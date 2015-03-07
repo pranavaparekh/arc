@@ -8,5 +8,19 @@
  */
 
 return array(
-  // 'omitScriptNameInUrls' => true,
+  '*' => array(
+    'omitScriptNameInUrls' => true,
+  ),
+
+  'live' => array(
+    // Config overrides for our live environment
+  ),
+
+  'staging' => array(
+    // Config overrides for our live environment
+  ),
+
+  'dev' => array(
+    // Config overrides for our dev environment
+  ),
 );
