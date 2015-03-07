@@ -1,5 +1,26 @@
 <?php
 
+switch ($_SERVER['SERVER_NAME'])
+{
+    // If the SERVER_NAME variable matches our case,
+    // assign the CRAFT_ENVIRONMENT variable a keyword
+    // that identifies this environment that we can
+    // use in our multi-environment config
+
+    case 'aranca.craft.dev' :
+        define('CRAFT_ENVIRONMENT', 'amite');
+        break;
+
+    case 'saranca.craft.dev' :
+        define('CRAFT_ENVIRONMENT', 'stanly');
+        break;
+
+    case 'aranca.com' :
+        define('CRAFT_ENVIRONMENT', 'live');
+        break;
+
+}
+
 // Path to your craft/ folder
 $craftPath = '../craft';
 
