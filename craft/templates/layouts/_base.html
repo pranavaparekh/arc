@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+      <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="assets/css/main.css">
+    {% endblock %}
+  </head>
+
+  <body class="pace-on pace-counter">
+    {% block body %}
+    {% endblock %}
+
+    {% block foot %}
+    {% endblock %}
+  </body>
+</html>
