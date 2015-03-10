@@ -1,12 +1,12 @@
 {% extends "layouts/_base" %}
 
 {% block body %}
-  {% include "partials/_top-bar.html" %}  {# Static content across all pages (i assume); hence, placed it here. #} 
+  {% include "includes/_top-bar.html" %}
 
   <main id="main" role="main">
-   
+
     {% block main %}
     {% endblock %}
-  
+
   </main>
 {% endblock %}
