@@ -4,13 +4,7 @@
   position: relative;
   box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
-.top-bar .container-fullwidth {
-  position: static;
-}
-.top-bar .container-fullwidth {
-  padding-left: 15px;
-  padding-right: 15px;
-}
+
 .top-bar .top {
   float: left;
   width: 50%;
@@ -46,14 +40,14 @@
 }
 
 /* - Header and top bar widgets - */
-.top-bar .sidebar-widget, #masthead .sidebar-widget {
+.top-bar .sidebar-widget {
   margin-bottom: 0;
 }
-.top-bar .sidebar-widget > *, #masthead .sidebar-widget > * {
+.top-bar .sidebar-widget  > * {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
-.top-bar .sidebar-widget .sidebar-header, #masthead .sidebar-widget .sidebar-header {
+.top-bar .sidebar-widget .sidebar-header {
   display: none;
 }
 
