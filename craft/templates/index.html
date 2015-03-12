@@ -10,8 +10,12 @@
                 <div class="col-md-12">
                     <div class="tp-banner-container">
                         <div class="tp-banner">
-                            <img src="assets/banners/aranca-banner.jpg" alt="aranca-banner"/>
                             
+                              {% set image = entry.banner.first() %}
+                              {% if image %}
+                                <img src="{{ image.getUrl() }}" alt="image.title"/>
+                              {% endif %}
+
                         </div>
                     </div>
                 </div>
