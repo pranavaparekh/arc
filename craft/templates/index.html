@@ -3,24 +3,5 @@
 {% set title = "Home" %}
 
 {% block main %}
-  <article>
-    <section class="section">
-        <div class="container-fullwidth">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="tp-banner-container">
-                        <div class="tp-banner">
-                            
-                              {% set image = entry.banner.first() %}
-                              {% if image %}
-                                <img src="{{ image.getUrl() }}" alt="image.title"/>
-                              {% endif %}
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    </article>
+  {% include "includes/_banner.html" %}
 {% endblock %}
