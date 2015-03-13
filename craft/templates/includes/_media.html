@@ -1,0 +1,41 @@
+<section class="section">
+    <div class="background-overlay" style="background-color: rgba(0,192,225,1);"></div>
+    <div class="container-fullwidth container-vertical-middle">
+        <div class="row vertical-middle">
+            <div class="col-md-6" style="background:#f0f0f0;">
+                <div class="text-center flexslider feature-slider" data-flex-animation="fade" data-flex-controls="hide" data-flex-controls-position="outside" data-flex-controlsalign="center" data-flex-directions="hide" data-flex-slideshow="true"
+                data-flex-speed="7000" data-os-animation="none" data-os-animation-delay="0s" id="flexslider-818">
+                    <ul class="slides">
+                        {% for block in entry.media %}
+                        <li>
+                            <blockquote class="blockquote-simple">
+                                <h1>{{block.personName}}</h1> 
+                                {% set image = block.image.first() %}
+                                {% if image %}
+                                <img alt="{{image.title}}" class="attachment-thumbnail" height="150" 
+                                src="{{image.getUrl()}}" width="150">
+                                {% endif %}
+                                <footer> <cite title="{{block.affiliation}}">{{block.affiliation}}</cite> </footer>
+                            </blockquote>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="element-top-80 element-bottom-80 text-center text-light flexslider feature-slider" data-flex-animation="slide" data-flex-controls="hide" data-flex-controls-position="outside" data-flex-controlsalign="center" data-flex-directions="hide"
+                data-flex-slideshow="true" data-flex-speed="7000" data-os-animation="none" data-os-animation-delay="0s" id="flexslider-39">
+                    <ul class="slides">
+                         {% for block in entry.media %}   
+                        <li>
+                            <blockquote>
+                                <p>{{block.testimonial}}</p>
+                            </blockquote>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>_

@@ -1,0 +1,408 @@
+
+/* ---------- */
+/* FLEXSLIDER */
+/* ---------- */
+/* - Default style - */
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus {
+  outline: none;
+}
+
+.flexslider .slides, .flex-control-nav, .flex-direction-nav, .slides {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flexslider {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.flexslider .slides blockquote img {
+  max-width: 100%;
+  width: auto;
+}
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+html[xmlns] .slides {
+  display: block;
+}
+
+* html .slides {
+  height: 1%;
+}
+
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+/* - Theme styles - */
+/* --  Flex Controls -- */
+.flex-control-nav {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.flex-control-nav li {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  line-height: 1;
+}
+.flex-control-nav a {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  text-indent: -9000em;
+  transition: background 0.5s, box-shadow 0.3s;
+  margin: 0 8px;
+  vertical-align: middle;
+  text-align: left;
+}
+.flex-controls-left .flex-control-nav {
+  left: 24px;
+}
+.flex-controls-right .flex-control-nav {
+  right: 24px;
+  text-align: right;
+}
+.flex-controls-center .flex-control-nav {
+  width: 100%;
+  text-align: center;
+}
+.flex-controls-top .flex-control-nav {
+  bottom: auto;
+  top: 0;
+}
+
+.flex-controls-outside .flex-control-nav {
+  position: relative;
+  width: 100%;
+  left: 0;
+  margin: 0;
+}
+
+/* -- Flex Direction arrows -- */
+.flex-direction-nav a {
+  display: block;
+  position: absolute;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  margin-top: -0.5em;
+  font-family: 'FontAwesome';
+  text-align: center;
+  vertical-align: middle;
+  line-height: 24px;
+  z-index: 3;
+}
+.flex-direction-nav a:before {
+  display: inline-block;
+}
+
+.flex-prev {
+  left: 0;
+}
+.flex-prev:before {
+  content: "\f104";
+}
+
+.flex-next {
+  right: 0;
+}
+.flex-next:before {
+  content: "\f105";
+}
+
+/* -- Flex Figcaptions -- */
+.flexslider {
+  margin-top: 0;
+}
+.flexslider figure {
+  position: relative;
+  margin: 0;
+}
+.flexslider figcaption {
+  display: inline-block;
+  position: absolute;
+  bottom: 48px;
+  left: 24px;
+  padding: 12px;
+  max-width: 400px;
+}
+.flexslider figcaption h3 {
+  margin-top: 0;
+}
+.flexslider figcaption p {
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+.flexslider.flex-caption-right figcaption {
+  left: auto;
+  right: 24px;
+}
+.flexslider.flex-caption-alternate li:nth-child(even) figcaption {
+  left: 24px;
+  right: auto;
+}
+.flexslider.flex-caption-alternate li:nth-child(odd) figcaption {
+  right: 24px;
+  left: auto;
+}
+
+@media (max-width: 480px) {
+  .flexslider figcaption {
+    display: none;
+  }
+}
+/* -- Flex items fix for tooptips -- */
+[data-flex-itemwidth] {
+  margin-top: -36px;
+  text-align: center;
+}
+[data-flex-itemwidth] .slides > li > a, [data-flex-itemwidth] .slides > li > figure {
+  padding-top: 36px;
+  display: inline-block;
+  max-width: 100%;
+}
+[data-flex-itemwidth] .flex-prev, [data-flex-itemwidth] .flex-next {
+  margin-top: -0px;
+}
+
+/* - Flexslider blockquotes - */
+.flexslider blockquote {
+  margin-bottom: 24px;
+}
+
+/* - Blockquote - */
+blockquote {
+  border: 0;
+  position: relative;
+  padding: 0 48px;
+}
+blockquote:before {
+  content: "\201C";
+  display: block;
+  font-family: Georgia;
+  font-size: 84px;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+blockquote p {
+  line-height: 1.5em;
+}
+
+blockquote img {
+  display: inline-block !important;
+  margin: 0 0 12px !important;
+  border-radius: 50%;
+}
+
+blockquote .box {
+  display: inline-block !important;
+}
+
+.blockquote-simple img {
+  max-width: 96px !important;
+  border: 8px solid;
+}
+.blockquote-simple:before {
+  display: none;
+}
+.blockquote-simple footer:before {
+  display: none;
+}
+
+blockquote p {
+  font-family: "Gentium Basic";
+  font-style: italic;
+}
+blockquote small, blockquote footer {
+  font-family: "Raleway";
+  color: #959494;
+}
+blockquote cite {
+  color: #4c4c4c;
+}
+blockquote:before {
+  color: rgba(76, 76, 76, 0.2);
+}
+blockquote.blockquote-simple img {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.text-light {
+  color: #ffffff;
+}
+.text-light i {
+  color: #ffffff;
+}
+
+h1.text-light,
+h2.text-light,
+h3.text-light,
+h4.text-light,
+h5.text-light,
+h6.text-light,
+.text-light h1,
+.text-light h2,
+.text-light h3,
+.text-light h4,
+.text-light h5,
+.text-light h6 {
+  color: #ffffff;
+}
+
+.text-light a, a.text-light {
+  color: #ffffff;
+}
+.text-light a:hover, a.text-light:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.text-light blockquote, blockquote.text-light {
+  color: #ffffff;
+}
+.text-light blockquote small, .text-light blockquote footer, .text-light blockquote cite, blockquote.text-light small, blockquote.text-light footer, blockquote.text-light cite {
+  color: #ffffff;
+}
+.text-light blockquote:before, blockquote.text-light:before {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text-light.btn-link, .text-light .btn-link {
+  box-shadow: 0px 0px 0px 1px #ffffff inset !important;
+}
+.text-light.btn-link i, .text-light .btn-link i {
+  color: #ffffff;
+}
+
+.text-light.btn-link:hover, .text-light .btn-link:hover {
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.9) inset !important;
+  background: none;
+}
+
+.text-light.btn-primary, .text-light .btn-primary {
+  background: #ffffff !important;
+  color: #4c4c4c !important;
+}
+.text-light.btn-primary:hover, .text-light .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.text-light small, .text-light .small {
+  color: #ffffff;
+}
+
+.text-light.btn-primary:hover, .text-light .btn-primary:hover {
+  opacity: 1;
+}
+
+.text-light .breadcrumb-blog a, .text-light .breadcrumb-blog .active {
+  color: #ffffff;
+}
+.text-light .breadcrumb-blog > li + li:before {
+  color: #ffffff;
+}
+
+.text-light.social-icons li a {
+  background: #ffffff !important;
+}
+.text-light.social-icons li a i {
+  color: #4c4c4c !important;
+}
+
+.text-light.social-simple li a {
+  background: none !important;
+}
+.text-light.social-simple li a i {
+  color: #ffffff !important;
+}
+
+.text-light .portfolio-nav svg {
+  stroke: #ffffff;
+}
+
+.text-light.scroll-to i, .text-light .scroll-to i {
+  color: #ffffff;
+}
+.text-light.scroll-to:hover, .text-light .scroll-to:hover {
+  opacity: 0.9;
+}
+
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.flexslider .slides blockquote img {
+  max-width: 100%;
+  width: auto;
+}
+
+/* - Sections - */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* -- Media sections -- */
+.background-media, .background-overlay {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0px;
+  bottom: 0;
+}
+
+  .vertical-top, .vertical-middle, .vertical-bottom {
+    display: table;
+    width: calc(100% + 30px);
+    width: 100% \0/IE9;
+    /* ie9 fix */
+    table-layout: fixed;
+  }
+  .vertical-top > *, .vertical-middle > *, .vertical-bottom > * {
+    display: table-cell;
+    float: none;
+  }
+ .vertical-middle > * {
+    vertical-align: middle;
+  }
