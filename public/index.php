@@ -1,17 +1,20 @@
 <?php
 
-switch ($_SERVER['SERVER_NAME'])
+// Path to your craft/ folder
+$craftPath = '../craft';
+// var_dump($_SERVER['APP_ENV']); exit();
+switch ($_SERVER['APP_ENV'])
 {
     // If the SERVER_NAME variable matches our case,
     // assign the CRAFT_ENVIRONMENT variable a keyword
     // that identifies this environment that we can
     // use in our multi-environment config
 
-    case 'aranca.craft.dev' :
+    case 'amite' :
         define('CRAFT_ENVIRONMENT', 'amite');
         break;
 
-    case 'saranca.craft.dev' :
+    case 'local' :
         define('CRAFT_ENVIRONMENT', 'stanly');
         break;
 
@@ -20,9 +23,6 @@ switch ($_SERVER['SERVER_NAME'])
         break;
 
 }
-
-// Path to your craft/ folder
-$craftPath = '../craft';
 
 // Do not edit below this line
 $path = rtrim($craftPath, '/').'/app/index.php';
