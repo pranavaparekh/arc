@@ -41,10 +41,14 @@ return array(
 
   'stanly' => array(
     'devMode' => true,
+    'assetsBaseUrl' => '/assets/uploads',
+    'assetsBasePath' => './assets/uploads',
   ),
 
   'amite' => array(
     'devMode' => true,
+    'assetsBaseUrl' => '/assets/uploads',
+    'assetsBasePath' => './assets/uploads',
   ),
 
 );
