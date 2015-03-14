@@ -240,6 +240,7 @@ blockquote .box {
 .blockquote-simple img {
   max-width: 96px !important;
   border: 8px solid;
+  max-height:96px;
 }
 .blockquote-simple:before {
   display: none;
