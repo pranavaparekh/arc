@@ -18,7 +18,7 @@ switch ($_SERVER['APP_ENV'])
         define('CRAFT_ENVIRONMENT', 'stanly');
         break;
 
-    case 'aranca.codelove.in' :
+    case 'staging' :
         define('CRAFT_ENVIRONMENT', 'staging');
         break;
 
