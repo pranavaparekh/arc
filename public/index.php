@@ -18,6 +18,10 @@ switch ($_SERVER['APP_ENV'])
         define('CRAFT_ENVIRONMENT', 'stanly');
         break;
 
+    case 'aranca.codelove.in' :
+        define('CRAFT_ENVIRONMENT', 'staging');
+        break;
+
     case 'aranca.com' :
         define('CRAFT_ENVIRONMENT', 'live');
         break;

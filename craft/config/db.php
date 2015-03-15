@@ -10,14 +10,23 @@
 return array(
     '*' => array(
         'tablePrefix' => 'craft',
+    ),
+    'stanly' => array(
+        'server' => 'localhost',
         'user' => $_SERVER['ARANCA_DATABASE_USER'],
         'password' => $_SERVER['ARANCA_DATABASE_PASS'],
         'database' => $_SERVER['ARANCA_DATABASE_NAME'],
     ),
-    'stanly' => array(
-        'server' => 'localhost',
-    ),
     'amite' => array(
-        'server' => 'localhost',
+        'server' => $_SERVER['ARANCA_REMOTE_DATABASE_SERVER'],
+        'user' => $_SERVER['ARANCA_REMOTE_DATABASE_USER'],
+        'password' => $_SERVER['ARANCA_REMOTE_DATABASE_PASS'],
+        'database' => $_SERVER['ARANCA_REMOTE_DATABASE_NAME'],
+    ),
+    'staging' => array(
+        'server' => $_SERVER['ARANCA_REMOTE_DATABASE_SERVER'],
+        'user' => $_SERVER['ARANCA_REMOTE_DATABASE_USER'],
+        'password' => $_SERVER['ARANCA_REMOTE_DATABASE_PASS'],
+        'database' => $_SERVER['ARANCA_REMOTE_DATABASE_NAME'],
     ),
 );

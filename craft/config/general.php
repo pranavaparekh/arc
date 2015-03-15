@@ -51,4 +51,10 @@ return array(
     'assetsBasePath' => './assets/uploads',
   ),
 
+  'staging' => array(
+    'devMode' => true,
+    'assetsBaseUrl' => '/assets/uploads',
+    'assetsBasePath' => './assets/uploads',
+  ),
+
 );
