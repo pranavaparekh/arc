@@ -60,3 +60,14 @@
     max-height: 340px;
   }
 }
+@media (max-width: 767px) {
+  .section .section .container {
+    padding: 0;
+    width: auto;
+  }
+
+  .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}

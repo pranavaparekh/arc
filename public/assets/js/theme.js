@@ -32,21 +32,21 @@ window.paceOptions = {
     startOnPageLoad: oxyThemeData.siteLoader === 'on',
     restartOnRequestAfter: false
 };
-// Loading Slabtext on window load to make sure fonts are loaded
-jQuery(window).on('load', function () {
-    jQuery( '.bigtext' ).bigtext(
-        {
-            minfontsize: 16
-        });
-});
+// // Loading Slabtext on window load to make sure fonts are loaded
+// jQuery(window).on('load', function () {
+//     jQuery( '.bigtext' ).bigtext(
+//         {
+//             minfontsize: 16
+//         });
+// });
 
 jQuery(document).ready(function( $ ) {
     // Parallax Scrolling - on desktops only
     // ======================
     if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-        skrollr.init({
-            forceHeight: false
-        });
+        // skrollr.init({
+        //     forceHeight: false
+        // });
     } else {
         // Assign the 'oxy-agent' class when not assigned by PHP - for the html Version
         // ======================
