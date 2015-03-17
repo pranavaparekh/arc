@@ -3,7 +3,7 @@
 @import "top-bar";
 @import "navbar";
 @import "media";
-@import "util";
+@import "components";
 
 .pace-on .pace-overlay {
   position: fixed;
@@ -105,7 +105,7 @@ ul.social-icons.social-simple a {
 }
 
 .social-simple li a:not([data-iconcolor]):hover i {
-  color: #0469ac;
+  color: $brand-primary;
 }
 
 /* - Social icons widget - */
