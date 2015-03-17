@@ -95,13 +95,13 @@
   color: #1c1c1c;
 }
 .menu .nav > li > a:hover, .menu .nav > li > a:focus {
-  color: #0469ac;
+  color: $brand-primary;
   background: none;
 }
 .menu .nav > li > a:hover:before, .menu .nav > li > a:focus:before {
   opacity: 1;
   width: 100%;
-  background-color: #0469ac;
+  background-color: $brand-primary;
 }
 
 .menu a .menu-icon {
@@ -128,7 +128,7 @@
 .menu .nav li.dropdown.open > .dropdown-toggle,
 .menu .nav li.dropdown.active > .dropdown-toggle,
 .menu .nav li.dropdown.open.active > .dropdown-toggle {
-  color: #0469ac;
+  color: $brand-primary;
 }
 .menu .nav > .active > a:after,
 .menu .nav > .current-menu-parent > a:after,
@@ -152,7 +152,7 @@
 .menu .nav li.dropdown.open > .dropdown-toggle:hover,
 .menu .nav li.dropdown.active > .dropdown-toggle:hover,
 .menu .nav li.dropdown.open.active > .dropdown-toggle:hover {
-  color: #0469ac;
+  color: $brand-primary;
 }
 
 .menu .nav > .disabled > a {
@@ -161,7 +161,7 @@
 
 .menu .dropdown-menu {
   background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 3px 0px #0469ac inset;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 3px 0px $brand-primary inset;
 }
 .menu .dropdown-menu > li > a {
   color: #4c4c4c;
@@ -171,7 +171,7 @@
 }
 
 .menu .dropdown-menu > li > a:hover, .menu .dropdown-menu > .active > a, .menu .dropdown-menu > .active > a:hover, .menu .dropdown-menu > .active > a:focus {
-  color: #0469ac;
+  color: $brand-primary;
   background: transparent;
 }
 
@@ -512,11 +512,11 @@
 }
 
 .menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li > a:hover {
-  color: #0469ac;
+  color: $brand-primary;
 }
 
 .menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li.current-menu-item > a {
-  color: #0469ac;
+  color: $brand-primary;
 }
 
 .menu-item-object-oxy_mega_menu .dropdown-menu > li > p {
