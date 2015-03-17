@@ -367,6 +367,8 @@ h6.text-light,
   opacity: 0.9;
 }
 
+// container-fullwidth container-vertical-middle
+
 .flexslider .slides img {
   width: 100%;
   display: block;
@@ -382,15 +384,6 @@ h6.text-light,
 .section {
   position: relative;
   overflow: hidden;
-}
-
-/* -- Media sections -- */
-.background-media, .background-overlay {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0px;
-  bottom: 0;
 }
 
   .vertical-top, .vertical-middle, .vertical-bottom {
