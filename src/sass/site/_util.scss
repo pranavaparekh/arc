@@ -254,7 +254,15 @@ img {
   filter: blur(2px);
 }
 
+
+
 /* - Border divider - */
+.divider-center
+{
+  border-top: 3px solid $brand-primary;
+  width: 60px;
+}
+
 .divider-border {
   position: relative;
   height: 4px;
