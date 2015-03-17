@@ -1,16 +1,12 @@
-<section class="section">
+<section class="section banner">
   <div class="container-fullwidth">
     <div class="row">
-      <div class="col-md-12">
-        <div class="tp-banner-container">
-          <div class="tp-banner">                            
-            {% set image = entry.banner.first() %}
-            {% if image %}
-              <img src="{{ image.getUrl() }}" alt="{{ image.title }}" 
-              style="max-height:375px; width:100%"/>
-            {% endif %}
-          </div>
-        </div>
+      <div class="col-md-12">                            
+        {% set image = entry.banner.first() %}
+        {% if image %}
+          <img src="{{ image.getUrl() }}" alt="{{ image.title }}" 
+          style="max-height:375px; width:100%"/>
+        {% endif %}
       </div>
     </div>
   </div>
