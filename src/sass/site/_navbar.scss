@@ -95,13 +95,13 @@
   color: #1c1c1c;
 }
 .menu .nav > li > a:hover, .menu .nav > li > a:focus {
-  color: #00c0e1;
+  color: $brand-primary;
   background: none;
 }
 .menu .nav > li > a:hover:before, .menu .nav > li > a:focus:before {
   opacity: 1;
   width: 100%;
-  background-color: #00c0e1;
+  background-color: $brand-primary;
 }
 
 .menu a .menu-icon {
@@ -128,7 +128,7 @@
 .menu .nav li.dropdown.open > .dropdown-toggle,
 .menu .nav li.dropdown.active > .dropdown-toggle,
 .menu .nav li.dropdown.open.active > .dropdown-toggle {
-  color: #00c0e1;
+  color: $brand-primary;
 }
 .menu .nav > .active > a:after,
 .menu .nav > .current-menu-parent > a:after,
@@ -152,7 +152,7 @@
 .menu .nav li.dropdown.open > .dropdown-toggle:hover,
 .menu .nav li.dropdown.active > .dropdown-toggle:hover,
 .menu .nav li.dropdown.open.active > .dropdown-toggle:hover {
-  color: #00c0e1;
+  color: $brand-primary;
 }
 
 .menu .nav > .disabled > a {
@@ -161,7 +161,7 @@
 
 .menu .dropdown-menu {
   background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 3px 0px #00c0e1 inset;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 3px 0px $brand-primary inset;
 }
 .menu .dropdown-menu > li > a {
   color: #4c4c4c;
@@ -171,7 +171,7 @@
 }
 
 .menu .dropdown-menu > li > a:hover, .menu .dropdown-menu > .active > a, .menu .dropdown-menu > .active > a:hover, .menu .dropdown-menu > .active > a:focus {
-  color: #00c0e1;
+  color: $brand-primary;
   background: transparent;
 }
 
@@ -362,4 +362,167 @@
 }
 .menu .navbar-brand:hover {
   color: #1c1c1c;
+}
+
+/* - Dropdowns - */
+.menu .dropdown-menu {
+  border-radius: 0;
+  text-shadow: none;
+  margin-top: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+.menu .dropdown-menu > li > a {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  transition: background 0.1s;
+}
+.menu .dropdown-menu > li > a:focus {
+  outline: none;
+}
+.menu .dropdown-menu .dropdown-menu {
+  margin-top: 0;
+}
+
+.menu .pull-right > li > .dropdown-menu .dropdown-menu, .menu .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+  left: 100%;
+  right: auto;
+}
+
+.menu .dropdown-menu .divider {
+  margin: 0;
+}
+
+/* - Fix for bootstrap 3 submenus - */
+.menu .dropdown-submenu {
+  position: relative;
+}
+
+.menu .dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+}
+
+.menu .dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+.menu .dropdown-submenu > a:after {
+  display: block;
+  content: "\f105";
+  float: right;
+  margin-right: -6px;
+  font-family: FontAwesome;
+}
+
+.menu .navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* --------- */
+/* MEGA MENU */
+/* --------- */
+.menu-item-object-oxy_mega_menu {
+  position: static !important;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu {
+  left: 0px !important;
+  right: 0px !important;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li {
+  position: relative;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li:before {
+  content: "";
+  position: absolute;
+  height: 1000px;
+  width: 1px;
+  left: 0;
+  top: 3px;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li:first-child:before {
+  display: none;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > ul {
+  list-style-type: none;
+  padding: 0 0 6px;
+  overflow: hidden;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li {
+  padding-bottom: 0px;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li > a {
+  padding: 8px 0;
+  display: block;
+  font-size: 14px;
+  transition: color 0.1s;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > strong {
+  padding-top: 16px;
+  padding-bottom: 8px;
+  display: block;
+}
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > p {
+  font-size: 14px;
+  font-style: italic;
+  padding-bottom: 12px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid;
+}
+
+.container-fullwidth .menu-item-object-oxy_mega_menu .dropdown-menu {
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+}
+
+.oxy_mega_menu-no-dividers > ul > li:before {
+  display: none;
+}
+
+.oxy_mega_menu-no-dividers > ul > li > p {
+  border: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .menu-item-object-oxy_mega_menu {
+    position: relative !important;
+  }
+
+  .menu-item-object-oxy_mega_menu .dropdown-menu {
+    background-image: none !important;
+  }
+
+  .menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li > a {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.menu-item-object-oxy_mega_menu {
+  color: #4c4c4c;
+}
+
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li > a {
+  color: #4c4c4c;
+}
+
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li > a:hover {
+  color: $brand-primary;
+}
+
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > ul > li.current-menu-item > a {
+  color: $brand-primary;
+}
+
+.menu-item-object-oxy_mega_menu .dropdown-menu > li > p {
+  border-bottom-color: rgba(0, 0, 0, 0.055);
+}
+
+.menu-item-object-oxy_mega_menu .dropdown-menu > li:before {
+  background: rgba(0, 0, 0, 0.055);
 }

@@ -1,0 +1,109 @@
+{% extends "layouts/_site" %}
+
+{% block main %}
+  <article>
+            <section class="section">
+                <div class="background-overlay " style="background-color: #0469ac;"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2  text-center"></div>
+                        <div class="col-md-8  text-center">
+                            <h1 class="text-default  element-top-70 element-bottom-0 text-light big default">
+                        About us
+                    </h1>
+                            <div class="divider-border divider-border-center element-top-10 element-bottom-10" 
+                            style="height:3px;">
+                                <div class="divider-border-inner" style="background:#ffffff; width:60px;"></div>
+                            </div>
+                            <p class="lead text-center center text-light element-bottom-70"> We are a corporate web design agency who are passionate with our pixels.
+                                <br /> We specialise in WordPress development and we create pixel perfect themes. </p>
+                        </div>
+                        <div class="col-md-2 "></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="background-overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="text-center element-top-50 element-bottom-20 big default">
+                        Our story
+                    </h2>
+                            <div class="divider-border divider-border-center element-top-10 element-bottom-10 "style="height:3px;">
+                                <div class="divider-border-inner" style="background: #0469ac;width:60px;"></div>
+                            </div>
+                            <div class="col-text-2 element-top-20 element-bottom-20 text-center">
+                                <p> Aranca is a leading provider of high quality, customized and cost effective research and analytics to global clients. Founded in UK in 2003, Aranca has a global presence including in the US, Europe and Middle East, and a state-of-the-art delivery center in Mumbai, India.
+
+                                Our research solutions are structured around four complementary business lines: Investment Research, Business Research, Valuation and Advisory Services and Intellectual Property Research. 
+
+                                We have consistently strived to build world-class research capabilities and differentiated ourselves by offering a broad spectrum of knowledge solutions and developing capabilities to deliver high-end research work. Aranca's operating model integrates our cross-disciplinary research expertise that delves deep into clients’ fundamental needs to deliver specific, insightful and actionable research.
+
+                                Aranca's leadership team with extensive experience in research, strategy consulting and organization building, research expertise and a robust information technology infrastructure blend together to create efficient processes that address clients’ business questions and add significant long-lasting value to their businesses.
+
+                                Over the years, Aranca has become a trusted partner to over 1500 global organizations including Fortune 500 companies, SMBs, investment banks, brokerage firms, asset management firms, consulting firms, PE andVC firms, law firms, government bodies, trade associations and universities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="background-overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center element-top-70 text-normal os-animation big default" data-os-animation="fadeIn" data-os-animation-delay="0s" data-start="opacity:1" data-center="opacity:1" data-0-top-bottom="opacity:0">
+                        Our Team
+                    </h1>
+                            <div class="divider-border divider-border-center element-top-10 element-bottom-10" style="height:3px;">
+                                <div class="divider-border-inner" style="background: #0469ac;width:60px;"></div>
+                            </div>
+                            <p class="lead text-center center text-normal element-bottom-40 os-animation " data-os-animation="fadeIn" data-os-animation-delay="0.2s"> Our team bring a broad wealth of knowledge and experience in our company.
+                                <br /> Your business can benefit from this. </p>
+                            <div class="row staff-list-container list-container element-bottom-60">
+
+                            {% for block in entry.profile %}
+                            {% if block.type == "teamProfile" %}
+                                <div class="figure col-md-4  fade-in element-bottom-20 figcaption-bottom text-left fade-in">
+                                    <div class="figure-image"> 
+                                    {% set image = block.image.first() %}
+                                    {% if image %}
+                                      <img alt="{{image.title}}" src="{{image.getUrl()}}"/>
+                                    {% endif %}
+                                        <div class="figure-overlay">
+                                            <div class="figure-overlay-container">
+                                                <div class="figure-caption text-center">
+                                                    <ul class="figure-overlay-icons social-icons social-simple">
+                                                        <li>
+                                                            <a href="#" target="_self"> <i class="fa fa-linkedin"></i> </a>
+                                                        </li>                                                        <li>
+                                                            <a href="#" target="_self"> <i class="fa fa-twitter"></i> </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="figure-caption text-left">
+                                        <h3 class="figure-caption-title">
+                                    <strong>{{block.personName}}</strong>
+                                    <span>{{block.affiliation}}</span>
+                                </h3>
+                                        <p class="figure-caption-description">{{block.about}}</p>
+                                    </div>
+                                </div>
+                              {% endif %}
+                              {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+  </article>
+{% endblock %}
