@@ -42,8 +42,7 @@
 }
 
 .about-aranca-lead-headline {
-  @extend .col-md-12;
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom:0px;
   color:#ffffff;
 }
@@ -52,4 +51,15 @@
   @extend %lead;
   margin-bottom:70px;
   color:#ffffff;
+}
+
+.about-aranca-story-headline {
+  margin-top: 50px;
+  margin-bottom:20px;
+  color:#000000;
+}
+
+.about-aranca-story-content {
+  margin-top: 20px;
+  margin-bottom:20px;
 }
