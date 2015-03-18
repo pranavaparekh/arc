@@ -63,3 +63,12 @@
   margin-top: 20px;
   margin-bottom:20px;
 }
+
+.about-aranca-team-headline {
+  margin-top:20px;
+
+}
+.about-aranca-team-lead {
+  @extend %lead;
+  margin-bottom:40px;
+}
