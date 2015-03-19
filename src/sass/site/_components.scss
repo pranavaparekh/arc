@@ -36,6 +36,7 @@
   @extend .container-fullwidth; 
 }
 
+/* Intro Styles*/
 .intro{ 
   width: 100%;
   background-color: #0469ac;
@@ -53,22 +54,19 @@
   color:#ffffff;
 }
 
-.about-aranca-story-headline {
+/* Page Body Styles */
+.page-body-headline {
   margin-top: 50px;
   margin-bottom:20px;
-  color:#000000;
+  
 }
 
-.about-aranca-story-content {
+.page-body-content {
   margin-top: 20px;
   margin-bottom:20px;
 }
 
-.about-aranca-team-headline {
-  margin-top:20px;
-
-}
-.about-aranca-team-lead {
+.page-body-lead {
   @extend %lead;
   margin-bottom:40px;
 }

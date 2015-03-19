@@ -1,0 +1,26 @@
+<section class="page-body section">        
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+      {% for block in entry.pageBody %}
+          <h1 class="page-body-headline">
+            {{block.headline}}
+          </h1>                
+          <hr class="divider-center" />
+          <p class="page-body-lead"> 
+            {% if block.lead %} 
+              {{block.lead}}
+            {% endif %} 
+          </p>
+          <div class="page-body-content col-text-2 text-left">
+            <p>
+            {% if block.pageBodyContent %} 
+              {{block.pageBodyContent}}
+            {% endif %}
+            </p>
+          </div>
+        {% endfor %}
+      </div> <!-- End of col-md-12  -->
+    </div>  <!-- End of Row  -->
+  </div>  <!-- End of container  -->
+</section>
