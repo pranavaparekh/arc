@@ -36,18 +36,18 @@
   @extend .container-fullwidth; 
 }
 
-.about-aranca-lead { 
+.intro{ 
   width: 100%;
   background-color: #0469ac;
 }
 
-.about-aranca-lead-headline {
+.intro-lead-headline {
   margin-top: 50px;
   margin-bottom:0px;
   color:#ffffff;
 }
 
-.about-aranca-lead-content {
+.intro-lead-content {
   @extend %lead;
   margin-bottom:70px;
   color:#ffffff;
