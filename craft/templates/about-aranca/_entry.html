@@ -3,5 +3,52 @@
 {% block main %}
   <article>
     {% include "includes/_intro.html" %}
+    {% include "includes/_page-body.html" with {"headline":"Our Story"} %}
+    {% include "includes/_page-body.html" with {"headline":"Our Team"} %}
+    
+      <section class="section about-aranca-team">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="row staff-list-container list-container element-bottom-60">
+              {% for block in entry.profile %}
+              {% if block.type == "teamProfile" %}
+                <div class="figure col-md-4  fade-in element-bottom-20 figcaption-bottom text-left fade-in">
+                  <div class="figure-image"> 
+                  {% set image = block.image.first() %}
+                  {% if image %}
+                    <img alt="{{image.title}}" src="{{image.getUrl()}}"/>
+                  {% endif %}
+                  <div class="figure-overlay">
+                    <div class="figure-overlay-container">
+                      <div class="figure-caption text-center">
+                        <ul class="figure-overlay-icons social-icons social-simple">
+                          <li>
+                            <a href="#" target="_self"> <i class="fa fa-linkedin"></i> </a>
+                          </li>                                                        <li>
+                            <a href="#" target="_self"> <i class="fa fa-twitter"></i> </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  </div>
+                  <div class="figure-caption text-left">
+                    <h3 class="figure-caption-title">
+                  <strong>{{block.personName}}</strong>
+                  <span>{{block.affiliation}}</span>
+                </h3>
+                    <p class="figure-caption-description">{{block.about}}</p>
+                  </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
   </article>
 {% endblock %}
