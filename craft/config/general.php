@@ -23,7 +23,8 @@ return array(
     'environmentVariables' => array(
       'siteUrl'  => SITE_URL,
       'basePath' => BASEPATH,
-
+      'assetsBaseUrl' => '/assets/uploads',
+      'assetsBasePath' => './assets/uploads',
     ),
   ),
 
@@ -42,8 +43,6 @@ return array(
 
   'stanly' => array(
     'devMode' => true,
-    'assetsBaseUrl' => '/assets/uploads',
-    'assetsBasePath' => './assets/uploads',
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
     'assetsImagesUrl' => '/assets/images',
@@ -53,8 +52,6 @@ return array(
 
   'amite' => array(
     'devMode' => true,
-    'assetsBaseUrl' => '/assets/uploads',
-    'assetsBasePath' => './assets/uploads',
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
     'assetsImagesUrl' => '/assets/images',
@@ -63,8 +60,6 @@ return array(
 
   'staging' => array(
     'devMode' => true,
-    'assetsBaseUrl' => '/assets/uploads',
-    'assetsBasePath' => './assets/uploads',
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
     'assetsImagesUrl' => '/assets/images',
