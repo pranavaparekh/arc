@@ -30,10 +30,10 @@
                         <div class="container">
                           <div class="row">
                             <div class="col-md-12 text-center">
-                              
-              {% if entry == "Profile-Team"%}              
-                {% for block in entry.profile %}
                               <div class="row staff-list-container list-container" style="margin-bottom:60px">
+              {% if entry == "Title"%}              
+                {% for block in entry.profile %}
+                              
                                 {% if block.type == "teamProfile" %}
                                   <div class="figure col-md-4  fade-in figcaption-bottom text-left fade-in" style="margin-bottom:20px">
                                     <div class="figure-image"> 
@@ -60,7 +60,7 @@
                                       <p>
                                         {{block.about}}
                                       </p>
-                                    </div>
+                                    
                                   </div>
                                    </div>
                                   {% endif %}
@@ -68,8 +68,7 @@
                 {% endfor %}
               {% endif %}
 
-              {% if entry == "Profile-Client"%}  
-              {{entry}}            
+              {% if entry == "Profile-Field"%}              
                 {% for block in entry.profile %}
                          <blockquote class="text-center" style="margin-top:70px; margin-bottom:50px">
                                 <p>{{block.testimonial}}</p>
@@ -88,7 +87,7 @@
 
                 {% endfor %}
               {% endif %}
-                             
+                             </div>
                             </div>
                           </div>
                         </div>
@@ -102,3 +101,45 @@
     </div>  <!-- End of Row  -->
   </div>  <!-- End of container  -->
 </section>
+
+{# Only Section left to make dynamic #}
+{#                             <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="features-list element-top-90 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+                                        <li class="element-top-20 element-bottom-20 os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
+                                            <div class="features-list-icon box-animate"> <i class="icon-heart" style="color:#ffffff;"></i> </div>
+                                            <h3>
+                                        Investment Research
+                                    </h3>
+                                            <p> We have researched over 2500 companies across 70+ sectors in both developed markets and emerging economies</p>
+                                        </li>
+                                        <li class="element-top-20 element-bottom-20 os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0.1s">
+                                            <div class="features-list-icon box-animate"> <i class="icon-map" style="color:#ffffff;"></i> </div>
+                                            <h3>
+                                        Business Research
+                                    </h3>
+                                            <p> We have helped clients to understand market dynamics in over 50 countries, across 80+ sectors and covering over 800 products / services </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="features-list element-top-90 element-bottom-20" data-os-animation="none" data-os-animation-delay="0s">
+                                       <li class="element-top-20 element-bottom-20 os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0.2s">
+                                            <div class="features-list-icon box-animate"> <i class="icon-cloud" style="color:#ffffff;"></i> </div>
+                                            <h3>
+                                        Intellectual Property Research
+                                    </h3>
+                                            <p> We have executed over 7500 patent research projects across 250 technology domains and involving searches in 70+ jurisdictions </p>
+                                        </li>
+
+                                        <li class="element-top-20 element-bottom-20 os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0s">
+                                            <div class="features-list-icon box-animate"> <i class="icon-monitor" style="color:#ffffff;"></i> </div>
+                                            <h3>
+                                        Valuation and advisory services
+                                    </h3>
+                                            <p> We have completed over 2000 valuation engagements across 15 major industries for clients ranging from start-ups to large enterprises </p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div> #}
