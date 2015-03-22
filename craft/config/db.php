@@ -18,10 +18,10 @@ return array(
         'database' => $_SERVER['ARANCA_DATABASE_NAME'],
     ),
     'amite' => array(
-        'server' => $_SERVER['ARANCA_REMOTE_DATABASE_SERVER'],
-        'user' => $_SERVER['ARANCA_REMOTE_DATABASE_USER'],
-        'password' => $_SERVER['ARANCA_REMOTE_DATABASE_PASS'],
-        'database' => $_SERVER['ARANCA_REMOTE_DATABASE_NAME'],
+        'server' => 'localhost',
+        'user' => $_SERVER['ARANCA_DATABASE_USER'],
+        'password' => $_SERVER['ARANCA_DATABASE_PASS'],
+        'database' => $_SERVER['ARANCA_DATABASE_NAME'],
     ),
     'staging' => array(
         'server' => $_SERVER['ARANCA_REMOTE_DATABASE_SERVER'],
