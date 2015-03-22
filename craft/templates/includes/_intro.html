@@ -1,0 +1,17 @@
+<section class="intro section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% for block in entry.intro %}
+          <h1 class="intro-lead-headline">
+            {{block.headline}}
+          </h1>
+          <hr class="divider-center-white" />
+          <p class="intro-lead-content">
+            {{block.lead}}
+          </p>
+        {% endfor %}
+      </div>  <!-- End of col-md-12  -->
+    </div>  <!-- End of Row  -->
+  </div>  <!-- End of container  -->
+</section>

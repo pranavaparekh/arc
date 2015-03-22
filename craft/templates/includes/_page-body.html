@@ -1,0 +1,99 @@
+<section class="page-body section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {% for block in entry.pageBody %}
+          <h1 class="page-body-headline">
+            {{block.headline}}
+          </h1>
+
+          <hr class="divider-center" />
+
+          {% if block.lead %}
+            <p class="page-body-lead">
+              {{block.lead}}
+            </p>
+          {% endif %}
+
+          {% if block.pageBodyContent %}
+            <div class="page-body-content text-center">
+              <p>
+                {{block.pageBodyContent}}
+              </p>
+            </div>
+          {% endif %}
+
+          {% if block.pageBodyContentProfile %}
+              {% for entry in block.pageBodyContentProfile %}
+                <section class="section">
+                  <div class="container">
+                    <div class="row">
+
+                      <div class="col-md-12 text-center">
+                      {% if entry == "Profile-Team"%}
+                        {% for block in entry.profile %}
+                        <div class="row staff-list-container list-container" style="margin-bottom:60px">
+                          {% if block.type == "teamProfile" %}
+                           <div class="figure col-md-4  fade-in figcaption-bottom text-left fade-in" style="margin-bottom:20px">
+                              <div class="figure-image">
+                                {% set image = block.image.first() %}
+                                {% if image %}
+                                  <img alt="{{image.title}}" src="{{image.getUrl()}}"/>
+                                {% endif %}
+                                <div class="text-center">
+                                  <ul class="social-icons social-simple">
+                                    <li>
+                                      <a href="#" target="_self"> <i class="fa fa-linkedin"></i> </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" target="_self"> <i class="fa fa-twitter"></i> </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div> <!-- end figure-image -->
+                              <div>
+                                <h3>
+                                  <strong>{{block.personName}}</strong>
+                                  <span>{{block.affiliation}}</span>
+                                </h3>
+                                <p>
+                                  {{block.about}}
+                                </p>
+                            </div>
+                          </div> <!-- end figure col-md-4 -->
+                    </div><!-- end staff-list-container -->
+
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+
+            {% if entry == "Profile-Client"%}
+              {{entry}}
+              {% for block in entry.profile %}
+                    <blockquote class="text-center" style="margin-top:70px; margin-bottom:50px">
+                      <p>{{block.testimonial}}</p>
+                      <footer>
+                        {% if block.personName %}
+                          {{block.personName}},
+                        {% endif %}
+                        {% if block.affiliation %}
+                          {{block.affiliation}}
+                        {% endif %}
+                       </footer>
+                    </blockquote>
+              {% endfor %}
+            {% endif %}
+
+          </div> <!-- text-center -->
+        </div> <!-- end row -->
+      </div> <!-- end container -->
+    </section>
+    {% endfor %}
+
+
+          {% endif %}
+        {% endfor %}
+      </div> <!-- End of col-md-12  -->
+    </div>  <!-- End of Row  -->
+  </div>  <!-- End of container  -->
+</section>
