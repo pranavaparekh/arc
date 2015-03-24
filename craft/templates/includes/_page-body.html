@@ -24,8 +24,8 @@
             </div>
           {% endif %}  {# End of if block.pageBodyContent #}
 
-          {% if block.pageBodyContentProfile %}
-            {% for relatedEntry in block.pageBodyContentProfile %}
+          {% if block.pageBodyMedia %}
+            {% for relatedEntry in block.pageBodyMedia %}
               <section class="section">
                 <div class="container">
                   <div class="row">
@@ -39,8 +39,8 @@
                   </div> <!-- end row -->
                 </div> <!-- end container -->
               </section>
-            {% endfor %} {# End of for relatedEntry in block.pageBodyContentProfile #}
-          {% endif %} {# End of if block.pageBodyContentProfile #}
+            {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
+          {% endif %} {# End of if block.pageBodyMedia #}
         {% endfor %} {# End of for block in entry.pageBody #}
       </div> <!-- End of col-md-12  -->
     </div>  <!-- End of Row  -->
