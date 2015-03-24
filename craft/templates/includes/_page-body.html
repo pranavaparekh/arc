@@ -24,15 +24,16 @@
           {% endif %}
 
           {% if block.pageBodyContentProfile %}
-              {% for entry in block.pageBodyContentProfile %}
+            {% for entry in block.pageBodyContentProfile %}
                 <section class="section">
                   <div class="container">
                     <div class="row">
 
                       <div class="col-md-12 text-center">
-                      {% if entry == "Profile-Team"%}
-                        {% for block in entry.profile %}
-                        <div class="row staff-list-container list-container" style="margin-bottom:60px">
+                {% set company = entry.title('Company') %}
+                {% if company %}
+                       <div class="row staff-list-container list-container" style="margin-bottom:60px">
+                  {% for block in entry.profile %}
                           {% if block.type == "teamProfile" %}
                            <div class="figure col-md-4  fade-in figcaption-bottom text-left fade-in" style="margin-bottom:20px">
                               <div class="figure-image">
@@ -61,14 +62,15 @@
                                 </p>
                             </div>
                           </div> <!-- end figure col-md-4 -->
-                    </div><!-- end staff-list-container -->
+                    
 
                 {% endif %}
               {% endfor %}
+              </div><!-- end staff-list-container -->
             {% endif %}
 
-            {% if entry == "Profile-Client"%}
-              {{entry}}
+            
+            {% if entry == "Client"%}
               {% for block in entry.profile %}
                     <blockquote class="text-center" style="margin-top:70px; margin-bottom:50px">
                       <p>{{block.testimonial}}</p>
@@ -89,8 +91,7 @@
       </div> <!-- end container -->
     </section>
     {% endfor %}
-
-
+    
           {% endif %}
         {% endfor %}
       </div> <!-- End of col-md-12  -->
