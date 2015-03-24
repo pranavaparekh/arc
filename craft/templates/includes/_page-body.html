@@ -25,15 +25,15 @@
           {% endif %}  {# End of if block.pageBodyContent #}
 
           {% if block.pageBodyContentProfile %}
-            {% for entry in block.pageBodyContentProfile %}
+            {% for relatedEntry in block.pageBodyContentProfile %}
               <section class="section">
                 <div class="container">
                   <div class="row">
                     <div class="col-md-12 text-center">
-                    
-                      {% if entry == "Company" %}
+
+                      {% if relatedEntry == "Company" %}
                         <div class="row staff-list-container list-container" style="margin-bottom:60px">
-                          {% for block in entry.profile %}
+                          {% for block in relatedEntry.profile %}
                             {% if block.type == "teamProfile" %}
                               <div class="figure col-md-4  fade-in figcaption-bottom text-left fade-in" style="margin-bottom:20px">
                                 <div class="figure-image">
@@ -52,7 +52,7 @@
                                     </ul>
                                   </div>
                                 </div> <!-- end figure-image -->
-                                <div>
+                                <div> <!-- Single Item block -->
                                   <h3>
                                     <strong>{{block.personName}}</strong>
                                     <span>{{block.affiliation}}</span>
@@ -60,15 +60,15 @@
                                   <p>
                                     {{block.about}}
                                   </p>
-                              </div>
+                                </div> <!-- End of Single Item block -->
                               </div> <!-- end figure col-md-4 -->
                             {% endif %} {# End of if block.type == "teamProfile" #}
-                          {% endfor %} {# End of for block in entry.profile #}
+                          {% endfor %} {# End of for block in relatedEntry.profile #}
                         </div><!-- end staff-list-container -->
-                      {% endif %} {# End of if entry == "Company" #}
+                      {% endif %} {# End of if relatedEntry == "Company" #}
                   
-                      {% if entry == "Client" %}
-                        {% for block in entry.profile %}
+                      {% if relatedEntry == "Client" %}
+                        {% for block in relatedEntry.profile %}
                           <blockquote class="text-center" style="margin-top:70px; margin-bottom:50px">
                             <p>{{block.testimonial}}</p>
                             <footer>
@@ -80,14 +80,14 @@
                               {% endif %}
                              </footer>
                           </blockquote>
-                        {% endfor %} {# End of for block in entry.profile #}
-                      {% endif %} {# End of if entry == "Client" #}
+                        {% endfor %} {# End of for block in relatedEntry.profile #}
+                      {% endif %} {# End of if relatedEntry == "Client" #}
 
                     </div> <!-- text-center -->
                   </div> <!-- end row -->
                 </div> <!-- end container -->
               </section>
-            {% endfor %} {# End of for entry in block.pageBodyContentProfile #}
+            {% endfor %} {# End of for relatedEntry in block.pageBodyContentProfile #}
           {% endif %} {# End of if block.pageBodyContentProfile #}
         {% endfor %} {# End of for block in entry.pageBody #}
       </div> <!-- End of col-md-12  -->
