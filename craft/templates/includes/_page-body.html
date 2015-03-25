@@ -24,6 +24,26 @@
             </div>
           {% endif %}  {# End of if block.pageBodyContent #}
 
+          {% if block.featureList %}
+          <section>
+            <div class="container">
+              <div class="row text-left">
+                <ul class="features-list" style="margin-top:90; margin-bottom:20">
+
+                  {% for row in block.featureList %}
+                    <li class="col-md-6" style="margin-top:20; margin-bottom:20">
+                      <div class="features-list-icon box-animate"> <i class="icon-{{row.icon}}" style="color:#ffffff;"></i> </div>
+                      <h3>{{row.headline}}</h3>
+                      <p>{{row.featureContent}}</p>
+                    </li>
+                  {% endfor %} {# End of for row in block.featureList #}
+                  
+                </ul>
+              </div> <!-- End of Row  -->
+            </div> <!-- End of container  -->
+          </section>
+          {% endif %}  {# End of if block.featureList #}
+
           {% if block.pageBodyMedia %}
             {% for relatedEntry in block.pageBodyMedia %}
               <section class="section">
