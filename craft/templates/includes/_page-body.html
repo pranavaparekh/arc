@@ -3,64 +3,80 @@
     <div class="row">
       <div class="col-md-12 text-center">
         {% for block in entry.pageBody %}
-          
-          <h1 class="page-body-headline">
-            {{block.headline}}
-          </h1>
+          {% if block.type == "pageBody" %}
+            <h1 class="page-body-headline">
+              {{block.headline}}
+            </h1>
 
-          <hr class="divider-center" />
+            <hr class="divider-center" />
 
-          {% if block.lead %}
-            <p class="page-body-lead">
-              {{block.lead}}
-            </p>
-          {% endif %} {# End of if block.lead #}
-
-          {% if block.pageBodyContent %}
-            <div class="page-body-content text-center">
-              <p>
-                {{block.pageBodyContent}}
+            {% if block.lead %}
+              <p class="page-body-lead">
+                {{block.lead}}
               </p>
+            {% endif %} {# End of if block.lead #}
+
+            {% if block.pageBodyContent %}
+              <div class="page-body-content text-center">
+                <p>
+                  {{block.pageBodyContent}}
+                </p>
+              </div>
+            {% endif %}  {# End of if block.pageBodyContent #}
+
+            {% if block.featureList %}
+            <section>
+              <div class="container">
+                <div class="row text-left">
+                  <ul class="features-list" style="margin-top:90; margin-bottom:20">
+
+                    {% for row in block.featureList %}
+                      <li class="col-md-6" style="margin-top:20; margin-bottom:20">
+                        <div class="features-list-icon box-animate"> <i class="icon-{{row.icon}}" style="color:#ffffff;"></i> </div>
+                        <h3>{{row.headline}}</h3>
+                        <p>{{row.featureContent}}</p>
+                      </li>
+                    {% endfor %} {# End of for row in block.featureList #}
+                    
+                  </ul>
+                </div> <!-- End of Row  -->
+              </div> <!-- End of container  -->
+            </section>
+            {% endif %}  {# End of if block.featureList #}
+
+            {% if block.pageBodyMedia %}
+              {% for relatedEntry in block.pageBodyMedia %}
+                <section class="section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12 text-center">
+
+                        {# This includes the related entry channels dynamically #}
+                        {% set entryTemplate = relatedEntry | lower %}
+                        {% include "includes/content/_" ~ entryTemplate %}                   
+
+                      </div> <!-- text-center -->
+                    </div> <!-- end row -->
+                  </div> <!-- end container -->
+                </section>
+              {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
+            {% endif %} {# End of if block.pageBodyMedia #}
+          {% endif %} {# End of if block.type == "pageBody" #}
+
+          {% if block.type == "image" %}
+            <div align="{{block.position}}">
+              <figure>
+                {% set image = block.image.first() %}
+                {% if image %}
+                {% if block.position == 'full' %}
+                  {% do image.setTransform({ width: 1440, height: 480 }) %}
+                {% endif %}
+                  <img alt="{{image.title}}" src="{{image.getUrl()}}"/>
+                {% endif %}
+                <figcaption>{{block.caption}}</figcaption>
+              </figure>
             </div>
-          {% endif %}  {# End of if block.pageBodyContent #}
-
-          {% if block.featureList %}
-          <section>
-            <div class="container">
-              <div class="row text-left">
-                <ul class="features-list" style="margin-top:90; margin-bottom:20">
-
-                  {% for row in block.featureList %}
-                    <li class="col-md-6" style="margin-top:20; margin-bottom:20">
-                      <div class="features-list-icon box-animate"> <i class="icon-{{row.icon}}" style="color:#ffffff;"></i> </div>
-                      <h3>{{row.headline}}</h3>
-                      <p>{{row.featureContent}}</p>
-                    </li>
-                  {% endfor %} {# End of for row in block.featureList #}
-                  
-                </ul>
-              </div> <!-- End of Row  -->
-            </div> <!-- End of container  -->
-          </section>
-          {% endif %}  {# End of if block.featureList #}
-
-          {% if block.pageBodyMedia %}
-            {% for relatedEntry in block.pageBodyMedia %}
-              <section class="section">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 text-center">
-
-                      {# This includes the related entry channels dynamically #}
-                      {% set entryTemplate = relatedEntry | lower %}
-                      {% include "includes/content/_" ~ entryTemplate %}                   
-
-                    </div> <!-- text-center -->
-                  </div> <!-- end row -->
-                </div> <!-- end container -->
-              </section>
-            {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
-          {% endif %} {# End of if block.pageBodyMedia #}
+          {% endif %}
         {% endfor %} {# End of for block in entry.pageBody #}
       </div> <!-- End of col-md-12  -->
     </div>  <!-- End of Row  -->
