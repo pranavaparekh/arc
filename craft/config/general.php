@@ -43,7 +43,6 @@ return array(
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
     'assetsImagesUrl' => '/assets/images',
-
   ),
   'staging' => array(
     'devMode' => true,

@@ -253,6 +253,16 @@ blockquote p {
   font-family: "Gentium Basic";
   font-style: italic;
 }
+.pullout-text-slab blockquote p {
+  font-size: 24px;
+  font-weight: 400;
+  color:#ffffff;
+}
+blockquote p {
+  font-size: 24px;
+  font-weight: 400;
+  color:#4c4c4c;
+}
 blockquote small, blockquote footer {
   font-family: "Raleway";
   color: #959494;
