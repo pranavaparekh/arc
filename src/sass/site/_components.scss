@@ -42,3 +42,38 @@
  
 
 }
+
+/* Intro Styles*/
+.intro{ 
+  width: 100%;
+  background-color: #0469ac;
+}
+
+.intro-lead-headline {
+  margin-top: 50px;
+  margin-bottom:0px;
+  color:#ffffff;
+}
+
+.intro-lead-content {
+  @extend %lead;
+  margin-bottom:70px;
+  color:#ffffff;
+}
+
+/* Page Body Styles */
+.page-body-headline {
+  margin-top: 50px;
+  margin-bottom:20px;
+  
+}
+
+.page-body-content {
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+
+.page-body-lead {
+  @extend %lead;
+  margin-bottom:40px;
+}
