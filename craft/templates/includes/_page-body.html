@@ -1,7 +1,7 @@
 <section class="page-body section">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-center">
+      <div class="text-center">
         {% for block in entry.pageBody %}
           {% if block.type == "pageBody" %}
             <h1 class="page-body-headline">
@@ -83,6 +83,27 @@
               <p>{{block.text}}</p>
             </div>
           {% endif %}
+
+          {% if block.type == "callToAction" %}
+            <section class="section" >
+              <div class="container container-vertical-middle" style="background-color: #0469ac; width:100%" >
+                <div class="row vertical-middle" >
+                  <div class="col-md-10">
+                     <h2 class="text-center text-light big light" style="margin-top:60px; margin-bottom:60px">
+                       {{block.callText}}
+                    </h2> 
+                  </div>
+                  <div class="col-md-2 text-center"> 
+                  <a class="btn btn-primary btn-lg text-light btn-icon-right" style="margin-top:60px; margin-bottom:60px" href="#" target="">
+                    {{block.actionText}}
+                    <i class="fa fa-comment-o" style="color:black"></i>
+                  </a> 
+                  </div>
+                </div>
+              </div>
+            </section>
+          {% endif %}
+
         {% endfor %} {# End of for block in entry.pageBody #}
       </div> <!-- End of col-md-12  -->
     </div>  <!-- End of Row  -->
