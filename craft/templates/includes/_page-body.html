@@ -104,6 +104,19 @@
             </section>
           {% endif %}
 
+          {% if block.type == "gallery" %}
+            <div class="masonry-item portfolio-item filter-people col-md-3">
+              <div class="figure image-filter-blur image-filter-onhover fade-in from-right text-center figcaption-middle normalwidth">
+                {% set image = block.image.first() %}
+                {% if image %}
+                  <a class="figure-image magnific" href="#"> 
+                  <img alt="{{image.title}}" class="normalwidth" src="{{image.getUrl()}}">
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+
         {% endfor %} {# End of for block in entry.pageBody #}
       </div> <!-- End of col-md-12  -->
     </div>  <!-- End of Row  -->
