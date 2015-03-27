@@ -77,6 +77,12 @@
               </figure>
             </div>
           {% endif %}
+
+          {% if block.type == "text" %}
+            <div>
+              <p>{{block.text}}</p>
+            </div>
+          {% endif %}
         {% endfor %} {# End of for block in entry.pageBody #}
       </div> <!-- End of col-md-12  -->
     </div>  <!-- End of Row  -->
