@@ -105,15 +105,13 @@
           {% endif %}
 
           {% if block.type == "gallery" %}
-            <div class="masonry-item portfolio-item filter-people col-md-3">
-              <div class="figure image-filter-blur image-filter-onhover fade-in from-right text-center figcaption-middle normalwidth">
+            <div class=" col-md-3" style="margin-bottom:30px">              
                 {% set image = block.image.first() %}
                 {% if image %}
-                  <a class="figure-image magnific" href="#"> 
-                  <img alt="{{image.title}}" class="normalwidth" src="{{image.getUrl()}}">
+                  <a  href="#"> 
+                  <img alt="{{image.title}}" src="{{image.getUrl('small')}}">
                   </a>
-                {% endif %}
-              </div>
+                {% endif %}             
             </div>
           {% endif %}
 
