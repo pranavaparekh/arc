@@ -120,17 +120,25 @@
 {#            {% set clearFix = (loop.last ? "clearfix": "not last") %}
           {{clearFix}} #}
           {% if block.type == "gallery" %}
+            {% for image in block.image %}
 
-            <div class=" col-md-3 gallery " style="margin-bottom:30px">              
-                {% set image = block.image.first() %}
-                {{loop.index0}}
-                {% if image %}
-                  <a  href="#"> 
-                  <img alt="{{image.title}}" src="{{image.getUrl('small')}}">
-                  </a>
-                {% endif %}             
-            </div>
-    
+              {% if loop.first %}
+                <div class="container-fluid">
+              {% endif %}
+
+                <div class=" col-md-3 gallery " style="margin-bottom:30px">
+                    {% if image %}
+                      <a  href="#"> 
+                      <img alt="{{image.title}}" src="{{image.getUrl('small')}}">
+                      </a>
+                    {% endif %}             
+                </div>
+
+              {% if loop.last %}
+                </div>
+              {% endif %}
+
+            {% endfor %}
           {% endif %}
            
 
