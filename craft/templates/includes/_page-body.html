@@ -74,18 +74,20 @@
           {% endif %} {# End of if block.type == "pageBody" #}
 
           {% if block.type == "image" %}
-            <div align="{{block.position}}">
+          <div class="container-fluid">
+            <div class="container">
               <figure>
                 {% set image = block.image.first() %}
                 {% if image %}
                 {% if block.position == 'full' %}
                   {% do image.setTransform({ width: 1440, height: 480 }) %}
                 {% endif %}
-                  <img alt="{{image.title}}" src="{{image.getUrl()}}"/>
+                  <img alt="{{image.title}}" src="{{image.getUrl()}}" class="pull-{{block.position}}" />
                 {% endif %}
                 <figcaption>{{block.caption}}</figcaption>
               </figure>
-            </div>
+            </div> <!-- End of container -->
+          </div> <!-- End of container-fluid"" -->
           {% endif %}
 
           {% if block.type == "text" %}
