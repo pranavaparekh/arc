@@ -1,15 +1,17 @@
-<section class="page-body section">
-  <div class="container">
-    <div class="row">
-      <div class="text-center">
+
         {% for block in entry.pageBody %}
           {% if block.type == "pageBody" %}
-            <h1 class="page-body-headline">
-              {{block.headline}}
-            </h1>
+          
+              <div class="container-fluid">
+                <div class="container">
+                  <h1 class="page-body-headline">
+                    {{block.headline}}
+                  </h1>
 
-            <hr class="divider-center" />
-
+                  <hr class="divider-center" />
+                </div>
+              </div>
+            
             {% if block.lead %}
               <p class="page-body-lead">
                 {{block.lead}}
@@ -116,7 +118,3 @@
           {% endif %}
 
         {% endfor %} {# End of for block in entry.pageBody #}
-      </div> <!-- End of col-md-12  -->
-    </div>  <!-- End of Row  -->
-  </div>  <!-- End of container  -->
-</section>
