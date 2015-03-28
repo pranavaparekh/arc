@@ -13,21 +13,29 @@
               </div>
             
             {% if block.lead %}
-              <p class="page-body-lead">
-                {{block.lead}}
-              </p>
+              <div class="container-fluid">
+                <div class="container">
+                  <p class="page-body-lead">
+                    {{block.lead}}
+                  </p>
+                </div>
+              </div>
             {% endif %} {# End of if block.lead #}
 
             {% if block.pageBodyContent %}
-              <div class="page-body-content text-center">
-                <p>
-                  {{block.pageBodyContent}}
-                </p>
-              </div>
+             <div class="container-fluid">
+                <div class="container">
+                  <div class="page-body-content text-center">
+                    <p>
+                      {{block.pageBodyContent}}
+                    </p>
+                  </div>
+                </div>
+              </div> 
             {% endif %}  {# End of if block.pageBodyContent #}
 
             {% if block.featureList %}
-            <section>
+             <div class="container-fluid">
               <div class="container">
                 <div class="row text-left">
                   <ul class="features-list" style="margin-top:90; margin-bottom:20">
@@ -43,12 +51,12 @@
                   </ul>
                 </div> <!-- End of Row  -->
               </div> <!-- End of container  -->
-            </section>
+            </div>
             {% endif %}  {# End of if block.featureList #}
 
             {% if block.pageBodyMedia %}
               {% for relatedEntry in block.pageBodyMedia %}
-                <section class="section">
+                <div class="container-fluid">
                   <div class="container">
                     <div class="row">
                       <div class="col-md-12 text-center">
@@ -60,7 +68,7 @@
                       </div> <!-- text-center -->
                     </div> <!-- end row -->
                   </div> <!-- end container -->
-                </section>
+                </div>
               {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
             {% endif %} {# End of if block.pageBodyMedia #}
           {% endif %} {# End of if block.type == "pageBody" #}
@@ -81,15 +89,17 @@
           {% endif %}
 
           {% if block.type == "text" %}
-            <div>
-              <p>{{block.text}}</p>
+            <div class="container-fluid">
+              <div class="container">
+                <p>{{block.text}}</p>
+              </div>
             </div>
           {% endif %}
 
           {% if block.type == "callToAction" %}
-            <section class="section" >
-              <div class="container container-vertical-middle" style="background-color: #0469ac; width:100%" >
-                <div class="row vertical-middle" >
+            <div class="container-fluid" style="background-color: #0469ac">
+              <div class="container">
+                <div class="row" >
                   <div class="col-md-10">
                      <h2 class="text-center text-light big light" style="margin-top:60px; margin-bottom:60px">
                        {{block.callText}}
@@ -103,18 +113,27 @@
                   </div>
                 </div>
               </div>
-            </section>
-          {% endif %}
+            </div>
+          {% endif %}          
+          
 
+{#            {% set clearFix = (loop.last ? "clearfix": "not last") %}
+          {{clearFix}} #}
           {% if block.type == "gallery" %}
-            <div class=" col-md-3" style="margin-bottom:30px">              
+
+            <div class=" col-md-3 gallery " style="margin-bottom:30px">              
                 {% set image = block.image.first() %}
+                {{loop.index0}}
                 {% if image %}
                   <a  href="#"> 
                   <img alt="{{image.title}}" src="{{image.getUrl('small')}}">
                   </a>
                 {% endif %}             
             </div>
+    
           {% endif %}
+           
 
+         
         {% endfor %} {# End of for block in entry.pageBody #}
+        

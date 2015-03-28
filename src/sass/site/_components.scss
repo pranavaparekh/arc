@@ -79,3 +79,7 @@
   @extend %lead;
   margin-bottom:40px;
 }
+
+.gallery:last-child {
+  @extend .clearfix;
+}
