@@ -74,22 +74,33 @@
           {% endif %} {# End of if block.type == "pageBody" #}
 
           {% if block.type == "image" %}
-
+          {% if block.position == 'left' %}
+            {% set margin = "margin-left: 7%" %}
+          {% endif %}
+          {% if block.position == 'right' %}
+            {% set margin = "margin-right: 7%" %}
+          {% endif %}
+          {% if block.position == 'center' %}
+            {% set margin = "" %}
+          {% endif %}
+          {% if block.position == 'full' %}
+            {% set margin = "" %}
+          {% endif %}
 
 
         
-           <span class="pull-{{block.position}}" style="margin:10px">
+           <div class="pull-{{block.position}}" style="{{margin}}" >
               
                 {% set image = block.image.first() %}
                 {% if image %}
                 {% if block.position == 'full' %}
                   {% do image.setTransform({ width: 1440, height: 480 }) %}
                 {% endif %}
-                  <img alt="{{image.title}}" src="{{image.getUrl()}}"/>
+                  <img alt="{{image.title}}" src="{{image.getUrl()}}" style="margin:0px 10px 10px 10px"/>
                 {% endif %}
-                {{block.caption}}
+                <figcaption class="text-center"> {{block.caption}} </figcaption>
              
-          </span>
+          </div>
           {% endif %}
 
           {% if block.type == "text" %}
