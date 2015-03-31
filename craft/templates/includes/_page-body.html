@@ -162,63 +162,13 @@
             {% endfor %}
           {% endif %}
 
-          
-          {% if block.next() %}  {# If Opening block of feature list #}
-            {% if block.next().type == "featureList" and semaphore == 1 %}
-              <section class="section">
-                <div class="background-overlay" style="background-color: rgba(240,240,240,1);"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-right small-screen-center">
-                            <div class="divider-wrapper">
-                                <div class="visible-xs element-height-30"></div>
-                                <div class="visible-sm element-height-30"></div>
-                                <div class="visible-md element-height-50"></div>
-                                <div class="visible-lg element-height-50"></div>
-                            </div>
-                            <div class="row">
-            {% set semaphore = 0 %}
-          {% endif %}
-            
-          {% endif %}
+         
           {% if block.type == "featureList" %}
-
-            <div class="col-md-3">
-              <div class="element-top-20 element-bottom-20 pricing-col os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
-                  <h2 class="pricing-head" style="background: #ffffff; color:#333333">{{block.featureTitle}}</h2>
-                  <div class="pricing-body" style="background: #ffffff; color:#333333">
-                        
-                    <ul class="pricing-list">
-                      {% for row in block.features %}
-                        <li style="border-color: rgba(51,51,51,0.1)">{{row.features}}</li>
-                      {% endfor %}                                                            
-                    </ul>
-                    <a class="btn btn-lg btn-primary" href="#" style="background: #6c6c6c; color: #ffffff;">More</a> 
-                  </div>
-              </div>
-            </div>  
+{{block.features}}
+        
           {% endif %}
 
-          {% if block.getNext() is empty  %} {# If no block after feature List#}
-          {% if block.type == "featureList"  %}
-          </div>
-          </div>
-          </div>
-          </div>
-          </section>
-          {% endif %}
-          {% endif %}
-           
-          {% if block.next() %} {# If a block exists after feature List#}
-          {% if block.type == "featureList" and block.next().type != "featureList"  %}
-          </div>
-          </div>
-          </div>
-          </div>
-          </section>  
-          {% endif %}
-          {% endif %}
-  
+    
          
         {% endfor %} {# End of for block in entry.pageBody #}
         
