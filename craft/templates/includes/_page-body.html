@@ -201,19 +201,16 @@
 
           {% if block.getNext() is empty  %} {# If no block after feature List#}
           {% if block.type == "featureList"  %}
-          {{"getNextprevious"}}
           </div>
           </div>
           </div>
           </div>
           </section>
-          {{"hahahahaha"}}
           {% endif %}
           {% endif %}
            
           {% if block.next() %} {# If a block exists after feature List#}
           {% if block.type == "featureList" and block.next().type != "featureList"  %}
-          {{"previous"}}
           </div>
           </div>
           </div>
