@@ -1,4 +1,4 @@
-
+{% set semaphore = 1 %}
         {% for block in entry.pageBody %}
           {% if block.type == "pageBody" %}
           
@@ -35,6 +35,7 @@
             {% endif %}  {# End of if block.pageBodyContent #}
 
             {% if block.featureList %}
+
              <div class="container-fluid">
               <div class="container">
                 <div class="row text-left">
@@ -74,12 +75,13 @@
           {% endif %} {# End of if block.type == "pageBody" #}
 
           {% if block.type == "image" %}
+
           {% if block.position == 'left' %}
-            {% set margin = "margin-left: 7%" %}
+            {% set margin = "margin-left: 9%" %}
             {% set float = "pull-left" %}
           {% endif %}
           {% if block.position == 'right' %}
-            {% set margin = "margin-right: 7%" %}
+            {% set margin = "margin-right: 9%" %}
             {% set float = "pull-right" %}
           {% endif %}
           {% if block.position == 'center' %}
@@ -100,7 +102,7 @@
                 {% if block.position == 'full' %}
                   {% do image.setTransform({ width: 1440, height: 480 }) %}
                 {% endif %}
-                  <img alt="{{image.title}}" src="{{image.getUrl()}}" style="margin:0px 10px 10px 10px"/>
+                  <img alt="{{image.title}}" src="{{image.getUrl()}}" style="margin:15px"/>
                 {% endif %}
                 <figcaption class="text-center"> {{block.caption}} </figcaption>
              
@@ -160,12 +162,10 @@
             {% endfor %}
           {% endif %}
 
-           
-
-         
-        {% endfor %} {# End of for block in entry.pageBody #}
-        
-            <section class="section">
+          
+          {% if block.next() %}  {# If Opening block of feature list #}
+            {% if block.next().type == "featureList" and semaphore == 1 %}
+              <section class="section">
                 <div class="background-overlay" style="background-color: rgba(240,240,240,1);"></div>
                 <div class="container">
                     <div class="row">
@@ -177,29 +177,56 @@
                                 <div class="visible-lg element-height-50"></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <div class="element-top-20 element-bottom-20 pricing-col os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
-                                        <h2 class="pricing-head" style="background: #ffffff; color:#333333">Tax Services</h2>
-                                        <div class="pricing-body" style="background: #ffffff; color:#333333">
-                                            <div class="pricing-price">
-                                                <header style="background: #f0f0f0; color: #6c6c6c;">
-                                                    <h2><small style="color: #6c6c6c;"></small>
-                                          </h2>
-                                                    <p style="color: #6c6c6c;"></p>
-                                                </header>
-                                            </div>
-                                            <ul class="pricing-list">
-                                                <li style="border-color: rgba(51,51,51,0.1)">Defensible, insightful & cost effective valuations </li>
-                                                <li style="border-color: rgba(51,51,51,0.1)"> trusted by 800+ VC backed and mid-market companies</li>
-                                                <li style="border-color: rgba(51,51,51,0.1)">50+ years experience</li>
-                                                <li style="border-color: rgba(51,51,51,0.1)">Value for money</li>
-                                            </ul><a class="btn btn-lg btn-primary" href="#" style="background: #6c6c6c; color: #ffffff;">More</a> </div>
-                                    </div>
-                                </div>                   
+            {% set semaphore = 0 %}
+          {% endif %}
+            
+          {% endif %}
+          {% if block.type == "featureList" %}
+
+            <div class="col-md-3">
+              <div class="element-top-20 element-bottom-20 pricing-col os-animation" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                  <h2 class="pricing-head" style="background: #ffffff; color:#333333">{{block.featureTitle}}</h2>
+                  <div class="pricing-body" style="background: #ffffff; color:#333333">
+                        
+                    <ul class="pricing-list">
+                      {% for row in block.features %}
+                        <li style="border-color: rgba(51,51,51,0.1)">{{row.features}}</li>
+                      {% endfor %}                                                            
+                    </ul>
+                    <a class="btn btn-lg btn-primary" href="#" style="background: #6c6c6c; color: #ffffff;">More</a> 
+                  </div>
+              </div>
+            </div>  
+          {% endif %}
+
+          {% if block.getNext() is empty  %} {# If no block after feature List#}
+          {% if block.type == "featureList"  %}
+          {{"getNextprevious"}}
+          </div>
+          </div>
+          </div>
+          </div>
+          </section>
+          {{"hahahahaha"}}
+          {% endif %}
+          {% endif %}
+           
+          {% if block.next() %} {# If a block exists after feature List#}
+          {% if block.type == "featureList" and block.next().type != "featureList"  %}
+          {{"previous"}}
+          </div>
+          </div>
+          </div>
+          </div>
+          </section>  
+          {% endif %}
+          {% endif %}
+  
+         
+        {% endfor %} {# End of for block in entry.pageBody #}
+        
+
+                                                 
          
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
