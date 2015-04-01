@@ -14,8 +14,11 @@ define('BASEPATH', realpath(CRAFT_BASE_PATH . '/../') . '/');
 return array(
   '*' => array(
     'omitScriptNameInUrls' => true,
+    'siteUrl'  => array(
+        'en' => SITE_URL,
+        'de' => SITE_URL . 'de',
+      ),
     'environmentVariables' => array(
-      'siteUrl'  => SITE_URL,
       'basePath' => BASEPATH,
       'assetsBaseUrl' => '/assets/uploads',
       'assetsBasePath' => './assets/uploads',
