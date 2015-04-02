@@ -4,6 +4,7 @@
 $craftPath = '../../craft';
  // var_dump($_SERVER['APP_ENV']); exit();
 define('CRAFT_LOCALE', 'de');
+
 switch ($_SERVER['APP_ENV'])
 {
     // If the SERVER_NAME variable matches our case,
