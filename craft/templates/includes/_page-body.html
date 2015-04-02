@@ -1,179 +1,209 @@
 {% set semaphore = 1 %}
-        {% for block in entry.pageBody %}
-          {% if block.type == "pageBody" %}
-          
-              <div class="container-fluid">
-                <div class="container">
-                  <h1 class="page-body-headline">
-                    {{block.headline}}
-                  </h1>
+{% for block in entry.pageBody %}
+  {% if block.type == "pageBody" %}
+  
+      <div class="container-fluid">
+        <div class="container">
+          <h1 class="page-body-headline">
+            {{block.headline}}
+          </h1>
 
-                  <hr class="divider-center" />
-                </div>
-              </div>
-            
-            {% if block.lead %}
-              <div class="container-fluid">
-                <div class="container">
-                  <p class="page-body-lead">
-                    {{block.lead}}
-                  </p>
-                </div>
-              </div>
-            {% endif %} {# End of if block.lead #}
+          <hr class="divider-center" />
+        </div>
+      </div>
+    
+    {% if block.lead %}
+      <div class="container-fluid">
+        <div class="container">
+          <p class="page-body-lead">
+            {{block.lead}}
+          </p>
+        </div>
+      </div>
+    {% endif %} {# End of if block.lead #}
 
-            {% if block.pageBodyContent %}
-             <div class="container-fluid">
-                <div class="container">
-                  <div class="page-body-content text-center">
-                    <p>
-                      {{block.pageBodyContent}}
-                    </p>
-                  </div>
-                </div>
-              </div> 
-            {% endif %}  {# End of if block.pageBodyContent #}
-
-            {% if block.featureList %}
-
-             <div class="container-fluid">
-              <div class="container">
-                <div class="row text-left">
-                  <ul class="features-list" style="margin-top:90; margin-bottom:20">
-
-                    {% for row in block.featureList %}
-                      <li class="col-md-6" style="margin-top:20; margin-bottom:20">
-                        <div class="features-list-icon box-animate"> <i class="icon-{{row.icon}}" style="color:#ffffff;"></i> </div>
-                        <h3>{{row.headline}}</h3>
-                        <p>{{row.featureContent}}</p>
-                      </li>
-                    {% endfor %} {# End of for row in block.featureList #}
-                    
-                  </ul>
-                </div> <!-- End of Row  -->
-              </div> <!-- End of container  -->
-            </div>
-            {% endif %}  {# End of if block.featureList #}
-
-            {% if block.pageBodyMedia %}
-              {% for relatedEntry in block.pageBodyMedia %}
-                <div class="container-fluid">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-12 text-center">
-
-                        {# This includes the related entry channels dynamically #}
-                        {% set entryTemplate = relatedEntry | lower %}
-                        {% include "includes/content/_" ~ entryTemplate %}                   
-
-                      </div> <!-- text-center -->
-                    </div> <!-- end row -->
-                  </div> <!-- end container -->
-                </div>
-              {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
-            {% endif %} {# End of if block.pageBodyMedia #}
-          {% endif %} {# End of if block.type == "pageBody" #}
-
-          {% if block.type == "image" %}
-
-          {% if block.position == 'left' %}
-            {% set margin = "margin-left: 9%" %}
-            {% set float = "pull-left" %}
-          {% endif %}
-          {% if block.position == 'right' %}
-            {% set margin = "margin-right: 9%" %}
-            {% set float = "pull-right" %}
-          {% endif %}
-          {% if block.position == 'center' %}
-            {% set margin = "" %}
-            {% set float = "text-center" %}
-          {% endif %}
-          {% if block.position == 'full' %}
-            {% set margin = "" %}
-            {% set float = "" %}
-          {% endif %}
-
-
-        
-           <div class="{{float}}" style="{{margin}}" >
-              
-                {% set image = block.image.first() %}
-                {% if image %}
-                {% if block.position == 'full' %}
-                  {% do image.setTransform({ width: 1440, height: 480 }) %}
-                {% endif %}
-                  <img alt="{{image.title}}" src="{{image.getUrl()}}" style="margin:15px"/>
-                {% endif %}
-                <figcaption class="text-center"> {{block.caption}} </figcaption>
-             
+    {% if block.pageBodyContent %}
+     <div class="container-fluid">
+        <div class="container">
+          <div class="page-body-content text-center">
+            <p>
+              {{block.pageBodyContent}}
+            </p>
           </div>
-          {% endif %}
+        </div>
+      </div> 
+    {% endif %}  {# End of if block.pageBodyContent #}
 
-          {% if block.type == "text" %}
-            <div class="container-fluid">
-              <div class="container">
-                <p>{{block.text}}</p>
-              </div>
-            </div>
-          {% endif %}
+    {% if block.featureList %}
 
-          {% if block.type == "callToAction" %}
-            <div class="container-fluid" style="background-color: #0469ac">
-              <div class="container">
-                <div class="row" >
-                  <div class="col-md-10">
-                     <h2 class="text-center text-light big light" style="margin-top:60px; margin-bottom:60px">
-                       {{block.callText}}
-                    </h2> 
-                  </div>
-                  <div class="col-md-2 text-center"> 
-                  <a class="btn btn-primary btn-lg text-light btn-icon-right" style="margin-top:60px; margin-bottom:60px" href="#" target="">
-                    {{block.actionText}}
-                    <i class="fa fa-comment-o" style="color:black"></i>
-                  </a> 
-                  </div>
-                </div>
-              </div>
-            </div>
-          {% endif %}          
-          
+     <div class="container-fluid">
+      <div class="container">
+        <div class="row text-left">
+          <ul class="features-list" style="margin-top:90; margin-bottom:20">
+
+            {% for row in block.featureList %}
+              <li class="col-md-6" style="margin-top:20; margin-bottom:20">
+                <div class="features-list-icon box-animate"> <i class="icon-{{row.icon}}" style="color:#ffffff;"></i> </div>
+                <h3>{{row.headline}}</h3>
+                <p>{{row.featureContent}}</p>
+              </li>
+            {% endfor %} {# End of for row in block.featureList #}
+            
+          </ul>
+        </div> <!-- End of Row  -->
+      </div> <!-- End of container  -->
+    </div>
+    {% endif %}  {# End of if block.featureList #}
+
+    {% if block.pageBodyMedia %}
+      {% for relatedEntry in block.pageBodyMedia %}
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+
+                {# This includes the related entry channels dynamically #}
+                {% set entryTemplate = relatedEntry | lower %}
+                {% include "includes/content/_" ~ entryTemplate %}                   
+
+              </div> <!-- text-center -->
+            </div> <!-- end row -->
+          </div> <!-- end container -->
+        </div>
+      {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
+    {% endif %} {# End of if block.pageBodyMedia #}
+  {% endif %} {# End of if block.type == "pageBody" #}
+
+  {% if block.type == "image" %}
+    {% if block.position == 'left' %}
+      {% set margin = "margin-left: 9%" %}
+      {% set float = "pull-left" %}
+    {% endif %}
+    {% if block.position == 'right' %}
+      {% set margin = "margin-right: 9%" %}
+      {% set float = "pull-right" %}
+    {% endif %}
+    {% if block.position == 'center' %}
+      {% set margin = "" %}
+      {% set float = "text-center" %}
+    {% endif %}
+    {% if block.position == 'full' %}
+      {% set margin = "" %}
+      {% set float = "" %}
+    {% endif %}
+     <div class="{{float}}" style="{{margin}}" >      
+          {% set image = block.image.first() %}
+          {% if image %}
+          {% if block.position == 'full' %}
+            {% do image.setTransform({ width: 1440, height: 480 }) %}
+          {% endif %}
+            <img alt="{{image.title}}" src="{{image.getUrl()}}" style="margin:15px"/>
+          {% endif %}
+          <figcaption class="text-center"> {{block.caption}} </figcaption>     
+      </div>
+  {% endif %} {# End of if block.type == "image" #}
+
+  {% if block.type == "text" %}
+    <div class="container-fluid">
+      <div class="container">
+        <p>{{block.text}}</p>
+      </div>
+    </div>
+  {% endif %} {# End of if block.type == "text" #}
+
+  {% if block.type == "callToAction" %}
+    <div class="container-fluid" style="background-color: #0469ac">
+      <div class="container">
+        <div class="row" >
+          <div class="col-md-10">
+             <h2 class="text-center text-light big light" style="margin-top:60px; margin-bottom:60px">
+               {{block.callText}}
+            </h2> 
+          </div>
+          <div class="col-md-2 text-center"> 
+          <a class="btn btn-primary btn-lg text-light btn-icon-right" style="margin-top:60px; margin-bottom:60px" href="#" target="">
+            {{block.actionText}}
+            <i class="fa fa-comment-o" style="color:black"></i>
+          </a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %} {# End of if block.type == "callToAction" #}         
+  
 
 {#            {% set clearFix = (loop.last ? "clearfix": "not last") %}
-          {{clearFix}} #}
-          {% if block.type == "gallery" %}
-            {% for image in block.image %}
+  {{clearFix}} #}
+  {% if block.type == "gallery" %}
+    {% for image in block.image %}
+      {% if loop.first %}
+        <div class="container-fluid">
+      {% endif %}
+        <div class=" col-md-3 gallery " style="margin-bottom:30px">
+            {% if image %}
+              <a  href="#"> 
+              <img alt="{{image.title}}" src="{{image.getUrl('small')}}">
+              </a>
+            {% endif %}             
+        </div>
+      {% if loop.last %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %} {# End of if block.type == "gallery" #}
+ 
+  {% if block.type == "featureList" %}
+    {{block.features}}
+  {% endif %} {# End of if block.type == "featureList" #}
 
-              {% if loop.first %}
-                <div class="container-fluid">
-              {% endif %}
+  {% if block.type == "contentSlider" %}
+    {% for relatedEntry in block.caseStudies %}
+      {% if relatedEntry == "Case Studies" %}
+        <section class="section content-media-slider">
+          <div class="container-fluid">
+            <div class="row vertical-middle">
+              <div class="col-md-12" style="background:#f0f0f0">
+                <div class="text-center flexslider feature-slider" data-flex-animation="fade" data-flex-controls="hide" data-flex-controls-position="outside" data-flex-controlsalign="center" data-flex-directions="hide" data-flex-slideshow="true"
+                    data-flex-speed="7000"id="flexslider-818">
+                  <ul class="slides">
+                    {% set j = relatedEntry.caseStudies|length -1 %}
+                    {% for i in range(0,j,3) %}
+                      <li>
+                        {% for block in relatedEntry.caseStudies |slice(i, i+3) %}
+                          <div class="col-md-4">
+                            <div class=" pricing-col" style="margin-top:20px; margin-bottom:20px">
+                              <h2 class="pricing-head" style="background: #ffffff; color:#333333">
+                                {{block.headline}}
+                              </h2>
+                              <div class="pricing-body" style="background: #ffffff; color:#333333">                 
+                                <ul class="pricing-list">                            
+                                  <li style="border-color: rgba(51,51,51,0.1)">
+                                    {{block.description}}
+                                  </li>             
+                                </ul>                           
+                              </div>
+                            </div>
+                          </div> 
+                        {% endfor %} {# End of for block in relatedEntry.caseStudies |slice(i, i+3) #}
+                      </li>                            
+                    {% endfor %} {# End of for i in range(0,j,3) #}
+                  </ul>
+                </div>               
+                <div class="text-center" style="margin-bottom:20px">
+                  <a class="btn btn-lg btn-primary" href="#" style="background: #6c6c6c; color: #ffffff;">
+                    See all
+                  </a>
+                </div> <!-- End of button -->
+              </div> <!-- End of col-md-12 -->
+            </div> <!-- End of row vertical-middle -->
+          </div> <!-- End of container-fluid -->
+        </section> <!-- End of section content-media-slider -->      
+      {% endif %} {# End of if relatedEntry == "Case Studies" #}
+    {% endfor %} {# End of for relatedEntry in block.caseStudies #}       
+  {% endif %} {# End of if block.type == "contentSlider" #}
 
-                <div class=" col-md-3 gallery " style="margin-bottom:30px">
-                    {% if image %}
-                      <a  href="#"> 
-                      <img alt="{{image.title}}" src="{{image.getUrl('small')}}">
-                      </a>
-                    {% endif %}             
-                </div>
-
-              {% if loop.last %}
-                </div>
-              {% endif %}
-
-            {% endfor %}
-          {% endif %}
-
-         
-          {% if block.type == "featureList" %}
-          {{block.features}}
-        
-          {% endif %}
-
-    
-         
-        {% endfor %} {# End of for block in entry.pageBody #}
-        
-
-                                                 
-         
+{% endfor %} {# End of for block in entry.pageBody #}
 
 
+              
+                
