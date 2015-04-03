@@ -162,10 +162,9 @@
         <section class="section content-media-slider">
           <div class="container-fluid">
             <div class="row vertical-middle">
-              <div class="col-md-12" style="background:#f0f0f0">
-                <div class="text-center flexslider feature-slider" data-flex-animation="fade" data-flex-controls="hide" data-flex-controls-position="outside" data-flex-controlsalign="center" data-flex-directions="hide" data-flex-slideshow="true"
-                    data-flex-speed="7000"id="flexslider-818">
-                  <ul class="slides">
+              <div class="col-md-12" style="background:#f0f0f0;">
+                <div class="text-center flexslider feature-slider" data-flex-animation="slide" data-flex-controls="show" data-flex-controls-position="inside" data-flex-directions="show" data-flex-slideshow="false" data-flex-controlsalign="center" data-flex-speed="7000" id="flexslider-818" style="margin-top:20px; margin-bottom:40px">
+                  <ul class="slides" style="margin-top:20px; margin-bottom:20px;">
                     {% set j = relatedEntry.caseStudies|length -1 %}
                     {% for i in range(0,j,3) %}
                       <li>
@@ -189,11 +188,6 @@
                     {% endfor %} {# End of for i in range(0,j,3) #}
                   </ul>
                 </div>               
-                <div class="text-center" style="margin-bottom:20px">
-                  <a class="btn btn-lg btn-primary" href="#" style="background: #6c6c6c; color: #ffffff;">
-                    See all
-                  </a>
-                </div> <!-- End of button -->
               </div> <!-- End of col-md-12 -->
             </div> <!-- End of row vertical-middle -->
           </div> <!-- End of container-fluid -->
