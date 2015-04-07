@@ -274,7 +274,7 @@
   <input type="hidden" name="formHandle" value="{{form.handle}}">
   <input type="hidden" name="formHoneypot" value="">
   <input type="hidden" name="required[yourEmail]" value="Please enter your email address.">
- 
+
   {% for field in fields %}
 
     {% include "_includes/field" with {
@@ -283,10 +283,9 @@
     } only %}
   {% endfor %}
  
-  <button type="submit">
-    Submit Message
-  </button>
- 
+  <div>
+      <input type="submit" value="Send Message">
+  </div>
 </form>
  
 </div>

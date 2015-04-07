@@ -7,7 +7,7 @@
 {%- set value = (value is defined ? value : null) %}
 {%- set hasOptgroups = false -%}
 
-<div class="{{ class }}">
+<p class="cd-select icon">
 	<select
 		{%- if id is defined %} id="{{ id }}"{% endif %}
 		{%- if toggle is defined and toggle %} class="fieldtoggle"{% endif %}
@@ -34,4 +34,4 @@
 			</optgroup>
 		{% endif %}
 	</select>
-</div>
+</p>
