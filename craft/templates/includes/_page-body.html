@@ -1,6 +1,6 @@
 {% set semaphore = 1 %}
 {% for block in entry.pageBody %}
-  {% if block.type == "pageBody" %}
+  {% if block.type == "body" %}
     {% if block.headline %}
       <div class="container-fluid">
         <div class="container">
@@ -242,5 +242,9 @@
       </div>
     </section>                       
   {% endif %} {# End of if block.type == "contentTabs" #} 
+
+  {% if block.type == "landingBlock" %}
+    {% include "includes/_landing-block.html" %}
+  {% endif %} {# End of if block.type == "text" #}
 
 {% endfor %} {# End of for block in entry.pageBody #}

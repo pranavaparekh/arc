@@ -34,6 +34,9 @@ Form
   width: 30%;
   max-width: 600px;
   margin: 4em;
+  border: 1px solid #cfd9db;
+  padding:15px;
+
 }
 .cd-form::after {
   clear: both;
@@ -45,14 +48,14 @@ Form
 }
 .cd-form legend {
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 2rem;
   border-bottom: 1px solid #ecf0f1;
 }
 .cd-form div {
   /* form element wrapper */
   position: relative;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .cd-form h4, .cd-form .cd-label {
   font-size: 1.3rem;
@@ -280,7 +283,7 @@ Form
 @media only screen and (min-width: 600px) {
   .cd-form div {
     /* form element wrapper */
-    margin: 32px 0;
+    margin: 20px 0;
   }
   .cd-form legend + div {
     /* reduce margin-top for first form element after the legend */
@@ -290,12 +293,7 @@ Form
     font-size: 1.4rem;
     margin-bottom: 10px;
   }
-  .cd-form input[type="text"],
-  .cd-form input[type="email"],
-  .cd-form textarea,
-  .cd-form select {
-    padding: 16px;
-  }
+
 }
 
 @-webkit-keyframes cd-bounce {
