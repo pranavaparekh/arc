@@ -1,17 +1,18 @@
 {% set semaphore = 1 %}
 {% for block in entry.pageBody %}
   {% if block.type == "pageBody" %}
-  
+    {% if block.headline %}
       <div class="container-fluid">
         <div class="container">
-          <h1 class="page-body-headline">
+          <h1 class="page-body-headline text-center">
             {{block.headline}}
           </h1>
 
           <hr class="divider-center" />
         </div>
       </div>
-    
+    {% endif %} {# End of if block.headline #}
+
     {% if block.lead %}
       <div class="container-fluid">
         <div class="container">

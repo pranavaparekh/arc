@@ -1,5 +1,37 @@
 {% for block in entry.landingBlock %}
-  {% if block.type == "form" %}                  
+  {% if block.type == "landingBlock" %}   
+    {% if block.headline %}
+        <div class="container-fluid">
+          <div class="container">
+            <h1 class="page-body-headline text-left">
+              {{block.headline}}
+            </h1>
+          </div>
+        </div>
+      {% endif %} {# End of if block.headline #}
+
+      {% if block.lead %}
+        <div class="container-fluid">
+          <div class="container">
+            <p class="page-body-lead text-left">
+              {{block.lead}}
+            </p>
+          </div>
+        </div>
+      {% endif %} {# End of if block.lead #}
+
+      {% if block.landingContent %}
+       <div class="container-fluid">
+          <div class="container">
+            <div class="page-body-content text-left">
+              <p>
+                {{block.landingContent}}
+              </p>
+            </div>
+          </div>
+        </div> 
+      {% endif %}  {# End of if block.pageBodyContent #}
+               
 
   {% set form = craft.formBuilder.getFormByHandle('projectForm') %}
   {% set fields = form.fieldLayout.getFieldLayout().getFields() %}
