@@ -1,17 +1,18 @@
 {% set semaphore = 1 %}
 {% for block in entry.pageBody %}
-  {% if block.type == "pageBody" %}
-  
+  {% if block.type == "body" %}
+    {% if block.headline %}
       <div class="container-fluid">
         <div class="container">
-          <h1 class="page-body-headline">
+          <h1 class="page-body-headline text-center">
             {{block.headline}}
           </h1>
 
           <hr class="divider-center" />
         </div>
       </div>
-    
+    {% endif %} {# End of if block.headline #}
+
     {% if block.lead %}
       <div class="container-fluid">
         <div class="container">
@@ -112,15 +113,15 @@
   {% endif %} {# End of if block.type == "text" #}
 
   {% if block.type == "callToAction" %}
-    <div class="container-fluid" style="background-color: #0469ac">
+    <div class="container-fluid" style="background-color: #0469ac; max-height:160px">
       <div class="container">
         <div class="row" >
-          <div class="col-md-10">
+          <div class="col-xs-6 col-md-10">
              <h2 class="text-center text-light big light" style="margin-top:60px; margin-bottom:60px">
                {{block.callText}}
             </h2> 
           </div>
-          <div class="col-md-2 text-center"> 
+          <div class="col-xs-6 col-md-2 text-center"> 
           <a class="btn btn-primary btn-lg text-light btn-icon-right" style="margin-top:60px; margin-bottom:60px" href="#" target="">
             {{block.actionText}}
             <i class="fa fa-comment-o" style="color:black"></i>
@@ -208,7 +209,7 @@
     <section class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-8 col-md-offset-2">
             <div style="margin-top:70px; margin-bottom:70px">
               <div class="tabbable">
 
@@ -240,11 +241,10 @@
         </div>
       </div>
     </section>                       
-  {% endif %} {# End of if block.type == "contentTabs" #}  
+  {% endif %} {# End of if block.type == "contentTabs" #} 
+
+  {% if block.type == "landingBlock" %}
+    {% include "includes/_landing-block.html" %}
+  {% endif %} {# End of if block.type == "text" #}
 
 {% endfor %} {# End of for block in entry.pageBody #}
-
-
-              
-                     
-                              
