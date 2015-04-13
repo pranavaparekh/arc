@@ -2,7 +2,7 @@
 
 // Path to your craft/ folder
 $craftPath = '../craft';
- // var_dump($_SERVER['APP_ENV']); exit();
+// var_dump($_SERVER['APP_ENV']); exit();
 switch ($_SERVER['APP_ENV'])
 {
     // If the SERVER_NAME variable matches our case,
