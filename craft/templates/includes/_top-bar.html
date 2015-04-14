@@ -16,29 +16,18 @@
 %}
 
 
-{% macro list(data) %}
-  {% for item in data %}
-    <li>
-      <a href="{{ item.href|default("") }}" data-iconcolor="{{ item.data_iconcolor }}" target="_blank">
-        <i class="{{ item.class }}"></i>
-        <small>{{item.info|default("")}}</small>
-      </a>
-    </li>
-  {% endfor %}
-{% endmacro %}
-
-{% import _self as list %}
+{% import 'macros/list.html' as list %}
 
 <div class="top-bar">
     <div class="container">
       <div class="row">
-        <nav class="icon-link-list col-sm-6">
+        <nav class="icon-link-list col-xs-6">
           <ul class="list-inline pull-left">
             {{ list.list(social_links) }}
           </ul>
         </nav><!-- .icon-link-list -->
 
-        <nav class="icon-link-list col-sm-6">
+        <nav class="icon-link-list col-xs-6">
           <ul class="list-inline pull-right">
             {{ list.list(contact_info) }}
           </ul>
