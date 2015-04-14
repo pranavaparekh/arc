@@ -1,0 +1,10 @@
+{% macro list(data) %}
+  {% for item in data %}
+    <li>
+      <a href="{{ item.href|default("") }}" data-iconcolor="{{ item.data_iconcolor }}" target="_blank">
+        <i class="{{ item.class }}"></i>
+        {{item.info|default("")}}
+      </a>
+    </li>
+  {% endfor %}
+{% endmacro %}
