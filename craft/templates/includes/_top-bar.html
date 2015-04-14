@@ -1,34 +1,30 @@
+
+{% set social_links = {
+    twitter: { title: "Twitter", class: "fa fa-twitter",
+              data_iconcolor: "#00acee", href: "https://twitter.com/aranca" },
+    linkedin: { title: "LinkedIn", class: "fa fa-linkedin",
+              data_iconcolor: "#5FB0D5", href:"https://www.linkedin.com/company/aranca" }
+  }
+%}
+
+{% macro list(data) %}
+  {% for item in data %}
+    <li>
+      <a href="{{ item.href }}" data-iconcolor="{{ item.data_iconcolor }}">
+        <i class="{{ item.class }}"></i>
+      </a>
+    </li>
+  {% endfor %}
+{% endmacro %}
+
+{% import _self as list %}
+
 <div class="top-bar">
     <div class="container">
-        <div class="top top-left">
-            <div class="sidebar-widget text-left small-screen-center widget_text">
-                <div class="textwidget"> 
-                    <i class="fa fa-envelope"></i> &nbsp; 
-                    <a href="#">aranca@aranca.com</a> 
-                </div>
-            </div>
-            <div class="sidebar-widget text-left small-screen-center widget_text">
-                <div class="textwidget"> 
-                    <i class="fa fa-phone"></i> &nbsp; 
-                    1-800-555-555 
-                </div>
-            </div>
-        </div>
-        <div class="top top-right">
-            <div class="sidebar-widget text-right small-screen-center widget_social">
-                <ul class="unstyled inline social-icons social-simple social-normal">
-                    <li>
-                        <a data-iconcolor="#00acee" href="#"> 
-                            <i class="fa fa-twitter"></i> 
-                        </a>
-                    </li>
-                    <li>
-                        <a data-iconcolor="#5FB0D5" href="#"> 
-                            <i class="fa fa-linkedin"></i> 
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+      <nav class="icon-link-list">
+        <ul>
+          {{ list.list(social_links) }}
+        </ul>
+      </nav>
+    </div><!-- .container -->
+</div><!-- .topbar -->
