@@ -7,11 +7,21 @@
   }
 %}
 
+{% set contact_info = {
+    email: { title: "Twitter", class: "fa fa-envelope",
+              data_iconcolor: "#00acee", href: "mailto:help@aranca.com", info: "help@aranca.com" },
+    phone: { title: "LinkedIn", class: "fa fa-phone",
+              data_iconcolor: "#5FB0D5", info: "1-800-555-555" }
+  }
+%}
+
+
 {% macro list(data) %}
   {% for item in data %}
     <li>
-      <a href="{{ item.href }}" data-iconcolor="{{ item.data_iconcolor }}">
+      <a href="{{ item.href|default("") }}" data-iconcolor="{{ item.data_iconcolor }}" target="_blank">
         <i class="{{ item.class }}"></i>
+        <small>{{item.info|default("")}}</small>
       </a>
     </li>
   {% endfor %}
@@ -21,10 +31,18 @@
 
 <div class="top-bar">
     <div class="container">
-      <nav class="icon-link-list">
-        <ul>
-          {{ list.list(social_links) }}
-        </ul>
-      </nav>
+      <div class="row">
+        <nav class="icon-link-list col-sm-6">
+          <ul class="list-inline pull-left">
+            {{ list.list(social_links) }}
+          </ul>
+        </nav><!-- .icon-link-list -->
+
+        <nav class="icon-link-list col-sm-6">
+          <ul class="list-inline pull-right">
+            {{ list.list(contact_info) }}
+          </ul>
+        </nav><!-- .icon-link-list -->
+      </div>
     </div><!-- .container -->
 </div><!-- .topbar -->
