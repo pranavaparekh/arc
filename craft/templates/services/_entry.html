@@ -1,0 +1,13 @@
+{% extends "layouts/_site" %}
+
+{% block main %}
+  <article> 
+  {% for entry in entry.servicesCategory %}
+    {{entry.uri}}</br>
+  {% endfor %}
+
+{{"ENTRY TEMPLATE LOADED"}}
+{#     {% include "includes/_intro.html" %}
+    {% include "includes/_page-body.html" %} #}
+  </article>
+{% endblock %}
