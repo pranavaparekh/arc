@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">   
-    <div class="col-md-6">
+    <div class="col-md-7">
       {% if block.headline %}
           <h1 class="page-body-headline">
             {{block.headline}}
@@ -23,7 +23,7 @@
     </div> <!-- End of col-md-6 -->
 
     {% if block.form %}
-      <div class="col-md-6">
+      <div class="col-md-5">
         {% set form = craft.formBuilder.getFormByHandle('projectForm') %}
         {% set fields = form.fieldLayout.getFieldLayout().getFields() %}
          
