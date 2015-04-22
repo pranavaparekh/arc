@@ -255,25 +255,23 @@
             {% for row in block.statComponent %}            
               <div class="col-md-3 text-center" style="background:{{color_gradient_blue[loop.index0]}};">
                 <div class="divider-wrapper">
-                    <div class="visible-xs element-height-30"></div>
-                    <div class="visible-sm element-height-30"></div>
-                    <div class="visible-md element-height-30"></div>
-                    <div class="visible-lg element-height-30"></div>
+                  <div class="visible-xs element-height-30"></div>
+                  <div class="visible-sm element-height-30"></div>
+                  <div class="visible-md element-height-30"></div>
+                  <div class="visible-lg element-height-30"></div>
                 </div> 
                 <i class="fa fa-{{row.icon}} text-light" style="font-size:42px"></i>
                 <div class="text-center element-top-10 text-light">
                 <span class="value super regular">{{row.data}}</span> </div>
-                <div class="divider-border divider-border-center element-bottom-10 os-animation" data-os-animation="fadeIn" data-os-animation-delay="0.1s" style="height:3px;">
-                    <div class="divider-border-inner" style="background:rgba(255, 255, 255, 0.81); width:60px;"> </div>
-                </div>
-                <h3 class="text-center text-light os-animation normal" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
-            {{row.caption}}
-            </h3>
+                <hr class="divider-center-white"/>
+                <h3 class="text-center text-light normal">
+                  {{row.caption}}
+                </h3>
                 <div class="divider-wrapper">
-                    <div class="visible-xs element-height-30"></div>
-                    <div class="visible-sm element-height-30"></div>
-                    <div class="visible-md element-height-30"></div>
-                    <div class="visible-lg element-height-30"></div>
+                  <div class="visible-xs element-height-30"></div>
+                  <div class="visible-sm element-height-30"></div>
+                  <div class="visible-md element-height-30"></div>
+                  <div class="visible-lg element-height-30"></div>
                 </div>
             </div>
             {% endfor %}
