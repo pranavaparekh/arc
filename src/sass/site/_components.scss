@@ -85,3 +85,15 @@
 .gallery:last-child {
   @extend .clearfix;
 }
+
+.content-link-box{
+  border: 1px solid lightgrey;
+  
+  height:125px;
+  padding:20px;
+  box-shadow: 2px 2px 2px #888888;
+
+  p {
+      padding:10px;
+  }
+}
