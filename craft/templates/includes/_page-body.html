@@ -56,22 +56,24 @@
     </div>
     {% endif %}  {# End of if block.featureList #}
 
-    {% if block.pageBodyMedia %}
-      {% for relatedEntry in block.pageBodyMedia %}
+    {% if block.pageBodyMedia %}      
         <div class="container-fluid">
           <div class="container">
             <div class="row">
               <div class="col-md-12 text-center">
+                <div class="row staff-list-container list-container" style="margin-bottom:60px">
+                  {% for relatedEntry in block.pageBodyMedia %}
 
-                {# This includes the related entry channels dynamically #}
-                {% set entryTemplate = relatedEntry | lower %}
-                {% include "includes/content/_" ~ entryTemplate %}                   
-
+                    {# This includes the related entry channels dynamically #}
+                    {% set entryTemplate = relatedEntry.type | lower %}
+                    {% include "includes/content/_" ~ entryTemplate %}   
+                                    
+                  {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
+                </div><!-- end staff-list-container -->
               </div> <!-- text-center -->
             </div> <!-- end row -->
           </div> <!-- end container -->
         </div>
-      {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
     {% endif %} {# End of if block.pageBodyMedia #}
   {% endif %} {# End of if block.type == "pageBody" #}
 

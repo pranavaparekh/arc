@@ -1,13 +1,11 @@
-{% for block in relatedEntry.profile %}
-  <blockquote class="text-center" style="margin-top:70px; margin-bottom:50px">
-    <p>{{block.testimonial}}</p>
-    <footer>
-      {% if block.personName %}
-        {{block.personName}},
-      {% endif %}
-      {% if block.affiliation %}
-        {{block.affiliation}}
-      {% endif %}
-     </footer>
-  </blockquote>
-{% endfor %} {# End of for block in relatedEntry.profile #}
+<blockquote class="text-center" style="margin-top:70px; margin-bottom:50px">
+  <p>{{relatedEntry.testimonial}}</p>
+  <footer>
+    {% if relatedEntry %}
+      {{relatedEntry}},
+    {% endif %}
+    {% if relatedEntry.designation %}
+      {{relatedEntry.designation}}
+    {% endif %}
+   </footer>
+</blockquote>
