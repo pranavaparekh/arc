@@ -303,7 +303,25 @@
         {% endfor %}
       </div>
     </div>
-  {% endif %} {# End of if block.type == "statComponent" #}
+  {% endif %} {# End of if block.type == "contentLinkBoxGrid" #}
+
+  {% if block.type == "contentRowGrid" %}
+    <div class="content-row-grid container">
+      {% for row in block.contentRow %}
+        <div class ="row">
+          <div class="content-row-item col-md-8 col-md-offset-2">
+            <img src="{{row.imageUrl}}" 
+            class="{% if loop.index0 % 2 == 0 %} pull-left {% else %} pull-right {% endif %}">
+            <h2>{{row.headline}}</h2>
+            <p>{{row.text}}</p>
+          </div>
+        </div>
+          
+       {#  <hr class="divider-center-blue-long"/> #}
+
+      {% endfor %}
+    </div>
+  {% endif %} {# End of if block.type == "contentRowGrid" #}
 
 {% endfor %} {# End of for block in entry.pageBody #}
 
