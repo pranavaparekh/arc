@@ -4,11 +4,14 @@
     {% if block.headline %}
       <div class="container-fluid">
         <div class="container">
-          <h1 class="page-body-headline text-center">
+          <div class="{% if block.centered|length  %}col-md-6 col-md-offset-3{% endif %}">
+          <h1 class="page-body-headline {% if not block.centered|length  %} text-center {% endif %}"
+          style="text-align:justify">
             {{block.headline}}
           </h1>
-
+          
           <hr class="divider-center" />
+          </div>
         </div>
       </div>
     {% endif %} {# End of if block.headline #}
@@ -16,7 +19,8 @@
     {% if block.lead %}
       <div class="container-fluid">
         <div class="container">
-          <p class="page-body-lead">
+          <p class="page-body-lead {% if block.centered|length  %}col-md-6 col-md-offset-3{% endif %}" 
+          style="text-align:justify">
             {{block.lead}}
           </p>
         </div>
@@ -26,7 +30,9 @@
     {% if block.pageBodyContent %}
      <div class="container-fluid">
         <div class="container">
-          <div class="page-body-content text-center">
+          <div class="page-body-content {% if not block.centered|length  %} text-center {% endif %}  
+          {% if block.centered|length  %}col-md-6 col-md-offset-3{% endif %}" 
+          style="text-align:justify">
             <p>
               {{block.pageBodyContent}}
             </p>
