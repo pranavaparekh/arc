@@ -280,21 +280,27 @@
         </div>
       </div>
     </section>
-  {% endif %} {# End of if block.type == "text" #}
+  {% endif %} {# End of if block.type == "statComponent" #}
+
+  {% if block.type == "contentLinkBoxGrid" %}
+    <div class="container-fluid" style="background-color: {{block.backgroundColor}}">
+      <div class="row">
+        {% for row in block.contentLinkBox %}
+          <div class="col-md-4 text-center" style="margin-top:40px; margin-bottom:40px ">
+            <a href="{{row.boxLink}}">
+              <div class="content-link-box" style="background-color:white ">
+                <i class="fa fa-{{row.icon}} text-light" style="font-size:42px;color:black"></i>
+                <p>{{row.boxContent}}</p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %} {# End of if block.type == "statComponent" #}
 
 {% endfor %} {# End of for block in entry.pageBody #}
 
 
   
-<div class="container">
-  <div class="row">
-    {% for i in 1..3 %}
-      <div class="col-md-4 text-center" style="margin-top:40px; margin-bottom:40px  ">
-        <div class="content-link-box">
-          <i class="fa fa-child text-light" style="font-size:42px;color:black"></i>
-          <p>View Case Studies</p>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+
