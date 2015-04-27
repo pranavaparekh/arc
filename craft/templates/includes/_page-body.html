@@ -324,25 +324,7 @@
   {% endif %} {# End of if block.type == "contentRowGrid" #}
 
   {% if block.type == "cardItemGrid" %}
-    <div class="card-item-grid container">
-      {% for row in block.cardItem %}
-          <div class="card-item-row row">
-    <div class="col-md-5 col-md-offset-1">
-      <div class="card-item">
-        <h2>{{row.heading}}</h2>
-        <p>{{row.text}}</p>
-        <i class="fa fa-{{row.icon}} text-light"></i>
-      </div>
-    </div>
-    <div class="col-md-5">
-      <div class="card-item">        
-      </div>
-    </div>
-  </div>
-      {% endfor %}
-    </div>
+    {{block.cardItem}}
   {% endif %} {# End of if block.type == "contentRowGrid" #}
 
 {% endfor %} {# End of for block in entry.pageBody #}
-  
-
