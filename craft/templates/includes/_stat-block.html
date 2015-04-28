@@ -1,0 +1,30 @@
+{% set color_gradient_blue = ['#2276b0','#2281c3','#3f98d5','#4eb1f4'] %}
+<section class="section">
+  <div class="container-fullwidth container-vertical-middle">
+    <div class="row vertical-middle">
+        {% for block in entry.statBlock %}            
+          <div class="col-md-3 text-center" style="background:{{color_gradient_blue[loop.index0]}};">
+            <div class="divider-wrapper">
+              <div class="visible-xs element-height-30"></div>
+              <div class="visible-sm element-height-30"></div>
+              <div class="visible-md element-height-30"></div>
+              <div class="visible-lg element-height-30"></div>
+            </div> 
+            <i class="fa fa-{{block.icon}} text-light" style="font-size:42px"></i>
+            <div class="text-center element-top-10 text-light">
+            <span class="value super regular">{{block.data}}</span> </div>
+            <hr class="divider-center-white"/>
+            <h3 class="text-center text-light normal">
+              {{block.description}}
+            </h3>
+            <div class="divider-wrapper">
+              <div class="visible-xs element-height-30"></div>
+              <div class="visible-sm element-height-30"></div>
+              <div class="visible-md element-height-30"></div>
+              <div class="visible-lg element-height-30"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
