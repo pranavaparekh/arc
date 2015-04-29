@@ -1,6 +1,7 @@
 {% extends "layouts/_site" %}
 
 {% block main %}
+
   <article> 
     {% include "includes/_intro.html" %}
     {% include "includes/_landing-block.html" %}
@@ -8,5 +9,6 @@
     {% include "includes/_picture-quote.html" %}
     {% include "includes/_media-grid-a.html" %}
     {% include "includes/_stat-block.html" %}
+    {% include "includes/_case-studies.html" with { categoryName: entry.servicesCategory.first() } %}
   </article>
 {% endblock %}
