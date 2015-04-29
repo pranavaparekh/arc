@@ -1,0 +1,18 @@
+
+
+<div class="container clearfix">
+  <div class="related-media-grid" data-columns>
+  {% for image in entry.mediaGridA %}
+
+    <article class="related-media-featured-blog">
+      <div class="related-media-featured-blog-content">
+        <img src="{{image.getUrl()}}"
+        {{image.caption}}
+        {{image.pictureRichText}}
+        {{image.quote}}
+        {{image.pictureLink}}
+      </div>
+    </article>     
+    {% endfor %} 
+  </div><!-- related-media-grid -->
+</div><!-- container -->
