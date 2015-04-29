@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3">            
+      {% if block.icon %}
+        <i class="fa fa-{{block.icon}} text-light" style="font-size:42px;color:lightgrey"></i>
+      {% endif %} {# End of if block.icon #}
+
+      {% if block.categoryBreadcrumb %}
+        <p>{{block.categoryBreadcrumb}}<p>
+      {% endif %} {# End of if block.categoryBreadcrumb #}
+
+      <h1 class="page-body-headline" style="text-align:justify">
+        {{block.headline}}
+      </h1>            
+      <hr class="divider-center" />
+      <div class="page-body-content" style="text-align:justify">
+        <p>
+          {{block.bodyContent}}
+        </p>
+      </div> <!-- page-body-content -->
+    </div> <!-- col-md-6 -->
+  </div> <!-- container-->
+</div> <!-- container-fluid -->
