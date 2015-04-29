@@ -1,0 +1,15 @@
+{% set image = entry.picture.first() %}
+{% if image %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="picture-quote">
+
+          <img src="{{image.getUrl()}}"/>
+          <p>{{image.quote}}</p>
+        
+        </div> <!-- picture quote -->
+      </div> <!-- End of col-md-6  -->
+    </div> <!-- row  -->
+  </div> <!-- container  -->
+{% endif %}  
