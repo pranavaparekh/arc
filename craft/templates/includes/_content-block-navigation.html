@@ -1,0 +1,16 @@
+{% for block in entry.contentBoxNavigation %}
+    <div class="container-fluid" style="background-color: {{block.color}}">
+      <div class="row">
+        {% for row in block.contentBox %}
+          <div class="col-md-4 text-center" style="margin-top:40px; margin-bottom:40px ">
+            <a href="{{row.link}}">
+              <div class="content-link-box" style="background-color:lightgrey ">
+                <i class="fa fa-{{row.icon}} text-light" style="font-size:42px;color:black"></i>
+                <p>{{row.linkText}}</p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+{% endfor %}
