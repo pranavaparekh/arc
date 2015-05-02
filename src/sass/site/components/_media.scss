@@ -17,3 +17,203 @@
 .slider-container {
   @extend .container-fullwidth; 
 }
+
+/*Lambda Styles*/
+
+
+
+/* - Blockquote - */
+blockquote {
+  border: 0;
+  position: relative;
+  padding: 0 48px;
+}
+blockquote:before {
+  content: "\201C";
+  display: block;
+  font-family: Georgia;
+  font-size: 84px;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+blockquote p {
+  line-height: 1.5em;
+}
+
+blockquote img {
+  display: inline-block !important;
+  margin: 0 0 12px !important;
+  border-radius: 50%;
+}
+
+blockquote .box {
+  display: inline-block !important;
+}
+
+.blockquote-simple img {
+  max-width: 96px !important;
+  border: 8px solid;
+  max-height:96px;
+}
+.blockquote-simple:before {
+  display: none;
+}
+.blockquote-simple footer:before {
+  display: none;
+}
+
+blockquote p {
+  font-family: "Gentium Basic";
+  font-style: italic;
+}
+.pullout-text-slab blockquote p {
+  font-size: 24px;
+  font-weight: 400;
+  color:#ffffff;
+}
+blockquote p {
+  font-size: 24px;
+  font-weight: 400;
+  color:#4c4c4c;
+}
+blockquote small, blockquote footer {
+  font-family: "Raleway";
+  color: #959494;
+}
+blockquote cite {
+  color: #4c4c4c;
+}
+blockquote:before {
+  color: rgba(76, 76, 76, 0.2);
+}
+blockquote.blockquote-simple img {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.text-light {
+  color: #ffffff;
+}
+.text-light i {
+  color: #ffffff;
+}
+
+h1.text-light,
+h2.text-light,
+h3.text-light,
+h4.text-light,
+h5.text-light,
+h6.text-light,
+.text-light h1,
+.text-light h2,
+.text-light h3,
+.text-light h4,
+.text-light h5,
+.text-light h6 {
+  color: #ffffff;
+}
+
+.text-light a, a.text-light {
+  color: #ffffff;
+}
+.text-light a:hover, a.text-light:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.text-light blockquote, blockquote.text-light {
+  color: #ffffff;
+}
+.text-light blockquote small, .text-light blockquote footer, .text-light blockquote cite, blockquote.text-light small, blockquote.text-light footer, blockquote.text-light cite {
+  color: #ffffff;
+}
+.text-light blockquote:before, blockquote.text-light:before {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text-light.btn-link, .text-light .btn-link {
+  box-shadow: 0px 0px 0px 1px #ffffff inset !important;
+}
+.text-light.btn-link i, .text-light .btn-link i {
+  color: #ffffff;
+}
+
+.text-light.btn-link:hover, .text-light .btn-link:hover {
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.9) inset !important;
+  background: none;
+}
+
+.text-light.btn-primary, .text-light .btn-primary {
+  background: #ffffff !important;
+  color: #4c4c4c !important;
+}
+.text-light.btn-primary:hover, .text-light .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.text-light small, .text-light .small {
+  color: #ffffff;
+}
+
+.text-light.btn-primary:hover, .text-light .btn-primary:hover {
+  opacity: 1;
+}
+
+.text-light .breadcrumb-blog a, .text-light .breadcrumb-blog .active {
+  color: #ffffff;
+}
+.text-light .breadcrumb-blog > li + li:before {
+  color: #ffffff;
+}
+
+.text-light.social-icons li a {
+  background: #ffffff !important;
+}
+.text-light.social-icons li a i {
+  color: #4c4c4c !important;
+}
+
+.text-light.social-simple li a {
+  background: none !important;
+}
+.text-light.social-simple li a i {
+  color: #ffffff !important;
+}
+
+.text-light .portfolio-nav svg {
+  stroke: #ffffff;
+}
+
+.text-light.scroll-to i, .text-light .scroll-to i {
+  color: #ffffff;
+}
+.text-light.scroll-to:hover, .text-light .scroll-to:hover {
+  opacity: 0.9;
+}
+
+
+
+
+/* - Sections - */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+  .vertical-top, .vertical-middle, .vertical-bottom {
+    display: table;
+    width: calc(100% + 30px);
+    width: 100% \0/IE9;
+    /* ie9 fix */
+    table-layout: fixed;
+  }
+  .vertical-top > *, .vertical-middle > *, .vertical-bottom > * {
+    display: table-cell;
+    float: none;
+  }
+ .vertical-middle > * {
+    vertical-align: middle;
+  }
+  
