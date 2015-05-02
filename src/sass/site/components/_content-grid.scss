@@ -1,0 +1,16 @@
+.content-grid-headline{
+  margin-top: 70px;
+}
+
+.content-grid-lead-text{
+  @extend %lead;
+  margin-bottom: 40px;
+}
+
+.content-grid-content{
+  margin-bottom: 50px;
+}
+
+ .content-grid-block{
+  margin-bottom: 20px;
+} 

@@ -1,0 +1,23 @@
+/*Content Row Grid*/
+.content-row-grid
+{
+  margin-top:30px; 
+  margin-bottom:30px;
+}
+
+.content-row-item
+{
+  @extend .clearfix;
+  margin-top:15px; 
+  margin-bottom:15px;
+  border-bottom:1px solid $brand-primary;
+  img{
+    padding:25px;
+  }
+
+}
+
+.content-row-item:last-child
+{
+  border-bottom:none;
+}

@@ -1,0 +1,4 @@
+/*Gallery*/
+.gallery:last-child {
+  @extend .clearfix;
+}
