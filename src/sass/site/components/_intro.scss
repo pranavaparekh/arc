@@ -19,3 +19,33 @@
   margin-bottom:20px;
   color:#ffffff;
 }
+
+.intro-b{
+  padding-top: 30px;
+  padding-bottom:30px;
+
+}
+
+.intro-b__icon
+{
+  font-size:42px; //Not working- need to fix
+  color:lightgrey;
+}
+
+.intro-b__breadcrumb{
+  @extend .text-center;
+  color:orange;
+  text-transform:uppercase;
+}
+
+.intro-b__headline
+{
+  @extend .text-center;
+  text-align:justify
+}
+
+.intro-b__content
+{
+
+  text-align:justify;
+}

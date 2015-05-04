@@ -1,25 +1,25 @@
-<section class="section">
+<section class="intro-b">
   <div class="container-fluid">
-    <div class="container">
-      <div class="col-md-6 col-md-offset-3">            
-        {% if block.icon %}
-          <i class="fa fa-{{block.icon}} text-light" style="font-size:42px;color:lightgrey"></i>
-        {% endif %} {# End of if block.icon #}
+    <div class="col-md-6 col-md-offset-3">            
+      {% if block.icon %}
+        <i class="fa fa-{{block.icon}} intro-b__icon"></i>
+      {% endif %} {# End of if block.icon #}
 
-        {% if block.categoryBreadcrumb %}
-          <p>{{block.categoryBreadcrumb}}<p>
-        {% endif %} {# End of if block.categoryBreadcrumb #}
+      {% if block.categoryBreadcrumb %}
+        <p class="intro-b__breadcrumb">
+          {{block.categoryBreadcrumb}}
+        <p>
+      {% endif %} {# End of if block.categoryBreadcrumb #}
 
-        <h1 class="page-body-headline" style="text-align:justify">
-          {{block.headline}}
-        </h1>            
-        <hr class="divider-center" />
-        <div class="page-body-content" style="text-align:justify">
-          <p>
-            {{block.bodyContent}}
-          </p>
-        </div> <!-- page-body-content -->
-      </div> <!-- col-md-6 -->
-    </div> <!-- container-->
+      <h1 class="intro-b__headline">
+        {{block.headline}}
+      </h1>            
+      <hr class="divider-center" />
+      <div class="intro-b__content">
+        <p>
+          {{block.bodyContent}}
+        </p>
+      </div> <!-- intro-b__content -->
+    </div> <!-- col-md-6 -->
   </div> <!-- container-fluid -->
 </section>
