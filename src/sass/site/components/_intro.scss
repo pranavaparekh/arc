@@ -26,10 +26,12 @@
 
 }
 
-.intro-b__icon
+.intro-b__image
 {
-  font-size:42px; //Not working- need to fix
-  color:lightgrey;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:10px;
 }
 
 .intro-b__breadcrumb{
