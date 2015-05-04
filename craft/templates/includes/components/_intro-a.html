@@ -1,18 +1,18 @@
-<section class="intro section">
+<section class="intro">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
 
-          <h1 class="intro-lead-headline">
-            {{block.headline}}
-          </h1>
-          {% if block.lead %}
-            <hr class="divider-center-white" />
-          {% endif %}
-            <p class="intro-lead-content">
-              {{block.lead}}
-            </p>
-
+        <h1 class="intro__headline">
+          {{block.headline}}
+        </h1>
+        {% if block.lead %}
+          <hr class="divider-center-white" />
+        
+          <p class="intro__lead">
+            {{block.lead}}
+          </p>
+        {% endif %}
       </div>  <!-- End of col-md-12  -->
     </div>  <!-- End of Row  -->
   </div>  <!-- End of container  -->
