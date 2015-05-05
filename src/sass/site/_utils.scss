@@ -313,11 +313,7 @@ img {
   font-weight: 700;
 }
 
-body {
-  font-size: 14px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-}
+
 body input, body textarea, body .btn, body button {
   font-family: "Raleway", sans-serif;
 }
@@ -327,9 +323,7 @@ body input, body textarea, body .btn, body button {
 /* GENERAL TYPOGRAPHY RULES */
 /* ------------------------ */
 /* - Body typography - */
-body {
-  -webkit-font-smoothing: antialiased;
-}
+
 body.hyphenated {
   word-break: break-all;
   word-break: break-word;
@@ -608,9 +602,6 @@ pre {
   }
 }
 @media (max-width: 320px) {
-  body {
-    font-size: 14px;
-  }
 
   h1 {
     font-size: 21px;
