@@ -251,8 +251,8 @@
     </section>                       
   {% endif %} {# End of if block.type == "contentTabs" #} 
 
-  {% if block.type == "landingBlock" %}
-    {% include "includes/_landing-block.html" %} {# prone to error since template is modified for services#}
+  {% if block.type == "landing" %}
+    {% include "includes/_landing.html" %} {# prone to error since template is modified for services#}
   {% endif %} {# End of if block.type == "text" #}
 
   {% if block.type == "statComponent" %}
