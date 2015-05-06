@@ -3,19 +3,19 @@
   <div class="row">   
     <div class="col-md-7">
       {% if block.headline %}
-          <h1 class="page-body-headline">
+          <h1 class="landing__headline">
             {{block.headline}}
           </h1>
       {% endif %} {# End of if block.headline #}
 
       {% if block.lead %}
-            <p class="page-body-lead">
+            <p class="landing__lead">
               {{block.lead}}
             </p>    
       {% endif %} {# End of if block.lead #}
 
       {% if block.landingContent %}
-            <div class="page-body-content">
+            <div class="landing__content">
               <p>
                 {{block.landingContent}}
               </p>

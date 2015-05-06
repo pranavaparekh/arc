@@ -12,6 +12,6 @@
 }
 
 .page-body-lead {
-  @extend %lead;
+  @extend .lead;
   margin-bottom:40px;
 }
