@@ -1,0 +1,19 @@
+{% if entry.mediaGridC %}
+
+<div class="media-grid-c">
+  {% for image in entry.mediaGridC %}
+
+    <div class="media-grid-c__item" data-w="470" data-h="100">
+      <p class="media-grid-c__caption">
+        <a class="media-grid-c__link" href="{{image.pictureLink}}">
+          {{image.title}}
+        </a>
+      </p>
+      <img class="media-grid-c__item-image" src="{{image.getUrl()}}">
+    </div>
+
+  {% endfor %}
+
+</div>
+
+{% endif %}
