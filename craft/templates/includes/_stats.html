@@ -1,23 +1,23 @@
 {% if entry.stats %}
 
-{% set color_gradient_blue = ['#2276b0','#2281c3','#3f98d5','#4eb1f4'] %}
+  {% set color_gradient_blue = ['#2276b0','#2281c3','#3f98d5','#4eb1f4'] %}
 
-<section class="stats">
-  <div class="container-fluid">
-    <div class="row">
-      {% for block in entry.stats %}            
-        <div class=" stats__block" style="background:{{color_gradient_blue[loop.index0]}};">
-          <i class="stats__icon fa fa-{{block.icon}}"></i>
-          <div class="stats__data">
-              {{block.data}} 
-          </div>
-          <hr class="divider-center-white"/>
-          <h3 class="stats__decription">
-            {{block.description}}
-          </h3>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+  <section class="stats">
+    <div class="container-fluid">
+      <div class="row">
+        {% for block in entry.stats %}            
+          <div class=" stats__block" style="background:{{color_gradient_blue[loop.index0]}};">
+            <i class="stats__icon fa fa-{{block.icon}}"></i>
+            <div class="stats__data">
+                {{block.data}}
+            </div><!-- stats-data -->
+            <hr class="divider-center-white"/>
+            <h3 class="stats__decription">
+              {{block.description}}
+            </h3>
+          </div><!-- stats-block -->
+        {% endfor %}
+      </div><!-- row -->
+    </div><!-- container-fluid -->
+  </section>
 {% endif %}
