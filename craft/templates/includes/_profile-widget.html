@@ -1,0 +1,58 @@
+{% if entry.profileWidget %}
+  {% for block in entry.profileWidget %}
+    {% if block.headline %}
+      <div class="container-fluid">
+        <div class="container">
+          <div class="col-md-12">
+          <h1 class="page-body-headline text-center"
+          style="text-align:justify">
+            {{block.headline}}
+  block
+          
+          <hr class="divider-center" />
+          </div>
+        </div>
+      </div>
+    {% endif %} {# End of if block.headline #}
+
+    {% if block.lead %}
+      <div class="container-fluid">
+        <div class="container">
+          <p class="page-body-lead col-md-12 text-center" 
+          style="text-align:justify">
+            {{block.lead}}
+          </p>
+        </div>
+      </div>
+    {% endif %} {# End of if block.lead #}
+
+    {% if block.media %}      
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <div class="row staff-list-container list-container" style="margin-bottom:60px">
+                  {% for relatedEntry in block.media %}
+
+                    {% include "includes/content/_company" %}   
+                                    
+                  {% endfor %} {# End of for relatedEntry in block.pageBodyMedia #}
+                </div><!-- end staff-list-container -->
+              </div> <!-- text-center -->
+            </div> <!-- end row -->
+          </div> <!-- end container -->
+        </div>
+    {% endif %} {# End of if block.pageBodyMedia #}
+
+    {% if block.centerText %}
+      <div class="container-fluid">
+        <div class="container">
+          <p class="page-body-lead col-md-8 col-md-offset-2 text-center" 
+          style="text-align:justify; font-size:26px">
+            {{block.centerText}}
+          </p>
+        </div>
+      </div>
+    {% endif %} {# End of if block.lead #}
+  {% endfor %}
+{% endif %}
