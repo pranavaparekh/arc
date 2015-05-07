@@ -3,9 +3,11 @@
   {% for caseStudy in entry.caseStudies %}
     <div class="col-md-4 {% if loop.index0 % 2 == 0 %} col-md-offset-2 {% endif %} ">
       <div class="case-studies">
-        {{caseStudy.title}}
-        {{caseStudy.body}}
-        {{caseStudy.url}}
+
+        <p class="case-studies__title">{{caseStudy.title}}</p>
+        <p class="case-studies__content">{{caseStudy.body}}</p>
+        <p href="{{caseStudy.url}}" class="case-studies__link">Read More</p>
+
       </div>
     </div>
   {% endfor %}
