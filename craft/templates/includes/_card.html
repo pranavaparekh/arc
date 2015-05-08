@@ -1,6 +1,6 @@
 <div class="card-item-grid container">    
     <div class="card-item-row row">
-        {% for block in entry.cardBlock %}
+        {% for block in entry.card %}
       <div class="col-md-5 {% if loop.index0 % 2 == 0 %} col-md-offset-1 {% endif %}">
         <div class="card-item">
           <h2>{{block.headline}}</h2>
