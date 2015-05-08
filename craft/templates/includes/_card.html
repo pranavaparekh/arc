@@ -1,14 +1,17 @@
-<div class="card-item-grid container">    
-    <div class="card-item-row row">
+{% if entry.card %}
+  <section class="card">
+    <div class="container">    
+      <div class="card__row">
         {% for block in entry.card %}
-      <div class="col-md-5 {% if loop.index0 % 2 == 0 %} col-md-offset-1 {% endif %}">
-        <div class="card-item">
-          <h2>{{block.headline}}</h2>
-          <p>{{block.contentBody}}</p>
-          <i class="fa fa-{{block.icon}} text-light"></i>
-        </div>
-      </div>
-          {% endfor %}
-    </div>
-
-</div>
+          <div class="col-md-5 {% if loop.index0 % 2 == 0 %} col-md-offset-1 {% endif %}">
+            <div class="card__box">
+              <h2 class="card__headline">{{block.headline}}</h2>
+              <p class="card__text">{{block.contentBody}}</p>
+              <i class="fa fa-{{block.icon}} text-light card__icon"></i>
+            </div><!-- card__box -->
+          </div><!-- col-md-5 -->
+        {% endfor %}
+      </div><!-- card__row -->
+    </div><!-- container -->
+  </section>
+{% endif %}

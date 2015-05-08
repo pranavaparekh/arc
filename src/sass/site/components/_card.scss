@@ -1,26 +1,31 @@
 /*Card*/
-.card-item-row
+.card__row
 {
+  @extend .row;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.card-item
-{
- 
+.card__box
+{ 
   border:1px solid #3f98d5;
   height:350px;
   background-color:#3f98d5;
-  padding:20px;
+  padding:30px;
   position:relative;
   margin-bottom: 40px;
-  i{
+}
+
+.card__headline{
+  color:white;
+}
+
+.card__text{
+  color:black;
+}
+.card__icon{
     position:absolute;
     right:0px;
     bottom:0px;
     font-size:200px;
     color:lightgrey;
-  }
-  h2{
-    color:white;
-  }
 }
