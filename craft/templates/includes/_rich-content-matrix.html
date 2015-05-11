@@ -1,0 +1,44 @@
+{% if entry.richContentMatrix %}
+  <section class="intro-b">
+    <div class="container-fluid" style="background-color: #2276b0;color:white">
+
+      {% for block in entry.richContentMatrix.type('richContent') %}
+        <div class="col-md-6 col-md-offset-3"> 
+          <img class="intro-b__image" src="http://placekitten.com/g/150/150" alt="">
+          <h1 class="intro-b__headline">
+            {{block.headline}}
+          </h1>            
+          <hr class="divider-center-white" />
+          <div class="intro-b__content">
+            <p>
+              {{block.lead}}
+            </p>
+          </div> <!-- intro-b__content -->
+        </div><!-- col-md-6 -->
+      {% endfor %} 
+
+      {# Slider starts here #}
+      <div class="row vertical-middle">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="text-center flexslider feature-slider" data-flex-animation="slide" data-flex-controls="show" data-flex-controls-position="inside" data-flex-directions="show" data-flex-slideshow="false" data-flex-controlsalign="center" data-flex-speed="7000" id="flexslider-818" style="margin-top:20px; margin-bottom:40px">
+            <ul class="slides" style="margin-top:20px; margin-bottom:20px;">
+              {% for block in entry.richContentMatrix.type('sliderItem') %}   
+                <li>
+                  <div class="col-md-10 col-md-offset-1">
+                    <h2>
+                      {{block.headline}}
+                    </h2>
+                    <div>
+                      {{block.body}}
+                    </div>
+                  </div><!-- col-md-10 -->                                      
+                </li>  
+              {% endfor %}    
+            </ul>
+          </div><!-- flexslider -->           
+        </div> <!-- End of col-md-12 -->
+      </div> <!-- End of row vertical-middle -->
+
+    </div><!-- intro-b -->
+  </section> 
+{% endif %}
