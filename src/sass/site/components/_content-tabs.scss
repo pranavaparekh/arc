@@ -143,7 +143,7 @@
 .nav-tabs-vertical {
   float: left;
   border-bottom: 0;
-  
+  padding-top:6%;
 
   li {
     float: none;
@@ -153,8 +153,9 @@
       margin-right: 0;
       border: 0;
       background-color: white;
-      color:$gray-base;
+      color:$gray;
       text-transform: uppercase;
+      border-bottom: 1px solid $gray;
       
       &:hover {
         color:$blue-base;
@@ -170,12 +171,20 @@
 
 .tab-content-vertical {
   margin-left: 45px;
+
+  h2{
+  color:white;
+  background-color:$blue-base;
+  text-transform: uppercase;
+  text-align:center;
+}
   
   .tab-pane-vertical {
     display: none;
     background-color: #fff;
     padding: 1.6rem;
     overflow-y: auto;
+    border-left: 1px solid $gray;
   }
   
   .active { display: block; }
@@ -192,3 +201,5 @@
     }
   }
 }
+
+
