@@ -1,8 +1,77 @@
-{% set about_us = {
-    about_us:    { title: "About Us", href: "/about-aranca/about-us" },
-    our_edge: { title: "Our Edge", href: "/about-aranca/our-edge" },
-    client_testimonials:     { title: "Client Testimonials", href: "/about-aranca/client-testimonials" },
-} %}
+{% set nav = 
+	 { about_us: {
+	 			overview: { title: "About Us", href: "about-aranca/about-us" },
+	    	our_edge: { title: "Our Edge", href: "about-aranca/our-edge" },
+	    	client_testimonials: { title: "Client Testimonials", href: "about-aranca/client-testimonials" },
+			},
+			investment_research: {
+	 			clients: { 
+	 				heading: { title: "Clients", href: "#" },
+	 				brokerage_firms: { title: "Brokerage Firms", href: "http://www.aranca.com/investment-research/clients/		brokerage-firms" },
+	 				asset_managers: { title: "Asset Managers", href: "http://www.aranca.com/investment-research/clients/asset-managers" },
+	 				investment_banks: { title: "Investment Banks", href: "http://www.aranca.com/investment-research/clients/investment-banks" },
+	 				private_equity: { title: "Private Equity/ Venture Cap Firms", href: "http://www.aranca.com/investment-research/clients/private-equity-venture-cap-firms" } 
+	 				},
+	 			research_solutions: { 
+	 				heading: { title: "Research Solutions", href: "#" },
+	 				equity_research: { title: "Equity Research", href: "#" },
+	 				fixed_income: { title: "Fixed Income and Credit Research", href: "#" },
+	 				investment_banking: { title: "Investment Banking Research", href: "#" },
+	 				pe_vc: { title: "PE-VC Research", href: "#" },
+	 				economic_research: { title: "Economic Research", href: "#" },
+	 				sustainable_research: { title: "Sustainable and Responsible Investing Research", href: "#" }, 
+	 				},
+	 			download: {
+	 				heading: { title: "Download", href: "#" },
+	 				link1: { title: "Case Studies", href: "#" },
+	 				link2: { title: "Request Samples", href: "#" },
+	 				},
+			},
+			market_inteligence: {
+	 			research_solutions: { 
+	 				heading: { title: "Research Solutions", href: "#" },
+	 				link1: { title: "Enterprises", href: "#" },
+	 				link2: { title: "Consulting Firms", href: "#" },
+	 				link3: { title: "Law Firms", href: "#" },
+	 				link4: { title: "Private Equity", href: "#" }, 
+	 				link5: { title: "Research Helpdesk", href: "#" }, 
+	 				},
+	 			sector_experience: { 
+	 				heading: { title: "Aerospace & Defense", href: "#" },
+	 				link1: { title: "Agribusiness", href: "#" },
+	 				link2: { title: "Alternate Energy & Fuels", href: "#" },
+	 				link3: { title: "Automobiles & Auto Parts", href: "#" },
+	 				link4: { title: "Banking & Financial Services", href: "#" }, 
+	 				link5: { title: "Chemicals", href: "#" }, 
+	 				link6: { title: "Education", href: "#" }, 
+	 				link7: { title: "Electronics & IT", href: "#" }, 
+	 				link8: { title: "Food & Beverages", href: "#" }, 
+	 				link9: { title: "Insurance", href: "#" }, 
+	 				link10: { title: "Internet", href: "#" }, 
+	 				link11: { title: "Media & Entertainment", href: "#" }, 
+	 				link12: { title: "Metals & Mining", href: "#" }, 
+	 				link13: { title: "Packaging", href: "#" }, 
+	 				link14: { title: "Pharma & Medical Devices", href: "#" }, 
+	 				link15: { title: "Telecom", href: "#" }, 
+	 				link16: { title: "Travel & Tourism", href: "#" },
+	 				},	 			
+	 			global_exprience: { 
+	 				heading: { title: "Asia Pacific", href: "#" },
+	 				link1: { title: "Middle East & North Africa", href: "#" },
+	 				link2: { title: "Central and Eastern Europe", href: "#" },
+	 				link3: { title: "North America", href: "#" },
+	 				link4: { title: "Western Europe", href: "#" }, 
+	 				link5: { title: "South America", href: "#" }, 
+	 				link6: { title: "South, West & East Africa", href: "#" }, 
+	 				},
+	 			download: {
+	 				heading: { title: "Download", href: "#" },
+	 				link1: { title: "Case Studies", href: "#" },
+	 				link2: { title: "Request Samples", href: "#" },
+	 				},
+			},
+		}
+%}
 
 {# {% set about_us = {
 	links: ["About Us","Our Edge","Client Testimonials"],
@@ -23,16 +92,15 @@
 					<ul class="nav navbar-nav" id="menu-main">
 						 <li class="menu-item active dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us</a>
 							<ul class="dropdown-menu dropdown-menu-left ">
-							{% for link in about_us %}
+							{% for link in nav.about_us %}
 								<li class="menu-item"> 
-									<a href="{{siteUrl}}/{{link.href}}">
+									<a href="{{siteUrl}}{{link.href}}">
 										{{link.title}}
 									</a> 
 								</li>
 							{% endfor %}
 							</ul>
 						</li>
-							 
 
 
 						</li>
@@ -40,38 +108,28 @@
 						<li class="menu-item  dropdown menu-item-object-oxy_mega_menu"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Investment Research</a>
 								<ul class="dropdown-menu dropdown-menu-left row">
 									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-3">
-
 									<strong><a href="http://www.aranca.com/investment-research">Investment Research Practice</a></strong>
 									<img src="{{craft.config.assetsImagesUrl}}/investment-research.jpg" alt="Investment Research"/>
 									<div><p>Aranca helps increase research coverage and depth without adding fixed costs, thereby allowing clients to focus on innovation, idea generation and client-facing activities.</p></div>
 									<strong><a href="http://www.aranca.com/investment-research/investment-research-practice/experience">Experience</a></strong>
-
 									</li>
 
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-3"> <strong><a href="http://www.aranca.com/investment-research/clients">Clients</a></strong>
+								{% for section in nav.investment_research %}
+									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-3"> <strong><a href="{{section.heading.title}}">{{section.heading.title}}</a></strong>
 										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/clients/brokerage-firms">Brokerage Firms</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/clients/asset-managers">Asset Managers</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/clients/investment-banks">Investment Banks</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/clients/private-equity-venture-cap-firms">Private Equity/ Venture Cap Firms</a> </li>
+											{% for link in section %}
+												{% if loop.index0 !=0 %}
+														<li class="menu-item"> 
+														<a href="{{link.href}}">
+															{{link.title}}
+														</a> 
+													</li>
+												{% endif %}
+											{% endfor %}
 										</ul>
 									</li>
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-3"> <strong><a href="http://www.aranca.com/investment-research/research-solutions">Research Solutions</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/research-solutions/equity-research">Equity Research</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/research-solutions/fixed-income-credit-research">Fixed Income and Credit Research</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/research-solutions/investment-banking-research">Investment Banking Research</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/research-solutions/pe-vc-research">PE-VC Research</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/research-solutions/economic-research">Economic Research</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/research-solutions/sustainable-and-responsible-investing-research">Sustainable and Responsible Investing Research</a> </li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-3"> <strong><a href="http://www.aranca.com/investment-research/download">Download</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/download/case-studies">Case Studies</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/investment-research/download/request-samples">Request Samples</a> </li>
-										</ul>
-									</li>
+									{% endfor %}
+	
 								</ul>
 							</li>
 
@@ -79,13 +137,11 @@
 								<ul class="dropdown-menu dropdown-menu-left row">
 
 									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2">
-
 									<strong><a href="http://www.aranca.com/business-research">Business Research Practice</a></strong>
 									<img src="{{craft.config.assetsImagesUrl}}/business-research.jpg" alt="Business Research"/>
 									<div><p>Aranca supports senior managers in global enterprises, consulting, law and PE/VC firms with quick, accurate and insightful answers to critical questions on markets, competition, customers, supply chain, innovation and technology trends</p></div>
 									<strong><a href="http://www.aranca.com/business-research/business-research-practice/track-record">Track Record</a></strong>
 									<strong><a href="http://www.aranca.com/business-research/business-research-practice/research-approach">Research Approach</a></strong>
-
 									</li>
 
 									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/business-research/research-solutions">Research Solutions</a></strong>
