@@ -1,8 +1,23 @@
 {% set nav = 
 	 { about_us: {
-	 			overview: { title: "About Us", href: "about-aranca/about-us" },
-	    	our_edge: { title: "Our Edge", href: "about-aranca/our-edge" },
-	    	client_testimonials: { title: "Client Testimonials", href: "about-aranca/client-testimonials" },
+		 		corporate_information: { 
+	 				heading: { title: "Corporate Information", href: "#" },
+	 				link1: { title: "Management", href: "#" },
+	 				link2: { title: "Advisory Board", href: "#" },
+	 				link3: { title: "Our Edge", href: "about-aranca/our-edge" },
+	 				link4: { title: "Engagement Models", href: "#" }, 
+	 				link5: { title: "Information Security and Confidentiality", href: "#" }, 
+	 				link6: { title: "Client Testimonials", href: "about-aranca/client-testimonials" }, 
+	 				link7: { title: "Corporate Social Responsibility (CSR)", href: "#" }, 
+	 				link8: { title: "Awards and Recognitions", href: "#" }, 
+	 				},
+	 			media_center: { 
+	 				heading: { title: "Media Center", href: "#" },
+	 				link1: { title: "Press Releases", href: "#" },
+	 				link2: { title: "Media Coverage", href: "#" },
+	 				link3: { title: "Videos", href: "#" },
+	 				link4: { title: "Media Contacts", href: "#" }, 
+	 				},	 			
 			},
 			investment_research: {
 	 			clients: { 
@@ -27,7 +42,7 @@
 	 				link2: { title: "Request Samples", href: "#" },
 	 				},
 			},
-			market_inteligence: {
+			market_intelligence: {
 	 			research_solutions: { 
 	 				heading: { title: "Research Solutions", href: "#" },
 	 				link1: { title: "Enterprises", href: "#" },
@@ -37,32 +52,103 @@
 	 				link5: { title: "Research Helpdesk", href: "#" }, 
 	 				},
 	 			sector_experience: { 
-	 				heading: { title: "Aerospace & Defense", href: "#" },
-	 				link1: { title: "Agribusiness", href: "#" },
-	 				link2: { title: "Alternate Energy & Fuels", href: "#" },
-	 				link3: { title: "Automobiles & Auto Parts", href: "#" },
-	 				link4: { title: "Banking & Financial Services", href: "#" }, 
-	 				link5: { title: "Chemicals", href: "#" }, 
-	 				link6: { title: "Education", href: "#" }, 
-	 				link7: { title: "Electronics & IT", href: "#" }, 
-	 				link8: { title: "Food & Beverages", href: "#" }, 
-	 				link9: { title: "Insurance", href: "#" }, 
-	 				link10: { title: "Internet", href: "#" }, 
-	 				link11: { title: "Media & Entertainment", href: "#" }, 
-	 				link12: { title: "Metals & Mining", href: "#" }, 
-	 				link13: { title: "Packaging", href: "#" }, 
-	 				link14: { title: "Pharma & Medical Devices", href: "#" }, 
-	 				link15: { title: "Telecom", href: "#" }, 
-	 				link16: { title: "Travel & Tourism", href: "#" },
+	 				heading: { title: "Sector Experience", href: "#" },
+	 				link1: { title: "Aerospace & Defense", href: "#" },
+	 				link2: { title: "Agribusiness", href: "#" },
+	 				link3: { title: "Alternate Energy & Fuels", href: "#" },
+	 				link4: { title: "Automobiles & Auto Parts", href: "#" },
+	 				link5: { title: "Banking & Financial Services", href: "#" }, 
+	 				link6: { title: "Chemicals", href: "#" }, 
+	 				link7: { title: "Education", href: "#" }, 
+	 				link8: { title: "Electronics & IT", href: "#" }, 
+	 				link9: { title: "Food & Beverages", href: "#" }, 
+	 				link10: { title: "Insurance", href: "#" }, 
+	 				link11: { title: "Internet", href: "#" }, 
+	 				link12: { title: "Media & Entertainment", href: "#" }, 
+	 				link13: { title: "Metals & Mining", href: "#" }, 
+	 				link14: { title: "Packaging", href: "#" }, 
+	 				link15: { title: "Pharma & Medical Devices", href: "#" }, 
+	 				link16: { title: "Telecom", href: "#" }, 
+	 				link17: { title: "Travel & Tourism", href: "#" },
 	 				},	 			
 	 			global_exprience: { 
-	 				heading: { title: "Asia Pacific", href: "#" },
-	 				link1: { title: "Middle East & North Africa", href: "#" },
-	 				link2: { title: "Central and Eastern Europe", href: "#" },
-	 				link3: { title: "North America", href: "#" },
-	 				link4: { title: "Western Europe", href: "#" }, 
-	 				link5: { title: "South America", href: "#" }, 
-	 				link6: { title: "South, West & East Africa", href: "#" }, 
+	 				heading: { title: "Global Experience", href: "#" },
+	 				link1: { title: "Asia Pacific", href: "#" },
+	 				link2: { title: "Middle East & North Africa", href: "#" },
+	 				link3: { title: "Central and Eastern Europe", href: "#" },
+	 				link4: { title: "North America", href: "#" },
+	 				link5: { title: "Western Europe", href: "#" }, 
+	 				link6: { title: "South America", href: "#" }, 
+	 				link7: { title: "South, West & East Africa", href: "#" }, 
+	 				},
+	 			download: {
+	 				heading: { title: "Download", href: "#" },
+	 				link1: { title: "Case Studies", href: "#" },
+	 				link2: { title: "Request Samples", href: "#" },
+	 				},
+			},
+			valuation_advisory: {
+	 			us_tax_compliance: { 
+	 				heading: { title: "US Tax Compliance", href: "#" },
+	 				link1: { title: "IRC 409A Valuation", href: "#" },
+	 				link2: { title: "Estate and Gift Tax", href: "#" },
+	 				link3: { title: "IRC 83b Election", href: "#" },
+	 				link4: { title: "'S' Corp Election (IRC1374)", href: "#" }, 
+	 				link5: { title: "Carry Forward of NOLs (IRC382)", href: "#" }, 
+	 				},
+	 			us_gaap_reporting: { 
+	 				heading: { title: "US GAAP Reporting", href: "#" },
+	 				link1: { title: "Purchase Price Allocation (ASC805)", href: "#" },
+	 				link2: { title: "Goodwill Impairment (ASC350)", href: "#" },
+	 				link3: { title: "Portfolio Valuation (ASC820)", href: "#" },
+	 				link4: { title: "Share Based Payments (ASC718)", href: "#" }, 
+	 				},	 			
+	 			ifrs_reporting: { 
+	 				heading: { title: "IFRS Reporting", href: "#" },
+	 				link1: { title: "Impairments of Assets (IAS36)", href: "#" },
+	 				link2: { title: "Intangibles Valuation (IFRS3)", href: "#" },
+	 				link3: { title: "Share Based Payments (IFRS2)", href: "#" },
+	 				link4: { title: "Fair Value Measurement (IFRS13)", href: "#" },  
+	 				},	 			
+	 			transaction_support: { 
+	 				heading: { title: "Transaction Support", href: "#" },
+	 				link1: { title: "Fairness Opinions", href: "#" },
+	 				link2: { title: "Buyer and Seller Services", href: "#" },
+	 				link3: { title: "Financial Modeling", href: "#" },
+	 				},
+	 			download: {
+	 				heading: { title: "Download", href: "#" },
+	 				link1: { title: "Case Studies", href: "#" },
+	 				link2: { title: "Request Samples", href: "#" },
+	 				},
+			},
+			ip_research: {
+	 			clients: { 
+	 				heading: { title: "Clients", href: "#" },
+	 				link1: { title: "Enterprises", href: "#" },
+	 				link2: { title: "Law Firms", href: "#" },
+	 				link3: { title: "Universities | R&D Institutions", href: "#" }, 
+	 				},
+	 			research_solutions: { 
+	 				heading: { title: "Research Solutions", href: "#" },
+	 				link1: { title: "Prior Art Searches", href: "#" },
+	 				link2: { title: "Patent Analytics Services", href: "#" },
+	 				link3: { title: "Outlicensing | Tehnology Transfer Support", href: "#" },
+	 				link4: { title: "Patent Valuation Services", href: "#" }, 
+	 				link5: { title: "Patent Prosecution Support", href: "#" }, 
+	 				},	 			
+	 			verticals: { 
+	 				heading: { title: "Verticals", href: "#" },
+	 				link1: { title: "Automotive", href: "#" },
+	 				link2: { title: "Chemicals", href: "#" },
+	 				link3: { title: "Electronics", href: "#" },
+	 				link4: { title: "Energy", href: "#" },
+	 				link5: { title: "Food Technologies", href: "#" }, 
+	 				link6: { title: "IT and Computing", href: "#" }, 
+	 				link7: { title: "Life Sciences", href: "#" }, 
+	 				link8: { title: "Mechanical Engineering", href: "#" }, 
+	 				link9: { title: "Pharmaceuticals", href: "#" }, 
+	 				link10: { title: "Telecommunications", href: "#" }, 
 	 				},
 	 			download: {
 	 				heading: { title: "Download", href: "#" },
@@ -90,15 +176,30 @@
 			<nav class="collapse navbar-collapse main-navbar logo-navbar navbar-right">
 				<div class="menu-container">
 					<ul class="nav navbar-nav" id="menu-main">
-						 <li class="menu-item active dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us</a>
-							<ul class="dropdown-menu dropdown-menu-left ">
-							{% for link in nav.about_us %}
-								<li class="menu-item"> 
-									<a href="{{siteUrl}}{{link.href}}">
-										{{link.title}}
-									</a> 
-								</li>
-							{% endfor %}
+
+						 <li class="menu-item active dropdown menu-item-object-oxy_mega_menu"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us</a>
+							<ul class="dropdown-menu dropdown-menu-left row ">
+									
+									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-4">
+									<img src="{{craft.config.assetsImagesUrl}}/corporate-info.jpg" alt="Investment Research"/ style="padding-top:20px;">
+									<div><p>Aranca is a leading provider of customized investment research, business research, intellectual property research and valuation services to global clients.</p></div>
+									</li>
+								
+								{% for section in nav.about_us %}
+									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-4"> <strong><a href="{{section.heading.title}}">{{section.heading.title}}</a></strong>
+										<ul class="dropdown-menu-left">
+											{% for link in section %}
+												{% if loop.index0 !=0 %}
+														<li class="menu-item"> 
+														<a href="{{link.href}}">
+															{{link.title}}
+														</a> 
+													</li>
+												{% endif %}
+											{% endfor %}
+										</ul>
+									</li>
+								{% endfor %}
 							</ul>
 						</li>
 
@@ -144,7 +245,22 @@
 									<strong><a href="http://www.aranca.com/business-research/business-research-practice/research-approach">Research Approach</a></strong>
 									</li>
 
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/business-research/research-solutions">Research Solutions</a></strong>
+									{% for section in nav.market_intelligence %}
+									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="{{section.heading.title}}">{{section.heading.title}}</a></strong>
+										<ul class="dropdown-menu-left">
+											{% for link in section %}
+												{% if loop.index0 !=0 %}
+														<li class="menu-item"> 
+														<a href="{{link.href}}">
+															{{link.title}}
+														</a> 
+													</li>
+												{% endif %}
+											{% endfor %}
+										</ul>
+									</li>
+									{% endfor %}
+{# 									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/business-research/research-solutions">Research Solutions</a></strong>
 										<ul class="dropdown-menu-left">
 											<li class="menu-item"> <a href="http://www.aranca.com/business-research/research-solutions/enterprises">Enterprises</a> </li>
 											<li class="menu-item"> <a href="http://www.aranca.com/business-research/research-solutions/consulting-firms">Consulting Firms</a> </li>
@@ -198,9 +314,9 @@
 											<li class="menu-item"> <a href="http://www.aranca.com/business-research/download/case-studies">Case Studies</a> </li>
 											<li class="menu-item"> <a href="http://www.aranca.com/business-research/download/request-samples">Request Samples</a> </li>
 										</ul>
-									</li>
+									</li>#}
 								</ul>
-							</li>
+							</li> 
 
 							<li class="menu-item  dropdown menu-item-object-oxy_mega_menu"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Valuation and Advisory</a>
 								<ul class="dropdown-menu dropdown-menu-left row">
@@ -215,46 +331,21 @@
 
 									</li>
 
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/valuation-and-advisory/us-tax-compliance">US Tax Compliance</a></strong>
+									{% for section in nav.valuation_advisory %}
+									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="{{section.heading.title}}">{{section.heading.title}}</a></strong>
 										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-tax-compliance/irc409a-valuation">IRC 409A Valuation</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-tax-compliance/estate-and-gift-tax">Estate and Gift Tax</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-tax-compliance/irc83b-election">IRC 83 b Election</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-tax-compliance/s-corp-election-irc1374">'S'-Corp Election (IRC1374)</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-tax-compliance/carry-forward-of-nols-irc382">Carry Forward of NOLs (IRC382)</a> </li>
+											{% for link in section %}
+												{% if loop.index0 !=0 %}
+														<li class="menu-item"> 
+														<a href="{{link.href}}">
+															{{link.title}}
+														</a> 
+													</li>
+												{% endif %}
+											{% endfor %}
 										</ul>
 									</li>
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/valuation-and-advisory/us-gaap-reporting">US GAAP Reporting</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-gaap-reporting/purchase-price-allocation-asc805">Purchase Price Allocation (ASC805)</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-gaap-reporting/goodwill-impairment-asc350">Goodwill Impairment (ASC350)</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-gaap-reporting/portfolio-valuation-asc820">Portfolio Valuation (ASC820)</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/us-gaap-reporting/share-based-payments-asc718">Share Based Payments (ASC718)</a> </li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/valuation-and-advisory/ifrs-reporting">IFRS Reporting</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/ifrs-reporting/impairments-of-assets-ias36">Impairments of Assets (IAS36)</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/ifrs-reporting/intangibles-valuation-ifrs3">Intangibles Valuation (IFRS3)</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/ifrs-reporting/share-based-payments-ifrs2">Share Based Payments (IFRS2)</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/ifrs-reporting/fair-value-measurement-ifrs13">Fair Value Measurement (IFRS13)</a> </li>
-										</ul>
-									</li>
-
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"><strong><a href"http://www.aranca.com/valuation-and-advisory/transaction-support">Transaction Support</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/transaction-support/fairness-opinions">Fairness Opinions</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/transaction-support/buyer-and-seller-services">Buyer and Seller Services</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/transaction-support/financial-modeling">Financial Modeling</a> </li>
-										</ul>
-									</li>
-
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/valuation-and-advisory/valuation-and-advisory-practice/download">Download</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/valuation-and-advisory-practice/download/case-studies">Case Studies</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/valuation-and-advisory/valuation-and-advisory-practice/download/request-samples">Request Samples</a> </li>
-										</ul>
-									</li>
+									{% endfor %}
 								</ul>
 							</li>
 
@@ -272,48 +363,24 @@
 									<strong><a href="http://www.aranca.com/about-aranca/corporate-information/information-security-and-confidentiality"> Information Security and Confidentiality</a></strong>
 
 									</li>
-
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/intellectual-property-research/clients">Clients</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/clients/enterprises">Enterprises</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/clients/law-firms">Law Firms</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/clients/universities-r-and-d-institutions">Universities | R&D Institutions</a> </li>
-
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-3"> <strong><a href="http://www.aranca.com/intellectual-property-research/research-solutions">Research Solutions</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/research-solutions/prior-art-searches">Prior Art Searches</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/research-solutions/patent-analytics-services">Patent Analytics Services</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/research-solutions/outlicensing-support-technology-transfer-support">Outlicensing | Tehnology Transfer Support</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/research-solutions/patent-valuation-services">Patent Valuation Services</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/research-solutions/patent-prosecution-support">Patent Prosecution Support</a> </li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/intellectual-property-research/verticals">Verticals</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/automotive">Automotive</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/chemicals">Chemicals</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/electronics">Electronics</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/energy">Energy</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/food-technologies">Food Technologies</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/it-and-computing">IT and Computing</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/life-sciences">Life Sciences</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/mechanical-engineering">Mechanical Engineering</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/pharmaceuticals">Pharmaceuticals</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/verticals/telecommunications">Telecommunications</a> </li>
-										</ul>
-									</li>
-
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="http://www.aranca.com/intellectual-property-research/download">Download</a></strong>
-										<ul class="dropdown-menu-left">
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/download/case-studies">Case Studies</a> </li>
-											<li class="menu-item"> <a href="http://www.aranca.com/intellectual-property-research/download/request-samples">Request Samples</a> </li>
-										</ul>
-									</li>
+									{% for section in nav.ip_research %}
+										<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-2"> <strong><a href="{{section.heading.title}}">{{section.heading.title}}</a></strong>
+											<ul class="dropdown-menu-left">
+												{% for link in section %}
+													{% if loop.index0 !=0 %}
+															<li class="menu-item"> 
+															<a href="{{link.href}}">
+																{{link.title}}
+															</a> 
+														</li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										</li>
+									{% endfor %}
 								</ul>
 							</li>
-
+							
 
 						<li class="menu-item"> <a href="#">Contact Us</a> </li>
 					</ul>
