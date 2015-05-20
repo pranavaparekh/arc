@@ -1,0 +1,24 @@
+{% extends "layouts/_base" %}
+
+{% block head %}
+  {{parent()}}
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{craft.config.assetsCssUrl}}/media-center.css">
+{% endblock %}
+
+{% block body %}
+
+  <main id="main" role="main">
+
+    {% block main %}
+    {% endblock %}
+
+  </main>
+{% endblock %}
+
+{% block foot %}
+  {{parent()}}
+  <script src="{{craft.config.assetsJsUrl}}/jquery.js"></script>
+
+{% endblock %}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
   <head>
     {% block head %}
       <meta charset="utf-8">
@@ -7,20 +8,45 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
       <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-      <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="{{craft.config.assetsCssUrl}}/main.css">
+
     {% endblock %} {# end head block #}
   </head>
+
   <body>
     {% block body %}
 
     {% endblock %} {# end main body block #}
 
     {% block foot %}
+      {% block scripts %}
+          <script type='text/javascript' >
+            /* Analytics script:  */
+            (function () {
+            var p5 = document.createElement('script'); p5.type = 'text/javascript';
+            p5.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cloud.plumb5.com/Script1/aranca_com_64.js';
+            var p5s = document.getElementsByTagName('script')[0]; p5s.parentNode.insertBefore(p5, p5s);
+            })();
+          </script>
 
 
-
+          <script type='text/javascript' >
+            /*  Automation script:  */
+            (function () {
+            var p5cap = document.createElement('script'); p5cap.type = 'text/javascript';
+            p5cap.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cloud.plumb5.com/Script/Domain14042015124110-64.js';
+            var p5scap = document.getElementsByTagName('script')[0]; p5scap.parentNode.insertBefore(p5cap, p5scap);
+            })();
+          </script>
+          <script type='text/javascript' >
+            /* Chat script:  */
+            (function () {
+            var p5cap = document.createElement('script'); p5cap.type = 'text/javascript';
+            p5cap.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cloud.plumb5.com/ChatScript/Chat14042015124129-64.js';
+            var p5scap = document.getElementsByTagName('script')[0]; p5scap.parentNode.insertBefore(p5cap, p5scap);
+            })();
+          </script>
+      {% endblock %} {# end scripts block #}
     {% endblock %} {# end footer block #}
   </body>
+  
 </html>
