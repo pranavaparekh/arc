@@ -252,7 +252,7 @@
   {% endif %} {# End of if block.type == "contentTabs" #} 
 
   {% if block.type == "landing" %}
-    {% include "includes/_landing.html" %} {# prone to error since template is modified for services#}
+    {% include "includes/services/_landing.html" %} {# prone to error since template is modified for services#}
   {% endif %} {# End of if block.type == "text" #}
 
   {% if block.type == "statComponent" %}

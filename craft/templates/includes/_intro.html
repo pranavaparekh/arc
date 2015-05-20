@@ -1,5 +1,3 @@
 {% for block in entry.intro %}
-{# Regular expression which converts camelcase string to slugified filename #}
-{% set introTemplate = block.type | preg_replace('/(?<=\\w)(?=[A-Z])/',"-$1") | lower %}
-{% include "includes/components/_" ~ introTemplate %}   
+{% include "includes/components/_intro-a" %}   
 {% endfor %}
