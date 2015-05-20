@@ -12,7 +12,7 @@
           link8: { title: "Awards and Recognitions", href: "#" }, 
           },
         media_center: { 
-          heading: { title: "Media Center", href: "media-center" },
+          heading: { title: "Media Center", href: "#" },
           link1: { title: "Press Releases", href: "#" },
           link2: { title: "Media Coverage", href: "#" },
           link3: { title: "Videos", href: "#" },
@@ -180,7 +180,7 @@
 									</li>
 								
 								{% for section in nav.about_us %}
-									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-4"> <strong><a href="{{section.heading.href}}">{{section.heading.title}}</a></strong>
+									<li class="menu-item menu-item-object-oxy_mega_columns menu-item-has-children dropdown-submenu dropdown col-md-4"> <strong><a href="{{section.heading.title}}">{{section.heading.title}}</a></strong>
 										<ul class="dropdown-menu-left">
 											{% for link in section %}
 												{% if loop.index0 !=0 %}
