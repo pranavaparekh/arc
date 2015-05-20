@@ -11,11 +11,13 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                  style: 'expanded',
+                  style: 'compressed', 
+                  // nested , compact , compressed , expanded
                   sourcemap: 'auto',
                 },
                 files: {
-                    'public/assets/css/main.css': 'src/sass/site/main.scss'
+                    'public/assets/css/main.css': 'src/sass/site/main.scss',
+                    'public/assets/css/media-center.css': 'src/sass/site/media-center.scss'
                 }
             }
         },
