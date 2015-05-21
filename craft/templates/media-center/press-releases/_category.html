@@ -5,8 +5,9 @@
 </br>
 </br>
 </br>
+
 {# Reference the category #}
-{% set cat = craft.categories.title('Awards').first() %}
+{% set cat = craft.categories.slug(category.slug).first() %}
 
 {# Find related entries #}
 {% set entries = craft.entries.section('pressReleases').relatedTo(cat).find() %}
