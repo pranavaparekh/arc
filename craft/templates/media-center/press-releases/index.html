@@ -1,0 +1,11 @@
+{# {% paginate craft.entries.section('pressReleases').limit(4) as pressReleases %} #}
+
+{% for pressRelease in craft.entries.section('pressReleases') %}
+
+{#   {{pressRelease.postDate}}
+  {{pressRelease.place}}
+  {{pressRelease.title}}
+  {{pressRelease.excerpt}} #}
+  {{pressRelease.pressReleasesCategory.first().title}}
+
+{% endfor %}
