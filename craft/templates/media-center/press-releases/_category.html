@@ -1,3 +1,14 @@
+<div class="col-md-3">
+<p>Group By Year</p>
+
+{% set firstEntryEver = craft.entries.section('pressReleases').order('postDate asc').first() %}
+<ul>
+    {% for year in now.year .. firstEntryEver.postDate.year %}
+        <li><a href="{{siteUrl}}media-center/press-releases/{{ year }}">{{ year }}</a></li>
+    {% endfor %}
+</ul>
+</div>
+
 <h2>View By Category</h2>
 <a href="/press-releases/category/announcements">Announcements</a>
 <a href="/press-releases/category/awards">Awards</a>

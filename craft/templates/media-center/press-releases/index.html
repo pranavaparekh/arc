@@ -1,3 +1,18 @@
+<div class="col-md-3">
+  <p>Group By Year</p>
+
+{% set firstEntryEver = craft.entries.section('pressReleases').order('postDate asc').first() %}
+<ul>
+  {% for year in now.year .. firstEntryEver.postDate.year %}
+      <li><a href="{{siteUrl}}media-center/press-releases/{{ year }}">{{ year }}</a></li>
+{#       {% set monthEntry = craft.entries.section('pressReleases').order('postDate asc').first() %}
+        {% for month in now.year .. year.month %}
+          <li><a href="{{siteUrl}}media-center/press-releases/{{ month }}">{{ month }}</a></li>
+        {% endfor %} #}
+  {% endfor %}
+</ul>
+</div>
+
 <h2>View By Category</h2>
 <a href="/press-releases/category/announcements">Announcements</a>
 <a href="/press-releases/category/awards">Awards</a>
@@ -5,9 +20,30 @@
 </br>
 </br>
 </br>
+
+{% if year is not defined %}
+  {% set year = now.year %}
+{% endif %}
+
+{% if year is not defined %}
+  {% redirect "media-center/press-releases/"~now.year %}
+{% endif %}
+
+<h1>{{ year }}</h1>
+
+{% set entriesInYear = craft.entries.section('pressReleases').limit(null).after(year).before(year+1) %}
+{% for month, entries in entriesInYear | group("postDate|date('F')") %}
+    <h2>{{ month }}</h2>
+    <ul>
+        {% for entry in entries %}
+            <li>{{ entry.getLink() }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+
 {# Reference the category #}
 {% set cat = craft.categories.title('Awards').first() %}
-
 {# Find related entries #}
 {% set entries = craft.entries.section('pressReleases').relatedTo(cat).find() %}
 
