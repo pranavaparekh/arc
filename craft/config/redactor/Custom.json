@@ -2,6 +2,8 @@
   buttons: ['html','formatting','bold','italic','unorderedlist','orderedlist','link','image','video'],
 	toolbarFixed: true,
   replaceDivs:false,
+  paragraphize:false,
+  cleanOnPaste:false,
   plugins: ['fullscreen','clips'],
 }
 
