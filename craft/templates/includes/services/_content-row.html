@@ -1,0 +1,44 @@
+{% if entry.contentRow %}
+  <section class="content-row">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          {% for block in entry.contentRow %}
+            {% if block.type == "intro" %}
+              <h1 class="page-body-headline text-center">
+                {{block.headline}}
+              </h1>
+
+              <hr class="divider-center" />
+
+              <p class="page-body-lead">
+                {{block.lead}}
+              </p>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class =" content-row-grid row">
+        <div class="col-md-10 col-md-offset-1">
+        <div class="content-row-item clearfix">
+        {% for block in entry.contentRow %}
+          {% if block.type == "contentRow" %}
+            {% set image = block.image.first() %}
+            {% if image %}
+              <img src="{{image.getUrl()}}" 
+              class="{% if loop.index0 % 2 == 0 %} pull-left {% else %} pull-right {% endif %}">
+            {% endif %}
+            <h2>{{block.headline}}</h2>
+            <p>{{block.text}} <span><a href="{{block.contentLink}}">More</a></span></p>
+
+            {% if not loop.last %}
+              <hr class="divider-center-blue-long"/>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
