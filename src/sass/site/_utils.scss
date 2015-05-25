@@ -220,6 +220,10 @@ figure {
   font-size: .35em;
 }
 
+.inverted-white {
+  color:white;
+}
+
 /* - Text aligns classes - */
 .text-left {
   text-align: left !important;
@@ -417,7 +421,7 @@ figure {
  .vertical-middle > * {
     vertical-align: middle;
   }
-  
+
 
 /* - Blockquote - */
 blockquote {
