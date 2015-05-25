@@ -1,7 +1,7 @@
 <section class="intro-b">
   <div class="container-fluid">
-    <div class="col-md-6 col-md-offset-3">  
-      {% set image = block.image.first() %}          
+    <div class="col-md-8 col-md-offset-2">
+      {% set image = block.image.first() %}
       {% if image %}
         <img class="intro-b__image" src="{{image.getUrl()}}" alt="{{image.title}}">
       {% endif %} {# End of if block.icon #}
@@ -14,7 +14,7 @@
 
       <h1 class="intro-b__headline">
         {{block.headline}}
-      </h1>            
+      </h1>
       <hr class="divider-center" />
       <div class="intro-b__content">
         <p>
