@@ -428,6 +428,9 @@ blockquote {
   border: 0;
   position: relative;
   padding: 0 48px;
+  font-size: 1.8em;
+  text-align: left;
+  font-style: italic;
 }
 blockquote:before {
   content: "\201C";
