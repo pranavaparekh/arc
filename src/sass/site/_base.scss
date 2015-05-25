@@ -9,6 +9,25 @@ body {
 
 ol, ul {
     list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Lede Styles */
+
+.lede__headline {
+  font-size: 2em;
+  color: $black-base;
+}
+
+.lede__body {
+  font-size: 1.3em;
+  color: $black-base-lighter;
+}
+
+.lede__body p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media (max-width: 320px) {

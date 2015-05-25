@@ -3,18 +3,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          {% for block in entry.contentRow %}
-            {% if block.type == "intro" %}
-              <h1 class="page-body-headline text-center">
-                {{block.headline}}
-              </h1>
-
-              <hr class="divider-center" />
-
-              <p class="page-body-lead">
-                {{block.lead}}
-              </p>
-            {% endif %}
+          {% for block in entry.contentRow.type('lede') %}
+            <h1 class="lede__headline text-center">
+              {{ block.ledeHeadline }}
+            </h1>
+            <hr class="divider-center" />
+            <div class="lede__body text-center">
+              {{ block.ledeBody }}
+            </div>
           {% endfor %}
         </div>
       </div>
@@ -25,7 +21,7 @@
           {% if block.type == "contentRow" %}
             {% set image = block.image.first() %}
             {% if image %}
-              <img src="{{image.getUrl()}}" 
+              <img src="{{image.getUrl()}}"
               class="{% if loop.index0 % 2 == 0 %} pull-left {% else %} pull-right {% endif %}">
             {% endif %}
             <h2>{{block.headline}}</h2>

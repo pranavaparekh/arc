@@ -1,12 +1,18 @@
 {% if entry.card %}
   <section class="card">
     <div class="container">
+      {% for block in entry.card.type('lede') %}
+        <h2 class="text-center lede__headline">{{ block.ledeHeadline }}</h2>
+        <div class="lede__body text-center">
+            {{ block.ledeBody }}
+        </div>
+      {% endfor %}
       <div class="card__row">
-        {% for block in entry.card %}
+        {% for block in entry.card.type('cardItem') %}
           <div class="col-md-5 {% if loop.index0 % 2 == 0 %} col-md-offset-1 {% endif %}">
             <div class="card__box inverted-white">
               <h2 class="card__headline">{{block.headline}}</h2>
-              <p class="card__text">{{block.contentBody}}</p>
+              <div class="card__text">{{block.contentBody}}</div>
               <i class="fa fa-{{block.icon}} text-light card__icon"></i>
             </div><!-- card__box -->
           </div><!-- col-md-5 -->

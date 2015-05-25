@@ -20,7 +20,7 @@
 }
 
 .intro-b{
-  padding-top: 30px;
+  padding-top: 170px;
   padding-bottom:30px;
 }
 
@@ -34,8 +34,10 @@
 
 .intro-b__breadcrumb{
   @extend .text-center;
-  color:orange;
+  color:$brand-secondary;
   text-transform:uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom:0;
 }
 
 .intro-b__headline
@@ -45,6 +47,7 @@
   text-transform: uppercase;
   color: $blue-base;
   font-weight: normal;
+  margin-top: -10px;
 }
 
 .intro-b__content

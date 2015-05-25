@@ -16,6 +16,10 @@ $gray-light:             #f2efef !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
 $blue-base:              #0072bc !default;
+$orange-secondary:       #EC752C !default;
+
+$black-base:             #202020 !default;
+$black-base-lighter:     lighten($black-base, 20%) !default;
 
 $body-background-color: #ffffff;
 
@@ -25,6 +29,7 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
+$brand-secondary:       $orange-secondary !default;
 
 //== Scaffolding
 //

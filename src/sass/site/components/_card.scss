@@ -16,12 +16,17 @@
 }
 
 .card__headline{
-
+  font-weight: normal;
 }
 
 .card__text{
-
+  color: #10354D;
 }
+
+.card__text li {
+  line-height: 2em;
+}
+
 .card__icon{
     position:absolute;
     right:0px;
