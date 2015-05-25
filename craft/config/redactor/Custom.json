@@ -4,6 +4,7 @@
   replaceDivs:false,
   paragraphize:false,
   cleanOnPaste:false,
+  tabAsSpaces: 2,
   plugins: ['fullscreen','clips'],
 }
 
