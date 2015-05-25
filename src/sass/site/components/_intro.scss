@@ -1,5 +1,5 @@
 /* Intro Styles*/
-.intro{ 
+.intro{
   width: 100%;
   background-color: #0469ac;
   padding-top: 30px;
@@ -22,7 +22,6 @@
 .intro-b{
   padding-top: 30px;
   padding-bottom:30px;
-
 }
 
 .intro-b__image
@@ -42,7 +41,10 @@
 .intro-b__headline
 {
   @extend .text-center;
-  text-align:justify
+  text-align:justify;
+  text-transform: uppercase;
+  color: $blue-base;
+  font-weight: normal;
 }
 
 .intro-b__content
