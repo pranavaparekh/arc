@@ -5,9 +5,9 @@
   <section class="stats">
     <div class="container-fluid">
       <div class="row">
-        {% for block in entry.stats %}            
+        {% for block in entry.stats %}
           <div class=" stats__block" style="background:{{color_gradient_blue[loop.index0]}};">
-            <i class="stats__icon fa fa-{{block.icon}}"></i>
+            <i class="stats__icon fa fa-{{block.icon}}" style="font-size:4.5em;"></i>
             <div class="stats__data">
                 {{block.data}}
             </div><!-- stats-data -->
