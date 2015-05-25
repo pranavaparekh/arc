@@ -7,6 +7,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+ol, ul {
+    list-style: none outside none;
+}
+
 @media (max-width: 320px) {
   body {
     font-size: 14px;
