@@ -19,6 +19,10 @@ $browser-context: $font-size-base; // Default
   display: inline-block !important;
 }
 
+.inverted-bkg {
+  background: $brand-primary;
+}
+
 /* - Clear - */
 .clear {
   clear: both;

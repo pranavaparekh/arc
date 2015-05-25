@@ -1,5 +1,5 @@
 {% if entry.contentRow %}
-  <section class="content-row">
+  <section class="content-row" style="padding-top: 70px;">
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -24,8 +24,10 @@
               <img src="{{image.getUrl()}}"
               class="{% if loop.index0 % 2 == 0 %} pull-left {% else %} pull-right {% endif %}">
             {% endif %}
-            <h2>{{block.headline}}</h2>
-            <p>{{block.text}} <span><a href="{{block.contentLink}}">More</a></span></p>
+            <h2 class="content-row__headline">{{block.headline}}</h2>
+            <p class="content-row__body">
+              {{block.text}} <span><a href="{{block.contentLink}}">More</a></span>
+            </p>
 
             {% if not loop.last %}
               <hr class="divider-center-blue-long"/>

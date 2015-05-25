@@ -1,4 +1,6 @@
-<section class="intro">
+{% set backgroundImage= block.backgroundImage.first() %}
+<section class="intro"
+{% if backgroundImage %} style="background-image: url('{{backgroundImage.getUrl()}}')" {% endif %}>
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -8,7 +10,7 @@
         </h1>
         {% if block.lead %}
           <hr class="divider-center-white" />
-        
+
           <p class="intro__lead">
             {{block.lead}}
           </p>

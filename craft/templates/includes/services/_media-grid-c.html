@@ -1,7 +1,11 @@
 {% if entry.mediaGridC %}
 
-<div class="media-grid-c">
-  {% for image in entry.mediaGridC %}
+<section class="media-grid-c" style="padding-bottom:70px; padding-top:70px;">
+{% for block in entry.mediaGridC %}
+  <h2 class="lede__headline text-center">{{block.ledeHeadline}}</h2>
+  <hr class="divider-center">
+  <div class="lede__body text-center">{{block.ledeBody}}</div>
+  {% for image in block.images %}
 
     <div class="media-grid-c__item" data-w="470" data-h="100">
       <p class="media-grid-c__caption">
@@ -13,7 +17,8 @@
     </div>
 
   {% endfor %}
+{% endfor %}
 
-</div>
+</section>
 
 {% endif %}

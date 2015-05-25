@@ -1,3 +1,4 @@
+<!-- Homepage Component -->
 <section class="section content-grid">
   <div class="container">
     <div class="row">
@@ -8,15 +9,15 @@
 
         <hr class="divider-center" />
 
-        <p class="content-grid-lead-text text-center"> 
-        We help businesses to create and implement exceptional experiences 
-        for their customers.<br> We specialise in online 
-        <strong>multi-channel</strong> technology services. 
+        <p class="content-grid-lead-text text-center">
+        We help businesses to create and implement exceptional experiences
+        for their customers.<br> We specialise in online
+        <strong>multi-channel</strong> technology services.
         </p>
 
         <div class="content-grid-content list-container row">
           {%for block in entry.contentGrid %}
-            <div class="content-grid-block col-md-3 text-center"> 
+            <div class="content-grid-block col-md-3 text-center">
               <span class="service-simple-image">
                  {% set icon = block.icon.first() %}
                  {% if icon %}
@@ -25,7 +26,7 @@
               </span>
               <h2>{{block.heading}}</h2>
               <p>{{block.body}}.</p>
-            </div>                
+            </div>
           {% endfor %}
         </div> <!-- End of content-grid-content -->
       </div>  <!-- End of col-md-12 -->

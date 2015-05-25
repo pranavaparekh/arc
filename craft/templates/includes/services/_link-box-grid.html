@@ -1,14 +1,13 @@
-{% for block in entry.contentBoxNavigation %}
+{% for block in entry.linkBoxGrid %}
 <section>
-    <div class="container-fluid" style="background-color: {{block.color}}">
+    <div class="container-fluid {% if block.inverted %} inverted-bkg {% endif %}">
       <div class="container">
         <div class="row">
-          {% for row in block.contentBox %}
+          {% for row in block.linkBox %}
             <div class="link-box-grid col-md-4 text-center" style="margin-top:40px; margin-bottom:40px">
               <a href="{{row.link}}">
-                <div class="content-link-box" style="background-color:lightgrey ">
-                  <i class="fa fa-{{row.icon}}"></i>
-                  <p>{{row.linkText}}</p>
+                <div class="content-link-box" style="background-color:white ">
+                  <p><i class="fa fa-{{row.icon}}" style="position: relative; top: 7px;"></i>{{row.linkText}}</p>
                 </div>
               </a>
             </div>

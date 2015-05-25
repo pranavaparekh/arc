@@ -2,15 +2,21 @@
 .intro{
   width: 100%;
   background-color: #0469ac;
-  padding-top: 30px;
-  padding-bottom:30px;
+  padding-top: 50px;
+  padding-bottom:50px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .intro__headline {
-
   color:#ffffff;
   font-size: em(36);
   text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.03em;
 }
 
 .intro__lead {
@@ -20,7 +26,7 @@
 }
 
 .intro-b{
-  padding-top: 170px;
+  padding-top: 50px;
   padding-bottom:30px;
 }
 
