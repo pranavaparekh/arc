@@ -1,0 +1,21 @@
+{% if entry.textBlockMatrix %}
+  <section class="text-block-matrix">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="lede_headline text-center">Research Experience in Aerospace and Defense Sector</h3>
+          <hr class="divider-center">
+          <div class="lede_body text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aliquam, nihil veritatis necessitatibus aliquid suscipit distinctio cupiditate optio nobis non debitis possimus. Veritatis minima repellat, illo quod animi, eius natus.</div>
+        </div>
+      </div>
+      {% for block in entry.textBlockMatrix %}
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="tbm__headline">{{block.tbmHeadline}}</h4>
+          {{block.tbmContent}}
+        </div>
+      </div> <!-- repeating rows for entry.textBlockMatrix -->
+      {% endfor %}
+    </div> <!-- container -->
+  </section>
+{% endif %}
