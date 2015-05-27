@@ -1,19 +1,21 @@
 {% for block in entry.linkBoxGrid %}
-<section>
-    <div class="container-fluid {% if block.inverted %} inverted-bkg {% endif %}">
-      <div class="container">
-        <div class="row">
-          {% for row in block.linkBox %}
-            <div class="link-box-grid col-md-4 text-center" style="margin-top:40px; margin-bottom:40px">
-              <a href="{{row.link}}">
-                <div class="content-link-box" style="background-color:white ">
-                  <p><i class="fa fa-{{row.icon}}" style="position: relative; top: 7px;"></i>{{row.linkText}}</p>
-                </div>
-              </a>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-</section>
+  <section class-"link-box-grid">
+      <div class="container-fluid {% if block.inverted %} inverted-bkg {% endif %}">
+        <div class="container">
+          <div class="row">
+            {% set gridClass = (block.linkBox|length == 3) ? 'col-md-4' : 'col-md-3' %}
+            {% for row in block.linkBox %}
+              <div class="link-box-grid {{gridClass}} text-center" 
+              style="margin-top:40px; margin-bottom:40px">
+                <a href="{{row.link}}">
+                  <div class="content-link-box" style="background-color:white ">
+                    <p><i class="fa fa-{{row.icon}}" style="position: relative; top: 7px;"></i>{{row.linkText}}</p>
+                  </div> <!-- content-link-box -->
+                </a>
+              </div> <!-- link-box-grid -->
+            {% endfor %}
+          </div> <!-- row -->
+        </div> <!-- container -->
+      </div> <!-- container-fluid -->
+  </section>
 {% endfor %}
