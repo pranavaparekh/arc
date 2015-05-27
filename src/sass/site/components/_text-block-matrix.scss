@@ -6,16 +6,14 @@
 }
 
 .tbm__content-headline{
-     @extend .text-center;
+  @extend .text-center;
   text-transform: uppercase;
   color:$blue-base;
   font-weight: normal;
   font-size: 1.2em;
 }
 
-.tbm__list li{
+.tbm__list__item {
   margin-bottom: 8px;
-  i{
-    padding-right:15px;
-  } 
+  text-align: center;
 }
