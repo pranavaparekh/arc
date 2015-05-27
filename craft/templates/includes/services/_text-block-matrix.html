@@ -3,15 +3,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="lede_headline text-center">Research Experience in Aerospace and Defense Sector</h3>
-          <hr class="divider-center">
-          <div class="lede_body text-center">
-            <p>From market attractiveness assessments to periodic tracking of industry trends or evaluating sourcing opportunities in low cost countries</p>
-            <p>Aranca has executed several assignments in every major segment of the Aerospace & Defense sector, encompassing a broad range of research needs of strategy, market intelligence and supply chain teams.</p>
-          </div><!-- lede__body -->
+        {% if entry.textBlockMatrix.type('lede') %}
+          {% for block in entry.textBlockMatrix.type('lede') %}
+            <h3 class="lede_headline text-center">{{ block.ledeHeadline}}</h3>
+            <hr class="divider-center">
+            <div class="lede_body text-center">
+              {{ block.ledeBody }}
+            </div><!-- lede__body -->
+          {% endfor %}
+        {% endif %}
         </div><!-- col-md-12 -->
       </div><!-- row -->
-      {% for block in entry.textBlockMatrix %}
+      {% for block in entry.textBlockMatrix.type('textBlocks') %}
       <div class="row">
         <div class="col-md-12">
           <h4 class="tbm__headline">{{block.tbmHeadline}}</h4>
