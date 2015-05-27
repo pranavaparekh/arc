@@ -1,15 +1,17 @@
-{% set image = entry.picture.first() %}
+{% set image = entry.pictureQuote.first() %}
 {% if image %}
+<section class="picture-quote">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="picture-quote">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="picture-quote__container">
 
           <img src="{{image.getUrl()}}"/>
-          <p>{{image.quote}}</p>
+          <p class="picture-quote__text--blue">{{image.quote}}</p>
         
         </div> <!-- picture quote -->
       </div> <!-- End of col-md-6  -->
     </div> <!-- row  -->
   </div> <!-- container  -->
+</section>
 {% endif %}  
