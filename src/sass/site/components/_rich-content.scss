@@ -88,7 +88,10 @@ background-color: #2276b0;
     background-color: #fff;
     padding: 1.6rem;
     overflow-y: auto;
-    border-left: 1px solid $gray;
+    // border-left: 1px solid $gray;
+      padding-right: 6%;
+  padding-left: 7%;
+    padding-top: 66px;
   }
   
   .active { display: block; }
