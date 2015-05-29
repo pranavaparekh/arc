@@ -6,7 +6,6 @@
 }
 .assignment-examples__background{
 background: url('/assets/images/backgrounds/city-bkg-blue.jpg') no-repeat center center fixed; 
-background: url('/assets/images/backgrounds/city-bkg-blue.jpg') no-repeat center center fixed; 
 background-color: #2276b0;
 }
 
@@ -97,3 +96,21 @@ background-color: #2276b0;
   .active { display: block; }
 }
 
+/*Bannered Text*/
+
+.bannered-text__background{
+  background: url('/assets/images/backgrounds/restaurant.png');
+  // background-color:$blue-base;
+  height:280px;
+}
+
+.bannered-text__link{
+  text-decoration: underline;
+  color: white;
+  font-size: 23px;
+  text-align: center;
+  line-height: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
