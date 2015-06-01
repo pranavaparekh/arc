@@ -1,0 +1,37 @@
+.pr-featured{
+  max-width:70%;
+    margin-left: auto;
+  margin-right: auto;
+    padding-top: 75px;
+}
+.pr-featured__breadcrumb{
+  @extend .text-center;
+  color:$brand-secondary;
+  text-transform:uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom:0;
+    font-size: 0.9em;
+}
+
+.pr-featured__image
+{
+  display: block;
+}
+
+.pr-featured__headline
+{
+  @extend .text-center;
+  text-align:justify;
+  color: $blue-base;
+  font-weight: normal;
+  margin-top: -10px;
+    line-height: 39px;
+  font-size: 2em;
+  opacity: 0.5;
+}
+
+.pr-featured__content
+{
+  text-align:justify;
+  word-break: break-word;
+}

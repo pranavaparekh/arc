@@ -2,6 +2,24 @@
 /* UTILITY CLASSES */
 /* --------------- */
 
+/* Release Date Style*/
+.release-date{
+  @extend .text-center ;
+  text-transform: uppercase;
+  margin-top: -11px;
+  font-family: Arial;
+  font-size: 0.8em;
+  span{
+    color:lightgrey;
+  }
+}
+
+/* Read More - Orange*/
+.read-more{
+  color:$brand-secondary;
+  text-transform: uppercase;
+}
+
 /* Use this class to remove padding from bootstrap's grid classes*/
 .no-padding {
    padding: 0 !important;
