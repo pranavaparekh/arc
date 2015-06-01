@@ -3,15 +3,11 @@
 {% set title = "Media Center" %}
 
 {% block main %}
-  <article>
+  <article style="background-color:#F1F9FC">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3" style="background-color:lightgrey">
-          {% include "includes/_sidebar" %}
-        </div>
-        <div class="col-md-9">
-          This is the Homepage for Media Center when you enter the route /media-center
-        </div>
+        {% include "includes/media-center/_sidebar" %}
+        {% include "includes/media-center/_main" %}
       </div>
     </div>
   </article>
