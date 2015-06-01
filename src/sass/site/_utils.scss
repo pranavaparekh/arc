@@ -2,6 +2,12 @@
 /* UTILITY CLASSES */
 /* --------------- */
 
+/* Use this class to remove padding from bootstrap's grid classes*/
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
 /* Mixin to Convert Pixels to Ems*/
 
 $browser-context: $font-size-base; // Default
