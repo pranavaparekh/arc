@@ -1,3 +1,17 @@
+{% extends "layouts/_media-center-site" %}
+
+{% set docTitle = "Press Releases" %}
+
+{% block sidebar %}
+  {% include "includes/media-center/_sidebar" %}
+{% endblock %}
+{% block mainBody %}
+  {% include "includes/media-center/components/_press-release-list" %}
+{% endblock %}
+
+
+{# 
+
 <div class="col-md-3">
   <p>Group By Year</p>
 
@@ -5,10 +19,10 @@
 <ul>
   {% for year in now.year .. firstEntryEver.postDate.year %}
       <li><a href="{{siteUrl}}media-center/press-releases/{{ year }}">{{ year }}</a></li>
-{#       {% set monthEntry = craft.entries.section('pressReleases').order('postDate asc').first() %}
+      {% set monthEntry = craft.entries.section('pressReleases').order('postDate asc').first() %}
         {% for month in now.year .. year.month %}
           <li><a href="{{siteUrl}}media-center/press-releases/{{ month }}">{{ month }}</a></li>
-        {% endfor %} #}
+        {% endfor %}
   {% endfor %}
 </ul>
 </div>
@@ -42,16 +56,16 @@
 {% endfor %}
 
 
-{# Reference the category #}
+{# Reference the category
 {% set cat = craft.categories.title('Awards').first() %}
 {# Find related entries #}
-{% set entries = craft.entries.section('pressReleases').relatedTo(cat).find() %}
+{# {% set entries = craft.entries.section('pressReleases').relatedTo(cat).find() %} #}
 
 {# Print them out #}
-{% for pressRelease in entries %}
+{# {% for pressRelease in entries %}
   {{pressRelease.postDate}}
   {{pressRelease.place}}
   {{pressRelease.title}}
   {{pressRelease.excerpt}}
   {{pressRelease.pressReleasesCategory.first().title}}
-{% endfor %}
+{% endfor %} #}

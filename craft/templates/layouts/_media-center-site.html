@@ -12,6 +12,16 @@
   <main id="main" role="main">
 
     {% block main %}
+      <article style="background-color:#F1F9FC">
+        <div class="container-fluid">
+          <div class="row">
+            {% block sidebar %}
+            {% endblock %}
+            {% block mainBody %}
+            {% endblock %}
+          </div>
+        </div>
+      </article>
     {% endblock %}
 
   </main>

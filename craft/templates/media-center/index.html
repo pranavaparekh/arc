@@ -1,14 +1,10 @@
 {% extends "layouts/_media-center-site" %}
 
-{% set title = "Media Center" %}
+{% set docTitle = "Media Center" %}
 
-{% block main %}
-  <article style="background-color:#F1F9FC">
-    <div class="container-fluid">
-      <div class="row">
-        {% include "includes/media-center/_sidebar" %}
-        {% include "includes/media-center/_main" %}
-      </div>
-    </div>
-  </article>
+{% block sidebar %}
+  {% include "includes/media-center/_sidebar" %}
+{% endblock %}
+{% block mainBody %}
+  {% include "includes/media-center/_main" %}
 {% endblock %}

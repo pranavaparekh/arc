@@ -1,1 +1,10 @@
-hi press releases entry
+{% extends "layouts/_media-center-site" %}
+
+{% set docTitle = entry.title %}
+
+{% block sidebar %}
+  {% include "includes/media-center/_sidebar" %}
+{% endblock %}
+{% block mainBody %}
+  {% include "includes/media-center/components/_press-release-single" %}
+{% endblock %}
