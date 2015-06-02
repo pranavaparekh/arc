@@ -1,16 +1,29 @@
-<div class="pr-featured">
-  {% for entry in craft.entries.section('pressReleases').order('postDate desc').limit(1) %}
-    <p class="pr-featured__breadcrumb">Latest Press Release<p>
-    <h1 class="pr-featured__headline">{{entry.title}}</h1>
-    <p class="release-date"><span>Released on</span> {{entry.postDate|date("d M, Y")}}</p>
-    {% set image = entry.shortImage.first() %}
-    {% if image %}
-    <img class="pr-featured__image" src="{{image.getUrl()}}" alt="">
-    {% endif %}
-    <p class="pr-featured__excerpt">{{entry.excerpt}} <a href="{{entry.url}}" class="read-more">Read More</a>
-    </p>
-  {% endfor %}
-</div>
-<div class="pr-stories">
-  
-</div>
+{% set latestPressReleases = craft.entries.section('pressReleases').order('postDate desc').limit(5) %}
+{% set latestPressRelease = latestPressReleases.first() %}
+
+<section class="press-releases">
+  <div class="pr-featured">
+      <p class="pr-featured__breadcrumb">Latest Press Release<p>
+      <h1 class="pr-featured__headline">{{latestPressRelease.title}}</h1>
+      <p class="release-date text-center"><span>Released on</span> {{latestPressRelease.postDate|date("d M, Y")}}</p>
+      {% set image = latestPressRelease.shortImage.first() %}
+      {% if image %}
+      <img class="pr-featured__image" src="{{image.getUrl()}}" alt="">
+      {% endif %}
+      <p class="pr-featured__excerpt">{{latestPressRelease.excerpt}} <a href="{{latestPressRelease.url}}" class="read-more">Read More</a>
+      </p>
+  </div><!-- pr-featured -->
+  <div class="pr-stories inverted-white">
+    <div class="arrow-down"></div>
+    <div class="row">
+    {# Offset entries to avoid repeating latest entry #}
+    {% for entry in latestPressReleases.offset('1') %}
+      <div class="col-sm-6">
+        <h3 class="pr-stories__headline">{{entry.title}}</h3>
+        <p class="release-date--small"><span>Released on</span> {{entry.postDate|date("d M, Y")}}</p>
+      </div>
+    {% endfor %}
+    <div class="pr-cta-wrapper col-md-12 text-center"><a class="ghost-button--wide" href="#">View All Press Releases</a></div>
+    </div><!-- row -->
+  </div><!-- pr-stories -->
+</section><!-- press-releases -->

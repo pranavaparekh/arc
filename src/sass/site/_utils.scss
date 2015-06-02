@@ -2,9 +2,49 @@
 /* UTILITY CLASSES */
 /* --------------- */
 
+/* CSS Shapes */
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-top: 20px solid white;
+  margin: 0 auto;
+  position:relative;
+  top:-63px;
+
+}
+
+/* Buttons */
+
+.ghost-button {
+  display: inline-block;
+  width: 200px;
+  padding: 4px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+  background-color: #fff;
+  color: #000;
+}
+
+.ghost-button--wide{
+  @extend .ghost-button;
+  width:45%;
+}
+
 /* Release Date Style*/
 .release-date{
-  @extend .text-center ;
   text-transform: uppercase;
   margin-top: -11px;
   font-family: Arial;
@@ -12,6 +52,12 @@
   span{
     color:lightgrey;
   }
+}
+
+.release-date--small{
+  @extend .release-date;
+  font-size:0.7em; 
+  letter-spacing:0.2em;
 }
 
 /* Read More - Orange*/
