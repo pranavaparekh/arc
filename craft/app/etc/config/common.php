@@ -166,6 +166,7 @@ $configArray = array(
 		'app.etc.state.StatePersister',
 		'app.etc.templating.BaseTemplate',
 		'app.etc.templating.StringTemplate',
+		'app.etc.templating.TwigParser',
 		'app.etc.templating.twigextensions.Cache_Node',
 		'app.etc.templating.twigextensions.Cache_TokenParser',
 		'app.etc.templating.twigextensions.CraftTwigExtension',
@@ -415,6 +416,7 @@ $configArray = array(
 		'app.tasks.LocalizeRelationsTask',
 		'app.tasks.ResaveAllElementsTask',
 		'app.tasks.ResaveElementsTask',
+		'app.tasks.UpdateElementSlugsAndUrisTask',
 		'app.tests.BaseTest',
 		'app.tests.TestApplication',
 		'app.tests.helpers.StubHelper',
@@ -447,6 +449,7 @@ $configArray = array(
 		'app.variables.AppVariable',
 		'app.variables.AssetSourceTypeVariable',
 		'app.variables.BaseComponentTypeVariable',
+		'app.variables.CategoryGroupsVariable',
 		'app.variables.ConfigVariable',
 		'app.variables.CpVariable',
 		'app.variables.CraftVariable',
@@ -732,7 +735,6 @@ $components['log']['routes'] = array(
 $components['httpSession']['autoStart']   = true;
 $components['httpSession']['cookieMode']  = 'only';
 $components['httpSession']['class']       = 'Craft\HttpSessionService';
-$components['httpSession']['sessionName'] = 'CraftSessionId';
 
 $components['userSession']['class'] = 'Craft\UserSessionService';
 $components['userSession']['allowAutoLogin']  = true;

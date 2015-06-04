@@ -676,6 +676,9 @@ Field = Garnish.Base.extend(
 			Craft.initUiElements($body);
 			Garnish.$bod.append(footHtml);
 		}
+
+		// Firefox might have been sleeping on the job.
+		this.$typeSettingsContainer.trigger('resize');
 	},
 
 	getParsedFieldTypeHtml: function(html)

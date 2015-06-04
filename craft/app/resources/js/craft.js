@@ -1961,7 +1961,7 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 			source:              this.instanceState.selectedSource,
 			status:              this.status,
 			viewState:           this.getSelectedSourceState(),
-			search:              (this.$search ? this.$search.val() : null)
+			search:              (this.searching ? this.$search.val() : null)
 		};
 
 		// Possible that the order/sort isn't entirely accurate if we're sorting by Score
@@ -2717,8 +2717,16 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 
 	getDefaultSort: function()
 	{
-		// Default to whatever's first
-		return [this.$sortAttributesList.find('a:first').data('attr'), 'asc'];
+		// Does the source specify what to do?
+		if (Garnish.hasAttr(this.$source, 'data-default-sort'))
+		{
+			return this.$source.attr('data-default-sort').split(':');
+		}
+		else
+		{
+			// Default to whatever's first
+			return [this.$sortAttributesList.find('a:first').data('attr'), 'asc'];
+		}
 	},
 
 	getViewModesForSource: function()
@@ -4506,6 +4514,10 @@ Craft.AdminTable = Garnish.Base.extend(
  */
 Craft.AssetIndex = Craft.BaseElementIndex.extend(
 {
+	$includeSubfoldersContainer: null,
+	$includeSubfoldersCheckbox: null,
+	showingIncludeSubfoldersCheckbox: false,
+
 	$uploadButton: null,
 	$uploadInput: null,
 	$progressBar: null,
@@ -5345,6 +5357,74 @@ Craft.AssetIndex = Craft.BaseElementIndex.extend(
 	_getFolderIdFromSourceKey: function(sourceKey)
 	{
 		return sourceKey.split(':')[1];
+	},
+
+	onStartSearching: function()
+	{
+		// Does this source have subfolders?
+		if (this.$source.siblings('ul').length)
+		{
+			if (this.$includeSubfoldersContainer === null)
+			{
+				var id = 'includeSubfolders-'+Math.floor(Math.random()*1000000000);
+
+				this.$includeSubfoldersContainer = $('<div style="margin-bottom: -23px; opacity: 0;"/>').insertAfter(this.$search);
+				var $subContainer = $('<div style="padding-top: 5px;"/>').appendTo(this.$includeSubfoldersContainer);
+				this.$includeSubfoldersCheckbox = $('<input type="checkbox" id="'+id+'" class="checkbox"/>').appendTo($subContainer);
+				$('<label class="light smalltext" for="'+id+'"/>').text(' '+Craft.t('Search in subfolders')).appendTo($subContainer);
+
+				this.addListener(this.$includeSubfoldersCheckbox, 'change', function()
+				{
+					this.setSelecetedSourceState('includeSubfolders', this.$includeSubfoldersCheckbox.prop('checked'));
+					this.updateElements();
+				});
+			}
+			else
+			{
+				this.$includeSubfoldersContainer.velocity('stop');
+			}
+
+			var checked = this.getSelectedSourceState('includeSubfolders', false)
+			this.$includeSubfoldersCheckbox.prop('checked', checked);
+
+			this.$includeSubfoldersContainer.velocity({
+				marginBottom: 0,
+				opacity: 1
+			}, 'fast');
+
+			this.showingIncludeSubfoldersCheckbox = true;
+		}
+
+		this.base();
+	},
+
+	onStopSearching: function()
+	{
+		if (this.showingIncludeSubfoldersCheckbox)
+		{
+			this.$includeSubfoldersContainer.velocity('stop');
+
+			this.$includeSubfoldersContainer.velocity({
+				marginBottom: -23,
+				opacity: 0
+			}, 'fast');
+
+			this.showingIncludeSubfoldersCheckbox = false;
+		}
+
+		this.base();
+	},
+
+	getControllerData: function()
+	{
+		var data = this.base();
+
+		if (this.showingIncludeSubfoldersCheckbox && this.$includeSubfoldersCheckbox.prop('checked'))
+		{
+			data.criteria.includeSubfolders = true;
+		}
+
+		return data;
 	},
 
 	/**
@@ -6895,11 +6975,12 @@ Craft.CategorySelectInput = Craft.BaseElementSelectInput.extend(
 		}
 
 		var data = {
-			categoryIds: selectedCategoryIds,
-			locale:      elements[0].locale,
-			id:          this.settings.id,
-			name:        this.settings.name,
-			limit:       this.settings.limit,
+			categoryIds:    selectedCategoryIds,
+			locale:         elements[0].locale,
+			id:             this.settings.id,
+			name:           this.settings.name,
+			limit:          this.settings.limit,
+			selectionLabel: this.settings.selectionLabel
 		};
 
 		Craft.postActionRequest('elements/getCategoriesInputHtml', data, $.proxy(function(response, textStatus)
@@ -7421,6 +7502,7 @@ Craft.EditableTable.Row = Garnish.Base.extend(
 				if (col.type == 'singleline' || col.type == 'number')
 				{
 					this.addListener($textarea, 'keypress', { type: col.type }, 'validateKeypress');
+					this.addListener($textarea, 'textchange', { type: col.type }, 'validateValue');
 				}
 
 				textareasByColId[colId] = $textarea;
@@ -7500,6 +7582,36 @@ Craft.EditableTable.Row = Garnish.Base.extend(
 		))
 		{
 			ev.preventDefault();
+		}
+	},
+
+	validateValue: function(ev)
+	{
+		var safeValue;
+
+		if (ev.data.type == 'number')
+		{
+			// Only grab the number at the beginning of the value (if any)
+			var match = ev.currentTarget.value.match(/^\s*(-?[\d\.]*)/);
+
+			if (match !== null)
+			{
+				safeValue = match[1];
+			}
+			else
+			{
+				safeValue = '';
+			}
+		}
+		else
+		{
+			// Just strip any newlines
+			safeValue = ev.currentTarget.value.replace(/[\r\n]/g, '');
+		}
+
+		if (safeValue !== ev.currentTarget.value)
+		{
+			ev.currentTarget.value = safeValue;
 		}
 	},
 
@@ -7909,18 +8021,6 @@ Craft.EntryIndex = Craft.BaseElementIndex.extend(
 		}
 
 		return this.base();
-	},
-
-	getDefaultSort: function()
-	{
-		if (Garnish.hasAttr(this.$source, 'data-has-structure'))
-		{
-			return ['structure', 'asc'];
-		}
-		else
-		{
-			return ['postDate', 'desc'];
-		}
 	},
 
 	onSelectSource: function()
