@@ -8,6 +8,19 @@
   font-family: Arial;
   font-size: 0.8em;
   span{
-    color:lightgrey;
+    color:$gray;
   }
+}
+
+.list__headline{
+  color: $blue-base;
+  font-weight: normal;
+  line-height: 39px;
+  font-size: 2em;
+  opacity: 0.9;
+}
+
+.list__excerpt{
+  text-align:justify;
+  word-break: break-word;
 }

@@ -7,13 +7,14 @@
     <p class="mc-masthead__tagline">News About Aranca in the media</p>
   </div>
 </section>
+
 {% set latestMediaCoverageList = craft.entries.section('mediaCoverage').order('postDate desc') %}
 {% for entry in latestMediaCoverageList %}
   <div class="col-md-12">
     <div class="media-coverage-list">
       <p class="release-date--list">{{entry.place}}, {{entry.postDate|date("d M, Y")}}</p>
-      <h1 class="pr-single__headline"><a href="{{entry.url}}">{{entry.title}}</a></h1>
-      <p class="pr-featured__excerpt">{{entry.excerpt}}</p>
+      <h1 class="list__headline"><a href="{{entry.url}}">{{entry.title}}</a></h1>
+      <p class="list__excerpt">{{entry.excerpt}}</p>
     </div>
   </div>
 {% endfor %}
