@@ -1,1 +1,10 @@
-hi media coverage list
+{% extends "layouts/_media-center-site" %}
+
+{% set docTitle = "Media Coverage" %}
+
+{% block sidebar %}
+  {% include "includes/media-center/_sidebar" %}
+{% endblock %}
+{% block mainBody %}
+  {% include "includes/media-center/components/_media-coverage-list" %}
+{% endblock %}

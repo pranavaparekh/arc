@@ -1,0 +1,23 @@
+{# Main column #}
+<div class="col-md-7 no-padding" style="background-color:white">
+
+<section class="media-coverage-masthead">
+  <div class="mc-masthead__content">
+    <h2 class="mc-masthead__heading no-padding">Media Coverage</h2>
+    <p class="mc-masthead__tagline">News About Aranca in the media</p>
+  </div>
+</section>
+{% set latestMediaCoverageList = craft.entries.section('mediaCoverage').order('postDate desc') %}
+{% for entry in latestMediaCoverageList %}
+  <div class="col-md-12">
+    <div class="media-coverage-list">
+      <p class="release-date--list">{{entry.place}}, {{entry.postDate|date("d M, Y")}}</p>
+      <h1 class="pr-single__headline"><a href="{{entry.url}}">{{entry.title}}</a></h1>
+      <p class="pr-featured__excerpt">{{entry.excerpt}}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{# Blank column on the right #}
+<div class="col-md-2" style="background-color:#F1F9FC">
+</div>

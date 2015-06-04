@@ -1,0 +1,13 @@
+.media-coverage-list{
+  padding: 5%;
+  border-bottom: 1px solid $gray;
+}
+
+.release-date--list{
+    text-transform: uppercase;
+  font-family: Arial;
+  font-size: 0.8em;
+  span{
+    color:lightgrey;
+  }
+}
