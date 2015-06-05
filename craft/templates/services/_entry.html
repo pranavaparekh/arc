@@ -1,5 +1,7 @@
 {% extends "layouts/_site" %}
 
+{% set title = entry.title %}
+
 {% block main %}
     {% include "services/_types/" ~ entry.type %}
 {% endblock %}
