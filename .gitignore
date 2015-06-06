@@ -10,6 +10,8 @@ node_modules
 *.swp
 *.vi
 *~
+.tags
+tags
 
 # Craft runtime and backups folders
 # ----------------------------------------------------------------------
