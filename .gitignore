@@ -12,6 +12,7 @@ node_modules
 *~
 .tags
 tags
+.tags_sorted_by_file
 
 # Craft runtime and backups folders
 # ----------------------------------------------------------------------
