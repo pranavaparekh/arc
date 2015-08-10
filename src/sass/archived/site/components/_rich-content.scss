@@ -1,0 +1,116 @@
+/*Assignment Examples*/
+
+.rich-content{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+.assignment-examples__background{
+background: url('/assets/images/backgrounds/city-bkg-blue.jpg') no-repeat center center fixed; 
+background-color: #2276b0;
+}
+
+.assignment-examples__icon{
+  padding-top: 65px; 
+  padding-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Vertical Tabs*/
+
+.vertical-tabs__subheading{
+  color:$orange-secondary;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+
+.badge {
+  background-color: #777;
+}
+
+.tabs-left-vertical { margin-top: 3rem; }
+
+.nav-tabs-vertical {
+  float: left;
+  border-bottom: 0;
+  padding-top:6%;
+  width: 35%;
+
+  li {
+    float: none;
+    margin: 0;
+    border-bottom: 1px solid $gray;
+    
+    a {
+      margin-right: 0;
+      border: 0;
+      background-color: white;
+      color:$gray-dark;
+      text-transform: uppercase;
+      padding-bottom:20px;
+      padding-top:20px;
+      font-size: 22px;
+      
+      
+      &:hover {
+        color:$blue-base;
+      }
+    } 
+  }
+}
+
+.active a{
+    color:$blue-base;   
+  }
+
+
+.tab-content-vertical {
+  margin-left: 45px;
+
+  h2{
+  color:white;
+  background-color:$blue-base;
+  text-transform: uppercase;
+  text-align:center;
+  width: 60%;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+  .tab-pane-vertical {
+    display: none;
+    background-color: #fff;
+    padding: 1.6rem;
+    overflow-y: auto;
+    // border-left: 1px solid $gray;
+      padding-right: 6%;
+  padding-left: 7%;
+    padding-top: 66px;
+  }
+  
+  .active { display: block; }
+}
+
+/*Bannered Text*/
+
+.bannered-text__background{
+  background: url('/assets/images/backgrounds/restaurant.png');
+  // background-color:$blue-base;
+  height:280px;
+}
+
+.bannered-text__link{
+  text-decoration: underline;
+  color: white;
+  font-size: 23px;
+  text-align: center;
+  line-height: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}

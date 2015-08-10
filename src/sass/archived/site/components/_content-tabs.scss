@@ -1,0 +1,131 @@
+// Horizontal Tabs
+.tab-content {
+  padding: 12px;
+  text-shadow: none !important;
+}
+.tab-content a {
+  text-decoration: underline;
+}
+.tab-content .btn {
+  text-decoration: none;
+}
+.tab-content p:last-child {
+  margin-bottom: 0;
+}
+.tab-content h1, .tab-content h2, .tab-content h3, .tab-content h4, .tab-content h5, .tab-content h6 {
+  margin-top: 0;
+}
+
+.tab-pane > *:last-child {
+  margin-bottom: 0;
+}
+
+.nav-tabs > li:focus {
+  outline: none;
+}
+
+.tabs-below .tab-content {
+  border-bottom: 0;
+}
+.tabs-below .nav-tabs {
+  border-bottom: 0;
+}
+.tabs-below .nav-tabs > li {
+  margin-bottom: 0;
+  margin-top: -1px;
+}
+.tabs-below .nav-tabs > li > a {
+  border-top: 0;
+}
+.tabs-below .nav-tabs > li.active > a, .tabs-below .nav-tabs > li > a:hover {
+  border-bottom: 1px solid;
+}
+
+.tabs-left > .nav-tabs {
+  margin-right: 0;
+  border-right: 0;
+}
+.tabs-left > .nav-tabs > li.active > a {
+  border: 0;
+  margin-right: 0;
+}
+.tabs-left > .nav-tabs > li > a {
+  border: 0;
+}
+.tabs-left > .nav-tabs > li > a:hover {
+  border: none;
+  margin-right: 0;
+}
+.tabs-left .tab-content {
+  border-top: none;
+}
+
+.tabs-right > .nav-tabs {
+  margin-left: 0;
+  border-left: 0;
+}
+.tabs-right > .nav-tabs > li.active > a {
+  border: 0;
+  margin-left: 0;
+}
+.tabs-right > .nav-tabs > li > a:hover {
+  border: none;
+  margin-left: 0;
+}
+.tabs-right .tab-content {
+  border-top: none;
+}
+
+.nav-pills > li > a {
+  border-radius: 0;
+  transition: background 0.2s;
+}
+
+.tab-pills .tab-content {
+  border-top: none;
+}
+
+
+/* - Tabs Override - */
+.nav-tabs {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.nav-tabs > li > a {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.nav-tabs > li > a:hover {
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #ffffff;
+}
+.nav-tabs > li > a:hover {
+  background: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active a:focus {
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-left-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+  background: #ffffff;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tabs-below .nav-tabs {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.tabs-below .nav-tabs > li > a {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.tabs-below .nav-tabs > li.active > a, .tabs-below .nav-tabs > li > a:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  border-top: 0;
+}
+.tabs-below .tab-content {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,33 @@
+.masthead{
+  position:relative; 
+  min-height:226px;
+  color:white;
+  text-transform: uppercase;
+}
+
+.mc-masthead{
+  @extend .masthead;
+  background-image:url('/assets/images/backgrounds/mc-masthead-bkg.jpg');
+}
+
+.media-coverage-masthead{
+  @extend .masthead;
+  background-image:url('/assets/images/backgrounds/media-coverage-masthead.jpg');
+  background-size:100% 100%;
+}
+
+.mc-masthead__content{
+  position:absolute;
+  top: 65px;
+  left: 58px;
+}
+
+.mc-masthead__heading{
+  font-weight: normal;
+  font-size: 39px;
+  border-bottom: 1px solid;
+}
+
+.mc-masthead__tagline{
+  font-size: 20px;
+}

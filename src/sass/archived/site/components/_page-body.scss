@@ -1,0 +1,17 @@
+/* Page Body */
+.page-body-headline {
+  @extend .row;
+  @extend .col-md-12;
+  margin-top: 50px;
+  margin-bottom:20px;  
+}
+
+.page-body-content {
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+
+.page-body-lead {
+  @extend .lead;
+  margin-bottom:40px;
+}

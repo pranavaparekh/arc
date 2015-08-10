@@ -1,0 +1,64 @@
+/* Intro Styles*/
+.intro{
+  width: 100%;
+  background-color: #0469ac;
+  padding-top: 50px;
+  padding-bottom:50px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.intro__headline {
+  color:#ffffff;
+  font-size: em(36);
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  text-shadow: 5px 7px 29px #0067A7;
+}
+
+.intro__lead {
+  @extend %lead;
+  margin-bottom:20px;
+  color:#ffffff;
+}
+
+.intro-b{
+  padding-top: 50px;
+  padding-bottom:30px;
+}
+
+.intro-b__image
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:10px;
+}
+
+.intro-b__breadcrumb{
+  @extend .text-center;
+  color:$brand-secondary;
+  text-transform:uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom:0;
+}
+
+.intro-b__headline
+{
+  @extend .text-center;
+  text-align:justify;
+  text-transform: uppercase;
+  color: $blue-base;
+  font-weight: normal;
+  margin-top: -10px;
+}
+
+.intro-b__content
+{
+
+  text-align:justify;
+}

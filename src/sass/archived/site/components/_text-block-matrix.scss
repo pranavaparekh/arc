@@ -1,0 +1,19 @@
+.tbm__headline{
+  @extend .text-center;
+  color:$blue-base;
+  font-weight: normal;
+  font-size: 2em;
+}
+
+.tbm__content-headline{
+  @extend .text-center;
+  text-transform: uppercase;
+  color:$blue-base;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.tbm__list__item {
+  margin-bottom: 8px;
+  text-align: center;
+}

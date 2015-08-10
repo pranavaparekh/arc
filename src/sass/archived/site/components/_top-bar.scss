@@ -1,0 +1,11 @@
+$top-bar-height: 2.4em;
+
+.top-bar {
+  height: $top-bar-height;
+  background: #f3f3f3;
+}
+
+.icon-link-list > ul >li {
+  line-height: $top-bar-height;
+  padding-right: 15px;
+}
