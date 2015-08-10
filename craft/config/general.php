@@ -35,12 +35,11 @@ return array(
   // If you wish to access the control panel via a different URL
   // or change your page trigger for pagination, you can do so here.
   // 'cpTrigger'       => 'arancadmin',
-  'stanly' => array(
+  'sandy' => array(
     'devMode' => true,
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
     'assetsImagesUrl' => '/assets/images',
-
   ),
   'amite' => array(
     'devMode' => true,
@@ -53,6 +52,5 @@ return array(
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
     'assetsImagesUrl' => '/assets/images',
-
   ),
 );
