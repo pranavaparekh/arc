@@ -179,8 +179,15 @@ class Image
 					$width = round($width * $scale);
 					$height = round($height * $scale);
 
-					$svg = preg_replace(ImageHelper::SVG_WIDTH_RE, "\${1}{$width}px\"", $svg);
-					$svg = preg_replace(ImageHelper::SVG_HEIGHT_RE, "\${1}{$height}px\"", $svg);
+                    if (preg_match(ImageHelper::SVG_WIDTH_RE, $svg) && preg_match(ImageHelper::SVG_HEIGHT_RE, $svg))
+                    {
+                        $svg = preg_replace(ImageHelper::SVG_WIDTH_RE, "\${1}{$width}px\"", $svg);
+                        $svg = preg_replace(ImageHelper::SVG_HEIGHT_RE, "\${1}{$height}px\"", $svg);
+                    }
+                    else
+                    {
+                        $svg = preg_replace(ImageHelper::SVG_TAG_RE, "\${1} width=\"{$width}px\" height=\"{$height}px\" \${2}", $svg);
+                    }
 				}
 			}
 
@@ -451,15 +458,16 @@ class Image
 	 */
 	public function saveAs($targetPath, $sanitizeAndAutoQuality = false)
 	{
-		$extension = IOHelper::getExtension($targetPath);
+		$extension = StringHelper::toLowerCase(IOHelper::getExtension($targetPath));
 		$options = $this->_getSaveOptions(false, $extension);
-		$targetPath = IOHelper::getFolderName($targetPath).IOHelper::getFileName($targetPath, false).'.'.$extension;
+		$targetPath = IOHelper::getFolderName($targetPath).IOHelper::getFileName($targetPath, false).'.'.IOHelper::getExtension($targetPath);
 
 		if (($extension == 'jpeg' || $extension == 'jpg' || $extension == 'png') && $sanitizeAndAutoQuality)
 		{
 			clearstatcache();
 			$originalSize = IOHelper::getFileSize($this->_imageSourcePath);
-			$this->_autoGuessImageQuality($targetPath, $originalSize, $extension, 0, 200);
+			$tempFile = $this->_autoGuessImageQuality($targetPath, $originalSize, $extension, 0, 200);
+			IOHelper::move($tempFile, $targetPath, true);
 		}
 		else
 		{
@@ -604,7 +612,7 @@ class Image
 	 * @param     $maxQuality
 	 * @param int $step
 	 *
-	 * @return bool
+	 * @return string $path the resulting file path
 	 */
 	private function _autoGuessImageQuality($tempFileName, $originalSize, $extension, $minQuality, $maxQuality, $step = 0)
 	{
@@ -636,7 +644,7 @@ class Image
 
 			// Generate one last time.
 			$this->_image->save($tempFileName, $this->_getSaveOptions($midQuality));
-			return true;
+			return $tempFileName;
 		}
 
 		$step++;

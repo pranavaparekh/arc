@@ -197,8 +197,7 @@ class EntriesController extends BaseEntriesController
 		}
 		else
 		{
-			$variables['docTitle'] = Craft::t($variables['entry']->title);
-			$variables['title'] = Craft::t($variables['entry']->title);
+			$variables['docTitle'] = $variables['title'] = $variables['entry']->title;
 
 			if (craft()->getEdition() >= Craft::Client && $variables['entry']->getClassHandle() != 'Entry')
 			{
@@ -753,7 +752,7 @@ class EntriesController extends BaseEntriesController
 				{
 					$variables['entry'] = craft()->entries->getEntryById($variables['entryId'], $variables['localeId']);
 
-					if (craft()->getEdition() == Craft::Pro)
+					if ($variables['entry'] && craft()->getEdition() == Craft::Pro)
 					{
 						$versions = craft()->entryRevisions->getVersionsByEntryId($variables['entryId'], $variables['localeId'], 1, true);
 

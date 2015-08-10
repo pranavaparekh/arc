@@ -1026,7 +1026,7 @@ body #redactor-modal-overlay { filter: alpha(opacity=100); -moz-opacity: 1; opac
 
 .modal.fitted { width: auto; height: auto; min-width: 0; min-height: 0; }
 
-.modal .resizehandle { position: absolute; z-index: 1; bottom: 0; width: 24px; height: 24px; background: no-repeat 50% 50%; cursor: move; }
+.modal .resizehandle { position: absolute; z-index: 1; bottom: 0; width: 24px; height: 24px; background: no-repeat 50% 50%; cursor: nwse-resize; }
 body.ltr .modal .resizehandle { right: 0; }
 body.rtl .modal .resizehandle { left: 0; }
 body.ltr .modal .resizehandle { background-image: url(../images/resizehandle.png); }

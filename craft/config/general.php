@@ -23,6 +23,7 @@ return array(
       'assetsBaseUrl' => '/assets/uploads',
       'assetsBasePath' => './assets/uploads',
     ),
+    'backupDbOnUpdate' => false,
   ),
   'cacheBustValue' => '20121017',
   // Create a custom variable that we can use for an environment conditional
