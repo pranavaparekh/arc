@@ -1,7 +1,21 @@
 
-{% include '_components/global/_sidemenu' %}
-<h1 id="logo">
-  <img src="" alt="">
-</h1>
-{% include '_components/global/_search' %}
-{% include '_components/global/_main_nav' %}
+<header class="site-header container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        {% include '_components/global/_sidemenu' %}
+        <h1>
+          <img id="logo" src="{{ craft.config.assetsImagesUrl }}/logo.png" alt="Aranca Logo">
+        </h1>
+      </div>
+      <div class="col-sm-6">
+        {% include '_components/global/_search' %}
+        {% include '_components/global/_main_nav' %}
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
