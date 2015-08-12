@@ -1,4 +1,4 @@
-{% extends "layouts/_base" %}
+{% extends "base_layouts/_base" %}
 
 {% block head %}
   {{parent()}}
@@ -7,9 +7,13 @@
   <link rel="stylesheet" href="{{craft.config.assetsCssUrl}}/main.css">
 {% endblock %}
 
+{% block demo %}
+    Here is some new demo content
+{% endblock %}
+
 {% block body %}
-  {% include "includes/_top-bar.html" %}
-  {% include "includes/_nav-bar.html" %}
+  {# include "includes/_top-bar.html" #}
+  {# include "includes/_nav-bar.html" #}
 
   <main id="main" role="main">
 
