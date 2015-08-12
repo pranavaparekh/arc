@@ -1,6 +1,6 @@
 body {
   font-size: $font-size-base+px;
-  font-family: $font-family;
+  font-family: $font-family-sans-serif;
   font-weight: 200;
   color:$gray-base;
   line-height: 1.5;
@@ -17,7 +17,7 @@ ol, ul {
 
 .lede__headline {
   font-size: 2em;
-  color: $black-base;
+  /* color: $black-base; */
 }
 
 .lede__headline--caps {
@@ -29,7 +29,7 @@ ol, ul {
 
 .lede__body {
   font-size: 1.3em;
-  color: $black-base-lighter;
+  /* color: $black-base-lighter; */
 }
 
 .lede__body p {
