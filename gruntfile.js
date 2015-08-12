@@ -11,23 +11,37 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                  style: 'expanded', 
+                  style: 'expanded',
                   // nested , compact , compressed , expanded
                   sourcemap: 'auto',
                 },
                 files: {
-                    'public/assets/css/main.css': 'src/sass/site/main.scss',
-                    'public/assets/css/media-center.css': 'src/sass/site/media-center.scss'
+                    '<%= pkg.dest %>/css/main.css': '<%= pkg.src %>/main.scss',
                 }
             }
+        },
+
+        browserSync: {
+          bsFiles: {
+            src : [
+              '<%= pkg.dest %>/css/*.css',
+              '<%= pkg.dest %>/js/*.js',
+            ]
+          },
+          options: {
+            watchTask: true,
+            proxy: "aranca.craft.dev"
+          }
         },
     });
 
     //Load NPM tasks
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'watch']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 
 };

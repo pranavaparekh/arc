@@ -1,10 +1,16 @@
 {
   "name": "Aranca",
+  "src": "src/sass/site",
+  "dest": "public/assets/",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-sass": "latest",
+    "grunt-browser-sync": "latest",
     "grunt-contrib-watch": "latest"
+  },
+  "dependencies": {
+    "grunt-contrib-concat": "^0.5.1"
   }
 }
