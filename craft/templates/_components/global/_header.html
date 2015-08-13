@@ -1,23 +1,25 @@
 
 <header class="site-header container-fluid">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        {% include '_components/global/_sidemenu' %}
-        <img id="logo" src="{{ craft.config.assetsImagesUrl }}/logo.png" alt="Aranca Logo">
-      </div><!-- end col-sm-6 -->
-      <div class="col-sm-9">
-        <div class="row">
-          <div class="col-sm-3">
-            {% include '_components/global/_search' %}
-          </div><!-- end col-sm-2 -->
-          <div class="col-sm-6">
-            {% include '_components/global/_main_nav' %}
-          </div><!-- end col-sm-4 -->
-        </div><!-- end row -->
-      </div><!-- end .col-sm-6 -->
-    </div><!-- end row -->
-  </div><!-- end container -->
+  <div class="row" style="line-height: 70px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          {% include '_components/global/_sidemenu' %}
+          <img id="logo" src="{{ craft.config.assetsImagesUrl }}/logo.png" alt="Aranca Logo">
+        </div><!-- end col-sm-6 -->
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-4">
+              {% include '_components/global/_search' %}
+            </div><!-- end col-sm-2 -->
+            <div class="col-sm-8">
+              {% include '_components/global/_main_nav' %}
+            </div><!-- end col-sm-4 -->
+          </div><!-- end row -->
+        </div><!-- end .col-sm-6 -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div>
 </header>
 
 
