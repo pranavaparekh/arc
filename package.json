@@ -1,6 +1,7 @@
 {
   "name": "Aranca",
   "src": "src/sass/site",
+  "components": "src/sass/_components",
   "dest": "public/assets/",
   "version": "0.0.1",
   "private": true,
