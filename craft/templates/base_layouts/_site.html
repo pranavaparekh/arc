@@ -42,11 +42,7 @@
         siteLoader: 'on'
     };
   </script>
-  <script src="{{craft.config.assetsJsUrl}}/jquery.js"></script>
-  <script src="{{craft.config.assetsJsUrl}}/bootstrap.js"></script>
-  <script src="{{craft.config.assetsJsUrl}}/images-loaded-2.js"></script>
-  <script src="{{craft.config.assetsJsUrl}}/flexslider.js"></script>
-  <script src="{{craft.config.assetsJsUrl}}/jquery.flex-images.js"></script>
-  <script src="{{craft.config.assetsJsUrl}}/site.js"></script>
+  {% includeJsFile "/assets/js/jquery.js" first %}
+  {% includeJsFile "/assets/js/site.js"  %}
 
 {% endblock %}
