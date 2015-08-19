@@ -1,58 +1,94 @@
 {% set whyarcCSS %}
 
+  @media(min-width: {{ screensm }}) {
+    .why-arc {
+      width: 50%;
+      float: left;
+    }
+  }
 
+  .why-arc__headline {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 40px;
+  }
+
+  .why-arc__headline > span {
+    font-weight: 700;
+  }
+
+  .why-arc__subtext {
+    font-size: 24px;
+  }
+
+  .red-bkg {
+    background: {{redPrimary}};
+    padding: 80px 60px;
+    color: {{ttPrimary}}
+  }
+
+  .white-bkg {
+    background: #FFFFFF;
+    padding: 50px 50px;
+  }
+
+  .why-arc_stat_col {
+    text-align: center;
+  }
+
+  .why-arc__stat {
+    font-size: 24px;
+    color: {{ttOrange}};
+  }
+
+  .why-arc__stat__content {
+    font-size: 18px;
+    color: {{ttOrange}};
+  }
 
 {% endset %}
 
 {% includeCss whyarcCSS %}
 
 
-<section class="why-arc container-fluid">
+<section class="why-arc container-fluid red-bkg">
   <div class="row">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <h3 class="why-arc__headline">Why Clients<br><span>Choose</span><br>Aranca</h3>
-          <p class="why-arc__subtext">Our track-record and depth of our valuation experience</p>
-        </div>
-        <!-- end left col -->
-
-        <div class="col-sm-6">
-
-          <div class="row">
-            <div class="col-sm-6">
-              <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
-              <p class="why-arc__stat">3000+</p>
-              <p class="why-arc__stat__content">Valuation Opinions</p>
-              <p class="why-arc__stat__subcontent">delivered to-date</p>
-            </div>
-
-            <div class="col-sm-6">
-              <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
-              <p class="why-arc__stat">1000+</p>
-              <p class="why-arc__stat__content">businesses</p>
-              <p class="why-arc__stat__subcontent">valued to-date</p>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-sm-6">
-              <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
-              <p class="why-arc__stat">50+</p>
-              <p class="why-arc__stat__content">experienced valuation analysts</p>
-              <p class="why-arc__stat__subcontent">including senior ASA, CPA, CFA credentialed valuation experts</p>
-            </div>
-
-            <div class="col-sm-6">
-              <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
-              <p class="why-arc__stat">20+</p>
-              <p class="why-arc__stat__content">countries</p>
-              <p class="why-arc__stat__subcontent">in which we have valued companies</p>
-            </div>
-          </div>
-
-        </div> <!-- end col-sm-6 -->
-      </div><!-- end row -->
-    </div><!-- end container -->
+    <h3 class="why-arc__headline">Why Clients<br><span>Choose</span><br>Aranca</h3>
+    <p class="why-arc__subtext">Our track-record and depth of our valuation experience</p>
   </div><!-- end row -->
-</section>
+</section><!-- end left col -->
+
+
+<section class="why-arc container-fluid white-bkg">
+  <div class="row">
+    <div class="col-sm-6 why-arc_stat_col">
+      <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
+      <p class="why-arc__stat">3000+</p>
+      <p class="why-arc__stat__content">Valuation Opinions</p>
+      <p class="why-arc__stat__subcontent">Delivered to-date</p>
+    </div>
+
+    <div class="col-sm-6 why-arc_stat_col">
+      <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
+      <p class="why-arc__stat">1000+</p>
+      <p class="why-arc__stat__content">Businesses</p>
+      <p class="why-arc__stat__subcontent">Valued to-date</p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 why-arc_stat_col">
+      <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
+      <p class="why-arc__stat">50+</p>
+      <p class="why-arc__stat__content">Experienced valuation analysts</p>
+      <p class="why-arc__stat__subcontent">Including senior ASA, CPA, CFA credentialed valuation experts</p>
+    </div>
+
+    <div class="col-sm-6 why-arc_stat_col">
+      <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
+      <p class="why-arc__stat">20+</p>
+      <p class="why-arc__stat__content">Countries</p>
+      <p class="why-arc__stat__subcontent">In which we have valued companies</p>
+    </div>
+  </div><!-- end row -->
+</section><!-- end right col -->
