@@ -1,12 +1,66 @@
-<section class="svc__masthead container-fluid">
+
+{% set svcmastheadCss %}
+  .svc-masthead {
+    background-color: {{ bgPrimary }};
+    color: {{ ttPrimary }};
+
+  }
+
+  @media(min-width: {{ screenmd }}) {
+    .svc-masthead {
+      background: url('/assets/uploads/banners/services/va-masthead-bkg.jpg') no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+       padding:20px 0;
+    }
+
+
+  }
+
+  .svc-masthead__headline {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .svc-masthead__subheadline {
+    font-size: 16px;
+  }
+
+  .svc-masthead__breadcrumb {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-top:8px;
+  }
+hr {
+  width: 50%;
+  margin: 0%;
+}
+  .svc-masthead__btn {
+    color: #ffffff;
+    background-color: {{ bgPrimary }};
+    margin-left: 45%;
+    margin-top:-9%;
+  }
+
+{% endset %}
+
+{% includeCss svcmastheadCss %}
+
+<section class="svc-masthead container-fluid">
+  <div class="row">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-          <h1 class="svc__masthead__headline">{{ entry.pageHeadline }}</h1>
-          <p class="svc__masthead__subheadline">{{ entry.pageSubheadline }}</p>
-          <p class="svc__masthead__breadcrumb">{{ entry.servicesCategory.first() }}</p>
+          <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+          <p class="svc-masthead__subheadline">{{ entry.pageSubheadline }}</p>
+          <hr/>
+          <p class="svc-masthead__breadcrumb">{{ entry.servicesCategory.first() }}</p>
 
-      </div>
-    </div>
-  </div>
+          <p><button type="button" class="btn btn-default svc-masthead__btn"><i class="fa fa-envelope"></i>  &nbsp;SEND US YOUR QUERIES</button></p>
+      </div> <!-- end col-sm-12 -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div> <!-- end row -->
 </section>

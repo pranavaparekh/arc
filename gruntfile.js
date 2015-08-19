@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                   sourcemap: 'auto',
                 },
                 files: {
-                    '<%= pkg.dest %>/css/main.css': '<%= pkg.src %>/main.scss',
+                    '<%= pkg.dest %>/css/main.css': '<%= pkg.src %>/main.scss'
                 }
             }
         },

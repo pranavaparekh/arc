@@ -1,5 +1,16 @@
 {% extends "base_layouts/_base" %}
 
+{% set bgPrimary = '#034883' %}
+{% set ttPrimary = '#ffffff' %}
+
+{# Responsive Breakpoints #}
+
+{% set screenxs = '480px'  %}
+{% set screensm = '768px'  %}
+{% set screenmd = '992px'  %}
+{% set screenlg = '1200px' %}
+
+
 {% block head %}
   {{parent()}}
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
