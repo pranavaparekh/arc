@@ -1,4 +1,56 @@
+{% includeJsFile '/assets/js/salvattore.min.js' %}
 
+{% set kcContentCss %}
+
+  .kc-content__grid[data-columns]::before {
+    content: '3 .column.size-1of3';
+  }
+
+  /* These are the classes that are going to be applied: */
+  .column { float: left; }
+  .size-1of3 { width: 100%; }
+
+  @media(min-width: {{ screenmd }}) {
+    .size-1of3 {
+      width: 33.333%;
+    }
+
+    .kc-content__grid__item {
+      margin-right: 10px;
+    }
+
+    .kc-content__grid__item--focus {
+      margin-right: 10px;
+    }
+  }
+
+  .kc-content__grid__item {
+    background: #f3f3f3;
+    height: 125px;
+    margin-bottom: 10px;
+  }
+
+  .kc-content__grid__item--focus {
+    background: #f3f3f3;
+    height: 540px;
+    margin-bottom: 10px;
+  }
+
+  .kc-content__grid__listbox {
+    background: #f3f3f3;
+    height: 260px;
+    margin-bottom: 10px;
+  }
+
+  .kc-content__grid__newsletter {
+    background: #f3f3f3;
+    height: 260px;
+    margin-bottom: 10px;
+  }
+
+{% endset %}
+
+{% includeCss kcContentCss %}
 
 
 <section class="container-fluid">
@@ -6,6 +58,40 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
+
+          <div class="kc-content__grid" data-columns>
+
+            <!-- start column 1 -->
+
+            <div>
+              <article class="kc-content__grid__item">
+                <h5>Trends in Payment Tech start-ups funding</h5>
+              </article>
+              <article class="kc-content__grid__item">
+                <h5>How founders stock sale transactions impact 409A valuation?</h5>
+              </article>
+              <article class="kc-content__grid__item">
+                <h5>How to deal with bargain purchase situations in MA reporting valuations?</h5>
+              </article>
+              <article class="kc-content__grid__item">
+                  <h5>How will new IRS guidelines on Estate &amp;
+                  Gift tax valuations impact your business?</h5>
+              </article>
+            </div>
+
+            <!-- start column 2 -->
+            <div>
+              <article class="kc-content__grid__item--focus">How to value businesses built on futuristic technologies?</article>
+            </div>
+
+            <!-- start column 3 -->
+
+            <div>
+              <article class="kc-content__grid__listbox">Who will get hurt the most when tech bubble bursts? Not VCs</article>
+              <article class="kc-content__grid__newsletter">ArancaWire</article>
+            </div>
+
+          </div> <!-- end kc-content__grid -->
 
         </div>   <!-- end col-sm-12 -->
       </div>   <!-- end row -->
