@@ -1,0 +1,80 @@
+{% includeCssFile "/assets/css/jquery.sidr.light.css" %}
+{% includeJsFile "/assets/js/jquery.sidr.min.js" %}
+
+{% set sdmenuCss %}
+
+
+  .sdmenu__section {
+    color: {{ ttgrey }};
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 35px;
+    background-color: #F5F5F5;
+    padding: 0 15px;
+  }
+  .sdmenu__item {
+    line-height: 15px;
+  }
+  .sdmenu__item-link {
+    color: {{ ttPrimary }};
+  }
+
+{% endset %}
+
+
+{% set sliderJs  %}
+  $(document).ready(function() {
+  $('.sdmenu').sidr();
+  });
+{% endset %}
+
+{% includeCss sdmenuCss %}
+{% includeJs sliderJs %}
+
+<a class="sdmenu" href="#sidr">Toggle menu</a>
+
+<nav id="sidr">
+  <!-- Menu content -->
+  <img src="" alt="">
+
+<h3 class="sdmenu__section">About Us</h3>
+  <ul>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Our Story</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Our Culture</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Media Room</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Press Releases</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Blog</a></li>
+  </ul>
+
+<h3 class="sdmenu__section">Practices</h3>
+  <ul>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Business Research</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Investment Research</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">FICR</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Procurement Research</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Valuation & Advisory</a></li>
+  </ul>
+
+<h3 class="sdmenu__section">Knowledge Center</h3>
+  <ul>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Articles</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Special Reports</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Blogs</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Inforgraphics</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Market Trends</a></li>
+  </ul>
+
+<h3 class="sdmenu__section">Careers</h3>
+  <ul>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Work at Aranca</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Curent Openings</a></li>
+  </ul>
+
+<h3 class="sdmenu__section">Contact Us</h3>
+  <ul>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Get in Touch</a></li>
+    <li class="sdmenu__item"><a class="sdmenu__item-link" href="#">Current Openings</a></li>
+  </ul>
+
+</nav>
