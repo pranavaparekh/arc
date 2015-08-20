@@ -1,40 +1,86 @@
+{% set custblokCss %}
+  .cust-blok {
+    background-color:  {{ bgBlue }};
+    color: {{ ttPrimary }};
+    padding: 50px 0;
+    margin: 30px 0;
+  }
+  .cust-blok__headline--main {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .cust-blok__headline {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+  }
+  .cust-blok__subheadline {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 3px;
+  }
+  .cust-blok__headline--col {
+    text-align: center;
+  }
+  .cust-blok__content {
+  color: {{ ttgrey }};
+  font-size: 15px;
+  text-align: center;
+  }
+{% endset %}
+
+{% includeCss custblokCss %}
+
 <section class="container-fluid cust-blok">
 
   <div class="row">
     <div class="container">
 
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 cust-blok__headline--main">
+        <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1" />
           <h2 class="cust-blok__headline">We have trusted by not only our Clients but stakeholders
           across their business ecosystem</h2>
           <p class="cust-blok__subheadline">Our valuation team understands the nuances of diverse industry sectors, value chains and business drivers as well as complex capital structures</p>
         </div> <!-- col-sm-12 -->
       </div> <!-- end row  -->
+    </div><!-- end container -->
+      </div> <!-- end row  -->
+    </section><!-- end section -->
 
+<section class="container-fluid cust-blok--col">
+  <div class="row">
+    <div class="container">
       <div class="row">
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 cust-blok__headline--col">
+        <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1" />
           <h3 class="cust-blok__headline--small">Law Firms</h3>
           <div class="cust-blok__content">
             <p>Significant part of our new client wins are through referrals from attorneys, partners of leading law firms</p>
           </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 cust-blok__headline--col">
+        <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon2" />
           <h3 class="cust-blok__headline--small">Audit Firms</h3>
           <div class="cust-blok__content">
             <p>All major firms including Big 4 have reviewed and consistently accepted our valuation reports</p>
           </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 cust-blok__headline--col">
+        <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon3" />
           <h3 class="cust-blok__headline--small">Investors</h3>
           <div class="cust-blok__content">
             <p>Aranca has emerged preferred valuation partner for some of top VC and PE firms</p>
           </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 cust-blok__headline--col">
+        <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon4" />
           <h3 class="cust-blok__headline--small">I-Banks, Advisors</h3>
           <div class="cust-blok__content">
             <p>Often work closely with Aranca on valuation matters across diverse client situations</p>

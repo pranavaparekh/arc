@@ -1,35 +1,80 @@
+{% set capblokCss %}
+  .cap-blok__headline--main {
+    margin-bottom: 20px;
+  }
+  .cap-blok__headline {
+    font-size: 30px;
+    color: #59656B;
+    font-weight: 600;
+    text-align: center;
+  }
+  .cap-blok__subheadline {
+    font-size: 18px;
+    text-align: center;
+    color: {{ ttgrey }};
+    font-weight: 500;
+  }
+  .cap-blok__border {
+    width: 50%;
+    border: 2px solid #034883;
+  }
+  .cap-blok__headline--col {
+    text-align: center;
+  }
+  .cap-blok__content {
+    color: {{ ttgrey }};
+    font-size: 15px;
+    text-align: center;
+  }
+  .cap-blok__border--content {
+    width: 80%;
+    border: 1px solid #034883;
+  }
+
+{% endset %}
+
+{% includeCss capblokCss %}
+
+
 <section class="container-fluid cap-blok">
 
   <div class="row">
     <div class="container">
 
       <div class="row">
-        <div class="col-sm-12">
-          <h2 class="cap-blok__headline">Our diverse capabilities, global scale, relentless focus on quality differentiate us</h2>
+        <div class="col-sm-12 cap-blok__headline--main">
+          <h3 class="cap-blok__headline">Our diverse capabilities, global scale, relentless focus on quality differentiate us</h3>
           <p class="cap-blok__subheadline">Our complimentary business research and IP research capabilities enable us to bring deep insights in valuation reports</p>
+          <hr class="cap-blok__border"/>
         </div> <!-- col-sm-12 -->
       </div> <!-- end row  -->
 
       <div class="row">
 
-        <div class="col-sm-4">
+        <div class="col-sm-4 cap-blok__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1" />
           <h3 class="cap-blok__headline--small">200+ business &amp; patent analysts</h3>
+          <hr class="cap-blok__border--content"/>
           <div class="cap-blok__content">
             <p>Support our valuation team in understanding technology domains or building market forecasts</p>
             <p>1500+ products and services studied by our business research team, covering 80+ sectors and more than 50 countries</p>
           </div>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-4 cap-blok__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon2" />
           <h3 class="cap-blok__headline--small">Resources &amp; Knowledgebase</h3>
+          <hr class="cap-blok__border--content"/>
           <div class="cap-blok__content">
             <p>Subscriptions to over 200 global, regional, national databases and expert networks</p>
             <p>Huge repository of best free and paid information sources by sectors and country</p>
           </div>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-4 cap-blok__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon3" />
           <h3 class="cap-blok__headline--small">Credible, yet Cost Effective</h3>
+          <hr class="cap-blok__border--content"/>
           <div class="cap-blok__content">
             <p>Our team’s structured valuation approach combined with insightful reporting has been proven over time.</p>
             <p>Our unique business model enables us to provide valuation services at cost effective rates without compromising on the time &amp; efforts required to delivery credible analysis </p>

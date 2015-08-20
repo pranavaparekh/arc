@@ -33,7 +33,7 @@
     letter-spacing: 3px;
     padding-top:8px;
   }
-hr {
+.svc-masthead__border {
   width: 50%;
   margin: 0%;
 }
@@ -55,7 +55,7 @@ hr {
       <div class="col-sm-12">
           <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
           <p class="svc-masthead__subheadline">{{ entry.pageSubheadline }}</p>
-          <hr/>
+          <hr class="svc-masthead__border" />
           <p class="svc-masthead__breadcrumb">{{ entry.servicesCategory.first() }}</p>
 
           <p><button type="button" class="btn btn-default svc-masthead__btn"><i class="fa fa-envelope"></i>  &nbsp;SEND US YOUR QUERIES</button></p>
