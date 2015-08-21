@@ -1,17 +1,69 @@
+{% includeCssFile '/assets/css/flexslider.css' %}
+{% includeJsFile '/assets/js/jquery.flexslider-min.js' %}
+
+{% set svctextCss %}
+  .svc-test {
+    margin-top: 50px;
+  }
+  .svc-test__headline {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    color:  {{ ttBlue }};
+  }
+  .svc-test__subheadline {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+  }
+  .svc-test-hrline {
+    border-top: 1px solid #cdcdcd;
+  }
+{% endset %}
+
+{% set svctextJs %}
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+      animation: "slider",
+    });
+  });
+{% endset %}
+
+{% includeCss svctextCss %}
+{% includeJs svctextJs %}
+
+
+
 <section class="svc-test container-fluid">
   <div class="row">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h2 class="svc-test__headline">Client Speaks</h2>
-          <p class="svc-test__subheadline">
-            There is no better testament than recommendations from our satisfied clients. We have won 90% of our business through recommendation from top law firms, existing clients, VC firms and audit firms.
-          </p>
-          <blockquote>
-            The team has really done a great job in a short period of time, narrowing down on each of the variables used to determine the valuation. Very impressive!
-            <cite>— VP Finance & Acting CFO, ISO Group</cite>
-          </blockquote>
-        </div>
+          <h3 class="svc-test__headline">Client Speaks</h3>
+            <p class="svc-test__subheadline">
+              There is no better testament than recommendations from our satisfied clients. We have won 90% of our business through recommendation from top law firms, existing clients, VC firms and audit firms.
+            </p>
+                <div class="flexslider">
+                  <ul class="slides">
+                    <li>
+                    <blockquote>
+                    <span class="img-sprite quote left-icon"></span>
+                      The team has really done a great job in a short period of time, narrowing down on each of the variables used to determine the valuation. Very impressive!
+                      <cite>— VP Finance & Acting CFO, ISO Group</cite>
+                    </blockquote>
+                    </li>
+
+                    <li>
+                    <blockquote>
+                      The team has really done a great job in a short period of time, narrowing down on each of the variables used to determine the valuation. Very impressive!
+                      <cite>— VP Finance & Acting CFO, ISO Group</cite>
+                    </blockquote>
+                    </li>
+                  </ul>
+                </div><!-- end flexslider -->
+
+        </div><!-- end col-sm-12 -->
       </div><!-- end row -->
     </div><!-- end container -->
   </div><!-- end row -->
