@@ -1,20 +1,10 @@
 {% extends "base_layouts/_site" %}
-{% set title = "valuation" %}
+{% set title = entry.title %}
 
 {% block main %}
 
-{% include '_components/global/_header' %}
-{% include '_components/services/_masthead' %}
-{% include '_components/services/_vfilter' %}
-{% include '_components/services/_svc-intro' %}
-{% include '_components/services/_why-aranca' %}
-{% include '_components/services/_capabilities-blok' %}
-{% include '_components/services/_customers-blok' %}
-{% include '_components/services/_svc-testimonials' %}
-{% include '_components/services/_featured-case-study' %}
-{% include '_components/services/_client-list' %}
-{% include '_components/services/_case-study-list' %}
-{% include '_components/services/_kc-content' %}
+{% include "layouts/services/va/_types/" ~ entry.type %}
+
 {% endblock %}
 
 
