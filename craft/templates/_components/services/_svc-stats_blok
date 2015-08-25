@@ -1,0 +1,97 @@
+{% set statsblokCSS %}
+  .stats-blok {
+    background-color: #F2F2F2;
+    padding: 20px 0;
+  }
+
+  .stats-blok__headline--main {
+    margin-bottom: 20px;
+  }
+  .stats-blok__headline {
+    font-size: 30px;
+    color: #59656B;
+    font-weight: 600;
+    text-align: center;
+  }
+  .stats-blok__subtext {
+    font-size: 18px;
+    text-align: center;
+    color: {{ ttgrey }};
+    font-weight: 500;
+  }
+  .stats-blok__border {
+    width: 15%;
+    border: 2px solid #034883;
+  }
+  .stats-blok__headline--col {
+    text-align: center;
+  }
+  .stats-blok__stat {
+    font-size: 24px;
+    color: {{ttOrange}};
+  }
+
+  .stats-blok__stat__content {
+    font-size: 18px;
+    color: {{ttgrey}};
+  }
+
+{% endset %}
+
+{% includeCss statsblokCSS %}
+
+
+<section class="stats-blok container-fluid">
+  <div class="row">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-12 stats-blok__headline--main">
+          <h3 class="stats-blok__headline">A trusted research partner to some of the world’s best companies</h3>
+          <p class="stats-blok__subtext">Over the last decade, our team has worked with over 700 companies across Americas, Europe, Asia, Africa and Middle-East region</p>
+          <hr class="stats-blok__border">
+        </div><!-- end col 12 -->
+      </div><!-- end row -->
+
+      <div class="row">
+      <div class="col-sm-3 stats-blok__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1">
+          <h3 class="stats-blok__stat">150+</h3>
+          <div class="stats-blok__stat__content">
+            <p>Fortune 500 companies</p>
+          </div>
+        </div>
+
+        <div class="col-sm-3 stats-blok__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon2">
+          <h3 class="stats-blok__stat">30+</h3>
+          <div class="stats-blok__stat__content">
+            <p>Top 100 consulting firms</p>
+          </div>
+        </div>
+
+        <div class="col-sm-3 stats-blok__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon2">
+          <h3 class="stats-blok__stat">25+</h3>
+          <div class="stats-blok__stat__content">
+            <p>Top 100 Law firms</p>
+          </div>
+        </div>
+
+        <div class="col-sm-3 stats-blok__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon2">
+          <h3 class="stats-blok__stat">30+</h3>
+          <div class="stats-blok__stat__content">
+            <p>PE firms with over 5bn AUM</p>
+          </div>
+        </div>
+
+
+      </div><!-- end row -->
+
+
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>
+
+

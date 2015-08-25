@@ -1,49 +1,35 @@
 {% set whyarcCSS %}
+  .why-arc-b { padding: 20px 0; }
 
-  @media(min-width: {{ screensm }}) {
-    .why-arc {
-      width: 50%;
-      float: left;
-    }
+  .why-arc-b__headline--main {
+    margin-bottom: 20px;
   }
-
-  .why-arc__headline {
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 40px;
-  }
-
-  .why-arc__headline > span {
-    font-weight: 700;
-  }
-
-  .why-arc__subtext {
-    font-size: 24px;
-  }
-
-  .red-bkg {
-    background: {{redPrimary}};
-    padding: 80px 60px;
-    color: {{ttPrimary}}
-  }
-
-  .white-bkg {
-    background: #FFFFFF;
-    padding: 50px 50px;
-  }
-
-  .why-arc_stat_col {
+  .why-arc-b__headline {
+    font-size: 30px;
+    color: #59656B;
+    font-weight: 600;
     text-align: center;
   }
-
-  .why-arc__stat {
-    font-size: 24px;
-    color: {{ttOrange}};
-  }
-
-  .why-arc__stat__content {
+  .why-arc-b__subtext {
     font-size: 18px;
-    color: {{ttOrange}};
+    text-align: center;
+    color: {{ ttgrey }};
+    font-weight: 500;
+  }
+  .why-arc-b__border {
+    width: 15%;
+    border: 2px solid #034883;
+  }
+  .why-arc-b__headline--col {
+    text-align: center;
+  }
+  .why-arc-b__content {
+    color: {{ ttgrey }};
+    font-size: 15px;
+    text-align: center;
+  }
+  .why-arc-b__border--content {
+    width: 50%;
   }
 
 {% endset %}
@@ -51,25 +37,42 @@
 {% includeCss whyarcCSS %}
 
 
-<section class="why-arc container-fluid red-bkg">
+<section class="why-arc-b container-fluid">
   <div class="row">
-    <h3 class="why-arc__headline">Why Clients<br><span>Choose</span><br>Aranca</h3>
-    <p class="why-arc__subtext">Our track-record and depth of our valuation experience</p>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-12 why-arc-b__headline--main">
+          {% for block in entry.contentBlockIntro %}
+            <h3 class="why-arc-b__headline">{{ block.headline }}</h3>
+            <p class="why-arc-b__subtext">{{ block.subHeadline }}</p>
+            <hr class="why-arc-b__border">
+          {% endfor %}
+
+        </div><!-- end col 12 -->
+      </div><!-- end row -->
+
+      <div class="row">
+        {% for block in entry.blockContent %}
+        <div class="col-sm-4 why-arc-b__headline--col">
+          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1">
+          <h3 class="why-arc-b__headline--small">{{ block.headline }}</h3>
+          <hr class="why-arc-b__border--content">
+          <div class="why-arc-b__content">
+            <p>{{ block.subtext }}</p>
+          </div>
+        </div>
+        {% if loop.index == 3 %}
+          </div> <br><br> <div class="row">
+        {% endif %}
+
+        {% endfor %}
+      </div><!-- end row -->
+
+
+
+    </div><!-- end container -->
   </div><!-- end row -->
-</section><!-- end left col -->
+</section>
 
 
-
-
-<section class="why-arc container-fluid white-bkg">
-{% for block in entry.whyArancaStats %}
-  <div class="row">
-    <div class="col-sm-6 why-arc_stat_col">
-      <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
-      <p class="why-arc__stat">{{ block.statsNumber }}</p>
-      <p class="why-arc__stat__content">{{ block.statsContent }}</p>
-      <p class="why-arc__stat__subcontent">{{ block.statsSubContent }}</p>
-    {% if loop.index % 2 == 0 %}<br></div>{% endif %}
-  </div>
-  {% endfor %}
-</section><!-- end right col -->
