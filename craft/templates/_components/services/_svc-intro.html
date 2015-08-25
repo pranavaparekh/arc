@@ -22,20 +22,22 @@
 
 {% includeCss svcintroCSS %}
 
-<section class="svc-intro container-fluid white-bkg">
-  <div class="row">
-    <p>Valuations have become increasingly important across wide spectrum of business situations, be it complying with complex tax regulations, dealing with ever-growing financial reporting needs or strategic decision making in transaction situations like M&amp;A, fund raising. </p>
 
-    <p>With businesses becoming increasingly global and dominated by intangible assets; your valuation firm should have multi-disciplinary capabilities in understanding industry sectors and technology domains, be able to apply financial expertise and knowledge of regulatory issues and have strong reputation with clients, their advisors, investors and regulators. </p>
-  </div>
-</section>
-<!-- end left col -->
+{% for block in entry.servicesIntro %}
+<div class="clearfix">
+  <section class="svc-intro container-fluid white-bkg">
+    <div class="row">
 
-<section class="svc-intro container-fluid red-bkg">
-  <div class="row">
-    <p>Valuations have become increasingly important across wide spectrum of business situations, be it complying with complex tax regulations, dealing with ever-growing financial reporting needs or strategic decision making in transaction situations like M&amp;A, fund raising. </p>
+     {{ block.textIntroLeft }}
 
-    <p>With businesses becoming increasingly global and dominated by intangible assets; your valuation firm should have multi-disciplinary capabilities in understanding industry sectors and technology domains, be able to apply financial expertise and knowledge of regulatory issues and have strong reputation with clients, their advisors, investors and regulators. </p>
-  </div><!-- end row -->
-</section>
-<!-- end right col -->
+    </div>
+  </section>
+  <section class="svc-intro container-fluid red-bkg">
+    <div class="row">
+
+      {{ block.textIntroRight }}
+
+    </div>
+  </section>
+</div>
+{% endfor %}

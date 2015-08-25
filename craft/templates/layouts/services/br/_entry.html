@@ -1,0 +1,11 @@
+{% extends "base_layouts/_site" %}
+{% set title = entry.title %}
+
+{% block main %}
+{{entry.type}}
+{% include "layouts/services/br/_types/" ~ entry.type %}
+
+{% endblock %}
+
+
+

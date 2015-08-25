@@ -1,50 +1,31 @@
+{% set svcClientListCss %}
+
+  .cl-list__subheadline {
+    font-size: 1.2em;
+  }
+
+{% endset %}
+
+{% includeCss svcClientListCss %}
+
 <section class="cl-list container-fluid">
   <div class="row">
     <div class="container">
       <div class="row">
-          <h2 class="cl-list__headline">A Trusted Research Partner to some of the Most Prolific PE &amp; VC Backed Companies</h2>
-          <p class="cl-list__subheadline">Over the decade, we have worked with 1000+ companies across diverse industry sectors</p>
+          {% for block in entry.clientListIntro %}
+          <h2 class="cl-list__headline text-center">{{ block.headline }}</h2>
+          <p class="cl-list__subheadline text-center">{{ block.subHeadline}}</p>
+          {% endfor %}
 
-          <div class="col-xs-3">
-            <a href="#" class="thumbnail">
-               <img src="http://placehold.it/350x150" class="img-responsive">
-            </a>
-          </div>
-          <div class="col-xs-3">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/350x150" class="img-responsive">
-              </a>
-          </div>
-          <div class="col-xs-3">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/350x150" class="img-responsive">
-              </a>
-          </div>
-          <div class="col-xs-3">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/350x150" class="img-responsive">
-              </a>
-          </div>
-          <div class="col-xs-3">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/350x150" class="img-responsive">
-              </a>
-          </div>
-          <div class="col-xs-3">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/350x150" class="img-responsive">
-              </a>
-          </div>
-          <div class="col-xs-3">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/350x150" class="img-responsive">
-              </a>
-          </div>
-          <div class="col-xs-3">
-              <a href="#" class="thumbnail">
-                   <img src="http://placehold.it/350x150" class="img-responsive">
-              </a>
-          </div>
+          {% if entry.clientLogoList | length %}
+              {% for asset in entry.clientLogoList %}
+                  <div class="col-xs-3">
+                    <a href="#" class="thumbnail">
+                       <img src="http://placehold.it/350x150" class="img-responsive">
+                    </a>
+                  </div>
+              {% endfor %}
+          {% endif %}
       </div><!-- end row -->
     </div><!-- end container -->
   </div><!-- end row -->
