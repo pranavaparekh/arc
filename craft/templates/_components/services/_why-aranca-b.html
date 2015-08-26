@@ -62,7 +62,7 @@
             <p>{{ block.subtext }}</p>
           </div>
         </div>
-        {% if loop.index == 3 %}
+        {% if loop.index % 3 == 0 %}
           </div> <br><br> <div class="row">
         {% endif %}
 
