@@ -1,4 +1,15 @@
+{% includeCssFile '/assets/css/flexslider.css' %}
+{% includeJsFile '/assets/js/jquery.flexslider-min.js' %}
+
 {% set svcClientListCss %}
+  .cl-list {
+    background: #f3f3f3;
+    padding: 30px 0;
+  }
+
+  .cl-list__slider {
+    margin-top: 30px;
+  }
 
   .cl-list__subheadline {
     font-size: 1.2em;
@@ -6,7 +17,25 @@
 
 {% endset %}
 
+{% set svcClientListJs %}
+  $(window).load(function() {
+    $('.cl-list__slider').flexslider({
+      animation: "slide",
+      animationLoop: true,
+      reverse: true,
+      itemWidth: 210,
+      itemMargin: 5,
+      controlNav: true,
+      directionNav: true,
+      slideshowSpeed: 2000,
+      minItems: 2,
+      maxItems: 4
+    });
+  });
+{% endset %}
+
 {% includeCss svcClientListCss %}
+{% includeJs svcClientListJs %}
 
 <section class="cl-list container-fluid">
   <div class="row">
@@ -18,13 +47,16 @@
           {% endfor %}
 
           {% if entry.clientLogoList | length %}
-              {% for asset in entry.clientLogoList %}
-                  <div class="col-xs-3">
-                    <a href="#" class="thumbnail">
-                       <img src="http://placehold.it/350x150" class="img-responsive">
-                    </a>
-                  </div>
-              {% endfor %}
+              <div class="row cl-list__slider">
+                <ul class="slides">
+                {% for asset in entry.clientLogoList %}
+                  <li>
+                    <img src="{{asset.url}}" alt="{{asset.altTag}}"
+                    class="img-responsive cl-list__slider__item">
+                  </li>
+                {% endfor %}
+                </ul>
+              </div>
           {% endif %}
       </div><!-- end row -->
     </div><!-- end container -->

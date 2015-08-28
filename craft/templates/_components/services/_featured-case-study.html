@@ -3,8 +3,19 @@
     background-color:  {{ bgBlue }};
     color: {{ ttPrimary }};
     padding: 50px 0;
-    margin: 30px 0;
   }
+
+    @media(min-width: {{ screenmd }}) {
+      .feat-cs  {
+        background: url('/assets/uploads/banners/feat-case-study-bkg.jpg') no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+         padding:20px 0;
+      }
+    }
+
   .feat-cs__main {
     text-align: center;
     text-transform: uppercase;
@@ -32,6 +43,7 @@
       {% for block in entry.featuredCaseStudyBanner %}
       <img class="feat-cs__icon" src="http://loremicon.com/files/uploads/line/png/32/notebook_32px.png" alt="featured case study">
       <h2 class="feat-cs__headline">Featured Case Study</h2>
+      <p class="cs__title">{{block.csTitle}}</p>
       <p class="feat-cs__summary">{{ block.csSummary}}</p>
       <p class="feat-cs__readmore"><a href="#">Read Story</a></p>
       {% endfor %}

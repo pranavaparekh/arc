@@ -3,6 +3,12 @@
 
 {% set sdmenuCss %}
 
+  .sdmenu {
+    position: absolute;
+    right: 105%;
+    top: 33%;
+    font-size: 2em;
+  }
 
   .sdmenu__section {
     color: {{ ttgrey }};
@@ -32,7 +38,7 @@
 {% includeCss sdmenuCss %}
 {% includeJs sliderJs %}
 
-<a class="sdmenu" href="#sidr">Toggle menu</a>
+<a class="sdmenu fa fa-align-justify" href="#sidr"></a>
 
 <nav id="sidr">
   <!-- Menu content -->
