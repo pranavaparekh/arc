@@ -59,8 +59,16 @@
 
       <div class="row">
 
+      {% set blocks = entry.statBlockContent.type('blockContent') %}
+
+      {% if blocks | length == 3 %}
+        {% set gridClass = "col-sm-4" %}
+      {% else %}
+        {% set gridClass = "col-sm-3" %}
+      {% endif %}
+
       {% for block in entry.statBlockContent %}
-      <div class="col-sm-3 stats-blok__headline--col">
+      <div class="{{ gridClass }} stats-blok__headline--col">
           <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1">
           <h3 class="stats-blok__stat">{{ block.headline }}</h3>
           <div class="stats-blok__stat__content">

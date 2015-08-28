@@ -25,6 +25,14 @@
   .cust-blok__headline--col {
     text-align: center;
   }
+  .cust-blok--intro {
+   text-align: center;
+   padding: 50px 0;
+  }
+  .cust-blok__border {
+    width: 50%;
+    border: 1px solid #034883;
+  }
   .cust-blok__content {
   color: {{ ttgrey }};
   font-size: 15px;
@@ -34,8 +42,8 @@
 
 {% includeCss custblokCss %}
 
+{% if entry.customersBlockBanner | length %}
 <section class="container-fluid cust-blok">
-
   <div class="row">
     <div class="container">
       <div class="row">
@@ -50,11 +58,31 @@
     </div><!-- end container -->
   </div> <!-- end row  -->
 </section><!-- end section -->
+{% endif %}
+
+{% if entry.customersBlockIntro | length %}
+<section class="container-fluid cust-blok--intro">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        {% for block in entry.customersBlockIntro %}
+          <h2 class="cust-blok__headline">{{ block.headline }}</h2>
+          <p class="cust-blok__subheadline">{{ block.subHeadline }}</p>
+          <hr class="cust-blok__border">
+        {% endfor %}
+       </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>
+{% endif %}
+
 
 <section class="container-fluid cust-blok--col">
   <div class="row">
     <div class="container">
       <div class="row">
+
+
 
        {{ entry.customersBlockContent }}
 
