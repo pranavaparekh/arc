@@ -1,0 +1,211 @@
+{% set htimelineCss %}
+
+  .section-header, .steps-header, .steps-name {
+    color: #3498DB;
+    font-weight: 400;
+    font-size: 1.4em;
+  }
+
+  .steps-header {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .steps-timeline {
+    outline: 1px dashed rgba(255, 0, 0, 0);
+  }
+
+  @media screen and (max-width: 500px) {
+    .steps-timeline {
+      border-left: 2px solid #3498DB;
+      margin-left: 25px;
+    }
+  }
+
+  @media screen and (min-width: 500px) {
+    .steps-timeline {
+      border-top: 2px solid #3498DB;
+      padding-top: 20px;
+      margin-top: 40px;
+      margin-left: 16.65%;
+      margin-right: 16.65%;
+    }
+  }
+
+  .steps-timeline:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .steps-one,
+  .steps-two,
+  .steps-three,
+  .steps-four {
+    outline: 1px dashed rgba(0, 128, 0, 0);
+  }
+
+  @media screen and (max-width: 500px) {
+    .steps-one,
+    .steps-two,
+    .steps-three,
+    .steps-four {
+      margin-left: -25px;
+    }
+  }
+  @media screen and (min-width: 500px) {
+    .steps-one,
+    .steps-two,
+    .steps-three,
+    .steps-four {
+      float: left;
+      width: 33%;
+      margin-top: -50px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .steps-one,
+    .steps-two {
+      padding-bottom: 40px;
+    }
+  }
+
+  @media screen and (min-width: 500px) {
+    .steps-one {
+      margin-left: -16.65%;
+      margin-right: 16.65%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .steps-three, .steps-four {
+      margin-bottom: -100%;
+    }
+  }
+  @media screen and (min-width: 500px) {
+    .steps-three, .steps-four {
+      margin-left: 16.65%;
+      margin-right: -16.65%;
+    }
+  }
+
+  .steps-img {
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  @media screen and (max-width: 500px) {
+    .steps-img {
+      float: left;
+      margin-right: 20px;
+    }
+  }
+
+  .steps-name,
+  .steps-description {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 500px) {
+    .steps-name {
+      text-align: center;
+    }
+  }
+
+  .steps-description {
+    overflow: hidden;
+  }
+  @media screen and (min-width: 500px) {
+    .steps-description {
+      text-align: center;
+    }
+  }
+
+{% endset %}
+
+{% includeCss htimelineCss %}
+
+<section class="htimeline container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <section id="Steps" class="steps-section">
+
+            <h2 class="steps-header">
+              Thinking Global? We can help!
+            </h2>
+
+            <div class="steps-timeline">
+
+              <div class="steps-one">
+                <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+                <h3 class="steps-name">
+                  Quick scans
+                </h3>
+                <p class="steps-description">
+                  Shortlist most attractive markets for detailed evaluation
+                </p>
+              </div>
+
+              <div class="steps-two">
+                <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+                <h3 class="steps-name">
+                  ‘Doing-business’ Guides
+                </h3>
+                <p class="steps-description">
+                   Learn the said and unsaid rules of doing business in a foreign country
+                </p>
+              </div>
+
+              <div class="steps-three">
+                <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+                <h3 class="steps-name">
+                  Deep-dive market studies
+                </h3>
+                <p class="steps-description">
+                   Facts and insights to help you decide market attractiveness
+                </p>
+              </div>
+
+              <div class="steps-four">
+                <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+                <h3 class="steps-name">
+                  Route-to-entry options
+                </h3>
+                <p class="steps-description">
+                   Exports, JV, acquisitions or greenfield project – what is  the right entry option?
+                </p>
+              </div>
+
+              <div class="steps-five">
+                <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+                <h3 class="steps-name">
+                  Go-to-market strategy
+                </h3>
+                <p class="steps-description">
+                   Define all elements of supply chain and marketing strategy
+                </p>
+              </div>
+
+              <div class="steps-six">
+                <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+                <h3 class="steps-name">
+                  Business Plan
+                </h3>
+                <p class="steps-description">
+                   Business case, financial model or project feasibility reports for internal approvals
+                </p>
+              </div>
+
+            </div><!-- /.steps-timeline -->
+
+          </section>
+        </div><!-- end col-sm-12 -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>
