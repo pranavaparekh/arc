@@ -70,6 +70,22 @@
     padding: 10px 20px;
   }
 
+.cs-modal__block {
+  padding: 20px 0;
+}
+
+.cs-modal__blok--headline {
+    color: {{ ttOrange }};
+}
+
+.cs-modal_sol--bk {
+  background: #F3F3F3;
+  padding: 20px 0;
+}
+
+.cs-modal__sol--headline {
+  text-align: center;
+}
 {% endset %}
 
 {% includeCss csListCss %}
@@ -117,27 +133,92 @@
       <div class="modal-header">
         <h1 id="myModalLabel"
             class="modal-title">
-          Modal title
+          Case Study
         </h1>
       </div>
       <!-- header -->
 
       <!-- body -->
-      <div class="modal-body">
-        <h2>1. Modal sub-title</h2>
+      <div class="cs-modal modal-body">
+        <div class="row">
+          <div class="col-sm-12 cs-modal__headmast">
+            <img src="http://aranca.craft.dev/assets/images/cs-banner-bkg.jpg" alt="" />
+            <h3 class="cs-modal__headmast--headline"> </h3>
+            <p class="cs-modal__headmast--download"> </p>
+          </div><!-- end: col-12 -->
+        </div><!-- end: row -->
 
-        <p>Liquor ipsum dolor sit amet bearded lady, grog murphy's bourbon lancer. Kamikaze vodka gimlet; old rip van winkle, lemon drop martell salty dog tom collins smoky martini ben nevis man o'war. Strathmill grand marnier sea breeze b & b mickey slim. Cactus jack aberlour seven and seven, beefeater early times beefeater kalimotxo royal arrival jack rose. Cutty sark scots whisky b & b harper's finlandia agent orange pink lady three wise men gin fizz murphy's. Chartreuse french 75 brandy daisy widow's cork 7 crown ketel one captain morgan fleischmann's, hayride, edradour godfather. Long island iced tea choking hazard black bison, greyhound harvey wallbanger, "gibbon kir royale salty dog tonic and tequila."</p>
 
-        <h2>2. Modal sub-title</h2>
 
-        <p>The last word drumguish irish flag, hurricane, brandy manhattan. Lemon drop, pulteney fleischmann's seven and seven irish flag pisco sour metaxas, hayride, bellini. French 75 wolfram christian brothers, calvert painkiller, horse's neck old bushmill's gin pahit. Monte alban glendullan, edradour redline cherry herring anisette godmother, irish flag polish martini glen spey. Abhainn dearg bloody mary amaretto sour, ti punch black cossack port charlotte tequila slammer? Rum swizzle glen keith j & b sake bomb harrogate nights 7 crown! Hairy virgin tomatin lord calvert godmother wolfschmitt brass monkey aberfeldy caribou lou. Macuá, french 75 three wise men.</p>
+        <div class="container cs-modal__block">
+          <div class="row">
+            <div class="col-sm-4 cs-modal__block--col">
+              <h3 class="cs-modal__blok--headline">BACKGROUND</h3>
+              <div class="cs-modal__blok--content">
+                <p>To support their planning process, a leading SoC company engaged Aranca to analyse the market for ARM and X86 processors</p>
+              </div>
+            </div><!-- end: col-4 -->
 
-        <h2>3. Modal sub-title</h2>
+            <div class="col-sm-4 cs-modal__block--col">
+              <h3 class="cs-modal__blok--headline">OUR SOLUTION</h3>
+              <div class="cs-modal__blok--content">
+                <p>We delivered an in-depth analysis of the market dynamics, value chain, profit pools and technology trends in different applications</p>
+              </div>
+            </div><!-- end: col-4 -->
 
-        <p>Pisco sour daiquiri lejon bruichladdich mickey slim sea breeze wolfram kensington court special: pink lady white lady or delilah. Pisco sour glen spey, courvoisier j & b metaxas glenlivet tormore chupacabra, sambuca lorraine knockdhu gin and tonic margarita schenley's." Bumbo glen ord the macallan balvenie lemon split presbyterian old rip van winkle paradise gin sling. Myers black bison metaxa caridan linkwood three wise men blue hawaii wine cooler?" Talisker moonwalk cosmopolitan wolfram zurracapote glen garioch patron saketini brandy alexander, singapore sling polmos krakow golden dream. Glenglassaugh usher's wolfram mojito ramos gin fizz; cactus jack. Mai-tai leite de onça bengal; crown royal absolut allt-á-bhainne jungle juice bacardi benrinnes, bladnoch. Cointreau four horsemen aultmore, "the amarosa cocktail vodka gimlet ardbeg southern comfort salmiakki koskenkorva."</p>
+            <div class="col-sm-4 cs-modal__block--col">
+              <h3 class="cs-modal__blok--headline">RESULTS</h3>
+              <div class="cs-modal__blok--content">
+                <p>Our analysis helped the client to assess its competitive position in different appliactions and define specific three-year growth plans</p>
+              </div>
+            </div><!-- end: col-4 -->
+          </div><!-- end: row -->
+        </div><!-- end: container -->
 
-      </div>
-      <!-- body -->
+        <div class="container-fluid cs-modal_sol--bk">
+          <div class="row">
+            <div class="container">
+            <div class="row">
+            <div class="col-sm-3 cs-modal__sol">
+              <h3 class="cs-modal__sol--headline">Ideate</h3>
+              <div class="cs-modal__sol--content">
+                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
+              </div>
+            </div><!-- end: col-3 -->
+
+            <div class="col-sm-3 cs-modal__sol">
+              <h3 class="cs-modal__sol--headline">Desk Research</h3>
+              <div class="cs-modal__sol--content">
+                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
+              </div>
+            </div><!-- end: col-3 -->
+
+            <div class="col-sm-3 cs-modal__sol">
+              <h3 class="cs-modal__sol--headline">Expert Interviews</h3>
+              <div class="cs-modal__sol--content">
+                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
+              </div>
+            </div><!-- end: col-3 -->
+
+            <div class="col-sm-3 cs-modal__sol">
+              <h3 class="cs-modal__sol--headline">Analysis</h3>
+              <div class="cs-modal__sol--content">
+                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
+              </div>
+            </div><!-- end: col-3 -->
+          </div><!-- end: row -->
+          </div><!-- end: container -->
+          </div><!-- end: row -->
+        </div><!-- end: container-fluid -->
+
+        <div class="row">
+          <div class="col-sm-12 cs-modal__img">
+            <img src="http://aranca.craft.dev/assets/images/cs-graph.jpg" alt="" />
+          </div><!-- end: col-12 -->
+        </div><!-- end: row -->
+
+
+      </div> <!-- modal-body -->
 
       <!-- footer -->
       <div class="modal-footer">
