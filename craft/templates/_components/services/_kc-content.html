@@ -27,7 +27,16 @@
   .kc-content__grid__item {
     background: #f3f3f3;
     height: 125px;
+    padding: 0 30px;
     margin-bottom: 10px;
+  }
+
+  .kc-content__grid__inner {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 
   .kc-content__grid__item--focus {
@@ -47,7 +56,9 @@
     height: 260px;
     margin-bottom: 10px;
   }
-
+.kc-content__list__item {
+  padding: 10px 10px;
+}
 {% endset %}
 
 {% includeCss kcContentCss %}
@@ -65,30 +76,56 @@
 
             <div>
               <article class="kc-content__grid__item">
-                <h5>Trends in Payment Tech start-ups funding</h5>
+                <div class="kc-content__grid__inner">
+                  <h5>Trends in Payment Tech start-ups funding</h5>
+                </div>
               </article>
               <article class="kc-content__grid__item">
-                <h5>How founders stock sale transactions impact 409A valuation?</h5>
+                <div class="kc-content__grid__inner">
+                  <h5>How founders stock sale transactions impact 409A valuation?</h5>
+                </div>
               </article>
               <article class="kc-content__grid__item">
-                <h5>How to deal with bargain purchase situations in MA reporting valuations?</h5>
+                <div class="kc-content__grid__inner">
+                  <h5>How to deal with bargain purchase situations in MA reporting valuations?</h5>
+                </div>
               </article>
               <article class="kc-content__grid__item">
+                <div class="kc-content__grid__inner">
                   <h5>How will new IRS guidelines on Estate &amp;
                   Gift tax valuations impact your business?</h5>
+                </div>
               </article>
             </div>
 
             <!-- start column 2 -->
             <div>
-              <article class="kc-content__grid__item--focus">How to value businesses built on futuristic technologies?</article>
+              <article class="kc-content__grid__item--focus">
+                <div class="kc-content__grid__inner">
+                  <p>How to value businesses built on futuristic technologies?</p>
+                </div>
+              </article>
             </div>
 
             <!-- start column 3 -->
 
             <div>
-              <article class="kc-content__grid__listbox">Who will get hurt the most when tech bubble bursts? Not VCs</article>
-              <article class="kc-content__grid__newsletter">ArancaWire</article>
+              <article class="kc-content__grid__listbox">
+                <ul class="kc-content__list">
+                  <li class="kc-content__list__item">Aircraft Safety Systems - In The Spotlight</li>
+                  <li class="kc-content__list__item">CO2 As A Future Refrigerant</li>
+                  <li class="kc-content__list__item">Demographics in Saudi Arabia: New Age Of Opportunities</li>
+                  <li class="kc-content__list__item">Buybacks & Dividends: A Trillion Dollar Offer</li>
+                </ul>
+              </article>
+              <article class="kc-content__grid__newsletter">
+                <ul class="kc-content__list">
+                  <li class="kc-content__list__item">Why Hope Isn’t Lost For the Indian Markets?</li>
+                  <li class="kc-content__list__item">Moody’s Lowers India’s 2015 GDP Growth Forecast</li>
+                  <li class="kc-content__list__item">Payment Banks: A Paradigm Shift in India’s Banking System?</li>
+                  <li class="kc-content__list__item">The Great Media Sale Is On!</li>
+                </ul>
+              </article>
             </div>
 
           </div> <!-- end kc-content__grid -->
