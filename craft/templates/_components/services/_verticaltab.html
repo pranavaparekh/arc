@@ -16,14 +16,15 @@ h3 {
   float: left;
   border-bottom: 0;
 }
+
+
+
 .nav-tabs li {
   float: none;
   margin: 0;
 }
 .nav-tabs li a {
   margin-right: 0;
-  border: 0;
-  background-color: #333;
 }
 .nav-tabs li a:hover {
   background-color: #444;
@@ -44,7 +45,6 @@ h3 {
 }
 .tab-content .tab-pane {
   display: none;
-  background-color: #fff;
   padding: 1.6rem;
   overflow-y: auto;
 }
@@ -61,6 +61,48 @@ h3 {
 .list-group .list-group-item h4, .list-group .list-group-item span {
   line-height: 11px;
 }
+
+.vtabs {
+  padding: 30px 0;
+  background: #EAEAEA;
+}
+
+.vtabs__list {
+  box-shadow: 3px 3px 10px #DBDBDB;
+}
+
+.vtabs__list__item {
+  background: #DFDEDE;
+  border-bottom: 1px solid #CFD2D3;
+}
+
+.vtabs__content__item {
+  background-color: white;
+  border: 1px solid #CFD2D3;
+  box-shadow: 3px 3px 10px #DBDBDB;
+}
+
+.vtabs__content__item h3 {
+  text-transform: uppercase;
+  color: #034883;
+  padding-bottom: 15px;
+}
+
+.vtabs__content__list__item {
+  margin-bottom: 10px;
+  color: #706F6F;
+  font-size: 1.1em;
+}
+
+.vtabs__content__list__item > .fa {
+    margin-right: 10px;
+    font-size: 1.4em;
+    color: #9BD572;
+    font-weight: 100;
+    position: relative;
+    top: 3px;
+}
+
 
 
 {% endset %}
@@ -88,58 +130,73 @@ var tabsFn = (function() {
 {% includeCss verticaltabCss %}
 {% includeJs verticaltabJs %}
 
-<section>
-  <div class="container">
+<section class="container-fluid vtabs">
   <div class="row">
-    <div class="col-md-4 col-sm-5">
-      <div class="tabs-left">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#a" data-toggle="tab">Agriculture</a></li>
-          <li><a href="#b" data-toggle="tab">Automobiles</a></li>
-          <li><a href="#c" data-toggle="tab">Food & Beverages</a></li>
-          <li><a href="#d" data-toggle="tab">Chemicals</span></a></li>
-          <li><a href="#e" data-toggle="tab">Retail</a></li>
-          <li><a href="#f" data-toggle="tab">Capital Goods</a></li>
-          <li><a href="#g" data-toggle="tab">MRO</a></li>
-          <li><a href="#h" data-toggle="tab">Chemicals</a></li>
-          <li><a href="#i" data-toggle="tab">Energy</a></li>
-          <li><a href="#j" data-toggle="tab">Healthcare</a></li>
-          <li><a href="#k" data-toggle="tab">Telecom</a></li>
-          <li><a href="#l" data-toggle="tab">Technology</a></li>
-        </ul>
-        <div class="tab-content">
-          <div class="tab-pane active" id="a">
-            <h3>Agriculture</h3>
-            <ul class="list-group pull-left">
-              <li>Global market opportunity assessment for innovative solutions in household appliances to capture the latent need for the client's niche product and devising a go-to-market strategy for the same</li>
-              <li>Market study on ‘After Sales Services Of Appliances’ in the GCC highlighting specific ways in which the client could improve their after sales campaigns</li>
-              <li>Market opportunity analysis on cooling and refrigeration units used in convenience stores to identify opportunity size, demand from franchise vis-a-vis demand from owned outlets, and procurement patterns</li>
-              <li>Strategy support for a major consumer electronics company to develop their e-commerce strategy for launching a direct-to-consumer channel for the MENA region</li>
-              <li>Market study  to assess the current demand and future outlook for ARM and x86 architectures used within  different consumer devices for helping the client to develop strategies for each product types</li>
-              <li>Market intelligence for a global printer company looking to boost its market share and understand ways to increase its footprint further in emerging economies</li>
-              <li>Market study on Vietnam’s Digital Camera market covering comprehensive industry information such as market size, industry structure, competition landscape, product portfolios of key players, distribution models, pricing, and growth potential by product segment</li>
-              <li>Opportunity analysis for a leading multinational that manufactures air conditioners to shortlist three out of  the 22 Tier II and III cities in India and formulate a go-to-market strategy for each city based on macroeconomic indicators, market size, and trends, as well as a detailed end-user analysis for each city</li>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <div class="vtabs__list tabs-left">
+            <ul class="nav nav-tabs">
+              <li class="vtabs__list__item active"><a href="#a" data-toggle="tab">Agriculture</a></li>
+              <li class="vtabs__list__item"><a href="#b" data-toggle="tab">Automobiles</a></li>
+              <li class="vtabs__list__item"><a href="#c" data-toggle="tab">Food & Beverages</a></li>
+              <li class="vtabs__list__item"><a href="#d" data-toggle="tab">Chemicals</span></a></li>
+              <li class="vtabs__list__item"><a href="#e" data-toggle="tab">Retail</a></li>
+              <li class="vtabs__list__item"><a href="#f" data-toggle="tab">Capital Goods</a></li>
+              <li class="vtabs__list__item"><a href="#g" data-toggle="tab">MRO</a></li>
+              <li class="vtabs__list__item"><a href="#h" data-toggle="tab">Chemicals</a></li>
+              <li class="vtabs__list__item"><a href="#i" data-toggle="tab">Energy</a></li>
+              <li class="vtabs__list__item"><a href="#j" data-toggle="tab">Healthcare</a></li>
+              <li class="vtabs__list__item"><a href="#k" data-toggle="tab">Telecom</a></li>
+              <li class="vtabs__list__item"><a href="#l" data-toggle="tab">Technology</a></li>
             </ul>
-          </div>
-          <div class="tab-pane" id="b">
-            BBBBBThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.
-          </div>
-          <div class="tab-pane" id="c">CCCCThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
-          <div class="tab-pane" id="d">DDDDDSecondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.</div>
-          <div class="tab-pane" id="e">EEEEEThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
-          <div class="tab-pane" id="f">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
-          <div class="tab-pane" id="g">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
-          <div class="tab-pane" id="h">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
-          <div class="tab-pane" id="i">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
-          <div class="tab-pane" id="j">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
 
-          <div class="tab-pane" id="k">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
-          <div class="tab-pane" id="l">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+            <div class="tab-content">
 
-        </div><!-- /tab-content -->
-      </div><!-- /tabbable -->
-    </div><!-- /col -->
-  </div><!-- /row -->
-</div><!-- /container -->
+              <div class="vtabs__content__item tab-pane active" id="a">
+                <h3>Agriculture</h3>
+                <ul class="vtabs__content__list list-group pull-left">
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Global market opportunity assessment for innovative solutions in household appliances to capture the latent need for the client's niche product and devising a go-to-market strategy for the same</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market study on ‘After Sales Services Of Appliances’ in the GCC highlighting specific ways in which the client could improve their after sales campaigns</li>
+                  <li class="vtabs__content__list__item">Market opportunity analysis on cooling and refrigeration units used in convenience stores to identify opportunity size, demand from franchise vis-a-vis demand from owned outlets, and procurement patterns</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Strategy support for a major consumer electronics company to develop their e-commerce strategy for launching a direct-to-consumer channel for the MENA region</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market study  to assess the current demand and future outlook for ARM and x86 architectures used within  different consumer devices for helping the client to develop strategies for each product types</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market intelligence for a global printer company looking to boost its market share and understand ways to increase its footprint further in emerging economies</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market study on Vietnam’s Digital Camera market covering comprehensive industry information such as market size, industry structure, competition landscape, product portfolios of key players, distribution models, pricing, and growth potential by product segment</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Opportunity analysis for a leading multinational that manufactures air conditioners to shortlist three out of  the 22 Tier II and III cities in India and formulate a go-to-market strategy for each city based on macroeconomic indicators, market size, and trends, as well as a detailed end-user analysis for each city</li>
+                </ul>
+              </div>
+
+              <div class="vtabs__content__item tab-pane" id="b">
+                BBBBBThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.
+              </div>
+
+              <div class="vtabs__content__item tab-pane" id="c">CCCCThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="d">DDDDDSecondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.</div>
+
+              <div class="vtabs__content__item tab-pane" id="e">EEEEEThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="f">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="g">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="h">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="i">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="j">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="k">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+              <div class="vtabs__content__item tab-pane" id="l">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+
+            </div><!-- /tab-content -->
+          </div><!-- /tabbable -->
+        </div><!-- /col -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div>
 </section>
 
