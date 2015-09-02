@@ -1,9 +1,8 @@
 
 {% set svcmastheadCss %}
   .svc-masthead {
-    background-color: {{ brandPrimary }};
+    padding: 50px 0;
     color: {{ ttPrimary }};
-
   }
 
   @media(min-width: {{ screenmd }}) {
@@ -49,7 +48,7 @@
 {% set asset = entry.mastheadBanner.first() %}
 
 <section class="svc-masthead container-fluid"
-  style="background: url({{ asset.url }}) no-repeat">
+  style="background: url({{ asset.url }}) no-repeat {{ brandPrimary }}">
   <div class="row">
   <div class="container">
     <div class="row">
