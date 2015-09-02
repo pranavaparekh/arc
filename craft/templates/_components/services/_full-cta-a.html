@@ -1,0 +1,54 @@
+
+{% set fullCtaACSS %}
+
+.full-cta-a {
+  background: url('/assets/images/full-cta-a-bkg.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 276px;
+}
+
+.full-cta-a__content {
+  margin-top: 110px;
+}
+
+.full-cta-a__headline {
+  color: white;
+  text-transform: uppercase;
+  font-size: 3.5em;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.full-cta-a__body {
+  border: 2px solid white;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.full-cta-a__body > a {
+  color: white;
+}
+
+
+{% endset %}
+
+{% includeCss fullCtaACSS %}
+
+<section class="container-fluid full-cta-a">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="full-cta-a__content">
+            <h3 class="full-cta-a__headline text-center">Help is just a call away</h3>
+            <p class="full-cta-a__body text-center"><a href="#">call us on or write to us at info@aranca.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
