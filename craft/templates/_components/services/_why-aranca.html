@@ -52,6 +52,10 @@
     color: {{ttOrange}};
   }
 
+  .why-arc__stat__icon {
+    opacity: 0.7;
+  }
+
 {% endset %}
 
 {% includeCss whyarcCSS %}
@@ -71,7 +75,7 @@
 {% for block in entry.whyArancaStats %}
   <div class="row">
     <div class="col-sm-6 why-arc_stat_col">
-      <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="">
+      <img class="why-arc__stat__icon" src="{{ block.statsBlockIcon.first().geturl() }}" alt="">
       <p class="why-arc__stat">{{ block.statsNumber }}</p>
       <p class="why-arc__stat__content">{{ block.statsContent }}</p>
       <p class="why-arc__stat__subcontent">{{ block.statsSubContent }}</p>

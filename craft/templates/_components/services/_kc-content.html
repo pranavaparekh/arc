@@ -2,6 +2,10 @@
 
 {% set kcContentCss %}
 
+  .kc-content {
+    padding: 30px 0;
+  }
+
   .kc-content__grid[data-columns]::before {
     content: '3 .column.size-1of3';
   }
@@ -24,6 +28,17 @@
     }
   }
 
+  .kc-content__headline {
+    font-size: 40px;
+    color: #59656B;
+    font-weight: 600;
+  }
+
+  .kc-content__border {
+    width: 15%;
+    border: 2px solid #034883;
+  }
+
   .kc-content__grid__item {
     background: #f3f3f3;
     height: 125px;
@@ -37,6 +52,14 @@
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+  }
+
+  .kc-content__grid__inner > h5 {
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 2px 3px #464343;
+    letter-spacing: 0.03em;
+    line-height: 1.2em;
   }
 
   .kc-content__grid__item--focus {
@@ -56,53 +79,90 @@
     height: 260px;
     margin-bottom: 10px;
   }
-.kc-content__list__item {
-  padding: 10px 10px;
-}
+
+  .kc-content__list__item {
+    padding: 10px 10px;
+  }
+
+  .kc-content__blog1 {
+    background: url('/assets/uploads/kc/blog1.jpg') no-repeat;
+  }
+
+  .kc-content__blog2 {
+    background: url('/assets/uploads/kc/blog2.jpg') no-repeat;
+  }
+
+  .kc-content__blog3 {
+    background: url('/assets/uploads/kc/blog3.jpg') -150px no-repeat;
+  }
+
+  .kc-content__blog4 {
+    background: url('/assets/uploads/kc/blog4.jpg') -440px no-repeat;
+  }
+
+  .kc-content__featured {
+    background: url('/assets/uploads/kc/kc-featured-story.jpg') 0 11px no-repeat;
+  }
+
+  .kc-content__featured__headline {
+    background: #2983BE;
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 1px 3px #384F5D;
+    letter-spacing: 0.03em;
+    line-height: 1.4em;
+    padding: 20px 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+  }
+
 {% endset %}
 
 {% includeCss kcContentCss %}
 
 
-<section class="container-fluid">
+<section class="container-fluid kc-content">
   <div class="row">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
+
+          <h2 class="kc-content__headline text-center">Expertise And Insights</h2>
+          <hr class="kc-content__border">
 
           <div class="kc-content__grid" data-columns>
 
             <!-- start column 1 -->
 
             <div>
-              <article class="kc-content__grid__item">
+              <article class="kc-content__grid__item kc-content__blog1">
                 <div class="kc-content__grid__inner">
-                  <h5>Trends in Payment Tech start-ups funding</h5>
+                  <h5>Why Hope Isn’t Lost For the Indian Markets?</h5>
                 </div>
               </article>
-              <article class="kc-content__grid__item">
+              <article class="kc-content__grid__item kc-content__blog2">
                 <div class="kc-content__grid__inner">
-                  <h5>How founders stock sale transactions impact 409A valuation?</h5>
+                  <h5>Moody’s Lowers India’s 2015 GDP Growth Forecast</h5>
                 </div>
               </article>
-              <article class="kc-content__grid__item">
+              <article class="kc-content__grid__item kc-content__blog3">
                 <div class="kc-content__grid__inner">
-                  <h5>How to deal with bargain purchase situations in MA reporting valuations?</h5>
+                  <h5>Payment Banks: A Paradigm Shift in India’s Banking System?</h5>
                 </div>
               </article>
-              <article class="kc-content__grid__item">
+              <article class="kc-content__grid__item kc-content__blog4">
                 <div class="kc-content__grid__inner">
-                  <h5>How will new IRS guidelines on Estate &amp;
-                  Gift tax valuations impact your business?</h5>
+                  <h5>The Great Media Sale Is On!</h5>
                 </div>
               </article>
             </div>
 
             <!-- start column 2 -->
             <div>
-              <article class="kc-content__grid__item--focus">
-                <div class="kc-content__grid__inner">
-                  <p>How to value businesses built on futuristic technologies?</p>
+              <article class="kc-content__grid__item--focus kc-content__featured">
+                <div class="kc-content__grid__inner" style="opacity: 0.9;">
+                  <p class="kc-content__featured__headline">How to value businesses built on futuristic technologies?</p>
                 </div>
               </article>
             </div>
@@ -120,10 +180,10 @@
               </article>
               <article class="kc-content__grid__newsletter">
                 <ul class="kc-content__list">
-                  <li class="kc-content__list__item">Why Hope Isn’t Lost For the Indian Markets?</li>
-                  <li class="kc-content__list__item">Moody’s Lowers India’s 2015 GDP Growth Forecast</li>
-                  <li class="kc-content__list__item">Payment Banks: A Paradigm Shift in India’s Banking System?</li>
-                  <li class="kc-content__list__item">The Great Media Sale Is On!</li>
+                  <li class="kc-content__list__item"></li>
+                  <li class="kc-content__list__item"></li>
+                  <li class="kc-content__list__item"></li>
+                  <li class="kc-content__list__item"></li>
                 </ul>
               </article>
             </div>
