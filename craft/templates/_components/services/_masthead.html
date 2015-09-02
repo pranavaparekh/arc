@@ -58,9 +58,109 @@
           <hr class="svc-masthead__border" />
           <p class="svc-masthead__breadcrumb">{{ entry.servicesCategory.first() }}</p>
 
-          <p><button type="button" class="btn btn-default svc-masthead__btn"><i class="fa fa-envelope"></i>  &nbsp;SEND US YOUR QUERIES</button></p>
+          <p>
+            <button data-toggle="modal" data-target=".contact-form" type="button" class="btn btn-default svc-masthead__btn">
+              <i class="fa fa-envelope"></i>  &nbsp;SEND US YOUR QUERIES
+            </button>
+          </p>
       </div> <!-- end col-sm-12 -->
       </div> <!-- end row -->
     </div> <!-- end container -->
   </div> <!-- end row -->
 </section>
+
+ <!-- modal -->
+<div id="fsModal"
+     class="contact-form modal animated zoomIn"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+
+  <!-- dialog -->
+  <div class="modal-dialog">
+
+    <!-- content -->
+    <div class="modal-content">
+
+      <!-- header -->
+      <div class="modal-header">
+        <h1 id="myModalLabel"
+            class="modal-title">
+          Send Enquiry
+        </h1>
+      </div>
+      <!-- header -->
+
+      <!-- body -->
+      <div class="cs-modal modal-body">
+
+        <div class="container cs-modal__block">
+          <div class="row">
+            <div class="col-sm-12 cs-modal__block--col">
+              <form class="form-horizontal">
+                <fieldset>
+                  <div class="col-sm-6 form-group">
+                  <label class="col-md-4 control-label" for="textinput">First Name</label>
+                    <div class="col-md-6">
+                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
+                    </div>
+
+                    <label class="col-md-4 control-label" for="textinput">company</label>
+                    <div class="col-md-6">
+                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
+                    </div>
+
+                    <label class="col-md-4 control-label" for="textinput">Email</label>
+                    <div class="col-md-6">
+                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
+                    </div>
+
+                  </div><!-- col-6 -->
+
+                  <div class="col-sm-6 form-group">
+                  <label class="col-md-4 control-label" for="textinput">Last Name</label>
+                    <div class="col-md-6">
+                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
+                    </div>
+
+                  <label class="col-md-4 control-label" for="textinput">Designation</label>
+                    <div class="col-md-6">
+                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
+                    </div>
+
+                  <label class="col-md-4 control-label" for="textinput">Phone</label>
+                    <div class="col-md-6">
+                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
+                    </div>
+
+                  </div><!-- col-6 -->
+
+                </fieldset>
+              </form>
+
+
+            </div><!-- end: col-12 -->
+          </div><!-- end: row -->
+        </div><!-- end: container -->
+
+      </div> <!-- modal-body -->
+
+      <!-- footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary"
+                data-dismiss="modal">
+          close
+        </button>
+      </div>
+      <!-- footer -->
+
+    </div>
+    <!-- content -->
+
+  </div>
+  <!-- dialog -->
+
+</div>
+<!-- modal -->
+
