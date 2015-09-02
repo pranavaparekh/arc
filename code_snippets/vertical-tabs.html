@@ -1,107 +1,230 @@
-<section class="vertical-tabs">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="tabs-left-vertical">
-          <ul class="nav nav-tabs-vertical">
-            <li class="active"><a href="#a" data-toggle="tab">For Strategic Planning</a></li>
-            <li><a href="#b" data-toggle="tab">Sales and Customer Management</a></li>
-            <li><a href="#c" data-toggle="tab">CXO's Business and Functional Heads</span></a></li>
-            <li><a href="#d" data-toggle="tab">Market and Procurement Intelligence</span></a></li>
-          </ul>
-          <div class="tab-content-vertical">
+{% set verticaltabCss %}
 
-            <div class="tab-pane-vertical active clearfix" id="a"><!--Start Content 1-->
-              <h2>For Strategic Planning</h2>
-              <table class="table pull-left ">
-                <tr>
-                  <th class="vertical-tabs__subheading">Business Priority</th>
-                  <th class="vertical-tabs__subheading">Aranca Solution</th>
-                </tr>
-                <tr>
-                  <td>Enter new markets. Introduce new products/services</td>
-                  <td>Quick market scans. In-depth Market studies</td>
-                </tr>
-                <tr>
-                  <td>Explore acquisition oppurtunities Identify joint venture partners</td>
-                  <td>Identify and shortlist targets</td>
-                </tr>              
-                <tr>
-                  <td>Business Innovation and transformation</td>
-                  <td>Emerging technologies, trends. Technology impats on traditional business models</td>
-                </tr>
-              </table>
-            </div><!--End Content 1-->
+h3 {
+  margin-top: 0;
+}
 
-            <div class="tab-pane-vertical clearfix" id="b"><!--Start Content 2-->
-              <h2>For Other Plannings</h2>
-              <table class="table pull-left ">
-                <tr>
-                  <th class="vertical-tabs__subheading">Business Priority</th>
-                  <th class="vertical-tabs__subheading">Aranca Solution</th>
-                </tr>
-                <tr>
-                  <td>Enter new markets. Introduce new products/services</td>
-                  <td>Quick market scans. In-depth Market studies</td>
-                </tr>
-                <tr>
-                  <td>Explore acquisition oppurtunities Identify joint venture partners</td>
-                  <td>Identify and shortlist targets</td>
-                </tr>              
-                <tr>
-                  <td>Business Innovation and transformation</td>
-                  <td>Emerging technologies, trends. Technology impats on traditional business models</td>
-                </tr>
-              </table>
-            </div><!--End Content 2-->
+.badge {
+  background-color: #777;
+}
 
-            <div class="tab-pane-vertical clearfix" id="c"><!--Start Content 3-->
-              <h2>For Various Plannings</h2>
-              <table class="table pull-left ">
-                <tr>
-                  <th class="vertical-tabs__subheading">Business Priority</th>
-                  <th class="vertical-tabs__subheading">Aranca Solution</th>
-                </tr>
-                <tr>
-                  <td>Enter new markets. Introduce new products/services</td>
-                  <td>Quick market scans. In-depth Market studies</td>
-                </tr>
-                <tr>
-                  <td>Explore acquisition oppurtunities Identify joint venture partners</td>
-                  <td>Identify and shortlist targets</td>
-                </tr>              
-                <tr>
-                  <td>Business Innovation and transformation</td>
-                  <td>Emerging technologies, trends. Technology impats on traditional business models</td>
-                </tr>
-              </table>
-            </div><!--End Content 3-->
+.tabs-left {
+  margin-top: 3rem;
+}
 
-            <div class="tab-pane-vertical clearfix" id="d"><!--Start Content 4-->
-              <h2>For Many Plannings</h2>
-              <table class="table pull-left ">
-                <tr>
-                  <th class="vertical-tabs__subheading">Business Priority</th>
-                  <th class="vertical-tabs__subheading">Aranca Solution</th>
-                </tr>
-                <tr>
-                  <td>Enter new markets. Introduce new products/services</td>
-                  <td>Quick market scans. In-depth Market studies</td>
-                </tr>
-                <tr>
-                  <td>Explore acquisition oppurtunities Identify joint venture partners</td>
-                  <td>Identify and shortlist targets</td>
-                </tr>              
-                <tr>
-                  <td>Business Innovation and transformation</td>
-                  <td>Emerging technologies, trends. Technology impats on traditional business models</td>
-                </tr>
-              </table>
-            </div><!--Start Content 4-->
+.nav-tabs {
+  float: left;
+  border-bottom: 0;
+}
 
-          </div><!-- /tab-content -->
-        </div><!-- /tabbable -->
-      </div><!-- /col -->
-    </div><!-- /row -->
-  </div><!-- /container -->
+
+
+.nav-tabs li {
+  float: none;
+  margin: 0;
+}
+.nav-tabs li a {
+  margin-right: 0;
+}
+.nav-tabs li a:hover {
+  background-color: #444;
+}
+.nav-tabs .glyphicon {
+  color: #fff;
+}
+.nav-tabs .active .glyphicon {
+  color: #333;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+}
+
+.tab-content {
+  margin-left: 45px;
+}
+.tab-content .tab-pane {
+  display: none;
+  padding: 1.6rem;
+  overflow-y: auto;
+}
+.tab-content .active {
+  display: block;
+}
+
+.list-group {
+  width: 100%;
+}
+.list-group .list-group-item {
+  height: 50px;
+}
+.list-group .list-group-item h4, .list-group .list-group-item span {
+  line-height: 11px;
+}
+
+.vtabs {
+  padding: 30px 0;
+  background: #EAEAEA;
+}
+
+.vtabs__list {
+  box-shadow: 3px 3px 10px #DBDBDB;
+}
+
+.vtabs__list__item {
+  background: #DFDEDE;
+  border-bottom: 1px solid #CFD2D3;
+}
+
+.vtabs__content__item {
+  background-color: white;
+  border: 1px solid #CFD2D3;
+  box-shadow: 3px 3px 10px #DBDBDB;
+}
+
+.vtabs__content__item h3 {
+  text-transform: uppercase;
+  color: #034883;
+  padding-bottom: 15px;
+}
+
+.vtabs__content__list__item {
+  margin-bottom: 10px;
+  color: #706F6F;
+  font-size: 1.1em;
+}
+
+.vtabs__content__list__item > .fa {
+    margin-right: 10px;
+    font-size: 1.4em;
+    color: #9BD572;
+    font-weight: 100;
+    position: relative;
+    top: 3px;
+}
+
+
+
+{% endset %}
+
+{% set verticaltabJs%}
+var tabsFn = (function() {
+
+  function init() {
+    setHeight();
+  }
+
+  function setHeight() {
+    var $tabPane = $('.tab-pane'),
+        tabsHeight = $('.nav-tabs').height();
+
+    $tabPane.css({
+      height: tabsHeight
+    });
+  }
+
+  $(init);
+})();
+{% endset %}
+
+{% includeCss verticaltabCss %}
+{% includeJs verticaltabJs %}
+
+<section class="container-fluid vtabs">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <div class="vtabs__list tabs-left">
+            <ul class="nav nav-tabs">
+              <li class="vtabs__list__item active"><a href="#a" data-toggle="tab">Global | Multi-Region</a></li>
+              <li class="vtabs__list__item"><a href="#b" data-toggle="tab">Asia & Oceania</a></li>
+              <li class="vtabs__list__item"><a href="#c" data-toggle="tab">ME & Africa</a></li>
+              <li class="vtabs__list__item"><a href="#d" data-toggle="tab">Europe</span></a></li>
+              <li class="vtabs__list__item"><a href="#e" data-toggle="tab">North America</a></li>
+              <li class="vtabs__list__item"><a href="#f" data-toggle="tab">South America</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+              <div class="vtabs__content__item tab-pane active" id="a">
+                <h3>Global | Multi-Region</h3>
+                <ul class="vtabs__content__list list-group pull-left">
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Targeting the BOP segment in emerging economies</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Premium alcohol market overview in emerging economies</li>
+                  <li class="vtabs__content__list__item">Analysis of global trends in beverages over the last decade</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Global market analysis for RTD stimulants</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Profitability analysis of global beverage manufacturers</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Analysis of R&D initiatives of beverage manufacturers</li>
+                </ul>
+              </div>
+
+              <div class="vtabs__content__item tab-pane" id="b">
+                <h3>Asia & Oceania</h3>
+                <ul class="vtabs__content__list list-group pull-left">
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market study for RTD juices in Bangladesh</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market opportunity assessment for spirits in China</li>
+                  <li class="vtabs__content__list__item">Value chain assessment for alcohol market in China</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Competition landscape for alcoholic drinks in SE Asia</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Value chain assessment for alcohol market in China</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Competition landscape for alcoholic drinks in SE Asia </li>
+                </ul>
+              </div>
+
+              <div class="vtabs__content__item tab-pane" id="c">
+                <h3>ME & Africa</h3>
+                <ul class="vtabs__content__list list-group pull-left">
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Beer market in Africa (13 countries)</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market study on bottled-water in GCC countries</li>
+                  <li class="vtabs__content__list__item">Feasibility study on packaged water in Jordon</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market entry strategy for juices in South Africa</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Value chain assessment for carbonated drinks in Nigeria</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market analysis for spirits in GCC region</li>
+                </ul>
+              </div>
+
+              <div class="vtabs__content__item tab-pane" id="d">
+                <h3>Europe</h3>
+                <ul class="vtabs__content__list list-group pull-left">
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market analysis of premium lager beer in UK</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Go-to-market strategy for milk-based drinks in EU5</li>
+                  <li class="vtabs__content__list__item">Identification of acquisition opportunities in flavored milk</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Competition analysis for juices in Spain, France and UK</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Distribution of carbonated drinks in Eastern Europe</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Feasibility study on RTD-tea in Germany</li>
+                </ul>
+              </div>
+
+              <div class="vtabs__content__item tab-pane" id="e">
+                <h3>North America</h3>
+                <ul class="vtabs__content__list list-group pull-left">
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Competition analysis for sports drinks</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market analysis for premium liqueurs in US</li>
+                  <li class="vtabs__content__list__item">Market assessment for drinking yogurt in US and Canada</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Distribution strategies for sports drinks in US</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Emerging trends for milk based drinks in US and Canada</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market assessment for coconut water in Canada</li>
+                </ul>
+              </div>
+
+              <div class="vtabs__content__item tab-pane" id="f">
+                <h3>South America</h3>
+                <ul class="vtabs__content__list list-group pull-left">
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market analysis for bottled water in South America</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market analysis for premium liqueurs in US</li>
+                  <li class="vtabs__content__list__item">Market assessment for drinking yogurt in US and Canada</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Distribution strategies for sports drinks in US</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Emerging trends for milk based drinks in US and Canada</li>
+                  <li class="vtabs__content__list__item"><i class="fa fa-check-circle-o"></i>Market assessment for coconut water in Canada</li>
+                </ul>
+              </div>
+
+            </div><!-- /tab-content -->
+          </div><!-- /tabbable -->
+        </div><!-- /col -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div>
 </section>
+
