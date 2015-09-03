@@ -31,6 +31,10 @@
     color: {{ttOrange}};
   }
 
+  .stats-blok__icon {
+    opacity: 0.8;
+  }
+
   .stats-blok__stat__content {
     font-size: 18px;
     color: {{ttgrey}};

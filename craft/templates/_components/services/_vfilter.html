@@ -2,13 +2,24 @@
 
 {% set vfilterCSS %}
 .iso-filter {
-  background:  url(/assets/images/vfilter-bkg.jpg) 0px 260px no-repeat, #E9E9E9;
+  background:  url(/assets/images/vfilter-bkg.jpg) 0px 308px no-repeat, #E9E9E9;
   min-height: 676px;
   padding: 30px 0;
 }
 
 .grid {
   margin-top: 20px;
+}
+
+.iso-filter__subheadline {
+  color: grey;
+  text-transform: capitalize;
+  line-height: 1.3em;
+}
+
+.iso-filter__intro {
+  font-size: 1.5em;
+  color: #808385;
 }
 
 .iso-filter__filter-list > li {
@@ -56,8 +67,10 @@ $(document).ready(function(){
         <div class="col-sm-3">
           <!-- start filters here -->
           <div class="filter-group filter-list-group">
-            <h3 class="iso-filter__subheadline">Browse by Geo</h3>
+            <h3 class="iso-filter__subheadline">Explore our Solutions Portfolio</h3>
             <ul class="iso-filter__filter-list">
+              <li><a href="#united-states" class="filter-item" data-filter="*">
+              All</a></li>
               <li><a href="#united-states" class="filter-item" data-filter=".united-states">
               United States</a></li>
               <li><a href="#india" class="filter-item" data-filter=".india">India</a></li>
@@ -75,10 +88,10 @@ $(document).ready(function(){
           data-isotope-options='{ "itemSelector": ".iso-filter__grid-item", "layoutMode": "fitRows" }'>
 
           <div class="iso-filter__grid-item united-states" style="min-width: 482px;">
-            <h4 class="iso-filter__grid-content__headline">Tax Services</h4>
+            <h4 class="iso-filter__grid-content__headline"><a href="/valuation-and-advisory/tax-services">Tax Services</a></h4>
             <ul>
               <div class="pull-left" style="margin-right: 30px;">
-                <li class="iso-filter__grid-content__item"><a href="">IRC409A Valuation (Stock Options)</a></li>
+                <li class="iso-filter__grid-content__item"><a href="/valuation-and-advisory/409-valuation-services">IRC409A Valuation (Stock Options)</a></li>
                 <li class="iso-filter__grid-content__item"><a href="">Estate &amp; Gift Tax</a></li>
                 <li class="iso-filter__grid-content__item"><a href="">Charitable Contributions (IRC351/355)</a></li>
                 <li class="iso-filter__grid-content__item"><a href="">Legal Entity Valuation (IRC351/355)</a></li>
