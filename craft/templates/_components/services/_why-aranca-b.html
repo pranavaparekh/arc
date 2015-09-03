@@ -1,5 +1,5 @@
 {% set whyarcCSS %}
-  .why-arc-b { padding: 20px 0; }
+  .why-arc-b { padding: 30px 0; }
 
   .why-arc-b__headline--main {
     margin-bottom: 20px;
@@ -55,7 +55,9 @@
       <div class="row">
         {% for block in entry.blockContent %}
         <div class="col-sm-4 why-arc-b__headline--col">
-          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1">
+          {% if block.icon.first() | length %}
+            <img src="{{ block.icon.first().getUrl() }}" class="why-arc-b__icon" alt="cap-block-icon1">
+          {% endif %}
           <h3 class="why-arc-b__headline--small">{{ block.headline }}</h3>
           <hr class="why-arc-b__border--content">
           <div class="why-arc-b__content">

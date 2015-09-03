@@ -69,19 +69,43 @@
   }
 
   .kc-content__grid__listbox {
-    background: #f3f3f3;
-    height: 260px;
-    margin-bottom: 10px;
+    background: url('/assets/images/thematic-reports-bkg.jpg') no-repeat #f3f3f3;
+    height: 286px;
+    margin-bottom: 24px;
+    position: relative;
+    top: 12px;
+    padding: 20px;
   }
 
   .kc-content__grid__newsletter {
-    background: #f3f3f3;
-    height: 260px;
+    background: url('/assets/images/newsletter-bkg.jpg') no-repeat #f3f3f3;
+    -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+    height: 231px;
     margin-bottom: 10px;
+    padding: 20px;
+  }
+
+  .kc-content__list {
+
   }
 
   .kc-content__list__item {
-    padding: 10px 10px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 2px 3px #464343;
+    letter-spacing: 0.03em;
+    line-height: 1.2em;
+  }
+
+  .kc-content__grid__newsletter__form {
+    color: white;
+    position: relative;
+    top: 70px;
   }
 
   .kc-content__blog1 {
@@ -179,12 +203,12 @@
                 </ul>
               </article>
               <article class="kc-content__grid__newsletter">
-                <ul class="kc-content__list">
-                  <li class="kc-content__list__item"></li>
-                  <li class="kc-content__list__item"></li>
-                  <li class="kc-content__list__item"></li>
-                  <li class="kc-content__list__item"></li>
-                </ul>
+                <form class="kc-content__grid__newsletter__form" action="">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Subscribe to our exclusive content</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Just Enter your Email">
+                  </div>
+                </form>
               </article>
             </div>
 

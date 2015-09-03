@@ -1,7 +1,7 @@
 {% set statsblokCSS %}
   .stats-blok {
     background-color: #F2F2F2;
-    padding: 20px 0;
+    padding: 30px 0;
   }
 
   .stats-blok__headline--main {
@@ -69,7 +69,10 @@
 
       {% for block in entry.statBlockContent %}
       <div class="{{ gridClass }} stats-blok__headline--col">
-          <img src="http://loremicon.com/files/uploads/line/png/32/global_32px.png" alt="cap-block-icon1">
+
+          {% if block.icon.first() | length %}
+            <img src="{{ block.icon.first().getUrl() }}" class="stats-blok__icon" alt="cap-block-icon1">
+          {% endif %}
           <h3 class="stats-blok__stat">{{ block.headline }}</h3>
           <div class="stats-blok__stat__content">
             <p>{{ block.subtext }}</p>
