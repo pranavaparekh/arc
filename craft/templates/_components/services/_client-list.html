@@ -42,8 +42,9 @@
     <div class="container">
       <div class="row">
           {% for block in entry.clientListIntro %}
-          <h2 class="cl-list__headline text-center">{{ block.headline }}</h2>
-          <p class="cl-list__subheadline text-center">{{ block.subHeadline}}</p>
+          <h2 class="lede__headline text-center">{{ block.headline }}</h2>
+          <hr class="lede__border">
+          <p class="lede__subheadline text-center">{{ block.subHeadline}}</p>
           {% endfor %}
 
           {% if entry.clientLogoList | length %}

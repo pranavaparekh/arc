@@ -20,6 +20,21 @@
   .svc-test-hrline {
     border-top: 1px solid #cdcdcd;
   }
+
+  .svc-test__quote {
+    text-align: center;
+    color:  {{ ttBlue }};
+    border: none;
+    font-size: 1.5em;
+    font-style: italic;
+  }
+
+  .svc-test__quote > cite {
+    font-weight: 300;
+    color: #59656B;
+  }
+
+
 {% endset %}
 
 {% set svctextJs %}
@@ -40,15 +55,16 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h3 class="svc-test__headline">Client Speak</h3>
-            <p class="svc-test__subheadline">
+          <h3 class="lede__headline text-center">Client Speak</h3>
+          <hr class="lede__border">
+            <p class="lede__subheadline text-center">
               {{ entry.serviceTestimonialsIntro }}
             </p>
                 <div class="flexslider">
                   <ul class="slides">
                     {% for block in entry.serviceTestimonials %}
                       <li>
-                      <blockquote>
+                      <blockquote class="svc-test__quote">
                         <span class="img-sprite quote left-icon"></span>
                          {{ block.testimonialQuote }}
                         <cite>— {{ block.testimonialAuthor }}</cite>

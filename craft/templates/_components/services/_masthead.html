@@ -1,35 +1,54 @@
+{% set asset = entry.mastheadBanner.first() %}
 
 {% set svcmastheadCss %}
   .svc-masthead {
     padding: 50px 0;
     color: {{ ttPrimary }};
+    background-color: {{ brandPrimary }};
   }
 
   @media(min-width: {{ screenmd }}) {
     .svc-masthead {
+      background: url({{ asset.url }}) no-repeat {{ brandPrimary }};
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+      min-height: 750px;
     }
 
+    .svc-masthead__content {
+      position: relative;
+      top: 450px;
+      left: 545px;
+      max-width: 641px;
+    }
 
+  }
+
+
+  .svc-masthead__content {
+    position: relative;
   }
 
   .svc-masthead__headline {
     text-transform: uppercase;
     font-weight: 400;
     text-shadow: 1px 2px 7px #5C5C5C;
+    position:relative;
+    top: -15px;
   }
 
   .svc-masthead__subheadline {
-    font-size: 16px;
+    font-size: 18px;
+    text-shadow: 1px 2px 7px #5C5C5C;
   }
 
   .svc-masthead__breadcrumb {
     text-transform: uppercase;
     letter-spacing: 3px;
-    padding-top:8px;
+    position: relative;
+    top:15px;
   }
 .svc-masthead__border {
   width: 50%;
@@ -39,31 +58,42 @@
     color: #ffffff;
     background-color: {{ brandPrimary }};
     margin-left: 45%;
-    margin-top:-9%;
+    margin-top:-14%;
+  }
+
+  .inq-modal__body {
+    padding: 30px;
+    background-color: aliceblue;
+    padding-top: 120px;
+  }
+
+  .inq-modal__body label {
+    color: #3275CD;
   }
 
 {% endset %}
 
 {% includeCss svcmastheadCss %}
 
-{% set asset = entry.mastheadBanner.first() %}
 
-<section class="svc-masthead container-fluid"
-  style="background: url({{ asset.url }}) no-repeat {{ brandPrimary }}">
+
+<section class="svc-masthead container-fluid">
   <div class="row">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
+        <div class="svc-masthead__content">
           <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
-          <p class="svc-masthead__subheadline">{{ entry.pageSubheadline }}</p>
+          <!-- <p class="svc-masthead__subheadline">{{ entry.pageSubheadline }}</p> -->
           <hr class="svc-masthead__border" />
           <p class="svc-masthead__breadcrumb">{{ entry.servicesCategory.first() }}</p>
 
           <p>
-            <button data-toggle="modal" data-target=".contact-form" type="button" class="btn btn-default svc-masthead__btn">
+            <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default svc-masthead__btn">
               <i class="fa fa-envelope"></i>  &nbsp;SEND US YOUR QUERIES
             </button>
           </p>
+        </div>
       </div> <!-- end col-sm-12 -->
       </div> <!-- end row -->
     </div> <!-- end container -->
@@ -72,7 +102,7 @@
 
  <!-- modal -->
 <div id="fsModal"
-     class="contact-form modal animated zoomIn"
+     class="modal inq-modal animated zoomIn"
      tabindex="-1"
      role="dialog"
      aria-labelledby="myModalLabel"
@@ -94,58 +124,56 @@
       <!-- header -->
 
       <!-- body -->
-      <div class="cs-modal modal-body">
+      <div class="modal-body inq-modal__body">
 
-        <div class="container cs-modal__block">
+        <div class="container inq-modal__block">
           <div class="row">
-            <div class="col-sm-12 cs-modal__block--col">
-              <form class="form-horizontal">
-                <fieldset>
-                  <div class="col-sm-6 form-group">
-                  <label class="col-md-4 control-label" for="textinput">First Name</label>
-                    <div class="col-md-6">
-                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
-                    </div>
+            <div class="col-sm-12">
 
-                    <label class="col-md-4 control-label" for="textinput">company</label>
-                    <div class="col-md-6">
-                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
-                    </div>
 
-                    <label class="col-md-4 control-label" for="textinput">Email</label>
-                    <div class="col-md-6">
-                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
-                    </div>
 
-                  </div><!-- col-6 -->
+                <form>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Last Name</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
 
-                  <div class="col-sm-6 form-group">
-                  <label class="col-md-4 control-label" for="textinput">Last Name</label>
-                    <div class="col-md-6">
-                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
-                    </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Designation</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
 
-                  <label class="col-md-4 control-label" for="textinput">Designation</label>
-                    <div class="col-md-6">
-                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
-                    </div>
+              </div>  <!-- end col-sm-6 -->
 
-                  <label class="col-md-4 control-label" for="textinput">Phone</label>
-                    <div class="col-md-6">
-                      <input id="textinput" name="firstname" type="text" placeholder="" class="form-control input-md" required="">
-                    </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Company</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
 
-                  </div><!-- col-6 -->
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Phone</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
 
-                </fieldset>
+              </div><!-- end: col-6 -->
+              <button type="submit" class="btn btn-primary btn-block">Send Your Query</button>
               </form>
-
 
             </div><!-- end: col-12 -->
           </div><!-- end: row -->
         </div><!-- end: container -->
 
-      </div> <!-- modal-body -->
+      </div> <!-- modal-body inq-modal__body -->
 
       <!-- footer -->
       <div class="modal-footer">
