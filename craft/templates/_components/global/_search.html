@@ -1,44 +1,14 @@
 {% set expandSearchJs %}
 
-  $(document).ready(function(){
-            var submitIcon = $('.searchbox-icon');
-            var inputBox = $('.searchbox-input');
-            var searchBox = $('.searchbox');
-            var isOpen = false;
-            submitIcon.click(function(){
-                if(isOpen == false){
-                    searchBox.addClass('searchbox-open');
-                    inputBox.focus();
-                    isOpen = true;
-                } else {
-                    searchBox.removeClass('searchbox-open');
-                    inputBox.focusout();
-                    isOpen = false;
-                }
-            });
-             submitIcon.mouseup(function(){
-                    return false;
-                });
-            searchBox.mouseup(function(){
-                    return false;
-                });
-            $(document).mouseup(function(){
-                    if(isOpen == true){
-                        $('.searchbox-icon').css('display','block');
-                        submitIcon.click();
-                    }
-                });
-        });
-        function buttonUp(){
-            var inputVal = $('.searchbox-input').val();
-            inputVal = $.trim(inputVal).length;
-            if( inputVal !== 0){
-                $('.searchbox-icon').css('display','none');
-            } else {
-                $('.searchbox-input').val('');
-                $('.searchbox-icon').css('display','block');
-            }
-        }
+(function($, window, undefined){
+
+  $('.search-trigger').on( 'click', function(e) {
+    e.preventDefault();
+    console.log('search clicked');
+    $('.search-bar').toggleClass('visible');
+  });
+
+})(jQuery, window, null);;
 
 {% endset %}
 
@@ -46,10 +16,11 @@
 {% includeJs expandSearchJs %}
 
 
-<div class="site-search">
-  <form class="searchbox" style="top:11px;">
-    <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-    <input type="submit" class="searchbox-submit" value="SEARCH">
-    <span class="searchbox-icon">Find</span>
+<div class="search-bar">
+  <div class="search-form-wrapper">
+    <form role="search" method="get" class="search-form" action="http://www.dtelepathy.com/blog/" id="search-form">
+    <button class="fa fa-search icon-search"></button>
+    <input type="text" autocomplete="off" placeholder="Search our library" value="" class="search-input" name="s" id="s">
   </form>
+  </div>
 </div>
