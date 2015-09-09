@@ -5,7 +5,6 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
-          {% include '_components/global/_sidemenu' %}
           <img id="logo" src="{{ craft.config.assetsImagesUrl }}/214x33-aranca-logo.png" alt="Aranca Logo">
         </div><!-- end col-sm-6 -->
         <div class="col-sm-9">
@@ -16,6 +15,7 @@
             </div><!-- end col-sm-2 -->
             <div class="col-sm-8">
               {% include '_components/global/_main_nav' %}
+              {% include '_components/global/_sidemenu' %}
             </div><!-- end col-sm-4 -->
           </div><!-- end row -->
         </div><!-- end .col-sm-6 -->

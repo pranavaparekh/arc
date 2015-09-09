@@ -2,13 +2,16 @@
 
   .body-intro-white-bkg {
     background: #FFF;
-    padding: 80px 60px;
+    padding: 20px 60px;
   }
 
   .body-intro-white-bkg > .row {
     padding-top: 26px;
   }
-
+  .body-intro__content {
+    font-size:  1.5em;
+    color:  #59656b;
+  }
 {% endset %}
 
 {% includeCss svcbodyintroCSS %}
@@ -19,7 +22,7 @@
   <section class="container-fluid body-intro-white-bkg">
     <div class="row">
 
-    <p>{{ entry.body }}</p>
+    <div class="body-intro__content text-center">{{ entry.body }}</div>
 
     </div>
   </section>

@@ -5,8 +5,8 @@
 
   .sdmenu {
     position: absolute;
-    right: 105%;
-    top: 33%;
+    left: 98%;
+    top: 30%;
     font-size: 2em;
   }
 
@@ -31,7 +31,9 @@
 
 {% set sliderJs  %}
   $(document).ready(function() {
-  $('.sdmenu').sidr();
+  $('.sdmenu').sidr({
+    side: 'right'
+  });
   });
 {% endset %}
 

@@ -1,0 +1,112 @@
+{% set svcBoxGridCss %}
+
+  .box-grid {
+    padding: 30px 0;
+    background: #e3f2fa;
+    padding-bottom: 60px;
+    border-bottom: 2px solid #CEE8F6;
+  }
+
+
+  .box-grid--inner {
+    background: white;
+    box-shadow: 0px 2px 7px #CBCBCB;
+    padding: 10px 20px;
+  }
+  .box-grid__col-headline__wrapper {
+    background-color: #5DA6DD;
+  }
+
+ .box-grid__col-headline {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    padding: 15px;
+    margin-bottom: 0;
+  }
+
+  .box-grid__col-list__item {
+    line-height: 2.2em;
+  }
+
+  .box-grid__col-list__item > a {
+    font-size: 1.2em;
+    color: #2d7da8;
+  }
+
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+{% endset %}
+
+{% includeCss svcBoxGridCss %}
+<section>
+  <div class="container-fluid box-grid">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 box-grid__headline-main">
+            <img src="/assets/uploads/icons/solutions-icon-gray.png" class="box-grid__icon img-center" alt="box-grid-icon" />
+            <h2 class="lede__headline">Explore Our Solutions Portfolio</h2>
+            <p class="lede__subheadline">Our diverse solutions portfolio helps our clients meet their ever-growing reporting needs and provide in-depth analysis in dealing with valuation issues during transaction process</p>
+            <hr class="lede__border">
+          </div><!-- headline main -->
+        </div><!-- row -->
+
+        <div class="row">
+          <div class="col-sm-4 box-grid__col-main">
+            <div class="box-grid__col-headline__wrapper">
+              <h2 class="box-grid__col-headline">Strategic Planning</h2>
+            </div>
+            <div class="box-grid--inner">
+              <ul class="box-grid__col-list">
+                 <li class="box-grid__col-list__item"><a href="#">International Expansion</a></li>
+                 <li class="box-grid__col-list__item"><a href="#">New products or Diversification</a></li>
+                 <li class="box-grid__col-list__item"><a href="#">Increase market share<</a></li>
+                 <li class="box-grid__col-list__item"><a href="#">Acquire Companies</a></li>
+                 <li class="box-grid__col-list__item"><a href="#">Digital Strategies</a></li>
+              </ul>
+            </div><!--inner -->
+          </div><!-- col-4-->
+
+          <div class="col-sm-4 box-grid__col-main">
+            <div class="box-grid__col-headline__wrapper">
+              <h2 class="box-grid__col-headline">Market Intelligence</h2>
+            </div>
+            <div class="box-grid--inner">
+              <ul class="box-grid__col-list">
+               <li class="box-grid__col-list__item"><a href="#">Track, analyse Competition</a></li>
+               <li class="box-grid__col-list__item"><a href="#">Understand your Customers</a></li>
+               <li class="box-grid__col-list__item"><a href="#">Enhance Sales effectiveness</a></li>
+               <li class="box-grid__col-list__item"><a href="#">Channel Effectiveness</a></li>
+               <li class="box-grid__col-list__item"><a href="#">Innovation Trends</a></li>
+              </ul>
+            </div><!--inner -->
+          </div><!-- col-4-->
+
+          <div class="col-sm-4 box-grid__col-main">
+            <div class="box-grid__col-headline__wrapper">
+              <h2 class="box-grid__col-headline">Research as a service</h2>
+            </div>
+            <div class="box-grid--inner">
+              <ul class="box-grid__col-list">
+                <li class="box-grid__col-list__item"><a href="#">Co-sourced CI / MI teams</a> </li>
+                <li class="box-grid__col-list__item"><a href="#">Research HelpDesk</a> </li>
+                <li class="box-grid__col-list__item"><a href="#">Self-Service Knowledge Portals</a> </li>
+                <li class="box-grid__col-list__item"><a href="#">Small-data Analytics</a> </li>
+                <li class="box-grid__col-list__item"><a href="#">Outsource Routine Knowledge Tasks</a> </li>
+              </ul>
+            </div><!--inner -->
+          </div><!-- col-4-->
+        </div><!-- row -->
+
+      </div><!-- container -->
+    </div><!-- row -->
+  </div><!-- container-fluid -->
+</section>
+
+
