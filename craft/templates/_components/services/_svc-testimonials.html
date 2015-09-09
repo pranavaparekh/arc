@@ -38,10 +38,10 @@
 {% endset %}
 
 {% set svctextJs %}
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-      animation: "slide",
-    });
+  $('.svc-testimonials__list').slick({
+    autoplay: true,
+    autoplaySpeed: 1000,
+    arrows: false,
   });
 {% endset %}
 
@@ -60,19 +60,19 @@
             <p class="lede__subheadline text-center">
               {{ entry.serviceTestimonialsIntro }}
             </p>
-                <div class="flexslider">
-                  <ul class="slides">
-                    {% for block in entry.serviceTestimonials %}
-                      <li>
-                      <blockquote class="svc-test__quote">
-                        <span class="img-sprite quote left-icon"></span>
-                         {{ block.testimonialQuote }}
-                        <cite>— {{ block.testimonialAuthor }}</cite>
-                      </blockquote>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div><!-- end flexslider -->
+            <div>
+              <ul class="svc-testimonials__list">
+                {% for block in entry.serviceTestimonials %}
+                  <li>
+                  <blockquote class="svc-test__quote">
+                    <span class="img-sprite quote left-icon"></span>
+                     {{ block.testimonialQuote }}
+                    <cite>— {{ block.testimonialAuthor }}</cite>
+                  </blockquote>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div><!-- end flexslider -->
 
         </div><!-- end col-sm-12 -->
       </div><!-- end row -->
