@@ -2,10 +2,10 @@
 
 {% include '_components/global/_header' %}
 {% include '_components/services/_masthead' %}
-{% include '_components/services/_svc_box_grid' %}
+{% include '_components/services/_svc_box_grid' with {'data': entry.solutionRichtext } %}
 {% include '_components/services/_svc-stats_blok' %}
 {% include '_components/services/_client-list' %}
-{% include '_components/services/_indus-filter' %}
+{% include '_components/services/_svc_box_grid' with {'data': entry.experienceRichtext } %}
 {% include '_components/services/_world_map' %}
 {% include '_components/services/_full-cta-a' %}
 {% include '_components/services/_kc-content' %}

@@ -1,0 +1,58 @@
+{% set svcBoxGridCss %}
+
+  .box-grid {
+    padding: 30px 0;
+    background: #e3f2fa;
+    padding-bottom: 60px;
+    border-bottom: 2px solid #CEE8F6;
+  }
+
+
+  .box-grid--inner {
+    background: white;
+    box-shadow: 0px 2px 7px #CBCBCB;
+    padding: 10px 20px;
+  }
+  .box-grid__col-headline__wrapper {
+    background-color: #5DA6DD;
+  }
+
+ .box-grid__col-headline {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    padding: 15px;
+    margin-bottom: 0;
+  }
+
+  .box-grid__col-list__item {
+    line-height: 2.2em;
+  }
+
+  .box-grid__col-list__item > a {
+    font-size: 1.2em;
+    color: #2d7da8;
+  }
+
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+{% endset %}
+
+{% includeCss svcBoxGridCss %}
+<section>
+  <div class="container-fluid box-grid">
+    <div class="row">
+      <div class="container">
+         {{ data }}
+      </div><!-- container -->
+    </div><!-- row -->
+  </div><!-- container-fluid -->
+</section>
+
+
+
