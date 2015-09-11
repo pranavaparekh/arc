@@ -36,7 +36,7 @@
     font-weight: 400;
     text-shadow: 1px 2px 7px #5C5C5C;
     position:relative;
-    top: -15px;
+    margin-bottom: 30px;
   }
 
   .svc-masthead__subheadline {
@@ -63,8 +63,9 @@
   .svc-masthead__btn {
     color: #ffffff;
     background-color: {{ brandPrimary }};
-    margin-left: 45%;
-    margin-top:-14%;
+    position: absolute;
+    left: 48%;
+    bottom: 30%;
   }
 
   .inq-modal__body {
@@ -75,6 +76,10 @@
 
   .inq-modal__body label {
     color: #3275CD;
+  }
+
+  .svc-masthead__cta-container {
+
   }
 
 {% endset %}
@@ -89,44 +94,45 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="svc-masthead__content">
-          <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+
           <!-- <p class="svc-masthead__subheadline">{{ entry.pageSubheadline }}</p> -->
-          <hr class="svc-masthead__border" />
+
           {% set firstLevel = entry.servicesCategory.level(1).first() %}
           {% set secondLevel = entry.servicesCategory.level(2).first() %}
-          {% set thirdLevel = entry.servicesCategory.level(3).first()%}
+          {% set thirdLevel = entry.servicesCategory.level(3).first() %}
 
-          <ul class="svc-masthead__breadcrumb">
-          {% if firstLevel | length %}
-            <li class="svc-masthead__breadcrumb__item">
-              {% for entry in firstLevel.categoryEntryUrl %}
-              <a href="{{ entry.url }}">{{ firstLevel }}</a>
-              {% endfor %}
-            </li>
-          {% endif %}
-
-          {% if secondLevel | length %}
-            {% for entry in secondLevel.categoryEntryUrl %}
-              <li class="svc-masthead__breadcrumb__item">
-                <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
-              </li>
-            {% endfor %}
-          {% endif %}
-
-          {% if thirdLevel | length %}
-            {% for entry in thirdLevel.categoryEntryUrl %}
-            <li class="svc-masthead__breadcrumb__item">
-              <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
-            </li>
-            {% endfor %}
-          {% endif %}
-          </ul>
-
-          <p>
+          <div class="svc-masthead__cta-container">
+            <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+            <hr class="svc-masthead__border" />
             <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default svc-masthead__btn">
-              <i class="fa fa-envelope"></i>  &nbsp;SEND US YOUR QUERIES
+              <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
             </button>
-          </p>
+            <ul class="svc-masthead__breadcrumb">
+              {% if firstLevel | length %}
+                <li class="svc-masthead__breadcrumb__item">
+                  {% for entry in firstLevel.categoryEntryUrl %}
+                  <a href="{{ entry.url }}">{{ firstLevel }}</a>
+                  {% endfor %}
+                </li>
+              {% endif %}
+
+              {% if secondLevel | length %}
+                {% for entry in secondLevel.categoryEntryUrl %}
+                  <li class="svc-masthead__breadcrumb__item">
+                    <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+
+              {% if thirdLevel | length %}
+                {% for entry in thirdLevel.categoryEntryUrl %}
+                <li class="svc-masthead__breadcrumb__item">
+                  <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
+                </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
         </div>
       </div> <!-- end col-sm-12 -->
       </div> <!-- end row -->
@@ -199,8 +205,13 @@
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
 
+
               </div><!-- end: col-6 -->
-              <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Query</button>
+
+              <div class="row">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Query</button>
+              </div>
+
               </form>
 
             </div><!-- end: col-12 -->
