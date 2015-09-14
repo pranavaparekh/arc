@@ -28,11 +28,12 @@
   }
   .stats-blok__stat {
     font-size: 24px;
-    color: {{ttOrange}};
+    color: {{redPrimary}};
   }
 
   .stats-blok__icon {
     opacity: 0.8;
+    padding-bottom: 1em;
   }
 
   .stats-blok__stat__content {

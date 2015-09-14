@@ -36,12 +36,15 @@
     font-weight: 400;
     text-shadow: 1px 2px 7px #5C5C5C;
     position:relative;
-    margin-bottom: 30px;
   }
 
   .svc-masthead__subheadline {
     font-size: 18px;
     text-shadow: 1px 2px 7px #5C5C5C;
+  }
+
+  .svc-masthead__breadcrumb {
+    margin-bottom: 23px;
   }
 
   .svc-masthead__breadcrumb__item {
@@ -63,9 +66,9 @@
   .svc-masthead__btn {
     color: #ffffff;
     background-color: {{ brandPrimary }};
-    position: absolute;
+    /* position: absolute;
     left: 48%;
-    bottom: 30%;
+    bottom: 4%; */
   }
 
   .inq-modal__body {
@@ -104,9 +107,7 @@
           <div class="svc-masthead__cta-container">
             <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
             <hr class="svc-masthead__border" />
-            <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default svc-masthead__btn">
-              <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
-            </button>
+
             <ul class="svc-masthead__breadcrumb">
               {% if firstLevel | length %}
                 <li class="svc-masthead__breadcrumb__item">
@@ -132,6 +133,9 @@
                 {% endfor %}
               {% endif %}
             </ul>
+            <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default svc-masthead__btn">
+              <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
+            </button>
           </div>
         </div>
       </div> <!-- end col-sm-12 -->

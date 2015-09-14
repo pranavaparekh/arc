@@ -2,7 +2,7 @@
 
 {% set vfilterCSS %}
 .iso-filter {
-  background:  url(/assets/images/vfilter-bkg.jpg) 0px 308px no-repeat, #E9E9E9;
+  background:  url(/assets/images/vfilter-bkg.jpg) 0px 334px no-repeat, {{ brandOrange }};
   min-height: 676px;
   padding: 30px 0;
 }
@@ -11,15 +11,23 @@
   margin-top: 20px;
 }
 
+.iso-filter__grid-content__headline {
+  color: #9D6625;
+}
+
 .iso-filter__subheadline {
-  color: grey;
+  color: white;
   text-transform: capitalize;
   line-height: 1.3em;
 }
 
 .iso-filter__intro {
   font-size: 1.5em;
-  color: #808385;
+  color: white;
+}
+
+.filter-item {
+  color: #9D6625;
 }
 
 .iso-filter__filter-list > li {
@@ -37,11 +45,12 @@
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 20px 10px;
-  box-shadow: 0px 2px 7px #CBCBCB;
+  box-shadow: 0px 2px 7px #C08033;
 }
 
-.iso-filter__grid-content__item {
+.iso-filter__grid-content__item > a  {
   margin-bottom: 5px;
+  color: #9D6625;
 }
 
 {% endset %}
