@@ -28,14 +28,38 @@
     line-height: 40px;
   }
   .feat-cs__summary {
-  font-size: 18px;
+  font-size: 1.5em;
   text-align: center;
   font-weight: 500;
-  letter-spacing: 3px;
+  text-transform: none;
+  }
+
+  .feat-cs__readmore {
+    margin-top: 10px;
+  }
+
+  .feat-cs__readmore > a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+    border: 1px solid white;
+    padding: 4px 60px;
   }
 {% endset %}
 
+{% set featCasestudyJs %}
+
+  new Waypoint.Inview({
+    element: $('.feat-cs')[0],
+    enter: function(direction) {
+      $('.feat-cs').addClass('animated fadeInUp');
+    }
+  });
+
+{% endset %}
+
 {% includeCss featcaseCss %}
+{% includeJs featCasestudyJs %}
 
 <section class="feat-cs container-fluid">
   <div class="row">

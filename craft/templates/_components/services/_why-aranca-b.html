@@ -48,8 +48,18 @@
 
 {% endset %}
 
-{% includeCss whyarcCSS %}
+{% set whyarcJs %}
+  new Waypoint.Inview({
+    element: $('.why-arc-b__headline--col')[0],
+    enter: function(direction) {
+      $('.why-arc-b__headline--col').addClass('animated fadeInUp');
+    }
+  });
 
+{% endset%}
+
+{% includeCss whyarcCSS %}
+{% includeJs whyarcJs %}
 
 <section class="why-arc-b container-fluid">
   <div class="row">

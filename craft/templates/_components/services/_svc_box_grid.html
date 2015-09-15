@@ -45,7 +45,19 @@
 
 {% endset %}
 
+{% set svcBoxGridJs %}
+  new Waypoint.Inview({
+    element: $('.box-grid')[0],
+    enter: function(direction) {
+       $('.box-grid__col-main').addClass('animated fadeInUpBig');
+    }
+  });
+
+{% endset %}
+
 {% includeCss svcBoxGridCss %}
+{% includeJs svcBoxGridJs %}
+
 <section>
   <div class="container-fluid box-grid">
     <div class="row">

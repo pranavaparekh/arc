@@ -43,8 +43,18 @@
 
 {% endset %}
 
-{% includeCss statsblokCSS %}
+{% set statsblokJs %}
+  new Waypoint.Inview({
+    element: $('.stats-blok')[0],
+    enter: function(direction) {
+      $('.stats-blok__headline--col').addClass('animated fadeInUp');
+      console.log('ststsblok reached');
+    }
+  });
+{% endset %}
 
+{% includeCss statsblokCSS %}
+{% includeJs statsblokJs %}
 
 <section class="stats-blok container-fluid">
   <div class="row">

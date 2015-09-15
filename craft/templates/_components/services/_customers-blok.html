@@ -1,3 +1,5 @@
+
+
 {% set custblokCss %}
   .cust {
     background-color: #F6F6F6;
@@ -71,7 +73,20 @@
 
 {% endset %}
 
+{% set custBlockJs %}
+
+  new Waypoint.Inview({
+    element: $('.cust-blok--col')[0],
+    enter: function(direction) {
+      $('.cust-blok__headline--col').addClass('animated fadeInUp');
+      console.log('Scrolled to waypoint!')
+    }
+  });
+
+{% endset %}
+
 {% includeCss custblokCss %}
+{% includeJs custBlockJs %}
 
 <section class="container-fluid cust">
   {% if entry.customersBlockBanner | length %}
