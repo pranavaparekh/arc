@@ -2,12 +2,15 @@
 {% includeJsFile "/assets/js/jquery.scrollUp.min.js"  %}
 {% includeJsFile "/assets/js/jquery.colio.min.js"  %}
 
+{% includeJsFile "/assets/js/jquery.matchHeight-min.js" %}
+
+
 {% includeCssFile "/assets/css/colio.css"  %}
 
 {% set cfilterCSS %}
 
   .cfilter {
-    background: #eae9e9;
+    background: #e3f2fa;
     padding: 20px 0;
   }
 
@@ -36,11 +39,17 @@
     font-weight: 600;
   }
 
+  .colio-content__headline {
+    color: #5DA6DD;
+    margin-left: 13px;
+  }
+
   #cfilter__expanded {
-    background: url('/assets/images/br-cfilter-expanded-bkg.jpg') no-repeat;
+    /*background: url('/assets/images/br-cfilter-expanded-bkg.jpg') no-repeat;*/
     margin: 110px 15px;
     color: {{ttPrimary}};
     top: -10px;
+    background-color: #e3f2fa;
   }
 
   .colio-active-item #cfilter__expanded {
@@ -108,7 +117,11 @@
         id: 'cfilter__expanded'
     });
 
+    $('.box-grid__col-main').matchHeight({});
+
   });
+
+
 
 {% endset %}
 
@@ -119,7 +132,16 @@
   <div class="row">
     <div class="container">
       <div class="row">
+        <div class="col-sm-12 box-grid__headline-main">
+            <img src="/assets/uploads/icons/solutions-icon-gray.png" class="box-grid__icon img-center" alt="box-grid-icon">
+            <h2 class="lede__headline">Solutions Portfolio</h2>
+            <p class="lede__subheadline">Our diverse solutions portfolio helps our clients meet their ever-growing research needs to enable their strategic business decisions
+            </p>
+            <hr class="lede__border">
+        </div>
+      </div><!-- end row -->
 
+      <div class="row">
         <div class="col-sm-12">
           {{ entry.servicesFilters }}
         </div><!-- end col-sm-12 -->
@@ -129,7 +151,7 @@
             <div class="main">
               <div class="row">
                 <div class="col-sm-6"><!-- main col 6 -->
-                  <h3>Growth and Strategy</h3>
+                  <h3 class="colio-content__headline">Growth and Strategy</h3>
                   <div class="col-sm-6 box-grid__col-main">
                     <div class="box-grid__col-headline__wrapper">
                       <h4 class="box-grid__col-headline">International Expansion</h4>
@@ -157,7 +179,7 @@
                 </div><!-- main-col-6-->
 
                 <div class="col-sm-6"><!-- main-col-6-->
-                <h3>Understand your business better</h3>
+                <h3 class="colio-content__headline">Understand your business better</h3>
                   <div class="col-sm-6 box-grid__col-main">
                     <div class="box-grid__col-headline__wrapper">
                       <h4 class="box-grid__col-headline">Customer Insights</h4>
@@ -303,7 +325,7 @@
             <div class="main">
               <div class="row">
                 <div class="col-sm-6"><!-- main col 6 -->
-                <h3>Research support for <br/>Consulting Engagements</h3>
+                <h3 class="colio-content__headline">Research support for <br/>Consulting Engagements</h3>
                   <div class="col-sm-6 box-grid__col-main">
                     <div class="box-grid__col-headline__wrapper">
                       <h2 class="box-grid__col-headline">Market | Industry Studies</h2>
@@ -331,7 +353,7 @@
                 </div><!-- main-col-6-->
 
                 <div class="col-sm-6"><!-- main-col-6-->
-                <h3>Knowledge management support for enhancing<br/>Operational effectiveness</h3>
+                <h3 class="colio-content__headline">Knowledge management support for enhancing Operational effectiveness</h3>
                   <div class="col-sm-12 box-grid__col-main">
                     <div class="box-grid__col-headline__wrapper">
                       <h2 class="box-grid__col-headline">Information Management</h2>
