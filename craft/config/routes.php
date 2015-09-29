@@ -19,5 +19,6 @@
  */
 
 return array(
-
+    // match url => load template
+   'media-center' => 'layouts/media-center/index',
 );
