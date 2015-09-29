@@ -1,0 +1,8 @@
+
+{% set mcEntries = craft.entries.section('mediaCenter').offset(3).limit(6) %}
+
+{% for mcEntry in mcEntries %}
+  <h2 class="sl-list__headline">{{ mcEntry.title }}</h2>
+  <p class="sl-list__date">{{ mcEntry.postDate | date('M j, Y') }}</p>
+  <p class="sl-list__excerpt">{{ mcEntry.mcExcerpt }}</p>
+{% endfor %}

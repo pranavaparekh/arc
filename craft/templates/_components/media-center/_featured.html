@@ -1,0 +1,9 @@
+
+
+{% set featuredEntries = craft.entries.section('mediaCenter').limit(3) %}
+
+{% for featEntry in featuredEntries %}
+
+  <h2 class="featEntry__headline"><a href="{{ featEntry.url }}">{{ featEntry.title }}</a></h2>
+
+{% endfor %}
