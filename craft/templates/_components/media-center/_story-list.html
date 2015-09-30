@@ -1,8 +1,30 @@
+{% set mcStoryListCss %}
+
+
+{% endset %}
+
+{% includeCss mcStoryListCss %}
 
 {% set mcEntries = craft.entries.section('mediaCenter').offset(3).limit(6) %}
 
-{% for mcEntry in mcEntries %}
-  <h2 class="sl-list__headline"><a href="{{ mcEntry.url }}">{{ mcEntry.title }}</a></h2>
-  <p class="sl-list__date">{{ mcEntry.postDate | date('M j, Y') }}</p>
-  <p class="sl-list__excerpt">{{ mcEntry.mcExcerpt|hacksaw(words='10', append='...') }}</p>
-{% endfor %}
+<section class="row sl-list">
+    <div class="col-sm-6">
+      {% for mcEntry in mcEntries %}
+
+        <h2 class="sl-list__headline"><a href="{{ mcEntry.url }}">{{ mcEntry.title }}</a></h2>
+        <!-- <p class="sl-list__date">{{ mcEntry.postDate | date('M j, Y') }}</p> -->
+        <p class="sl-list__excerpt">{{ mcEntry.mcExcerpt|hacksaw(words='10', append='...') }}</p>
+
+        {% if loop.index % 3 == 0 and loop.index != 6 %}
+        </div>
+        <div class="col-sm-6">
+        {% endif %}
+
+      {% endfor %}
+    </div>
+
+
+</section>
+
+
+

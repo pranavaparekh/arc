@@ -1,8 +1,53 @@
-{% set prEntries = craft.entries.section('pressReleases').limit(6) %}
-<h1>Press Releases</h1>
-{% for prEntry in prEntries %}
+{% set prListCss %}
 
-  <h2 class="pr-list__headline"><a href="{{ prEntry.url }}">{{ prEntry.title }}</a></h2>
-  <p class="pr-list__date">{{ prEntry.postDate | date('M j, Y') }}</p>
-  <p class="pr-list__excerpt">{{ prEntry.prExcerpt|hacksaw(words='10', append='...') }}</p>
-{% endfor %}
+.prList {
+  background: #164873;
+  padding: 10px;
+}
+
+.pr-list__headline--big {
+  text-transform: uppercase;
+  color: #EFA044;
+  font-size: 6.8em;
+  font-weight: 300;
+}
+
+.pr-list__headline {
+  margin-top: 2px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 3.8em;
+}
+
+.pr-list__item {
+  color: white;
+}
+
+.pr-list__item__headline {
+
+}
+
+.pr-list__item__excerpt {
+
+}
+
+
+{% endset %}
+
+{% includeCss prListCss %}
+
+{% set prEntries = craft.entries.section('pressReleases').limit(4) %}
+
+<section class="prList">
+  <h2 class="pr-list__headline--big">Latest</h2>
+  <h3 class="pr-list__headline">Press Releases</h3>
+
+  <ul>
+  {% for prEntry in prEntries %}
+    <li class="pr-list__item">
+      <h4 class="pr-list__item__headline"><a href="{{ prEntry.url }}">{{ prEntry.title }}</a></h4>
+      <p class="pr-list__item__excerpt">{{ prEntry.prExcerpt|hacksaw(words='10', append='...') }}</p>
+    </li>
+  {% endfor %}
+  </ul>
+</section>

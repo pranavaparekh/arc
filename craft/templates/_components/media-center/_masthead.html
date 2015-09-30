@@ -1,6 +1,28 @@
 
 {% set mcmastheadCss %}
 
+  .mc-masthead__content--headline {
+    font-size: 5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    text-shadow: 2px 2px 3px #6F361A;
+  }
+
+  .mc-masthead__content--tagline {
+    font-size: 2.2em;
+    line-height: 1em;
+    color: white;
+    text-shadow: 2px 2px 3px #6F361A;
+  }
+
+  .mc-masthead__border {
+    margin: 5px 0;
+  }
+
+
+
   @media(min-width: {{ screenmd }}) {
     .mc-masthead {
       background: url('/assets/images/backgrounds/mc-masthead-bkg.jpg') no-repeat {{ brandPrimary }};
@@ -13,7 +35,7 @@
 
     .mc-masthead__content {
       position: relative;
-      top: 272px;
+      top: 360px;
       left: 545px;
       max-width: 641px;
     }
@@ -28,7 +50,7 @@
   <div class="row">
     <div class="mc-masthead__content">
       <h2 class="mc-masthead__content--headline">Media Center</h2>
-      <hr>
+      <hr class="mc-masthead__border">
       <p class="mc-masthead__content--tagline">
       announcements, coverage, press kit and more</p>
     </div>

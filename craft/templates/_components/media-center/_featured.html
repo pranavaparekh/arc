@@ -1,9 +1,81 @@
+{% set featuredMcCss %}
+  .featEntry {
+    margin-top: 60px;
 
+  }
+
+  .featEntry__inner {
+    position: relative;
+  }
+
+  .featEntry__headline__wrapper {
+    position: absolute;
+    bottom: 0;
+    padding: 3px 12px;
+    background: black;
+    opacity: 0.75;
+    filter: alpha(opacity=80);
+    width: 100%;
+  }
+
+  .featEntry__headline {
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  .featEntry__headline > a {
+    color: white;
+  }
+
+  .featEntry__image {
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    transition: opacity 0.5s ease;
+  }
+
+  .featEntry__image:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+  }
+
+
+
+
+{% endset %}
 
 {% set featuredEntries = craft.entries.section('mediaCenter').limit(3) %}
 
-{% for featEntry in featuredEntries %}
+{% includeCss featuredMcCss %}
 
-  <h2 class="featEntry__headline"><a href="{{ featEntry.url }}">{{ featEntry.title }}</a></h2>
 
-{% endfor %}
+<section class="container featEntry">
+  <div class="row">
+    {% for featEntry in featuredEntries %}
+      <div class="col-sm-4">
+        <div class="featEntry__inner">
+
+          {% if featEntry.mcfeatStoryImg | length %}
+            {% for asset in featEntry.mcfeatStoryImg %}
+              <img src="{{ asset.url }}" alt="" class="featEntry__image img-responsive">
+            {% endfor %}
+          {% endif %}
+
+          <div class="featEntry__headline__wrapper">
+            <h2 class="featEntry__headline">
+              <a href="{{ featEntry.url }}">{{ featEntry.title }}</a>
+            </h2>
+          </div>
+
+        </div><!--  end featEntry__inner -->
+      </div><!--  end col-sm-4 -->
+    {% endfor %}
+  </div><!--  end row -->
+</section>
+
+
+
+
+
+
+
+
