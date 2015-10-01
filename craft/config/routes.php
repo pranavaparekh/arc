@@ -21,4 +21,5 @@
 return array(
     // match url => load template
    'media-center' => 'layouts/media-center/index',
+   'press-releases' => 'layouts/press-releases/index',
 );

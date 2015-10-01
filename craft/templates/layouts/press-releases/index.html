@@ -1,12 +1,11 @@
 {% extends "base_layouts/_site" %}
 
-{% set title = 'media center' %}
+{% set title = 'press releases' %}
 
 {% block main %}
 
 {% include '_components/global/_header' %}
-{% include '_components/media-center/_masthead' %}
-{% include '_components/media-center/_featured' %}
+{% include '_components/press-releases/_masthead' %}
 
 <div class="container">
   <div class="row">
@@ -16,9 +15,8 @@
     </div><!--  end col-sm-4 -->
 
     <div class="col-sm-8 mc-main">
-      {% include '_components/media-center/_story-list' %}
+      {% include '_components/press-releases/_story-list' %}
       {% include '_components/press-kit/_pk-download' %}
-      {% include '_components/media-center/_contact' %}
     </div><!--  end col-sm-8 -->
   </div><!--  end row -->
 </div>

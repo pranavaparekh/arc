@@ -1,0 +1,58 @@
+
+{% set prmastheadCss %}
+
+  .pr-masthead__content--headline {
+    font-size: 5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    text-shadow: 2px 2px 3px #8994B6;
+  }
+
+  .pr-masthead__content--tagline {
+    font-size: 2.2em;
+    line-height: 1em;
+    color: white;
+    text-shadow: 2px 2px 3px #8994B6;
+  }
+
+  .pr-masthead__border {
+    margin: 5px 0;
+  }
+
+
+
+  @media(min-width: {{ screenmd }}) {
+    .pr-masthead {
+      background: url('/assets/images/backgrounds/pr-masthead-bkg.jpg') no-repeat {{ brandPrimary }};
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      min-height: 610px;
+    }
+
+    .pr-masthead__content {
+      position: relative;
+      top: 360px;
+      left: 545px;
+      max-width: 641px;
+    }
+
+  }
+
+{% endset %}
+
+{% includeCss prmastheadCss %}
+
+<section class="container-fluid pr-masthead">
+  <div class="row">
+    <div class="pr-masthead__content">
+      <h2 class="pr-masthead__content--headline">Press Releases</h2>
+      <hr class="pr-masthead__border">
+      <p class="pr-masthead__content--tagline">
+      announcements, coverage, press kit and more</p>
+    </div>
+  </div>
+</section>

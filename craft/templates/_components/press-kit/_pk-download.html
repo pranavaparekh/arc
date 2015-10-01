@@ -1,1 +1,53 @@
-{{ pressKit.pkDownload }}
+{% set pressKitCss %}
+
+.pk-download__headline {
+  padding-top: 130px;
+  color: white;
+}
+
+.pk-download__link, .pk-download__link > a  {
+  color: {{ roman }};
+  font-size: 1.3em;
+}
+
+
+@media(min-width: {{ screenmd }}) {
+
+  .pk-download {
+    margin-top: 20px;
+    background: url('/assets/images/backgrounds/pk-download-bkg.jpg') no-repeat {{ brandPrimary }};
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 375px;
+  }
+
+
+
+}
+
+{% endset %}
+
+
+{% includeCss pressKitCss %}
+
+
+<section class="row pk-download">
+  <div class="col-sm-12">
+    <h1 class="pk-download__headline text-center">DOWNLOAD OUR PRESS KIT</h1>
+    <p class="pk-download__link text-center"><a href="/assets/uploads/press-kit/aranca_corporate_brochure.pdf">corporate brochure</a> | <a href="/assets/uploads/press-kit/aranca_fact_sheet.pdf">fact sheet</a> | <a href="/assets/uploads/press-kit/aranca_photographs.pdf">photographs & more</a>
+    </p>
+    <p class="pk-download__ziplink text-center">
+      <a href="/assets/uploads/press-kit/press-kit.zip">
+        <img src="/assets/images/icons/download.png" alt="download press kit">
+      </a>
+    </p>
+  </div>
+</section>
+
+
+
+
+
+{# pressKit.pkDownload #}
