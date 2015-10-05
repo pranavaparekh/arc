@@ -1,0 +1,96 @@
+{% set articleCss %}
+
+.article {
+  background: #2E7DA8;
+  min-height: 1000px;
+}
+
+.article__body {
+  background: white;
+  padding: 30px 90px;
+}
+
+.article__headline {
+  color: #2E7DA8;
+  margin-bottom: 20px;
+}
+
+.article__content > p:first-child {
+  font-size: 1.4em;
+  font-style: italic;
+  color: #5E95B5;
+}
+
+.article__content > p {
+  margin-bottom: 20px;
+  color: #5B6A72;
+  font-size: 1.1em;
+}
+
+.release-date {
+  color: {{ roman }};
+}
+
+.action-bar{
+  border-top: 1px solid {{ ttgreyLight }};
+  margin-bottom: 22px;
+}
+.action-bar__item{
+  float:left;
+  color: {{ ttgreyLight }};
+  font-size:22px;
+  width: 4em;
+  border-right: 1px solid {{ ttgreyLight }};
+  transition: font-size 0.2s ease;
+}
+
+.action-bar__item:hover{
+  color: {{ ttgreyLight }};
+  font-size:25px;
+}
+
+.action-bar__item-text{
+  font-size: 0.5em;
+  text-transform: uppercase;
+  position: relative;
+  top: -10px;
+  letter-spacing: 0.1em;
+}
+
+.action-bar__icon{
+  padding-top: 15px;
+}
+
+{% endset %}
+
+{% includeCss articleCss %}
+
+<div class="article__body">
+  <h1 class="article__headline">{{ entry.title }}</h1>
+  <p class="release-date">{{ entry.postDate|date("d M, Y") }}</p>
+
+    {# Action Bar #}
+    <div class="action-bar text-center clearfix">
+      <a href="#" class="action-bar__item">
+        <i class="fa fa-share action-bar__icon"></i><br/>
+        <span class="action-bar__item-text">Share</span>
+      </a>
+      <a href="#" class="action-bar__item">
+        <i class="fa fa-comment-o action-bar__icon"></i> <br/>
+        <span class="action-bar__item-text">Comment</span>
+      </a>
+      <a href="#" class="action-bar__item">
+        <i class="fa fa-print action-bar__icon"></i> <br/>
+        <span class="action-bar__item-text">Print</span>
+      </a>
+      <a href="#" class="action-bar__item">
+        <i class="fa fa-envelope-o action-bar__icon"></i><br/>
+        <span class="action-bar__item-text">Email</span>
+      </a>
+    </div>
+    {# End Action Bar #}
+
+  <div class="article__content">
+    {{ entry.mcContent }}
+  </div>
+</div>
