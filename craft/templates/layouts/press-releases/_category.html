@@ -1,0 +1,34 @@
+{% extends "base_layouts/_site" %}
+
+{% set title = 'Press Releases Category' %}
+
+{% block main %}
+
+  <h1>{{ category }}</h1>
+
+  {% set category = craft.categories.slug(category).first() %}
+
+  <p>Category is {{ category }}</p>
+
+  {% set entries = craft.entries.section('pressReleases').relatedTo(category).find() %}
+
+  <p>No of entries found in {{ category }}: {{ entries | length }}</p>
+
+  {% if entries | length %}
+
+    {# Output them #}
+    <ul>
+    {% for entry in entries %}
+        <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+    {% endfor %}
+    </ul>
+
+  {% else %}
+
+  <p>No entries found in {{ category }}</p>
+
+  {% endif %}
+
+{% endblock %}
+
+

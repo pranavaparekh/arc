@@ -67,7 +67,10 @@
 
 <div class="article__body">
   <h1 class="article__headline">{{ entry.title }}</h1>
-  <p class="release-date">{{ entry.postDate|date("d M, Y") }}</p>
+  <p class="section">{{ section.getUrlFormat()|split('/')[0] }}</p>
+  <p class="release-date">
+    {{ entry.postDate|date("d M, Y") }} | Published under <a href="{{ category.url}}">{{ category.title }}
+  </a></p>
 
     {# Action Bar #}
     <div class="action-bar text-center clearfix">
@@ -91,6 +94,6 @@
     {# End Action Bar #}
 
   <div class="article__content">
-    {{ entry.mcContent }}
+    {{ content }}
   </div>
 </div>
