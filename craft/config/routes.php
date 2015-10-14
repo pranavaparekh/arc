@@ -24,5 +24,8 @@ return array(
    'press-releases' => 'layouts/press-releases/index',
    'press-releases/practices/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
    'press-releases/regions/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
+   'knowledge-center/(?P<ctype>\w+(\-?\w+?)*)/practices/(?P<category>\w+\-?\w+?)' => 'layouts/kc/_category',
+   'knowledge-center/(?P<ctype>\w+(\-?\w+?)*)/tags/(?P<tag>\w+\-?\w+?)' => 'layouts/kc/_tag',
+   'knowledge-center/(?P<ctype>\w+(\-?\w+?)*)/authors/(?P<author>\w+\-?\w+?)' => 'layouts/kc/_author',
 
 );

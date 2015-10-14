@@ -1,0 +1,21 @@
+
+{% set auth = craft.users.username(author).first() %}
+
+<h2>All {{ ctype }} by {{ auth.firstName }} {{ auth.lastName }}</h2>
+
+
+
+{% set blogPosts = craft.entries.section('blogs').authorId(auth.id).find() %}
+
+{% if blogPosts | length %}
+<ul>
+    {% for entry in blogPosts %}
+        <li>{{ entry.getLink() }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No entries could be found with that tag.</p>
+{% endif %}
+
+Found: {{ blogPosts|length }} blog posts.
+

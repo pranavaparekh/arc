@@ -1,10 +1,32 @@
 {% extends "base_layouts/_site" %}
 
-{% set title = 'Press Releases Category' %}
+{% set title = category %}
 
 {% block main %}
 
-  <h1>{{ category }} {{ ctype }}</h1>
+  {# set sectionName variable #}
+
+  {% switch ctype %}
+
+    {% case "blogs-and-opinions" %}
+
+        {% set sectionName = "Blogs" %}
+
+    {% case "infographics" %}
+
+        {% set sectionName = "Infographics" %}
+
+    {% case "special-reports" %}
+
+        {% set sectionName = "Special Reports" %}
+
+    {% default %}
+
+        {% set sectionName = "Content" %}
+
+  {% endswitch %}
+
+  <h1>{{ category }} {{ sectionName }}</h1>
 
   {% set category = craft.categories.slug(category).first() %}
 
