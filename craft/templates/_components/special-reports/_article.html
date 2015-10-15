@@ -31,6 +31,11 @@
   margin-bottom: 20px;
 }
 
+.article__download {
+  font-size: 1.2em;
+  color: {{ roman }};
+}
+
 .release-date {
   color: {{ roman }};
 }
@@ -102,15 +107,24 @@
     </div>
     {# End Action Bar #}
 
-    <div class="byline">
-      <p>Written by {{ entry.author.firstName }} {{ entry.author.lastName }}</p>
-    </div>
-    {% set assets = entry.blogBanner %}
-    {% if assets | length %}
-      {% for image in assets %}
-        <img src="{{ image.url }}" alt="" class="img-responsive article__image">
-      {% endfor %}
-    {% endif %}
+  {% set pdfLink = entry.srDownload.first() %}
+  {% set asset = entry.srBanner.first() %}
+
+  {% if asset | length %}
+    <a href="{{ pdfLink.url }}" target="_blank">
+      <img src="{{ asset.url }}" alt="" class="img-responsive article__image">
+    </a>
+  {% endif %}
+
+
+  {% if pdfLink | length %}
+    <p class="article__download"><strong>Download this report:</strong>
+      <a href="{{ pdfLink.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i>   {{pdfLink.title}}</a>
+    </p>
+    <hr>
+  {% endif %}
+
+  <h2>{{ "Summary" }}</h2>
   <div class="article__content">
     {{ content }}
   </div>

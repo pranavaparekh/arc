@@ -1,0 +1,29 @@
+{% extends "base_layouts/_site" %}
+
+{% set title = entry.title %}
+
+{% block main %}
+
+{% include '_components/global/_header' %}
+
+<div class="container-fluid article">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          {% set category = entry.practiceCategory.first %}
+          {% set content = entry.srContent %}
+
+
+
+          {% include '_components/special-reports/_article'
+              with { 'category': category, 'content': content }
+          %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

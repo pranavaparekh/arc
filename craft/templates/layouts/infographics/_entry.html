@@ -11,14 +11,12 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-
           {% set category = entry.practiceCategory.first %}
-          {% set content = entry.blogContent %}
+          {% set content = entry.igContent %}
+          {% set assets = entry.igBanner %}
 
-          {% set assets = entry.blogBanner %}
-
-          {% include '_components/blogs/_article'
-              with { 'category': category, 'content': content }
+          {% include '_components/infographics/_article'
+              with { 'category': category, 'content': content, 'assets': assets }
           %}
 
         </div>

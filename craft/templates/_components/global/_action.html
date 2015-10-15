@@ -1,0 +1,56 @@
+{% set actionCss %}
+
+.action-bar{
+  border-top: 1px solid {{ ttgreyLight }};
+  margin-bottom: 22px;
+}
+.action-bar__item{
+  float:left;
+  color: {{ ttgreyLight }};
+  font-size:22px;
+  width: 4em;
+  border-right: 1px solid {{ ttgreyLight }};
+  transition: font-size 0.2s ease;
+}
+
+.action-bar__item:hover{
+  color: {{ ttgreyLight }};
+  font-size:25px;
+}
+
+.action-bar__item-text{
+  font-size: 0.5em;
+  text-transform: uppercase;
+  position: relative;
+  top: -10px;
+  letter-spacing: 0.1em;
+}
+
+.action-bar__icon{
+  padding-top: 15px;
+}
+
+{% endset %}
+
+{% includeCss actionCss %}
+
+{# Action Bar #}
+<div class="action-bar text-center clearfix">
+  <a href="#" class="action-bar__item">
+    <i class="fa fa-share action-bar__icon"></i><br/>
+    <span class="action-bar__item-text">Share</span>
+  </a>
+  <a href="#" class="action-bar__item">
+    <i class="fa fa-comment-o action-bar__icon"></i> <br/>
+    <span class="action-bar__item-text">Comment</span>
+  </a>
+  <a href="#" class="action-bar__item">
+    <i class="fa fa-print action-bar__icon"></i> <br/>
+    <span class="action-bar__item-text">Print</span>
+  </a>
+  <a href="#" class="action-bar__item">
+    <i class="fa fa-envelope-o action-bar__icon"></i><br/>
+    <span class="action-bar__item-text">Email</span>
+  </a>
+</div>
+{# End Action Bar #}

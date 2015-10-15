@@ -1,0 +1,28 @@
+{% extends "base_layouts/_site" %}
+
+{% set title = entry.title %}
+
+{% block main %}
+
+{% include '_components/global/_header' %}
+
+<div class="container-fluid article">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+
+          {% set videoContent = entry.videoUrl %}
+          {% set content = entry.videoDescription %}
+
+          {% include '_components/videos/_article'
+              with { 'videoContent': videoContent, 'content': content }
+          %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
