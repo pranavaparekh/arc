@@ -1,0 +1,49 @@
+{% macro getSectionName(type) %}
+    {% switch type %}
+      {% case "blogs-and-opinions" %}
+
+        {{ "Blogs And Opinions" }}
+
+    {% case "infographics" %}
+
+        {{ "Infographics" }}
+
+    {% case "special-reports" %}
+
+        {{ "Special Reports" }}
+
+    {% case "videos" %}
+
+        {{ "Videos" }}
+
+    {% default %}
+
+        {{ "Content" }}
+
+    {% endswitch %}
+{% endmacro %}
+
+{% macro getSectionHandle(type) %}
+    {% switch type %}
+      {% case "blogs-and-opinions" %}
+
+        {{ "blogs" }}
+
+    {% case "infographics" %}
+
+        {{ "infographics" }}
+
+    {% case "special-reports" %}
+
+        {{ "specialReports" }}
+
+    {% case "videos" %}
+
+        {{ "videos" }}
+
+    {% default %}
+
+        {{ "Content" }}
+
+    {% endswitch %}
+{% endmacro %}

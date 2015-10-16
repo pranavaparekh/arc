@@ -1,0 +1,36 @@
+
+<h2>Archives</h2>
+
+{% import 'macros/ctype' as contentType %}
+
+{% set sectionName = contentType.getSectionName(ctype) %}
+{% set sectionHandle = contentType.getSectionHandle(ctype) %}
+
+<p>Archives for {{ sectionName }} for {{ month|date('F') }} {{ year }}</p>
+
+{{ now.month()|format('Y-m') }}
+
+<br>
+{% set allEntries = craft.entries.section(sectionHandle).find() %}
+
+{% for year, entriesInYear in allEntries | group("postDate.year") %}
+    <h2>{{ year }}</h2>
+    <ul>
+        {% for month, entriesInMonth in entriesInYear | group("postDate|date('F')") %}
+            <h3>{{ month }}</h3>
+            <ul>
+                {% for entry in entriesInMonth %}
+                    <li>{{ entry.getLink() }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+
+<br>
+
+{% set entriesByMonth = allEntries|group("postDate.format('Y-m')") %}
+{% for month, entries in entriesByMonth %}
+<a href="{{ siteUrl }}/knowledge-center/blogs-and-opinions/archives/{{ month }}">{{ month|date('F Y') }} ({{ entries|length }})</a><br>
+{% endfor %}

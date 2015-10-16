@@ -4,35 +4,21 @@
 
 {% block main %}
 
-  {# set sectionName variable #}
+  {# set sectionName and sectionHandle variables #}
 
-  {% switch ctype %}
+  {% import 'macros/ctype' as contentType %}
 
-    {% case "blogs-and-opinions" %}
+  {% set sectionName = contentType.getSectionName(ctype) %}
 
-        {% set sectionName = "Blogs" %}
+  {% set sectionHandle = contentType.getSectionHandle(ctype) %}
 
-    {% case "infographics" %}
-
-        {% set sectionName = "Infographics" %}
-
-    {% case "special-reports" %}
-
-        {% set sectionName = "Special Reports" %}
-
-    {% default %}
-
-        {% set sectionName = "Content" %}
-
-  {% endswitch %}
-
-  <h1>{{ category }} {{ sectionName }}</h1>
+  <h1>{{ category }} {{ sectionName }} {{ sectionHandle }}</h1>
 
   {% set category = craft.categories.slug(category).first() %}
 
   <p>Category is {{ category }}</p>
 
-  {% set entries = craft.entries.section('pressReleases').relatedTo(category).find() %}
+  {% set entries = craft.entries.section(sectionHandle).relatedTo(category).find() %}
 
   <p>No of entries found in {{ category }}: {{ entries | length }}</p>
 
