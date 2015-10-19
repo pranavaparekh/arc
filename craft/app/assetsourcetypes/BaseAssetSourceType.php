@@ -83,14 +83,24 @@ abstract class BaseAssetSourceType extends BaseSavableComponentType
 	abstract public function getLocalCopy(AssetFileModel $file);
 
 	/**
-	 * Return true if a physical folder exists.
+	 * Return true if a physical file exists.
 	 *
-	 * @param AssetFolderModel $parentFolder The assetFolderModel that has the folder to check if it exists.
-	 * @param string           $folderName   The name of the folder to check if it exists.
+	 * @param string $parentPath  Parent path
+	 * @param string $filename    The name of the file.
 	 *
 	 * @return boolean
 	 */
-	abstract public function folderExists($parentFolder, $folderName);
+	abstract public function fileExists($parentPath, $filename);
+
+	/**
+	 * Return true if a physical folder exists.
+	 *
+	 * @param string $parentPath  Parent path
+	 * @param string $folderName  The name of the folder to check if it exists.
+	 *
+	 * @return boolean
+	 */
+	abstract public function folderExists($parentPath, $folderName);
 
 	/**
 	 * Return the source's base URL.
@@ -186,6 +196,15 @@ abstract class BaseAssetSourceType extends BaseSavableComponentType
 				craft()->images->cleanImage($localFilePath);
 			}
 
+			$mobileUpload = false;
+
+			if (IOHelper::getFileName($fileName, false) == "image" && craft()->request->isMobileBrowser(true))
+			{
+				$mobileUpload = true;
+				$date = DateTimeHelper::currentUTCDateTime();
+				$fileName = "image_".$date->format('Ymd_His').".".IOHelper::getExtension($fileName);
+			}
+
 			if ($preventConflicts)
 			{
 				$newFileName = $this->getNameReplacement($folder, $fileName);
@@ -222,6 +241,11 @@ abstract class BaseAssetSourceType extends BaseSavableComponentType
 
 					$fileModel->width = $width;
 					$fileModel->height = $height;
+				}
+
+				if ($mobileUpload)
+				{
+					$fileModel->getContent()->title = Craft::t('Mobile Upload');
 				}
 
 				craft()->assets->storeFile($fileModel);
@@ -556,7 +580,7 @@ abstract class BaseAssetSourceType extends BaseSavableComponentType
 
 		// If folder exists in DB or physically, bail out
 		if (craft()->assets->findFolder(array('parentId' => $parentFolder->id, 'name' => $folderName))
-			|| $this->folderExists($parentFolder, $folderName))
+			|| $this->folderExists($parentFolder->path, $folderName))
 		{
 			throw new Exception(Craft::t('A folder already exists with that name!'));
 		}
@@ -601,7 +625,7 @@ abstract class BaseAssetSourceType extends BaseSavableComponentType
 		}
 
 		// Allow this for changing the case
-		if (!(StringHelper::toLowerCase($newName) == StringHelper::toLowerCase($folder->name)) && $this->folderExists($parentFolder, $newName))
+		if (!(StringHelper::toLowerCase($newName) == StringHelper::toLowerCase($folder->name)) && $this->folderExists($parentFolder->path, $newName))
 		{
 			throw new Exception(Craft::t('Folder “{folder}” already exists there.', array('folder' => $newName)));
 		}
@@ -655,7 +679,7 @@ abstract class BaseAssetSourceType extends BaseSavableComponentType
 
 		$removeFromTree = '';
 
-		if ($this->folderExists($newParentFolder, $folder->name))
+		if ($this->folderExists($newParentFolder->path, $folder->name))
 		{
 			if ($overwriteTarget)
 			{

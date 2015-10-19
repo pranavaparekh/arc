@@ -64,7 +64,7 @@ class ElementsService extends BaseApplicationComponent
 	 * If no element type is provided, the method will first have to run a DB query to determine what type of element
 	 * the $elementId is, so you should definitely pass it if it’s known.
 	 *
-	 * The element’s status will not be a factor when usisng this method.
+	 * The element’s status will not be a factor when using this method.
 	 *
 	 * @param int    $elementId   The element’s ID.
 	 * @param null   $elementType The element type’s class handle.
@@ -229,7 +229,7 @@ class ElementsService extends BaseApplicationComponent
 					{
 						// Avoid matching fields named "asc" or "desc" in the string "column_name asc" or
 						// "column_name desc"
-						$order = preg_replace('/(?<!\s)\b'.$column['handle'].'\b/', $column['column'].'$1', $order);
+						$order = preg_replace('/(?<!\w\s)\b'.$column['handle'].'\b/', $column['column'].'$1', $order);
 					}
 				}
 
@@ -378,7 +378,7 @@ class ElementsService extends BaseApplicationComponent
 
 			if ($criteria->search)
 			{
-				$elementIds = craft()->search->filterElementIdsByQuery($elementIds, $criteria->search, false);
+				$elementIds = craft()->search->filterElementIdsByQuery($elementIds, $criteria->search, false, $criteria->locale);
 			}
 
 			return count($elementIds);
@@ -927,7 +927,7 @@ class ElementsService extends BaseApplicationComponent
 		{
 			$elementIds = $this->_getElementIdsFromQuery($query);
 			$scoredSearchResults = ($criteria->order == 'score');
-			$filteredElementIds = craft()->search->filterElementIdsByQuery($elementIds, $criteria->search, $scoredSearchResults);
+			$filteredElementIds = craft()->search->filterElementIdsByQuery($elementIds, $criteria->search, $scoredSearchResults, $criteria->locale);
 
 			// No results?
 			if (!$filteredElementIds)
@@ -1869,6 +1869,7 @@ class ElementsService extends BaseApplicationComponent
 							{
 								$criteria = craft()->elements->getCriteria($elementTypeHandle);
 								$criteria->status = null;
+								$criteria->limit = null;
 								$criteria->$thing = array_keys($refTagsByThing);
 								$elements = $criteria->find();
 
