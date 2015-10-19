@@ -1,5 +1,6 @@
 {% set siteName = craft.app.getSiteName() -%}
-{% set docTitle = docTitle is defined ? docTitle : title|striptags -%}
+{% set entry = entry is defined ? entry : 'Aranca' -%}
+{% set docTitle = entry.seoTitle is defined ? entry.seoTitle : title|striptags -%}
 
 <!DOCTYPE html>
 <html class="no-js" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -7,6 +8,7 @@
   <head>
     {% block head %}
       <meta charset="utf-8">
+      <meta name="keywords" content="">
       <meta name="description" content="">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">

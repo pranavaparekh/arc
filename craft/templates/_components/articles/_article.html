@@ -10,6 +10,11 @@
   padding: 30px 90px;
 }
 
+.article__body h2 {
+  color: #2E7DA8;
+  font-size: 1.5em;
+}
+
 .article__headline {
   color: #2E7DA8;
   margin-bottom: 20px;
@@ -42,11 +47,8 @@
 <div class="article__body">
   <h1 class="article__headline">{{ entry.title }}</h1>
   <p class="release-date">
-    Published on {{ entry.postDate|date("d M, Y") }}
-    {% if category %}
-    Published under <a href="{{ siteUrl}}{{craft.request.firstSegment}}/{{ craft.request.getSegment(2) }}/{{ "practices" }}/{{ category.slug}}">{{ category.title }}
-    {% endif %}
-    </a>
+    {{ entry.postDate|date("d M, Y") }} |
+    Published under <a href="{{ siteUrl}}{{craft.request.firstSegment}}/{{ craft.request.getSegment(2) }}/{{ "practices" }}/{{ category.slug}}">{{ category.title }}</a>
   </p>
   <p>
     {% for tag in craft.tags.relatedTo(entry) %}
@@ -56,10 +58,7 @@
 
     {% include '_components/global/_action' %}
 
-    <div class="byline">
-      <p>Written by {{ entry.author.firstName }} {{ entry.author.lastName }}</p>
-    </div>
-    {% set assets = entry.blogBanner %}
+    {% set assets = entry.articlesBanner %}
     {% if assets | length %}
       {% for image in assets %}
         <img src="{{ image.url }}" alt="" class="img-responsive article__image">
