@@ -1,3 +1,4 @@
+
 {% set articleCss %}
 
 .article {
@@ -69,6 +70,9 @@
 
 {% includeCss articleCss %}
 
+
+
+
 <div class="article__body">
   <h1 class="article__headline">{{ entry.title }}</h1>
   <p class="release-date">
@@ -81,26 +85,8 @@
     {% endfor %}
   </p>
 
-    {# Action Bar #}
-    <div class="action-bar text-center clearfix">
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-share action-bar__icon"></i><br/>
-        <span class="action-bar__item-text">Share</span>
-      </a>
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-comment-o action-bar__icon"></i> <br/>
-        <span class="action-bar__item-text">Comment</span>
-      </a>
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-print action-bar__icon"></i> <br/>
-        <span class="action-bar__item-text">Print</span>
-      </a>
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-envelope-o action-bar__icon"></i><br/>
-        <span class="action-bar__item-text">Email</span>
-      </a>
-    </div>
-    {# End Action Bar #}
+    {% include '_components/global/_action' %}
+
     <div class="article__content">
       {{ content }}
     </div>

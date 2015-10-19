@@ -1,5 +1,14 @@
 {% extends "base_layouts/_base" %}
 
+{% block ogtags %}
+  <!-- for Facebook -->
+  <meta property="og:title" content="{{ docTitle }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://aranca.craft.dev/assets/uploads/infographics/US-Electric-Vehicle-Market-Report.jpg" />
+  <meta property="og:url" content="{{ entry.url }}" />
+  <meta property="og:description" content="The US automobile market is witnessing a steady adoption of electric passenger cars. This recent success of the electric car segment can be attributed to reasons like cost effectiveness, energy-efficiency" />
+{% endblock %}
+
 {% set brandPrimary = '#00436f' %}
 {% set brandOrange = '#faae53' %}
 {% set redPrimary = '#A41034' %}

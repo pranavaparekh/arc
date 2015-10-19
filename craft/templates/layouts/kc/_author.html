@@ -1,7 +1,18 @@
+{% extends "base_layouts/_site" %}
 
-{% set auth = craft.users.username(author).first() %}
+{% set title = category %}
 
-<h2>All {{ ctype }} by {{ auth.firstName }} {{ auth.lastName }}</h2>
+{% block main %}
+
+  {# set sectionName and sectionHandle variables #}
+
+  {% import 'macros/ctype' as contentType %}
+
+  {% set sectionName = contentType.getSectionName(ctype) %}
+  {% set sectionHandle = contentType.getSectionHandle(ctype) %}
+  {% set auth = craft.users.username(author).first() %}
+
+<h2>All {{ sectionName }} by {{ auth.firstName }} {{ auth.lastName }}</h2>
 
 
 
@@ -19,3 +30,4 @@
 
 Found: {{ blogPosts|length }} blog posts.
 
+{% endblock %}
