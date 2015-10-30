@@ -68,7 +68,9 @@
           <div class="row">
             <div class="container">
             <div class="row">
-              {{ csModalBody2 }}
+              {% if csModalBody2 | length%}
+                {{ csModalBody2 }}
+              {% endif %}
           </div><!-- end: row -->
           </div><!-- end: container -->
           </div><!-- end: row -->
