@@ -26,33 +26,14 @@ $('.cs-list__item').matchHeight({});
     color: #1C7197;
   }
 
-.cs-modal__block {
-  padding: 20px 0;
-}
-
-.cs-modal__blok--headline {
-    color: {{ ttOrange }};
-}
-
-.cs-modal_sol--bk {
-  background: #F3F3F3;
-  padding: 20px 0;
-}
-
-.cs-modal__sol--headline {
-  text-align: center;
-}
-
-.case-studies__link {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background: #3CA6D8;
-  padding: 5px 20px;
-  color: white;
-}
-
-
+  .case-studies__link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #3CA6D8;
+    padding: 5px 20px;
+    color: white;
+  }
 
 {% endset %}
 
@@ -80,13 +61,17 @@ $('.cs-list__item').matchHeight({});
 
           <div class="cs-list__item">
             <h3 class="cs-list__title">{{block.title}}</h3>
-            {% for blk in block.csOverview.limit(1) %}
+            {% for blk in block.csExcerpt.limit(1) %}
               <p class="cs-list__excerpt">{{blk.body}}</p>
             {% endfor %}
             <p>
               <a href="{{block.url}}" class="case-studies__link"
-              data-toggle="modal" data-target=".modal-1">Read More</a>
+              data-toggle="modal" data-target=".modal-{{ loop.index }}">Read More</a>
             </p>
+            {% include '_components/services/_cs-modal.html'
+              with { 'csModalHeadline': block.title, 'modalId': loop.index,
+                     'csModalBody1': block.csBody1, 'csModalBody2': block.csBody2 }
+            %}
           </div>
 
         </div> <!-- end col-sm-6 -->
@@ -103,125 +88,4 @@ $('.cs-list__item').matchHeight({});
   </div> <!-- end row -->
 </section>
 
-<!-- modal -->
-<div id="fsModal"
-     class="modal-1 modal animated zoomIn"
-     tabindex="-1"
-     role="dialog"
-     aria-labelledby="myModalLabel"
-     aria-hidden="true">
 
-  <!-- dialog -->
-  <div class="modal-dialog">
-
-    <!-- content -->
-    <div class="modal-content">
-
-      <!-- header -->
-      <div class="modal-header">
-        <h1 id="myModalLabel"
-            class="modal-title">
-          Case Study
-        </h1>
-      </div>
-      <!-- header -->
-
-      <!-- body -->
-      <div class="cs-modal modal-body">
-        <div class="row">
-          <div class="col-sm-12 cs-modal__headmast">
-            <img src="/assets/images/cs-banner-bkg.jpg" alt="" />
-            <h3 class="cs-modal__headmast--headline"> </h3>
-            <p class="cs-modal__headmast--download"> </p>
-          </div><!-- end: col-12 -->
-        </div><!-- end: row -->
-
-
-
-        <div class="container cs-modal__block">
-          <div class="row">
-            <div class="col-sm-4 cs-modal__block--col">
-              <h3 class="cs-modal__blok--headline">BACKGROUND</h3>
-              <div class="cs-modal__blok--content">
-                <p>To support their planning process, a leading SoC company engaged Aranca to analyse the market for ARM and X86 processors</p>
-              </div>
-            </div><!-- end: col-4 -->
-
-            <div class="col-sm-4 cs-modal__block--col">
-              <h3 class="cs-modal__blok--headline">OUR SOLUTION</h3>
-              <div class="cs-modal__blok--content">
-                <p>We delivered an in-depth analysis of the market dynamics, value chain, profit pools and technology trends in different applications</p>
-              </div>
-            </div><!-- end: col-4 -->
-
-            <div class="col-sm-4 cs-modal__block--col">
-              <h3 class="cs-modal__blok--headline">RESULTS</h3>
-              <div class="cs-modal__blok--content">
-                <p>Our analysis helped the client to assess its competitive position in different appliactions and define specific three-year growth plans</p>
-              </div>
-            </div><!-- end: col-4 -->
-          </div><!-- end: row -->
-        </div><!-- end: container -->
-
-        <div class="container-fluid cs-modal_sol--bk">
-          <div class="row">
-            <div class="container">
-            <div class="row">
-            <div class="col-sm-3 cs-modal__sol">
-              <h3 class="cs-modal__sol--headline">Ideate</h3>
-              <div class="cs-modal__sol--content">
-                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
-              </div>
-            </div><!-- end: col-3 -->
-
-            <div class="col-sm-3 cs-modal__sol">
-              <h3 class="cs-modal__sol--headline">Desk Research</h3>
-              <div class="cs-modal__sol--content">
-                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
-              </div>
-            </div><!-- end: col-3 -->
-
-            <div class="col-sm-3 cs-modal__sol">
-              <h3 class="cs-modal__sol--headline">Expert Interviews</h3>
-              <div class="cs-modal__sol--content">
-                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
-              </div>
-            </div><!-- end: col-3 -->
-
-            <div class="col-sm-3 cs-modal__sol">
-              <h3 class="cs-modal__sol--headline">Analysis</h3>
-              <div class="cs-modal__sol--content">
-                <p>Shortlist applications in computing, consumer and industrial markets<br/><br/>Define analytical framework and blank slides for data collation/synthesis </p>
-              </div>
-            </div><!-- end: col-3 -->
-          </div><!-- end: row -->
-          </div><!-- end: container -->
-          </div><!-- end: row -->
-        </div><!-- end: container-fluid -->
-
-        <div class="row">
-          <div class="col-sm-12 cs-modal__img">
-            <img src="/assets/images/cs-graph.jpg" alt="" />
-          </div><!-- end: col-12 -->
-        </div><!-- end: row -->
-
-
-      </div> <!-- modal-body -->
-
-      <!-- footer -->
-      <div class="modal-footer">
-        <button class="btn btn-secondary"
-                data-dismiss="modal">
-          close
-        </button>
-      </div>
-      <!-- footer -->
-
-    </div>
-    <!-- content -->
-
-  </div>
-  <!-- dialog -->
-
-</div>
-<!-- modal -->

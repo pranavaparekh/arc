@@ -2,7 +2,11 @@
 
 {% include '_components/global/_header' %}
 {% include '_components/services/_masthead' %}
+
+{% if entry.body|length %}
 {% include '_components/services/_intro-single-col' %}
+{% endif %}
+
 {% include '_components/services/_verticaltab' %}
 {% include '_components/services/_case-study-list' %}
 {% include '_components/services/_full-cta-a' %}
