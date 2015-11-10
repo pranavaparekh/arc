@@ -1,0 +1,146 @@
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+
+{% set ztabsCss %}
+
+  .ztabs {
+    padding: 60px 0;
+  }
+
+  .ztabs__headline {
+    font-size: 3em;
+    color: #e55b2b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 3px #ccc;
+  }
+
+  .ztab__list__item {
+    margin-left: 1.3em;
+    padding-left: 0.3em;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: {{ ttgrey }};
+    list-style-image: url(/assets/images/icons/tick.png);
+  }
+
+{% endset %}
+
+{% set ztabsJs %}
+
+ $(document).ready(function () {
+      /*  jQuery activation and setting options. Visit docs.zozoui.com/tabs for
+          complete documentation, option list, public methods, callback events.*/
+      $("#tabbed-nav").zozoTabs({
+          theme: "silver",
+          orientation: "vertical",
+          position: "top-left",
+          size: "xlarge",
+          animation: {
+              duration: 400,
+              effects: "slideV"
+          },
+      });
+  });
+
+{% endset %}
+
+{% includeJs ztabsJs %}
+{% includeCss ztabsCss %}
+
+<section class="container-fluid ztabs">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+        <div class="lede__headline text-center">Solutions Experience in Aerospace and Defense</div>
+
+        <div class="lede__subheadline text-center">Sub-segments and Platforms</div>
+        <hr class="lede__border">
+          <!-- Zozo Tabs Start-->
+        <div id="tabbed-nav">
+
+            <!-- Tab Navigation Menu -->
+            <ul>
+                <li><a>Military Aviation</a></li>
+                <li><a>Army vehicles</a></li>
+                <li><a>Naval systems</a></li>
+                <li><a>Space vehicles</a></li>
+                <li><a>Weapons</a></li>
+                <li><a>Systems</a></li>
+                <li><a>Products</a></li>
+                <li><a>Services</a></li>
+                <li><a>Participants</a></li>
+            </ul>
+
+            <!-- Content container -->
+            <div>
+
+                <!-- Military aviation -->
+                <div>
+                    <h4 class="ztabs__headline">Military Aviation</h4>
+
+                    <br>
+                    <div class="row">
+
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                      <li class="ztab__list__item">Military engines</li>
+                      <li class="ztab__list__item">Landing systems</li>
+                      <li class="ztab__list__item">Electrical power equipment</li>
+                      <li class="ztab__list__item">Marine gas turbines</li>
+                      <li class="ztab__list__item">Advanced materials</li>
+                      <li class="ztab__list__item">Calibers</li>
+                      <li class="ztab__list__item">Sensors</li>
+                        </div>
+                        <div class="col-sm-6">
+                      <li class="ztab__list__item">Crew protection</li>
+                      <li class="ztab__list__item">Surveillance cameras</li>
+                      <li class="ztab__list__item">Antennas</li>
+                      <li class="ztab__list__item">Actuators</li>
+                      <li class="ztab__list__item">Relays and contactors</li>
+                      <li class="ztab__list__item">Cables and connectors</li>
+                      <li class="ztab__list__item">Cyber security</li>
+                      <li class="ztab__list__item">Space components</li>
+                      </div>
+                    </ul>
+                    </div>
+                </div><!-- Military aviation -->
+
+                <!-- Features -->
+                <div>
+                    <h4>Features</h4>
+                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
+                </div>
+
+                <!-- Docs -->
+                <div>
+                    <h4>Docs</h4>
+                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
+                </div>
+
+                <!-- Themes -->
+                <div>
+                    <h4>Themes</h4>
+                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
+                </div>
+
+                <!-- Purchase -->
+                <div>
+                    <h4>Purchase</h4>
+                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
+                </div>
+
+            </div> <!-- content container -->
+
+        </div>
+        <!-- Zozo Tabs End-->
+        </div> <!-- end col-sm-12 -->
+      </div> <!-- end row -->
+    </div> <!-- end row -->
+  </div> <!-- end row -->
+
+
+</section><!-- end ztabs -->
+
