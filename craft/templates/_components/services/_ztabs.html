@@ -5,6 +5,7 @@
 
   .ztabs {
     padding: 60px 0;
+    background: url('/assets/images/patterns/swirl_pattern.jpg');
   }
 
   .ztabs__headline {
@@ -15,13 +16,23 @@
     text-shadow: 1px 1px 3px #ccc;
   }
 
-  .ztab__list__item {
-    margin-left: 1.3em;
-    padding-left: 0.3em;
-    font-size: 1.2em;
+  .ztab__list__item__head {
+    font-size: 1.3em;
     line-height: 1.6em;
     color: {{ ttgrey }};
-    list-style-image: url(/assets/images/icons/tick.png);
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    border-bottom: 1px dashed #C2CDD5;
+    padding-bottom: 0.5em;
+    color: #A0ABB2;
+  }
+
+  .ztab__subllist > li {
+    margin-left: 2em;
+    list-style: none;
+    line-height: 2.5em;
+    background: url(/assets/images/icons/tick.png) left center no-repeat;
+    padding-left: 30px;
   }
 
 {% endset %}
@@ -77,60 +88,218 @@
             <!-- Content container -->
             <div>
 
-                <!-- Military aviation -->
+                <!-- First col -->
                 <div>
                     <h4 class="ztabs__headline">Military Aviation</h4>
-
                     <br>
                     <div class="row">
-
                     <ul class="ztab__list">
-                      <div class="col-sm-6">
-                      <li class="ztab__list__item">Military engines</li>
-                      <li class="ztab__list__item">Landing systems</li>
-                      <li class="ztab__list__item">Electrical power equipment</li>
-                      <li class="ztab__list__item">Marine gas turbines</li>
-                      <li class="ztab__list__item">Advanced materials</li>
-                      <li class="ztab__list__item">Calibers</li>
-                      <li class="ztab__list__item">Sensors</li>
-                        </div>
-                        <div class="col-sm-6">
-                      <li class="ztab__list__item">Crew protection</li>
-                      <li class="ztab__list__item">Surveillance cameras</li>
-                      <li class="ztab__list__item">Antennas</li>
-                      <li class="ztab__list__item">Actuators</li>
-                      <li class="ztab__list__item">Relays and contactors</li>
-                      <li class="ztab__list__item">Cables and connectors</li>
-                      <li class="ztab__list__item">Cyber security</li>
-                      <li class="ztab__list__item">Space components</li>
+                      <div class="col-sm-4">
+                        <li class="ztab__list__item__head">Combat Aircraft</li>
+                        <ul class="ztab__subllist">
+                          <li class="ztab__list__item">Bombers</li>
+                          <li class="ztab__list__item">Fighters</li>
+                          <li class="ztab__list__item">Attack helicopters</li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-4">
+                        <li class="ztab__list__item__head">Non combat aircraft</li>
+                        <ul class="ztab__subllist">
+                          <li class="ztab__list__item">Military transport</li>
+                          <li class="ztab__list__item">Aerial Tanker</li>
+                          <li class="ztab__list__item">Surveillance aircraft</li>
+                          <li class="ztab__list__item">Trainer</li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-4">
+                        <li class="ztab__list__item__head">Unmanned systems</li>
                       </div>
                     </ul>
-                    </div>
-                </div><!-- Military aviation -->
+                    </div><!-- row -->
+                </div><!-- First col -->
 
-                <!-- Features -->
+                <!-- Second col -->
                 <div>
-                    <h4>Features</h4>
-                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
-                </div>
+                    <h4 class="ztabs__headline">Army vehicles</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Combat vehicles</li>
+                        <ul class="ztab__subllist">
+                          <li class="ztab__list__item">Armoured Fighting vehicles</li>
+                          <li class="ztab__list__item">Armoured personnel vehicles</li>
+                          <li class="ztab__list__item">Infantry fighting vehicles</li>
+                          <li class="ztab__list__item">Main Battle Tanks</li>
+                          <li class="ztab__list__item">Anti Mine vehicles</li>
+                          <li class="ztab__list__item">Unmanned combat vehicles</li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Non combat vehicles</li>
+                        <ul class="ztab__subllist">
+                          <li class="ztab__list__item">Light utility vehicles</li>
+                          <li class="ztab__list__item">Recovery and Rescue vehicles</li>
+                        </ul>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- Second col -->
 
-                <!-- Docs -->
-                <div>
-                    <h4>Docs</h4>
-                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
-                </div>
 
-                <!-- Themes -->
+                <!-- Third col -->
                 <div>
-                    <h4>Themes</h4>
-                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
-                </div>
+                    <h4 class="ztabs__headline">Naval systems</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Warships</li>
+                        <ul class="ztab__subllist">
+                          <li class="ztab__list__item">Aircraft carriers</li>
+                          <li class="ztab__list__item">Submarines</li>
+                          <li class="ztab__list__item">Destroyers</li>
+                          <li class="ztab__list__item">Corvettes</li>
+                          <li class="ztab__list__item">Frigates</li>
+                        </ul>
+                      </div>
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Patrol vessels</li>
+                        <li class="ztab__list__item__head">Coast guard vessels</li>
+                        <li class="ztab__list__item__head">Unmanned Under Water Vehicles</li>
+                        <li class="ztab__list__item__head">Auxiliary support vehicles</li>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- Third col -->
 
-                <!-- Purchase -->
+                <!-- Fourth col -->
                 <div>
-                    <h4>Purchase</h4>
-                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer</p>
-                </div>
+                    <h4 class="ztabs__headline">Space Vehicles</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-12">
+                        <li class="ztab__list__item__head">Commercial satellites</li>
+                        <li class="ztab__list__item__head">Science and National security satellites</li>
+                        <li class="ztab__list__item__head">Space launch vehicles</li>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- Fourth col -->
+
+                <!-- Fifth col -->
+                <div>
+                    <h4 class="ztabs__headline">Weapons</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Missiles and guided weapons</li>
+                        <li class="ztab__list__item__head">Missile defense</li>
+                      </div>
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Munitions</li>
+                        <li class="ztab__list__item__head">Caliber systems</li>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- Fifth col -->
+
+                <!-- six col -->
+                <div>
+                    <h4 class="ztabs__headline">Systems</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Military engines</li>
+                        <li class="ztab__list__item__head">Landing systems</li>
+                        <li class="ztab__list__item__head">Electrical power equ</li>
+                        <li class="ztab__list__item__head">Marine gas turbines</li>
+                        <li class="ztab__list__item__head">Advanced materials</li>
+                        <li class="ztab__list__item__head">Calibers</li>
+                        <li class="ztab__list__item__head">Sensors</li>
+                      </div>
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Crew protection</li>
+                        <li class="ztab__list__item__head">Surveillance cameras</li>
+                        <li class="ztab__list__item__head">Antennas</li>
+                        <li class="ztab__list__item__head">Actuators</li>
+                        <li class="ztab__list__item__head">Relays and contactors</li>
+                        <li class="ztab__list__item__head">Cables and connectors</li>
+                        <li class="ztab__list__item__head">Cyber security</li>
+                        <li class="ztab__list__item__head">Space components</li>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- six col -->
+
+                <!-- seven col -->
+                <div>
+                    <h4 class="ztabs__headline">Products</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Military engines</li>
+                        <li class="ztab__list__item__head">Landing systems</li>
+                        <li class="ztab__list__item__head">Electrical power equipment</li>
+                        <li class="ztab__list__item__head">Calibers</li>
+                        <li class="ztab__list__item__head">Sensors</li>
+
+                      </div>
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Surveillance cameras</li>
+                        <li class="ztab__list__item__head">Antennas & Actuators</li>
+                        <li class="ztab__list__item__head">Relays and contactors</li>
+                        <li class="ztab__list__item__head">Cables and connectors</li>
+                        <li class="ztab__list__item__head">Cyber security</li>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- seven col -->
+
+              <!-- eight col -->
+                <div>
+                    <h4 class="ztabs__headline">Services</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Logistics</li>
+                        <li class="ztab__list__item__head">Aircraft simulation and training</li>
+                        <li class="ztab__list__item__head">Maintenance, Repair and Overhaul</li>
+                        <li class="ztab__list__item__head">Aircraft Modification & Upgrades </li>
+                      </div>
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Air traffic management</li>
+                        <li class="ztab__list__item__head">Cloud computing in aerospace and defense</li>
+                        <li class="ztab__list__item__head">Cyber security services</li>
+                        <li class="ztab__list__item__head">Asset and life cycle management</li>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- eight col -->
+
+                 <!-- Nine col -->
+                <div>
+                    <h4 class="ztabs__headline">Services</h4>
+                    <br>
+                    <div class="row">
+                    <ul class="ztab__list">
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Primes</li>
+                        <li class="ztab__list__item__head">Integrators</li>
+                      </div>
+                      <div class="col-sm-6">
+                        <li class="ztab__list__item__head">Sub primes</li>
+                        <li class="ztab__list__item__head">Product manufacturers</li>
+                      </div>
+                    </ul>
+                    </div><!-- row -->
+                </div><!-- Nine col -->
+
 
             </div> <!-- content container -->
 
