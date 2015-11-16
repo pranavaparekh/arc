@@ -1,0 +1,40 @@
+{% includeJsFile "/assets/js/slick.min.js"  %}
+{% includeCssFile "/assets/css/slick.css"  %}
+
+{% set asxCss %}
+
+{% endset %}
+
+{% set asxJs %}
+
+$(document).ready(function(){
+  $('.asx-slider__box').slick({
+  });
+});
+
+{% endset %}
+
+{% includeCss asxCss %}
+{% includeJs asxJs %}
+
+<section class="container-fluid asx-slider">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="lede__icon text-center"><img src="/assets/uploads/icons/solutions-icon-gray.png" class="asx-slider__icon img-center" alt="asx-slider-icon"></div>
+          <div class="lede__headline text-center">Assignment Examples</div>
+          <div class="lede__subheadline text-center">Our Work in the Aerospace and Defence Market</div>
+          <hr class="lede__border">
+
+          <!-- slick start -->
+          <div class="asx-slider__box">
+            <div class="asx-slider__item">1</div>
+            <div class="asx-slider__item">2</div>
+            <div class="asx-slider__item">3</div>
+          </div>
+        </div><!-- col 12 -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- row -->
+</section>
