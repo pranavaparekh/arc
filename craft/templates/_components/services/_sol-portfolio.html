@@ -1,26 +1,87 @@
 {% set solPortCss %}
 
 .sol-port {
+  background: url(/assets/images/backgrounds/sol-port-bkg.jpg);
   padding: 60px 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .sol-port-tabs {
-  margin-top: 3em;
   text-align:center;
+  display: table;
+  width: 100%;      /* new */
 }
 
-.sol-port-tabs.nav-tabs > li, .nav-pills > li {
+.sol-port-tabs.nav-tabs {
+  border-bottom: none;
+}
+
+.sol-port-tabs.nav-tabs > li {
   float:none;
-  display:inline-block;
-  *display:inline; /* ie7 fix */
-   zoom:1; /* hasLayout ie7 trigger */
+  margin-bottom: 1.5em;
+  display: table-cell;  /* updated */
+  margin-left:50px;
+}
+
+.sol-port-tabs__content {
+  background: white;
+  padding: 2em;
+  border-radius: 1.5em;
+  margin-top: 2em;
+  box-shadow: -2px 2px 2px #89CAFF;
+}
+
+.sol-port-tabs__item > h4 {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 0.8em;
+}
+
+.nav-tabs .sol-port-tabs__item > a {
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+    border-radius: 100px;
+     background: white;
+}
+
+.nav-tabs .sol-port-tabs__item > a > i {
+    line-height: 3.6em;
+    font-size: 2.3em;
+}
+.nav-tabs .sol-port-tabs__item.active > a {
+  box-shadow: -2px 2px 8px #89CAFF;
+}
+
+.nav-tabs > .sol-port-tabs__item.active > a:focus {
+  color: blue;
+}
+
+.nav-tabs .sol-port-tabs__item.active > a::before {
+  /* triangle properties */
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid white;
+    content: "";
+    width: 0;
+    height: 0;
+
+     /*  positioning */
+    left: 34%;
+    top: 108%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
 }
 
 @media only screen and (min-width: {{ screenmd }}) {
   .sol-port-tabs__item {
-    margin-left: 5em;
-    margin-right: 5em;
+
   }
+
 
 }
 
@@ -38,41 +99,114 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <h3 class="lede__headline">Solutions Portfolio</h3>
-            <p class="lede__subheadline">Our Solutions for diverse businesses</p>
-            <hr class="lede__border">
+            <h3 class="lede__headline--white">Solutions Portfolio</h3>
+            <p class="lede__subheadline--white">Our Solutions for diverse businesses</p>
+            <hr class="lede__border--white">
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs sol-port-tabs" role="tablist">
               <li class="active sol-port-tabs__item">
-                <a href="#enterprises" role="tab" data-toggle="tab">
-                  <icon class="fa fa-home"></icon> For Enterprises
+                <h4>For Enterprises</h4>
+                <a href="#enterprises" role="tab" data-toggle="tab" data-target="#enterprises">
+                  <i class="fa fa-home"></i><br>
                 </a>
               </li>
               <li class="sol-port-tabs__item">
-                <a href="#c-firms" role="tab" data-toggle="tab">
-                  <i class="fa fa-user"></i> Consulting Firms
+                <h4>Consulting Firms</h4>
+                <a href="#c-firms" role="tab" data-toggle="tab" data-target="#c-firms">
+                  <i class="fa fa-user"></i><br>
                 </a>
               </li>
-              <li class="sol-port-tabs__item">
-                <a href="#l-firms" role="tab" data-toggle="tab">
-                    <i class="fa fa-envelope"></i> Law Firms
+              <li class="sol-port-tabs__item" data-target="">
+                <h4>Law Firms</h4>
+                <a href="#l-firms" role="tab" data-toggle="tab" data-target="#l-firms">
+                    <i class="fa fa-envelope"></i><br>
                 </a>
               </li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content sol-port-tabs__content">
+              <!-- First Pane -->
               <div class="tab-pane fade active in" id="enterprises">
-                <h2>Home Content Goes Here</h2>
-                <img src="http://lorempixel.com/400/400/cats/1" alt="Cats"/>
-              </div>
-              <div class="tab-pane fade sol-port-tabs__content" id="c-firms">
-                <h2>Profile Content Goes Here</h2>
+                <div class="row">
+                  <div class="col-sm-6"><!-- outer wrapper first half -->
+                    <div class="row"><!--  start inner wrapper for split columns -->
+                      <h2 class="sol-port-content__headline">Home Content Goes Here</h2>
+                      <div class="col-sm-6">
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6"><!-- outer wrapper second half -->
+                    <div class="row"><!--  start inner wrapper for split columns -->
+                      <h2 class="sol-port-content__headline">Home Content Goes Here</h2>
+                      <div class="col-sm-6">
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+
+                        <ul>
+                          <li>item</li>
+                          <li>item</li>
+                          <li>item</li>
+                        </ul>
+                      </div>
+
+                    </div><!-- end row -->
+                  </div><!-- end col-sm-6  -->
+                </div><!-- end row -->
+              </div> <!-- First Pane -->
+
+
+              <div class="tab-pane fade" id="c-firms">
+                <h2 class="sol-port-content__headline">Profile Content Goes Here</h2>
                 <img src="http://lorempixel.com/400/400/cats/2" alt="Cats"/>
               </div>
-              <div class="tab-pane fade sol-port-tabs__content" id="l-firms">
-                <h2>Messages Content Goes Here</h2>
+              <div class="tab-pane fade" id="l-firms">
+                <h2 class="sol-port-content__headline">Messages Content Goes Here</h2>
                 <img src="http://lorempixel.com/400/400/cats/3" alt="Cats"/>
               </div>
             </div> <!-- end Tab panes -->

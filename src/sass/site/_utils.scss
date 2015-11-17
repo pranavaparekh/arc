@@ -6,9 +6,19 @@
   text-align: center;
 }
 
+.lede__headline--white {
+  @extend .lede__headline;
+  color: white
+}
+
 .lede__border {
   width: 15%;
   border: 2px solid #00436f;
+}
+
+.lede__border--white {
+  width: 15%;
+  border: 3px solid #fff;
 }
 
 .lede__subheadline {
@@ -16,6 +26,26 @@
   color: #474A4C;
   font-weight: 500;
   text-align: center;
+}
+
+.lede__subheadline--white {
+  @extend .lede__subheadline;
+  color: white
+}
+
+.lede__headline-b {
+  @extend .lede__headline;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2.4em;
+  color: #005E95
+}
+
+.lede__subheadline-b {
+  @extend .lede__subheadline;
+  font-size: 1.4em;
+  font-weight: normal;
+  color: #03476E;
 }
 
 /* story list */
