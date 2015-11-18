@@ -1,4 +1,6 @@
+
 {% includeJsFile "/assets/js/slick.min.js"  %}
+{% includeJsFile "/assets/js/jquery.matchHeight-min.js" %}
 {% includeCssFile "/assets/css/slick.css"  %}
 
 {% set asxCss %}
@@ -14,6 +16,7 @@
     margin-bottom: 2.3em;
     border: 10px solid #DBEDFC;
     box-shadow: 2px 2px 8px #D9D9D9;
+    padding-top: 3em;
   }
   .asx-item__cat-headline {
     text-transform: uppercase;
@@ -126,6 +129,10 @@ $(document).ready(function(){
     speed: 300,
     adaptiveHeight: true
   });
+
+  $('.asx-item').matchHeight({
+    byRow: false
+  });
 });
 
 {% endset %}
@@ -139,116 +146,7 @@ $(document).ready(function(){
       <div class="row">
         <div class="col-sm-12">
           <div class="lede__icon text-center"><img src="/assets/uploads/icons/solutions-icon-gray.png" class="asx-slider__icon img-center" alt="asx-slider-icon"></div>
-          <div class="lede__headline-b text-center">Assignment Examples</div>
-          <div class="lede__subheadline text-center">Our Work in the Aerospace and Defence Market</div>
-          <hr class="lede__border">
-          <!-- slick start -->
-
-          <div class="asx-slider__box">
-            <!-- first Slide -->
-            <div class="row">
-
-              <div class="col-sm-6">
-
-                <div class="asx-item">
-                  <p class="asx-item__cat-headline">Market Study</p>
-                  <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                  <p class="asx-item__region">North America</p>
-                </div><!-- end asx-item -->
-
-                <div class="asx-item">
-                  <p class="asx-item__cat-headline">Market Study</p>
-                  <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                  <p class="asx-item__region">North America</p>
-                </div><!-- end asx-item -->
-
-                <div class="asx-item">
-                  <p class="asx-item__cat-headline">Market Study</p>
-                  <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                  <p class="asx-item__region">North America</p>
-                </div><!-- end asx-item -->
-
-              </div><!-- end .col-sm-6 -->
-
-              <div class="col-sm-6">
-
-
-                  <div class="asx-item">
-                    <p class="asx-item__cat-headline">Market Study</p>
-                    <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                    <p class="asx-item__region">North America</p>
-                  </div><!-- end asx-item -->
-
-
-
-                  <div class="asx-item">
-                    <p class="asx-item__cat-headline">Market Study</p>
-                    <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                    <p class="asx-item__region">North America</p>
-                  </div><!-- end asx-item -->
-
-                  <div class="asx-item">
-                    <p class="asx-item__cat-headline">Market Study</p>
-                    <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                    <p class="asx-item__region">North America</p>
-                  </div><!-- end asx-item -->
-
-
-              </div><!-- end .col-sm-6 -->
-
-              <!-- end .row -->
-            </div>
-            <!-- end .col-sm-12 end first Slide -->
-
-            <!-- start second Slide -->
-            <div class="row">
-
-              <div class="col-sm-6">
-
-                <div class="asx-slider__item">
-                  <div class="asx-item">
-                    <p class="asx-item__cat-headline">Market Study</p>
-                    <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                    <p class="asx-item__region">North America</p>
-                  </div><!-- end asx-item -->
-                 </div><!-- end asx-slider__item -->
-
-                <div class="asx-slider__item">
-                  <div class="asx-item">
-                    <p class="asx-item__cat-headline">Market Study</p>
-                    <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                    <p class="asx-item__region">North America</p>
-                  </div><!-- end asx-item -->
-                </div><!-- end asx-slider__item -->
-
-              </div><!-- end .col-sm-6 -->
-
-              <div class="col-sm-6">
-
-                <div class="asx-slider__item">
-                  <div class="asx-item">
-                    <p class="asx-item__cat-headline">Market Study</p>
-                    <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                    <p class="asx-item__region">North America</p>
-                  </div><!-- end asx-item -->
-                 </div><!-- end asx-slider__item -->
-
-                <div class="asx-slider__item">
-                  <div class="asx-item">
-                    <p class="asx-item__cat-headline">Market Study</p>
-                    <h3 class="asx-item__headline">Assessment of Air Logistics Market in North America</h3>
-                    <p class="asx-item__region">North America</p>
-                  </div><!-- end asx-item -->
-                </div><!-- end asx-slider__item -->
-              </div><!-- end .col-sm-6 -->
-
-            </div><!-- end .row -->
-            <!-- end second Slide -->
-
-
-
-          </div>
-          <!-- end slider -->
+              {{entry.assignmentRichtext}}
         </div>
         <!-- col 12 -->
       </div>
