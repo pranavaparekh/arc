@@ -1,15 +1,15 @@
-
-
-{% include '_components/global/_header' %}
-{% include '_components/services/_masthead' %}
-
+  {% include '_components/global/_header' %}
+  {% include '_components/services/_masthead' %}
 {% if entry.body|length %}
-{% include '_components/services/_intro-single-col' %}
+  {% include '_components/services/_intro-single-col' %}
 {% endif %}
-{% include '_components/services/assignment-slider' %}
-{% include '_components/services/_ztabs' %}
-{% include '_components/services/_verticaltab' %}
-{% include '_components/services/_case-study-list' %}
-{% include '_components/services/_full-cta-a' %}
-{% include '_components/services/_kc-content' %}
-{% include '_components/global/_footer' %}
+  {% include '_components/services/assignment-slider' %}
+{% if entry.solutionRichtext|length %}
+  {% include '_components/services/_ztabs' %}
+{% endif %}
+{% if entry.caseStudyEntries|length %}
+  {% include '_components/services/_case-study-list' %}
+{% endif %}
+  {% include '_components/services/_full-cta-a' %}
+  {% include '_components/services/_kc-content' %}
+  {% include '_components/global/_footer' %}

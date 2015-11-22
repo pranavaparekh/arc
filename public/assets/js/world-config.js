@@ -13,7 +13,7 @@
 		'countryLines':'#30309D', //countries outline inside this continent
 		'lakesColor':'#B2F0FF', //lakes color in this continent
 		'lakesOutline':'#66E0FF', //lakes outline color
-		'url':'http://codecanyon.net/user/Art101/portfolio', //Goto URL
+		'url':'', //Goto URL
 		'target':'same_window', //open link in new window:'new_window', open in current window:'same_window', or 'none' for nothing.
 		'enable':true,//true/false to enable/disable this continent
 	},
@@ -26,7 +26,7 @@
 		'countryLines':'#30309D',
 		'lakesColor':'#B2F0FF',
 		'lakesOutline':'#66E0FF',
-		'url':'http://codecanyon.net/user/Art101/portfolio',
+		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
@@ -36,7 +36,7 @@
 		'overColor':'#CCFF99',
 		'downColor':'#8FB26B',
 		'outLine':'#30309D',
-		'url':'http://codecanyon.net/user/Art101/portfolio',
+		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
@@ -47,7 +47,7 @@
 		'downColor':'#8FB26B',
 		'outLine':'#30309D',
 		'countryLines':'#30309D',
-		'url':'http://codecanyon.net/user/Art101/portfolio',
+		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
@@ -60,7 +60,7 @@
 		'countryLines':'#30309D',
 		'lakesColor':'#B2F0FF',
 		'lakesOutline':'#66E0FF',
-		'url':'http://codecanyon.net/user/Art101/portfolio',
+		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
@@ -71,7 +71,7 @@
 		'downColor':'#8FB26B',
 		'outLine':'#30309D',
 		'countryLines':'#30309D',
-		'url':'http://codecanyon.net/user/Art101/portfolio',
+		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},

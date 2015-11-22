@@ -1,5 +1,9 @@
 {% set whyarcCSS %}
-  .why-arc-b { padding: 30px 0; }
+  .why-arc-b { padding: 30px 0;
+    {% if blueBackground is defined %}
+    background-color: #E2F0FB;
+    {% endif %}
+  }
 
   .why-arc-b__headline--main {
     margin-bottom: 20px;

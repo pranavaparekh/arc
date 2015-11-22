@@ -1,6 +1,9 @@
 {% set statsblokCSS %}
   .stats-blok {
     background-color: #F2F2F2;
+    {% if blueBackground is defined %}
+    background-color: #E2F0FB;
+    {% endif %}
     padding: 30px 0;
   }
 
