@@ -1,0 +1,104 @@
+{% set csModalCss %}
+
+.cs-modal__block {
+  padding: 20px 0;
+}
+
+.cs-modal__blok--headline {
+    color: {{ ttOrange }};
+}
+
+.cs-modal_sol--bk {
+  background: #F3F3F3;
+  padding: 20px 0;
+}
+
+.cs-modal__sol--headline {
+  text-align: center;
+}
+
+{% endset %}
+
+{% includeCss csModalCss %}
+
+<!-- modal -->
+<div id="fsModal"
+     class="modal-{{ modalId }} modal animated zoomIn"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+
+  <!-- dialog -->
+  <div class="modal-dialog">
+
+    <!-- content -->
+    <div class="modal-content">
+
+      <!-- header -->
+      <div class="modal-header">
+        <h1 id="myModalLabel"
+            class="modal-title">
+          Case Study
+        </h1>
+      </div>
+      <!-- header -->
+
+      <!-- body -->
+      <div class="cs-modal modal-body">
+        <div class="row">
+          <div class="col-sm-12 cs-modal__headmast">
+            <img src="/assets/images/cs-banner-bkg.jpg" alt="" />
+            <h3 class="cs-modal__headmast--headline">{{ csModalHeadline }}</h3>
+            <p class="cs-modal__headmast--download"> </p>
+          </div><!-- end: col-12 -->
+        </div><!-- end: row -->
+
+
+
+        <div class="container cs-modal__block">
+          <div class="row">
+            {% if csModalBody1 | length%}
+              {{ csModalBody1 }}
+            {% endif %}
+          </div><!-- end: row -->
+        </div><!-- end: container -->
+
+        <div class="container-fluid cs-modal_sol--bk">
+          <div class="row">
+            <div class="container">
+            <div class="row">
+              {% if csModalBody2 | length%}
+                {{ csModalBody2 }}
+              {% endif %}
+          </div><!-- end: row -->
+          </div><!-- end: container -->
+          </div><!-- end: row -->
+        </div><!-- end: container-fluid -->
+
+        <div class="row">
+          <div class="col-sm-12 cs-modal__img">
+            <img src="/assets/images/cs-graph.jpg" alt="" />
+          </div><!-- end: col-12 -->
+        </div><!-- end: row -->
+
+
+      </div> <!-- modal-body -->
+
+      <!-- footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary"
+                data-dismiss="modal">
+          close
+        </button>
+      </div>
+      <!-- footer -->
+
+    </div>
+    <!-- content -->
+
+  </div>
+  <!-- dialog -->
+
+</div>
+<!-- modal -->

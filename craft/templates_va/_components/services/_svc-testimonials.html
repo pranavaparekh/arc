@@ -1,0 +1,165 @@
+{% includeCssFile '/assets/css/flexslider.css' %}
+{% includeJsFile '/assets/js/jquery.flexslider-min.js' %}
+
+{% set svctextCss %}
+  .svc-test {
+    margin-top: 50px;
+  }
+  .svc-test__headline {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    color:  {{ ttBlue }};
+  }
+  .svc-test__subheadline {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+  }
+  .svc-test-hrline {
+    border-top: 1px solid #cdcdcd;
+  }
+
+  .svc-test__quote {
+    text-align: center;
+    color:  {{ ttBlue }};
+    border: none;
+    font-size: 1.5em;
+    font-style: italic;
+  }
+
+  .svc-test__quote > cite {
+    font-weight: 300;
+    color: #59656B;
+  }
+
+  /* Dots */
+.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: 'â€¢';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
+
+
+
+{% endset %}
+
+{% set svctextJs %}
+  $('.svc-testimonials__list').slick({
+    arrows: false,
+    dots: true
+  });
+{% endset %}
+
+{% includeCss svctextCss %}
+{% includeJs svctextJs %}
+
+
+
+<section class="svc-test container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="lede__headline text-center">Client Speak</h3>
+          <hr class="lede__border">
+            <p class="lede__subheadline text-center">
+              {{ entry.serviceTestimonialsIntro }}
+            </p>
+            <div>
+              <ul class="svc-testimonials__list">
+                {% for block in entry.serviceTestimonials %}
+                  <li>
+                  <blockquote class="svc-test__quote">
+                    <span class="img-sprite quote left-icon"></span>
+                     {{ block.testimonialQuote }}
+                    <cite>— {{ block.testimonialAuthor }}</cite>
+                  </blockquote>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div><!-- end flexslider -->
+
+        </div><!-- end col-sm-12 -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>

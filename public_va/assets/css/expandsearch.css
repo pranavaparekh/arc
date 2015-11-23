@@ -1,0 +1,73 @@
+/***
+* SEARCH BAR DROPDOWN
+*
+***/
+.search-bar {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  top: 70px;
+  left: 0;
+  padding: 0 50px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.25s ease-in, opacity 0.25s, visibility 0s linear 0.25s;
+  -webkit-transition: top 0.25s ease-in, opacity 0.25s, visibility 0s linear 0.25s;
+  -moz-transition: top 0.25s ease-in, opacity 0.25s, visibility 0s linear 0.25s;
+  -ms-transition: top 0.25s ease-in, opacity 0.25s, visibility 0s linear 0.25s;
+  -o-transition: top 0.25s ease-in, opacity 0.25s, visibility 0s linear 0.25s;
+}
+@media (max-width: 768px) {
+  .search-bar {
+    display: none !important;
+  }
+}
+.search-bar.visible {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: top 0.25s ease-in, opacity 0.25s linear 0.1s, visibility 0s linear 0s;
+  -webkit-transition: top 0.25s ease-in, opacity 0.25s linear 0.1s, visibility 0s linear 0s;
+  -moz-transition: top 0.25s ease-in, opacity 0.25s linear 0.1s, visibility 0s linear 0s;
+  -ms-transition: top 0.25s ease-in, opacity 0.25s linear 0.1s, visibility 0s linear 0s;
+  -o-transition: top 0.25s ease-in, opacity 0.25s linear 0.1s, visibility 0s linear 0s;
+}
+.search-bar .search-form-wrapper {
+  width: 100%;
+  height: 70px;
+  float: left;
+}
+.search-bar .search-form-wrapper form {
+  height: 100%;
+}
+.search-bar .icon-search {
+  float: left;
+  margin: 24px 10px 0 0;
+  color: #ccc;
+  background-color: transparent;
+  border: 0;
+}
+.search-bar input[type="text"] {
+  color: #ccc;
+  width: 50%;
+  height: 100%;
+  background: transparent !important;
+  border: none;
+}
+.search-bar input[type="text"]:focus {
+  background: transparent !important;
+}
+.search-bar .form-select {
+  margin-top: 13px;
+  width: 250px;
+  float: right;
+}
+.search-bar input[type="submit"] {
+  min-width: 44px;
+  float: right;
+  margin-top: 13px;
+  height: 44px;
+  margin-left: 15px;
+}

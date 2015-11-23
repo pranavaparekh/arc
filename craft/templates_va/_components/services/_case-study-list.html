@@ -1,0 +1,91 @@
+{% includeJsFile "/assets/js/jquery.matchHeight-min.js" %}
+
+{% set csListJs %}
+
+$('.cs-list__item').matchHeight({});
+
+{% endset %}
+
+{% set csListCss %}
+  .cs-list {
+    padding: 30px 0;
+  }
+
+  .cs-list__item {
+    position: relative;
+    border: 1px solid #3CA7D7;
+    padding: 10px 20px;
+
+  }
+
+  .cs-list__title {
+    color: #3CA7D7;
+  }
+
+  .cs-list__excerpt {
+    color: #1C7197;
+  }
+
+  .case-studies__link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #3CA6D8;
+    padding: 5px 20px;
+    color: white;
+  }
+
+{% endset %}
+
+{% includeCss csListCss %}
+{% includeJs csListJs %}
+
+<section class="container-fluid cs-list--intro">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+          <h2 class="lede__headline">Case Studies</h2>
+          <p class="lede__subheadline"></p>
+          <hr class="lede__border">
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>
+
+<section class="cs-list container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row row-break">
+        {% for block in entry.caseStudyEntries %}
+        <div class="col-sm-6">
+
+          <div class="cs-list__item">
+            <h3 class="cs-list__title">{{block.title}}</h3>
+            {% for blk in block.csExcerpt.limit(1) %}
+              <p class="cs-list__excerpt">{{blk.body}}</p>
+            {% endfor %}
+            <p>
+              <a href="{{block.url}}" class="case-studies__link"
+              data-toggle="modal" data-target=".modal-{{ loop.index }}">Read More</a>
+            </p>
+            {% include '_components/services/_cs-modal.html'
+              with { 'csModalHeadline': block.title, 'modalId': loop.index,
+                     'csModalBody1': block.csBody1, 'csModalBody2': block.csBody2 }
+            %}
+          </div>
+
+        </div> <!-- end col-sm-6 -->
+        {% if loop.index % 2 == 0 %}
+
+        </div> <!-- end row -->
+        <div class="row row-break">
+
+        {% endif %}
+
+        {% endfor %}
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div> <!-- end row -->
+</section>
+
+

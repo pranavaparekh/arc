@@ -1,0 +1,99 @@
+{% set featProfileCss %}
+
+  .feat-profile {
+    padding: 30px 0;
+    background: #fcfcfc;
+  }
+
+  .feat-profile__headline {
+    font-size: 30px;
+    color: #59656B;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .feat-profile__border {
+    width: 15%;
+    border: 2px solid #034883;
+  }
+
+  .feat-profile__bio {
+    padding-top: 65px;
+  }
+
+  .feat-profile__bio > p {
+    color: #8b9094;
+    font-size: 1.3em;
+  }
+
+  .feat-profile__title {
+     margin-top: 45px;
+     border-top: 1px solid #8b9094;
+     border-bottom: 1px solid #8b9094;
+  }
+
+  .feat-profile__title__headline {
+    font-weight: 800;
+    color: #5e686f;
+  }
+
+  .feat-profile__title__designation {
+    color: #5e686f;
+    text-transform: uppercase;
+  }
+
+  .feat-profile__cta {
+    background: #eaebeb;
+    position: absolute;
+    padding: 35px 20px;
+    top: 345px;
+    box-shadow: 2px 4px 6px #C9C6C6;
+  }
+
+  .feat-profile__cta > p {
+    color: #034883;
+    text-transform: uppercase;
+    font-size: 1.2em;
+  }
+
+{% endset %}
+
+{%  includeCss featProfileCss %}
+
+<section class="container-fluid feat-profile">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <h3 class="feat-profile__headline text-center">Meet Our Practice Head</h3>
+        <hr class="feat-profile__border">
+      </div><!-- end row -->
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="feat-profile__bio">
+            <p>I have about 15 years of professional experience in Business Research & Advisory Services across industries sectors.</p>
+
+            <p>Prior to Aranca, I was with Tata Consultancy Services (TCS) as Head of Delivery in their Eco Sustainability Services Practice.</p>
+
+            <p>Early in my career I was involved in various strategic roles in organisations likes Agilisys, BaaN and Deloitte. Prabir holds a Master’s Degree in Business Administration (MBA) and a Bachelor’s Degree in Electrical Engineering.</p>
+          </div>
+
+          <div class="feat-profile__title">
+            <h4 class="feat-profile__title__headline">Prabir Chetia</h4>
+            <p class="feat-profile__title__designation">Head of Business Research and Advisory at Aranca  </p>
+          </div>
+        </div><!-- end col-sm-6 -->
+
+        <div class="col-sm-6">
+          <img src="/assets/uploads/profile/br-prabir-profile.jpg" alt="Prabir Chetia">
+          <div class="feat-profile__cta">
+            <p>Drop us a note with your query and I and my team <br> will get back to you</p>
+          </div>
+        </div><!-- end col-sm-6 -->
+
+      </div><!-- end row -->
+
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>

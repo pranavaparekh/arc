@@ -1,0 +1,30 @@
+{% set svcbodyintroCSS %}
+
+  .body-intro-white-bkg {
+    background: #FFF;
+    padding: 20px 60px;
+  }
+
+  .body-intro-white-bkg > .row {
+    padding-top: 26px;
+  }
+  .body-intro__content {
+    font-size:  1.5em;
+    color:  #59656b;
+  }
+{% endset %}
+
+{% includeCss svcbodyintroCSS %}
+
+
+
+<div class="clearfix">
+  <section class="container-fluid body-intro-white-bkg">
+    <div class="row">
+
+    <div class="body-intro__content text-center">{{ entry.body }}</div>
+
+    </div>
+  </section>
+</div>
+

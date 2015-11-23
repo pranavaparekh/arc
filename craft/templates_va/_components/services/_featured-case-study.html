@@ -1,0 +1,76 @@
+{% set featcaseCss %}
+  .feat-cs {
+    background-color:  {{ bgBlue }};
+    color: {{ ttPrimary }};
+    padding: 50px 0;
+  }
+
+    @media(min-width: {{ screenmd }}) {
+      .feat-cs  {
+        background: url('/assets/uploads/banners/feat-case-study-bkg.jpg') no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+         padding:20px 0;
+      }
+    }
+
+  .feat-cs__main {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .feat-cs__headline {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    line-height: 40px;
+  }
+  .feat-cs__summary {
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: 500;
+  text-transform: none;
+  }
+
+  .feat-cs__readmore {
+    margin-top: 10px;
+  }
+
+  .feat-cs__readmore > a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1em;
+    border: 1px solid white;
+    padding: 4px 60px;
+  }
+{% endset %}
+
+{% set featCasestudyJs %}
+
+  new Waypoint.Inview({
+    element: $('.feat-cs')[0],
+    enter: function(direction) {
+      $('.feat-cs').addClass('animated fadeInUp');
+    }
+  });
+
+{% endset %}
+
+{% includeCss featcaseCss %}
+{% includeJs featCasestudyJs %}
+
+<section class="feat-cs container-fluid">
+  <div class="row">
+    <div class="container feat-cs__main" >
+      {% for block in entry.featuredCaseStudyBanner %}
+      <img class="feat-cs__icon" src="/assets/uploads/icons/case-studies-icon-white.png" alt="featured case study">
+      <h2 class="feat-cs__headline">Featured Case Study</h2>
+      <p class="cs__title">{{block.csTitle}}</p>
+      <p class="feat-cs__summary">{{ block.csSummary}}</p>
+      <p class="feat-cs__readmore"><a href="#">Read Story</a></p>
+      {% endfor %}
+    </div>
+  </div>
+</section>

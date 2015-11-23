@@ -1,0 +1,60 @@
+{% set capblokCss %}
+  .cap-blok__headline--main {
+    margin-bottom: 20px;
+  }
+  .cap-blok__headline {
+    font-size: 30px;
+    color: #59656B;
+    font-weight: 600;
+    text-align: center;
+  }
+  .cap-blok__subheadline {
+    font-size: 18px;
+    text-align: center;
+    color: {{ ttgrey }};
+    font-weight: 500;
+  }
+  .cap-blok__border {
+    width: 15%;
+    border: 2px solid #034883;
+  }
+  .cap-blok__headline--col {
+    text-align: center;
+  }
+  .cap-blok__content {
+    color: {{ ttgrey }};
+    font-size: 15px;
+    text-align: center;
+  }
+  .cap-blok__border--content {
+    width: 50%;
+  }
+
+{% endset %}
+
+{% includeCss capblokCss %}
+
+
+<section class="container-fluid cap-blok">
+
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 cap-blok__headline--main">
+          {% for block in entry.capabilitiesBlockIntro %}
+          <h3 class="cap-blok__headline">{{ block.introHeadline }}</h3>
+          <p class="cap-blok__subheadline">{{ block.introSubHeadline }}</p>
+          <hr class="cap-blok__border"/>
+          {% endfor %}
+        </div> <!-- col-sm-12 -->
+      </div> <!-- end row  -->
+
+      <div class="row">
+
+       {{ entry.capabilitiesBlockContent }}
+
+      </div><!-- end row -->
+
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>

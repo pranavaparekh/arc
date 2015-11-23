@@ -1,0 +1,71 @@
+
+{% set introSingleCss %}
+  .intro-single {
+    padding: 30px 0;
+  }
+
+  .track-rec__headline {
+    text-transform: uppercase;
+    color: #5e686f;
+    font-size: 1.5em;
+  }
+
+  .track-rec__subheadline {
+    color: #979B9E;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .track-rec__list__item {
+    font-size: 1.2em;
+    line-height: 2.3em;
+    color: #828585;
+  }
+
+  .product-list__item {
+    color: #4D5050;
+    font-weight: 400;
+  }
+  .product-content__container {
+    background-color: #F2F2F2;
+    padding: 20px;
+    padding-left: 63px;
+    border-left: 1px dotted #CBC9C9;
+  }
+
+  .intro-sep {
+    z-index: 1;
+    position: absolute;
+    top: 65%;
+    left: 39%;
+    transform: translateY(-65%);
+  }
+
+  .intro-single__headline {
+    font-size: 40px;
+    color: #7F8588;
+  }
+
+  .intro-single__subheadline {
+    font-size: 20px;
+    color: #7F8588;
+    margin-bottom: 40px;
+  }
+
+{% endset %}
+
+{% includeCss introSingleCss %}
+
+
+<section class="intro-single container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          {{ entry.body }}
+        </div><!-- end col-sm-12 -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>

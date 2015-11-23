@@ -1,0 +1,14 @@
+
+{% set tweets = craft.twitter.get('statuses/user_timeline') %}
+
+{% if tweets %}
+
+    {% for tweet in tweets %}
+
+        {{ tweet.text|autoLinkTweet }}
+
+    {% endfor %}
+
+{% else %}
+    <p>No tweets</p>
+{% endif %}

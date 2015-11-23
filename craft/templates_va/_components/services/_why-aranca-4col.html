@@ -1,0 +1,103 @@
+{% set custblokCss %}
+  .cust-blok {
+    background-color:  {{ bgBlue }};
+    color: {{ ttPrimary }};
+    padding: 50px 0;
+    margin: 30px 0;
+  }
+  .cust-blok__headline--main {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .cust-blok__headline {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    line-height: 40px;
+  }
+  .cust-blok__subheadline {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .cust-blok__headline--col {
+    text-align: center;
+  }
+  .cust-blok--intro {
+   text-align: center;
+   padding: 50px 0;
+  }
+  .cust-blok__border {
+    width: 50%;
+    border: 1px solid #034883;
+  }
+  .cust-blok__content {
+  color: {{ ttgrey }};
+  font-size: 15px;
+  text-align: center;
+  }
+
+  .cust-blok__content > span {
+    font-size: 18px;
+    color: {{ttOrange}};
+  }
+
+  .triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-top: 80px solid {{ bgBlue }};
+  }
+
+  .cust-blok__headline--main > .triangle-down {
+    position: relative;
+    top: 100px;
+  }
+
+  .cust-blok--col {
+    padding-bottom: 30px;
+  }
+
+  .cust-blok__headline--small {
+    font-size: 24px;
+    color: {{ttOrange}};
+}
+  .cust-blok__content--headline {
+    font-size: 18px;
+    color: {{ttOrange}};
+}
+{% endset %}
+
+{% includeCss custblokCss %}
+
+
+<section class="container-fluid cust-blok--intro">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        {% for block in entry.customersBlockIntro %}
+          <h2 class="lede__headline">{{ block.headline }}</h2>
+          <p class="lede__subheadline">{{ block.subHeadline }}</p>
+          <hr class="lede__border">
+        {% endfor %}
+       </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>
+
+
+<section class="container-fluid cust-blok--col">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+
+       {{ entry.customersBlockContent }}
+
+      </div><!-- end row -->
+
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>

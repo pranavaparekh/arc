@@ -1,0 +1,145 @@
+{% set verticaltabCss %}
+
+h3 {
+  margin-top: 0;
+}
+
+.badge {
+  background-color: #777;
+}
+
+.tabs-left {
+  margin-top: 3rem;
+}
+
+.nav-tabs {
+  float: left;
+  border-bottom: 0;
+}
+
+
+
+.nav-tabs li {
+  float: none;
+  margin: 0;
+}
+.nav-tabs li a {
+  margin-right: 0;
+}
+.nav-tabs li a:hover {
+  background-color: #444;
+}
+.nav-tabs .glyphicon {
+  color: #fff;
+}
+.nav-tabs .active .glyphicon {
+  color: #333;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+}
+
+.tab-content {
+  margin-left: 45px;
+}
+.tab-content .tab-pane {
+  display: none;
+  padding: 1.6rem;
+  overflow-y: auto;
+}
+.tab-content .active {
+  display: block;
+}
+
+.list-group {
+  width: 100%;
+}
+.list-group .list-group-item {
+  height: 50px;
+}
+.list-group .list-group-item h4, .list-group .list-group-item span {
+  line-height: 11px;
+}
+
+.vtabs {
+  padding: 30px 0;
+  background: #EAEAEA;
+}
+
+.vtabs__list {
+  box-shadow: 3px 3px 10px #DBDBDB;
+}
+
+.vtabs__list__item {
+  background: #DFDEDE;
+  border-bottom: 1px solid #CFD2D3;
+}
+
+.vtabs__content__item {
+  background-color: white;
+  border: 1px solid #CFD2D3;
+  box-shadow: 3px 3px 10px #DBDBDB;
+}
+
+.vtabs__content__item h3 {
+  text-transform: uppercase;
+  color: #034883;
+  padding-bottom: 15px;
+}
+
+.vtabs__content__list__item {
+  margin-bottom: 10px;
+  color: #706F6F;
+  font-size: 1.1em;
+}
+
+.vtabs__content__list__item > .fa {
+    margin-right: 10px;
+    font-size: 1.4em;
+    color: #9BD572;
+    font-weight: 100;
+    position: relative;
+    top: 3px;
+}
+
+
+
+{% endset %}
+
+{% set verticaltabJs%}
+var tabsFn = (function() {
+
+  function init() {
+    setHeight();
+  }
+
+  function setHeight() {
+    var $tabPane = $('.tab-pane'),
+        tabsHeight = $('.nav-tabs').height();
+
+    $tabPane.css({
+      height: tabsHeight
+    });
+  }
+
+  $(init);
+})();
+{% endset %}
+
+{% includeCss verticaltabCss %}
+{% includeJs verticaltabJs %}
+
+<section class="container-fluid vtabs">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          {{ entry.verticalTabsContent }}
+        </div><!-- /col -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div>
+</section>
+

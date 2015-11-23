@@ -1,0 +1,75 @@
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+
+{% set ztabsCss %}
+
+  .ztabs {
+    padding: 60px 0;
+    background: url('/assets/images/patterns/swirl_pattern.jpg');
+  }
+
+  .ztabs__headline {
+    font-size: 3em;
+    color: #e55b2b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 3px #ccc;
+  }
+
+  .ztab__list__item__head {
+    font-size: 1.3em;
+    line-height: 1.6em;
+    color: {{ ttgrey }};
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    border-bottom: 1px dashed #C2CDD5;
+    padding-bottom: 0.5em;
+    color: #A0ABB2;
+  }
+
+  .ztab__subllist > li {
+    margin-left: 2em;
+    list-style: none;
+    line-height: 2.5em;
+    background: url(/assets/images/icons/tick.png) left center no-repeat;
+    padding-left: 30px;
+  }
+
+{% endset %}
+
+{% set ztabsJs %}
+
+ $(document).ready(function () {
+      /*  jQuery activation and setting options. Visit docs.zozoui.com/tabs for
+          complete documentation, option list, public methods, callback events.*/
+      $("#tabbed-nav").zozoTabs({
+          theme: "silver",
+          orientation: "vertical",
+          position: "top-left",
+          size: "xlarge",
+          animation: {
+              duration: 400,
+              effects: "slideV"
+          },
+      });
+  });
+
+{% endset %}
+
+{% includeJs ztabsJs %}
+{% includeCss ztabsCss %}
+
+<section class="container-fluid ztabs">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            {{entry.solutionRichtext}}
+        </div> <!-- end col-sm-12 -->
+      </div> <!-- end row -->
+    </div> <!-- end row -->
+  </div> <!-- end row -->
+
+
+</section><!-- end ztabs -->
+

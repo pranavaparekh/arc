@@ -1,0 +1,106 @@
+{% set statsblokCSS %}
+  .stats-blok {
+    background-color: #F2F2F2;
+    {% if blueBackground is defined %}
+    background-color: #E2F0FB;
+    {% endif %}
+    padding: 30px 0;
+  }
+
+  .stats-blok__headline--main {
+    margin-bottom: 20px;
+  }
+  .stats-blok__headline {
+    font-size: 30px;
+    color: #59656B;
+    font-weight: 600;
+    text-align: center;
+  }
+  .stats-blok__subtext {
+    font-size: 18px;
+    text-align: center;
+    color: {{ ttgrey }};
+    font-weight: 500;
+  }
+  .stats-blok__border {
+    width: 15%;
+    border: 2px solid #034883;
+  }
+  .stats-blok__headline--col {
+    text-align: center;
+  }
+  .stats-blok__stat {
+    font-size: 24px;
+    color: {{redPrimary}};
+  }
+
+  .stats-blok__icon {
+    opacity: 0.8;
+    padding-bottom: 1em;
+  }
+
+  .stats-blok__stat__content {
+    font-size: 18px;
+    color: {{ttgrey}};
+  }
+
+{% endset %}
+
+{% set statsblokJs %}
+  new Waypoint.Inview({
+    element: $('.stats-blok')[0],
+    enter: function(direction) {
+      $('.stats-blok__headline--col').addClass('animated fadeInUp');
+      console.log('ststsblok reached');
+    }
+  });
+{% endset %}
+
+{% includeCss statsblokCSS %}
+{% includeJs statsblokJs %}
+
+<section class="stats-blok container-fluid">
+  <div class="row">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-12 stats-blok__headline--main">
+
+        {% for block in entry.contentStatIntro %}
+          <h3 class="stats-blok__headline">{{ block.headline  }}</h3>
+          <p class="stats-blok__subtext">{{ block.subHeadline }}</p>
+          <hr class="stats-blok__border">
+          {% endfor %}
+
+        </div><!-- end col 12 -->
+      </div><!-- end row -->
+
+      <div class="row">
+
+      {% set blocks = entry.statBlockContent.type('blockContent') %}
+
+      {% if blocks | length == 3 %}
+        {% set gridClass = "col-sm-4" %}
+      {% else %}
+        {% set gridClass = "col-sm-3" %}
+      {% endif %}
+
+      {% for block in entry.statBlockContent %}
+      <div class="{{ gridClass }} stats-blok__headline--col">
+
+          {% if block.icon.first() | length %}
+            <img src="{{ block.icon.first().getUrl() }}" class="stats-blok__icon" alt="cap-block-icon1">
+          {% endif %}
+          <h3 class="stats-blok__stat">{{ block.headline }}</h3>
+          <div class="stats-blok__stat__content">
+            <p>{{ block.subtext }}</p>
+          </div>
+        </div>
+     {% endfor %}
+
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>
+
+

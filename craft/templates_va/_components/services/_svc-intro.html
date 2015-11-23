@@ -1,0 +1,47 @@
+{% set svcintroCSS %}
+
+  @media(min-width: {{ screensm }}) {
+    .svc-intro {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  .red-bkg {
+    background: {{redPrimary}};
+    padding: 80px 60px;
+    color: {{ttPrimary}}
+  }
+
+  .white-bkg {
+    background: #FFF;
+    padding: 80px 60px;
+  }
+
+  .white-bkg > .row {
+    padding-top: 26px;
+  }
+
+{% endset %}
+
+{% includeCss svcintroCSS %}
+
+
+{% for block in entry.servicesIntro %}
+<div class="clearfix">
+  <section class="svc-intro container-fluid white-bkg">
+    <div class="row">
+
+     {{ block.textIntroLeft }}
+
+    </div>
+  </section>
+  <section class="svc-intro container-fluid red-bkg">
+    <div class="row">
+
+      {{ block.textIntroRight }}
+
+    </div>
+  </section>
+</div>
+{% endfor %}

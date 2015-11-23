@@ -1,0 +1,27 @@
+{% set expandSearchJs %}
+
+(function($, window, undefined){
+
+  $('.search-trigger').on( 'click', function(e) {
+    e.preventDefault();
+    console.log('search clicked');
+    $('.search-bar').toggleClass('visible');
+  });
+
+})(jQuery, window, null);;
+
+{% endset %}
+
+{% includeCssFile '/assets/css/expandsearch.css' %}
+{% includeJs expandSearchJs %}
+
+
+<!-- <div class="search-bar">
+  <div class="search-form-wrapper">
+    <form role="search" method="get" class="search-form" action="http://www.dtelepathy.com/blog/" id="search-form">
+    <button class="fa fa-search icon-search"></button>
+    <input type="text" autocomplete="off" placeholder="Search our library" value="" class="search-input" name="s" id="s">
+  </form>
+  </div>
+</div>
+ -->

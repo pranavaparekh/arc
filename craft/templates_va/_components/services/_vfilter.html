@@ -1,0 +1,186 @@
+{% includeJsFile "/assets/js/isotope.min.js"  %}
+
+{% set vfilterCSS %}
+.iso-filter {
+  background:  url(/assets/images/vfilter-bkg.jpg) 0px 334px no-repeat, {{ brandOrange }};
+  min-height: 676px;
+  padding: 30px 0;
+}
+
+.grid {
+  margin-top: 20px;
+}
+
+.iso-filter__grid-content__headline {
+  color: #9D6625;
+}
+
+.iso-filter__subheadline {
+  color: white;
+  text-transform: capitalize;
+  line-height: 1.3em;
+}
+
+.iso-filter__intro {
+  font-size: 1.5em;
+  color: white;
+}
+
+.filter-item {
+  color: #9D6625;
+}
+
+.iso-filter__filter-list > li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.iso-filter__filter-list > li.active {
+
+}
+
+.iso-filter__grid-item {
+  background: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 20px 10px;
+  box-shadow: 0px 2px 7px #C08033;
+}
+
+.iso-filter__grid-content__item > a  {
+  margin-bottom: 5px;
+  color: #9D6625;
+}
+
+{% endset %}
+
+{% set vfilterJS %}
+// filter items on list item click
+$(document).ready(function(){
+  $('.filter-list-group').on( 'click', '.filter-item', function() {
+    console.log('clicked item');
+    var filterValue = $(this).attr('data-filter');
+    var $container = $('.grid');
+    $container.isotope({ filter: filterValue });
+  });
+});
+{% endset %}
+
+{% includeCss vfilterCSS %}
+{% includeJs vfilterJS %}
+
+<section class="container-fluid iso-filter animated fadeInUp">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <!-- start filters here -->
+          <div class="filter-group filter-list-group">
+            <h3 class="iso-filter__subheadline">Solutions Portfolio</h3>
+            <ul class="iso-filter__filter-list">
+              <li><a href="#united-states" class="filter-item" data-filter="*">
+              All</a></li>
+              <li><a href="#united-states" class="filter-item" data-filter=".united-states">
+              United States</a></li>
+              <li><a href="#india" class="filter-item" data-filter=".india">India</a></li>
+              <li><a href="#mena" class="filter-item" data-filter=".mena">MENA</a></li>
+              <li><a href="#europe" class="filter-item" data-filter=".europe">Europe</a></li>
+            </ul>
+          </div><!-- end filter-group -->
+        </div><!-- end col-sm-3 -->
+
+
+        <!-- start content grid here -->
+        <div class="col-sm-9">
+          <p class="iso-filter__intro">Our diverse solutions portfolio helps clients meet their ever-growing reporting needs and provide in-depth analysis in dealing with valuation issues across diverse transaction situations</p>
+          <div class="grid js-isotope"
+          data-isotope-options='{ "itemSelector": ".iso-filter__grid-item", "layoutMode": "fitRows" }'>
+
+          <div class="iso-filter__grid-item united-states" style="min-width: 482px;">
+            <h4 class="iso-filter__grid-content__headline"><a href="/valuation-and-advisory/tax-services">Tax Services</a></h4>
+            <ul>
+              <div class="pull-left" style="margin-right: 30px;">
+                <li class="iso-filter__grid-content__item"><a href="/valuation-and-advisory/409-valuation-services">IRC409A Valuation (Stock Options)</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Estate &amp; Gift Tax</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Charitable Contributions (IRC351/355)</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Legal Entity Valuation (IRC351/355)</a></li>
+              </div>
+              <div class="pull-left">
+                <li class="iso-filter__grid-content__item"><a href="">S-Corp Elections (IRC 1374)</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">NOLs &amp; Built-in Gains</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Litigation Support</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Other Corporate Tax Valuations</a></li>
+              </div>
+            </ul>
+          </div><!-- end group one -->
+
+
+          <div class="iso-filter__grid-item united-states india" style="min-width: 482px;">
+            <h4 class="iso-filter__grid-content__headline">Financial Reporting</h4>
+            <ul>
+              <div class="pull-left" style="margin-right: 30px;">
+                <li class="iso-filter__grid-content__item"><a href="">Purchase Price Allocation | ASC 805</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Goodwill Impairment</a></li>
+              </div>
+              <div class="pull-left">
+                <li class="iso-filter__grid-content__item"><a href="">Complex Securities Valuation</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Fair Value Measurements (ASC820)</a></li>
+              </div>
+            </ul>
+          </div><!-- end group two -->
+
+
+          <div class="iso-filter__grid-item mena pull-right">
+            <h4 class="iso-filter__grid-content__headline">Transaction Services</h4>
+            <ul>
+              <div class="pull-left" style="margin-right: 30px;">
+                <li class="iso-filter__grid-content__item"><a href="">Fairness Opinions</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">M&amp;A Valuations</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Early Stage Valuations</a></li>
+              </div>
+              <div class="pull-left">
+                <li class="iso-filter__grid-content__item"><a href="">Solvency Opinions</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Financial Modeling</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Transaction Support Services</a></li>
+              </div>
+            </ul>
+          </div><!-- end group three -->
+
+          <div class="iso-filter__grid-item mena europe">
+            <h4 class="iso-filter__grid-content__headline">IP &amp; Brand Valuation</h4>
+            <ul>
+              <div>
+                <li class="iso-filter__grid-content__item"><a href="">M &amp; A</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Technology Transfer</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Equity/Debt Funding</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Corporate Strategic Initiatives</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Brand Valuation</a></li>
+              </div>
+            </ul>
+          </div><!-- end group four -->
+
+          <div class="iso-filter__grid-item mena europe">
+            <h4 class="iso-filter__grid-content__headline">Valuation Outsourcing</h4>
+            <ul>
+              <div>
+                <li class="iso-filter__grid-content__item"><a href="">Portfolio Valuation</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">ESOP Transactions</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Fund Valuation</a></li>
+                <li class="iso-filter__grid-content__item"><a href="">Financial Modeling</a></li>
+              </div>
+            </ul>
+          </div><!-- end group four -->
+
+
+        </div><!-- end main grid -->
+      </div><!-- end col-sm-9 -->
+    </div><!-- end row -->
+  </div><!-- end container -->
+</section>
+
+
+
+
+
+

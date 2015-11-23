@@ -1,0 +1,85 @@
+{% set whyarcCSS %}
+
+  @media(min-width: {{ screensm }}) {
+    .why-arc {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  .why-arc__headline {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 40px;
+  }
+
+  .why-arc__headline > span {
+    font-weight: 700;
+  }
+
+  .why-arc__subtext {
+    font-size: 24px;
+  }
+
+  .red-bkg {
+    background: {{redPrimary}};
+    padding: 80px 60px;
+    color: {{ttPrimary}}
+  }
+
+  .blue-bkg {
+    background: url(/assets/images/why-aranca-bkg.jpg) no-repeat;
+    padding: 80px 60px;
+    color: {{ttPrimary}};
+  }
+
+  .white-bkg {
+    background: #FFFFFF;
+    padding: 50px 50px;
+  }
+
+  .why-arc_stat_col {
+    text-align: center;
+  }
+
+  .why-arc__stat {
+    font-size: 24px;
+    color: {{ttOrange}};
+  }
+
+  .why-arc__stat__content {
+    font-size: 18px;
+    color: {{ttOrange}};
+  }
+
+  .why-arc__stat__icon {
+    opacity: 0.7;
+  }
+
+{% endset %}
+
+{% includeCss whyarcCSS %}
+
+
+<section class="why-arc container-fluid blue-bkg">
+  <div class="row">
+    <h3 class="why-arc__headline">Why Clients<br><span>Choose</span><br>Aranca</h3>
+    <p class="why-arc__subtext">Our track-record and depth of our valuation experience</p>
+  </div><!-- end row -->
+</section><!-- end left col -->
+
+
+
+
+<section class="why-arc container-fluid white-bkg">
+{% for block in entry.whyArancaStats %}
+  <div class="row">
+    <div class="col-sm-6 why-arc_stat_col animated fadeInUp">
+      <img class="why-arc__stat__icon" src="{{ block.statsBlockIcon.first().geturl() }}" alt="">
+      <p class="why-arc__stat">{{ block.statsNumber }}</p>
+      <p class="why-arc__stat__content">{{ block.statsContent }}</p>
+      <p class="why-arc__stat__subcontent">{{ block.statsSubContent }}</p>
+    {% if loop.index % 2 == 0 %}<br></div>{% endif %}
+  </div>
+  {% endfor %}
+</section><!-- end right col -->

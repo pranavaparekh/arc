@@ -1,0 +1,563 @@
+{% includeJsFile "/assets/js/jquery.easing.1.3.js"  %}
+{% includeJsFile "/assets/js/jquery.scrollUp.min.js"  %}
+{% includeJsFile "/assets/js/jquery.colio.min.js"  %}
+
+{% includeJsFile "/assets/js/jquery.matchHeight-min.js" %}
+
+
+{% includeCssFile "/assets/css/colio.css"  %}
+
+{% set cfilterCSS %}
+
+  .cfilter {
+    background: #e3f2fa;
+    padding: 20px 0;
+  }
+
+
+  .cfilter__inner {
+    background: white;
+    border: 1px solid #e1dede;
+    text-align: center;
+    padding: 45px 0;
+    box-shadow: 0px 2px 7px #CBCBCB;
+  }
+
+  .cfilter__inner > h3 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    color: #b0aaaa;
+  }
+
+  .colio-active-item .cfilter__inner {
+    background: #f3f2f2;
+    padding: 20px 0;
+    border: 25px solid white;
+  }
+
+  .colio-active-item h3 {
+    font-weight: 600;
+  }
+
+  .colio-content__headline {
+    color: #5DA6DD;
+    margin-left: 13px;
+  }
+
+  #cfilter__expanded {
+    /*background: url('/assets/images/br-cfilter-expanded-bkg.jpg') no-repeat;*/
+    margin: 110px 15px;
+    color: {{ttPrimary}};
+    top: -10px;
+    background-color: #e3f2fa;
+  }
+
+  .colio-active-item #cfilter__expanded {
+    min-height: 400px;
+  }
+
+  .cfilter__list-item {
+    padding: 30px 0;
+  }
+
+.colio-content__item {
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.colio-content__item  > a {
+     color: white;
+
+}
+
+.colio-content__heading {
+  margin-top:0;
+}
+
+.colio-content__sep {
+    border-left: 1px solid #ffffff;
+}
+.colio-content__para {
+}
+.colio-container { padding: 90px 40px; }
+
+.colio-navigation {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.colio-navigation a {
+  margin-right: 5px;
+  color: white;
+  background-color: #1477CB;
+  padding: 5px;
+}
+
+.colio-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background-color: #1477CB;
+  padding: 5px;
+}
+.box-grid--inner > p {
+  color: #474A4C;
+}
+
+{% endset %}
+
+{% set cfilterJS %}
+  $(document).ready(function(){
+    $.scrollUp();
+
+    $('.cfilter__list').colio({
+        placement: 'after',
+        id: 'cfilter__expanded'
+    });
+
+    $('.box-grid__col-main').matchHeight({});
+
+  });
+
+
+
+{% endset %}
+
+{% includeCss cfilterCSS %}
+{% includeJs cfilterJS %}
+
+<section class="container-fluid cfilter">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 box-grid__headline-main">
+            <img src="/assets/uploads/icons/solutions-icon-gray.png" class="box-grid__icon img-center" alt="box-grid-icon">
+            <h2 class="lede__headline">Solutions Portfolio</h2>
+            <p class="lede__subheadline">Our diverse solutions portfolio helps our clients meet their ever-growing research needs to enable their strategic business decisions
+            </p>
+            <hr class="lede__border">
+        </div>
+      </div><!-- end row -->
+
+      <div class="row">
+        <div class="col-sm-12">
+          {{ entry.servicesFilters }}
+        </div><!-- end col-sm-12 -->
+
+        <div class="col-sm-12">
+          <div id="colio_c1" class="colio-content">
+            <div class="main">
+              <div class="row">
+                <div class="col-sm-6"><!-- main col 6 -->
+                  <h3 class="colio-content__headline">Growth and Strategy</h3>
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">International Expansion</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                        <li class="box-grid__col-list__item"><a href="#">Quick scans - shortlist markets</a></li>
+                        <li class="box-grid__col-list__item"><a href="#">Deep-dive market studies</a></li>
+                        <li class="box-grid__col-list__item"><a href="#">GTM strategy</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Diversification</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                        <li class="box-grid__col-list__item"><a href="#">Opportunity scans</a></li>
+                        <li class="box-grid__col-list__item"><a href="#">Market opportunity assessment</a></li>
+                        <li class="box-grid__col-list__item"><a href="#">Business case / Financial Model</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+
+                <div class="col-sm-6"><!-- main-col-6-->
+                <h3 class="colio-content__headline">Understand your business better</h3>
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Customer Insights</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                        <li class="box-grid__col-list__item"><a href="#">Satisfaction & Loyalty studies</a></li>
+                        <li class="box-grid__col-list__item"><a href="#">Lost customer surveys</a></li>
+                        <li class="box-grid__col-list__item"><a href="#">Customer experience management</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Competition Analysis</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">'How-they-do-it’ analysis?</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Product / Price benchmarking</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Profiles: Performance, Plans</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+              </div><!-- row-1 -->
+
+              <div class="row">
+                <div class="col-sm-6"><!-- main col 6 -->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Acquisitions</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Identify, shortlist targets</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Fit analysis – Detailed profiles</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Due diligence support</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Increase market share</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Market segments and growth</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Customer / product profitability</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Customer needs analysis</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+
+                <div class="col-sm-6"><!-- main-col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">B2B Sales Planning</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Account Planning</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Prospect Infopacks</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Firmographics</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Channel</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Planning & Optimization</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Satisfaction studies</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Business outlook surveys</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+              </div><!-- row-2 -->
+
+              <div class="row">
+                <div class="col-sm-6"><!-- main col 6 -->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Digital Strategy</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Industry trends / analysis</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Best practices / Success stories</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">GTM strategy</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Innovation</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Mega-trends workshop</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Product / Service design</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Business process innovation</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+
+                <div class="col-sm-6"><!-- main-col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Brand Research</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Brand tracking research</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Brand strategy research</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Brand Valuation</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h4 class="box-grid__col-headline">Advertising Research</h4>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Communications testing</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Advertising effectiveness</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Digital communications strategy</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+              </div><!-- row-3 -->
+            </div><!-- main -->
+          </div><!-- colio-content # colio_c1 -->
+
+          <div id="colio_c2" class="colio-content">
+            <div class="main">
+              <div class="row">
+                <div class="col-sm-6"><!-- main col 6 -->
+                <h3 class="colio-content__headline">Research support for <br/>Consulting Engagements</h3>
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Market | Industry Studies</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Market sizing & segmentation</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Value chain, Profit-pool maps</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Scorecards (financial / operating metrics)</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Competition Analysis</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Price, Product benchmarking</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Deep-dive analysis (Functional areas)</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Profiles (Operations, SWOT, Plans)</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+
+                <div class="col-sm-6"><!-- main-col-6-->
+                <h3 class="colio-content__headline">Knowledge management support for enhancing Operational effectiveness</h3>
+                  <div class="col-sm-12 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Information Management</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Proprietary databases (design and maintenance) </a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Credential packs / case studies management</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Internal newsletters (industry or topic specific)</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Training material development / management</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-12-->
+                </div><!-- main-col-6-->
+              </div><!-- row-1 -->
+
+              <div class="row">
+                <div class="col-sm-6"><!-- main col 6 -->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Customer Analysis</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Satisfaction surveys</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Share-of-wallet analysis</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Up-sell or cross-sell analytics</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Digital Business</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Market sizing and forecasts</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Technology / Social trends</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Best practices / Success stories</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+
+                <div class="col-sm-6"><!-- main-col-6-->
+                  <div class="col-sm-12 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Business Development | Marketing Support</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Prospect Infopacks</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Strategic Client Updates </a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Proposal development support</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">White papers, Client news-letters</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-12-->
+                </div><!-- main-col-6-->
+              </div><!-- row-2 -->
+
+              <div class="row">
+                <div class="col-sm-6"><!-- main col 6 -->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Procurement | Supply Chain Research</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Category intelligence reports</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Best-Cost-Country Sourcing</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Supply-chain risk assessments</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Technology | IP Research</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Patent portfolio analysis</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Technology Intelligence </a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Outlicensing opportunity evaluation</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+
+                <div class="col-sm-6"><!-- main-col-6-->
+                  <div class="col-sm-12 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Business Support Services</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Presentation and DTP support</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Editorial services</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Library support services </a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Intranet content management</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-12-->
+                </div><!-- main-col-6-->
+              </div><!-- row-3 -->
+
+              <div class="row">
+                <div class="col-sm-6"><!-- main col 6 -->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Surveys</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">CXO surveys (business issues)</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">CTO surveys (technology issues)</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">B2C or Healthcare surveys</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                  <div class="col-sm-6 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Innovation and Differentiation</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <ul class="box-grid__col-list">
+                      <li class="box-grid__col-list__item"><a href="#">Industry mega-trends</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Product / service design</a></li>
+                      <li class="box-grid__col-list__item"><a href="#">Business process innovation</a></li>
+                      </ul>
+                    </div><!--inner -->
+                  </div><!-- col-6-->
+                </div><!-- main-col-6-->
+
+                <div class="col-sm-6"><!-- main-col-6-->
+                  <div class="col-sm-12 box-grid__col-main">
+                  </div><!-- col-12-->
+                </div><!-- main-col-6-->
+              </div><!-- row-4 -->
+            </div><!-- main -->
+          </div><!-- colio-content # colio_c2 -->
+
+          <div id="colio_c3" class="colio-content">
+            <div class="main">
+              <div class="row">
+                  <div class="col-sm-4 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Business Development</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <p>Maximize your returns on business development through our account  planning related research solutions</p>
+                    </div><!--inner -->
+                  </div><!-- col-4-->
+                  <div class="col-sm-4 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Business Development</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <p>Use our intelligence on litigation related trends to proactively plan customer / marketing strategies</p>
+                    </div><!--inner -->
+                  </div><!-- col-4-->
+                  <div class="col-sm-4 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Customer Satisfaction</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <p>Leverage our customized customer experience management and loyalty measurement programs for law firms</p>
+                    </div><!--inner -->
+                  </div><!-- col-4-->
+              </div><!-- row-1 -->
+
+                            <div class="row">
+                  <div class="col-sm-4 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Strategic Planning Support</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <p>Leverage our research and insights on the ecosystem that you operate in to design winning strategies for your firm</p>
+                    </div><!--inner -->
+                  </div><!-- col-4-->
+                  <div class="col-sm-4 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Competition Analysis</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <p>Customized CI solutions to help you track, analyze competitors or benchmark your firms versus peers</p>
+                    </div><!--inner -->
+                  </div><!-- col-4-->
+                  <div class="col-sm-4 box-grid__col-main">
+                    <div class="box-grid__col-headline__wrapper">
+                      <h2 class="box-grid__col-headline">Thematic Research</h2>
+                    </div>
+                    <div class="box-grid--inner">
+                      <p>Engage our experts for developing white papers or newsletters for clients or internal audiences</p>
+                    </div><!--inner -->
+                  </div><!-- col-4-->
+              </div><!-- row-2 -->
+            </div><!-- main -->
+          </div><!-- colio-content # colio_c3 -->
+
+        </div><!-- end col-sm-12 -->
+
+
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row-->
+</section>

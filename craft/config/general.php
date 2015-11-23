@@ -25,6 +25,11 @@ return array(
     ),
     'backupDbOnUpdate' => false,
   ),
+  'valuation.aranca.dev/' => array(
+    'environmentVariables' => array(
+        'siteUrl' => 'http://valuation.aranca.dev/'
+    )
+  ),
   'cacheBustValue' => '20121017',
   // Create a custom variable that we can use for an environment conditional
   // We set the environment in index.php: live, dev, or local

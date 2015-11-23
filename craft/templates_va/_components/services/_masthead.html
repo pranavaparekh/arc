@@ -1,0 +1,244 @@
+{% set asset = entry.mastheadBanner.first() %}
+
+{% set svcmastheadCss %}
+  .svc-masthead {
+    padding: 50px 0;
+    color: {{ ttPrimary }};
+    background-color: {{ brandPrimary }};
+  }
+
+  @media(min-width: {{ screenmd }}) {
+    .svc-masthead {
+      background: url({{ asset.url }}) no-repeat {{ brandPrimary }};
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      min-height: 610px;
+    }
+
+    .svc-masthead__content {
+      position: relative;
+      top: 272px;
+      left: 545px;
+      max-width: 641px;
+    }
+
+  }
+
+
+  .svc-masthead__content {
+    position: relative;
+  }
+
+  .svc-masthead__headline {
+    text-transform: uppercase;
+    font-weight: 400;
+    text-shadow: 1px 2px 7px #5C5C5C;
+    position:relative;
+  }
+
+  .svc-masthead__subheadline {
+    font-size: 18px;
+    text-shadow: 1px 2px 7px #5C5C5C;
+  }
+
+  .svc-masthead__breadcrumb {
+    margin-bottom: 23px;
+  }
+
+  .svc-masthead__breadcrumb__item {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    top:15px;
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+
+  .svc-masthead__breadcrumb__item > a {
+   color: white;
+  }
+.svc-masthead__border {
+  width: 50%;
+  margin: 0%;
+}
+  .svc-masthead__btn {
+    color: #ffffff;
+    background-color: {{ brandPrimary }};
+    /* position: absolute;
+    left: 48%;
+    bottom: 4%; */
+  }
+
+  .inq-modal__body {
+    padding: 30px;
+    background-color: aliceblue;
+    padding-top: 120px;
+  }
+
+  .inq-modal__body label {
+    color: #3275CD;
+  }
+
+  .svc-masthead__cta-container {
+
+  }
+
+{% endset %}
+
+{% includeCss svcmastheadCss %}
+
+
+
+<section class="svc-masthead container-fluid">
+  <div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="svc-masthead__content">
+
+          <!-- <p class="svc-masthead__subheadline">{{ entry.pageSubheadline }}</p> -->
+
+          {% set firstLevel = entry.servicesCategory.level(1).first() %}
+          {% set secondLevel = entry.servicesCategory.level(2).first() %}
+          {% set thirdLevel = entry.servicesCategory.level(3).first() %}
+
+          <div class="svc-masthead__cta-container">
+            <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+            <hr class="svc-masthead__border" />
+
+            <ul class="svc-masthead__breadcrumb">
+              {% if firstLevel | length %}
+                <li class="svc-masthead__breadcrumb__item">
+                  {% for entry in firstLevel.categoryEntryUrl %}
+                  <a href="{{ entry.url }}">{{ firstLevel }}</a>
+                  {% endfor %}
+                </li>
+              {% endif %}
+
+              {% if secondLevel | length %}
+                {% for entry in secondLevel.categoryEntryUrl %}
+                  <li class="svc-masthead__breadcrumb__item">
+                    <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
+                  </li>
+                {% endfor %}
+              {% endif %}
+
+              {% if thirdLevel | length %}
+                {% for entry in thirdLevel.categoryEntryUrl %}
+                <li class="svc-masthead__breadcrumb__item">
+                  <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
+                </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+            <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default svc-masthead__btn">
+              <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
+            </button>
+          </div>
+        </div>
+      </div> <!-- end col-sm-12 -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div> <!-- end row -->
+</section>
+
+ <!-- modal -->
+<div id="fsModal"
+     class="modal inq-modal animated zoomIn"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+
+  <!-- dialog -->
+  <div class="modal-dialog">
+
+    <!-- content -->
+    <div class="modal-content">
+
+      <!-- header -->
+      <div class="modal-header">
+        <h1 id="myModalLabel"
+            class="modal-title">
+          Send Enquiry
+        </h1>
+      </div>
+      <!-- header -->
+
+      <!-- body -->
+      <div class="modal-body inq-modal__body">
+
+        <div class="container inq-modal__block">
+          <div class="row">
+            <div class="col-sm-12">
+
+
+
+                <form>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Designation</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+
+              </div>  <!-- end col-sm-6 -->
+
+              <div class="col-sm-6">
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Last Name</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Company</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Phone</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+
+              </div><!-- end: col-6 -->
+
+              <div class="row">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Query</button>
+              </div>
+
+              </form>
+
+            </div><!-- end: col-12 -->
+          </div><!-- end: row -->
+        </div><!-- end: container -->
+
+      </div> <!-- modal-body inq-modal__body -->
+
+      <!-- footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary"
+                data-dismiss="modal">
+          close
+        </button>
+      </div>
+      <!-- footer -->
+
+    </div>
+    <!-- content -->
+
+  </div>
+  <!-- dialog -->
+
+</div>
+<!-- modal -->
+
