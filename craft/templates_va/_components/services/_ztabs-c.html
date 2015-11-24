@@ -1,0 +1,296 @@
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+
+{% set ztabBCss %}
+
+  .ztab-c {
+    padding: 60px 0;
+    background: url('/assets/images/patterns/swirl_pattern.jpg');
+  }
+
+  .ztabs-c__headline {
+    font-size: 3em;
+    color: #e55b2b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 3px #ccc;
+  }
+
+  .ztab-c__list__item__head {
+    font-size: 1.3em;
+    line-height: 1.6em;
+    color: {{ ttgrey }};
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    border-bottom: 1px dashed #C2CDD5;
+    padding-bottom: 0.5em;
+    color: #A0ABB2;
+  }
+
+  .ztab-c__subllist > li {
+    margin-left: 2em;
+    list-style: none;
+    line-height: 2.5em;
+    background: url(/assets/images/icons/tick.png) left center no-repeat;
+    padding-left: 30px;
+  }
+
+
+  .up-arrow-blok {
+    background-color:  {{ bgBlue }};
+    color: {{ ttPrimary }};
+    padding-top: 1.5em;
+    padding-bottom:2.5em;
+  }
+  .up-arrow-blok__icon {
+    padding-top: 20px;
+    padding-bottom:20px;
+    text-align: center;
+  }
+  .up-arrow-blok__headline {
+    color: {{ ttPrimary }};
+  }
+  .up-arrow-blok__list {
+    padding-top: 2.5em;
+  }
+
+  .up-arrow-blok__list__item {
+    font-size: 1.3em;
+    line-height: 3.0em;
+    color: {{ ttPrimary  }};
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+  }
+
+
+{% endset %}
+
+{% set ztabBJs %}
+
+ $(document).ready(function () {
+      /*  jQuery activation and setting options. Visit docs.zozoui.com/tabs for
+          complete documentation, option list, public methods, callback events.*/
+      $("#tabbed-nav").zozoTabs({
+          theme: "silver",
+          orientation: "vertical",
+          position: "top-left",
+          size: "xlarge",
+          animation: {
+              duration: 400,
+              effects: "slideV"
+          },
+      });
+
+ /* jQuery activation and setting options for all nested tabs with class selector*/
+      $(".nested-tabs").zozoTabs({
+          position: "top-left",
+          theme: "red",
+          style: "underlined",
+          rounded: false,
+          shadows: false,
+          defaultTab: "tab1",
+          animation: {
+              easing: "easeInOutCirc",
+              effects: "slideV",
+              duration: 350
+          },
+          size: "medium"
+      });
+  });
+
+{% endset %}
+
+{% includeJs ztabBJs %}
+{% includeCss ztabBCss %}
+
+<section class="container-fluid ztab-c">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <div class="lede__headline text-center">Solutions Experience in Aerospace and Defense</div>
+
+          <div class="lede__subheadline text-center">Sub-segments and Platforms</div>
+          <hr class="lede__border">
+          <!-- Zozo Tabs Start-->
+        <div id="tabbed-nav">
+
+            <!-- Tab Navigation Menu -->
+            <ul>
+                <li><a>Technology</a></li>
+                <li><a>Healthcare</a></li>
+                <li><a>Internet</a></li>
+                <li><a>Automobiles</a></li>
+                <li><a>Real Estate</a></li>
+                <li><a>Industrials</a></li>
+            </ul>
+
+            <!-- Content container -->
+            <div>
+
+                <!-- Overview -->
+                <div>
+                    <!-- Zozo Tabs nested (Overview) Start-->
+                    <div class="nested-tabs">
+                        <ul>
+                            <li><a>Pharmaceuticals</a></li>
+                            <li><a>Medical Devices</a></li>
+                            <li><a>Diagnostics</a></li>
+                            <li><a>Oncology</a></li>
+                        </ul>
+                        <div>
+                            <div>
+                                <h4>Pharmaceuticals</h4>
+                                <p>Zozo Tabs is a user-friendly, fully customizable, responsive jQuery tabs plugin to take any HTML content, including images, video, forms, maps, image slider and galleries and display it in a clean organised and responsive tabbed navigation. </p>
+                            </div>
+                            <div>
+                                <h4>Resources & Case Studies</h4>
+                                <ul>
+                                <li>Biotech company that develops prescription eye drops for the treatment of age-related vision loss in people suffering from early cataracts</li>
+                                <li>A Company focused on the development of a novel helical stent technology to provide a wide range of vascular therapies</li>
+                                <li>A medical device company with a mission to pioneer a new direction in the design and distribution of interventional medical devices</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Diagnostics</h4>
+                                <p>Zozo Tabs comes with plenty of demos. Check it out at zozoui.com</p>
+                            </div>
+                            <div>
+                                <h4>Oncology</h4>
+                                <p>Zozo Tabs comes with a lot features. Check it out at zozoui.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  Zozo Tabs nested (Overview) End-->
+                </div>
+
+                <!-- Subscribe -->
+                <div>
+                    <!-- Zozo Tabs nested (Subscribe) Start-->
+                    <div class="nested-tabs">
+                        <ul>
+                            <li><a>Twitter</a></li>
+                            <li><a>Facebook</a></li>
+                            <li><a>Google+</a></li>
+                            <li><a>Pinterest</a></li>
+                        </ul>
+                        <div>
+                            <div>
+                                <h4>Twitter</h4>
+                                <p><a href="http://twitter.com/zozoui">Follow Zozo UI on Twitter</a></p>
+                            </div>
+                            <div>
+                                <h4>Facebook</h4>
+                                <p><a href="https://www.facebook.com/pages/Zozo-UI/454240371295483">Follow Zozo UI on Facebook</a></p>
+                            </div>
+                            <div>
+                                <h4>Google+</h4>
+                                <p><a href="https://plus.google.com/101523111550453173471/posts">Follow Zozo UI on Google+</a></p>
+                            </div>
+                            <div>
+                                <h4>Pinterest</h4>
+                                <p><a href="http://www.pinterest.com/zozoui/">Follow Zozo UI on Pinterest</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Zozo Tabs nested (Subscribe) End-->
+                </div>
+
+                <!-- Themes -->
+                <div>
+                    <!-- Zozo Tabs nested (Themes) Start-->
+                    <div class="nested-tabs">
+                        <ul>
+                            <li><a>White</a></li>
+                            <li><a>Crystal</a></li>
+                            <li><a>Silver</a></li>
+                            <li><a>Gray</a></li>
+                            <li><a>Black</a></li>
+                            <li><a>Orange</a></li>
+                            <li><a>Red</a></li>
+                            <li><a>Green</a></li>
+                            <li><a>Blue</a></li>
+                            <li><a>DeepBlue</a></li>
+                        </ul>
+                        <div>
+                            <div>
+                                <h4>White</h4>
+                            </div>
+                            <div>
+                                <h4>Crystal</h4>
+                            </div>
+                            <div>
+                                <h4>Silver</h4>
+                            </div>
+                            <div>
+                                <h4>Gray</h4>
+                            </div>
+                            <div>
+                                <h4>Black</h4>
+                            </div>
+                            <div>
+                                <h4>Orange</h4>
+                            </div>
+                            <div>
+                                <h4>Red</h4>
+                            </div>
+                            <div>
+                                <h4>Green</h4>
+                            </div>
+                            <div>
+                                <h4>Blue</h4>
+                            </div>
+                            <div>
+                                <h4>DeepBlue</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Zozo Tabs nested (Themes) End-->
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <!-- Zozo Tabs nested (Support) Start-->
+                    <div class="nested-tabs">
+                        <ul>
+                            <li><a>Docs</a></li>
+                            <li><a>Blog</a></li>
+                            <li><a>Knowledge Base</a></li>
+                            <li><a>Forums</a></li>
+                        </ul>
+                        <div>
+                            <div>
+                                <h4>Documentation</h4>
+                                <p>The following default options are provided by the plugin. They can be overridden and customized by passing options object to the initialization of the pluqin and by using HTML5 data attributes on the container element.</p>
+                            </div>
+                            <div>
+                                <h4>Blog</h4>
+                                <p>Zozo Tabs comes with complete API. Check it out at zozoui.com</p>
+                            </div>
+                            <div>
+                                <h4>Knowledge Base</h4>
+                                <p>Zozo Tabs comes with complete API. Check it out at zozoui.com</p>
+                            </div>
+                            <div>
+                                <h4>Forums</h4>
+                                <p>Zozo Tabs comes with complete API. Check it out at zozoui.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  Zozo Tabs nested (Support) End-->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Zozo Tabs End-->
+
+        </div> <!-- end col-sm-12 -->
+      </div> <!-- end row -->
+    </div> <!-- end row -->
+  </div> <!-- end row -->
+</section><!-- end ztab-cs-b -->
+
+
