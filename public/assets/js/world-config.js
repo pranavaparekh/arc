@@ -6,11 +6,11 @@
 	},
 	'svg_africa':{
 		'hover': 'AFRICA', //continent hover content
-		'upColor':'#00CAFD', //continent's color when page loads
+		'upColor':'#A9ACAC', //continent's color when page loads
 		'overColor':'#CCFF99', //continent's color when mouse hover
 		'downColor':'#8FB26B', //continent's color when mouse clicking
-		'outLine':'#30309D', //outline border of this continent
-		'countryLines':'#30309D', //countries outline inside this continent
+		'outLine':'#EBEDED', //outline border of this continent
+		'countryLines':'#EBEDED', //countries outline inside this continent
 		'lakesColor':'#B2F0FF', //lakes color in this continent
 		'lakesOutline':'#66E0FF', //lakes outline color
 		'url':'', //Goto URL
@@ -19,11 +19,11 @@
 	},
 	'svg_asia':{
 		'hover': 'ASIA',
-		'upColor':'#00CAFD',
+		'upColor':'#A9ACAC',
 		'overColor':'#CCFF99',
 		'downColor':'#8FB26B',
-		'outLine':'#30309D',
-		'countryLines':'#30309D',
+		'outLine':'#EBEDED',
+		'countryLines':'#EBEDED',
 		'lakesColor':'#B2F0FF',
 		'lakesOutline':'#66E0FF',
 		'url':'',
@@ -32,32 +32,32 @@
 	},
 	'svg_australia':{
 		'hover': 'AUSTRALIA',
-		'upColor':'#00CAFD',
+		'upColor':'#A9ACAC',
 		'overColor':'#CCFF99',
 		'downColor':'#8FB26B',
-		'outLine':'#30309D',
+		'outLine':'#EBEDED',
 		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
 	'svg_europe':{
 		'hover': 'EUROPE',
-		'upColor':'#00CAFD',
+		'upColor':'#A9ACAC',
 		'overColor':'#CCFF99',
 		'downColor':'#8FB26B',
-		'outLine':'#30309D',
-		'countryLines':'#30309D',
+		'outLine':'#EBEDED',
+		'countryLines':'#EBEDED',
 		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
 	'svg_n_america':{
 		'hover': 'NORTH AMERICA',
-		'upColor':'#00CAFD',
+		'upColor':'#A9ACAC',
 		'overColor':'#CCFF99',
 		'downColor':'#8FB26B',
-		'outLine':'#30309D',
-		'countryLines':'#30309D',
+		'outLine':'#EBEDED',
+		'countryLines':'#EBEDED',
 		'lakesColor':'#B2F0FF',
 		'lakesOutline':'#66E0FF',
 		'url':'',
@@ -66,11 +66,11 @@
 	},
 	'svg_s_america':{
 		'hover': 'SOUTH AMERICA',
-		'upColor':'#00CAFD',
+		'upColor':'#A9ACAC',
 		'overColor':'#CCFF99',
 		'downColor':'#8FB26B',
-		'outLine':'#30309D',
-		'countryLines':'#30309D',
+		'outLine':'#EBEDED',
+		'countryLines':'#EBEDED',
 		'url':'',
 		'target':'same_window',
 		'enable':true,

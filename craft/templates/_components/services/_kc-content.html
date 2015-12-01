@@ -159,34 +159,28 @@
       <div class="row">
         <div class="col-sm-12">
 
-          <h2 class="kc-content__headline text-center">Expertise and Insights</h2>
+          <h2 class="kc-content__headline text-center">Knowledge Library</h2>
           <hr class="kc-content__border">
 
           <div class="kc-content__grid" data-columns>
 
             <!-- start column 1 -->
+            {# Get the category that this entry belongs to #}
+            {% set entryCategory = entry.servicesCategory.first() %}
+            {# Pass the above category slug to the below query for knowledge center domain #}
+            {% set practicesCategory = craft.categories.group('practices').slug(entryCategory.slug) %}
+            {# Filter entries in knowledge center by category slug #}
+            {% set articles = craft.entries.section('infographics').relatedTo(practicesCategory).limit(4) %}
+
 
             <div>
+              {% for article in articles %}
               <article class="kc-content__grid__item kc-content__blog1 image-cover">
                 <div class="kc-content__grid__inner">
-                  <h5>Japan’s Nuclear Reactor Restart: Commodities Investors Worry</h5>
+                  <h5>{{ article.title }} | {{ article.practiceCategory.first() }}</h5>
                 </div>
               </article>
-              <article class="kc-content__grid__item kc-content__blog2 image-cover">
-                <div class="kc-content__grid__inner">
-                  <h5>Moody’s Lowers India’s 2015 GDP Growth Forecast</h5>
-                </div>
-              </article>
-              <article class="kc-content__grid__item kc-content__blog3 image-cover">
-                <div class="kc-content__grid__inner">
-                  <h5>Payment Banks: A Paradigm Shift in India’s Banking System?</h5>
-                </div>
-              </article>
-              <article class="kc-content__grid__item kc-content__blog4 image-cover">
-                <div class="kc-content__grid__inner">
-                  <h5>Aircraft Safety Systems - In The Spotlight</h5>
-                </div>
-              </article>
+              {% endfor %}
             </div>
 
             <!-- start column 2 -->

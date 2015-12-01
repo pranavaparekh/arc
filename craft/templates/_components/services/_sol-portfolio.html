@@ -1,7 +1,10 @@
 {% set solPortCss %}
 
 .sol-port {
-  background: url(/assets/images/backgrounds/sol-port-bkg.jpg);
+  /*background: url(/assets/images/backgrounds/sol-port-bkg.jpg);*/
+  {% if brandColor is defined %}
+  background-color: {{ brandColor }} ;
+  {% endif %}
   padding: 60px 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -31,7 +34,7 @@
   padding: 2em;
   border-radius: 1.5em;
   margin-top: 2em;
-  box-shadow: -2px 2px 2px #89CAFF;
+  box-shadow: -2px 2px 2px {{ BrCore }};
 }
 
 .sol-port-tabs__item > h4 {
@@ -79,7 +82,9 @@
 
 .sol-port-content__headline {
   text-transform: uppercase;
-  color: #2C7DA8;
+  {% if brandColor is defined %}
+  color: {{ brandColor }};
+  {% endif %}
   font-size: 1.6em;
   letter-spacing: 0.02em;
   padding-left: 0.6em;
@@ -103,8 +108,14 @@
 
 
 .sol-port-content__item {
-  color:#2C7DA8;
+  {% if brandColor is defined %}
+  color: {{ brandColor }};
+  {% endif %}
   line-height: 1.8em;
+}
+
+#l-firms .sol-port-content__list, #l-firms .sol-port-content__headline  {
+  text-align: center;
 }
 
 @media only screen and (min-width: {{ screenmd }}) {
@@ -130,7 +141,9 @@
         <div class="row">
           <div class="col-sm-12">
             <h3 class="lede__headline--white">Solutions Portfolio</h3>
-            <p class="lede__subheadline--white">Our Solutions for diverse businesses</p>
+            <p class="lede__subheadline--white">Our diverse solutions portfolio helps our clients meet their ever-growing research needs to enable their strategic business decisions
+
+</p>
             <hr class="lede__border--white">
 
             <!-- Nav tabs -->
@@ -166,7 +179,7 @@
                       <div class="col-sm-6">
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">International Expansion</li>
-                          <li class="sol-port-content__item">Quick scans - shortlist markets</li>
+                          <li class="sol-port-content__item">Market scans</li>
                           <li class="sol-port-content__item">Deep-dive market studies</li>
                           <li class="sol-port-content__item">GTM strategy</li>
                         </ul>
@@ -180,7 +193,7 @@
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Digital Strategy</li>
-                          <li class="sol-port-content__item">Industry trends / analysis</li>
+                          <li class="sol-port-content__item">Industry trend analysis</li>
                           <li class="sol-port-content__item">Best practices / Success stories</li>
                           <li class="sol-port-content__item">GTM strategy</li>
                         </ul>
@@ -195,10 +208,10 @@
                         </ul>
 
                         <ul class="sol-port-content__list">
-                          <li class="sol-port-content__item__headline">Increase market share</li>
+                          <li class="sol-port-content__item__headline">Increase Market Share</li>
                           <li class="sol-port-content__item">Market segments and growth</li>
                           <li class="sol-port-content__item">Customer / product profitability</li>
-                          <li class="sol-port-content__item">Customer needs analysis</li>
+                          <li class="sol-port-content__item">Customer need analysis</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
@@ -218,23 +231,23 @@
                       <div class="col-sm-6">
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Customer Insights</li>
-                          <li class="sol-port-content__item">Satisfaction & Loyalty studies</li>
+                          <li class="sol-port-content__item">Satisfaction & loyalty studies</li>
                           <li class="sol-port-content__item">Lost customer surveys</li>
                           <li class="sol-port-content__item">Customer experience management</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">B2B Sales Planning</li>
-                          <li class="sol-port-content__item">Account Planning</li>
-                          <li class="sol-port-content__item">Prospect Infopacks</li>
+                          <li class="sol-port-content__item">Account planning</li>
+                          <li class="sol-port-content__item">Prospect Profiling</li>
                           <li class="sol-port-content__item">Firmographics</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Brand Research</li>
-                          <li class="sol-port-content__item">Brand tracking research</li>
-                          <li class="sol-port-content__item">Brand strategy research</li>
-                          <li class="sol-port-content__item">Brand Valuation</li>
+                          <li class="sol-port-content__item">Brand tracking</li>
+                          <li class="sol-port-content__item">Brand strategy</li>
+                          <li class="sol-port-content__item">Brand valuation</li>
                         </ul>
                       </div><!-- col 6 -->
 
@@ -242,22 +255,22 @@
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Competition Analysis</li>
                           <li class="sol-port-content__item">’How-they-do-it’ analysis?</li>
-                          <li class="sol-port-content__item">Product / Price benchmarking</li>
-                          <li class="sol-port-content__item">Profiles: Performance, Plans</li>
+                          <li class="sol-port-content__item">Product & Price benchmarking</li>
+                          <li class="sol-port-content__item">Competitor profiling</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Channel</li>
-                          <li class="sol-port-content__item">Planning & Optimization</li>
+                          <li class="sol-port-content__item">Planning & optimization</li>
                           <li class="sol-port-content__item">Satisfaction studies</li>
                           <li class="sol-port-content__item">Business outlook surveys</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Advertising Research</li>
-                          <li class="sol-port-content__item">Communications testing</li>
+                          <li class="sol-port-content__item">Communication testing</li>
                           <li class="sol-port-content__item">Advertising effectiveness</li>
-                          <li class="sol-port-content__item">Digital communications strategy</li>
+                          <li class="sol-port-content__item">Digital communication strategy</li>
                         </ul>
                       </div><!-- col 6 -->
 
@@ -291,7 +304,7 @@
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Procurement | Supply Chain Research</li>
                           <li class="sol-port-content__item">Category intelligence reports</li>
-                          <li class="sol-port-content__item">Best-Cost-Country Sourcing</li>
+                          <li class="sol-port-content__item">Best-cost-country sourcing</li>
                           <li class="sol-port-content__item">Supply-chain risk assessments</li>
                         </ul>
 
@@ -306,22 +319,22 @@
                       <div class="col-sm-6">
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Competition Analysis</li>
-                          <li class="sol-port-content__item">Price, Product benchmarking</li>
+                          <li class="sol-port-content__item">Product & price benchmarking</li>
                           <li class="sol-port-content__item">Deep-dive analysis (Functional areas)</li>
-                          <li class="sol-port-content__item">Profiles (Operations, SWOT, Plans)</li>
+                          <li class="sol-port-content__item">Profiling (Operations, SWOT, Plans)</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Digital Business</li>
                           <li class="sol-port-content__item">Market sizing and forecasts</li>
-                          <li class="sol-port-content__item">Technology / Social trends</li>
-                          <li class="sol-port-content__item">Best practices / Success stories</li>
+                          <li class="sol-port-content__item">Technology & social trends</li>
+                          <li class="sol-port-content__item">Best practices & success stories</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Technology | IP Research</li>
                           <li class="sol-port-content__item">Patent portfolio analysis</li>
-                          <li class="sol-port-content__item">Technology Intelligence </li>
+                          <li class="sol-port-content__item">Technology intelligence </li>
                           <li class="sol-port-content__item">Outlicensing opportunity evaluation</li>
                         </ul>
 
@@ -342,18 +355,18 @@
                       <div class="col-sm-12">
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Information Management</li>
-                          <li class="sol-port-content__item">Proprietary databases (design and maintenance) </li>
-                          <li class="sol-port-content__item">Credential packs / case studies management</li>
-                          <li class="sol-port-content__item">Internal newsletters (industry or topic specific)</li>
-                          <li class="sol-port-content__item">Training material development / management</li>
+                          <li class="sol-port-content__item">Proprietary databases</li>
+                          <li class="sol-port-content__item">Sales enablement assets</li>
+                          <li class="sol-port-content__item">Internal newsletters</li>
+                          <li class="sol-port-content__item">Training material development & management</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">Business Development | Marketing Support</li>
-                          <li class="sol-port-content__item">Prospect Infopacks</li>
-                          <li class="sol-port-content__item">Strategic Client Updates </li>
+                          <li class="sol-port-content__item">Prospect profiling</li>
+                          <li class="sol-port-content__item">Strategic client updates </li>
                           <li class="sol-port-content__item">Proposal development support</li>
-                          <li class="sol-port-content__item">White papers, Client news-letters</li>
+                          <li class="sol-port-content__item">White papers, client newsletters</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
@@ -375,11 +388,11 @@
                 <div class="row">
                   <div class="col-sm-12"><!-- outer wrapper first half -->
                     <div class="row"><!--  start inner wrapper for split columns -->
-                      <h2 class="sol-port-content__headline"></h2>
+                      <h2 class="sol-port-content__headline"><span>Research solutions that are customized to help law firms</span><br/>increase ROI from their business investments</h2>
                       <div class="col-sm-4">
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">BUSINESS DEVELOPMENT</li>
-                          <li class="sol-port-content__item">Maximize your returns on business development through our account  planning related research solutions</li>
+                          <li class="sol-port-content__item">Maximize your returns on business development through our account  planning research support</li>
                         </ul>
 
                         <ul class="sol-port-content__list">
@@ -394,9 +407,9 @@
                           <li class="sol-port-content__item">Use our intelligence on litigation related trends to proactively plan customer / marketing strategies</li>
                         </ul>
 
-                        <ul class="sol-port-content__list" style="position: relative; top: 26px;">
+                        <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">COMPETITION ANALYSIS</li>
-                          <li class="sol-port-content__item">Customized CI solutions to help you track, analyze competitors or benchmark your firms versus peers</li>
+                          <li class="sol-port-content__item">Customized competitive intelligence to track, analyze competitors or benchmark your firms versus peers</li>
                         </ul>
 
                       </div><!-- col 4 -->
@@ -404,7 +417,7 @@
                       <div class="col-sm-4">
                         <ul class="sol-port-content__list">
                           <li class="sol-port-content__item__headline">CUSTOMER SATISFACTION</li>
-                          <li class="sol-port-content__item">Leverage our customized customer experience management and loyalty measurement programs for law firms</li>
+                          <li class="sol-port-content__item">Leverage our customized customer experience management and loyalty measurement programs</li>
                         </ul>
 
                         <ul class="sol-port-content__list">

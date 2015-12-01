@@ -1,0 +1,27 @@
+{% extends "base_layouts/_site" %}
+
+{% set title = 'knowledge center' %}
+
+{% block main %}
+
+{% include '_components/global/_header' %}
+{% include '_components/kc/_masthead' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 mc-sidebar">
+      {% include '_components/media-center/_pr-list' %}
+      {% include '_components/media-center/_archive' %}
+    </div><!--  end col-sm-4 -->
+
+    <div class="col-sm-8 mc-main">
+      {% include '_components/kc/_featured' %}
+      {% include '_components/media-center/_story-list' %}
+      {% include '_components/press-kit/_pk-download' %}
+      {% include '_components/media-center/_contact' %}
+    </div><!--  end col-sm-8 -->
+  </div><!--  end row -->
+</div>
+
+
+{% endblock %}

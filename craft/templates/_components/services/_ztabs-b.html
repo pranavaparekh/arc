@@ -5,11 +5,23 @@
 
   .ztab-b {
     padding: 60px 0;
-    background: url('/assets/images/patterns/swirl_pattern.jpg');
+    background-color: #E4F3FA;
+  }
+
+  .ztab-b::after {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 35px solid #2E6596;
+    position: relative;
+    left: 47.3%;
+    bottom: -66px;
+    z-index: 4;
   }
 
   .ztabs-b__headline {
-    font-size: 3em;
+    font-size: 2em;
     color: #e55b2b;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -64,6 +76,7 @@
   }
 
 
+
 {% endset %}
 
 {% set ztabBJs %}
@@ -72,7 +85,8 @@
       /*  jQuery activation and setting options. Visit docs.zozoui.com/tabs for
           complete documentation, option list, public methods, callback events.*/
       $("#tabbed-nav").zozoTabs({
-          theme: "silver",
+          theme: "flat-graphite",
+
           orientation: "vertical",
           position: "top-left",
           size: "xlarge",
@@ -109,7 +123,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="up-arrow-blok__icon"><img src="/assets/uploads/icons/services/trusted-white.png" alt="cap-block-icon1" /></div>
-            <div class="lede__headline text-center up-arrow-blok__headline">Explore our capabilities and experience in procurement research</div>
+            <div class="lede__headline text-center up-arrow-blok__headline">How Our Solutions Can Help</div>
             <div class="lede__subheadline text-center"></div>
 
 

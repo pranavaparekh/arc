@@ -14,9 +14,9 @@
     background-color: #A5E0F2;
     padding: 2em;
     margin-bottom: 2.3em;
-    border: 10px solid #DBEDFC;
-    box-shadow: 2px 2px 8px #D9D9D9;
     padding-top: 3em;
+    max-height: 180px;
+    box-shadow: 2px 2px 8px #D9D9D9;
   }
   .asx-item__cat-headline {
     text-transform: uppercase;
@@ -28,6 +28,7 @@
   .asx-item__headline {
     font-weight: 300;
     color: #4F99C2;
+    font-size: 1.3em;
   }
   .asx-item__region {
     color: #3886AE;
@@ -146,7 +147,9 @@ $(document).ready(function(){
       <div class="row">
         <div class="col-sm-12">
           <div class="lede__icon text-center"><img src="/assets/uploads/icons/solutions-icon-gray.png" class="asx-slider__icon img-center" alt="asx-slider-icon"></div>
-              {{entry.assignmentRichtext}}
+
+            {{ entry.assignmentRichtext }}
+
         </div>
         <!-- col 12 -->
       </div>

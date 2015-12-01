@@ -1,3 +1,5 @@
+
+
 {% macro getSectionName(type) %}
     {% switch type %}
       {% case "blogs-and-opinions" %}
@@ -46,4 +48,28 @@
         {{ "Content" }}
 
     {% endswitch %}
+{% endmacro %}
+
+{% macro getAssetsHandle(entryType) %}
+
+  {% switch entryType %}
+
+  {% case "blogs" %}
+
+    {% set featuredBanner = entry.blogsBanner %}
+
+  {% case "articles" %}
+
+    {% set featuredBanner = entry.articlesBanner %}
+
+  {% case "specialReports" %}
+
+    {% set featuredBanner = entry.srBanner %}
+
+   {% case "infographics" %}
+
+    {% set featuredBanner = entry.igBanner %}
+
+  {% endswitch %}
+
 {% endmacro %}

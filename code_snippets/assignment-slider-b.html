@@ -1,0 +1,616 @@
+
+{% includeJsFile "/assets/js/slick.min.js"  %}
+{% includeJsFile "/assets/js/jquery.matchHeight-min.js" %}
+{% includeCssFile "/assets/css/slick.css"  %}
+
+{% set asxCss %}
+  .asx-slider {
+    padding: 30px 0;
+    background: #E2F0FB;
+  }
+
+  .asx-item {
+    text-align: center;
+    background-color: #A5E0F2;
+    padding: 2em;
+    margin-bottom: 2.3em;
+    padding-top: 3em;
+    max-height: 180px;
+    box-shadow: 2px 2px 8px #D9D9D9;
+  }
+  .asx-item__cat-headline {
+    text-transform: uppercase;
+    font-size: 1em;
+    color: {{ roman }};
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  .asx-item__headline {
+    font-weight: 300;
+    color: #4F99C2;
+    font-size: 1.3em;
+  }
+  .asx-item__region {
+    color: #3886AE;
+  }
+
+  /* Dots */
+.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -45px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+
+    display: block;
+
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    border-radius: 50px;
+    color: white;
+    background:
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
+{% endset %}
+
+{% set asxJs %}
+
+$(document).ready(function(){
+  $('.asx-slider__box').slick({
+    arrows: false,
+    dots: true,
+    infinite: true,
+    speed: 300,
+    adaptiveHeight: true
+  });
+
+  $('.asx-item').matchHeight({
+    byRow: false
+  });
+});
+
+{% endset %}
+
+{% includeCss asxCss %}
+{% includeJs asxJs %}
+
+<section class="container-fluid asx-slider">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="lede__icon text-center"><img src="/assets/uploads/icons/solutions-icon-gray.png" class="asx-slider__icon img-center" alt="asx-slider-icon"></div>
+
+              <div class="lede__headline text-center">Category Experience</div>
+              <div class="lede__subheadline text-center">We have researched over 1750 items spanning 50+ spend categories
+              </div>
+              <hr class="lede__border">
+              <!-- slick start -->
+                <div class="asx-slider__box">
+                  <!-- first row -->
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">APIs
+                        </p>
+                        <h3 class="asx-item__headline">Acitretin, Alosetron, Bicalutamide, Epoprostenol, Exenatide Letrozole</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Auto Components
+                        </p>
+                        <h3 class="asx-item__headline">Clutch components, Brake pads, motors & drives, sensors, gauges, seats</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Basic Chemicals
+                        </p>
+                        <h3 class="asx-item__headline">Ethylene, Benzene, Hydrogen peroxide, Acids - Sulphuric, Phosphoric, Nitric</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Biologics
+                        </p>
+                        <h3 class="asx-item__headline">Chromatography, Resins & Filters, Protein Purification Reagents</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Bulk Packaging
+                        </p>
+                        <h3 class="asx-item__headline">Crates, Drums, Wooden Pallets, Trays, Bags</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Clinical Research
+                        </p>
+                        <h3 class="asx-item__headline">Clinical Trials, R & D Informatics Chemistry Research, Drug Safety</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Construction Materials
+                        </p>
+                        <h3 class="asx-item__headline">Cement, Lime, Aggregates, concrete, tiles, switches</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Contract Manufacturing
+                        </p>
+                        <h3 class="asx-item__headline">API Sourcing, Contract Formulation (Small & Large molecule), Drug Delivery</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Crops & Grains
+                        </p>
+                        <h3 class="asx-item__headline">Corn, Sugar, Cotton, Guar Gum, Natural Rubber, Wheat, Oilseeds</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+                  </div><!-- first row -->
+
+                  <!-- second row -->
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Digital Marketing
+                        </p>
+                        <h3 class="asx-item__headline">Creative Advertising, Marketing Communication</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Drug Delivery Devices
+                        </p>
+                        <h3 class="asx-item__headline">Inhalers, Safety Syringes, Auto Injectors, Pen Injectors, Syringes</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Energy & Derivatives
+                        </p>
+                        <h3 class="asx-item__headline">Gasoline, Diesel, Heating oil, Kerosene, Residual Oil, Fuel Oil</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Engg. & Construction
+                        </p>
+                        <h3 class="asx-item__headline">Architectural & Engineering Services, Construction Services (EPC& EPCM)</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">F&B Ingredients
+                        </p>
+                        <h3 class="asx-item__headline">Eggs, Dried Vegetables, Cocoa & Coffee, Milk & Derivatives,Concentrates</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Facilities Management
+                        </p>
+                        <h3 class="asx-item__headline">Mechanical and electrical maintenance, Catering, Security, HVAC</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Ferrous Metals
+                        </p>
+                        <h3 class="asx-item__headline">Iron Ore, Carbon Steel, Mild Steel, Stainless Steel, HRC/CRC </h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Fibers
+                        </p>
+                        <h3 class="asx-item__headline">Cotton, Jute, Coir, Bagasse, Kenaf, Wheat Straw, Corn Straw</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Fine Chemicals
+                        </p>
+                        <h3 class="asx-item__headline">Fluoro-aromatic compounds, Phenols, Phenyl derivatives, feed additives</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+                  </div><!-- second row -->
+
+                  <!-- third row -->
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Flexible Packaging
+                        </p>
+                        <h3 class="asx-item__headline">Aluminum Foils, Labels & Printed Components, Films & Laminates</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">HR Services
+                        </p>
+                        <h3 class="asx-item__headline">Recruitment and staffing, compensation, Training & Development</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Industrial Durables
+                        </p>
+                        <h3 class="asx-item__headline">Plastic Based Molded Parts, Casting & Forgings, Composite Structures</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Industrial Gases
+                        </p>
+                        <h3 class="asx-item__headline">Ammonia, Nitrogen, Argon, Hydrogen, Acetylene, Oxygen, Carbon-dioxide</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">IT Equipment & Services
+                        </p>
+                        <h3 class="asx-item__headline">Hardware Purchase and Maintenance, Software Licensing & Maintenance</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Lab Supplies
+                        </p>
+                        <h3 class="asx-item__headline">General Lab Equipment & Supplies, Chromatography, Filters, Spirometers</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Logistics
+                        </p>
+                        <h3 class="asx-item__headline">Air/Ocean/Road/Rail Freight, Intermodal & LTL, 3PL/4PL, Freight Forwarding</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Mass Communication
+                        </p>
+                        <h3 class="asx-item__headline">Media Buying, TV/Radio/Newspaper, Campaign Management</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Mechanical Equipment
+                        </p>
+                        <h3 class="asx-item__headline">Pumps, Motors, Turbines, Control Valves, Conveyer belt, pipes & fittings</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+                  </div><!-- third row -->
+
+                  <!-- fourth row -->
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Medical Equipment
+                        </p>
+                        <h3 class="asx-item__headline">MRIs, X ray Scanners, CT Scanners, Ultrasound Imaging Systems, PET</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Medical Supplies
+                        </p>
+                        <h3 class="asx-item__headline">Suction Catheters, Surgical Mesh, Surgical Scissors, Blades and Forceps</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Mining
+                        </p>
+                        <h3 class="asx-item__headline">Mobile Equipment, Explosives, Capital Equipment, Refractories, OTR Tires</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Mining Services
+                        </p>
+                        <h3 class="asx-item__headline">Equipment Maintenance, Blasting services, Drilling Services </h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Minor Metals & Minerals
+                        </p>
+                        <h3 class="asx-item__headline">Magnesium, Manganese, Tantalum, Titanium, Cobalt, Lithium, Gypsum</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">MRO
+                        </p>
+                        <h3 class="asx-item__headline">Industrial Supplies, Bearings & Power Transmissions</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">MRO Services
+                        </p>
+                        <h3 class="asx-item__headline">MRO Outsourcing, Overhaul Services, Motor Repair Services</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Non Ferrous Metals
+                        </p>
+                        <h3 class="asx-item__headline">Copper, Aluminum, Nickel, Tin, Zinc, Lead</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Non Renewable Energy
+                        </p>
+                        <h3 class="asx-item__headline">Crude oil, Natural Gas, Shale Gas, Coal, nuclear fuels</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+                  </div><!-- fourth row -->
+
+                  <!-- fifth row -->
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Oil & Gas
+                        </p>
+                        <h3 class="asx-item__headline">Capital Equipment, Oilfield Consumables, Oilfield Chemicals</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Oil & Gas Services
+                        </p>
+                        <h3 class="asx-item__headline">Oilfield Services, Drilling & exploration services, Equipment Maintenance</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Paper Packaging
+                        </p>
+                        <h3 class="asx-item__headline">GC2, GD2, OCC, Carton, Container Box & Boards, Carton board, Fluff Pulp</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Petrochemicals
+                        </p>
+                        <h3 class="asx-item__headline">PET, PE, PP, PVC, PS, SBR, Benzene, Butadiene, Ethylene, LDPE</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Precious Metals
+                        </p>
+                        <h3 class="asx-item__headline">Gold, Silver, Platinum, Palladium, Rhodium, Ruthenium, Osmium, iridium</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Professional Services
+                        </p>
+                        <h3 class="asx-item__headline">Audit, Accounting & tax, Legal Services, Management Consulting</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Real Estate Services
+                        </p>
+                        <h3 class="asx-item__headline">Property Management, Engineering, Building Lease & Maintenance</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Renewable Energy
+                        </p>
+                        <h3 class="asx-item__headline">Wind energy, Solar energy, biomass, geothermal, tidal</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Rigid Packaging
+                        </p>
+                        <h3 class="asx-item__headline">Glass & Plastic Bottles, Aerosol & Metal Cans, Beverage Cans, Tubes & Jars</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+                  </div><!-- fifth row -->
+
+                  <!-- sixth row -->
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Speciality Chemicals
+                        </p>
+                        <h3 class="asx-item__headline">Adhesives, Elastomers, Food additives and colorings, lubricants, surfactants</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Surgical Components
+                        </p>
+                        <h3 class="asx-item__headline">Surgical Instruments, Joint Prosthesis, Cast Components, Orthopaedic </h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Targeted Audience
+                        </p>
+                        <h3 class="asx-item__headline">Print & Fulfilment, Digital Marketing, Contact Centers, Promotional Items</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Telecom. Eqpt. & Services
+                        </p>
+                        <h3 class="asx-item__headline">Police and fire communications, Land and Mobile Telecommunication</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Textiles
+                        </p>
+                        <h3 class="asx-item__headline">Yarn, Chemical treatment, Colors & pigments, Fabric, Garments</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Travel Services
+                        </p>
+                        <h3 class="asx-item__headline">Hotel & Accommodation, Air Travel Meals, Car Hire / Rental, Taxi</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Vegetable Fats & Oils
+                        </p>
+                        <h3 class="asx-item__headline">Palm Oil, Soy Bean Oil, Coconut Oil, Essential Oils, Animal Fats</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">W’housing & Distribution
+                        </p>
+                        <h3 class="asx-item__headline">Distribution Channels, Cold-Chain Management, In-Market Distribution</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+
+                    <div class="col-sm-4">
+                      <div class="asx-item">
+                        <p class="asx-item__cat-headline">Waste Management
+                        </p>
+                        <h3 class="asx-item__headline">Solid Waste Management, Effluent Discharge & Remediation</h3>
+                      </div><!-- end asx-item -->
+                    </div>
+                  </div><!-- sixth row -->
+
+                </div><!-- asx-slider__box -->
+        </div>
+        <!-- col 12 -->
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </div>
+  <!-- row -->
+</section>

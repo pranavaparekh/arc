@@ -74,37 +74,7 @@
   <div class="row">
     <div class="container">
 
-      <div class="row">
-        <div class="col-sm-12 why-arc-c__headline--main">
-          {% for block in entry.contentBlockIntro %}
-            <h3 class="why-arc-c__headline">{{ block.headline }}</h3>
-            <p class="why-arc-c__subtext">{{ block.subHeadline }}</p>
-            <hr class="why-arc-c__border">
-          {% endfor %}
-
-        </div><!-- end col 12 -->
-      </div><!-- end row -->
-
-      <div class="row">
-        {% for block in entry.blockContent %}
-        <div class="col-sm-4 why-arc-c__headline--col">
-          {% if block.icon.first() | length %}
-            <img src="{{ block.icon.first().getUrl() }}" class="why-arc-c__icon" alt="cap-block-icon1">
-          {% endif %}
-          <h3 class="why-arc-c__headline--small">{{ block.headline }}</h3>
-          <hr class="why-arc-c__border--content">
-          <div class="why-arc-c__content">
-            <p>{{ block.subtext }}</p>
-          </div>
-        </div>
-        {% if loop.index % 3 == 0 %}
-          </div> <br><br> <div class="row">
-        {% endif %}
-
-        {% endfor %}
-      </div><!-- end row -->
-
-
+      {{ entry.whyArancaC }}
 
     </div><!-- end container -->
   </div><!-- end row -->

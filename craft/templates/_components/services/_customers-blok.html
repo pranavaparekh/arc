@@ -5,6 +5,21 @@
     background-color: #F6F6F6;
   }
 
+  /* top triangle will show if passed in */
+  {% if topConnector is defined %}
+  .cust::before {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    {% if brandColor is defined %}
+      border-top: 25px solid {{ brandColor }};
+    {% endif %}
+    position: absolute;
+    left: 50%;
+  }
+  {% endif %}
+
   .cust-blok {
     background-color:  {{ bgBlue }};
     color: {{ ttPrimary }};
@@ -37,8 +52,11 @@
   }
   .cust-blok--intro {
    text-align: center;
-   padding: 30px 0;
+   padding: 25px 0;
   }
+
+
+
   .cust-blok__border {
     width: 50%;
     border: 1px solid #034883;

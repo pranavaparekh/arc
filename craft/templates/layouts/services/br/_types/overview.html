@@ -1,13 +1,12 @@
 
-
 {% include '_components/global/_header' %}
 {% include '_components/services/_masthead' %}
 {% include '_components/services/_svc-stats_blok' %}
 {% include '_components/services/_client-list' %}
+{% include '_components/services/_sol-portfolio' with { 'brandColor': BrCore } %}
+{% include '_components/services/_customers-blok' with { 'brandColor': BrCore, 'topConnector': true } %}
 {% include '_components/services/_why-aranca-c' %}
-{% include '_components/services/_sol-portfolio' %}
-{% include '_components/services/_customers-blok' %}
-{% include '_components/services/_svc_box_grid' with {'data': entry.experienceRichtext } %}
+{% include '_components/services/_svc_box_grid' with {'data': entry.experienceRichtext, 'brandColor': BrCore } %}
 {% include '_components/services/_featured-case-study' %}
 {% include '_components/services/_world-map' %}
 {% include '_components/services/_full-cta-a' %}

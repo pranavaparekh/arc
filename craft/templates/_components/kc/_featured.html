@@ -1,0 +1,49 @@
+
+
+{% set featuredBlogId = craft.entries.section('blogs').limit(1).ids() %}
+{% set featuredArticleId = craft.entries.section('articles').limit(1).ids() %}
+{% set featuredSpecialReportId = craft.entries.section('specialReports').limit(1).ids() %}
+{% set featuredInfographicId = craft.entries.section('infographics').limit(1).ids() %}
+
+
+{% set featuredIds = featuredBlogId
+    |merge(featuredArticleId)
+    |merge(featuredSpecialReportId)
+    |merge(featuredInfographicId) %}
+
+{% set featuredEntries = craft.entries.id(featuredIds) %}
+
+{% for entry in featuredEntries %}
+
+  {% switch entry.type %}
+
+  {% case "blogs" %}
+
+    {% set featuredBanner = entry.blogsBanner %}
+
+  {% case "articles" %}
+
+    {% set featuredBanner = entry.articlesBanner %}
+
+  {% case "specialReports" %}
+
+    {% set featuredBanner = entry.srBanner %}
+
+   {% case "infographics" %}
+
+    {% set featuredBanner = entry.igBanner %}
+
+  {% endswitch %}
+
+  {% if featuredBanner | length %}
+      {% set asset = featuredBanner.first() %}
+
+      {% if asset %}
+          <img src={{ asset.url }} alt={{entry.title}}> <br>
+      {% endif %}
+  {% endif %}
+
+  {{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}<br>
+{% endfor %}
+
+<!-- 2014-12-31 -->
