@@ -7,7 +7,7 @@
 
     @media(min-width: {{ screenmd }}) {
       .feat-cs  {
-        background: url('/assets/uploads/banners/feat-case-study-bkg.jpg') no-repeat;
+        background: url('/assets/uploads/banners/feat-content-bkg.jpg') no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -66,7 +66,7 @@
     <div class="container feat-cs__main" >
       {% for block in entry.featuredCaseStudyBanner %}
       <img class="feat-cs__icon" src="/assets/uploads/icons/case-studies-icon-white.png" alt="featured case study">
-      <h2 class="feat-cs__headline">Featured Case Study</h2>
+      <h2 class="feat-cs__headline">Featured Content</h2>
       <p class="cs__title">{{block.csTitle}}</p>
       <p class="feat-cs__summary">{{ block.csSummary}}</p>
       <p class="feat-cs__readmore"><a href="#">Read Story</a></p>
