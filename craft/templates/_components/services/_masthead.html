@@ -1,91 +1,37 @@
 {% set asset = entry.mastheadBanner.first() %}
+{% set firstLevel = entry.servicesCategory.level(1).first() %}
+{% set secondLevel = entry.servicesCategory.level(2).first() %}
+{% set thirdLevel = entry.servicesCategory.level(3).first() %}
+
 
 {% set svcmastheadCss %}
   .svc-masthead {
-    padding: 20px 0;
-    color: {{ ttPrimary }};
-    background-color: {{ brandPrimary }};
-
-  }
-
-  @media(min-width: {{ screenmd }}) {
-    .svc-masthead {
-      background: url({{ asset.url }}) no-repeat /*{{ brandPrimary }}*/;
-      background-size: contain;
-/*      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;*/
-      background-position: center center;
-      height: 500px;
-    }
-
-    .svc-masthead__content {
-      position: relative;
-      top: 210px;
-      left: 462px;
-      max-width: 641px;
-    }
-
-  }
-
-
-  .svc-masthead__content {
     position: relative;
+    color: white;
+  }
+
+
+  .svc-masthead__heading {
+    position: absolute;
+    bottom: 15%;
+    left:15%;
+    max-width: 49%;
   }
 
   .svc-masthead__headline {
-    text-transform: uppercase;
-    font-weight: 500;
-    text-shadow: 3px 3px 7px #5C5C5C;
-    position:relative;
+    font-size: 2.4em;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
   }
 
-  .svc-masthead__subheadline {
-    font-size: 18px;
-    text-shadow: 1px 2px 7px #5C5C5C;
-  }
-
-  .svc-masthead__breadcrumb {
-    margin-bottom: 23px;
-  }
-
-  .svc-masthead__breadcrumb__item {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    top:15px;
-    font-size: 1.1em;
-    font-weight: 700;
+  .svc-masthead__breadcrumbs {
+    position: absolute;
+    bottom: 18%;
+    right:15%;
   }
 
   .svc-masthead__breadcrumb__item > a {
-   color: white;
-  }
-.svc-masthead__border {
-  width: 50%;
-  margin: 0%;
-}
-  .svc-masthead__btn {
-    color: #ffffff;
-    background-color: {{ CoreBlue }};
-    /* position: absolute;
-    left: 48%;
-    bottom: 4%; */
-  }
-
-  .inq-modal__body {
-    padding: 30px;
-    background-color: aliceblue;
-    padding-top: 120px;
-  }
-
-  .inq-modal__body label {
-    color: #3275CD;
-  }
-
-  .svc-masthead__cta-container {
-
+    font-size: 1.5em;
   }
 
 {% endset %}
@@ -94,60 +40,51 @@
 
 
 
-<section class="svc-masthead container-fluid">
-  <div class="row">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="svc-masthead__content">
+<section class="svc-masthead">
 
-          <!-- <p class="svc-masthead__subheadline">{{ entry.pageSubheadline }}</p> -->
+  <img src={{ asset.url }} class="img-responsive" alt="" />
 
-          {% set firstLevel = entry.servicesCategory.level(1).first() %}
-          {% set secondLevel = entry.servicesCategory.level(2).first() %}
-          {% set thirdLevel = entry.servicesCategory.level(3).first() %}
-
-          <div class="svc-masthead__cta-container">
-            <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
-            <hr class="svc-masthead__border" />
-
-            <ul class="svc-masthead__breadcrumb">
-              {% if firstLevel | length %}
-                <li class="svc-masthead__breadcrumb__item">
-                  {% for entry in firstLevel.categoryEntryUrl %}
-                  <a href="{{ entry.url }}">{{ firstLevel }}</a>
-                  {% endfor %}
-                </li>
-              {% endif %}
-
-              {% if secondLevel | length %}
-                {% for entry in secondLevel.categoryEntryUrl %}
-                  <li class="svc-masthead__breadcrumb__item">
-                    <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
-                  </li>
+  <div class="svc-masthead__breadcrumbs">
+      <div class="svc-masthead__cta-container">
+          <ul class="svc-masthead__breadcrumb">
+            {% if firstLevel | length %}
+              <li class="svc-masthead__breadcrumb__item">
+                {% for entry in firstLevel.categoryEntryUrl %}
+                <a href="{{ entry.url }}">{{ firstLevel }}</a>
                 {% endfor %}
-              {% endif %}
+              </li>
+            {% endif %}
 
-              {% if thirdLevel | length %}
-                {% for entry in thirdLevel.categoryEntryUrl %}
+            {% if secondLevel | length %}
+              {% for entry in secondLevel.categoryEntryUrl %}
                 <li class="svc-masthead__breadcrumb__item">
-                  <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
+                  <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
                 </li>
-                {% endfor %}
-              {% endif %}
-            </ul>
-            <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default svc-masthead__btn">
-              <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
-            </button>
-          </div>
+              {% endfor %}
+            {% endif %}
+
+            {% if thirdLevel | length %}
+              {% for entry in thirdLevel.categoryEntryUrl %}
+              <li class="svc-masthead__breadcrumb__item">
+                <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
+              </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+          <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default svc-masthead__btn">
+            <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
+          </button>
         </div>
-      </div> <!-- end col-sm-12 -->
-      </div> <!-- end row -->
-    </div> <!-- end container -->
-  </div> <!-- end row -->
+    </div>
+
+    <div class="svc-masthead__heading">
+      <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+    </div>
+
+
 </section>
 
- <!-- modal -->
+<!-- modal -->
 <div id="fsModal"
      class="modal inq-modal animated zoomIn"
      tabindex="-1"
@@ -244,4 +181,3 @@
 
 </div>
 <!-- modal -->
-
