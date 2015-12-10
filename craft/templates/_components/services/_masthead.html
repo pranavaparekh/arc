@@ -10,18 +10,19 @@
 
   @media(min-width: {{ screenmd }}) {
     .svc-masthead {
-      background: url({{ asset.url }}) no-repeat {{ brandPrimary }};
-      -webkit-background-size: cover;
+      background: url({{ asset.url }}) no-repeat /*{{ brandPrimary }}*/;
+      background-size: contain;
+/*      -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
-      background-size: cover;
+      background-size: cover;*/
       background-position: center center;
-      height: 550px;
+      height: 500px;
     }
 
     .svc-masthead__content {
       position: relative;
-      top: 272px;
+      top: 210px;
       left: 462px;
       max-width: 641px;
     }
