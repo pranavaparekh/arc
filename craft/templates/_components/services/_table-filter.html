@@ -1,0 +1,336 @@
+{% includeJsFile '/assets/js/jquery.chained.min.js' %}
+
+{% set tFilterCss %}
+
+.tfilter {
+  padding: 30px 0;
+}
+
+.tfilter__selects {
+  padding: 30px 0;
+}
+
+{% endset %}
+
+
+
+{% set tFilterJs %}
+  $(function() {
+    // chained dropdown plugin
+    $("#sectors").chained("#countries");
+    $("#subsectors").chained("#sectors");
+    var utils = {
+      noItems: function(filteredItems) {
+        return filteredItems.length < 1;
+      },
+      // hack needed to work with chained dropdown plugin
+      // which adds extra dots to the end of the selector
+      removeDots: function(filters) {
+        return (filters.slice(-1) == ".") ? this.removeDots(filters.slice(0, -1)) : filters;
+      }
+    };
+    (function hideDefaultUi() {
+      $('#projects').hide();
+      $('#no-data').hide();
+      $('#projects thead').hide();
+    })();
+    $("select.filterby").on('change', handleSelectChanged);
+    function handleSelectChanged() {
+      // hide default ui when user interacts with dropdown
+      $('#default').hide();
+      function showItems(){
+        $('#projects').show();
+        filteredItems.show();
+        $("#no-data").hide();
+        $('#projects thead').show();
+      }
+      function showEmptyState(){
+        $("#no-data").show();
+        $('#projects').hide();
+      }
+      // get the filters from selected values of multiple dropdowns
+      var filters = utils.removeDots($.map($("select.filterby").toArray(), function(e){
+          return $(e).val();
+      }).join("."));
+      // hide and show selected items
+      var allItems = $("#projects").find("tr").hide(),
+          filteredItems = $("#projects").find("tr." + filters);
+      utils.noItems(filteredItems) ? showEmptyState() : showItems();
+    }
+  });
+
+{% endset %}
+
+
+{% includeCss tFilterCss %}
+{% includeJs tFilterJs %}
+
+<section class="container-fluid tfilter">
+  <div class="row">
+    <div class="container">
+      <div class="col-sm-12">
+        <h3 class="lede__headline">
+          Global Experience: No Country is Beyond Our Reach
+        </h3>
+        <hr class="lede__border">
+        <h4 class="lede__subheadline">
+          In any given year, we execute client projects in over 60 countries
+        </h4>
+
+        <div class="tfilter__content">
+          <div class="tfilter__selects text-center">
+            <div class="row">
+              <div class="col-sm-4">
+                <select id="countries" class="filterby form-control" name="countries">
+                  <option value="">Countries</option>
+                  <option value="india">India</option>
+                  <option value="brazil">Brazil</option>
+                  <option value="china">China</option>
+                  <option value="south-korea">South Korea</option>
+                  <option value="france">France</option>
+                  <option value="nigeria">Nigeria</option>
+                  <option value="saudi-arabia">Saudi Arabia</option>
+                  <option value="bangladesh">Bangladesh</option>
+                  <option value="nordic">Nordic</option>
+                  <option value="sweden">Sweden</option>
+                  <option value="denmark">Denmark</option>
+                  <option value="norway">Norway</option>
+                </select>
+              </div>
+
+              <div class="col-sm-4">
+                <select id="sectors" class="filterby form-control" name="sectors">
+                  <option value="">Sectors</option>
+                  <option value="energy-i-infrastructure" class="brazil">Energy I Infrastructure</option>
+                  <option value="energy-i-infrastructure" class="brazil">Energy I Infrastructure</option>
+                  <option value="consumer-goods" class="brazil">Consumer Goods</option>
+                  <option value="consumer-goods" class="brazil">Consumer Goods</option>
+                  <option value="consumer-goods" class="brazil">Consumer Goods</option>
+                  <option value="metals-mining" class="brazil">Metals & Mining</option>
+                  <option value="metals-mining" class="brazil">Metals & Mining</option>
+                  <option value="banking" class="brazil">Banking & Financial Services</option>
+                  <option value="healthcare" class="brazil">Healthcare</option>
+                  <option value="chemicals" class="brazil">Chemicals</option>
+                  <option value="ict" class="brazil">ICT</option>
+                  <option value="ict" class="brazil">ICT</option>
+                  <option value="energy-i-infrastructure" class="south-korea">Energy I Infrastructure</option>
+                  <option value="energy-i-infrastructure" class="south-korea">Energy I Infrastructure</option>
+                  <option value="industrials" class="south-korea">Industrials</option>
+                  <option value="consumer-goods" class="south-korea">Consumer Goods</option>
+                  <option value="banking" class="south-korea">Banking & Financial Services</option>
+                  <option value="healthcare" class="south-korea">Healthcare</option>
+                  <option value="nonlife-insurance" class="finance">Nonlife Insurance</option>
+                  <option value="industrials-engineering" class="finance">Industrial Engineering</option>
+                  <option value="household-goods" class="finance">Household Goods & Home Construction</option>
+                  <option value="general-industrials" class="finance">General Industrials</option>
+                  <option value="chemicals" class="finance">Chemicals</option>
+                  <option value="ict" class="nigeria">ICT</option>
+                  <option value="automobiles-parts" class="nigeria">Automobiles & Parts</option>
+                  <option value="food-producers" class="nigeria">Food Producers</option>
+                  <option value="healthcare" class="nigeria">Healthcare</option>
+                  <option value="utilities" class="nigeria">Utilities</option>
+                  <option value="energy-i-infrastructure" class="saudi-arabia">Energy I Infrastructure</option>
+                  <option value="ict" class="saudi-arabia">ICT</option>
+                  <option value="energy-i-infrastructure" class="saudi-arabia">Energy I Infrastructure</option>
+                  <option value="industrials" class="saudi-arabia">Industrials</option>
+                  <option value="banking" class="saudi-arabia">Banking & Financial Services</option>
+                  <option value="consumer-goods" class="bangladesh">Consumer Goods</option>
+                  <option value="banking" class="bangladesh">Banking & Financial Services</option>
+                  <option value="chemicals" class="bangladesh">Chemicals</option>
+                  <option value="healthcare" class="bangladesh">Healthcare</option>
+                  <option value="healthcare" class="bangladesh">Healthcare</option>
+                  <option value="consumer-goods" class="nordic">Consumer Goods</option>
+                  <option value="consumer-goods" class="nordic">Consumer Goods</option>
+                  <option value="energy-i-infrastructure" class="sweden">Energy I Infrastructure</option>
+                  <option value="healthcare" class="denmark">Healthcare</option>
+                  <option value="machinery" class="norway">Machinery | Instruments</option>
+                </select>
+              </div>
+
+              <div class="col-sm-4">
+                <select id="subsectors" class="filterby form-control" name="subsectors">
+                  <option value="">Sub-Sectors</option>
+                  <option class="energy-i-infrastructure" value="building-materials">Building Materials</option>
+                  <option class="energy-i-infrastructure" value="alternate-energy">Alternate Energy</option>
+                  <option class="consumer-goods" value="food-products">Food Products</option>
+                  <option class="consumer-goods" value="beverage">Beverage</option>
+                  <option class="consumer-goods" value="beverage">Beverage</option>
+                  <option class="metals-mining" value="metallic-ores">Metallic ores</option>
+                  <option class="metals-mining" value="aluminium">Aluminium</option>
+                  <option class="banking" value="leasing">Leasing</option>
+                  <option class="healthcare" value="animal-health">Animal Health</option>
+                  <option class="chemicals" value="engineering-plastics">Engineering Plastics</option>
+                  <option class="ict" value="internet">Internet</option>
+                  <option class="ict" value="mobile-communication">Mobile Communication</option>
+                  <option class="energy-i-infrastructure" value="building-materials">Building Materials </option>
+                  <option class="energy-i-infrastructure" value="alternate-energy">Alternate Energy</option>
+                  <option class="industrials" value="aerospace-defence">Aerospace & Defence</option>
+                  <option class="consumer-goods" value="non-durables">Non-durables</option>
+                  <option class="banking" value="health-insurance">Health Insurance</option>
+                  <option class="healthcare" value="medical-equipment">Medical Equipment</option>
+                  <option class="nonlife-insurance" value="full-line-insurance">Full Line Insurance</option>
+                  <option class="industrials-engineering" value="commercial-vehicles-trucks">Commercial Vehicles & Trucks</option>
+                  <option class="household-goods" value="nondurable-household-products">Nondurable Household Products</option>
+                  <option class="general-industrials" value="industrial-engineering">Industrial Engineering</option>
+                  <option class="chemicals" value="transportation-services">Transportation Services</option>
+                  <option class="ict" value="telecom">Telecom</option>
+                  <option class="automobiles-parts" value="automobiles">Automobiles</option>
+                  <option class="food-producers" value="food-products">Food Products</option>
+                  <option class="healthcare" value="hospitals">Hospitals</option>
+                  <option class="utilities" value="electricity">Electricity</option>
+                  <option class="energy-i-infrastructure" value="real-estate-construction">Real Estate & Construction</option>
+                  <option class="ict" value="it-hardware">IT Hardware</option>
+                  <option class="energy-i-infrastructure" value="oil-equipment">Oil Equipment & Services </option>
+                  <option class="industrials" value="aerospace-defence">Aerospace & Defence</option>
+                  <option class="banking" value="consumer-credit">Consumer Credit</option>
+                  <option class="consumer-goods" value="food-products">Food Products</option>
+                  <option class="banking" value="retail-banking">Retail Banking</option>
+                  <option class="chemicals" value="organic-chemicals">Organic Chemicals</option>
+                  <option class="healthcare" value="pharmaceuticals">Pharmaceuticals</option>
+                  <option class="healthcare" value="medical-supplies">Medical Supplies</option>
+                  <option class="consumer-goods" value="food-products">Food Products</option>
+                  <option class="consumer-goods" value="beverage">Beverage</option>
+                  <option class="energy-i-infrastructure" value="building-materials">Building Materials</option>
+                  <option class="healthcare" value="medical-equipment">Medical Equipment</option>
+                  <option class="machinery" value="engineering-products">Engineering Products & Components</option>
+                </select>
+              </div>
+            </div><!-- end row -->
+          </div><!-- end tfilter__selects -->
+          <div id="default" style="background: grey">
+            <p>Select country and sectors from drop down to start seeing our project portfolio</p>
+          </div>
+
+          <div id="no-data" style="background: red">
+            <p>No data found for this combination. Please select other choices from the dropdown menus above</p>
+          </div>
+
+          <table id="projects" class="table tfilter__table">
+            <thead>
+              <tr>
+                <th>Project Title</th>
+                <th>Project Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="brazil energy-i-infrastructure building-materials">
+                <td>Market Intelligence study on Cement, Aggregate & Construction Sectors in Brazil</td>
+                <td>Opportunity Assessment / White Space Analysis</td>
+              </tr>
+              <tr class="brazil energy-i-infrastructure alternate-energy">
+                <td>Investment assessment of solar and wind energy contracting in Brazil</td>
+                <td>Competitive Intelligence</td>
+              </tr>
+              <tr class="brazil consumer-goods food-products">
+                <td>Supply chain assessment for bakery and cereals products in Brazil</td>
+                <td>Value Chain</td>
+              </tr>
+              <tr class="brazil consumer-goods beverage">
+                <td>Market analysis and opportunity selection for premium liquor in Brazil</td>
+                <td>Market Study</td>
+              </tr>
+              <tr class="brazil consumer-goods beverage">
+                <td>B2B customer satisfaction measurement and improvement initiatives for leading dairy products manufacturer in Brazil</td>
+                <td>Customer Survey</td>
+              </tr>
+              <tr class="brazil metals-mining metallic-ores">
+                <td>Competitive benchmarking of Tin mining industry in North America and Brazil</td>
+                <td>Competitive Analysis</td>
+              </tr>
+              <tr class="brazil metals-mining aluminium">
+                <td>Assessment of demand and supply of aluminium foils, and market entry options</td>
+                <td>Opportunity Analysis</td>
+              </tr>
+              <tr class="brazil banking leasing">
+                <td>Development of a 5 year strategic plan for a leading leasing company in Brazil</td>
+                <td>Business Plan & Financial Model</td>
+              </tr>
+              <tr class="brazil healthcare animal-health">
+                <td>Feasibility study for a distribution business of veterinary pharmaceuticals for companion animals</td>
+                <td>Opportunity Assessment</td>
+              </tr>
+              <tr class="brazil chemicals engineering-plastics">
+                <td>Analysis and benchmarking of product portfolio and strategies of styrene co-polymer manufacturers in Brazil </td>
+                <td>Competitive Benchmarking</td>
+              </tr>
+              <tr class="brazil ict internet">
+                <td>Emerging white space opportunities in social media strategies of banks and other key financial institutions in Brazil</td>
+                <td>White Space Analysis</td>
+              </tr>
+              <tr class="brazil ict mobile-communication">
+                <td>Analysis for market opportunity for smartphones and tablets with built-in native mobile applications</td>
+                <td>Customer Needs Analysis</td>
+              </tr>
+              <tr class="south-korea energy-i-infrastructure building-materials">
+                <td>South Korean Distribution Landscape For Bathroom & Wellness and Tableware Products</td>
+                <td>Supply Chain Assessment </td>
+              </tr>
+              <tr class="south-korea energy-i-infrastructure alternate-energy">
+                <td>Detailed profiling of key players in the hydro power equipment market in South Korea</td>
+                <td>Competitive Intelligence</td>
+              </tr>
+              <tr class="south-korea industrials aerospace-defence">
+                <td>Country Insight study for aerospace and defence market along with competitor landscape in South Korea</td>
+                <td>Country Analysis & Benchmarking</td>
+              </tr>
+              <tr class="south-korea consumer-goods non-durables">
+                <td>Distribution practices for high-end sanitary ware in South Korea</td>
+                <td>Distribution Assessment</td>
+              </tr>
+              <tr class="south-korea banking health-insurance">
+                <td>White paper on National Health Insurance Program</td>
+                <td>Opportunity Assessment / White Space Analysis</td>
+              </tr>
+              <tr class="south-korea healthcare medical-equipment">
+                <td>Market study to identify potential demand of installation of Ultrasonography machines in Seoul, South Korea</td>
+                <td>Industry / Sector Deep Dive</td>
+              </tr>
+              <tr class="finance nonlife-insurance full-line-insurance">
+                <td>Market analysis of the distribution channels in the European Insurance sector</td>
+                <td>Market Study</td>
+              </tr>
+              <tr class="finance industrials-engineering commercial-vehicles-trucks">
+                <td>Market assessment of the global agricultural vehicle market</td>
+                <td>Market Study</td>
+              </tr>
+              <tr class="finance household-goods nondurable-household-products">
+                <td>Opportunity Assessment of OLED Manufacturing in France</td>
+                <td>Investment Assessment</td>
+              </tr>
+              <tr class="finance general-industrials industrial-engineering">
+                <td>Market opportunity assessment of the Custom Sensors Market in France</td>
+                <td>Market Study</td>
+              </tr>
+              <tr class="finance chemicals transportation-services">
+                <td>Analysis of the French Rail Sector</td>
+                <td>Market study</td>
+              </tr>
+              <tr class="finance ict telecom">
+                <td>Investment Opportunity analysis in broadband services in Nigeria and Ghana</td>
+                <td>Investment Assessment</td>
+              </tr>
+              <tr class="finance automobiles-parts automobiles">
+                <td>Analysis of Automobile Industry in Abuja, Nigeria</td>
+                <td>Market Study</td>
+              </tr>
+              <tr class="finance food-producers food-products">
+                <td>Nigeria Baby Food Market</td>
+                <td>Market Study</td>
+              </tr>
+              <tr class="finance healthcare hospitals">
+                <td>Feasibility Report & Financial Valuation of a Hospital in Nigeria </td>
+                <td>Market Study</td>
+              </tr>
+              <tr class="finance utilities electricity">
+                <td>Energy Sector Report: Nigeria</td>
+                <td>Market Study</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div><!-- end tfilter__content -->
+      </div><!-- end container -->
+    </div><!-- end col-sm-12 -->
+  </div><!-- end row -->
+</section>
