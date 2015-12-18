@@ -2,7 +2,10 @@
 {% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
 
 {% set chTabsCss %}
-.stats-blok {
+  .ch-tabs {
+    padding: 30px 0;
+  }
+  .stats-blok {
     background-color: #ffffff;
   }
 
@@ -44,6 +47,19 @@
   }
   .chtabs__headline {
     font-size: 24px;
+    text-align: center;
+    display: none;
+  }
+
+  .chtabs__tablist__item {
+    text-transform: uppercase;
+    font-size: 5.5em;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  #chtabs {
+    padding-top: 30px;
   }
 
 {% endset %}
@@ -53,9 +69,10 @@
 $(document).ready(function () {
 
       $("#chtabs").zozoTabs({
-          theme: "underline",
+          theme: "red",
+          style: "underlined",
           orientation: "horizontal",
-          position: "top-left",
+          position: "top-center",
           size: "xlarge",
           animation: {
             easing: "easeInOutExpo",
@@ -144,10 +161,10 @@ $(document).ready(function () {
           <div id="chtabs">
 
               <!-- Tab Navigation Menu -->
-              <ul>
-                  <li><a>Equity</a></li>
-                  <li><a>Credit</a></li>
-                  <li><a>Investment Banking</a></li>
+              <ul class="chtabs__tablist">
+                  <li class="chtabs__tablist__item"><a>Equity</a></li>
+                  <li class="chtabs__tablist__item"><a>Credit</a></li>
+                  <li class="chtabs__tablist__item"><a>Investment Banking</a></li>
               </ul>
 
               <!-- Content container -->
@@ -182,7 +199,27 @@ $(document).ready(function () {
                       <div class="row text-center">
                         <div class="col-sm-4">
                           <p class="chtabs__subheadline">Breakdown of credit coverage (by sector)</p>
-                          <img src="/assets/images/charts/credit_chart_1.jpg" class="img-responsive" alt="chtabs-icon">
+                          <a href="" data-toggle="modal" data-target="#1">
+                            <img src="/assets/images/charts/credit_chart_1.jpg" class="img-responsive" alt="chtabs-icon">
+                          </a>
+                          <!-- modal starts here -->
+                          <div class="modal fade" tabindex="-1" id="1" role="dialog">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                  <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <img src="/assets/images/charts/credit_chart_1.jpg" class="img-responsive" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                          </div><!-- /.modal -->
                         </div><!-- col 4 -->
 
                         <div class="col-sm-4">

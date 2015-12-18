@@ -10,6 +10,72 @@
   padding: 30px 0;
 }
 
+.tfilter__default {
+  -moz-box-shadow:    inset 0 0 10px #DADADA;
+   -webkit-box-shadow: inset 0 0 10px #DADADA;
+   box-shadow:         inset 0 0 10px #DADADA;
+
+  position: relative;
+  background-color: #EFEFEF;
+  min-height: 350px;
+}
+
+.tfilter__default > p {
+  font-size: 2.2em;
+  color: #BEBEBE;
+  text-transform: uppercase;
+  width: 80%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tfilter__no-data {
+  -moz-box-shadow:    inset 0 0 10px #DADADA;
+   -webkit-box-shadow: inset 0 0 10px #DADADA;
+   box-shadow:         inset 0 0 10px #DADADA;
+
+  position: relative;
+  background-color: #FFE7DF;
+  min-height: 350px;
+}
+
+.tfilter__no-data > p {
+  font-size: 2.2em;
+  color: #FF4E4E;
+  text-transform: uppercase;
+  width: 80%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#projects tr td {
+  padding: 20px 0;
+  color: #7A8187;
+  font-size: 1.15em;
+  padding-left: 1em;
+}
+
+#projects .table-striped > tbody > tr:nth-child(2n+1) > td {
+   background-color: #E4F3FA;
+}
+
+.filterby {
+  text-transform: uppercase;
+  color: black;
+
+}
+
+.filterby.form-control {
+  border-radius: none;
+
+}
+
 {% endset %}
 
 
@@ -18,7 +84,7 @@
   $(function() {
     // chained dropdown plugin
     $("#sectors").chained("#countries");
-    $("#subsectors").chained("#sectors");
+    $("#subsectors").chained("#countries, #sectors");
     var utils = {
       noItems: function(filteredItems) {
         return filteredItems.length < 1;
@@ -31,21 +97,21 @@
     };
     (function hideDefaultUi() {
       $('#projects').hide();
-      $('#no-data').hide();
+      $('.tfilter__no-data').hide();
       $('#projects thead').hide();
     })();
     $("select.filterby").on('change', handleSelectChanged);
     function handleSelectChanged() {
       // hide default ui when user interacts with dropdown
-      $('#default').hide();
+      $('.tfilter__default').hide();
       function showItems(){
         $('#projects').show();
         filteredItems.show();
-        $("#no-data").hide();
+        $(".tfilter__no-data").hide();
         $('#projects thead').show();
       }
       function showEmptyState(){
-        $("#no-data").show();
+        $(".tfilter__no-data").show();
         $('#projects').hide();
       }
       // get the filters from selected values of multiple dropdowns
@@ -101,111 +167,77 @@
               <div class="col-sm-4">
                 <select id="sectors" class="filterby form-control" name="sectors">
                   <option value="">Sectors</option>
-                  <option value="energy-i-infrastructure" class="brazil">Energy I Infrastructure</option>
-                  <option value="energy-i-infrastructure" class="brazil">Energy I Infrastructure</option>
-                  <option value="consumer-goods" class="brazil">Consumer Goods</option>
-                  <option value="consumer-goods" class="brazil">Consumer Goods</option>
-                  <option value="consumer-goods" class="brazil">Consumer Goods</option>
-                  <option value="metals-mining" class="brazil">Metals & Mining</option>
-                  <option value="metals-mining" class="brazil">Metals & Mining</option>
-                  <option value="banking" class="brazil">Banking & Financial Services</option>
-                  <option value="healthcare" class="brazil">Healthcare</option>
-                  <option value="chemicals" class="brazil">Chemicals</option>
-                  <option value="ict" class="brazil">ICT</option>
-                  <option value="ict" class="brazil">ICT</option>
-                  <option value="energy-i-infrastructure" class="south-korea">Energy I Infrastructure</option>
-                  <option value="energy-i-infrastructure" class="south-korea">Energy I Infrastructure</option>
-                  <option value="industrials" class="south-korea">Industrials</option>
-                  <option value="consumer-goods" class="south-korea">Consumer Goods</option>
-                  <option value="banking" class="south-korea">Banking & Financial Services</option>
-                  <option value="healthcare" class="south-korea">Healthcare</option>
-                  <option value="nonlife-insurance" class="finance">Nonlife Insurance</option>
-                  <option value="industrials-engineering" class="finance">Industrial Engineering</option>
-                  <option value="household-goods" class="finance">Household Goods & Home Construction</option>
-                  <option value="general-industrials" class="finance">General Industrials</option>
-                  <option value="chemicals" class="finance">Chemicals</option>
-                  <option value="ict" class="nigeria">ICT</option>
                   <option value="automobiles-parts" class="nigeria">Automobiles & Parts</option>
+                  <option value="banking" class="brazil south-korea saudi-arabia bangladesh">Banking & Financial Services</option>
+                  <option value="chemicals" class="brazil france bangladesh">Chemicals</option>
+                  <option value="consumer-goods" class="brazil south-korea bangladesh nordic">Consumer Goods</option>
+                  <option value="energy-i-infrastructure" class="brazil south-korea saudi-arabia sweden">Energy I Infrastructure</option>
                   <option value="food-producers" class="nigeria">Food Producers</option>
-                  <option value="healthcare" class="nigeria">Healthcare</option>
-                  <option value="utilities" class="nigeria">Utilities</option>
-                  <option value="energy-i-infrastructure" class="saudi-arabia">Energy I Infrastructure</option>
-                  <option value="ict" class="saudi-arabia">ICT</option>
-                  <option value="energy-i-infrastructure" class="saudi-arabia">Energy I Infrastructure</option>
-                  <option value="industrials" class="saudi-arabia">Industrials</option>
-                  <option value="banking" class="saudi-arabia">Banking & Financial Services</option>
-                  <option value="consumer-goods" class="bangladesh">Consumer Goods</option>
-                  <option value="banking" class="bangladesh">Banking & Financial Services</option>
-                  <option value="chemicals" class="bangladesh">Chemicals</option>
-                  <option value="healthcare" class="bangladesh">Healthcare</option>
-                  <option value="healthcare" class="bangladesh">Healthcare</option>
-                  <option value="consumer-goods" class="nordic">Consumer Goods</option>
-                  <option value="consumer-goods" class="nordic">Consumer Goods</option>
-                  <option value="energy-i-infrastructure" class="sweden">Energy I Infrastructure</option>
-                  <option value="healthcare" class="denmark">Healthcare</option>
+                  <option value="general-industrials" class="france">General Industrials</option>
+                  <option value="healthcare" class="brazil south-korea nigeria bangladesh denmark">Healthcare</option>
+                  <option value="household-goods" class="france">Household Goods & Home Construction</option>
+                  <option value="ict" class="brazil nigeria saudi-arabia">ICT</option>
+                  <option value="industrials-engineering" class="france">Industrial Engineering</option>
+                  <option value="industrials" class="south-korea saudi-arabia">Industrials</option>
                   <option value="machinery" class="norway">Machinery | Instruments</option>
+                  <option value="metals-mining" class="brazil">Metals & Mining</option>
+                  <option value="nonlife-insurance" class="france">Nonlife Insurance</option>
+                  <option value="utilities" class="nigeria">Utilities</option>
                 </select>
               </div>
 
               <div class="col-sm-4">
                 <select id="subsectors" class="filterby form-control" name="subsectors">
                   <option value="">Sub-Sectors</option>
-                  <option class="energy-i-infrastructure" value="building-materials">Building Materials</option>
-                  <option class="energy-i-infrastructure" value="alternate-energy">Alternate Energy</option>
-                  <option class="consumer-goods" value="food-products">Food Products</option>
-                  <option class="consumer-goods" value="beverage">Beverage</option>
-                  <option class="consumer-goods" value="beverage">Beverage</option>
-                  <option class="metals-mining" value="metallic-ores">Metallic ores</option>
-                  <option class="metals-mining" value="aluminium">Aluminium</option>
-                  <option class="banking" value="leasing">Leasing</option>
-                  <option class="healthcare" value="animal-health">Animal Health</option>
-                  <option class="chemicals" value="engineering-plastics">Engineering Plastics</option>
-                  <option class="ict" value="internet">Internet</option>
-                  <option class="ict" value="mobile-communication">Mobile Communication</option>
-                  <option class="energy-i-infrastructure" value="building-materials">Building Materials </option>
-                  <option class="energy-i-infrastructure" value="alternate-energy">Alternate Energy</option>
-                  <option class="industrials" value="aerospace-defence">Aerospace & Defence</option>
-                  <option class="consumer-goods" value="non-durables">Non-durables</option>
-                  <option class="banking" value="health-insurance">Health Insurance</option>
-                  <option class="healthcare" value="medical-equipment">Medical Equipment</option>
-                  <option class="nonlife-insurance" value="full-line-insurance">Full Line Insurance</option>
-                  <option class="industrials-engineering" value="commercial-vehicles-trucks">Commercial Vehicles & Trucks</option>
-                  <option class="household-goods" value="nondurable-household-products">Nondurable Household Products</option>
-                  <option class="general-industrials" value="industrial-engineering">Industrial Engineering</option>
-                  <option class="chemicals" value="transportation-services">Transportation Services</option>
-                  <option class="ict" value="telecom">Telecom</option>
-                  <option class="automobiles-parts" value="automobiles">Automobiles</option>
-                  <option class="food-producers" value="food-products">Food Products</option>
-                  <option class="healthcare" value="hospitals">Hospitals</option>
-                  <option class="utilities" value="electricity">Electricity</option>
-                  <option class="energy-i-infrastructure" value="real-estate-construction">Real Estate & Construction</option>
-                  <option class="ict" value="it-hardware">IT Hardware</option>
-                  <option class="energy-i-infrastructure" value="oil-equipment">Oil Equipment & Services </option>
-                  <option class="industrials" value="aerospace-defence">Aerospace & Defence</option>
-                  <option class="banking" value="consumer-credit">Consumer Credit</option>
-                  <option class="consumer-goods" value="food-products">Food Products</option>
-                  <option class="banking" value="retail-banking">Retail Banking</option>
-                  <option class="chemicals" value="organic-chemicals">Organic Chemicals</option>
-                  <option class="healthcare" value="pharmaceuticals">Pharmaceuticals</option>
-                  <option class="healthcare" value="medical-supplies">Medical Supplies</option>
-                  <option class="consumer-goods" value="food-products">Food Products</option>
-                  <option class="consumer-goods" value="beverage">Beverage</option>
-                  <option class="energy-i-infrastructure" value="building-materials">Building Materials</option>
-                  <option class="healthcare" value="medical-equipment">Medical Equipment</option>
-                  <option class="machinery" value="engineering-products">Engineering Products & Components</option>
+                  <option value="aerospace-defence" class="south-korea\industrials saudi-arabia\industrials" >Aerospace & Defence</option>
+                  <option value="alternate-energy" class="brazil\energy-i-infrastructure south-korea\energy-i-infrastructure">Alternate Energy</option>
+                  <option value="aluminium" class="brazil\metals-mining" >Aluminium</option>
+                  <option value="animal-health" class="brazil\healthcare">Animal Health</option>
+                  <option value="automobiles" class="nigeria\automobiles-parts">Automobiles</option>
+                  <option value="beverage" class="brazil\consumer-goods nordic\consumer-goods">Beverage</option>
+                  <option value="building-materials" class="brazil\energy-i-infrastructure south-korea\energy-i-infrastructure sweden\energy-i-infrastructure">Building Materials</option>
+                  <option value="commercial-vehicles-trucks" class="france\industrials-engineering" >Commercial Vehicles & Trucks</option>
+                  <option value="consumer-credit" class="saudi-arabia\banking" >Consumer Credit</option>
+                  <option value="electricity" class="nigeria\utilities">Electricity</option>
+                  <option value="engineering-plastics" class="brazil\chemicals" >Engineering Plastics</option>
+                  <option value="engineering-products" class="norway\machinery">Engineering Products & Components</option>
+                  <option value="food-products" class="brazil\consumer-goods bangladesh\consumer-goods nordic\consumer-goods nigeria\food-producers">Food Products</option>
+                  <option value="full-line-insurance" class="france\nonlife-insurance" >Full Line Insurance</option>
+                  <option value="health-insurance" class="south-korea\banking" >Health Insurance</option>
+                  <option value="hospitals" class="nigeria\healthcare" >Hospitals</option>
+                  <option value="industrial-engineering" class="france\general-industrials">Industrial Engineering</option>
+                  <option value="internet" class="brazil\ict">Internet</option>
+                  <option value="it-hardware" class="saudi-arabia\ict">IT Hardware</option>
+                  <option value="leasing" class="brazil\banking">Leasing</option>
+                  <option value="medical-equipment" class="south-korea\healthcare denmark\healthcare bangladesh\healthcare" >Medical Equipment</option>
+                  <option value="metallic" class="brazil\metals-mining">Metallic</option>
+                  <option value="mobile-communication" class="brazil\ict">Mobile Communication</option>
+                  <option value="non-durables" class="south-korea\consumer-goods">Non-durables</option>
+                  <option value="nondurable-household-products" class="france\household-goods">Nondurable Household Products</option>
+                  <option value="oil-equipment" class="saudi-arabia\energy-i-infrastructure">Oil Equipment & Services </option>
+                  <option value="organic-chemicals" class="bangladesh\chemicals">Organic Chemicals</option>
+                  <option value="pharmaceuticals"class="bangladesh\healthcare">Pharmaceuticals</option>
+                  <option value="real-estate-construction" class="saudi-arabia\energy-i-infrastructure">Real Estate & Construction</option>
+                  <option value="retail-banking" class="bangladesh\banking">Retail Banking</option>
+                  <option value="telecom" class="nigeria\ict">Telecom</option>
+                  <option value="transportation-services" class="france\chemicals">Transportation Services</option>
+
+
+
+
                 </select>
               </div>
             </div><!-- end row -->
           </div><!-- end tfilter__selects -->
-          <div id="default" style="background: grey">
-            <p>Select country and sectors from drop down to start seeing our project portfolio</p>
+          <div class="tfilter__default">
+            <p class="text-center">Select country and sectors from drop down to <strong>start seeing our project portfolio</strong></p>
           </div>
 
-          <div id="no-data" style="background: red">
+          <div class="tfilter__no-data">
             <p>No data found for this combination. Please select other choices from the dropdown menus above</p>
           </div>
 
-          <table id="projects" class="table tfilter__table">
+          <table id="projects" class="table table-striped tfilter__table">
             <thead>
               <tr>
                 <th>Project Title</th>
@@ -233,7 +265,7 @@
                 <td>B2B customer satisfaction measurement and improvement initiatives for leading dairy products manufacturer in Brazil</td>
                 <td>Customer Survey</td>
               </tr>
-              <tr class="brazil metals-mining metallic-ores">
+              <tr class="brazil metals-mining metallic">
                 <td>Competitive benchmarking of Tin mining industry in North America and Brazil</td>
                 <td>Competitive Analysis</td>
               </tr>

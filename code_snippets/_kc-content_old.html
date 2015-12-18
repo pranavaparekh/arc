@@ -1,0 +1,222 @@
+{% includeJsFile '/assets/js/salvattore.min.js' %}
+
+{% set kcContentCss %}
+
+  .kc-content {
+    padding: 30px 0;
+  }
+
+  .kc-content__grid[data-columns]::before {
+    content: '3 .column.size-1of3';
+  }
+
+  /* These are the classes that are going to be applied: */
+  .column { float: left; }
+  .size-1of3 { width: 100%; }
+
+  @media(min-width: {{ screenmd }}) {
+    .size-1of3 {
+      width: 33.333%;
+    }
+
+    .kc-content__grid__item {
+      margin-right: 10px;
+    }
+
+    .kc-content__grid__item--focus {
+      margin-right: 10px;
+    }
+  }
+
+  .kc-content__headline {
+    font-size: 40px;
+    color: #59656B;
+    font-weight: 600;
+  }
+
+  .kc-content__border {
+    width: 15%;
+    border: 2px solid #034883;
+  }
+
+  .kc-content__grid__item {
+    background: #f3f3f3;
+    height: 125px;
+    padding: 0 30px;
+    margin-bottom: 10px;
+  }
+
+  .kc-content__grid__inner {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .kc-content__grid__inner > h5 {
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 2px 3px #464343;
+    letter-spacing: 0.03em;
+    line-height: 1.2em;
+  }
+
+  .kc-content__grid__item--focus {
+    background: #f3f3f3;
+    height: 540px;
+    margin-bottom: 10px;
+  }
+
+  .kc-content__grid__listbox {
+    background: url('/assets/images/thematic-reports-bkg.jpg') no-repeat #f3f3f3;
+    height: 286px;
+    margin-bottom: 24px;
+    position: relative;
+    top: 12px;
+    padding: 20px;
+  }
+
+  .kc-content__grid__newsletter {
+    background: url('/assets/images/newsletter-bkg.jpg') no-repeat #f3f3f3;
+    -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+    height: 231px;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+
+  .kc-content__list {
+
+  }
+
+  .kc-content__list__item {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 2px 3px #464343;
+    letter-spacing: 0.03em;
+    line-height: 1.2em;
+  }
+
+  .kc-content__grid__newsletter__form {
+    color: white;
+    position: relative;
+    top: 70px;
+  }
+
+  .kc-content__blog1 {
+    background: url('/assets/uploads/kc/blog1.jpg') no-repeat;
+  }
+
+  .kc-content__blog2 {
+    background: url('/assets/uploads/kc/blog2.jpg') no-repeat;
+  }
+
+  .kc-content__blog3 {
+    background: url('/assets/uploads/kc/blog3.jpg') -150px no-repeat;
+  }
+
+  .kc-content__blog4 {
+    background: url('/assets/uploads/kc/blog4.jpg')  no-repeat;
+  }
+
+  .kc-content__featured {
+    background: url('/assets/uploads/kc/kc-featured-story.jpg') 0 11px no-repeat;
+  }
+
+  .kc-content__featured__headline {
+    background: #2983BE;
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 1px 3px #384F5D;
+    letter-spacing: 0.03em;
+    line-height: 1.4em;
+    padding: 20px 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .image-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+{% endset %}
+
+{% includeCss kcContentCss %}
+
+
+<section class="container-fluid kc-content">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <h2 class="kc-content__headline text-center">Knowledge Library</h2>
+          <hr class="kc-content__border">
+
+          <div class="kc-content__grid" data-columns>
+
+            <!-- start column 1 -->
+            {# Get the category that this entry belongs to #}
+            {% set entryCategory = entry.servicesCategory.first() %}
+            {# Pass the above category slug to the below query for knowledge center domain #}
+            {% set practicesCategory = craft.categories.group('practices').slug(entryCategory.slug) %}
+            {# Filter entries in knowledge center by category slug #}
+            {% set articles = craft.entries.section('infographics').relatedTo(practicesCategory).limit(4) %}
+
+
+            <div>
+              {% for article in articles %}
+              <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                <div class="kc-content__grid__inner">
+                  <h5>{{ article.title }} | {{ article.practiceCategory.first() }}</h5>
+                </div>
+              </article>
+              {% endfor %}
+            </div>
+
+            <!-- start column 2 -->
+            <div>
+              <article class="kc-content__grid__item--focus kc-content__featured">
+                <div class="kc-content__grid__inner" style="opacity: 0.9;">
+                  <p class="kc-content__featured__headline">How to value businesses built on futuristic technologies?</p>
+                </div>
+              </article>
+            </div>
+
+            <!-- start column 3 -->
+
+            <div>
+              <article class="kc-content__grid__listbox">
+                <ul class="kc-content__list">
+                  <li class="kc-content__list__item">Aircraft Safety Systems - In The Spotlight</li>
+                  <li class="kc-content__list__item">CO2 As A Future Refrigerant</li>
+                  <li class="kc-content__list__item">Demographics in Saudi Arabia: New Age Of Opportunities</li>
+                  <li class="kc-content__list__item">Buybacks & Dividends: A Trillion Dollar Offer</li>
+                </ul>
+              </article>
+              <article class="kc-content__grid__newsletter">
+                <form class="kc-content__grid__newsletter__form" action="">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Subscribe to our exclusive content</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Just Enter your Email">
+                  </div>
+                </form>
+              </article>
+            </div>
+
+          </div> <!-- end kc-content__grid -->
+
+        </div>   <!-- end col-sm-12 -->
+      </div>   <!-- end row -->
+    </div>   <!-- end container -->
+  </div>  <!-- end row -->
+</section>

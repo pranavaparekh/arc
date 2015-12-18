@@ -53,15 +53,18 @@
 $(document).ready(function () {
 
       $("#chtabs").zozoTabs({
-          theme: "underline",
-          orientation: "horizontal",
-          position: "top-left",
-          size: "xlarge",
+        position: "top-left",
+          theme: "red",
+          style: "underlined",
+          rounded: false,
+          shadows: false,
+          defaultTab: "tab2",
           animation: {
-            easing: "easeInOutExpo",
-            duration: 400,
-            effects: "slideH"
+              easing: "easeInOutCirc",
+              effects: "slideV",
+              duration: 350
           },
+          size: "medium"
       });
   });
 
@@ -146,7 +149,7 @@ $(document).ready(function () {
               <!-- Tab Navigation Menu -->
               <ul>
                   <li><a>Equity</a></li>
-                  <li><a>Credit</a></li>
+                  <li><a>Credits</a></li>
                   <li><a>Investment Banking</a></li>
               </ul>
 
