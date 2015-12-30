@@ -8,9 +8,45 @@
   .svc-masthead {
     position: relative;
     color: white;
+    overflow-y: hidden;
+  }
+
+  .svc-masthead .btn-default {
+    border: none;
+    padding: 8px;
+    border-radius: 0;
+  }
+
+  .svc-masthead__headline {
+    font-size: 1.4em;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    text-shadow: 1px 2px 6px #5C5555;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    max-width: 50%;
+  }
+
+  .svc-masthead__btn {
+    padding: 3px;
+    font-size: 1em;
+    position: absolute;
+    top: 63%;
+    left: 10%;
+  }
+  .svc-masthead__breadcrumb__item > a {
+    font-size: 1em;
+    color: white;
+    position: absolute;
+    left: 36%;
+    top: 63%;
   }
 
 
+
+
+@media(min-width: {{ screensm }}) {
   .svc-masthead__heading {
     position: absolute;
     bottom: 15%;
@@ -23,6 +59,8 @@
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     text-shadow: 1px 2px 6px #5C5555;
+    position: static;
+    max-width: 90%;
   }
 
   .svc-masthead__breadcrumbs {
@@ -40,12 +78,22 @@
   .svc-masthead__breadcrumb__item > a {
     font-size: 1.5em;
     color: white;
+    position: static;
   }
 
   .btn-red {
     background-color: {{ CoreCrimson }};
     color: white;
   }
+
+  .svc-masthead__btn {
+    padding: 10px;
+    font-size: 1.3em;
+    margin-left: 95%;
+    margin-top: 6%;
+
+  }
+}
 
 {% endset %}
 
@@ -58,15 +106,15 @@
   <img src={{ asset.url }} class="img-responsive" alt="" />
 
   <div class="svc-masthead__breadcrumbs">
-      <div class="svc-masthead__cta-container">
 
-          <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default btn-lg btn-red svc-masthead__btn">
-            <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
-          </button>
-        </div>
     </div>
 
     <div class="svc-masthead__heading">
+      <div class="svc-masthead__cta-container">
+          <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default btn-lg btn-red svc-masthead__btn">
+            <i class="fa fa-envelope"></i>  &nbsp;Send Us Your Queries
+          </button>
+      </div>
       <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
       <ul class="svc-masthead__breadcrumb">
             {% if firstLevel | length %}

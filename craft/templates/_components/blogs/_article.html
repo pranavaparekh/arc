@@ -59,7 +59,7 @@
     <div class="byline">
       <p>Written by {{ entry.author.firstName }} {{ entry.author.lastName }}</p>
     </div>
-    {% set assets = entry.blogBanner %}
+    {% set assets = entry.blogsBanner %}
     {% if assets | length %}
       {% for image in assets %}
         <img src="{{ image.url }}" alt="" class="img-responsive article__image">

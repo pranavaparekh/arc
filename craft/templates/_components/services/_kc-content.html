@@ -156,7 +156,7 @@ $(document).ready(function () {
                                 <div class="kc-item-number">{{ loop.index }}</div>
                                 <article class="kc-content__grid__item kc-content__blog1 image-cover">
                                   <div class="kc-content__grid__inner">
-                                    <h5 class="kc-content__headline">{{ blogPost.title }}</h5>
+                                    <h5 class="kc-content__headline"><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></h5>
                                     <p class="kc-content__excerpt">{{ blogPost.blogContent|hacksaw(words='25') }}</p>
                                   </div>
                                 </article>
@@ -178,7 +178,7 @@ $(document).ready(function () {
                               <li class="kc-content__list__item">
                                 <article class="kc-content__grid__item kc-content__blog1 image-cover">
                                   <div class="kc-content__grid__inner">
-                                    <h5 class="kc-content__headline">{{ article.title }}</h5>
+                                    <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
                                     <p class="kc-content__excerpt">{{ article.articlesContent|hacksaw(words='25') }}</p>
                                   </div>
                                 </article>
@@ -200,7 +200,7 @@ $(document).ready(function () {
                               <li class="kc-content__list__item">
                                 <article class="kc-content__grid__item kc-content__blog1 image-cover">
                                   <div class="kc-content__grid__inner">
-                                    <h5 class="kc-content__headline">{{ infographic.title }}</h5>
+                                    <h5 class="kc-content__headline"><a href="{{ infographic.url }}">{{ infographic.title }}</a></h5>
                                     <p class="kc-content__excerpt">{{ infographic.igContent|hacksaw(words='25') }}</p>
                                   </div>
                                 </article>
@@ -222,7 +222,7 @@ $(document).ready(function () {
                               <li class="kc-content__list__item">
                                 <article class="kc-content__grid__item kc-content__blog1 image-cover">
                                   <div class="kc-content__grid__inner">
-                                    <h5 class="kc-content__headline">{{ specialReport.title }}</h5>
+                                    <h5 class="kc-content__headline"><a href="{{ specialReport.url }}">{{ specialReport.title }}</a></h5>
                                     <p class="kc-content__excerpt">{{ specialReport.srContent|hacksaw(words='25') }}</p>
                                   </div>
                                 </article>

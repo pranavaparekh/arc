@@ -18,7 +18,7 @@
           {% set category = entry.practiceCategory.first %}
           {% set content = entry.blogContent %}
 
-          {% set assets = entry.blogBanner %}
+          {% set assets = entry.blogsBanner %}
 
           {% include '_components/blogs/_article'
               with { 'category': category, 'content': content }
