@@ -1,0 +1,50 @@
+{% extends "base_layouts/_site" %}
+{% set title = entry.title %}
+
+{% includeJsFile '/assets/js/impress.js' %}
+{% includeCssFile '/assets/css/impress.css' %}
+
+{% set aboutJs %}
+
+impress().init();
+
+{% endset %}
+
+{% includeJs aboutJs %}
+
+{% block main %}
+
+<section id="impress" class="container">
+  <div class="row">
+
+    <div id="title" class="step col-sm-12" data-x="0" data-y="0" data-scale="4">
+        <h1 class="text-center">About Aranca</h1>
+        <p class="text-center abt__intro">Ever heard of a Decision Engineer? Ever met one? Talked to one? Worked with one?</p>
+        <p class="text-center abt__intro">Welcome to a company of 500 Decision Engineers on 5 Continents</p>
+        <p class=" text-center footlink">Welcome to Aranca</p>
+    </div>
+
+    <div class="step col-sm-12 small-text" data-x="1500" data-y="2500" data-scale="8" data-perspective="300">
+        <h2>Once upon a Decision</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime et corporis laborum eligendi, odit, magni consectetur odio delectus natus id optio repellendus impedit rem eum tempore, totam fuga rerum! Eligendi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime et corporis laborum eligendi, odit, magni consectetur odio delectus natus id optio repellendus impedit rem eum tempore, totam fuga rerum! Eligendi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime et corporis laborum eligendi, odit, magni consectetur odio delectus natus id optio repellendus impedit rem eum tempore, totam fuga rerum! Eligendi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, corporis velit ut facilis porro aliquid, rerum, perspiciatis dicta nam maxime est! Quis sed eveniet deserunt libero necessitatibus voluptates fuga, possimus.</p>
+    </div>
+
+     <div class="step col-sm-12 small-text" data-x="500" data-y="-4500" data-scale="8" data-perspective="300" data-rotate="90" data-z="-3000">
+        <h1 class="abt__headline--large">Welcome to Aranca</h1>
+        <a class="abt__footerlink">Aranca So Far</a>
+        <a class="abt__footerlink">Aranca Today</a>
+        <a class="abt__footerlink">Aranca Tomorrow</a>
+    </div>
+
+    <div class="step col-sm-12 small-text" data-x="500" data-y="-4500" data-scale="8" data-perspective="300" data-rotate="90" data-z="-8000">
+        <h2>Aranca Tomorrow</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime et corporis laborum eligendi, odit, magni consectetur odio delectus natus id optio repellendus impedit rem eum tempore, totam fuga rerum! Eligendi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime et corporis laborum eligendi, odit, magni consectetur odio delectus natus id optio repellendus impedit rem eum tempore, totam fuga rerum! Eligendi.</p>
+    </div>
+
+  </div><!-- end row -->
+</section>
+
+{% endblock %}

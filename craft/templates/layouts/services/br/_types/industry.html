@@ -7,9 +7,14 @@
   {% include '_components/services/_ztabs' %}
 {% endif %}
   {% include '_components/services/assignment-slider' %}
+{% include '_components/services/_svc_box_grid' with {'data': entry.experienceRichtext, 'brandColor': BrCore } %}
+{% if entry.tfilterRichtext|length %}
+  {% include '_components/services/_table-filter' %}
+{% endif %}
 {% if entry.caseStudyEntries|length %}
   {% include '_components/services/_case-study-list' %}
 {% endif %}
+
   {% include '_components/services/_full-cta-a' %}
   {% include '_components/services/_kc-content' %}
   {% include '_components/global/_footer' %}
