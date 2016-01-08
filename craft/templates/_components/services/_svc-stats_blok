@@ -69,7 +69,7 @@
         {% for block in entry.contentStatIntro %}
           <h3 class="stats-blok__headline">{{ block.headline  }}</h3>
           <p class="stats-blok__subtext">{{ block.subHeadline }}</p>
-          <hr class="stats-blok__border">
+          <hr class="lede__border">
           {% endfor %}
 
         </div><!-- end col 12 -->
