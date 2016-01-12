@@ -4,16 +4,12 @@
 }
 
 
-.sol-port-table .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
-  padding: 30px 0;
-  padding-left: 21px;
-}
 
 
-.sol-port-table__head th {
+.sol-port__headline  {
   background-color: {{ brandPrimary }};
   color: white;
-  font-size: 1.3em;
+  font-size: 1.1em;
   padding: 10px 0;
   text-align: center;
 }
@@ -44,8 +40,10 @@
 
 <section class="container-fluid sol-port-table">
   <div class="row">
-  <div class="col-sm-12">
+  <div class="container">
+    <div class="row">
     {{ entry.solutionRichtext }}
-    </div><!-- col-12-->
+    </div>
+    </div><!-- container-->
   </div><!-- row -->
 </section>
