@@ -13,7 +13,7 @@
   .stats-blok__headline {
     font-size: 30px;
     color: #59656B;
-    font-weight: 600;
+    font-weight: 300;
     text-align: center;
   }
   .stats-blok__subtext {
@@ -69,7 +69,7 @@
         {% for block in entry.contentStatIntro %}
           <h3 class="stats-blok__headline">{{ block.headline  }}</h3>
           <p class="stats-blok__subtext">{{ block.subHeadline }}</p>
-          <hr class="lede__border">
+          <hr class="stats-blok__border">
           {% endfor %}
 
         </div><!-- end col 12 -->
