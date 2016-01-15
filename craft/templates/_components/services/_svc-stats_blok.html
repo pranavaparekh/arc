@@ -1,6 +1,5 @@
 {% set statsblokCSS %}
   .stats-blok {
-    box-shadow: 0px 3px 12px #E4E1E1;
     padding: 60px 0;
   }
 
@@ -64,8 +63,8 @@
         <div class="col-sm-12 stats-blok__headline--main">
 
         {% for block in entry.contentStatIntro %}
-          <h3 class="stats-blok__headline">{{ block.headline  }}</h3>
-          <p class="stats-blok__subtext">{{ block.subHeadline }}</p>
+          <h3 class="lede__headline">{{ block.headline  }}</h3>
+          <p class="lede__subheadline">{{ block.subHeadline }}</p>
           <hr class="lede__border">
         {% endfor %}
 
