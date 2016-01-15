@@ -1,8 +1,27 @@
 
+{# logic for getting cta content and image #}
+
+{% set callText = '' %}
+{% set callBanner = '' %}
+
+{% for call in servicesCta.callToAction %}
+  {% for cat in call.ctaCategory %}
+
+    {% if cat.slug == entry.servicesCategory.first().slug %}
+      {% set callText = call.ctaRichtext %}
+      {% set callBanner = call.ctaBanner.first() %}
+    {% endif %}
+
+  {% endfor %}
+{% endfor %}
+
+{# endlogic #}
+
+
 {% set fullCtaACSS %}
 
 .full-cta-a {
-  background: url('/assets/images/full-cta-a-bkg.jpg') no-repeat;
+  background: url({{ callBanner.url }}) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -10,16 +29,20 @@
   min-height: 276px;
 }
 
+
+
 .full-cta-a__content {
-  margin-top: 110px;
+  transform: translate(0, 60%);
 }
 
 .full-cta-a__headline {
   color: white;
-  text-transform: uppercase;
-  font-size: 3.5em;
-  font-weight: 900;
+  font-size: 2.5em;
+  font-weight: 300;
   letter-spacing: 0.05em;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .full-cta-a__body {
@@ -30,6 +53,28 @@
 
 .full-cta-a__body > a {
   color: white;
+}
+
+.call-to-action {
+  background-color: #3498db;
+  background-image: -webkit-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: -moz-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: -o-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: linear-gradient(#4aa3df 0%, #258cd1 100%);
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  padding: 10px 60px;
+  border: none;
+  box-shadow: 1px 2px 6px #256498;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  letter-spacing: 0.06em;
+  font-weight: 500;
 }
 
 
@@ -43,10 +88,10 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="full-cta-a__content">
-            <h3 class="full-cta-a__headline text-center">Help is just a call away</h3>
+            <h3 class="full-cta-a__headline text-center">{{ callText }}</h3>
             <p class="text-center">
-            <button data-toggle="modal" data-target=".inq-modal" type="button" class="btn btn-default btn-lg btn-block">
-              <i class="fa fa-envelope"></i>  &nbsp;call us on or write to us at info@aranca.com
+            <button data-toggle="modal" data-target=".inq-modal" type="button" class="call-to-action">
+              <i class="fa fa-envelope"></i>  Write To Us
             </button>
             </p>
           </div>
