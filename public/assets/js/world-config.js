@@ -6,11 +6,11 @@
 	},
 	'svg_africa':{
 		'hover': 'AFRICA', //continent hover content
-		'upColor':'#A9ACAC', //continent's color when page loads
-		'overColor':'#CCFF99', //continent's color when mouse hover
+		'upColor':'#FFF', //continent's color when page loads
+		'overColor':'#f3f3f3', //continent's color when mouse hover
 		'downColor':'#8FB26B', //continent's color when mouse clicking
-		'outLine':'#EBEDED', //outline border of this continent
-		'countryLines':'#EBEDED', //countries outline inside this continent
+		'outLine':'#287BB1', //outline border of this continent
+		'countryLines':'#287BB1', //countries outline inside this continent
 		'lakesColor':'#B2F0FF', //lakes color in this continent
 		'lakesOutline':'#66E0FF', //lakes outline color
 		'url':'', //Goto URL
@@ -19,11 +19,11 @@
 	},
 	'svg_asia':{
 		'hover': 'ASIA',
-		'upColor':'#A9ACAC',
-		'overColor':'#CCFF99',
+		'upColor':'#FFF',
+		'overColor':'#f3f3f3',
 		'downColor':'#8FB26B',
-		'outLine':'#EBEDED',
-		'countryLines':'#EBEDED',
+		'outLine':'#287BB1',
+		'countryLines':'#287BB1',
 		'lakesColor':'#B2F0FF',
 		'lakesOutline':'#66E0FF',
 		'url':'',
@@ -32,32 +32,32 @@
 	},
 	'svg_australia':{
 		'hover': 'AUSTRALIA',
-		'upColor':'#A9ACAC',
-		'overColor':'#CCFF99',
+		'upColor':'#FFF',
+		'overColor':'#f3f3f3',
 		'downColor':'#8FB26B',
-		'outLine':'#EBEDED',
+		'outLine':'#287BB1',
 		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
 	'svg_europe':{
 		'hover': 'EUROPE',
-		'upColor':'#A9ACAC',
-		'overColor':'#CCFF99',
+		'upColor':'#FFF',
+		'overColor':'#f3f3f3',
 		'downColor':'#8FB26B',
-		'outLine':'#EBEDED',
-		'countryLines':'#EBEDED',
+		'outLine':'#287BB1',
+		'countryLines':'#287BB1',
 		'url':'',
 		'target':'same_window',
 		'enable':true,
 	},
 	'svg_n_america':{
 		'hover': 'NORTH AMERICA',
-		'upColor':'#A9ACAC',
-		'overColor':'#CCFF99',
+		'upColor':'#FFF',
+		'overColor':'#f3f3f3',
 		'downColor':'#8FB26B',
-		'outLine':'#EBEDED',
-		'countryLines':'#EBEDED',
+		'outLine':'#287BB1',
+		'countryLines':'#287BB1',
 		'lakesColor':'#B2F0FF',
 		'lakesOutline':'#66E0FF',
 		'url':'',
@@ -66,11 +66,11 @@
 	},
 	'svg_s_america':{
 		'hover': 'SOUTH AMERICA',
-		'upColor':'#A9ACAC',
-		'overColor':'#CCFF99',
+		'upColor':'#FFF',
+		'overColor':'#f3f3f3',
 		'downColor':'#8FB26B',
-		'outLine':'#EBEDED',
-		'countryLines':'#EBEDED',
+		'outLine':'#287BB1',
+		'countryLines':'#287BB1',
 		'url':'',
 		'target':'same_window',
 		'enable':true,

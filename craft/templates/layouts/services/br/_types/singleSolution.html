@@ -1,7 +1,11 @@
 
 {% include '_components/global/_header' %}
 {% include '_components/services/_masthead' %}
+
+{% if entry.contentStatIntro | length %}
 {% include '_components/services/_svc-stats_blok' %}
+{% endif %}
+
 {% include '_components/services/_htimeline' %}
 {% include '_components/services/_case-study-list' %}
 {# include '_components/services/_why-aranca-b' #}

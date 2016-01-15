@@ -38,11 +38,7 @@
 @media(min-width: {{ screensm }}) {
 
   .svc-masthead__content {
-    position: static;
-    max-width: 40%;
-    margin: 0 auto;
-    transform: translate(0, 60%);
-    overflow: visible;
+    transform: translate(0, 75%);
   }
 
   .svc-masthead__headline {
@@ -79,6 +75,30 @@
     display: inline-block;
     font-size: 1.5em;
   }
+
+  .kc-story-container {
+    background: #195182;
+    padding: 15px;
+    padding-right: 0;
+    opacity: 0.8;
+    margin-top: -27px;
+  }
+
+  .kc-story-item {
+    margin-bottom: 20px;
+  }
+
+  .kc-tag {
+    display: inline-block;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .kc-story__headline {
+    margin-top: 0;
+    font-weight: 300;
+    font-size: 1.9em;
+  }
 }
 
 {% endset %}
@@ -90,38 +110,62 @@
 <section class="svc-masthead">
 
   <!--  content -->
-  <div class="svc-masthead__content text-center">
+  <div class="svc-masthead__content">
 
-    <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
-    <ul class="svc-masthead__breadcrumb">
-      {% if firstLevel | length %}
-        <li class="svc-masthead__breadcrumb__item">
-          {% for entry in firstLevel.categoryEntryUrl %}
-          <a href="{{ entry.url }}">{{ firstLevel }}</a>
-          {% endfor %}
-        </li>
-      {% endif %}
+    <div class="container">
+      <div class="row">
+        <!-- start headline and cta -->
+        <div class="col-sm-6">
+          <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+        <ul class="svc-masthead__breadcrumb">
+          {% if firstLevel | length %}
+            <li class="svc-masthead__breadcrumb__item">
+              {% for entry in firstLevel.categoryEntryUrl %}
+              <a href="{{ entry.url }}">{{ firstLevel }}</a>
+              {% endfor %}
+            </li>
+          {% endif %}
 
-      {% if secondLevel | length %}
-        {% for entry in secondLevel.categoryEntryUrl %}
-          <li class="svc-masthead__breadcrumb__item">
-            <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
-          </li>
-        {% endfor %}
-      {% endif %}
+          {% if secondLevel | length %}
+            {% for entry in secondLevel.categoryEntryUrl %}
+              <li class="svc-masthead__breadcrumb__item">
+                <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
+              </li>
+            {% endfor %}
+          {% endif %}
 
-      {% if thirdLevel | length %}
-        {% for entry in thirdLevel.categoryEntryUrl %}
-        <li class="svc-masthead__breadcrumb__item">
-          <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
-        </li>
-        {% endfor %}
-      {% endif %}
-    </ul>
+          {% if thirdLevel | length %}
+            {% for entry in thirdLevel.categoryEntryUrl %}
+            <li class="svc-masthead__breadcrumb__item">
+              <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
+            </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
 
-    <button data-toggle="modal" data-target=".inq-modal" type="button" class="svc-masthead__btn">
-      <i class="fa fa-envelope"></i>
-    </button>
+        <!-- <button data-toggle="modal" data-target=".inq-modal" type="button" class="svc-masthead__btn">
+          <i class="fa fa-envelope"></i>
+        </button> -->
+        </div>
+        <!-- end headline and cta -->
+        <div class="col-sm-6">
+          <div class="kc-story-container">
+            <div class="kc-story-item">
+              &#10095;  <small class="kc-tag">Blogs and Insights</small>
+              <h3 class="kc-story__headline">The Gamification of Education</h3>
+            </div>
+            <div class="kc-story-item">
+              &#10095; <small class="kc-tag">Infographics</small>
+              <h3 class="kc-story__headline">The Story behind Education</h3>
+            </div>
+            <div class="kc-story-item">
+              &#10095; <small class="kc-tag">Special Report</small>
+              <h3 class="kc-story__headline">Insights into Education</h3>
+            </div>
+          </div><!-- end kc-story-container -->
+        </div><!-- end col-sm-6 -->
+      </div><!-- end row -->
+    </div><!-- end container -->
 
   </div><!--  content -->
 
