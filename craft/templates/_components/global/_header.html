@@ -1,4 +1,18 @@
+{% set headerCss %}
 
+.site-header {
+  width:100%;
+  position:fixed;
+  top:0px;
+  z-index: 1;
+  border-bottom: 1px solid #EEEBEB;
+  box-shadow: 0 1px 8px #989A9C;
+}`
+
+{% endset %}
+
+
+{% includeCss headerCss %}
 <header class="site-header container-fluid">
 {% include '_components/global/_search' %}
   <div class="row" style="line-height: 70px;">
