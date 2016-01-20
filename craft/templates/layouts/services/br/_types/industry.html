@@ -6,7 +6,9 @@
 {% if entry.solutionRichtext|length %}
   {% include '_components/services/_ztabs' %}
 {% endif %}
+{% if entry.assignmentRichtext|length %}
   {% include '_components/services/assignment-slider' %}
+{% endif %}
 {% include '_components/services/_svc_box_grid' with {'data': entry.experienceRichtext, 'brandColor': BrCore } %}
 {% if entry.tfilterRichtext|length %}
   {% include '_components/services/_table-filter' %}
