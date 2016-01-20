@@ -1,0 +1,5 @@
+{# add this to the top of any template #}
+
+{% for entry in craft.entries.section().limit(null) %}
+    {{ entry.url }}<br>
+{% endfor %}
