@@ -14,13 +14,13 @@ $('.cs-list__item').matchHeight({});
   .cs-list__item {
     position: relative;
     border: 1px solid #3CA7D7;
-    padding: 10px 20px;
+    padding: 12px 20px;
 
   }
 
   .cs-list__title {
     color: #3CA7D7;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 400;
   }
 
@@ -63,9 +63,7 @@ $('.cs-list__item').matchHeight({});
 
           <div class="cs-list__item">
             <h3 class="cs-list__title">{{block.title}}</h3>
-            {% for blk in block.csExcerpt.limit(1) %}
-              <p class="cs-list__excerpt">{{blk.body}}</p>
-            {% endfor %}
+
             <p>
               <a href="{{block.url}}" class="case-studies__link"
               data-toggle="modal" data-target=".modal-{{ loop.index }}">Read More</a>
