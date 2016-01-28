@@ -3,6 +3,11 @@
 
 {% set spSliderCss %}
 
+.spSlider {
+  padding: 50px 0;
+  background: {{ brandPrimary }};
+  color: white;
+}
 
 {% endset %}
 
@@ -21,11 +26,13 @@
 
         <!-- story slider starts here -->
         <div class="col-sm-6">
-          <div class="spSlider__headline"><span>In the spotlight</span>
-          Aircraft Systems</div>
-          <div class="spSlider__intro">Not long after we first caressed Not long after we first caressed Not long after we first caressed Not long after we first caressed
+          <h3 class="spSlider__headline"><span>In the spotlight</h3>
+          <h4 class="spSlider__topic__headline">Aircraft Systems</h4>
+          <div class="spSlider__intro">
+              <p>Not long after we first caressed Not long after we first caressed Not long after we first caressed Not long after we first caressed
+              </p>
           </div>
-          <a class="btn btn-primary">Read More</a>
+          <p><a class="btn btn-primary">Read More</a></p>
         </div>
         <div class="col-sm-6">
           <img class="" src="http://placehold.it/300x150"/>
