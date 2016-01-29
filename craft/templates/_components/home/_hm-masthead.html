@@ -1,0 +1,227 @@
+{% set asset = entry.mastheadBanner.first() %}
+{% set firstLevel = entry.servicesCategory.level(1).first() %}
+{% set secondLevel = entry.servicesCategory.level(2).first() %}
+{% set thirdLevel = entry.servicesCategory.level(3).first() %}
+
+
+{% set svcmastheadCss %}
+  .hm-masthead {
+    position: relative;
+    color: white;
+    background: url({{ asset.url }}) center center;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+
+  .hm-masthead__headline {
+    font-size: 3.3em;
+    text-shadow: 1px 2px 6px #19486F;
+    position: static;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  .hm-masthead__breadcrumb {
+    margin-bottom: 15px;
+  }
+
+  .hm-masthead__breadcrumb__item {
+    margin-bottom: 10px;
+  }
+
+  .hm-masthead__breadcrumb__item > a {
+    font-size: 1em;
+    color: white;
+    position: static;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #b2213d;
+    padding: 4px 35px;
+    box-shadow: 1px 3px 6px #19486F;
+  }
+
+  .hm-masthead__btn {
+    display: inline-block;
+    font-size: 1.2em;
+    letter-spacing: 0.08em;
+  }
+
+  .hm-masthead__btn {
+    background: {{ brandPrimary }};
+    color: white;
+    text-transform: uppercase;
+    padding: 8px 30px;
+    transition: all .6s;
+    border: 1px solid white;
+  }
+
+  .hm-masthead__btn:hover {
+    background-color: #dd4b39;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .hm-masthead__btn:active {
+    margin-top: 1px;
+  }
+
+  .hm-masthead__content {
+    transform: translate(0, 150%);
+  }
+
+
+@media(min-width: {{ screensm }}) {
+
+  .hm-masthead__content {
+    position: static;
+    max-width: 50%;
+    margin: 0 auto;
+    transform: translate(0, 150%);
+    overflow: visible;
+  }
+
+
+{% endset %}
+
+{% includeCss svcmastheadCss %}
+
+
+
+<section class="hm-masthead">
+
+  <!--  content -->
+  <div class="hm-masthead__content text-center">
+
+    <h1 class="hm-masthead__headline">{{ entry.pageHeadline }}</h1>
+    <ul class="hm-masthead__breadcrumb">
+      {% if firstLevel | length %}
+        <li class="hm-masthead__breadcrumb__item">
+          {% for entry in firstLevel.categoryEntryUrl %}
+          <a href="{{ entry.url }}">{{ firstLevel }}</a>
+          {% endfor %}
+        </li>
+      {% endif %}
+
+      {% if secondLevel | length %}
+        {% for entry in secondLevel.categoryEntryUrl %}
+          <li class="hm-masthead__breadcrumb__item">
+            <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      {% if thirdLevel | length %}
+        {% for entry in thirdLevel.categoryEntryUrl %}
+        <li class="hm-masthead__breadcrumb__item">
+          <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
+        </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+
+    <button data-toggle="modal" data-target=".inq-modal" type="button" class="hm-masthead__btn">
+      Learn more About Us
+    </button>
+
+  </div><!--  content -->
+
+</section> <!--  end masthead section -->
+
+<!-- modal -->
+<div id="fsModal"
+     class="modal inq-modal animated zoomIn"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+
+  <!-- dialog -->
+  <div class="modal-dialog">
+
+    <!-- content -->
+    <div class="modal-content">
+
+      <!-- header -->
+      <div class="modal-header">
+        <h1 id="myModalLabel"
+            class="modal-title">
+          Send Enquiry
+        </h1>
+      </div>
+      <!-- header -->
+
+      <!-- body -->
+      <div class="modal-body inq-modal__body">
+
+        <div class="container inq-modal__block">
+          <div class="row">
+            <div class="col-sm-12">
+
+
+
+                <form>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Designation</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+
+              </div>  <!-- end col-sm-6 -->
+
+              <div class="col-sm-6">
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Last Name</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Company</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Phone</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+
+              </div><!-- end: col-6 -->
+
+              <div class="row">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Query</button>
+              </div>
+
+              </form>
+
+            </div><!-- end: col-12 -->
+          </div><!-- end: row -->
+        </div><!-- end: container -->
+
+      </div> <!-- modal-body inq-modal__body -->
+
+      <!-- footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary"
+                data-dismiss="modal">
+          close
+        </button>
+      </div>
+      <!-- footer -->
+
+    </div>
+    <!-- content -->
+
+  </div>
+  <!-- dialog -->
+
+</div>
+<!-- modal -->
