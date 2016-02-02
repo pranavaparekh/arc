@@ -70,7 +70,7 @@ $('.cs-list__item').matchHeight({});
             </p>
             {% include '_components/services/_cs-modal.html'
               with { 'csModalHeadline': block.title, 'modalId': loop.index,
-                     'csModalBody1': block.csBody1, 'csModalBody2': block.csBody2 }
+                     'csModalBody1': block.csBody1, 'csModalBody2': block.csBody2, 'csModalChart': block.csChartImage }
             %}
           </div>
 

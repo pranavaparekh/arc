@@ -1,60 +1,91 @@
- <!-- header -->
-      <div class="modal-header">
-        <h1 id="myModalLabel"
-            class="modal-title">
-          Case Study
-        </h1>
-      </div>
-      <!-- header -->
+ {% set csModalCss %}
+
+.cs-entry__block {
+  padding: 20px 0;
+
+}
+.cs-entry__headmast {
+  margin-top: 60px;
+}
+
+.cs-entry__headmast--headline {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3em;
+    max-width: 80%;
+    margin: 0 auto;
+    color: {{ brandPrimary }};
+}
+
+.cs-modal__blok--headline, .cs-modal__sol--headline {
+  font-weight: 300;
+  color: {{ brandPrimary }};
+}
+
+.cs-entry__blok--headline {
+    color: {{ ttOrange }};
+}
+
+.cs-entry_sol--bk {
+  background: #F3F3F3;
+  padding: 20px 0;
+}
+
+.cs-entry__sol--headline {
+  text-align: center;
+}
+
+.cs-entry__img {
+  margin-top: 30px;
+}
+
+{% endset %}
+
+{% includeCss csModalCss %}
+
+
+
+
 
       <!-- body -->
-      <div class="cs-modal modal-body">
+      <div class="cs-entry modal-body">
         <div class="row">
-          <div class="col-sm-12 cs-modal__headmast">
-            <h3 class="cs-modal__headmast--headline">{{ csModalHeadline }}</h3>
-            <p class="cs-modal__headmast--download"> </p>
+          <div class="col-sm-12 cs-entry__headmast">
+            <h3 class="cs-entry__headmast--headline">{{ entry.csHeadline }}</h3>
+            <p class="cs-entry__headmast--download"> </p>
           </div><!-- end: col-12 -->
         </div><!-- end: row -->
 
 
 
-        <div class="container cs-modal__block">
+        <div class="container cs-entry__block">
           <div class="row">
-            {% if csModalBody1 | length%}
-              {{ csModalBody1 }}
+            {% if entry.csBody1 | length%}
+              {{ entry.csBody1 }}
             {% endif %}
           </div><!-- end: row -->
         </div><!-- end: container -->
 
-        <div class="container-fluid cs-modal_sol--bk">
+        <div class="container-fluid cs-entry_sol--bk">
           <div class="row">
             <div class="container">
             <div class="row">
-              {% if csModalBody2 | length%}
-                {{ csModalBody2 }}
+              {% if entry.csBody2 | length%}
+                {{ entry.csBody2 }}
               {% endif %}
           </div><!-- end: row -->
           </div><!-- end: container -->
           </div><!-- end: row -->
         </div><!-- end: container-fluid -->
 
+        {% set csGraphImg = entry.csChartImage.first() %}
+        {% if csGraphImg | length %}
         <div class="row">
-          <div class="col-sm-12 cs-modal__img">
-            <img src="/assets/images/cs-graph.jpg" alt="" />
+          <div class="col-sm-12 cs-entry__img">
+            <img src={{ csGraphImg.url() }} class="img-responsive" alt="" />
           </div><!-- end: col-12 -->
         </div><!-- end: row -->
+        {% endif %}
 
-
-      </div> <!-- modal-body -->
-
-      <!-- footer -->
-      <div class="modal-footer">
-        <button class="btn btn-secondary"
-                data-dismiss="modal">
-          close
-        </button>
-      </div>
-      <!-- footer -->
-
-    </div>
+      </div> <!-- entry-body -->
     <!-- content -->
