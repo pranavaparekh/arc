@@ -1,3 +1,21 @@
+{% includeCssFile '/assets/css/slick.css' %}
+{% includeJsFile '/assets/js/slick.min.js' %}
+
+{% set kcFeaturedcss %}
+
+
+{% endset %}
+
+{% set kcFeaturedJs %}
+  $('.slides').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      arrows: false,
+      variableWidth: true,
+  });
+{% endset %}
 
 
 {% set featuredBlogId = craft.entries.section('blogs').limit(1).ids() %}
@@ -35,15 +53,17 @@
 
   {% endswitch %}
 
-  {% if featuredBanner | length %}
-      {% set asset = featuredBanner.first() %}
+  <div class="kc-featured--slide">
+    {% if featuredBanner | length %}
+        {% set asset = featuredBanner.first() %}
 
-      {% if asset %}
-          <img src={{ asset.url }} alt={{entry.title}}> <br>
-      {% endif %}
-  {% endif %}
+        {% if asset %}
+            <img src={{ asset.url }} alt={{entry.title}}> <br>
+        {% endif %}
+    {% endif %}
 
-  {{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}<br>
+    <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
+  </div><!-- kc-featured--slide -->
 {% endfor %}
 
 <!-- 2014-12-31 -->
