@@ -1,22 +1,25 @@
 {% includeCssFile '/assets/css/slick.css' %}
 {% includeJsFile '/assets/js/slick.min.js' %}
 
-{% set kcFeaturedcss %}
+{% set kcFeaturedCss %}
 
 
 {% endset %}
 
 {% set kcFeaturedJs %}
   $('.slides').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 1000,
-      arrows: false,
-      variableWidth: true,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    autoplay: true,
+    adaptiveHeight: true
+
   });
 {% endset %}
 
+{% includeJs kcFeaturedJs %}
+{% includeCss kcFeaturedCss %}
 
 {% set featuredBlogId = craft.entries.section('blogs').limit(1).ids() %}
 {% set featuredArticleId = craft.entries.section('articles').limit(1).ids() %}
@@ -30,6 +33,9 @@
     |merge(featuredInfographicId) %}
 
 {% set featuredEntries = craft.entries.id(featuredIds) %}
+
+<p class="kc__label">Special Reports</p>
+<div class="slides">
 
 {% for entry in featuredEntries %}
 
@@ -58,12 +64,13 @@
         {% set asset = featuredBanner.first() %}
 
         {% if asset %}
-            <img src={{ asset.url }} alt={{entry.title}}> <br>
+            <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
         {% endif %}
     {% endif %}
 
     <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
   </div><!-- kc-featured--slide -->
 {% endfor %}
+</div>
 
 <!-- 2014-12-31 -->
