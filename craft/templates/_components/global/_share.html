@@ -1,0 +1,30 @@
+{% includeJsFile '/assets/js/sharer.min.js' %}
+
+{% set SharerCss %}
+
+.sharer__list {
+  padding-right: 3em;
+}
+
+.sharer__list__item {
+  display: inline-block;
+  margin-right: 15px;
+
+}
+
+.sharer__list__item  i {
+  color: #A94442;
+}
+
+
+
+{% endset %}
+
+{% includeCss SharerCss %}
+
+<ul class="sharer__list pull-right">
+  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="twitter" data-title="Checkout Sharer.js!" data-via="ellisonleao" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"><i class="fa fa-twitter"></i></a></li>
+
+  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="facebook" data-title="Checkout Sharer.js!" data-via="ellisonleao" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"><i class="fa fa-facebook"></i></li>
+  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="linkedin" data-title="Checkout Sharer.js!" data-via="ellisonleao" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"><i class="fa fa-linkedin"></i></li>
+</ul>
