@@ -26,14 +26,51 @@
     color: {{ ttPrimary }};
   }
 
+  .sdmenu__children {
+
+  }
+
+  .sdmenu__child__item {
+    padding-left: 2.5em;
+  }
+
+  .toggle {
+    font-weight: bold;
+    font-variant: uppercase;
+  }
+
+  .toggle .show {
+    display: block;
+  }
+
 {% endset %}
 
 
 {% set sliderJs  %}
   $(document).ready(function() {
-  $('.sdmenu').sidr({
-    side: 'right'
-  });
+
+    $('.sdmenu').sidr({
+      side: 'right'
+    });
+
+    $('.sdmenu__children').hide();
+
+    $('.toggle').click(function(e) {
+      e.preventDefault();
+
+      var $this = $(this);
+
+      if ($this.next().hasClass('show')) {
+          $this.next().removeClass('show');
+          $this.next().hide(350);
+      } else {
+          $this.parent().parent().find('li .inner').removeClass('show');
+          $this.parent().parent().find('li .inner').hide(350);
+          $this.next().toggleClass('show');
+          $this.next().toggle(350);
+      }
+    });
+
   });
 {% endset %}
 
@@ -57,7 +94,36 @@
 
 <h3 class="sdmenu__section">Services</h3>
   <ul>
-    <li class="sdmenu__item"><a class="sdmenu__item-link" href="{{siteUrl}}business-research/business-research-advisory-services-overview">Business Research</a></li>
+    <li class="sdmenu__item">
+      <a class="sdmenu__item-link toggle" href="javascript:void(0);">Business Research</a>
+      <ul class="sdmenu__children inner">
+        <li class="sdmenu__child__item"><a href="{{siteUrl}}business-research/business-research-advisory-services-overview">Overview</a></li>
+        <li class="sdmenu__child__item">
+          <a class="toggle" href="javascript:void(0);">Solutions</a>
+            <ul class="inner">
+              <li><a href="/business-research/acquisitions">Acquisitions</a></li>
+              <li><a href="/business-research/diversification">Diverification</a></li>
+              <li><a href="/business-research/international-expansion">International Expansion</a></li>
+            </ul><!-- close solutions -->
+        </li>
+        <li class="sdmenu__child__item">
+        <a class="toggle" href="javascript:void(0);">Industry</a>
+          <ul class="inner">
+            <li><a href="/business-research/aerospace-and-defense">Aerospace and Defense</a></li>
+            <li><a href="/business-research/agro-chemicals">Agro Chemicals</a></li>
+            <li><a href="/business-research/airlines">Airlines</a></li>
+            <li><a href="/business-research/alternate-energy">Alternate Energy</a></li>
+            <li><a href="/business-research/automobiles-parts">Automobiles & Parts</a></li>
+            <li><a href="/business-research/business-support-services">Business Support Services</a></li>
+            <li><a href="/business-research/commercial-banking">Commercial Banking</a></li>
+            <li><a href="/business-research/consumer-finance">Consumer Finance</a></li>
+            <li><a href="/business-research/education">Education</a></li>
+            <li><a href="/business-research/health-insurance">Health Insurance</a></li>
+            <li><a href="/business-research/hotels-and-restaurants">Hotels and Restaurants</a></li>
+          </ul>
+        </li>
+      </ul> <!-- close industry -->
+    </li><!-- close business research -->
     <li class="sdmenu__item"><a class="sdmenu__item-link" href="{{siteUrl}}investment-research/overview">Investment Research</a></li>
     <li class="sdmenu__item"><a class="sdmenu__item-link" href="{{siteUrl}}ip-research/overview">IP Research</a></li>
     <li class="sdmenu__item"><a class="sdmenu__item-link" href="{{siteUrl}}procurement-research/overview">Procurement Research</a></li>
