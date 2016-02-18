@@ -39,7 +39,7 @@
     font-variant: uppercase;
   }
 
-  .toggle .show {
+  .show {
     display: block;
   }
 
@@ -61,13 +61,13 @@
       var $this = $(this);
 
       if ($this.next().hasClass('show')) {
-          $this.next().removeClass('show');
-          $this.next().hide(350);
+          $this.next().removeClass('show', 250);
+          $this.next().slideUp(250);
       } else {
-          $this.parent().parent().find('li .inner').removeClass('show');
-          $this.parent().parent().find('li .inner').hide(350);
-          $this.next().toggleClass('show');
-          $this.next().toggle(350);
+          $this.parent().parent().find('li .inner').removeClass('show', 250);
+          $this.parent().parent().find('li .inner').slideUp(250);
+          $this.next().toggleClass('show', 250);
+          $this.next().slideToggle(250);
       }
     });
 
@@ -108,7 +108,7 @@
         </li>
         <li class="sdmenu__child__item">
         <a class="toggle" href="javascript:void(0);">Industry</a>
-          <ul class="inner">
+          <ul class="sdmenu__children inner">
             <li><a href="/business-research/aerospace-and-defense">Aerospace and Defense</a></li>
             <li><a href="/business-research/agro-chemicals">Agro Chemicals</a></li>
             <li><a href="/business-research/airlines">Airlines</a></li>
