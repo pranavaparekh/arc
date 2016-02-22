@@ -1,0 +1,79 @@
+{% includeCssFile '/assets/css/slick.css' %}
+{% includeJsFile '/assets/js/slick.min.js' %}
+
+{% set kcFeaturedCss %}
+
+.kc__label {
+
+}
+
+{% endset %}
+
+{% set kcFeaturedJs %}
+  $('.slides').slick({
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    autoplay: true,
+    adaptiveHeight: true
+
+  });
+{% endset %}
+
+{% includeJs kcFeaturedJs %}
+{% includeCss kcFeaturedCss %}
+
+{% set featuredBlogId = craft.entries.section('blogs').limit(1).ids() %}
+{% set featuredArticleId = craft.entries.section('articles').limit(1).ids() %}
+{% set featuredSpecialReportId = craft.entries.section('specialReports').limit(1).ids() %}
+{% set featuredInfographicId = craft.entries.section('infographics').limit(1).ids() %}
+
+
+{% set featuredIds = featuredBlogId
+    |merge(featuredArticleId)
+    |merge(featuredSpecialReportId)
+    |merge(featuredInfographicId) %}
+
+{% set featuredEntries = craft.entries.id(featuredIds) %}
+
+<p class="kc__label">Special Reports</p>
+<div class="slides">
+
+{% for entry in featuredEntries %}
+
+  {% switch entry.type %}
+
+  {% case "blogs" %}
+
+    {% set featuredBanner = entry.blogsBanner %}
+
+  {% case "articles" %}
+
+    {% set featuredBanner = entry.articlesBanner %}
+
+  {% case "specialReports" %}
+
+    {% set featuredBanner = entry.srBanner %}
+
+   {% case "infographics" %}
+
+    {% set featuredBanner = entry.igBanner %}
+
+  {% endswitch %}
+
+  <div class="kc-featured--slide">
+    {% if featuredBanner | length %}
+        {% set asset = featuredBanner.first() %}
+
+        {% if asset %}
+            <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
+        {% endif %}
+    {% endif %}
+
+    <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
+  </div><!-- kc-featured--slide -->
+{% endfor %}
+</div>
+
+<!-- 2014-12-31 -->
