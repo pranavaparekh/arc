@@ -1,5 +1,6 @@
 {% set kcHighlightsCss %}
   .featEntry {
+    margin-top: 35px;
     margin-bottom: 35px;
 
   }
@@ -42,8 +43,7 @@
 
 {% endset %}
 
-{% set highlightBlogEntries = craft.entries.section('blogs').limit(2) %}
-{% set highlightArticleEntries = craft.entries.section('articles').limit(2) %}
+{% set highlightBlogEntries = craft.entries.section('blogs').limit(5) %}
 
 {% includeCss kcHighlightsCss %}
 
@@ -51,7 +51,8 @@
   <div class="featEntry">
     <a href={{ entry.url }}>
       <div class="featEntry__inner">
-        <img src="/assets/uploads/media-center/featured1.jpg" alt="" class="img-responsive featEntry__image">
+        {% set blogBanner = entry.blogsBanner.first() %}
+        <img src={{ blogBanner.url() }} alt="" class="img-responsive featEntry__image">
         <div class="featEntry__headline__wrapper">
           <h2 class="featEntry__headline">{{ entry.title }}</h2>
         </div>
@@ -62,20 +63,6 @@
 
 <hr>
 
-{% for entry in highlightArticleEntries %}
-
-  <div class="featEntry">
-    <a href={{ entry.url }}>
-      <div class="featEntry__inner">
-        <img src="/assets/uploads/media-center/featured1.jpg" alt="" class="img-responsive featEntry__image">
-        <div class="featEntry__headline__wrapper">
-          <h2 class="featEntry__headline">{{ entry.title }}</h2>
-        </div>
-      </div><!-- end featEntryInner -->
-    </a>
-  </div><!-- end featEntry -->
-
-{% endfor %}
 
 
 

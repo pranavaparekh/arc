@@ -1,0 +1,59 @@
+
+{% set mcmastheadCss %}
+
+  .kc-masthead__content--headline {
+    font-size: 3.5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    text-shadow: 2px 2px 3px #1A4161;
+  }
+
+  .kc-masthead__content--tagline {
+    font-size: 2em;
+    line-height: 1em;
+    color: white;
+    font-weight: 300;
+    text-shadow: 2px 2px 3px #1A4161;
+  }
+
+  .kc-masthead__border {
+    margin: 5px 0;
+  }
+
+  .kc-masthead {
+    background: url('/assets/images/backgrounds/kc-masthead-bkg.jpg') no-repeat center center {{ brandPrimary }};
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+  .kc-masthead__content {
+    position: absolute;
+    top: 30%;
+    left: 46%;
+  }
+
+
+  @media(min-width: {{ screenmd }}) {
+
+
+  }
+
+{% endset %}
+
+{% includeCss mcmastheadCss %}
+
+<section class="container-fluid kc-masthead">
+  <div class="row">
+    <div class="kc-masthead__content">
+      <h2 class="kc-masthead__content--headline">Knowledge Library </h2>
+      <hr class="kc-masthead__border">
+      <p class="kc-masthead__content--tagline">
+      Articles, Blogs, Special Reports and more</p>
+    </div>
+  </div>
+</section>
