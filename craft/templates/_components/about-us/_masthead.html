@@ -2,15 +2,17 @@
 
 
 {% set abtmastheadCss %}
-  .svc-masthead {
+  .abt-masthead {
     position: relative;
     color: white;
+    {% if asset | length %}
     background: url({{ asset.url }}) center center;
+    {% endif %}
     background-size: cover;
     min-height: 500px;
   }
 
-  .svc-masthead__btn {
+  .abt-masthead__btn {
     height: 60px;
     width: 60px;
     border-radius: 190px;
@@ -20,13 +22,13 @@
     border: 1px solid {{ brandPrimary }};
   }
 
-  .svc-masthead__btn:hover {
+  .abt-masthead__btn:hover {
     background-color: #dd4b39;
     color: white;
     border: 1px solid white;
   }
 
-  .svc-masthead__btn:active {
+  .abt-masthead__btn:active {
     margin-top: 1px;
   }
 
@@ -34,7 +36,7 @@
 
 @media(min-width: {{ screensm }}) {
 
-  .svc-masthead__content {
+  .abt-masthead__content {
     position: static;
     max-width: 50%;
     margin: 0 auto;
@@ -42,7 +44,7 @@
     overflow: visible;
   }
 
-  .svc-masthead__headline {
+  .abt-masthead__headline {
     font-size: 3.5em;
     border-bottom: 1px solid white;
     padding-bottom: 15px;
@@ -53,15 +55,19 @@
     font-weight: 300;
   }
 
-  .svc-masthead__breadcrumb {
+  .abt-masthead__tagline {
+
+  }
+
+  .abt-masthead__breadcrumb {
     margin-bottom: 15px;
   }
 
-  .svc-masthead__breadcrumb__item {
+  .abt-masthead__breadcrumb__item {
     margin-bottom: 10px;
   }
 
-  .svc-masthead__breadcrumb__item > a {
+  .abt-masthead__breadcrumb__item > a {
     font-size: 1.1em;
     color: white;
     position: static;
@@ -72,7 +78,7 @@
     box-shadow: 1px 3px 6px #19486F;
   }
 
-  .svc-masthead__btn {
+  .abt-masthead__btn {
     display: inline-block;
     font-size: 1.5em;
   }
@@ -80,48 +86,19 @@
 
 {% endset %}
 
-{% includeCss abtmasthead %}
+{% includeCss abtmastheadCss %}
 
 
 
-<section class="svc-masthead">
+<section class="abt-masthead">
 
   <!--  content -->
-  <div class="svc-masthead__content text-center">
+  <div class="abt-masthead__content text-center">
 
-    <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
-    <ul class="svc-masthead__breadcrumb">
-      {% if firstLevel | length %}
-        <li class="svc-masthead__breadcrumb__item">
-          {% for entry in firstLevel.categoryEntryUrl %}
-          <a href="{{ entry.url }}">{{ firstLevel }}</a>
-          {% endfor %}
-        </li>
-      {% endif %}
+    <h1 class="abt-masthead__headline">{{ entry.pageHeadline }}</h1>
+    <p class="abt-masthead__tagline">{{ entry.pageSubheadline }}</p>
 
-      {% if secondLevel | length %}
-        {% for entry in secondLevel.categoryEntryUrl %}
-          <li class="svc-masthead__breadcrumb__item">
-            <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
-          </li>
-        {% endfor %}
-      {% endif %}
-
-      {% if thirdLevel | length %}
-        {% for entry in thirdLevel.categoryEntryUrl %}
-        <li class="svc-masthead__breadcrumb__item">
-          <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
-        </li>
-        {% endfor %}
-      {% endif %}
-    </ul>
-
-    <button data-toggle="modal" data-target=".inq-modal" type="button" class="svc-masthead__btn">
-      <i class="fa fa-envelope"></i>
-    </button>
 
   </div><!--  content -->
 
 </section> <!--  end masthead section -->
-
-{% include '_components/global/_inquiry-form-modal' %}
