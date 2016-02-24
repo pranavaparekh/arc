@@ -1,0 +1,34 @@
+{% set kcFeaturedArticlesCss %}
+
+  .feat-articles {
+    margin-top: 40px;
+  }
+
+{% endset %}
+
+{% includeCss kcFeaturedArticlesCss %}
+
+{% set featuredEntries = craft.entries.section('specialreports').limit() %}
+
+<div class="feat-articles">
+
+  <div class="row">
+  {% for entry in featuredEntries %}
+  <a href={{ entry.url }}>
+    <div class="kc-featured--article col-sm-6">
+      {% if not entry.srBanner.first() is empty %}
+        {% set asset = entry.srBanner[0] %}
+        <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
+      {% endif %}
+
+
+      <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
+    </div><!-- kc-featured-article -->
+  </a>
+  {% if loop.index % 2 == 0 %}
+    </div><!-- close row and open it below again -->
+    <div class="row">
+  {% endif %}
+{% endfor %}
+   </div><!-- row -->
+</div><!-- articles -->

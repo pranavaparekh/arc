@@ -1,7 +1,7 @@
 
 {% set mcmastheadCss %}
 
-  .blog-list__masthead__content--headline {
+  .article-list__masthead__content--headline {
     font-size: 3.5em;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -10,7 +10,7 @@
     text-shadow: 2px 2px 3px #1A4161;
   }
 
-  .blog-list__masthead__content--tagline {
+  .article-list__masthead__content--tagline {
     font-size: 2em;
     line-height: 1em;
     color: white;
@@ -18,12 +18,12 @@
     text-shadow: 2px 2px 3px #1A4161;
   }
 
-  .blog-list__masthead__border {
+  .article-list__masthead__border {
     margin: 5px 0;
   }
 
-  .blog-list__masthead {
-    background: url('/assets/images/backgrounds/blogs-bkg.jpg') no-repeat center center {{ brandPrimary }};
+  .article-list__masthead {
+    background: url('/assets/images/backgrounds/articles-bkg.jpg') no-repeat center center {{ brandPrimary }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -31,7 +31,7 @@
     min-height: 500px;
   }
 
-  .blog-list__masthead__content {
+  .article-list__masthead__content {
     position: absolute;
     top: 30%;
     left: 46%;
@@ -47,13 +47,13 @@
 
 {% includeCss mcmastheadCss %}
 
-<section class="container-fluid blog-list__masthead">
+<section class="container-fluid article-list__masthead">
   <div class="row">
-    <div class="blog-list__masthead__content">
-      <h2 class="blog-list__masthead__content--headline">Blogs and Opinions</h2>
-      <hr class="blog-list__masthead__border">
-      <p class="blog-list__masthead__content--tagline">
-      Opinions and Insights from the Experts</p>
+    <div class="article-list__masthead__content">
+      <h2 class="article-list__masthead__content--headline">Articles</h2>
+      <hr class="article-list__masthead__border">
+      <p class="article-list__masthead__content--tagline">
+      Deep Insights from the Experts</p>
     </div>
   </div>
 </section>
