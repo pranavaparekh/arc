@@ -3,9 +3,16 @@
 
 {% set kcFeaturedCss %}
 
-.kc__label {
-
+.kc-featured--slide {
+  margin-top: 20px;
 }
+
+.kc-featured--article {
+  position: relative;
+  overflow: hidden;
+}
+
+
 
 {% endset %}
 
@@ -27,8 +34,8 @@
 
 {% set featuredEntries = craft.entries.section('specialReports').limit(3) %}
 
-<p class="kc__label">Special Reports</p>
-<div class="slides">
+<span class="kc-label--teal">Special Reports</span>
+<div class="slides kc-slider">
 
 {% for entry in featuredEntries %}
 
@@ -41,8 +48,10 @@
         {% endif %}
 
 
-    <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
-  </div><!-- kc-featured--slide -->
+    <div class="featEntry__headline__wrapper">
+      <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
+    </div>
+  </div><!-- kc-featured-slide -->
 {% endfor %}
 </div>
 

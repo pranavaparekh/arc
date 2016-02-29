@@ -1,7 +1,7 @@
 {% set kcHighlightsCss %}
   .featEntry {
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
   }
 
@@ -46,7 +46,7 @@
 {% set highlightBlogEntries = craft.entries.section('blogs').limit(5) %}
 
 {% includeCss kcHighlightsCss %}
-
+  <span class="kc-label">Blogs and Opinions</span>
 {% for entry in highlightBlogEntries %}
   <div class="featEntry">
     <a href={{ entry.url }}>

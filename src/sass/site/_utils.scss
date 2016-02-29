@@ -73,8 +73,6 @@
 }
 
 
-
-
 .mc-main {
     margin-top: 40px;
 }
@@ -86,3 +84,48 @@
 .row-break {
   margin-bottom: 20px;
 }
+
+// Knowledge Library styles
+.kc-label, .kc-label--teal {
+  text-transform: uppercase;
+  background: #E26958;
+  padding: 5px;
+  font-size: 0.8em;
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+.kc-label--teal {
+  background: #6EBDB9;
+}
+
+.kc-featured--article {
+  position: relative;
+}
+
+.feat-articles {
+    margin-top: 20px;
+}
+
+.kc-featured--article {
+  margin-bottom: 20px;
+}
+
+.featEntry__headline__wrapper, .featEntry__headline__wrapper--short  {
+    position: absolute;
+    bottom: 0;
+    padding: 3px 12px;
+    background: black;
+    opacity: 0.75;
+    filter: alpha(opacity=80);
+    color: white;
+    width: 100%;
+}
+
+  .featEntry__headline__wrapper--short {
+    width: 90.8%;
+  }
+
+  .kc-featured--caption {
+    margin-top: 5px;
+  }

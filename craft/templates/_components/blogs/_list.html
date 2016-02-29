@@ -1,30 +1,29 @@
 {% set kcFeaturedArticlesCss %}
 
-  .feat-articles {
-    margin-top: 40px;
-  }
 
 {% endset %}
 
 {% includeCss kcFeaturedArticlesCss %}
 
-{% set featuredEntries = craft.entries.section('blogs').limit() %}
-
+{% set featuredEntries = craft.entries.section('blogs').offset(5).limit() %}
+<span class="kc-label--teal">All Blog Posts</span>
 <div class="feat-articles">
 
   <div class="row">
+
   {% for entry in featuredEntries %}
   <a href={{ entry.url }}>
     <div class="kc-featured--article col-sm-6">
 
-          {% set asset = entry.blogsBanner[0] %}
+      {% set asset = entry.blogsBanner[0] %}
 
-          {% if asset %}
-              <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
-          {% endif %}
+      {% if asset %}
+          <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}>
+      {% endif %}
 
-
-      <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
+      <div class="featEntry__headline__wrapper--short">
+        <p class="kc-featured--slide__meta">{{ entry.title }}</p>
+      </div>
     </div><!-- kc-featured-article -->
   </a>
   {% if loop.index % 2 == 0 %}

@@ -4,6 +4,11 @@
     margin-top: 40px;
   }
 
+  .kc-featured--infographic {
+    position: relative;
+    margin-top: 20px;
+  }
+
   .feat-igraphics__headline {
 
   }
@@ -16,17 +21,18 @@
 
 <div class="feat-igraphics">
   <div class="row">
-    <h2 class="feat-igraphics__headline">Infographics</h2>
+    <span class="kc-label">Infographics</span>
   {% for entry in featuredEntries %}
   <a href={{ entry.url }}>
-    <div class="kc-featured--article col-sm-12">
+    <div class="kc-featured--infographic col-sm-12">
     {% if entry.igBanner[1] | length %}
       {% set asset = entry.igBanner[1] %}
       <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
     {% endif %}
-
-      <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
-    </div><!-- kc-featured-article -->
+    <div class="featEntry__headline__wrapper--short" style="width: 96%;">
+      <p class="kc-featured--slide__meta">{{ entry.title }}</p>
+    </div>
+    </div><!-- kc-featured-infographic -->
   </a>
   {% if loop.index % 2 == 0 %}
     </div><!-- close row and open it below again -->
