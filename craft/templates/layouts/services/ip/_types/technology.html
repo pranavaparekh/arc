@@ -5,6 +5,9 @@
 {% if entry.tfilterRichtext|length %}
   {% include '_components/services/_assignment-tab' %}
 {% endif %}
+{% if entry.solutionRichtext|length %}
+  {% include '_components/services/_ztabs' %}
+{% endif %}
 {% include '_components/services/_full-cta-a' %}
 {% include '_components/services/_kc-content' %}
 {% include '_components/global/_footer' %}
