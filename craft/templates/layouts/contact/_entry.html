@@ -1,1 +1,28 @@
-<h1>Contact Us</h1>
+{% extends "base_layouts/_site" %}
+{% set title = entry.title %}
+
+{% block main %}
+{% include '_components/global/_header' %}
+{% include '_components/contact/_masthead' %}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-8">
+      {% include '_components/contact/_form' %}
+      {% include '_components/contact/_social' %}
+      {% include '_components/contact/_media' %}
+    </div>
+
+    <div class="col-sm-4">
+      {% include '_components/contact/_locations' %}
+    </div>
+
+  </div>
+</div>
+
+{% include '_components/global/_footer' %}
+
+{% endblock %}
+
+
