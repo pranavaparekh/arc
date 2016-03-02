@@ -1,0 +1,43 @@
+{% set profileCss %}
+  .profile {
+    padding-top: 120px;
+    padding-bottom: 30px;
+    background: aliceblue;
+  }
+
+  .team-member img {
+    margin: 0 auto;
+    border: 7px solid white;
+    width: 65%;
+  }
+
+  .team-member {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+  }
+
+  .team-member p {
+    margin-top: 0;
+  }
+
+  .profile__content p {
+    font-size: 1.2em;
+    color: #5C5555;
+  }
+
+{% endset %}
+
+{% includeCss profileCss %}
+
+<div class="profile container-fluid">
+  <div class="row">
+    {{ entry.body }}
+  </div><!-- end row -->
+</div>
+
