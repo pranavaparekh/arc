@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   display: none;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(54, 144, 240, 0.94);
 }
 
 /* CONTENT WRAPPER
@@ -477,7 +477,7 @@
     }
 
     jQuery("#nav8").FSNav({
-      animation: "none"
+      animation: "zoom"
     });
 
 
@@ -495,12 +495,46 @@
   <span class="full-screen-nav-close"></span>
   <div class="full-screen-nav-content">
     <div class="full-screen-nav-general">
-      <p>Access your files</p>
-      <form class="form-example" method="get">
-        <input type="text" class="form-control input-lg" id="email" placeholder="E-mail">
-        <input type="password" class="form-control input-lg" id="pass" placeholder="Password">
-        <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
-      </form>
+
+      <!-- start form here -->
+  <form action="http://connect.aranca.com/acton/eform/17562/0017/d-ext-0001" id="contact-us">
+
+      <h2>Send us your inquiry</h2>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <input type="hidden" name="_ipaddr" >
+          <input type="hidden" name="ao_refurl" >
+          <label for="">What's Your Query?</label>
+          <textarea rows="20" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements"></textarea><br>
+        </div><!--  end col-sm-12 -->
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Your Name</label>
+            <input type="text" name="name" class="form-control" id="firstname" placeholder="Your full name">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Your Email</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Valid Work Email only">
+          </div>
+        </div>  <!-- end col-sm-6 -->
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <input type="hidden" name="_ipaddr" >
+          <input type="hidden" name="ao_refurl" >
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Query</button>
+        </div><!--  end col-sm-12 -->
+      </div>
+    </form>
+
+
     </div>
   </div>
 </div>

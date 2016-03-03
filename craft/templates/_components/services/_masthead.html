@@ -84,13 +84,16 @@
 {% endset %}
 
 {% set svcmastheadJs %}
-  ;(function ( $, window, document, undefined ) {
+  (function ( $, window, document, undefined ) {
     $("#show-nav").click(function(){
-      $("#full-screen-nav").data("FSNav").showNav();
+      console.log('show modal');
+      $("#nav8").data("FSNav").showNav();
     });
-  }( jQuery, window, document );
+  }( jQuery, window, document ));
 {% endset %}
+
 {% includeCss svcmastheadCss %}
+{% includeJs svcmastheadJs %}
 
 
 
