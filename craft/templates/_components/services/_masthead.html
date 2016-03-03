@@ -83,6 +83,13 @@
 
 {% endset %}
 
+{% set svcmastheadJs %}
+  ;(function ( $, window, document, undefined ) {
+    $("#show-nav").click(function(){
+      $("#full-screen-nav").data("FSNav").showNav();
+    });
+  }( jQuery, window, document );
+{% endset %}
 {% includeCss svcmastheadCss %}
 
 
@@ -119,7 +126,7 @@
       {% endif %}
     </ul>
 
-    <button type="button" class="svc-masthead__btn">
+    <button id="show-nav" type="button" class="svc-masthead__btn">
       <i class="fa fa-envelope"></i>
     </button>
 
