@@ -2,7 +2,14 @@
 
 {% set csListJs %}
 
-$('.cs-list__item').matchHeight({});
+(function ( $, window, document, undefined ) {
+    $('.cs-list__item').matchHeight({});
+
+    $(".case-studies__link").click(function(){
+      console.log('show modal');
+      $("#cs-modal").data("FSNav").showNav();
+    });
+  }( jQuery, window, document ));
 
 {% endset %}
 
