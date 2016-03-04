@@ -6,6 +6,9 @@
   .ztab-b {
     padding: 60px 0;
     background-color: #E4F3FA;
+    {% if bkColor is defined  %}
+      background-color: {{bkColor}};
+    {% endif %}
   }
 
    .ztab-b::after {
