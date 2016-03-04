@@ -80,8 +80,18 @@
 
 {% endset %}
 
-{% includeCss fullCtaACSS %}
+{% set fullCtaAJs %}
+  (function ( $, window, document, undefined ) {
+    $(".call-to-action").click(function(e){
+      e.preventDefault();
+      console.log('show modal');
+      $("#nav8").data("FSNav").showNav();
+    });
+  }( jQuery, window, document ));
+{% endset %}
 
+{% includeCss fullCtaACSS %}
+{% includeJs fullCtaAJs %}
 <section class="container-fluid full-cta-a">
   <div class="row">
     <div class="container">
@@ -90,7 +100,7 @@
           <div class="full-cta-a__content">
             <h3 class="full-cta-a__headline text-center">{{ callText }}</h3>
             <p class="text-center">
-            <button data-toggle="modal" data-target=".inq-modal" type="button" class="call-to-action">
+            <button type="button" class="call-to-action">
               <i class="fa fa-envelope"></i>  Write To Us
             </button>
             </p>
@@ -100,3 +110,5 @@
     </div>
   </div>
 </section>
+
+{% include '_components/global/_inquiry-form-modal' %}

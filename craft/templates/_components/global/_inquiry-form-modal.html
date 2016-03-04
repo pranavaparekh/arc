@@ -16,7 +16,8 @@
   top: 0;
   left: 0;
   display: none;
-  background-color: rgba(54, 144, 240, 0.94);
+  background-color: #1C4587;
+  opacity: 0.94;
 }
 
 /* CONTENT WRAPPER
@@ -380,6 +381,10 @@
     top: 0;
   }
 }
+
+.btn-blue {
+  background: #7DA9F0;
+}
 {% endset %}
 
 {% set FSNavJs %}
@@ -499,13 +504,13 @@
       <!-- start form here -->
   <form action="http://connect.aranca.com/acton/eform/17562/0017/d-ext-0001" id="contact-us">
 
-      <h2>Send us your inquiry</h2>
+      <h2>Send Your Inquiry</h2>
 
       <div class="row">
         <div class="col-sm-12">
           <input type="hidden" name="_ipaddr" >
           <input type="hidden" name="ao_refurl" >
-          <textarea rows="20" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements"></textarea><br>
+          <textarea rows="15" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements"></textarea><br>
         </div><!--  end col-sm-12 -->
       </div>
 
@@ -526,9 +531,16 @@
 
       <div class="row">
         <div class="col-sm-12">
+          <label for="exampleInputEmail1">Your Phone Number</label>
+          <input type="tel" name="phone" class="form-control" id="email" placeholder="Where can we reach you?">
+        </div><!--  end col-sm-12 -->
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-12">
           <input type="hidden" name="_ipaddr" >
           <input type="hidden" name="ao_refurl" >
-          <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Query</button>
+          <button type="submit" class="btn btn-blue btn-block btn-lg">Send Your Inquiry</button>
         </div><!--  end col-sm-12 -->
       </div>
     </form>
