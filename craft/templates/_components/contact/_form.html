@@ -36,21 +36,29 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
       <div class="form-group">
         <label for="exampleInputEmail1">Your Organization</label>
         <input type="text" name="organization" class="form-control" id="firstname" placeholder="Your Organization name">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+          <label for="exampleInputEmail1">Your Phone Number</label>
+          <input type="tel" name="phone" class="form-control" id="email" placeholder="Where can we reach you?">
       </div>
     </div>
   </div>  <!-- end col-sm-6 -->
 
   <div class="row">
     <div class="col-sm-12">
-      <input type="hidden" name="_ipaddr" >
-      <input type="hidden" name="ao_refurl" >
-      <label for="">What's Your Query?</label>
-      <textarea name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements"></textarea><br>
-      <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Query</button>
+      <div class="form-group">
+        <input type="hidden" name="_ipaddr" >
+        <input type="hidden" name="ao_refurl" >
+        <label for="">Send Us Your Inquiry</label>
+        <textarea rows="10" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements"></textarea><br>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Inquiry</button>
+      </div>
     </div><!--  end col-sm-12 -->
   </div>
 </form>

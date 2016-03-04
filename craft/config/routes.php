@@ -27,7 +27,7 @@ return array(
    'knowledge-library' => 'layouts/kc/index',
    'knowledge-library/blogs' => 'layouts/blogs/index',
    'knowledge-library/infographics' => 'layouts/articles/index',
-   'knowledge-library/articles-and-opinions' => 'layouts/articles/index',
+   'knowledge-library/articles' => 'layouts/articles/index',
    'knowledge-library/special-reports' => 'layouts/special-reports/index',
    'knowledge-library/videos' => 'layouts/kc/index',
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/practices/(?P<category>\w+\-?\w+?)' => 'layouts/kc/_category',
