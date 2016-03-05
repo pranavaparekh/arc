@@ -194,11 +194,11 @@
 }
 .slick-prev:before
 {
-    content: 'â†';
+    content: '<<';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: 'â†’';
+    content: '<<’';
 }
 
 .slick-next
@@ -212,12 +212,12 @@
 }
 .slick-next:before
 {
-    content: "\f061";
+    content: ">>";
 }
 
 [dir='rtl'] .slick-next:before
 {
-    content: 'â†';
+    content: '>>';
 }
 
 {% endset %}
@@ -227,7 +227,7 @@
 $(document).ready(function(){
   $('.asx-slider__box').slick({
     arrows: true,
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 300,
     adaptiveHeight: true
