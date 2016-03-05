@@ -11,17 +11,18 @@
     {% endif %}
   }
 
+{% if bottomArrow is defined %}
    .ztab-b::after {
-    width: 0;
-    height: 0;
-    border-left: 35px solid transparent;
-    border-right: 35px solid transparent;
-    border-bottom: 35px solid #2E6596;
-    position: relative;
-    left: 47.3%;
-    bottom: -66px;
-    z-index: 4;
+      width: 0;
+      height: 0;
+      border-left: 35px solid transparent;
+      border-right: 35px solid transparent;
+      border-top: 35px solid {{arrowColor}};
+      position: relative;
+      left: 47.3%;
+      bottom: -90px;
   }
+{% endif %}
 
   .ztabs-b__headline {
     font-size: 2em;
@@ -48,42 +49,6 @@
     line-height: 2.5em;
     padding-left: 10px;
   }
-
-
-  .up-arrow-blok {
-    background-color:  {{ bgBlue }};
-    color: {{ ttPrimary }};
-    padding-top: 1.5em;
-    padding-bottom:2.5em;
-  }
-  .up-arrow-blok__icon {
-    padding-top: 20px;
-    padding-bottom:20px;
-    text-align: center;
-  }
-  .up-arrow-blok__headline {
-    color: {{ ttPrimary }};
-  }
-  .up-arrow-blok__list {
-    padding-top: 2.5em;
-
-  }
-
-  .up-arrow-blok__list__item {
-    font-size: 1.3em;
-    line-height: 3.0em;
-    color: {{ ttPrimary  }};
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    padding-bottom: 0.5em;
-    font-weight: 300;
-  }
-  .white {
-    color:#ffffff;
-  }
-
-
-
 
 {% endset %}
 
@@ -124,38 +89,6 @@
   </div> <!-- end row -->
 </section><!-- end ztab-bs-b -->
 
-  <section class="container-fluid up-arrow-blok">
-    <div class="row">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="up-arrow-blok__icon"><!-- <img src="/assets/uploads/icons/services/trusted-white.png" alt="cap-block-icon1" /> --></div>
-            <div class="lede__headline text-center up-arrow-blok__headline">Frameworks and Case Studies</div>
-            <div class="lede__subheadline text-center white">Learn more about our approach to solving critical sourcing questions</div>
-<hr class="lede__border" style="border: 1px solid #fff;">
 
-            <ul class="up-arrow-blok__list">
-              <div class="col-sm-4 col-sm-offset-1">
-              <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/flexibility-white.png" class="" alt="cap-block-icon1"> -->  Category@360 Diagnosis</li>
-
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/cost-effective-white.png" class="" alt="cap-block-icon1"> -->  Should-Cost Modelling</li>
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/exp-va-analysts-white.png" class="" alt="cap-block-icon1"> -->  Category Landscape Reports</li>
-              </div>
-              <div class="col-sm-3">
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/cap-white.png" class="" alt="cap-block-icon1"> -->  Price Forecasting</li>
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/focus-insight-white.png" class="" alt="cap-block-icon1"> -->  Supplier Risk Analysis</li>
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/pe-firms-white.png" class="" alt="cap-block-icon1"> -->  Category Dashboard</li>
-              </div>
-              <div class="col-sm-4">
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/global-footprint-white.png" class="" alt="cap-block-icon1"> -->  Best-Cost Country Sourcing</li>
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/32x32-22-white.png" class="" alt="cap-block-icon1"> -->  Supply Chain Risk Assessment</li>
-                <li class="up-arrow-blok__list__item"><!-- <img src="/assets/uploads/icons/services/advisors-white.png" class="" alt="cap-block-icon1"> -->  RFx Support for Supplier Assessment</li>
-              </div>
-            </ul>
-          </div> <!-- col-sm-12 -->
-        </div> <!-- end row  -->
-      </div><!-- end container -->
-    </div> <!-- end row  -->
-  </section><!-- end section -->
 
 
