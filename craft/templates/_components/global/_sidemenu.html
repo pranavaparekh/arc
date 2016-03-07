@@ -46,11 +46,15 @@
 {% endset %}
 
 
-{% set sliderJs  %}
+{% set sidrJs  %}
   $(document).ready(function() {
 
     $('.sdmenu').sidr({
       side: 'right'
+    });
+
+    $('#sidr').on("click",function(e) {
+        e.stopPropagation();
     });
 
     $('.sdmenu__children').hide();
@@ -71,19 +75,21 @@
       }
     });
 
+    $("body").on("click",function(e) {
+        $.sidr('close');
+    });
+
+
   });
 {% endset %}
 
 {% includeCss sdmenuCss %}
-{% includeJs sliderJs %}
+{% includeJs sidrJs %}
 
 <a class="sdmenu fa fa-align-justify" href="#sidr"></a>
 
 <nav id="sidr">
   <!-- Menu content -->
-  <img src="" alt="">
-
-
 
 <h3 class="sdmenu__section">Services</h3>
   <ul>
