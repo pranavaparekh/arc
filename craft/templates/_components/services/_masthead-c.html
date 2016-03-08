@@ -1,0 +1,140 @@
+{% set asset = entry.mastheadBanner.first() %}
+{% set firstLevel = entry.servicesCategory.level(1).first() %}
+{% set secondLevel = entry.servicesCategory.level(2).first() %}
+{% set thirdLevel = entry.servicesCategory.level(3).first() %}
+
+
+{% set svcmastheadCss %}
+  .svc-masthead {
+    position: relative;
+    color: white;
+    background: url({{ asset.url }}) center center;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+  .svc-masthead__btn {
+    height: 60px;
+    width: 60px;
+    border-radius: 190px;
+    background: white;
+    color: {{ brandPrimary }};
+    transition: all .6s;
+    border: 1px solid {{ brandPrimary }};
+  }
+
+  .svc-masthead__btn:hover {
+    background-color: #dd4b39;
+    color: white;
+    border: 1px solid white;
+  }
+
+  .svc-masthead__btn:active {
+    margin-top: 1px;
+  }
+
+
+
+@media(min-width: {{ screensm }}) {
+
+  .svc-masthead__content {
+    position: static;
+    max-width: 50%;
+    margin: 0 auto;
+    transform: translate(0, 80%);
+    overflow: visible;
+  }
+
+  .svc-masthead__headline {
+    font-size: 3.5em;
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    text-shadow: 1px 2px 6px #19486F;
+    position: static;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-weight: 300;
+  }
+
+  .svc-masthead__breadcrumb {
+    margin-bottom: 15px;
+  }
+
+  .svc-masthead__breadcrumb__item {
+    margin-bottom: 10px;
+  }
+
+  .svc-masthead__breadcrumb__item > a {
+    font-size: 1.1em;
+    color: white;
+    position: static;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #b2213d;
+    padding: 4px 35px;
+    box-shadow: 1px 3px 6px #19486F;
+  }
+
+  .svc-masthead__btn {
+    display: inline-block;
+    font-size: 1.5em;
+  }
+}
+
+{% endset %}
+
+{% set svcmastheadJs %}
+  (function ( $, window, document, undefined ) {
+    $("#show-nav").click(function(){
+      console.log('show modal');
+      $("#nav8").data("FSNav").showNav();
+    });
+  }( jQuery, window, document ));
+{% endset %}
+
+{% includeCss svcmastheadCss %}
+{% includeJs svcmastheadJs %}
+
+
+
+<section class="svc-masthead">
+
+  <!--  content -->
+  <div class="svc-masthead__content text-center">
+
+    <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+    <ul class="svc-masthead__breadcrumb">
+      {% if firstLevel | length %}
+        <li class="svc-masthead__breadcrumb__item">
+          {% for entry in firstLevel.categoryEntryUrl %}
+          <a href="{{ entry.url }}">{{ firstLevel }}</a>
+          {% endfor %}
+        </li>
+      {% endif %}
+
+      {% if secondLevel | length %}
+        {% for entry in secondLevel.categoryEntryUrl %}
+          <li class="svc-masthead__breadcrumb__item">
+            <a href="{{ entry.url }}">>> {{ secondLevel }}</a>
+          </li>
+        {% endfor %}
+      {% endif %}
+
+      {% if thirdLevel | length %}
+        {% for entry in thirdLevel.categoryEntryUrl %}
+        <li class="svc-masthead__breadcrumb__item">
+          <a href="{{ entry.url }}" >> {{ thirdLevel }}</a>
+        </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+
+    <button id="show-nav" type="button" class="svc-masthead__btn">
+      <i class="fa fa-envelope"></i>
+    </button>
+
+  </div><!--  content -->
+
+</section> <!--  end masthead section -->
+
+{% include '_components/global/_inquiry-form-modal' %}
