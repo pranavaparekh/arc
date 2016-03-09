@@ -1,0 +1,27 @@
+{% extends "base_layouts/_site" %}
+{% set title = 'Search Results' %}
+
+{% block main %}
+{% set query = craft.request.getParam('q') %}
+{% set entries = craft.entries.search(query).order('score') %}
+
+<h1>Search Results for {{ query }}</h1>
+
+{% if entries|length %}
+    <p>{{ entries|length }} results for {{ query }}:</p>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Your search for “{{ query }}” didn’t return any results.</p>
+{% endif %}
+
+{% endblock %}
+
+
+
+
+

@@ -35,4 +35,6 @@ return array(
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/authors/(?P<author>\w+\-?\w+?)' => 'layouts/kc/_author',
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/archives/(?P<year>\d{4})-(?P<month>\d{2})' => 'layouts/kc/_archive',
 
+   'search/results' => 'layouts/search/results',
+
 );

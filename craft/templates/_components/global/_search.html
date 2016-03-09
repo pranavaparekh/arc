@@ -1,3 +1,5 @@
+
+
 {% set expandSearchJs %}
 
 (function($, window, undefined){
@@ -12,15 +14,16 @@
 
 {% endset %}
 
+
 {% includeCssFile '/assets/css/expandsearch.css' %}
 {% includeJs expandSearchJs %}
 
 
 <div class="search-bar">
   <div class="search-form-wrapper">
-    <form role="search" method="get" class="search-form" action="http://www.dtelepathy.com/blog/" id="search-form">
+    <form role="search" method="get" class="search-form" action="{{ url('search/results') }}" id="search-form">
     <button class="fa fa-search icon-search"></button>
-    <input type="text" autocomplete="off" placeholder="Search our library" value="" class="search-input" name="s" id="s">
+    <input type="text" autocomplete="off" placeholder="Search our library" value="" class="search-input" name="q" id="s" style="width: 90%;">
   </form>
   </div>
 </div>

@@ -1,4 +1,14 @@
 
+/* style search input form */
+
+input#s {
+  font-size: 1.3em;
+}
+
+input#s:focus {
+  outline: none;
+}
+
 .lede__headline {
   font-size: 30px;
   color: #59656B;
