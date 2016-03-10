@@ -1,3 +1,5 @@
+{% includeJsFile '/assets/js/bs-validator.js' %}
+
 {% set ctFormCss %}
 
 .ct__form__content {
@@ -14,7 +16,7 @@
 {% includeCss ctFormCss %}
 
 <h1 class="ct__headline">Email Us</h1>
-<form action="http://connect.aranca.com/acton/eform/17562/0017/d-ext-0001" id="contact-us">
+<form data-toggle="validator" action="http://connect.aranca.com/acton/eform/17562/001c/d-ext-0001" id="contact-us">
 
   <p class="ct__form__content">A consultant from our business team will personally assess your inquiry and get back to you within 24 hours after you fill out this form.</p>
 
@@ -23,29 +25,41 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="exampleInputEmail1">Your Name</label>
-        <input type="text" name="name" class="form-control" id="firstname" placeholder="Your full name">
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Your first name" required>
+        <div class="help-block with-errors"></div>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="exampleInputEmail1">Your Email</label>
-        <input type="email" name="email" class="form-control" id="email" placeholder="Valid Work Email only">
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Your last name" required>
+        <div class="help-block with-errors"></div>
       </div>
     </div>  <!-- end col-sm-6 -->
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+       <div class="form-group">
+          <label for="exampleInputEmail1">Your Email</label>
+          <input type="email" name="email" class="form-control" id="email" placeholder="Valid Work Email only" pattern="^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$" required>
+          <div class="help-block with-errors"></div>
+        </div>
+    </div>
   </div>
 
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
         <label for="exampleInputEmail1">Your Organization</label>
-        <input type="text" name="organization" class="form-control" id="firstname" placeholder="Your Organization name">
+        <input type="text" name="company" class="form-control" id="company" placeholder="Your Organization name">
       </div>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
           <label for="exampleInputEmail1">Your Phone Number</label>
-          <input type="tel" name="phone" class="form-control" id="email" placeholder="Where can we reach you?">
+          <input type="tel" name="tel" class="form-control" id="tel" placeholder="Where can we reach you?">
       </div>
     </div>
   </div>  <!-- end col-sm-6 -->
