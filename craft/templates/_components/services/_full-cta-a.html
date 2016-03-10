@@ -81,11 +81,12 @@
 {% endset %}
 
 {% set fullCtaAJs %}
+
   (function ( $, window, document, undefined ) {
     $(".call-to-action").click(function(e){
       e.preventDefault();
       console.log('show modal');
-      $("#nav8").data("FSNav").showNav();
+      $("#nav9").data("FSNav").showNav();
     });
   }( jQuery, window, document ));
 {% endset %}
@@ -111,4 +112,4 @@
   </div>
 </section>
 
-{% include '_components/global/_inquiry-form-modal' %}
+{% include '_components/global/_cta-form' with { 'formtype': 'cta' } %}

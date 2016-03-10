@@ -487,14 +487,14 @@
         });
     }
 
-    jQuery("#nav8").FSNav({
+    jQuery("#nav9").FSNav({
       animation: "dropdown",
       onShow: function(e) {
-        $('#{{formtype}}').validator();
+        $('#{{formtype}}-form').validator();
         $('#btnsubmit').addClass("disabled");
       },
       onHide: function(e) {
-        $('#{{formtype}}').validator('destroy')
+        $('#{{formtype}}-form').validator('destroy')
       }
     });
 
@@ -510,7 +510,7 @@
 {% includeJsFile '/assets/js/bs-validator.js' %}
 
 <!-- modal -->
-<div id="nav8" class="full-screen-nav">
+<div id="nav9" class="full-screen-nav">
   <span class="full-screen-nav-close"></span>
   <div class="full-screen-nav-content">
     <div class="full-screen-nav-general">
