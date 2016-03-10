@@ -1,6 +1,9 @@
 {% set statsblokCSS %}
   .stats-blok {
-    padding: 60px 0;
+    padding-bottom: 40px;
+    {% if bkcolor is defined %}
+      background-color: {{ bkcolor }} ;
+    {% endif %}
   }
 
   .stats-blok__headline--main {

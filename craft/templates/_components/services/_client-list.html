@@ -3,16 +3,26 @@
 
 {% set svcClientListCss %}
   .cl-list {
-    padding: 20px 0;
+    padding: 20px 0 20px 0;
     box-shadow: 0 -3px 6px #e3e3e3;
   }
 
   .cl-list__slider {
-    /*margin-top: 30px;*/
+
+    {% if padding is defined %}
+      padding: {{padding}}
+    {% endif %}
+  }
+
+  .cl-list__slider__item {
+     padding-right:30px;
   }
 
   .cl-list__subheadline {
     font-size: 1.2em;
+  }
+  .lede__headline {
+  padding-top: 40px;
   }
 
 {% endset %}
@@ -37,8 +47,8 @@
       <div class="row">
           {% for block in entry.clientListIntro %}
           <h2 class="lede__headline text-center">{{ block.headline }}</h2>
+          <p class="lede__subheadline text-center">{{ block.subHeadline}}</p>
           <hr class="lede__border">
-          <!-- <p class="lede__subheadline text-center">{{ block.subHeadline}}</p> -->
           {% endfor %}
 
           {% if entry.clientLogoList | length %}

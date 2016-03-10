@@ -103,9 +103,14 @@
 {% endset %}
 
 {% set csListCss %}
-  .cs-list {
-    padding: 30px 0;
+  .cs-list, .cs-list--intro {
+    padding: 20px 0;
+    {% if bkcolor is defined %}
+      background-color: {{ bkcolor }};
+    {% endif %}
   }
+
+
 
   .cs-list__item {
     position: relative;
