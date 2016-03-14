@@ -1,7 +1,7 @@
 {% set kcFeaturedArticlesCss %}
 
   .feat-articles {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
 {% endset %}
@@ -9,7 +9,7 @@
 {% includeCss kcFeaturedArticlesCss %}
 
 {% set featuredEntries = craft.entries.section('articles').limit() %}
-
+<span class="kc-label--teal">All Articles</span>
 <div class="feat-articles">
 
   <div class="row">
@@ -21,8 +21,9 @@
         <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
       {% endif %}
 
-
-      <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
+      <div class="featEntry__headline__wrapper--short">
+        <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
+      </div>
     </div><!-- kc-featured-article -->
   </a>
   {% if loop.index % 2 == 0 %}

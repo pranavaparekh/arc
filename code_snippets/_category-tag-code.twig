@@ -1,0 +1,7 @@
+Published under <a href="{{ siteUrl}}{{craft.request.firstSegment}}/{{ craft.request.getSegment(2) }}/{{ "practices" }}/{{ category.slug}}">{{ category.title }}</a>
+  </p>
+  <p>
+    {% for tag in craft.tags.relatedTo(entry) %}
+      <a href="{{ tag.slug }}">{{ tag }}</a>
+    {% endfor %}
+  </p>

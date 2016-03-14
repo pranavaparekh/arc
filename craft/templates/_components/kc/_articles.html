@@ -6,10 +6,11 @@
 {% includeCss kcFeaturedArticlesCss %}
 
 {% set featuredEntries = craft.entries.section('articles').limit(4) %}
-
+<a href="/knowledge-library/articles" class="kc-label">Articles</a>
 <div class="feat-articles">
 
   <div class="row">
+
   {% for entry in featuredEntries %}
   <a href={{ entry.url }}>
     <div class="kc-featured--article col-sm-6">
@@ -31,4 +32,5 @@
   {% endif %}
 {% endfor %}
    </div><!-- row -->
+   <p class="view-all--right"><a class="view-all" href="/knowledge-library/articles">View All Articles</a></p>
 </div><!-- articles -->

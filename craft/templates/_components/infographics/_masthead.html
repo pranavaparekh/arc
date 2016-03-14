@@ -1,0 +1,59 @@
+
+{% set mcmastheadCss %}
+
+  .article-list__masthead__content--headline {
+    font-size: 3.5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    text-shadow: 2px 2px 3px #1A4161;
+  }
+
+  .article-list__masthead__content--tagline {
+    font-size: 2em;
+    line-height: 1em;
+    color: white;
+    font-weight: 300;
+    text-shadow: 2px 2px 3px #1A4161;
+  }
+
+  .article-list__masthead__border {
+    margin: 5px 0;
+  }
+
+  .article-list__masthead {
+    background: url('/assets/images/backgrounds/articles-bkg.jpg') no-repeat center center {{ brandPrimary }};
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 500px;
+  }
+
+  .article-list__masthead__content {
+    position: absolute;
+    top: 30%;
+    left: 46%;
+  }
+
+
+  @media(min-width: {{ screenmd }}) {
+
+
+  }
+
+{% endset %}
+
+{% includeCss mcmastheadCss %}
+
+<section class="container-fluid article-list__masthead">
+  <div class="row">
+    <div class="article-list__masthead__content">
+      <h2 class="article-list__masthead__content--headline">Infographics</h2>
+      <hr class="article-list__masthead__border">
+      <p class="article-list__masthead__content--tagline">
+      Clarity in Data</p>
+    </div>
+  </div>
+</section>

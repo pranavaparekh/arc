@@ -3,6 +3,10 @@
 
 {% set kcFeaturedCss %}
 
+.kc-slider {
+  margin-bottom: 20px;
+}
+
 .kc-featured--slide {
   margin-top: 20px;
 }
@@ -34,11 +38,11 @@
 
 {% set featuredEntries = craft.entries.section('specialReports').limit(3) %}
 
-<span class="kc-label--teal">Special Reports</span>
+<a href="/knowledge-library/special-reports" class="kc-label--teal">Special Reports</a>
 <div class="slides kc-slider">
 
 {% for entry in featuredEntries %}
-
+  <a href="{{entry.url}}">
   <div class="kc-featured--slide">
 
         {% set asset = entry.srBanner.first() %}
@@ -52,6 +56,7 @@
       <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }} | {{ entry.type }}</p>
     </div>
   </div><!-- kc-featured-slide -->
+  </a>
 {% endfor %}
 </div>
 

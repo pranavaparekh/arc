@@ -46,13 +46,7 @@
 <div class="article__body">
   <h1 class="article__headline">{{ entry.title }}</h1>
   <p class="release-date">
-    {{ entry.postDate|date("d M, Y") }} |
-    Published under <a href="{{ siteUrl}}{{craft.request.firstSegment}}/{{ craft.request.getSegment(2) }}/{{ "practices" }}/{{ category.slug}}">{{ category.title }}</a>
-  </p>
-  <p>
-    {% for tag in craft.tags.relatedTo(entry) %}
-      <a href="{{ tag.slug }}">{{ tag }}</a>
-    {% endfor %}
+    {{ entry.postDate|date("d M, Y") }}</p>
   </p>
 
     {% include '_components/global/_action' %}

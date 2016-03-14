@@ -1,7 +1,7 @@
 {% set kcFeaturedInfoGraphicsCss %}
 
   .feat-igraphics {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .kc-featured--infographic {
@@ -18,10 +18,10 @@
 {% includeCss kcFeaturedInfoGraphicsCss %}
 
 {% set featuredEntries = craft.entries.section('infographics').limit(4) %}
-
+<a href="/knowledge-library/infographics" class="kc-label">Infographics</a>
 <div class="feat-igraphics">
   <div class="row">
-    <span class="kc-label">Infographics</span>
+
   {% for entry in featuredEntries %}
   <a href={{ entry.url }}>
     <div class="kc-featured--infographic col-sm-12">
@@ -40,4 +40,5 @@
   {% endif %}
 {% endfor %}
    </div><!-- row -->
+   <p class="view-all--right"><a class="view-all" href="/knowledge-library/infographics">View All Infographics</a></p>
 </div><!-- featured igraphics -->

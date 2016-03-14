@@ -105,6 +105,15 @@ input#s:focus {
   letter-spacing: 0.05em;
 }
 
+.view-all, .view-all--right {
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.view-all--right {
+  text-align: right;
+}
+
 .kc-label--teal {
   background: #6EBDB9;
 }
