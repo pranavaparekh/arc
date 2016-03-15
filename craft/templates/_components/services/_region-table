@@ -29,5 +29,5 @@
 {% includeCss regTabCss %}
 
 <section class="container-fluid reg-tab">
-{{ entry assignmentRichtext }}
+{{ entry.assignmentRichtext }}
 </section>
