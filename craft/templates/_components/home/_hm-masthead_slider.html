@@ -2,9 +2,6 @@
 {% includeJsFile '/assets/js/slick.min.js' %}
 
 {% set asset = entry.mastheadBanner.first() %}
-{% set firstLevel = entry.servicesCategory.level(1).first() %}
-{% set secondLevel = entry.servicesCategory.level(2).first() %}
-{% set thirdLevel = entry.servicesCategory.level(3).first() %}
 
 
 {% set hmMastheadCss %}
@@ -20,18 +17,20 @@
 
 .masthead__wrapper{
     position: absolute;
-    top: 40%;
     left: 0;
     right: 0;
+    top: 44%;
 }
 
 .masthead__content__headline {
   font-weight: 300;
+  text-shadow: 1px 2px 5px #756D6D;
 }
 
 .masthead__content p {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: 300;
+  text-shadow: 1px 2px 3px #2D2727;
 }
 
 .hm-masthead__btn {
@@ -58,7 +57,7 @@
 {% set hmMastheadJs %}
   $('.masthead__wrapper').slick({
     arrows: false,
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 6000,
@@ -75,16 +74,16 @@
   <div class="masthead__wrapper">
 
     <div class="masthead__content">
-      <h1 class="masthead__content__headline">MAKE ALL YOUR DECISION-MAKING FEARLESS!</h1>
-      <p>Our working lives are completely calculated to reach but one goal:<br> ​You should experience <strong>no hesitation</strong> in making the big decisions.​</p>
+      <h1 class="masthead__content__headline">Decide Fearlessly!</h1>
+      <p>All our lives are calculated to reach one goal:<br> ​You should experience <em>no hesitation</em> in making the big decisions.​</p>
       <button href="/about-us/company-overview" type="button" class="hm-masthead__btn">
         Learn more About Us
       </button>
     </div><!-- end masthead__content -->
 
     <div class="masthead__content">
-      <h1 class="masthead__content__headline">HOW F​AR CAN ONE GO WITH GOOD DECISION-MAKING?​</h1>
-      <p>2000 Clients, 600 Arancans, 4 Continents, Over a Decade, 5 Complimentary Practices. <br>And no matter what you'll ask of us, <em>we will go the distance with you</em>.</p>
+      <h1 class="masthead__content__headline">How far can you go with good decision-making?​</h1>
+      <p>2000 Clients, 600 Arancans, 4 Continents, Over a Decade, 5 Complimentary Practices. <br>And no matter what you'll ask of us, we will go the distance with you.</p>
       <button href="/about-us/company-overview" type="button" class="hm-masthead__btn">
         Learn more About Us
       </button>

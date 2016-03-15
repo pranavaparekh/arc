@@ -43,15 +43,6 @@
   <h1 class="article__headline">{{ entry.title }}</h1>
   <p class="release-date">
     Published on {{ entry.postDate|date("d M, Y") }}
-    {% if category %}
-    Published under <a href="{{ siteUrl}}{{craft.request.firstSegment}}/{{ craft.request.getSegment(2) }}/{{ "practices" }}/{{ category.slug}}">{{ category.title }}
-    {% endif %}
-    </a>
-  </p>
-  <p>
-    {% for tag in craft.tags.relatedTo(entry) %}
-      <a href="{{ tag.slug }}">{{ tag }}</a>
-    {% endfor %}
   </p>
 
     {% include '_components/global/_action' %}

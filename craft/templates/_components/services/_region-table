@@ -1,0 +1,33 @@
+{% set regTabCss%}
+  .reg-tab {
+    padding: 60px 0;
+  }
+  .reg-tab__content-head {
+    color: #A41034;
+    width: 28%;
+    font-weight: 300;
+    font-size: 17px;
+    background-color: #F1F1F1;
+    padding: 1.0em;
+  }
+
+  .reg-tab .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    padding: 1.1em;
+  }
+
+  .reg-tab__content-para {
+    font-size: 1.1em;
+    color: #76797B;
+    font-weight: 400;
+    line-height: 1.6em;
+    text-align: justify;
+
+
+  }
+{% endset %}
+
+{% includeCss regTabCss %}
+
+<section class="container-fluid reg-tab">
+{{ entry assignmentRichtext }}
+</section>

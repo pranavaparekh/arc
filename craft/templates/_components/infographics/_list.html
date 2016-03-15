@@ -1,0 +1,35 @@
+{% set kcFeaturedArticlesCss %}
+
+  .feat-articles {
+    margin-top: 20px;
+  }
+
+{% endset %}
+
+{% includeCss kcFeaturedArticlesCss %}
+
+{% set featuredEntries = craft.entries.section('infographics').limit(4) %}
+<span class="kc-label--teal">All Infographics</span>
+<div class="feat-articles">
+
+  <div class="row">
+  {% for entry in featuredEntries %}
+  <a href={{ entry.url }}>
+    <div class="kc-featured--article">
+      {% if entry.igBanner[1] | length %}
+        {% set asset = entry.igBanner[1] %}
+        <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
+      {% endif %}
+
+      <div class="featEntry__headline__wrapper--short">
+        <p class="kc-featured--slide__meta">{{ entry.title }}</p>
+      </div>
+    </div><!-- kc-featured-article -->
+  </a>
+  {% if loop.index % 2 == 0 %}
+    </div><!-- close row and open it below again -->
+    <div class="row">
+  {% endif %}
+{% endfor %}
+   </div><!-- row -->
+</div><!-- articles -->

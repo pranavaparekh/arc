@@ -1,7 +1,7 @@
 {% set kcFeaturedArticlesCss %}
 
   .feat-articles {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
 {% endset %}
@@ -9,7 +9,7 @@
 {% includeCss kcFeaturedArticlesCss %}
 
 {% set featuredEntries = craft.entries.section('specialreports').limit() %}
-
+<span class="kc-label--teal">All Special Reports</span>
 <div class="feat-articles">
 
   <div class="row">

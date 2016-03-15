@@ -1,7 +1,5 @@
 {% set asset = entry.mastheadBanner.first() %}
-{% set firstLevel = entry.servicesCategory.level(1).first() %}
-{% set secondLevel = entry.servicesCategory.level(2).first() %}
-{% set thirdLevel = entry.servicesCategory.level(3).first() %}
+
 
 
 {% set svcmastheadCss %}
@@ -20,25 +18,6 @@
     position: static;
     margin: 0 auto;
     font-weight: 300;
-  }
-
-  .hm-masthead__breadcrumb {
-    margin-bottom: 15px;
-  }
-
-  .hm-masthead__breadcrumb__item {
-    margin-bottom: 10px;
-  }
-
-  .hm-masthead__breadcrumb__item > a {
-    font-size: 1em;
-    color: white;
-    position: static;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    background: #b2213d;
-    padding: 4px 35px;
-    box-shadow: 1px 3px 6px #19486F;
   }
 
   .hm-masthead__btn {
