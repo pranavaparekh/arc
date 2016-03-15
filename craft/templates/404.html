@@ -16,11 +16,28 @@
  # http://buildwithcraft.com/docs/routing
  #}
 
-{% extends "layouts/_site" %}
-{% set title = "404" %}
 
-{% block content %}
-	<h1>Page not found</h1>
+{% extends "base_layouts/_site" %}
 
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+{% set title = "You have reached404" %}
+
+{% block main %}
+
+{% include '_components/global/_header' %}
+
+<div class="container-fluid article">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            <h1>Page not found</h1>
+
+            <p>What’s worse, a hilarious 404 page can’t be found either.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

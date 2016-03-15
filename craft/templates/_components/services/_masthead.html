@@ -137,4 +137,24 @@
 
 </section> <!--  end masthead section -->
 
-{% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry' } %}
+{# Get the category that this entry belongs to #}
+{% set entryCategory = entry.servicesCategory.first() %}
+
+{% if entryCategory is defined %}
+
+{% switch entryCategory.slug %}
+  {% case 'business-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0017/d-ext-0001' %}
+  {% case 'procurement-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0020/d-ext-0001' %}
+  {% case 'investment-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001d/d-ext-0001' %}
+  {% case 'ip-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001e/d-ext-0001' %}
+  {% default %}
+    {% set formActionUrl = 'invalid' %}
+{% endswitch %}
+
+{% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl  } %}
+
+{% endif %}

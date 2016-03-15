@@ -1,0 +1,45 @@
+{% set thankyouCss %}
+
+.thank-you {
+  padding-top: 70px;
+}
+
+{% endset %}
+
+{% includeCss thankyouCss %}
+
+
+
+<div class="container thank-you">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Thank you for writing to us about your {{ teamName }} requirements</h1>
+          <h2>We will have someone from our {{ teamName }} team reach out to you shortly.</h2>
+
+          <p>In the meanwhile, if you need to speak with someone urgently, reach out to any of our office numbers listed below:</p>
+
+          <table class="table table-bordered table-hover" style="font-size: 11pt; font-family: 'Arial','sans-serif'; color: black">
+            <thead>
+              <tr style="background-color:#3B62A1; color:#ffffff">
+                <th>Americas</th>
+                <th>Europe and Africa</th>
+                <th>Asia Pacific</th>
+          <th>China</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>New York: +1 212 878 8826<br>Silicon Valley: +1 650 666 3011</td>
+                <td>London: +44 207 487 8214</td>
+                <td>Mumbai: +91 22 39379999</td>
+          <td>Shanghai: +86 (0) 21 6157 7555</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -37,4 +37,6 @@ return array(
 
    'search/results' => 'layouts/search/results',
 
+   'thank-you/(?P<practiceType>\w+\-?\w+?)' => 'layouts/thank-you/_entry'
+
 );

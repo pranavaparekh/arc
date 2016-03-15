@@ -1,0 +1,32 @@
+
+
+{% extends "base_layouts/_site" %}
+
+{% set title = "Thank you for submitting your {{practiceType}} inquiry" %}
+
+{% block main %}
+
+{% switch practiceType %}
+
+    {% case 'business-research' %}
+        {% set teamName = 'Business Research' %}
+    {% case 'procurement-research' %}
+        {% set teamName = 'Procurement Research' %}
+    {% case 'investment-research' %}
+        {% set teamName = 'Investment Research' %}
+    {% case 'ip-research' %}
+        {% set teamName = 'IP Research' %}
+    {% case 'contact-us' %}
+        {% set teamName = 'Contact' %}
+    {% default %}
+        {% redirect '/404.html' %}
+
+{% endswitch %}
+
+
+{% include '_components/global/_header' %}
+{% include '_components/global/_thank-you' %}
+
+
+{% endblock %}
+
