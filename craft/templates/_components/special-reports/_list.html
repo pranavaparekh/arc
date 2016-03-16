@@ -8,7 +8,7 @@
 
 {% includeCss kcFeaturedArticlesCss %}
 
-{% set featuredEntries = craft.entries.section('specialreports').limit() %}
+{% set featuredEntries = craft.entries.section('specialreports').limit(8) %}
 <span class="kc-label--teal">All Special Reports</span>
 <div class="feat-articles">
 
