@@ -1,4 +1,49 @@
+{% set csModalCss %}
 
+
+
+.cs-modal-title {
+  color: grey;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.full-screen-nav.cs-modal {
+  background-color: white;
+  opacity: 1.0;
+}
+
+.cs-modal .full-screen-nav-close:before, .cs-modal .full-screen-nav-close:after {
+  background-color: #252121;
+}
+
+.cs-modal {
+  font-weight: 300;
+  background-color: white;
+}
+
+.cs-modal__headmast--headline {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.cs-modal__blok--headline {
+  font-weight: 300;
+}
+
+.cs-modal__blok--content, .cs-modal__sol {
+  color: grey;
+}
+
+.cs-modal__sol--headline {
+  font-weight: 300;
+}
+
+.cs-modal__img {
+  padding-top: 30px;
+}
+
+{% endset  %}
 
 {% set csModalJs %}
 ;(function ( $, window, document, undefined ) {
@@ -22,15 +67,15 @@
 {% includeJs csModalJs %}
 
 <!-- modal -->
-<div id="cs-modal-{{ modalId }}" class="full-screen-nav">
+<div id="cs-modal-{{ modalId }}" class="full-screen-nav cs-modal">
   <span class="full-screen-nav-close"></span>
   <div class="full-screen-nav-content">
     <div class="full-screen-nav-general">
 
       <!-- header -->
       <div class="modal-header">
-        <h1 id="myModalLabel"
-            class="modal-title">
+        <h1 id="cs-modal__label"
+            class="cs-modal-title">
           Case Study
         </h1>
       </div>
@@ -70,7 +115,7 @@
         {% if csModalChart | length%}
         <div class="row">
           <div class="col-sm-12 cs-modal__img">
-            <img src="/assets/images/cs-graph.jpg" alt="" class="img-responsive" />
+            <img src={{ csModalChart.first().url }} alt="" class="img-responsive" />
           </div><!-- end: col-12 -->
         </div><!-- end: row -->
         {% endif %}
