@@ -1,7 +1,7 @@
 {% set articleCss %}
 
 .article {
-  background: #2E7DA8;
+  padding-top: 70px;
   min-height: 1000px;
 }
 
@@ -68,8 +68,7 @@
 <div class="article__body">
   <h1 class="article__headline">{{ entry.title }}</h1>
   <p class="release-date">
-    {{ entry.postDate|date("d M, Y") }} | Published under <a href="{{ category.url}}">{{ category.title }}
-  </a></p>
+    {{ entry.postDate|date("d M, Y") }}</p>
 
     {# Action Bar #}
     <div class="action-bar text-center clearfix">
