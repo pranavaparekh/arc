@@ -1,0 +1,87 @@
+{% set srCss %}
+  .sresults {
+    padding-top: 70px;
+  }
+
+  .sr__section__heading {
+    font-weight: 300;
+  }
+
+  .sr__item a {
+    font-size: 1.5em;
+    margin-bottom: 0.4em;
+  }
+  .sr__excerpt {
+    color: #7B7676;
+    font-size: 1.1em;
+    font-style: italic;
+  }
+
+
+
+{% endset %}
+
+{% includeCss srCss %}
+
+<h1>Search Results for {{ query }}</h1>
+
+{# articles results #}
+{% if articleEntries|length %}
+    <h2 class="sr__section__heading">Articles</h2>
+    <p>{{ articleEntries|length }} articles found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in articleEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.excerpt }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}
+
+
+{# blogs results #}
+{% if blogEntries|length %}
+    <h2 class="sr__section__heading">Blogs</h2>
+    <p>{{ blogEntries|length }} blog posts found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in blogEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.excerpt }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}
+
+{# infographics results #}
+{% if igEntries|length %}
+    <h2 class="sr__section__heading">Infographics</h2>
+    <p>{{ igEntries|length }} infographics found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in igEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.igIntro }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}
+
+{# special reports results #}
+{% if srEntries|length %}
+    <h2 class="sr__section__heading">Special Reports</h2>
+    <p>{{ srEntries|length }} infographics found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in srEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.srIntro }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}

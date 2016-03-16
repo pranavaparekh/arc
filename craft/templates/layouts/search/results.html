@@ -3,21 +3,28 @@
 
 {% block main %}
 {% set query = craft.request.getParam('q') %}
-{% set entries = craft.entries.search(query).order('score') %}
+{% set articleEntries = craft.entries.search(query).section('articles').order('score') %}
+{% set blogEntries = craft.entries.search(query).section('articles').order('score') %}
+{% set srEntries = craft.entries.search(query).section('special-reports').order('score') %}
+{% set igEntries = craft.entries.search(query).section('infographics').order('score') %}
+{% set ipEntries = craft.entries.search(query).section('ip').order('score') %}
+{% set irEntries = craft.entries.search(query).section('investmentResearch').order('score') %}
+{% set prEntries = craft.entries.search(query).section('procurement').order('score') %}
+{% set brEntries = craft.entries.search(query).section('br').order('score') %}
+{% set newsEntries = craft.entries.search(query).section('news').order('score') %}
+{% set mcEntries = craft.entries.search(query).section('mediaCenter').order('score') %}
 
-<h1>Search Results for {{ query }}</h1>
+{% include '_components/global/_header' %}
+<section class="sresults container">
+  <div class="row">
+    <div class="col-sm-12">
+      {% include '_components/global/_search-results' %}
+    </div>
+  </div>
+</section>
+{% include '_components/global/_footer' %}
 
-{% if entries|length %}
-    <p>{{ entries|length }} results for {{ query }}:</p>
 
-    <ul>
-        {% for entry in entries %}
-            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>Your search for “{{ query }}” didn’t return any results.</p>
-{% endif %}
 
 {% endblock %}
 

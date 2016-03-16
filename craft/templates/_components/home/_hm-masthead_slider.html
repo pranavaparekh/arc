@@ -8,7 +8,7 @@
 
 .masthead {
   position: relative;
-  text-align: center;
+  text-align: right;
   background: url({{ asset.url }}) center center;
   background-size: cover;
   min-height: 500px;
@@ -17,14 +17,15 @@
 
 .masthead__wrapper{
     position: absolute;
-    left: 0;
+    left: -20%;
     right: 0;
     top: 44%;
+    margin-right: 2em;
 }
 
 .masthead__content__headline {
   font-weight: 300;
-  text-shadow: 1px 2px 5px #756D6D;
+  text-shadow: 1px 2px 3px #756D6D;
 }
 
 .masthead__content p {
@@ -55,7 +56,7 @@
 {% endset %}
 
 {% set hmMastheadJs %}
-  $('.masthead__wrapper').slick({
+  $('.masthead__wrapper--inner').slick({
     arrows: false,
     dots: false,
     infinite: true,
@@ -72,22 +73,22 @@
 {% includeJs hmMastheadJs %}
 <section class="container-fluid masthead">
   <div class="masthead__wrapper">
+    <div class="masthead__wrapper--inner">
+      <div class="masthead__content">
+        <h1 class="masthead__content__headline">Decide Fearlessly!</h1>
+        <p>All our lives are calculated to reach one goal:<br> ​You should experience <em>no hesitation</em> in making the big decisions.​</p>
+        <button href="/about-us/company-overview" type="button" class="hm-masthead__btn">
+          Learn more About Us
+        </button>
+      </div><!-- end masthead__content -->
 
-    <div class="masthead__content">
-      <h1 class="masthead__content__headline">Decide Fearlessly!</h1>
-      <p>All our lives are calculated to reach one goal:<br> ​You should experience <em>no hesitation</em> in making the big decisions.​</p>
-      <button href="/about-us/company-overview" type="button" class="hm-masthead__btn">
-        Learn more About Us
-      </button>
-    </div><!-- end masthead__content -->
-
-    <div class="masthead__content">
-      <h1 class="masthead__content__headline">How far can you go with good decision-making?​</h1>
-      <p>2000 Clients, 600 Arancans, 4 Continents, Over a Decade, 5 Complimentary Practices. <br>And no matter what you'll ask of us, we will go the distance with you.</p>
-      <button href="/about-us/company-overview" type="button" class="hm-masthead__btn">
-        Learn more About Us
-      </button>
-    </div><!-- end masthead__content -->
-
+      <div class="masthead__content">
+        <h1 class="masthead__content__headline">How far can you go with good decision-making?​</h1>
+        <p>2000 Clients, 600 Arancans, 4 Continents, Over a Decade, 5 Complimentary Practices. <br>And no matter what you'll ask of us, we will go the distance with you.</p>
+        <button href="/about-us/company-overview" type="button" class="hm-masthead__btn">
+          Learn more About Us
+        </button>
+      </div><!-- end masthead__content -->
+    </div><!-- end masthead__wrapper-inner -->
   </div><!-- end masthead__wrapper -->
 </section>
