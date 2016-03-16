@@ -1,0 +1,29 @@
+{% set abtSvcCss %}
+
+  .abt__services {
+    padding: 30px 0;
+    background: aliceblue;
+  }
+
+  .abt__services p {
+    text-align: center;
+    color: grey;
+    font-size: 1.2em;
+  }
+
+{% endset %}
+
+
+{% includeCss abtSvcCss %}
+
+<section class="abt__services container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="lede__headline">Services We Offer</h3>
+      <hr class="lede__border">
+      <p>Aranca offers expertise across – <a href="/investment-research/overview">Investment Research &amp; Analytics</a>, <a href="/business-research/business-research-advisory-services-overview">Business Research &
+      Advisory</a>, <a href="http://www.arancavaluation.com" target="_blank">Valuation Advisory</a>, <a href="">Technology Intelligence &amp; IP Research</a>, <a href="/procurement-research/overview">Procurement &amp; Supply Chain Intelligence</a>
+</p>
+    </div>
+  </div>
+</section>
