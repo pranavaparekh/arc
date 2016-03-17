@@ -6,6 +6,9 @@
   .ztabs {
     padding: 60px 0;
     /*background: url('/assets/images/patterns/swirl_pattern.jpg');*/
+    {% if blueBackground is defined %}
+    background: {{ blueBackground }}
+    {% endif %}
   }
 
   .ztabs__headline {
@@ -31,10 +34,16 @@
     font-size: 1.3em;
     color: #878788;
   }
-.ztab__list__item--content {
-  color: #8B8D8F;
-  padding-left: 20px;
-}
+  .ztab__list__item--content {
+    color: #8B8D8F;
+    padding-left: 20px;
+  }
+
+  {% if blueBackground is defined %}
+  .z-tabs.vertical.underlined > ul.z-tabs-nav > li.z-active > a, .z-tabs.vertical.underlined > ul.z-tabs-nav > li > a:hover {
+      background: #FFFFFF;
+    }
+  {% endif %}
 {% endset %}
 
 {% set ztabsJs %}
