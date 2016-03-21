@@ -2,12 +2,13 @@
 {% include '_components/services/_masthead' %}
 {% include '_components/services/_customers-blok' %}
 {% include '_components/services/_svc_box_grid' with {'data': entry.experienceRichtext, 'brandColor': BrCore, 'blueBackground': 'aliceblue' } %}
+{% if entry.solutionRichtext|length %}
+  {% include '_components/services/_ztabs' %}
+{% endif %}
 {% if entry.tfilterRichtext|length %}
   {% include '_components/services/_assignment-tab'  %}
 {% endif %}
-{% if entry.solutionRichtext|length %}
-  {% include '_components/services/_ztabs' with { 'blueBackground': 'aliceblue' } %}
-{% endif %}
+
 {% include '_components/services/_full-cta-a' %}
 {% include '_components/services/_kc-content' %}
 {% include '_components/global/_footer' %}
