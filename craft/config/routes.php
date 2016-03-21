@@ -20,7 +20,7 @@
 
 return array(
     // match url => load template
-   'media-center' => 'layouts/media-center/index',
+   'media-room' => 'layouts/media-center/index',
    'press-releases' => 'layouts/press-releases/index',
    'press-releases/practices/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
    'press-releases/regions/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
