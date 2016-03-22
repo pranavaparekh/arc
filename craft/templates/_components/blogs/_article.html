@@ -35,6 +35,11 @@
   color: {{ roman }};
 }
 
+.multi-byline__item {
+  float: left;
+  padding-right: 15px;
+}
+
 {% endset %}
 
 {% includeCss articleCss %}
@@ -48,7 +53,15 @@
     {% include '_components/global/_action' %}
 
     <div class="byline">
+      {% if entry.multiAuthor | length %}
+        {% for author in entry.multiAuthor %}
+        <div class="multi-byline__item">
+          <p>By {{ author.firstName }} {{ author.lastName }} |</p>
+        </div>
+        {% endfor %}
+      {% else %}
       <p>Written by {{ entry.author.firstName }} {{ entry.author.lastName }}</p>
+      {% endif %}
     </div>
     {% set assets = entry.blogsBanner %}
     {% if assets | length %}
