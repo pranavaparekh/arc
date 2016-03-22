@@ -9,9 +9,11 @@
 .masthead {
   position: relative;
   text-align: right;
-  background: url({{ asset.url }}) center center;
+  background: url({{ asset.url }});
+  background-position: 0 25px;
   background-size: cover;
-  min-height: 500px;
+  min-height: 800px;
+  min-height: 45vh;
   color: white;
 }
 
@@ -25,11 +27,13 @@
 
 .masthead__content__headline {
   font-weight: 300;
+  font-size: 3vw;
   text-shadow: 1px 2px 3px #756D6D;
 }
 
 .masthead__content p {
   font-size: 1.4em;
+  font-size: 1.5vw;
   font-weight: 300;
   text-shadow: 1px 2px 3px #2D2727;
 }

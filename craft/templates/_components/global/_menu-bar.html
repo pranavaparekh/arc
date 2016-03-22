@@ -1,0 +1,123 @@
+{% set mBarCss %}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+.no-gutter > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 76px;
+  width: 100%;
+  background: white;
+  z-index: 9;
+  /*border-bottom: 1px solid #F6E9E9;*/
+}
+
+.menu-bar-list {
+
+}
+
+.menu-bar-list__item {
+  min-height: 4.5vh;
+  float: left;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.menu-bar-list__item a {
+  display: block;
+  transform: translateY(60%);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.1em;
+  font-size: 1.1vw;
+}
+
+.menu-bar-list__item a:hover {
+
+}
+
+.menu-bar-list__item.br:hover {
+  background: #13718B;
+  border-bottom: 1px solid #13718B;
+
+}
+
+.menu-bar-list__item.ip:hover {
+  background: #02B9B5;
+}
+
+.menu-bar-list__item.ir:hover {
+  background: #F89F5D;
+}
+
+.menu-bar-list__item.pr:hover {
+  background: #5E7849;
+}
+
+.menu-bar-list__item.va:hover {
+  background: #DF6D55;
+}
+
+.menu-bar-list__item:hover a {
+  color: white;
+}
+
+
+
+{% endset %}
+
+{% includeCss mBarCss %}
+
+
+<nav class="menu-bar container-fluid">
+  <div class="row">
+    <div class="container">
+    <div class="col-sm-12">
+      <ul class="menu-bar-list">
+      <div class="row">
+        <li class="menu-bar-list__item col-sm-15 col-sm-3 no-gutter br"><a href="{{siteUrl}}/business-research/business-research-advisory-services-overview">Business Research</a></li>
+        <li class="menu-bar-list__item col-sm-15 col-sm-3 no-gutter ip"><a href="{{siteUrl}}/investment-research/overview">IP Research</a></li>
+        <li class="menu-bar-list__item col-sm-15 col-sm-3  no-gutter ir"><a href="{{siteUrl}}/ip-research/overview">Investment Research</a></li>
+        <li class="menu-bar-list__item col-sm-15 col-sm-3  no-gutter pr"><a href="{{siteUrl}}/procurement-research/overview">Procurement Research</a></li>
+        <li class="menu-bar-list__item col-sm-15 no-gutter va"><a href="http://www.arancavaluation.com" target="_blank">Valuation</a></li>
+      </div>
+      </ul><!-- end menu-bar-list -->
+    </div><!-- end col-sm-12 -->
+    </div>
+  </div><!-- end row -->
+</nav>
