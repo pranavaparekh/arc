@@ -26,8 +26,8 @@
   <a href={{ entry.url }}>
     <div class="kc-featured--infographic col-sm-12">
     {% if entry.igBanner[1] | length %}
-      {% set asset = entry.igBanner[1] ? '' %}
-      <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
+      {% set asset = entry.igBanner[1] %}
+      <img src={{ asset.url() }} class="img-responsive" alt={{entry.title}}> <br>
     {% endif %}
     <div class="featEntry__headline__wrapper--short" style="width: 96%;">
       <p class="kc-featured--slide__meta">{{ entry.title }}</p>
