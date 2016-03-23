@@ -1,5 +1,16 @@
 {% set headerCss %}
 
+/*==========  Non-Mobile First Method  ==========*/
+
+ /* Custom, iPhone Retina */
+    @media only screen and (max-width : 320px) {
+        .menu__container {
+          display: none;
+        }
+    }
+
+/*==========  Non-Mobile First Method  ==========*/
+
 .site-header {
   width:100%;
   position:fixed;
@@ -7,7 +18,11 @@
   z-index: 12;
   border-bottom: 1px solid #EEEBEB;
   box-shadow: 0 1px 8px #989A9C;
-}`
+}
+
+.menu__container {
+  position: relative;
+}
 
 {% endset %}
 
@@ -20,20 +35,12 @@
       <div class="row">
         <div class="col-sm-3">
           <a href="{{siteUrl}}"><img id="logo" src="{{ craft.config.assetsImagesUrl }}/aranca_logo_214x75.png" alt="Aranca Logo"></a>
-        </div><!-- end col-sm-6 -->
-        <div class="col-sm-9">
-          <div class="row">
-
-            <div class="col-sm-4">
-
-            </div><!-- end col-sm-2 -->
-            <div class="col-sm-8">
+        </div><!-- end col-sm-3 -->
+        <div class="col-sm-9 menu__container">
               {% include '_components/global/_main_nav' %}
               {% include '_components/global/_share' %}
-              {% include '_components/global/_sidemenu' %}
-            </div><!-- end col-sm-4 -->
-          </div><!-- end row -->
-        </div><!-- end .col-sm-6 -->
+        </div><!-- end .col-sm-6 menu__container  -->
+        {% include '_components/global/_sidemenu' %}
       </div><!-- end row -->
     </div><!-- end container -->
   </div>
