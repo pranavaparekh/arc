@@ -1,0 +1,40 @@
+{% set fourOfourCss %}
+
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+
+.fourOfour {
+  padding-top: 70px;
+  height: 80vh;
+  background: #F7F8F8;
+}
+
+{% endset %}
+
+{% includeCss fourOfourCss %}
+
+<div class="container-fluid fourOfour">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="error-template">
+              <h1>
+                  Oops!</h1>
+              <h2>
+                  404 Not Found</h2>
+              <div class="error-details">
+                  Sorry, an error has occured, This page does not exist on our website!
+              </div>
+              <div class="error-actions">
+                  <a href="{{siteUrl}}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                      Take Me Home </a><a href="/contact-us" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Us </a>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
