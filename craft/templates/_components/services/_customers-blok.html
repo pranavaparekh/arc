@@ -3,6 +3,9 @@
 {% set custblokCss %}
   .cust {
     background-color: white;
+    {% if bkColor is defined  %}
+      background-color: {{bkColor}};
+    {% endif %}
   }
 
   /* top triangle will show if passed in */
