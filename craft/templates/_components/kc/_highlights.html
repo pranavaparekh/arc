@@ -52,7 +52,9 @@
     <a href={{ entry.url }}>
       <div class="featEntry__inner">
         {% set blogBanner = entry.blogsBanner.first() %}
+        {% if blogBanner | length %}
         <img src={{ blogBanner.url() }} alt="" class="img-responsive featEntry__image">
+        {% endif %}
         <div class="featEntry__headline__wrapper">
           <h2 class="featEntry__headline">{{ entry.title }}</h2>
         </div>
