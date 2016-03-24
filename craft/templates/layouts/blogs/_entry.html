@@ -3,8 +3,6 @@
 {% set title = entry.title %}
 
 
-
-
 {% block main %}
 
 {% include '_components/global/_header' %}
@@ -30,4 +28,5 @@
   </div>
 </div>
 {% include '_components/global/_footer' %}
+{% includeJsFile '/assets/js/disqus.js' %}
 {% endblock %}

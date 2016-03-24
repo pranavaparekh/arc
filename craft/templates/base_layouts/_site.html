@@ -7,6 +7,13 @@
   <meta property="og:image" content="http://aranca.craft.dev/assets/uploads/infographics/US-Electric-Vehicle-Market-Report.jpg" />
   <meta property="og:url" content="{# entry.url #}" />
   <meta property="og:description" content="The US automobile market is witnessing a steady adoption of electric passenger cars. This recent success of the electric car segment can be attributed to reasons like cost effectiveness, energy-efficiency" />
+  <script type="text/javascript">
+  (function() {
+     // do stuff locally
+     window.pageUrl = "{{ entry.url }}";
+     window.pageId = "{{ entry.id }}";
+  }());
+  </script>
 {% endblock %}
 
 {% set brandPrimary = '#00436f' %}

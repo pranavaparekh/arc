@@ -1,6 +1,5 @@
-{% includeJsFile '/assets/js/share-button.min.js' %}
+{% includeJsFile '/assets/js/sharer.min.js' %}
 
-{% includeCssFile '/assets/css/share-button.min.css' %}
 
 {% set actionCss %}
 
@@ -65,8 +64,7 @@ $(".action-share").on("click", function(e) {
 {% includeCss actionCss %}
 {% includeJs actionJs %}
 
-<a href="https://www.facebook.com/sharer/sharer.php?
-u={{ entry.url | url_encode }}" target="_blank" class="action-share">
+<a class="sharer" data-sharer="facebook" data-title="{{ entry.title }}" data-url="{{ entry.url | url_encode }}" >
 share on facebook</a>
 
 <a href="https://twitter.com/intent/tweet/?text={{ entry.url | url_encode }}" target="_blank" class="action-share">
