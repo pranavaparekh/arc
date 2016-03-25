@@ -175,9 +175,19 @@ input#s:focus {
   margin-top: 5px;
 }
 
+.article__content ul  {
+  margin-left:20px;
+}
+
 .article__content ul li {
   list-style-type: disc;
   margin-bottom: 5px;
   font-size: 1.1em;
   color: #7B878D;
+}
+
+.source {
+    font-size: 0.9em;
+    color: #7B878D;
+    font-style: italic;
 }
