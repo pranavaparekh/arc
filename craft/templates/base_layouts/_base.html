@@ -1,8 +1,8 @@
-{% set siteName = craft.app.getSiteName() -%}
-{% set entry = entry is defined ? entry : 'Aranca' -%}
-{% set docTitle = entry.seoTitle is defined ? entry.seoTitle : title|striptags -%}
-{% set docDesc = entry.seoDescription is defined ? entry.seoDescription : title|striptags -%}
-{% set docKeyWords = entry.seoKeywords is defined ? entry.seoKeywords : title|striptags -%}
+{% set siteName = craft.app.getSiteName() %}
+{% set entry = entry is defined ? entry : 'Aranca' %}
+{% set docTitle = entry.seoTitle is defined ? entry.seoTitle : title|striptags %}
+{% set docDesc = entry.seoDescription is defined ? entry.seoDescription : title|striptags %}
+{% set docKeyWords = entry.seoKeywords is defined ? entry.seoKeywords : title|striptags %}
 <!DOCTYPE html>
 <html class="no-js" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 
