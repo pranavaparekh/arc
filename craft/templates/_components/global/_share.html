@@ -23,9 +23,9 @@
 {% includeCss SharerCss %}
 
 <ul class="sharer__list pull-right hidden-xs">
-  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="twitter" data-title="{{entry.title}}" data-url="{{entry.url}}"><i class="fa fa-twitter"></i></a></li>
+  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="twitter" data-title="{{entry.title | default('Aranca')}}" data-url="{{entry.url|default('http://www.aranca.com')}}"><i class="fa fa-twitter"></i></a></li>
 
-  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="facebook" data-title="{{entry.title}}" data-url="{{entry.url}}"><i class="fa fa-facebook"></i></a></li>
+  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="facebook" data-title="{{entry.title | default('Aranca')}}" data-url="{{entry.url|default('http://www.aranca.com')}}"><i class="fa fa-facebook"></i></a></li>
 
-  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="linkedin" data-title="{{entry.title}}" data-url="{{entry.url}}"><i class="fa fa-linkedin"></i></a></li>
+  <li class="sharer__list__item"><a class="sharer" href="#" data-sharer="linkedin" data-title="{{entry.title | default('Aranca')}}" data-url="{{entry.url|default('http://www.aranca.com')}}"><i class="fa fa-linkedin"></i></a></li>
 </ul>
