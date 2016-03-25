@@ -7,26 +7,34 @@
 {% set hmMastheadCss %}
 
 .masthead {
+
+}
+
+.masthead__slide {
   position: relative;
-  min-height: 500px;
+  text-align: left;
+  color: white;
 }
 
 .masthead__content {
-  text-align: right;
-  background: url('/assets/uploads/banners/hm-fearless.jpg') no-repeat;
-  background-position: 0 25px;
-  background-size: cover;
-  color: white;
-  min-height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  background: #204371;
+  padding: 10px;
+  opacity: 0.8;
 }
 
-.masthead__content__headline {
+.masthead__slide img {
+}
+
+.masthead__slide__headline {
   font-weight: 300;
   font-size: 3vw;
   text-shadow: 1px 2px 3px #756D6D;
 }
 
-.masthead__content p {
+.masthead__slide p {
   font-weight: 300;
   text-shadow: 1px 2px 3px #2D2727;
 }
@@ -35,8 +43,8 @@
     display: inline-block;
     font-size: 1em;
     letter-spacing: 0.08em;
-    background: {{ brandPrimary }};
-    color: white;
+    background: white;
+    color: {{ brandPrimary }};
     text-transform: uppercase;
     padding: 3px 20px;
     transition: all .6s;
@@ -53,7 +61,7 @@
 {% endset %}
 
 {% set hmMastheadJs %}
-  $('.masthead__wrapper--inner').slick({
+  $('.masthead').slick({
     arrows: false,
     dots: false,
     infinite: true,
@@ -69,39 +77,52 @@
 {% includeCss hmMastheadCss %}
 {% includeJs hmMastheadJs %}
 <section class="masthead">
-  <div class="masthead__wrapper">
-    <div class="masthead__wrapper--inner">
-      <div class="masthead__content" >
-        <h1 class="masthead__content__headline">Decide Fearlessly!</h1>
+    <div class="masthead__slide">
+      <img src="/assets/uploads/banners/hm-fearless.jpg" class="img-responsive" alt="">
+      <div class="masthead__content">
+        <h1 class="masthead__slide__headline">Decide Fearlessly!</h1>
         <p>All our lives are calculated to reach one goal:<br> ​You should experience <em>no hesitation</em> in making the big decisions.​</p>
         <button onclick="location.href='/about-us/company-overview'" type="button" class="hm-masthead__btn">
           Learn more About Us
         </button>
       </div><!-- end masthead__content -->
 
+    </div><!-- end masthead__slide -->
+
+    <div class="masthead__slide">
+      <img src="/assets/uploads/banners/hm-fearless.jpg" class="img-responsive" alt="">
       <div class="masthead__content">
-        <h1 class="masthead__content__headline">How far can you go with good decision-making?​</h1>
+        <h1 class="masthead__slide__headline">How far can you go with good decision-making?​</h1>
         <p>2000 Clients, 600 Arancans, 4 Continents, Over a Decade, 5 Complementary Practices. <br>And no matter what you'll ask of us, we will go the distance with you.</p>
         <button onclick="location.href='/about-us/company-overview'" type="button" class="hm-masthead__btn">
-          Learn more About Us
+          Read More
         </button>
       </div><!-- end masthead__content -->
 
+    </div><!-- end masthead__slide -->
+
+    <div class="masthead__slide">
+      <img src="/assets/uploads/banners/hm-fearless.jpg" class="img-responsive" alt="">
       <div class="masthead__content">
-        <h1 class="masthead__content__headline">How far can you go with good decision-making?​</h1>
+        <h1 class="masthead__slide__headline">How far can you go with good decision-making?​</h1>
         <p>2000 Clients, 600 Arancans, 4 Continents, Over a Decade, 5 Complementary Practices. <br>And no matter what you'll ask of us, we will go the distance with you.</p>
         <button onclick="location.href='/about-us/company-overview'" type="button" class="hm-masthead__btn">
-          Learn more About Us
+          Read More
         </button>
       </div><!-- end masthead__content -->
 
+    </div><!-- end masthead__slide -->
+
+    <div class="masthead__slide">
+      <img src="/assets/uploads/banners/hm-fearless.jpg" class="img-responsive" alt="">
       <div class="masthead__content">
-        <h1 class="masthead__content__headline">How far can you go with good decision-making?​</h1>
+        <h1 class="masthead__slide__headline">How far can you go with good decision-making?​</h1>
         <p>2000 Clients, 600 Arancans, 4 Continents, Over a Decade, 5 Complementary Practices. <br>And no matter what you'll ask of us, we will go the distance with you.</p>
         <button onclick="location.href='/about-us/company-overview'" type="button" class="hm-masthead__btn">
-          Learn more About Us
+          Read More
         </button>
-      </div><!-- end masthead__content -->
-    </div><!-- end masthead__wrapper-inner -->
-  </div><!-- end masthead__wrapper -->
+        </div><!-- end masthead__content -->
+
+    </div><!-- end masthead__slide -->
+
 </section>
