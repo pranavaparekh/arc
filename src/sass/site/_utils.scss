@@ -167,10 +167,17 @@ input#s:focus {
     width: 100%;
 }
 
-  .featEntry__headline__wrapper--short {
-    width: 90.8%;
-  }
+.featEntry__headline__wrapper--short {
+  width: 90.8%;
+}
 
-  .kc-featured--caption {
-    margin-top: 5px;
-  }
+.kc-featured--caption {
+  margin-top: 5px;
+}
+
+.article__content ul li {
+  list-style-type: disc;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  color: #7B878D;
+}
