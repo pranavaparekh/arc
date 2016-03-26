@@ -80,26 +80,7 @@
     {{ entry.postDate|date("d M, Y") }}
   </p>
 
-    {# Action Bar #}
-    <div class="action-bar text-center clearfix">
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-share action-bar__icon"></i><br/>
-        <span class="action-bar__item-text">Share</span>
-      </a>
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-comment-o action-bar__icon"></i> <br/>
-        <span class="action-bar__item-text">Comment</span>
-      </a>
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-print action-bar__icon"></i> <br/>
-        <span class="action-bar__item-text">Print</span>
-      </a>
-      <a href="#" class="action-bar__item">
-        <i class="fa fa-envelope-o action-bar__icon"></i><br/>
-        <span class="action-bar__item-text">Email</span>
-      </a>
-    </div>
-    {# End Action Bar #}
+    {# include '_components/global/_action' #}
 
   {% set pdfLink = entry.srDownload.first() %}
   {% set asset = entry.srBanner.first() %}
