@@ -4,7 +4,7 @@
 {% block main %}
 {% set query = craft.request.getParam('q') %}
 {% set articleEntries = craft.entries.search(query).section('articles').order('score') %}
-{% set blogEntries = craft.entries.search(query).section('articles').order('score') %}
+{% set blogEntries = craft.entries.search(query).section('blogs').order('score') %}
 {% set srEntries = craft.entries.search(query).section('special-reports').order('score') %}
 {% set igEntries = craft.entries.search(query).section('infographics').order('score') %}
 {% set ipEntries = craft.entries.search(query).section('ip').order('score') %}
