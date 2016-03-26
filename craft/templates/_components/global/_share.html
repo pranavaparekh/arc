@@ -1,4 +1,3 @@
-{% includeJsFile '/assets/js/sharer.min.js' %}
 
 {% set SharerCss %}
 
@@ -23,9 +22,9 @@
 {% includeCss SharerCss %}
 
 <ul class="sharer__list pull-right hidden-xs">
-  <li class="sharer__list__item"><a class="sharer" href="javascript:void(0);" data-sharer="twitter" data-width="800" data-height="600" data-title="{{entry.title | default('Aranca')}}" data-url="{{entry.url|default('http://www.aranca.com')}}"><i class="fa fa-twitter"></i></a></li>
+  <li class="sharer__list__item"><a href="https://twitter.com/aranca" target="_blank"><i class="fa fa-twitter"></i></a></li>
 
-  <li class="sharer__list__item"><a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-width="800" data-height="600" data-url="{{entry.url|default('http://www.aranca.com')}}"><i class="fa fa-facebook"></i></a></li>
+  <li class="sharer__list__item"><a href="https://www.facebook.com/ArancaResearch" target="_blank"><i class="fa fa-facebook"></i></a></li>
 
-  <li class="sharer__list__item"><a class="sharer" href="javascript:void(0);" data-sharer="linkedin" data-width="800" data-height="600" data-url="{{entry.url|default('http://www.aranca.com')}}"><i class="fa fa-linkedin"></i></a></li>
+  <li class="sharer__list__item"><a href="http://www.linkedin.com/company/aranca" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 </ul>
