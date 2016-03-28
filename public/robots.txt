@@ -1,5 +1,2 @@
 User-agent: *
-Disallow: /craft/
-Disallow: /code_snippets/
-Disallow: /public_va/
-Disallow: /src/
+Allow: /
