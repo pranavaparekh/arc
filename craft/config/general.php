@@ -47,7 +47,7 @@ return array(
     'assetsImagesUrl' => '/assets/images',
   ),
   'amite' => array(
-    'devMode' => true,
+    'devMode' => false,
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
     'assetsImagesUrl' => '/assets/images',
