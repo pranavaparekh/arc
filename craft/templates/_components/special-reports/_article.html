@@ -87,7 +87,7 @@
     {{ entry.postDate|date("d M, Y") }}
   </p>
 
-    {# include '_components/global/_action' #}
+  {% include '_components/global/_action' %}
 
   {% set pdfLink = entry.srDownload.first() %}
   {% set asset = entry.srBanner.first() %}

@@ -85,13 +85,8 @@
   <p class="release-date">
     {{ entry.postDate|date("d M, Y") }}
   </p>
-  <p>
-    {% for tag in craft.tags.relatedTo(entry) %}
-      <a href="{{ tag.slug }}">{{ tag }}</a>
-    {% endfor %}
-  </p>
 
-    {# include '_components/global/_action' #}
+    {% include '_components/global/_action' %}
 
     <div class="article__content">
       {{ content }}
