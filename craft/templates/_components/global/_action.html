@@ -64,7 +64,7 @@ $(".action-share").on("click", function(e) {
 {% includeCss actionCss %}
 {% includeJs actionJs %}
 
-<a class="sharer" data-sharer="facebook" data-title="{{ entry.title }}" data-url="{{ entry.url | url_encode }}" >
+<a class="sharer" data-sharer="facebook" data-url="{{ entry.url }}" >
 share on facebook</a>
 
 <a href="https://twitter.com/intent/tweet/?text={{ entry.url | url_encode }}" target="_blank" class="action-share">
