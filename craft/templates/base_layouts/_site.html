@@ -2,19 +2,11 @@
 
 {% block ogtags %}
   <!-- for Facebook -->
-  <meta property="og:url" content="{{ docUrl }}">
-  <meta property="og:title" content="{{ docTitle }}">
-  <meta property="og:site_name" content="Aranca">
-  <meta property="og:image" content="http://staging.aranca.com/assets/images/aranca_logo_214x75.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1291">
-  <meta property="og:image:height" content="315">
-  <script type="text/javascript">
-  (function() {
-     // do stuff locally
-
-  }());
-  </script>
+  <meta property="og:url"                content={{ docUrl }} />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content={{ docTitle }} />
+  <meta property="og:description"        content={{ docDesc }} />
+  <meta property="og:image"              content="http://staging.aranca.com/assets/images/aranca_logo_214x75.png" />
 {% endblock %}
 
 {% set brandPrimary = '#00436f' %}

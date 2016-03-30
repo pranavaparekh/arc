@@ -39,24 +39,6 @@
 
 {% set actionJs %}
 
-function windowPopup(url, width, height) {
-  // Calculate the position of the popup so
-  // it’s centered on the screen.
-  var left = (screen.width / 2) - (width / 2),
-      top = (screen.height / 2) - (height / 2);
-
-  window.open(
-    url,
-    "",
-    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left
-  );
-}
-
-$(".action-share").on("click", function(e) {
-  e.preventDefault();
-
-  windowPopup($(this).attr("href"), 500, 300);
-});
 
 
 {% endset %}
@@ -64,7 +46,7 @@ $(".action-share").on("click", function(e) {
 {% includeCss actionCss %}
 {% includeJs actionJs %}
 
-<a class="sharer" data-sharer="facebook" data-url="{{ entry.url }}" >
+<a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-url="{{ entry.url }}" >
 share on facebook</a>
 
 <a href="https://twitter.com/intent/tweet/?text={{ entry.url | url_encode }}" target="_blank" class="action-share">
