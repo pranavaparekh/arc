@@ -13,7 +13,7 @@
         <div class="col-sm-12">
           {% set category = entry.practiceCategory.first %}
           {% set content = entry.igContent %}
-          {% set assets = entry.igBanner.first() %}
+          {% set assets = entry.igBanner %}
 
           {% include '_components/infographics/_article'
               with { 'category': category, 'content': content, 'assets': assets }
