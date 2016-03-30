@@ -96,11 +96,9 @@
     <div class="article__content">
       {{ content }}
     </div>
-    {% set assets = assets %}
-    {% if assets | length %}
-      {% for image in assets %}
-        <img src="{{ image.url }}" alt="" class="img-responsive article__image">
-      {% endfor %}
+
+    {% if banner | length %}
+        <img src="{{ banner.url() }}" alt="" class="img-responsive article__image">
     {% endif %}
 
 </div>
