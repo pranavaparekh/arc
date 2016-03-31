@@ -3,6 +3,27 @@
 
 {% set actionCss %}
 
+.share-links {
+  padding: 30px 0;
+}
+
+.sharer {
+  display: inline-block;
+  padding-right: 1.5em;
+}
+
+.sharer .fa {
+  font-size: 1.4em;
+ border-radius: 60px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em;
+}
+
+.sharer .fa:hover {
+  background: #2E7DA8;
+  color: white;
+}
+
 .action-bar{
   border-top: 1px solid {{ ttgreyLight }};
   margin-bottom: 22px;
@@ -46,32 +67,14 @@
 {% includeCss actionCss %}
 {% includeJs actionJs %}
 
+<div class="share-links">
 <a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-url="{{ entry.url }}" >
-share on facebook</a>
+<i class="fa fa-facebook"></i></a>
 
-<a href="https://twitter.com/intent/tweet/?text={{ entry.url | url_encode }}" target="_blank" class="action-share">
-share on twitter</a>
+<a class="sharer" href="javascript:void(0);"  data-sharer="twitter" data-url="{{ entry.url }}">
+<i class="fa fa-twitter"></i></a>
 
-<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ entry.url | url_encode }}&title={{ entry.title }}" target="_blank" class="action-share">
-share on linkedIn</a>
-
-{# Action Bar #}
-<div class="action-bar text-center clearfix">
-  <a href="#" class="action-bar__item">
-    <i class="fa fa-share action-bar__icon"></i><br/>
-    <span class="action-bar__item-text">Share</span>
-  </a>
-  <a href="#" class="action-bar__item">
-    <i class="fa fa-comment-o action-bar__icon"></i> <br/>
-    <span class="action-bar__item-text">Comment</span>
-  </a>
-  <a href="#" class="action-bar__item">
-    <i class="fa fa-print action-bar__icon"></i> <br/>
-    <span class="action-bar__item-text">Print</span>
-  </a>
-  <a href="#" class="action-bar__item">
-    <i class="fa fa-envelope-o action-bar__icon"></i><br/>
-    <span class="action-bar__item-text">Email</span>
-  </a>
+<a class="sharer" href="javascript:void(0);" data-sharer="linkedin" data-url="{{ entry.url }}">
+<i class="fa fa-linkedin"></i></a>
 </div>
-{# End Action Bar #}
+

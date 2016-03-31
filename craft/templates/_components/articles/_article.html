@@ -2,11 +2,10 @@
 
 .article {
   min-height: 1000px;
-  padding-top: 70px;
 }
 
 .article__body {
-  padding: 30px 90px;
+  padding: 70px 90px;
 }
 
 .article__body h2 {
@@ -61,6 +60,7 @@
   </p>
 
     {% include '_components/global/_action' %}
+    {% include '_components/global/_action-bar' %}
 
     <div class="byline">
       {% if entry.multiAuthor | length %}
@@ -79,6 +79,7 @@
       {% endfor %}
     {% endif %}
   <div class="article__content">
+    {% include '_components/global/_action' with { 'vertical': true } %}
     {{ content }}
   </div>
 </div>

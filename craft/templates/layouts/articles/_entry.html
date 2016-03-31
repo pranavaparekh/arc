@@ -17,7 +17,6 @@
           {% set content = entry.articlesContent %}
 
           {% set assets = entry.articlesBanner %}
-          <h1>{{ docTitle }}</h1>
 
           {% include '_components/articles/_article'
               with { 'category': category, 'content': content }
