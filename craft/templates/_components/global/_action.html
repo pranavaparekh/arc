@@ -68,13 +68,17 @@
 {% includeJs actionJs %}
 
 <div class="share-links">
-<a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-url="{{ entry.url }}" >
+<a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-url="{{ docUrl }}" >
 <i class="fa fa-facebook"></i></a>
 
-<a class="sharer" href="javascript:void(0);"  data-sharer="twitter" data-url="{{ entry.url }}">
+<a class="sharer" href="javascript:void(0);"  data-sharer="twitter" data-title="{{ docTitle }}" data-url="{{ docUrl }}">
 <i class="fa fa-twitter"></i></a>
 
-<a class="sharer" href="javascript:void(0);" data-sharer="linkedin" data-url="{{ entry.url }}">
+<a class="sharer" href="javascript:void(0);" data-sharer="linkedin" data-url="{{ docUrl }}">
 <i class="fa fa-linkedin"></i></a>
+
+<a class="sharer" href="javascript:void(0);" data-sharer="email" data-title="{{ docTitle }}"
+  data-subject="I found this at the aranca website" data-to="" data-url="{{ docUrl }}">
+<i class="fa fa-envelope"></i></a>
 </div>
 
