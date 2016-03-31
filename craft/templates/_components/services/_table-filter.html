@@ -108,7 +108,9 @@
       $('#projects thead').hide();
     })();
     $("select.filterby").on('change', handleSelectChanged);
+
     function handleSelectChanged() {
+      console.log(this.value);
       // hide default ui when user interacts with dropdown
       $('.tfilter__default').hide();
       function showItems(){
@@ -118,7 +120,7 @@
         $('#projects thead').show();
       }
       function showEmptyState(){
-        $(".tfilter__no-data").show();
+        $(".tfilter__default").show();
         $('#projects').hide();
       }
       // get the filters from selected values of multiple dropdowns
@@ -142,7 +144,7 @@
   <div class="row">
     <div class="container">
       <div class="col-sm-12">
-           {{ entry.tfilterRichtext }}
+          {{ entry.tfilterRichtext }}
       </div><!-- end container -->
     </div><!-- end col-sm-12 -->
   </div><!-- end row -->
