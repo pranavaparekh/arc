@@ -22,14 +22,14 @@ HEADER AFFIX -->
 FIX VIDEO -->
 =============================================== */
 
-  $(document).ready(function(){
-    $(".ttmenu").fitVids();
-  });
+  // $(document).ready(function(){
+  //   $(".ttmenu").fitVids();
+  // });
 
 /* ==============================================
 TABBED HOVER -->
 =============================================== */
-  
+
   $('.nav-pills > li ').hover( function(){
     if($(this).hasClass('hoverblock'))
       return;
