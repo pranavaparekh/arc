@@ -191,15 +191,27 @@ input#s:focus {
   margin-top: 5px;
 }
 
+.article__content > p, .article__content ul li, .byline p {
+  margin-bottom: 20px;
+  color: #5E6569;
+  font-size: 1.25em;
+  font-weight: 300
+}
+
 .article__content ul  {
-  margin-left:20px;
+  margin: 4%;
 }
 
 .article__content ul li {
   list-style-type: disc;
-  margin-bottom: 5px;
-  font-size: 1.1em;
-  color: #5B6A72;
+}
+
+.article__image {
+  margin-bottom: 30px;
+}
+
+.byline p {
+  color: #2E7DA8;
 }
 
 .source {
