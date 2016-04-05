@@ -26,8 +26,18 @@
   letter-spacing: 0.05;
 }
 
+.ttmenu .dropdown-menu, .ttmenu .navbar-default .ttmenu-content {
+  background-color: #f3f3f3;
+  box-shadow: 0 1px 3px #E1DFDF;
+}
+
+h3.ttmenu__subheadline  {
+  margin-bottom: 0;
+}
+
 .ttmenu__subheadline a {
-  font-size: 1.2em;
+  color: #00458C !important;
+  font-size: 1.2em !important;
 }
 
 {% endset %}
@@ -69,27 +79,42 @@
                                                     <div class="tab-content">
                                                         <div id="tabs5-pane1" class="tab-pane active">
                                                             <div class="row">
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                                     <div class="box">
                                                                         <ul>
                                                                             <li>
                                                                               <h3 class="ttmenu__subheadline"><a href="#">Overview</a></h3>
                                                                               <p>Learn more about what business research solutions can do for you.</p>
                                                                             </li>
-                                                                            <li><a href="#">Solutions</a></li>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
+                                                                              <p>Explore our complete solution portfolio</p>
+                                                                            </li>
                                                                         </ul>
                                                                     </div><!-- end box -->
                                                                 </div><!-- end col -->
 
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                                     <div class="box">
                                                                         <ul>
-                                                                            <li><h4>Industries</h4></li>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="#">Industries</a></h4>
+                                                                            </li>
                                                                             <li><a href="#">Aerospace and Defense</a></li>
                                                                             <li><a href="#">Auto and Auto Parts</a></li>
                                                                             <li><a href="#">Animal Health</a></li>
                                                                             <li><a href="#">Alternate energy / fuels</a></li>
                                                                             <li><a href="#">Commercial Banking</a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <br>
+                                                                            <br>
+                                                                            <br>
+
                                                                             <li><a href="#">Crop Production</a></li>
                                                                             <li><a href="#">Ores</a></li>
                                                                             <li><a href="#">Petrochemicals</a></li>
