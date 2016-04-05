@@ -9,6 +9,7 @@ node_modules
 *.swo
 *.swp
 *.vi
+*.sql
 *~
 .tags
 tags
