@@ -1,0 +1,14 @@
+<div class="byline">
+  {% if entry.multiAuthor | length %}
+
+    <div class="multi-byline__item">
+      <p>
+        {% for author in entry.multiAuthor %}
+          {{ author.firstName }} {{ author.lastName }}
+         {% endfor %}
+         {% if entry.multiAuthor | length > 1 %} | {% endif %}
+      </p>
+    </div>
+
+  {% endif %}
+</div>

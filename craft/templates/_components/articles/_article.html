@@ -51,15 +51,7 @@
   </p>
 
 
-    <div class="byline">
-      {% if entry.multiAuthor | length %}
-        {% for author in entry.multiAuthor %}
-        <div class="multi-byline__item">
-          <p>{{ author.firstName }} {{ author.lastName }} |</p>
-        </div>
-        {% endfor %}
-      {% endif %}
-    </div>
+    {% include '_components/global/_byline' %}
 
     {% set assets = entry.articlesBanner %}
     {% if assets | length %}
