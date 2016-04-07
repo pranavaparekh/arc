@@ -1,0 +1,103 @@
+{% includeJsFile "/assets/js/jquery.matchHeight-min.js" %}
+
+
+
+{% set csListCss %}
+  .cs-list, .cs-list--intro {
+    padding: 20px 0;
+    {% if bkcolor is defined %}
+      background-color: {{ bkcolor }};
+    {% endif %}
+  }
+
+
+
+  .cs-list__item {
+    position: relative;
+    border: 1px solid #3CA7D7;
+    padding: 12px 20px;
+
+  }
+
+  .cs-list__title {
+    color: #3CA7D7;
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+
+  .cs-list__excerpt {
+    color: #1C7197;
+  }
+
+  .case-studies__link {
+    position: absolute;
+    right: 39%;
+    background: #3CA6D8;
+    padding: 0 35px;
+    color: white;
+  }
+
+{% endset %}
+
+{% set csListJs %}
+
+(function ( $, window, document, undefined ) {
+    $('.cs-list__item').matchHeight({});
+  }( jQuery, window, document ));
+
+{% endset %}
+
+
+
+{% includeCss csListCss %}
+{% includeJs csListJs %}
+
+<section class="container-fluid cs-list--intro">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+          <h2 class="lede__headline">Case Studies</h2>
+          <p class="lede__subheadline"></p>
+          <hr class="lede__border">
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</section>
+
+<section class="cs-list container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="row row-break">
+        {% for block in entry.caseStudyEntries %}
+        <div class="col-sm-6">
+
+          <div class="cs-list__item">
+            <h3 class="cs-list__title">{{block.title}}</h3>
+
+            {% for download in block.csDownload %}
+              <p>
+                <a href="{{download.url()}}" class="case-studies__link-{{ loop.index }}">Download PDF</a>
+              </p>
+
+            {% endfor %}
+
+
+
+
+          </div>
+
+        </div> <!-- end col-sm-6 -->
+        {% if loop.index % 2 == 0 %}
+
+        </div> <!-- end row -->
+        <div class="row row-break">
+
+        {% endif %}
+
+        {% endfor %}
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </div> <!-- end row -->
+</section>
+
+
