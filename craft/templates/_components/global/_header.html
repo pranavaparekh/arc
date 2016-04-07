@@ -1,50 +1,13 @@
 {% set headerCss %}
 
-/*==========  Non-Mobile First Method  ==========*/
 
- /* Custom, iPhone Retina */
-    @media only screen and (max-width : 320px) {
-        .menu__container {
-          display: none;
-        }
-    }
-
-/*==========  Non-Mobile First Method  ==========*/
-
-.site-header {
-  width:100%;
-  position:fixed;
-  top:0;
-  z-index: 12;
-/*  border-bottom: 1px solid #EEEBEB;
-  box-shadow: 0 1px 8px #989A9C;*/
-}
-
-.menu__container {
-  position: relative;
-}
 
 {% endset %}
 
 
 {% includeCss headerCss %}
-<header class="site-header container-fluid">
-{% include '_components/global/_search' %}
-  <div class="row" style="line-height: 70px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3">
-          <a href="{{siteUrl}}"><img id="logo" src="{{ craft.config.assetsImagesUrl }}/aranca_logo_214x75.png" alt="Aranca Logo"></a>
-        </div><!-- end col-sm-3 -->
-        <div class="col-sm-9 menu__container">
-              {% include '_components/global/_main_nav' %}
-              {% include '_components/global/_share' %}
-        </div><!-- end .col-sm-6 menu__container  -->
-        {% include '_components/global/_sidemenu' %}
-      </div><!-- end row -->
-    </div><!-- end container -->
-  </div>
-</header>
+
+ {% include '_components/global/_mega-menu' %}
 
 
 
