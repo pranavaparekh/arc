@@ -1,14 +1,14 @@
 {% set kcFeaturedArticlesCss %}
 
   .feat-articles {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 
 {% endset %}
 
 {% includeCss kcFeaturedArticlesCss %}
 
-{% set featuredEntries = craft.entries.section('infographics').limit(4) %}
+{% set featuredEntries = craft.entries.section('infographics').limit() %}
 <span class="kc-label--teal">All Infographics</span>
 <div class="feat-articles">
 

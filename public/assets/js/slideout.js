@@ -40,16 +40,16 @@ function clearStatusSlide() {
 }
 
 Waybeo.CTC.Init({
-    hash: '55a650a2c572d',
+    hash: '56bd928aa3e24',
 });
 
 function slideoutMakecall() {
     var _phone = $.trim($("#slideoutMobile").val()).replace('+', '').replace(' ', '');
     $('.wbs-container').addClass('connecting');
     Waybeo.CTC.MakeCall({
-        'hash': '55a650a2c572d',
-        'route_hash': '55a64035e22c0',
-        'callerid_hash': '55a650a2c7f4a',
+        'hash': '56bd928aa3e24',
+        'route_hash': '56bd8379cf7b9',
+        'callerid_hash': '56bd928aaaa39',
         'contact_number': _phone,
         'optional_params': {
             name: $('#wctcname').val(),
