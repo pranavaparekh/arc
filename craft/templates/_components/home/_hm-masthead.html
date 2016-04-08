@@ -60,7 +60,7 @@
   .custom-dropdown {
     cursor: pointer;
     max-width: 30%;
-    z-index: 10;
+    z-index: 12;
     margin: auto;
     margin-top: 20px;
     font-weight: 400;
@@ -118,8 +118,21 @@
     color: #fff;
   }
 
-  .explore {
+  #explore {
+    margin-top: 15px;
     display: none;
+  }
+
+  #explore a {
+    font-size: 1.4em;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 183px;
+  }
+
+  #explore a:hover {
+    background: white;
+    color: black;
   }
 
   /* make keyframes that tell the start state and the end state of our object */
@@ -199,6 +212,13 @@
     }
   }
 
+  function showCta(e) {
+    var selected = $(this).data('href');
+    console.log(selected);
+    $('#explore').show();
+    $('#explore a').attr('href', selected);
+  }
+
   var customDropdown = document.getElementById("customDropdown");
   if (customDropdown) {
     customDropdown.addEventListener("click", addDropdownClass);
@@ -208,6 +228,7 @@
   if (customInputs) {
     Array.prototype.forEach.call(customInputs, function(el, i) {
       el.addEventListener("change", toggleBackgroundClass);
+      el.addEventListener("change", showCta);
     });
   }
 
@@ -224,24 +245,36 @@
   <!--  content -->
   <div class="hm-masthead__content text-center">
 
-    <p class="hm-masthead__tagline fade-in one">get your own</p>
+    <p class="hm-masthead__tagline fade-in one">get your</p>
     <h1 class="hm-masthead__headline fade-in two">Custom Intelligence Blueprint</h1>
-    <p class="hm-masthead__explainer fade-in three">We empower you with a Blueprint you can execute
-better business strategies with</p>
+    <p class="hm-masthead__explainer fade-in three">Decide fearlessly! Leverage the best data and methodologies combined with the best talent. </p>
     <div class="custom-dropdown fade-in four" id="customDropdown">
       <input type="radio" id="default" name="dropdown" class="custom-input" checked/>
       <label for="default">I am interested in <i class="fa fa-arrow-down"></i></label>
-      <input type="radio" id="cd_br" name="dropdown" class="custom-input"  />
+
+
+      <input type="radio" id="cd_inv" data-href="/intellectual-property-research/overview" name="dropdown" class="custom-input" />
+      <label for="cd_inv">business growth decision</label>
+
+      <input type="radio" id="cd_br" data-href="/business-research/advisory-services-overview" name="dropdown" class="custom-input"  />
       <label for="cd_br">building my technology</label>
-      <input type="radio" id="cd_ip" name="dropdown" class="custom-input" />
+
+      <input type="radio" id="cd_ip" data-href="/intellectual-property-research/technology-intelligence" name="dropdown" class="custom-input" />
       <label for="cd_ip">protecting my IP</label>
-      <input type="radio" id="cd_ir" name="dropdown" class="custom-input" />
+
+      <input type="radio" id="cd_ir" data-href="/intellectual-property-research/litigation-support" name="dropdown" class="custom-input" />
       <label for="cd_ir">co-sourcing investment</label>
-      <input type="radio" id="cd_va" name="dropdown" class="custom-input" />
-      <label for="cd_va">IP Valuation </label>
+
+      <input type="radio" id="cd_va" data-href="/intellectual-property-research/overview" name="dropdown" class="custom-input" />
+      <label for="cd_inv">co-sourcing investment</label>
+
+      <input type="radio" id="cd_va2" data-href="/intellectual-property-research/overview" name="dropdown" class="custom-input" />
+      <label for="cd_va2">Valuation for my IP</label>
+
+
     </div><!--  custom-dropdown -->
 
-    <p class="explore"><a href="javascript:void(0);">Explore</a></p>
+    <p id="explore"><a href="javascript:void(0);">Explore</a></p>
 
   </div><!--  hm-masthead__content -->
 
