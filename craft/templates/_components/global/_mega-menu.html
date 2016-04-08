@@ -49,7 +49,56 @@ h3.ttmenu__subheadline  {
 
 {% endset %}
 
+{% set mmenuJs %}
+
+(function($) {
+"use strict";
+  // SEARCH
+  $(document).ready(function(){
+    var submitIcon = $('.searchbox-icon');
+    var inputBox = $('.searchbox-input');
+    var searchBox = $('.searchbox');
+    var isOpen = false;
+      submitIcon.click(function(){
+        if(isOpen == false){
+          searchBox.addClass('searchbox-open');
+          inputBox.focus();
+          isOpen = true;
+        } else {
+          searchBox.removeClass('searchbox-open');
+          inputBox.focusout();
+          isOpen = false;
+        }
+      });
+      submitIcon.mouseup(function(){
+        return false;
+      });
+      searchBox.mouseup(function(){
+        return false;
+      });
+      $(document).mouseup(function(){
+        if(isOpen == true){
+        $('.searchbox-icon').css('display','block');
+        submitIcon.click();
+        }
+      });
+      });
+      function buttonUp(){
+        var inputVal = $('.searchbox-input').val();
+        inputVal = $.trim(inputVal).length;
+        if( inputVal !== 0){
+          $('.searchbox-icon').css('display','none');
+        } else {
+        $('.searchbox-input').val('');
+        $('.searchbox-icon').css('display','block');
+      }
+  }
+})(jQuery);
+
+{% endset %}
+
 {% includeCss mmenuCss %}
+{% includeJs mmenuJs %}
 
 <div class="mmenu">
       <div class="hero">
@@ -425,8 +474,8 @@ h3.ttmenu__subheadline  {
                             </ul><!-- end nav navbar-nav -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <form class="searchbox">
-                                        <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+                                    <form role="search" method="get" action="{{ url('search/results') }}" id="search-form"class="searchbox">
+                                        <input type="search" placeholder="Search......" name="q" class="searchbox-input" onkeyup="buttonUp();" id="s" required>
                                         <input type="submit" class="searchbox-submit" value="GO">
                                         <span class="searchbox-icon"><i class="fa fa-search"></i></span>
                                     </form>
