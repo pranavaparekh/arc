@@ -31,6 +31,7 @@
   box-shadow: 0 1px 3px #E1DFDF;
 }
 
+
 h3.ttmenu__subheadline  {
   margin-bottom: 0;
 }
@@ -38,6 +39,12 @@ h3.ttmenu__subheadline  {
 .ttmenu__subheadline a {
   color: #00458C !important;
   font-size: 1.2em !important;
+}
+
+.dropdown-menu .dp {
+  padding-left: 20px;
+  background-color: rgb(242, 242, 242);
+  margin-top: -10px;
 }
 
 {% endset %}
@@ -57,7 +64,7 @@ h3.ttmenu__subheadline  {
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                           </button>
-                          <a href="http://aranca.craft.dev/"><img id="logo" src="/assets/images/aranca_logo_214x75.png" alt="Aranca Logo"></a>
+                          <a href="http://www.aranca.com"><img id="logo" src="/assets/images/aranca_logo_214x75.png" alt="Aranca Logo"></a>
                         </div><!-- end navbar-header -->
 
                         <div class="navbar-collapse collapse">
@@ -258,7 +265,7 @@ h3.ttmenu__subheadline  {
                                                         </div>
                                                         <div id="tabs5-pane5" class="tab-pane">
                                                             <div class="row">
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                                     <div class="box">
                                                                         <ul>
                                                                             <li>
@@ -271,15 +278,33 @@ h3.ttmenu__subheadline  {
                                                                         </ul>
                                                                     </div><!-- end box -->
                                                                 </div><!-- end col -->
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                                     <div class="box">
                                                                         <ul>
                                                                             <li>
                                                                               <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
                                                                               </li>
-                                                                              <li><a href="#">Tax Valuation</a></li>
-                                                                              <li><a href="#">Financial Reporting</a></li>
-                                                                              <li><a href="#">Transaction Services</a></li>
+                                                                              <li class="dropdown-submenu">
+                                                                              <a href="#">Tax Valuation <span class="dropme-left"></span></a>
+                                                                                <ul class="dropdown-menu" style="left:70%;">
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/409a-valuation">409a</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/estate-gift-tax-valuations">Estate & Gift Tax</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/s-corp-election-irc-1374">S-Corp Election</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/nols-built-in-capital-gains-irc382">NOLs & Built-in Capital Gains</a></li>
+                                                                                </ul>
+                                                                              </li>
+                                                                              <li class="dropdown-submenu"><a href="#">Financial Reporting <span class="dropme-left"></span></a>
+                                                                                <ul class="dropdown-menu" style="left:70%;">
+                                                                                    <li class="dp"><a href="{{siteUrl}}financial-reporting/purchase-price-allocations-asc-805-ifrs-3">Purchase Price Allocations</a></li>
+                                                                                    <li class="dp"><a href="{{siteUrl}}financial-reporting/impairment-of-goodwill-and-other-intangible-assets">Goodwill Impairment</a></li>
+                                                                                    <li class="dp"><a href="{{siteUrl}}financial-reporting/complex-securities">Complex Securities</a></li>
+                                                                                </ul>
+                                                                              </li>
+                                                                              <li class="dropdown-submenu"><a href="#">Transaction Services <span class="dropme-left"></span></a>
+                                                                                <ul class="dropdown-menu" style="left:70%;">
+                                                                                    <li class="dp"><a href="{{siteUrl}}transaction-services/fairness-opinions">Fairness Opinions</a></li>
+                                                                                </ul>
+                                                                              </li>
                                                                               <li><a href="http://www.arancavaluation.com/ip-valuation/overview">IP Valuation</a></li>
                                                                         </ul>
                                                                     </div><!-- end box -->
@@ -293,7 +318,7 @@ h3.ttmenu__subheadline  {
                                         </li>
                                     </ul>
                                 </li><!-- end mega menu -->
-                                <li class="dropdown ttmenu-full"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Knowledge Library <b class="dropme"></b></a>
+                                <li class="dropdown ttmenu-full"><a href="{{siteUrl}}knowledge-library" data-toggle="dropdown" class="dropdown-toggle">Knowledge Library <b class="dropme"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                         <div class="ttmenu-content">
@@ -354,19 +379,41 @@ h3.ttmenu__subheadline  {
                                     </ul>
                                 </li><!-- end mega menu -->
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<span class="dropme"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{siteUrl}}about-us/company-overview">Overview</a></li>
-                                    <li><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
-                                    <li><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
-                                    <li><a href="{{siteUrl}}about-us/how-we-work">How We Work</a></li>
-                                    <li><a href="{{siteUrl}}about-us/our-values">Our Values</a></li>
-                                    <li><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
-                                    <li><a href="{{siteUrl}}about-us/our-team">Our Team</a></li>
-                                    <li><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
-                                    <li><a href="{{siteUrl}}media-room">Media Room</a></li>
-                                    <li><a href="{{siteUrl}}press-releases">Press Release</a></li>
+                                    <a href="{{siteUrl}}about-us/company-overview" class="dropdown-toggle" data-toggle="dropdown">About Us<span class="dropme"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                        <div class="ttmenu-content">
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="box">
+                                                        <ul class="dropdown-menu" role="menu">
+                                                          <li><a href="{{siteUrl}}about-us/company-overview">Overview</a></li>
+                                                          <li><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
+                                                          <li><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
+                                                          <li><a href="{{siteUrl}}about-us/how-we-work">How We Work</a></li>
+                                                          <li><a href="{{siteUrl}}about-us/our-values">Our Values</a></li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="box">
+                                                        <ul class="dropdown-menu" role="menu">
+
+                                                          <li><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
+                                                          <li><a href="{{siteUrl}}about-us/our-team">Our Team</a></li>
+                                                          <li><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
+                                                          <li><a href="{{siteUrl}}media-room">Media Room</a></li>
+                                                          <li><a href="{{siteUrl}}press-releases">Press Release</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </li>
                                     </ul>
+
+
                                 </li>
                                 <li><a href="/contact-us">Contact</a>
                                 </li><!-- end mega menu -->
