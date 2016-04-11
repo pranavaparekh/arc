@@ -74,12 +74,73 @@
 {# special reports results #}
 {% if srEntries|length %}
     <h2 class="sr__section__heading">Special Reports</h2>
-    <p>{{ srEntries|length }} infographics found for {{ query }}:</p>
+    <p>{{ srEntries|length }} special reports found for {{ query }}:</p>
 
     <ul class="sr__list">
         {% for entry in srEntries %}
           <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
               <p class="sr__excerpt">{{ entry.srIntro }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}
+
+{# business research results #}
+{% if brEntries|length %}
+    <h2 class="sr__section__heading">Business Research</h2>
+    <p>{{ brEntries|length }} pages found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in brEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.seoDescription }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}
+
+{# investment research results #}
+{% if irEntries|length %}
+    <h2 class="sr__section__heading">Investment Research</h2>
+    <p>{{ irEntries|length }} pages found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in irEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.seoDescription }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}
+
+
+{# ip research results #}
+{% if ipEntries|length %}
+    <h2 class="sr__section__heading">Intellectual Property Research</h2>
+    <p>{{ ipEntries|length }} pages found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in ipEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.seoDescription }}</p>
+          </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endif %}
+
+{# Procurement Research results #}
+{% if prEntries|length %}
+    <h2 class="sr__section__heading">Procurement Research</h2>
+    <p>{{ prEntries|length }} pages found for {{ query }}:</p>
+
+    <ul class="sr__list">
+        {% for entry in prEntries %}
+          <li class="sr__item"><a href="{{ entry.url }}">{{ entry.title }}</a>
+              <p class="sr__excerpt">{{ entry.seoDescription }}</p>
           </li>
         {% endfor %}
     </ul>
