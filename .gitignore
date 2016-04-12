@@ -24,7 +24,8 @@ craft/storage/backups/*
 # ----------------------------------------------------------------------
 public/assets/uploads/*
 public/assets/css/*
-
+public/downloads/*
+public/outlookmsg/*
 # Misc files
 # ----------------------------------------------------------------------
 .DS_Store
