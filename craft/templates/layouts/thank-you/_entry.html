@@ -6,23 +6,6 @@
 
 {% block main %}
 
-{% switch practiceType %}
-
-    {% case 'business-research' %}
-        {% set teamName = 'Business Research' %}
-    {% case 'procurement-research' %}
-        {% set teamName = 'Procurement Research' %}
-    {% case 'intellectual-property-research' %}
-        {% set teamName = 'Investment Research' %}
-    {% case 'ip-research' %}
-        {% set teamName = 'IP Research' %}
-    {% case 'request-sample' %}
-        {% set teamName = 'Contact' %}
-    {% default %}
-        {% redirect '/404.html' %}
-
-{% endswitch %}
-
 
 {% include '_components/global/_header' %}
 {% include '_components/global/_tk_masthead' %}
