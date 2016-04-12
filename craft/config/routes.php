@@ -25,7 +25,7 @@ return array(
    'press-releases/practices/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
    'press-releases/regions/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
    'knowledge-library' => 'layouts/kc/index',
-   'knowledge-library/blogs' => 'layouts/blogs/index',
+   'knowledge-library/blogs-and-opinions' => 'layouts/blogs/index',
    'knowledge-library/infographics' => 'layouts/infographics/index',
    'knowledge-library/articles' => 'layouts/articles/index',
    'knowledge-library/special-reports' => 'layouts/special-reports/index',
