@@ -70,7 +70,33 @@
 
 {% endset %}
 
+{% set articleJs %}
+
+$(document).ready(function() {
+
+  var shareLinks = $('.share-links');
+  var commentsBox = $('#disqus_thread');
+
+  $(window).on('scroll', function(e){
+    var linksTop = shareLinks.offset().top;
+    var commentsTop =commentsBox.offset().top;
+
+    // 300 is just an offset that prevents overlap
+
+    if(linksTop + 300 >= commentsTop) {
+      shareLinks.fadeOut('fast');
+      console.log("bottom reached");
+    } else {
+      shareLinks.show();
+    }
+  });
+
+});
+
+{% endset %}
+
 {% includeCss articleCss %}
+{% includeJs articleJs %}
 
 <div class="article__body">
   <h1 class="article__headline">{{ entry.title }}</h1>
