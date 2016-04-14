@@ -6,7 +6,7 @@ $(document).ready(function () {
         });
     }, "jsonp");
 
-    $('.wbs-switch').click(function () {
+    $('.wbs-switch, .wbs-close').click(function () {
         $('.wbs-container').toggleClass('active');
         if (!$('.wbs-container').hasClass('active')) {
             $(this).delay(300).queue(function () {
@@ -18,6 +18,20 @@ $(document).ready(function () {
             });
         }
     });
+
+    // $('body :not(.wbs-container)').on('click', function (e) {
+    //     if ($('.wbs-container').hasClass('active')) {
+    //         $('.wbs-container').toggleClass('active');
+    //         $(this).delay(300).queue(function () {
+    //             $.dequeue(this);
+    //             clearStatusSlide();
+    //             console.log('remove active');
+    //             if (timer) {
+    //                 timer = null;
+    //             }
+    //         });
+    //     }
+    // });
 
     $('#slideoutCallMe').click(function () {
         slideoutMakecall();
