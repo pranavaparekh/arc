@@ -1,20 +1,22 @@
 
 {% includeCssFile '/assets/css/intlTelInput.css' %}
-{% includeCssFile '/assets/css/slideout.css' %}
+{% includeCssFile '/assets/css/popout.css' %}
 
 {% includeJsFile 'http://js.waybeo.com/v0.1-beta2/waybeo.min.js' %}
 {% includeJsFile '/assets/js/intlTelInput.min.js' %}
-{% includeJsFile '/assets/js/slideout.js' %}
+{% includeJsFile '/assets/js/popout.js' %}
+
+<div class="wbs-switch">
+        <!--Use the css background property to change this image-->
+</div>
 
 <!-- Slideout popup form -->
 <div class="wbs-container right theme-peter-river">
-    <div class="wbs-switch">
-        <!--Use the css background property to change this image-->
-    </div>
     <div class="wbs-form">
         <div class="wbs-window">
             <div class="wbs-msg">
                 Learn how to use call intelligence and analytics to increase your phone lead generation.
+                <a href="javascript:void(0);" class="wbs-close">[x] close</a>
             </div>
             <input type="text" class="wbpb-name"  name="name" id="wctcname" placeholder="First Name">
             <!--<div class="wbs-formerror">Please enter a valid Name</div>-->
@@ -64,9 +66,6 @@
                 00:00:00
             </div>
         </div>
-    </div>
-    <div class="wbs-footer">
-        <div class="wbs-poweredby"><a href="http://waybeo.com" target="_blank"></a></div>
     </div>
 </div>
 <!-- End slideout popup form -->
