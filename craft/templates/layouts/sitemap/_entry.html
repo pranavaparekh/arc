@@ -1,8 +1,18 @@
 {% extends "base_layouts/_site" %}
 {% set title = entry.title %}
 
+{% set stCss %}
+
+.sitemap {
+  padding-top: 70px;
+}
+
+{% endset%}
+
+{% includeCss stCss %}
+
 {% block main %}
   {% include '_components/global/_header' %}
   {{ entry.body }}
-  {% include '_components/global/_footer' %}
+
 {% endblock %}
