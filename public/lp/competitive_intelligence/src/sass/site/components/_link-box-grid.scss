@@ -1,0 +1,32 @@
+/*Link Box Grid*/
+
+.content-link-box{
+  border: 1px solid lightgrey;
+  
+  height:120px;
+  // box-shadow: 2px 2px 2px #888888;
+
+  i{
+    font-size:42px;
+    color:$blue-base;
+    padding-right:15px;
+    padding-top:35px;
+  }
+  p{
+    display:inline;
+    // padding-top:35px;
+  }
+}
+
+.link-box-grid{
+}
+.link-box-grid__row{
+}
+.link-box-grid__box{
+}
+.link-box-grid__icon{
+}
+.link-box-grid__text{
+}
+
+

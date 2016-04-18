@@ -1,0 +1,35 @@
+/*Case Studies*/
+.case-studies
+{
+  border: 1px solid $blue-base;
+  min-height: 200px;
+  margin-bottom: 30px;
+  padding:20px;
+  box-shadow: -10px 0px 12px $gray-light;
+  position: relative;
+}
+
+.case-studies__title{
+  display:inline;
+  color:$blue-base;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.case-studies__content{
+  display:inline;
+}
+
+.case-studies__link{
+  @extend .text-center;
+  display: inline;
+  border: 1px solid $blue-base;
+  color:white;
+  background-color: $blue-base;
+  position:absolute;
+  right:0px;
+  bottom:0px;
+  margin:0;
+  width: 140px;
+  height:30px;
+}

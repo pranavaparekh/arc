@@ -1,0 +1,25 @@
+.team{background-position:0 -72px;}
+.audit{background-position:0 -165px;}
+.ip{background-position:0 -258px;}
+.solution{background-position:0 -353px;}
+.icon {
+  height: 94px;
+  width: 94px;
+  display: inline-block;
+}
+.img-sprite {
+  background-image: url('/assets/img/img-sprite.png');
+  background-repeat: no-repeat;
+}
+.w-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 0;
+  color: #676869;
+}
+hr.title {
+  position: relative;
+  top: 5px;
+  border-top: 1px solid #cdcdcd;
+}
+

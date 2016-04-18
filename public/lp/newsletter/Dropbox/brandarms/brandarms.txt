@@ -1,0 +1,11 @@
+GoDaddy
+username: 71486018
+Password: Brandarms2013
+
+mysql details
+database name: D1Dj6
+prefix: nwa
+username: D1Dj6
+password: Brandarms!@#123
+
+hostname: D1Dj6.db.11948859.hostedresource.com

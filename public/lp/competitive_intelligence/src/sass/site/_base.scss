@@ -1,0 +1,44 @@
+body {
+  font-size: $font-size-base+px;
+  font-family: $font-family;
+  font-weight: 200;
+  color:$gray-base;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+ol, ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Lede Styles */
+
+.lede__headline {
+  font-size: 2em;
+  color: $black-base;
+}
+
+.lede__headline--caps {
+  @extend .lede__headline;
+  text-transform:uppercase;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+.lede__body {
+  font-size: 1.3em;
+  color: $black-base-lighter;
+}
+
+.lede__body p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+}

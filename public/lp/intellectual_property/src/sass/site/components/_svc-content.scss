@@ -1,0 +1,73 @@
+
+.svc__content__intro {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 35px;
+  color: $gray-darker;
+}
+
+/* text content */
+
+.svc__content {
+  background: $gray-light;
+  padding: 3em 1.5em 4.7em 1.5em;
+  position: relative;
+}
+
+.svc__content__headline {
+  text-transform: uppercase;
+  color: $brand-primary;
+  letter-spacing: 0.05em;
+}
+
+/* svc stat content container */
+
+.svc__stat__content {
+  padding-left: 60px;
+  margin-top:20px;
+  color: $brand-primary;
+}
+
+.svc__stat__content--full {
+  @extend .svc__stat__content;
+  padding-left: 0px;
+  margin-right: 30px;
+}
+
+/* stat spotlight */
+
+.svc__stat__spotlight {
+  color: $brand-secondary;
+  font-size: 2.5em;
+  letter-spacing: 0.05em;
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-weight: 100;
+}
+
+.svc__stat__spotlight__content {
+  color: $gray-dark;
+  margin-top: -5px;
+}
+
+/* stat items */
+
+.svc__stat__item {
+  margin-bottom: 15px;
+  display:table;
+}
+
+.svc__stat__focus {
+  font-size: 1.5em;
+  padding-right: 2em;
+}
+
+.svc__stat {
+
+}
+
+.svc__stat__desc {
+  // font-size: 0.95em;
+  display: block;
+  padding-left: 1em;
+}

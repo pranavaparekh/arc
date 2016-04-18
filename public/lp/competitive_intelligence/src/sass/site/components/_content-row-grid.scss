@@ -1,0 +1,34 @@
+/*Content Row Grid*/
+.content-row-grid
+{
+  margin-top:10px;
+  margin-bottom:30px;
+}
+
+.content-row-item
+{
+  @extend .clearfix;
+  margin-top:1px;
+  margin-bottom:15px;
+  border-bottom:1px solid $brand-primary;
+  img{
+    padding:25px;
+  }
+}
+
+
+.content-row__headline {
+  color: $brand-primary;
+  letter-spacing: 0.05em;
+}
+
+.content-row__headline > span {
+  color: $gray-dark;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+.content-row-item:last-child
+{
+  border-bottom:none;
+}

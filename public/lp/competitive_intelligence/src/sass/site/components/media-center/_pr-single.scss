@@ -1,0 +1,59 @@
+.pr-single{
+  padding:13%;
+}
+
+.pr-single__category{
+  border-bottom: 1px solid $blue-base;
+}
+
+.pr-single__category--orange{
+  color:$brand-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  padding-bottom: 15px;
+}
+
+.pr-single__category--grey{
+  color:$gray;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding-bottom: 15px;
+}
+
+.pr-single__headline{
+  color: $blue-base;
+  font-weight: normal;
+  line-height: 39px;
+  font-size: 2em;
+  opacity: 0.9;
+}
+
+.action-bar{
+  border-top: 1px solid $gray;
+  margin-bottom: 22px;
+}
+.action-bar__item{
+  float:left;
+  color:$gray;
+  font-size:22px;
+  width: 4em;
+  border-right: 1px solid $gray;
+  transition: font-size 0.2s ease;
+}
+
+.action-bar__item:hover{
+  color:$gray-dark;
+  font-size:25px;
+}
+
+.action-bar__item-text{
+  font-size: 0.5em;
+  text-transform: uppercase;
+  position: relative;
+  top: -10px;
+  letter-spacing: 0.1em;
+}
+
+.action-bar__icon{
+  padding-top: 15px;
+}

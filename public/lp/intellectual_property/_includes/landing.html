@@ -1,0 +1,125 @@
+
+<div class="container" id="why" name="why">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 ">
+      <h1 class="landing__headline">Why Aranca?</h1>
+      <div class="landing__content" style="text-align: left;">
+        <p style="font-family:Verdana;">Aranca has the entire arsenal of aces your IP needs. Our research and analysis backed advisory solutions help IP owners, managers and practitioners to invest, leverage and protect their ideas and IP across technology domains and through the patent lifecycle. So whether you are inventing ideas, selling them in the market or protecting them from theft, we have the experience and the expertise to ensure you make the most of your IP.</p>
+        <br/>
+        <!-- <h2 class="landing__headline">What we do</h2> -->
+        <p style="font-family:Verdana;">Aranca offers a comprehensive portfolio of solutions spanning the entire patent lifecycle from conceptualization to commercialization. Through bespoke projects to support one-off requirements or dedicated teams for recurring research needs, Aranca's patent research services have been leveraged by over 450 clients including Fortune 500 enterprises, start-ups, law firms, Universities, R&D institutes and patent brokers. </p>
+        <br/>
+        <p style="font-family:Verdana;">Our ability to blend business analysis and valuation opinion with patent research to offer unmatched depth and insights when answering key questions pertaining to IP strategy is unique.</p>
+      </div>
+      <!-- End of landing__content -->
+    </div>
+    <!-- End of col-md-6 -->
+    <!-- Start: Form URL capture -->
+<script>
+    window.onload = function ()
+    {
+    var url = window.location.href;
+    document.getElementById("formurl").value = url;
+
+    var urlParams;
+    var query = (window.location != window.parent.location) ? document.referrer.split('?')[1] || '' : window.location.search.split('?')[1]|| '';
+    (window.onpopstate = function () {
+    var match, search = /([^&=]+)=?([^&]*)/g;
+    urlParams = {};
+    while (match = search.exec(query))
+    urlParams[encodeURIComponent(match[1])] = match[2];
+    }
+    )();
+    for (i in urlParams) {
+    var urlParamsArray = urlParams[i];
+    try {
+    document.getElementsByName(i)[0].value=decodeURIComponent(urlParamsArray);
+    }
+    catch(err) {
+    }
+    }
+    };
+</script>
+  <!-- End: Form URL capture -->
+       <div class="col-md-4 col-md-push-1 col-lg-4 col-lg-pull-1">
+ <form class="landing__form no-lfm" method="post" accept-charset="utf-8" name="Intellectual Property Research Solutions" action="/landing/19052014/bin/process-equity2.php" style="height:450px;">
+ <input type="hidden" name="LFMIdsite" value="9698" />
+<input type="hidden" name="LFMC" id="LFMC" value="0" />
+<input type="hidden" name="_form_name_" value="Intellectual Property Research Solutions" />
+<input type="hidden" name="lead_source__c" value="website" />
+<input type="hidden" name="practice__c" value="IP" />
+<input type="hidden" name="created_by__c" value="Marketing" />
+<input type="hidden" name="utm_source" />
+<input type="hidden" name="utm_medium" />
+<input type="hidden" name="utm_content" />
+<input type="hidden" name="utm_campaign" />
+<input type="hidden" name="formurl" id="formurl" />
+<input type="hidden" name="referrer" />
+<input type="hidden" name="ao_refurl" />
+<script type="text/javascript">
+  function getCookie(cookieName, path, domain) {
+  var cookiePattern = new RegExp('(^|;)[ ]*' + cookieName + '=([^;]*)' +
+  (path ? '(;[ ]*expires=[^;]*)?;[ ]*path=' + path.replace('/', '\\/') + '' : '') +
+  (domain ? ';[ ]*domain=' + domain + '(;|$)' : '')),
+  cookieMatch = cookiePattern.exec(document.cookie),
+  unescapeWrapper = window.decodeURIComponent || unescape;
+  return cookieMatch ? unescapeWrapper(cookieMatch[2]) : 0;
+  }
+  function setLFMC() {
+  try {
+  document.Intellectual Property Research Solutions.LFMC.value= getCookie("_vt_");
+  } catch (e) { }
+  }
+  window.onload = function(){ setLFMC(); }
+</script>
+        <div class="form-group field" id="yourFirstName-field">
+          <div class="input">
+            <input class="form-control" type="text" id="firstname" name="firstname" value="" data-show-chars-left="" autocomplete="off" placeholder="First Name*" style="color:#555555;" required="">
+          </div>
+        </div>
+        <div class="form-group field" id="yourLastName-field">
+          <div class="input">
+            <input class="form-control" type="text" id="lastname" name="lastname" value="" data-show-chars-left="" autocomplete="off" placeholder="Last Name*" style="color:#555555;" required="">
+          </div>
+        </div>
+        <div class="form-group field" id="company-field">
+          <div class="input">
+            <input class="form-control" type="text" id="company" name="company" value="" data-show-chars-left="" autocomplete="off" placeholder="Company*" style="color:#555555;" required="">
+          </div>
+        </div>
+        <div class="form-group field" id="email-field">
+          <div class="input">
+            <input class="form-control" type="email" id="email" name="email" value="" data-show-chars-left="" autocomplete="off" placeholder="Email*" style="color:#555555;" required="">
+          </div>
+        </div>
+         <div class="form-group field" id="phone-field">
+          <div class="input">
+            <input class="form-control" type="text" id="tel" name="tel" value="" data-show-chars-left="" autocomplete="off" placeholder="Phone" style="color:#555555;">
+          </div>
+        </div>
+        <div class="form-group field" id="projectDescription-field">
+          <div class="input">
+            <textarea class="form-control text nicetext fullwidth" rows="2" cols="50" id="projectDescription" name="comment" data-show-chars-left="" placeholder="How can we help?" style="color:#555555;"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <p class="w3b_url" style="display:none;" >website
+            <br /><input name="url" id="url" type="text" /></p>
+            <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-intellectual-property-research" />
+            <input type="hidden" name="subject" value="Google Enquiry | LP-Intellectual Property Research" />
+            <button type="submit" class="btn btn-warning btn-lg mybt" onClick="_gaq.push(['_trackEvent', 'Intellectual Property Research Contact', 'Information Request', 'Intellectual Property Research Contact From', , false]);">Contact Our Team</button>
+          </div>
+        </div>
+      </form>
+       <script>document.getElementsByName('ao_refurl')[0].value = document.referrer</script>
+    </div>
+    <!-- End of col-md-6 -->
+
+
+
+
+  </div>
+  <!-- End of row -->
+</div>
+<!-- End of container -->

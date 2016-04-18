@@ -1,0 +1,599 @@
+/* --------------- */
+/* UTILITY CLASSES */
+/* --------------- */
+
+/* separators */
+
+.sep50 { margin-bottom: 50px; }
+
+
+/* CSS Shapes */
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid white;
+  margin: 0 auto;
+  position:relative;
+  top:-63px;
+
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-left: 20px solid $gray-light;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  top: 45%;
+  right: -18px;
+}
+
+.triangle-left {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-right: 20px solid $gray-light;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  top: 40%;
+  left: -18px;
+}
+
+
+/* Buttons */
+
+.ghost-button {
+  display: inline-block;
+  width: 200px;
+  padding: 4px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+  background-color: #fff;
+  color: #000;
+}
+
+.ghost-button--wide{
+  @extend .ghost-button;
+  width:45%;
+}
+
+/* Release Date Style*/
+.release-date{
+  text-transform: uppercase;
+  margin-top: -11px;
+  font-family: Arial;
+  font-size: 0.8em;
+  span{
+    color:lightgrey;
+  }
+}
+
+.release-date--small{
+  @extend .release-date;
+  font-size:0.7em;
+  letter-spacing:0.2em;
+}
+
+/* Read More - Orange*/
+.read-more{
+  color:$brand-secondary;
+  text-transform: uppercase;
+}
+
+/* Use this class to remove padding from bootstrap's grid classes*/
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+/* Mixin to Convert Pixels to Ems*/
+
+$browser-context: $font-size-base; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+/* - Block behaviors */
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.inverted-bkg {
+  background: $brand-primary;
+}
+
+/* - Clear - */
+.clear {
+  clear: both;
+}
+
+/* - Responsive images -*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* - List containers - */
+.list-container .col-md-2:nth-child(6n+1), .list-container .col-md-3:nth-child(4n+1), .list-container .col-md-4:nth-child(3n+1), .list-container .col-md-6:nth-child(2n+1), .list-container .col-md-2-4:nth-child(5n+1) {
+  clear: both;
+}
+.list-container .figure-image img {
+  width: 100%;
+}
+
+/* - FAde out content - */
+.fade-content > * {
+  opacity: 0.2;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+
+
+
+/* - Border divider - */
+.divider-center
+{
+  border-top: 3px solid $brand-primary;
+  width: 60px;
+}
+
+.divider-center-white
+{
+  border-top: 3px solid #ffffff;
+  width: 60px;
+}
+
+.divider-center-blue-long
+{
+  border-top: 1px solid $brand-primary;
+  width: 960px;
+  margin: 30px 0 30px 0;
+}
+
+%lead {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.75em;
+}
+.lead strong {
+  font-weight: 700;
+}
+
+
+body input, body textarea, body .btn, body button {
+  font-family: "Raleway", sans-serif;
+}
+
+
+/* ------------------------ */
+/* GENERAL TYPOGRAPHY RULES */
+/* ------------------------ */
+/* - Body typography - */
+
+body.hyphenated {
+  word-break: break-all;
+  word-break: break-word;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* - Headers - */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.5em;
+}
+h1.headings-caps, h2.headings-caps, h3.headings-caps, h4.headings-caps, h5.headings-caps, h6.headings-caps {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h1 small {
+  font-size: 0.6em;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h2 small {
+  font-size: 0.75em;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h3 small {
+  font-size: 0.75em;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h4 small {
+  font-size: 0.75em;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+h6 {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* - Header element - */
+.header {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* - Links - */
+a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active, a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+/* - Small text - */
+small, .small {
+  font-size: 0.85em;
+  line-height: inherit;
+}
+
+/* - Figures - */
+figure {
+  margin: 0 0 24px;
+}
+
+/* - Font weight classes - */
+.black {
+  font-weight: bolder;
+}
+
+.light {
+  font-weight: lighter;
+}
+
+.hairline {
+  font-weight: lighter;
+}
+
+/* - Font size classes - */
+.big {
+  font-size: 36px;
+  line-height: 48px;
+}
+
+.bigger {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.super {
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+.super small {
+  font-size: .35em;
+}
+
+.hyper {
+  font-size: 96px;
+  line-height: 1.2;
+}
+.hyper small {
+  font-size: .35em;
+}
+
+.inverted-white {
+  color:white;
+}
+
+/* - Text aligns classes - */
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* - Text transform classes - */
+.text-caps {
+  text-transform: uppercase !important;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-none {
+  text-transform: none !important;
+}
+
+/* Responsive typography */
+@media (max-width: 992px) {
+  .small-screen-center {
+    text-align: center !important;
+  }
+
+  .small-screen-left {
+    text-align: left !important;
+  }
+
+  .small-screen-right {
+    text-align: right !important;
+  }
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h1 small {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  h2 small {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h3 small {
+    font-size: 14px;
+  }
+
+  .big {
+    font-size: 24px;
+    line-height: 1.2em;
+  }
+
+  .bigger {
+    font-size: 36px;
+    line-height: 1.2em;
+  }
+
+  .super {
+    font-size: 48px;
+  }
+  .super small {
+    margin-top: 12px;
+    display: block;
+  }
+
+  .hyper {
+    font-size: 72px;
+    line-height: 1.2em;
+  }
+
+  .condensed {
+    max-width: 100%;
+  }
+
+  .lead {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: normal;
+  }
+}
+@media (max-width: 480px) {
+  .big {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .bigger {
+    font-size: 32px;
+    line-height: 1.2em;
+  }
+
+  .super {
+    font-size: 36px;
+    line-height: 1.2em;
+  }
+
+  .hyper {
+    font-size: 48px;
+    line-height: 1.2em;
+  }
+}
+@media (max-width: 320px) {
+
+  h1 {
+    font-size: 21px;
+  }
+
+  h1 small {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h2 small {
+    font-size: 12px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h3 small {
+    font-size: 11px;
+  }
+}
+
+
+/* -- Media sections -- */
+.background-media, .background-overlay {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0px;
+  bottom: 0;
+}
+
+.background-media {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+/* -- Sections in sections -- */
+.section .section .container {
+  width: auto;
+}
+
+.text-light {
+  color: #ffffff;
+}
+
+/* - Sections - */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+  .vertical-top, .vertical-middle, .vertical-bottom {
+    display: table;
+    width: calc(100% + 30px);
+    width: 100% \0/IE9;
+    /* ie9 fix */
+    table-layout: fixed;
+  }
+  .vertical-top > *, .vertical-middle > *, .vertical-bottom > * {
+    display: table-cell;
+    float: none;
+  }
+ .vertical-middle > * {
+    vertical-align: middle;
+  }
+
+
+/* - Blockquote - */
+blockquote {
+  border: 0;
+  position: relative;
+  padding: 0 48px;
+  font-size: 1.8em;
+  text-align: left;
+  font-style: italic;
+}
+blockquote:before {
+  content: "\201C";
+  display: block;
+  font-family: Georgia;
+  font-size: 84px;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+blockquote p {
+  line-height: 1.5em;
+}
+
+blockquote img {
+  display: inline-block !important;
+  margin: 0 0 12px !important;
+  border-radius: 50%;
+}
+
+blockquote .box {
+  display: inline-block !important;
+}
+
+.blockquote-simple img {
+  max-width: 96px !important;
+  border: 8px solid;
+  max-height:96px;
+}
+.blockquote-simple:before {
+  display: none;
+}
+.blockquote-simple footer:before {
+  display: none;
+}
+
+blockquote p {
+  font-family: "Gentium Basic";
+  font-style: italic;
+}
+.pullout-text-slab blockquote p {
+  font-size: 24px;
+  font-weight: 400;
+  color:#ffffff;
+}
+blockquote p {
+  font-size: 24px;
+  font-weight: 400;
+  color:#4c4c4c;
+}
+blockquote small, blockquote footer {
+  font-family: "Raleway";
+  color: #959494;
+}
+blockquote cite {
+  color: #4c4c4c;
+}
+blockquote:before {
+  color: rgba(76, 76, 76, 0.2);
+}
+blockquote.blockquote-simple img {
+  border-color: rgba(0, 0, 0, 0.2);
+}

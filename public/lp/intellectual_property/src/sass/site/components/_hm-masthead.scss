@@ -1,0 +1,19 @@
+.masthead-top {
+  background: url('/assets/images/masthead/Intellectual_property_masthead.jpg') no-repeat;
+  background-color: #d7d9da;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 400px;
+
+
+  @media screen and (max-width: $screen-sm-min){
+    background: url('/assets/images/cn-banner-mob.jpg') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 330px;
+  }
+}

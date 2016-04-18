@@ -1,0 +1,167 @@
+/* - Pricing tables - */
+.pricing-col {
+  text-align: center;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  text-shadow: none;
+  position: relative;
+}
+.pricing-col:before, .pricing-col:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 16px;
+  width: 50%;
+  height: 40px;
+  bottom: 36px;
+  max-width: 300px;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.pricing-col:after {
+  -webkit-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 16px;
+  left: auto;
+}
+
+.pricing-head {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 12px;
+}
+
+.pricing-body {
+  padding-bottom: 24px;
+}
+.pricing-body .btn {
+  transition: all 0.2s;
+}
+.pricing-body .btn:hover {
+  opacity: .95;
+}
+
+.pricing-price header {
+  margin-top: 0;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15) inset, 0px -1px 1px rgba(0, 0, 0, 0.15) inset;
+}
+.pricing-price header h2 {
+  font-size: 60px;
+  line-height: 1em;
+  margin: 0;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+}
+.pricing-price header small {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  color: inherit;
+  opacity: 0.5;
+  left: -16px;
+}
+.pricing-price header p {
+  margin-bottom: 0;
+  opacity: 0.5;
+  line-height: 1.2em;
+}
+
+.pricing-list {
+  list-style-type: none;
+  margin: 0 0 24px;
+  padding-left: 0;
+  text-align: center;
+}
+.pricing-list li {
+  padding: 12px;
+  border-bottom: 1px solid;
+}
+
+.pricing-featured {
+  position: relative;
+  -webkit-transform: translateY(-24px);
+  transform: translateY(-24px);
+}
+.pricing-featured .pricing-head {
+  padding: 24px;
+  font-size: 24px;
+}
+.pricing-featured .pricing-body {
+  padding-bottom: 36px;
+}
+
+@media (max-width: 767px) {
+  .pricing-featured {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  .pricing-featured .pricing-head {
+    padding: 12px;
+    font-size: 18px;
+  }
+  .pricing-featured .pricing-body {
+    padding-bottom: 24px;
+  }
+}
+/* -  Pricing  list - */
+.pricing-item-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.pricing-item-list li {
+  position: relative;
+}
+.pricing-item-list li h3 {
+  margin-bottom: 0;
+  padding-right: 60px;
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.pricing-item-list li span {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.pricing-item-list li.featured:before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: -12px;
+  bottom: -12px;
+  left: -12px;
+  right: -12px;
+  border-width: 1px;
+  border-style: solid;
+}
+.pricing-item-list li strong {
+  display: block;
+  position: absolute;
+  top: -36px;
+  line-height: 24px;
+  right: -12px;
+  padding: 0 12px;
+}
+.pricing-item-list li img {
+  display: block;
+  max-width: 60px;
+  position: absolute;
+}
+.pricing-item-list li.pricing-cirle img {
+  border-radius: 50%;
+}
+.pricing-item-list li img + .pricing-item-list-content {
+  padding-left: 70px;
+}
+
+/* From corporate.css */

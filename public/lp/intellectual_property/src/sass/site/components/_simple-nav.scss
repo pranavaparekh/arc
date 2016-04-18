@@ -1,0 +1,57 @@
+$header-height: 80px;
+
+header {
+
+  width:100%;
+  height:$header-height;
+  background-color:rgb(252, 252, 252);
+  border-bottom: 1px solid white;
+
+}
+
+.fixed {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 2;
+  width: 100%;
+
+}
+
+.box-shadow {
+  box-shadow: 0 0 18px 0 rgba(46,40,64,0.4);
+  -webkit-box-shadow: 0 0 18px 0 rgba(46,40,64,0.4);
+  -moz-box-shadow: 0 0 18px 0 rgba(46,40,64,0.4);
+}
+
+.brand-logo {
+  display: inline-block;
+  line-height: $header-height;
+  @media screen and (max-width: $screen-sm-min){
+    display: block;
+    text-align: center;
+  }
+}
+
+.simp-nav {
+  @media screen and (max-width: $screen-sm-min){
+    display: none;
+  }
+}
+
+.simp-nav__item {
+  float: right;
+  margin-right: 35px;
+  line-height: $header-height;
+  height: $header-height;
+}
+
+.simp-nav__item > a {
+  color: $gray-darker;
+  transition: all 0.5s;
+}
+
+.simp-nav__item > a:hover {
+  color: $brand-primary;
+  letter-spacing: 0.04em;
+}

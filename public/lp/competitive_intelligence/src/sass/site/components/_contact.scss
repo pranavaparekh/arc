@@ -1,0 +1,16 @@
+.contact {
+  background: $blue-base-darker;
+  padding: 2em;
+  font-size: 0.9em;
+}
+
+.contact__headline {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.1em;
+}
+
+.contact__link {
+  color: white;
+  text-decoration: underline;
+}

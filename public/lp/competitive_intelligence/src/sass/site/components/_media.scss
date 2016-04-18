@@ -1,0 +1,19 @@
+/*Homepage Media*/
+.media-content {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.profile-media-slab{
+  @extend .col-md-6;
+  background:#f0f0f0;
+}
+
+.pullout-text-slab{
+  @extend .col-md-6;
+  background: #0469ac;
+}
+
+.slider-container {
+  @extend .container-fullwidth; 
+}

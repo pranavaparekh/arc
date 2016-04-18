@@ -1,0 +1,42 @@
+# Numerous always-ignore extensions
+.sass-cache
+node_modules
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+.tags
+tags
+
+# Craft runtime and backups folders
+# ----------------------------------------------------------------------
+craft/storage/runtime/*
+craft/storage/backups/*
+
+# Uploaded files
+# ----------------------------------------------------------------------
+public/assets/uploads/*
+public/assets/css/*
+!public/assets/css/font-awesome.min.css
+
+
+# Misc files
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-workspace
+*.sublime-project
+_notes
+dwsync.xml
+logs/*
