@@ -48,6 +48,8 @@ return array(
    'valuation-and-advisory/us-tax-compliance/carry-forward-of-nols-irc382' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/us-tax-compliance/s-corp-election-irc1374' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/transaction-support/fairness-opinions' => 'layouts/services/va/_redirects',
-   'valuation-and-advisory/us-tax-compliance/irc409a-valuation' => 'layouts/services/va/_redirects'
-
+   'valuation-and-advisory/us-tax-compliance/irc409a-valuation' => 'layouts/services/va/_redirects',
+   'valuation-and-advisory/us-gaap-reporting' => 'layouts/services/va/_redirects',
+   'valuation-and-advisory/us-tax-compliance' => 'layouts/services/va/_redirects',
+   'valuation-and-advisory/transaction-support' => 'layouts/services/va/_redirects'
 );
