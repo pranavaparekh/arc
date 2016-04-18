@@ -12,20 +12,25 @@
   <div class="row">
 
   {% for entry in featuredEntries %}
-  <a href={{ entry.url }}>
+
     <div class="kc-featured--article col-sm-6">
+      <a href={{ entry.url }}>
+        <div class="featEntry__inner">
 
-      {% set asset = entry.blogsBanner.first() %}
+           {% set asset = entry.blogsBanner.first() %}
 
-      {% if asset %}
-          <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}>
-      {% endif %}
+          {% if asset %}
+              <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}>
+          {% endif %}
 
-      <div class="featEntry__headline__wrapper--short">
-        <p class="kc-featured--slide__meta">{{ entry.title }}</p>
-      </div>
+          <div class="featEntry__headline__wrapper">
+            <h2 class="featEntry__headline">{{ entry.title }}</h2>
+          </div>
+
+        </div><!-- featEntry__inner -->
+      </a>
     </div><!-- kc-featured-article -->
-  </a>
+
   {% if loop.index % 2 == 0 %}
     </div><!-- close row and open it below again -->
     <div class="row">
