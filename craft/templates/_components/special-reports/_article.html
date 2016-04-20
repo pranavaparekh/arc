@@ -108,6 +108,7 @@ $(document).ready(function() {
   {% include '_components/global/_byline' %}
 
   {% set pdfLink = entry.srDownload.first() %}
+  {% set actonPdfLink = entry.srPdfUrl %}
   {% set asset = entry.srBanner.first() %}
 
   {% if asset | length %}
@@ -117,7 +118,12 @@ $(document).ready(function() {
   {% endif %}
 
 
-  {% if pdfLink | length %}
+  {% if actonPdfLink | length %}
+    <p class="article__download"><strong>Download this report:</strong>&nbsp;
+      <a href="{{ actonPdfLink }}" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;{{ entry.title }}</a>
+    </p>
+    <hr>
+  {% else %}
     <p class="article__download"><strong>Download this report:</strong>
       <a href="{{ pdfLink.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i>   {{pdfLink.title}}</a>
     </p>
