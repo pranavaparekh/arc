@@ -5,9 +5,9 @@
       <p>
 
         {% for author in entry.multiAuthor %}
-          {{ author.firstName }} {{ author.lastName }}
+          {{ author.firstName }} {% if entry.multiAuthor | length > 1 %} | {% endif %} {{ author.lastName }}
          {% endfor %}
-         {% if entry.multiAuthor | length > 1 %} | {% endif %}
+
       </p>
     </div>
 
