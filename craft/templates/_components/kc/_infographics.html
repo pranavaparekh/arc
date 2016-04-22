@@ -23,21 +23,25 @@
   <div class="row">
 
   {% for entry in featuredEntries %}
-  <a href={{ entry.url }}>
-    <div class="kc-featured--infographic col-sm-12">
-    {% if entry.igBanner[1] | length %}
-      {% set asset = entry.igBanner[1] %}
-      <img src={{ asset.url() }} class="img-responsive" alt={{entry.title}}> <br>
+
+    <div class="featEntry col-sm-12">
+      <a href={{ entry.url }}>
+        <div class="featEntry__inner">
+          {% if entry.igBanner[1] | length %}
+            {% set asset = entry.igBanner[1] %}
+            <img src={{ asset.url() }} class="img-responsive" alt={{entry.title}}>
+          {% endif %}
+          <div class="featEntry__headline__wrapper">
+            <p class="featEntry__headline">{{ entry.title }}</p>
+          </div>
+        </div><!-- featEntry__inner -->
+      </a>
+    </div><!-- featEntry -->
+
+    {% if loop.index % 2 == 0 %}
+      </div><!-- close row and open it below again -->
+      <div class="row">
     {% endif %}
-    <div class="featEntry__headline__wrapper--short" style="width: 96%;">
-      <p class="kc-featured--slide__meta">{{ entry.title }}</p>
-    </div>
-    </div><!-- kc-featured-infographic -->
-  </a>
-  {% if loop.index % 2 == 0 %}
-    </div><!-- close row and open it below again -->
-    <div class="row">
-  {% endif %}
 {% endfor %}
    </div><!-- row -->
    <p class="view-all--right"><a class="view-all" href="/knowledge-library/infographics">View All Infographics</a></p>
