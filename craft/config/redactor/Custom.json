@@ -1,6 +1,6 @@
 {
   buttons: ['html','formatting','bold','italic','unorderedlist','orderedlist','link','image','video'],
-  formatting: ['p', 'blockquote', 'h1', h2'],
+  formatting: ['p', 'blockquote', 'h2'],
 	toolbarFixed: true,
   replaceDivs:false,
   paragraphSize:false,
