@@ -1,9 +1,8 @@
 {
   buttons: ['html','formatting','bold','italic','unorderedlist','orderedlist','link','image','video'],
-  formatting: ['p', 'blockquote', 'h1', h2'],
 	toolbarFixed: true,
   replaceDivs:false,
-  paragraphSize:false,
+  paragraphize:false,
   cleanOnPaste:false,
   tabAsSpaces: 2,
   plugins: ['fullscreen','clips'],
