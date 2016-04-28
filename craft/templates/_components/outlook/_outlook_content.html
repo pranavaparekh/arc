@@ -1,0 +1,30 @@
+{% set thankyouCss %}
+
+.thank-you {
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+{% endset %}
+
+{% includeCss thankyouCss %}
+
+
+
+<div class="container thank-you">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="lede__subheadline">Download the Outlook Email File</h1>
+          <h2 class="lede__headline">{{entry.outlookFileCategory}} - {{entry.title}}</h2>
+          <p class="text-center">{{entry.outlookRichtext}}</p>
+          <hr class="lede__border">
+          <p class="text-center"><a href="{{ emailLink.url }}" class="btn btn-lg btn-primary" role="button">Download File</a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
