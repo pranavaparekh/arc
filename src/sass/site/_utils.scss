@@ -25,6 +25,8 @@
 
   }
 
+
+
 /* add class .section-to-print to content you want printed */
 
 @media print {
@@ -52,7 +54,7 @@ input#s:focus {
 }
 
 .lede__headline {
-  font-size: 30px;
+  font-size: 2em;
   color: #59656B;
   font-weight: 600;
   text-align: center;
@@ -219,3 +221,10 @@ input#s:focus {
     color: #5B6A72;
     font-style: italic;
 }
+
+@media only screen and (max-width : 480px) {
+/*  .lede__headline {
+    font-size: 25px;
+  }*/
+}
+
