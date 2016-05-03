@@ -2,9 +2,15 @@
 
 .thank-you {
   padding-top: 20px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
 }
-
+p {
+  text-align: center;
+  color: #474A4C;
+}
+.headline {
+  font-weight: 400;
+}
 {% endset %}
 
 {% includeCss thankyouCss %}
@@ -16,13 +22,16 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h1 class="lede__subheadline">Download the Outlook Email File</h1>
-          <h2 class="lede__headline">{{entry.outlookFileCategory}} - {{entry.title}}</h2>
-          <p class="text-center">{{entry.outlookRichtext}}</p>
+          <!-- <h1 class="lede__subheadline">Download the Outlook Email File</h1> -->
+          <h2 class="lede__headline">{{entry.outlookFileCategory}}:  {{entry.title}}</h2>
+          <p class="lede__subheadline"><span class="headline">Practice:</span> {{entry.outlookPracticeCategory}}</p>
+          <p class="lede__subheadline"><span class="headline">Industry:</span> {{entry.outlookIndustry}}</p>
           <hr class="lede__border">
-          <p class="text-center"><a href="{{ emailLink.url }}" class="btn btn-lg btn-primary" role="button">Download File</a>
+          <p class="text-center">{{entry.outlookRichtext}}</p>
+          <p class="text-center"><a href="{{ emailLink.url }}" class="btn btn-lg btn-primary" role="button">Download Email Template</a>
           </p>
 
+          <p style="padding-top: 20px;"><em>To view the list of all content pieces <a href="https://onedrive.live.com/view.aspx?resid=E66445CFBBFF2309!149&ithint=file%2cxlsx&app=Excel&authkey=!AO6aBrvX-suKeNs" target="_blank">click here</em></p>
         </div>
       </div>
     </div>

@@ -1,0 +1,74 @@
+
+
+{% set mmenuCss %}
+.mmenu {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 9;
+  background: white;
+  max-height: 66px;
+  box-shadow: 0 1px 3px #E1DFDF;
+}
+
+#logo {
+  max-width: 88%;
+}
+
+.ttmenu .navbar-default {
+  background: white;
+}
+
+.ttmenu .navbar-default .navbar-nav > li > a {
+  color: grey !important;
+  font-weight: 400;
+  font-size: 1.02em;
+  letter-spacing: 0.05;
+}
+
+.ttmenu .dropdown-menu, .ttmenu .navbar-default .ttmenu-content {
+  background-color: #f3f3f3;
+  box-shadow: 0 1px 3px #E1DFDF;
+}
+
+
+h3.ttmenu__subheadline  {
+  margin-bottom: 0;
+}
+
+.ttmenu__subheadline a {
+  color: #00458C !important;
+  font-size: 1em !important;
+}
+
+.dropdown-menu .dp {
+  padding-left: 20px;
+  background-color: rgb(242, 242, 242);
+  margin-top: -10px;
+}
+
+.ttmenu .btn-primary {
+  background-color: transparent;
+  color: grey;
+  border-color: grey;
+}
+
+{% endset %}
+
+{% includeCss mmenuCss %}
+
+<div class="mmenu">
+      <div class="hero">
+            <div class="hovermenu ttmenu">
+                <div class="container">
+                  <div class="row">
+                    <div class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                          <a href="http://www.aranca.com"><img id="logo" src="/assets/images/aranca_logo_214x75.png" alt="Aranca Logo"></a>
+                        </div><!-- end navbar-header -->
+                    </div><!-- end navbar navbar-default clearfix -->
+                  </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end menu 1 -->
+        </div><!-- end hero -->
+</div><!-- /container -->

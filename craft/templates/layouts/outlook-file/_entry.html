@@ -4,9 +4,7 @@
 {% set emailLink = entry.outlookFileUpload.first() %}
 
 {% block main %}
-
-{% include '_components/global/_header' %}
+{% include '_components/outlook/_outlook_header' %}
 {% include '_components/outlook/_outlook_masthead' %}
 {% include '_components/outlook/_outlook_content' %}
-{% include '_components/global/_footer' %}
 {% endblock %}
