@@ -11,7 +11,7 @@ return array(
     '*' => array(
         'tablePrefix' => 'craft',
     ),
-    'stanly' => array(
+    'sandy' => array(
       'server' => 'localhost',
       'user' => $_SERVER['ARANCA_DATABASE_USER'],
       'password' => $_SERVER['ARANCA_DATABASE_PASS'],

@@ -14,8 +14,8 @@ switch ($_SERVER['APP_ENV'])
         define('CRAFT_ENVIRONMENT', 'amite');
         break;
 
-    case 'local' :
-        define('CRAFT_ENVIRONMENT', 'stanly');
+    case 'sandy' :
+        define('CRAFT_ENVIRONMENT', 'sandy');
         break;
 
     case 'staging' :
