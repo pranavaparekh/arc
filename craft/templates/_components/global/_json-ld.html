@@ -1,0 +1,34 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id": "{{ url }}"
+  },
+  "headline": "Article headline",
+  "image": {
+    "@type": "ImageObject",
+    "url": '{{ craft.config.siteUrlAbs }}{{ imageUrl }}',
+    "height": 800,
+    "width": 800
+  },
+  "datePublished": "{{ entryDate }}",
+  "dateModified": "{{ entryDate }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ author }}"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Aranca",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://aranca.com/assets/images/aranca_logo_214x75.png",
+      "width": 214,
+      "height": 75
+    }
+  },
+  "description": "{{description}}"
+}
+</script>
