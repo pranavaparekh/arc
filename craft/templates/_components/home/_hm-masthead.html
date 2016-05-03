@@ -179,9 +179,22 @@
   animation-delay: 2s;
 }
 
-@media(min-width: {{ screensm }}) {
+@media only screen and (max-width : 480px) {
+  .hm-masthead__headline {
+    font-size: 3em;
+  }
 
+  .hm-masthead__explainer {
+    padding: 0 10px;
+  }
 
+  .custom-dropdown {
+    max-width: 90%;
+  }
+
+  #explore a {
+    padding: 10px 130px;
+  }
 }
 
 
