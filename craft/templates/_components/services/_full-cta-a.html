@@ -27,12 +27,18 @@
   -o-background-size: cover;
   background-size: cover;
   min-height: 276px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 
 
 .full-cta-a__content {
-  transform: translate(0, 60%);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .full-cta-a__headline {
@@ -75,6 +81,12 @@
   font-size: 1.3em;
   letter-spacing: 0.06em;
   font-weight: 500;
+}
+
+@media only screen and (max-width : 480px) {
+  .full-cta-a__headline {
+    font-size: 1.5em;
+  }
 }
 
 

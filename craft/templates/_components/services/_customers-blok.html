@@ -3,6 +3,7 @@
 {% set custblokCss %}
   .cust {
     background-color: white;
+    margin-top: -1px;
     {% if bkColor is defined  %}
       background-color: {{bkColor}};
     {% endif %}
@@ -95,6 +96,12 @@
 
   .cust-blok--col {
     padding-bottom: 30px;
+  }
+
+  @media only screen and (max-width : 480px) {
+    .cust::before {
+      left: 42%;
+    }
   }
 
 {% endset %}
