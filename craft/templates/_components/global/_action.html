@@ -56,6 +56,22 @@
   padding-top: 15px;
 }
 
+@media only screen and (max-width : 480px) {
+  .share-links {
+    position: static;
+    padding: 0;
+  }
+
+  .sharer {
+    float: left;
+    padding-right: 1em;
+  }
+
+  .byline {
+    padding: 10px 0px;
+  }
+}
+
 @media only screen and (min-width : 480px) {
   .share-links {
     left: 6%;
@@ -75,7 +91,7 @@
 {% includeCss actionCss %}
 {% includeJs actionJs %}
 
-<div class="share-links">
+<div class="share-links clearfix">
 <a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-url="{{ docUrl }}" >
 <i class="fa fa-facebook" style="padding: 9px 13px;"></i></a>
 
