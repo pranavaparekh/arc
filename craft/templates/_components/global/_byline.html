@@ -3,7 +3,7 @@
 
     <div class="multi-byline__item">
       <p>
-
+        Written by
         {% for author in entry.multiAuthor %}
           {{ author.firstName }} {{ author.lastName }} {% if entry.multiAuthor | length > 1 %} | {% endif %}
          {% endfor %}

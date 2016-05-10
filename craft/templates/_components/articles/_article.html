@@ -2,11 +2,12 @@
 
 .article {
   min-height: 1000px;
+  padding-top: 84px;
 }
 
 .article__body {
-  padding: 70px 90px;
-  overflow: auto;
+  background: white;
+  padding: 30px 90px;
 }
 
 .article__body h2 {
@@ -17,10 +18,7 @@
 .article__headline {
   color: #2E7DA8;
   margin-bottom: 20px;
-}
-
-.article__content {
-  position: relative;
+  font-weight: 300;
 }
 
 .article__content > p:first-child {
@@ -29,20 +27,24 @@
   color: #5E95B5;
 }
 
-
-.article__content h2 {
-  font-size: 2em;
-  font-weight: 300;
-  line-height: 1.2em;
-  color: #034883
+.article__content > p {
+  margin-bottom: 20px;
+  color: #5B6A72;
+  font-size: 1.1em;
 }
 
-.article__content img {
-  padding: 20px 0px;
+.article__image {
+  margin-bottom: 20px;
 }
 
 .release-date {
   color: {{ roman }};
+}
+
+@media only screen and (max-width : 480px) {
+  .article__body, #disqus_thread {
+    padding: 10px 20px;
+  }
 }
 
 {% endset %}
@@ -80,6 +82,7 @@ $(document).ready(function() {
   <p class="release-date">
     {{ entry.postDate|date("d M, Y") }}</p>
   </p>
+  {% include '_components/global/_action' with { 'vertical': true } %}
 
 
      {% include '_components/global/_byline' %}
@@ -91,7 +94,7 @@ $(document).ready(function() {
       {% endfor %}
     {% endif %}
   <div class="article__content">
-    {% include '_components/global/_action' with { 'vertical': true } %}
+    
     {{ content }}
   </div>
 </div>

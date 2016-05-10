@@ -61,6 +61,12 @@
     line-height: 1.5em;
   }
 
+  @media only screen and (max-width : 480px) {
+    .z-tabs.mobile.underlined> .z-container > .z-content > .z-content-inner {
+      padding: 0 20px;
+    }
+  }
+
 {% endset %}
 
 {% set kcContentJs %}
@@ -118,28 +124,28 @@ $(document).ready(function () {
                     <ul>
                       {% if blogPosts.total() > 0 %}
                         <li class="kc-content__type-item">
-                          <img src="/assets/images/icons/kc-books.jpg" alt="books and opinions">
+                          <img src="/assets/images/icons/kc-books.jpg" class="hidden-xs" alt="books and opinions">
                           <a>Blogs and Opinions</a>
                         </li>
                       {% endif %}
 
                       {% if articles.total() > 0 %}
                         <li class="kc-content__type-item">
-                          <img src="/assets/images/icons/kc-articles.jpg" alt="articles">
+                          <img src="/assets/images/icons/kc-articles.jpg" class="hidden-xs" alt="articles">
                           <a>Articles</a>
                         </li>
                       {% endif %}
 
                       {% if infographics.total() > 0 %}
                         <li class="kc-content__type-item">
-                          <img src="/assets/images/icons/kc-infographics.jpg" alt="infographics">
+                          <img src="/assets/images/icons/kc-infographics.jpg" class="hidden-xs" alt="infographics">
                           <a>Infographics</a>
                         </li>
                       {% endif %}
 
                       {% if specialReports.total() > 0 %}
                         <li class="kc-content__type-item">
-                          <img src="/assets/images/icons/kc-special-reports.jpg" alt="special reports">
+                          <img src="/assets/images/icons/kc-special-reports.jpg" class="hidden-xs" alt="special reports">
                           <a>Special Reports</a>
                         </li>
                       {% endif %}

@@ -9,11 +9,13 @@
 define('URI_SCHEME', ( isset($_SERVER['HTTPS'] ) ) ? "https://" : "http://" );
 // The site url
 define('SITE_URL', URI_SCHEME . $_SERVER['SERVER_NAME'] . '/');
+define('SITE_URL_ABS', URI_SCHEME . $_SERVER['SERVER_NAME']);
 // The site basepath
 define('BASEPATH', realpath(CRAFT_BASE_PATH . '/../') . '/');
 return array(
   '*' => array(
     'omitScriptNameInUrls' => true,
+    'siteUrlAbs'  => SITE_URL_ABS,
     'siteUrl'  => array(
       'en' => SITE_URL,
       'de' => SITE_URL . 'de',

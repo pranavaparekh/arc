@@ -130,12 +130,31 @@
   text-align: center;
 }
 
-@media only screen and (min-width: {{ screenmd }}) {
-  .sol-port-tabs__item {
-
+@media only screen and (max-width : 480px) {
+  .nav-tabs .sol-port-tabs__item > a {
+    width: 5em;
+    height: 5em;
   }
 
+  .nav-tabs .sol-port-tabs__item > a > img {
+    position: relative;
+    top: 3px;
+    left: -2px;
+  }
 
+  .sol-port-tabs__item > h4 {
+    font-size: 0.9em;
+  }
+
+  .sol-port-tabs__content {
+    border-radius: 0;
+  }
+
+  .nav-tabs .sol-port-tabs__item.active > a::before {
+     /*  positioning */
+    left: 14%;
+
+  }
 }
 
 {% endset %}
