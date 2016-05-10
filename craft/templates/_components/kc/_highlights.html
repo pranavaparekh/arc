@@ -43,10 +43,13 @@
 
 {% endset %}
 
-{% set highlightBlogEntries = craft.entries.section('blogs').limit(5) %}
+{# set highlightBlogEntries = craft.entries.section('blogs').limit(5) #}
 
 {% includeCss kcHighlightsCss %}
+
+{#
   <a href="/knowledge-library/blogs-and-opinions" class="kc-label">Blogs and Opinions</a>
+
 {% for entry in highlightBlogEntries %}
   <div class="featEntry">
     <a href={{ entry.url }}>
@@ -64,8 +67,7 @@
 {% endfor %}
 <p><a class="view-all" href="/knowledge-library/blogs-and-opinions">View All Blog Posts</a></p>
 <hr>
-
-
+#}
 
 
 

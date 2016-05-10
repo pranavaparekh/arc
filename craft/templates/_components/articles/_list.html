@@ -8,7 +8,7 @@
 
 {% includeCss kcFeaturedArticlesCss %}
 
-{% set featuredEntries = craft.entries.section('articles').limit(6) %}
+{% set featuredEntries = craft.entries.section('articles').limit() %}
 <span class="kc-label--teal">All Articles</span>
 <div class="feat-articles">
 
@@ -22,6 +22,8 @@
 
           {% if asset %}
               <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}>
+          {% else %}
+              <img src="/assets/images/Article-thumb.jpg" class="img-responsive" alt={{entry.title}}>
           {% endif %}
 
           <div class="featEntry__headline__wrapper">
