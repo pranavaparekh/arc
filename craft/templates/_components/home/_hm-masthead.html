@@ -209,7 +209,7 @@
   function addDropdownClass(e) {
     var target = e.target;
     if (target) {
-      if (target.nodeName.toLowerCase() === "label") {
+      if (target.nodeName.toLowerCase() === "label" ) {
         target.parentElement.classList.toggle("active");
       }
     }
@@ -225,6 +225,8 @@
     }
   }
 
+
+
   function showCta(e) {
     var selected = $(this).data('href');
     console.log(selected);
@@ -233,9 +235,15 @@
   }
 
   var customDropdown = document.getElementById("customDropdown");
+  
   if (customDropdown) {
     customDropdown.addEventListener("click", addDropdownClass);
   }
+
+  // Make sure dropdown opens on arrow click too
+  $('#down-arrow').on('click', function(e){ $('#customDropdown').toggleClass('active'); });
+
+ 
 
   var customInputs = document.getElementsByClassName("custom-input");
   if (customInputs) {
@@ -263,7 +271,7 @@
     <p class="hm-masthead__explainer fade-in three">Leverage our experience and expertise as a research, analytics & advisory firm</p>
     <div class="custom-dropdown fade-in four" id="customDropdown">
       <input type="radio" id="default" name="dropdown" class="custom-input" checked/>
-      <label for="default">I need help with &nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-down"></i></label>
+      <label for="default">I need help with &nbsp;&nbsp;&nbsp;<i id="down-arrow" class="fa fa-arrow-down"></i></label>
 
       <input type="radio" id="cd_br" data-href="/business-research/advisory-services-overview" name="dropdown" class="custom-input"  />
       <label for="cd_br">a strategic business decision</label>
