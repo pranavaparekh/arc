@@ -84,6 +84,14 @@ function slideoutEventCallBack(event, data) {
         //case 'ORIGINATE_ERROR':
           //  $('.wbs-container').addClass('wbs-livemsg-oops');
             //break;
+        case 'ORIGINATE_ERROR':
+            if(data.errorCode && data.errorCode == 812) {
+                $('.wbf-container').addClass('agent-busy');
+            } else {
+                $('.wbf-container').addClass('oops');
+            }
+            clearInterval(timer);
+            break;
         case 'DIALING':
             $('.wbs-container').addClass('connected');
             break;
