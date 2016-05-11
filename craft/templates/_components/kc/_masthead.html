@@ -1,19 +1,39 @@
 
 {% set mcmastheadCss %}
 
+  .kc-masthead {
+    position: relative;
+     color: white;
+    background: url('/assets/images/backgrounds/kc-masthead-bkg.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 500px;
+    
+  }
+
+  .kc-masthead__content {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 50%;
+  }
+
   .kc-masthead__content--headline {
     font-size: 3.5em;
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 300;
-    color: white;
     text-shadow: 2px 2px 3px #232323;
   }
 
   .kc-masthead__content--tagline {
     font-size: 2em;
     line-height: 1em;
-    color: white;
     font-weight: 300;
     text-shadow: 2px 2px 3px #232323;
   }
@@ -22,20 +42,21 @@
     margin: 5px 0;
   }
 
-  .kc-masthead {
-    background: url('/assets/images/backgrounds/kc-masthead-bkg.jpg') no-repeat center center {{ brandPrimary }};
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 500px;
+  @media only screen and (max-width : 480px) {
+    .kc-masthead__content--headline {
+      font-size: 3em;
+    }
+
+    .kc-masthead__content--tagline {
+      font-size: 1.8em;
+    }
+
+    .kc-masthead__content {
+      max-width: 80%;
+    }
   }
 
-  .kc-masthead__content {
-    position: absolute;
-    top: 30%;
-    left: 46%;
-  }
+
 
 
   @media(min-width: {{ screenmd }}) {
