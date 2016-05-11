@@ -81,9 +81,9 @@ function slideoutEventCallBack(event, data) {
             captcha = data.code;
             $('.wbs-container').addClass('connecting');
             break;
-        case 'ORIGINATE_ERROR':
-            $('.wbs-container').addClass('wbs-livemsg-oops');
-            break;
+        //case 'ORIGINATE_ERROR':
+          //  $('.wbs-container').addClass('wbs-livemsg-oops');
+            //break;
         case 'DIALING':
             $('.wbs-container').addClass('connected');
             break;
@@ -117,7 +117,11 @@ function slideoutEventCallBack(event, data) {
             clearInterval(timer);
             break;
         case 'ORIGINATE_ERROR':
-            $('.wbs-container').addClass('oops');
+            if(data.errorCode && data.errorCode == 812) {
+                $('.wbf-container').addClass('agent-busy');
+            } else {
+                $('.wbf-container').addClass('oops');
+            }
             clearInterval(timer);
             break;
         default:
