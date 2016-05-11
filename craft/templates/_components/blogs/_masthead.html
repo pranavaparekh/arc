@@ -1,28 +1,8 @@
 
 {% set mcmastheadCss %}
-
-  .blog-list__masthead__content--headline {
-    font-size: 3.5em;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: white;
-    text-shadow: 2px 2px 3px #1A4161;
-  }
-
-  .blog-list__masthead__content--tagline {
-    font-size: 2em;
-    line-height: 1em;
-    color: white;
-    font-weight: 300;
-    text-shadow: 2px 2px 3px #1A4161;
-  }
-
-  .blog-list__masthead__border {
-    margin: 5px 0;
-  }
-
   .blog-list__masthead {
+    position: relative;
+    color: white;
     background: url('/assets/images/backgrounds/blogs-bkg.jpg') no-repeat center center {{ brandPrimary }};
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -32,10 +12,56 @@
   }
 
   .blog-list__masthead__content {
+    text-align: center;
     position: absolute;
-    top: 30%;
-    left: 46%;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 50%
   }
+
+  .blog-list__masthead__content--headline {
+    font-size: 3.5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    text-shadow: 2px 2px 3px #352F2F;
+  }
+
+  .blog-list__masthead__content--tagline {
+    font-size: 2em;
+    line-height: 1em;
+    color: white;
+    font-weight: 300;
+    text-shadow: 2px 2px 3px #352F2F;
+  }
+
+  .blog-list__masthead__border {
+    margin: 5px 0;
+  }
+
+  @media only screen and (max-width : 480px) {
+    .blog-list__masthead__content--headline {
+      font-size: 3em;
+    }
+
+    .blog-list__masthead__content--tagline {
+      font-size: 1.8em;
+    }
+
+    .blog-list__masthead__content {
+      max-width: 80%;
+    }
+
+    .kc-label--teal {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
+
+
 
 
   @media(min-width: {{ screenmd }}) {

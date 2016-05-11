@@ -17,6 +17,10 @@
           {% set content = entry.articlesContent %}
 
           {% set assets = entry.articlesBanner %}
+          {% include '_components/global/_json-ld'
+            with { 'url':  entry.url, 'imageUrl': entry.articlesBanner.first().url,
+            'author' : entry.multiAuthor.first().firstName, 'description': docDesc,
+            'entryDate': entry.postDate }  %}
 
           {% include '_components/articles/_article'
               with { 'category': category, 'content': content }

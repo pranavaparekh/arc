@@ -15,6 +15,11 @@
           {% set content = entry.igContent %}
           {% set banner = entry.igBanner.first() %}
 
+          {% include '_components/global/_json-ld'
+            with { 'url':  entry.url, 'imageUrl': entry.igBanner.first().url,
+            'author' : entry.multiAuthor.first().firstName, 'description': docDesc,
+            'entryDate': entry.postDate }  %}
+
           {% include '_components/infographics/_article'
               with { 'category': category, 'content': content, 'banner': banner }
           %}

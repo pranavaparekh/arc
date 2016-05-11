@@ -131,6 +131,7 @@ input#s:focus {
     margin-top: 40px;
 }
 
+
 .mc-sidebar {
   margin-top: 40px;
 }
@@ -223,8 +224,16 @@ input#s:focus {
 }
 
 @media only screen and (max-width : 480px) {
-/*  .ztab__subllist {
-    padding-right: 2.9em;
-  }*/
+  .mc-main, .feat-articles {
+    margin-top: 0;
+  }
+
+  .view-all, .view-all--right {
+    font-size: 1em;
+  }
+
+  .mc-sidebar {
+    margin-top: 20px;
+  }
 }
 

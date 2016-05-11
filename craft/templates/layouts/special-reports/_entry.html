@@ -15,7 +15,10 @@
           {% set category = entry.practiceCategory.first %}
           {% set content = entry.srContent %}
 
-
+          {% include '_components/global/_json-ld'
+            with { 'url':  entry.url, 'imageUrl': entry.srBanner.first().url,
+            'author' : entry.multiAuthor.first().firstName, 'description': docDesc,
+            'entryDate': entry.postDate }  %}
 
           {% include '_components/special-reports/_article'
               with { 'category': category, 'content': content }

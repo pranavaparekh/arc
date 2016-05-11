@@ -1,0 +1,40 @@
+{% set kcFeaturedArticlesCss %}
+
+
+{% endset %}
+
+{% includeCss kcFeaturedArticlesCss %}
+
+{% set featuredEntries = craft.entries.section('blogs').limit(4) %}
+<a href="/knowledge-library/blogs-and-opinions" class="kc-label">Blogs</a>
+<div class="feat-articles">
+
+  <div class="row">
+
+  {% for entry in featuredEntries %}
+
+    <div class="featEntry col-sm-6">
+      <a href={{ entry.url }}>
+        <div class="featEntry__inner">
+
+          {% set asset = entry.blogsBanner.first() %}
+
+          {% if asset %}
+              <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}>
+          {% endif %}
+
+          <div class="featEntry__headline__wrapper">
+            <h2 class="featEntry__headline">{{ entry.title }}</h2>
+          </div>
+        </div><!-- featEntry__inner -->
+      </a>
+    </div><!-- featEntry -->
+
+  {% if loop.index % 2 == 0 %}
+    </div><!-- close row and open it below again -->
+    <div class="row">
+  {% endif %}
+{% endfor %}
+   </div><!-- row -->
+   <p class="view-all--right"><a class="view-all" href="/knowledge-library/blogs-and-opinions">View All blogs</a></p>
+</div><!-- articles -->
