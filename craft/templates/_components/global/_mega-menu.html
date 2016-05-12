@@ -1,507 +1,1549 @@
 
 
-{% set mmenuCss %}
-.mmenu {
+{% set wsmenuCss %}
+
+
+/* Color Theme */
+.gry{background:#424242; color:#fff;}
+.orange {background:#ff670f; color:#fff;}
+.blue {background:#4A89DC; color:#fff;}
+.green{background:#74a52e; color:#fff;}
+.red{background:#DA4B38; color:#fff;}
+.yellow{background:#F6BB42; color:#fff;}
+.purple{background:#967ADC; color:#fff;}
+.pink{background:#ee1289; color:#fff;}
+.chocolate {background:#934915; color:#fff;}
+
+
+.gry > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.gry > .wsmenu-list > li > a{background-color:#fff !important;}
+.gry > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.gry > .wsmenu-list > li:hover>a{background:#424242 !important; color:#fff !important;}
+.gry > .wsmenu-list > li > a:hover {background:#424242 !important; color:#fff !important;}
+.gry > .wsmenu-list > li > a.active{background:#424242 !important; color:#fff !important;}
+.gry > .wsmenu-submenu > li > a:hover {background:#424242; border-radius:0px!important; color:#fff;}
+.gry .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.gry .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.gry .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.orange > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.orange > .wsmenu-list > li > a{background-color:#fff !important;}
+.orange > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.orange > .wsmenu-list > li:hover>a{background:#ff670f !important; color:#fff !important;}
+.orange > .wsmenu-list > li > a:hover {background:#ff670f !important; color:#fff !important;}
+.orange > .wsmenu-list > li > a.active{background:#ff670f !important; color:#fff !important;}
+.orange > .wsmenu-submenu > li > a:hover {background:#ff670f; border-radius:0px!important; color:#fff;}
+.orange .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.orange .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.orange .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.blue > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.blue > .wsmenu-list > li > a{background-color:#fff !important;}
+.blue > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.blue > .wsmenu-list > li:hover>a{background:#4A89DC !important; color:#fff !important;}
+.blue > .wsmenu-list > li > a:hover {background:#4A89DC !important; color:#fff !important;}
+.blue > .wsmenu-list > li > a.active{background:#4A89DC !important; color:#fff !important;}
+.blue > .wsmenu-submenu li > a:hover {background:#4A89DC !important; border-radius:0px!important; color:#fff !important;}
+.blue .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.blue .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.blue .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.green > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.green > .wsmenu-list > li > a{background-color:#fff !important;}
+.green > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.green > .wsmenu-list > li:hover>a{background:#74a52e !important; color:#fff !important;}
+.green > .wsmenu-list > li > a:hover {background:#74a52e !important; color:#fff !important;}
+.green > .wsmenu-list > li > a.active{background:#74a52e !important; color:#fff !important;}
+.green > .wsmenu-submenu > li > a:hover {background:#74a52e !important; border-radius:0px!important; color:#fff !important;}
+.green .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.green .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.green .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.red > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.red > .wsmenu-list > li > a{background-color:#fff !important;}
+.red > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.red > .wsmenu-list > li:hover>a{background:#DA4B38 !important; color:#fff !important;}
+.red > .wsmenu-list > li > a:hover {background:#DA4B38 !important; color:#fff !important;}
+.red > .wsmenu-list > li > a.active{background:#DA4B38 !important; color:#fff !important;}
+.red > .wsmenu-submenu > li > a:hover {background:#DA4B38 !important; border-radius:0px!important; color:#fff !important;}
+.red .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.red .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.red .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.yellow > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.yellow > .wsmenu-list > li > a{background-color:#fff !important;}
+.yellow > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.yellow > .wsmenu-list > li:hover>a{background:#F6BB42 !important; color:#fff !important;}
+.yellow > .wsmenu-list > li > a:hover {background:#F6BB42 !important; color:#fff !important;}
+.yellow > .wsmenu-list > li > a.active{background:#F6BB42 !important; color:#fff !important;}
+.yellow > .wsmenu-submenu > li > a:hover {background:#F6BB42 !important; border-radius:0px!important; color:#fff !important;}
+.yellow .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.yellow .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.yellow .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+.yellow > .wsmenu-list li a .fa{color:#424242 !important;}
+
+.purple > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.purple > .wsmenu-list > li > a{background-color:#fff !important;}
+.purple > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.purple > .wsmenu-list > li:hover>a{background:#967ADC !important; color:#fff !important;}
+.purple > .wsmenu-list > li > a:hover {background:#967ADC !important; color:#fff !important;}
+.purple > .wsmenu-list > li > a.active{background:#967ADC !important; color:#fff !important;}
+.purple > .wsmenu-submenu > li > a:hover {background:#967ADC !important; border-radius:0px!important; color:#fff !important;}
+.purple .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.purple .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.purple .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.pink > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.pink > .wsmenu-list > li > a{background-color:#fff !important;}
+.pink > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.pink > .wsmenu-list > li:hover>a{background:#ee1289 !important; color:#fff !important;}
+.pink > .wsmenu-list > li > a:hover {background:#ee1289 !important; color:#fff !important;}
+.pink > .wsmenu-list > li > a.active{background:#ee1289 !important; color:#fff !important;}
+.pink > .wsmenu-submenu > li > a:hover {background:#ee1289 !important; border-radius:0px!important; color:#fff !important;}
+.pink .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.pink .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.pink .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+.chocolate > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.chocolate > .wsmenu-list > li > a{background-color:#fff !important;}
+.chocolate > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+.chocolate > .wsmenu-list > li:hover>a{background:#934915 !important; color:#fff !important;}
+.chocolate > .wsmenu-list > li a:hover {background:#934915 !important; color:#fff !important;}
+.chocolate > .wsmenu-list > li a.active{background:#934915 !important; color:#fff !important;}
+.chocolate > .wsmenu-submenu > li a:hover {background:#934915 !important; border-radius:0px!important; color:#fff !important;}
+.chocolate .wsmenu-list li a:hover .arrow:after{ border-top-color:#fff;}
+.chocolate .wsmenu-list li a.active .arrow:after{ border-top-color:#fff;}
+.chocolate .wsmenu-list li:hover>a .arrow:after{ border-top-color:#fff;}
+
+
+
+
+/* Gradient Theme */
+.tranbg{background-color:transparent !important;}
+.whitebg{ background-color:#fff !important; }
+.whitebg:hover{ color:#000 !important; }
+.blue-grdt{
+  background: #5999ee;
+  background: -moz-linear-gradient(top,  #5999ee 0%, #4a89dc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5999ee), color-stop(100%,#4a89dc));
+  background: -webkit-linear-gradient(top,  #5999ee 0%,#4a89dc 100%);
+  background: -o-linear-gradient(top,  #5999ee 0%,#4a89dc 100%);
+  background: -ms-linear-gradient(top,  #5999ee 0%,#4a89dc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5999ee', endColorstr='#4a89dc',GradientType=0 );
+  color:#fff;}
+  
+.gry-grdt{
+  background: #565656;
+  background: -moz-linear-gradient(top,  #565656 0%, #424242 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#565656), color-stop(100%,#424242));
+  background: -webkit-linear-gradient(top,  #565656 0%,#424242 100%);
+  background: -o-linear-gradient(top,  #565656 0%,#424242 100%);
+  background: -ms-linear-gradient(top,  #565656 0%,#424242 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', endColorstr='#424242',GradientType=0 );
+  color:#fff;}
+  
+.green-grdt{
+  background: #86ba3d;
+  background: -moz-linear-gradient(top,  #86ba3d 0%, #74a52e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#86ba3d), color-stop(100%,#74a52e));
+  background: -webkit-linear-gradient(top,  #86ba3d 0%,#74a52e 100%);
+  background: -o-linear-gradient(top,  #86ba3d 0%,#74a52e 100%);
+  background: -ms-linear-gradient(top,  #86ba3d 0%,#74a52e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86ba3d', endColorstr='#74a52e',GradientType=0 );
+  color:#fff;}  
+
+.red-grdt{
+  background: #f05c48;
+  background: -moz-linear-gradient(top,  #f05c48 0%, #da4b38 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f05c48), color-stop(100%,#da4b38));
+  background: -webkit-linear-gradient(top,  #f05c48 0%,#da4b38 100%);
+  background: -o-linear-gradient(top,  #f05c48 0%,#da4b38 100%);
+  background: -ms-linear-gradient(top,  #f05c48 0%,#da4b38 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f05c48', endColorstr='#da4b38',GradientType=0 );
+  color:#fff;}  
+    
+.orange-grdt{
+  background: #fc7d33;
+  background: -moz-linear-gradient(top,  #fc7d33 0%, #ff670f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fc7d33), color-stop(100%,#ff670f));
+  background: -webkit-linear-gradient(top,  #fc7d33 0%,#ff670f 100%);
+  background: -o-linear-gradient(top,  #fc7d33 0%,#ff670f 100%);
+  background: -ms-linear-gradient(top,  #fc7d33 0%,#ff670f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc7d33', endColorstr='#ff670f',GradientType=0 );
+  color:#fff;}  
+
+.yellow-grdt{
+  background: #ffcd67;
+  background: -moz-linear-gradient(top,  #ffcd67 0%, #f6bb42 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffcd67), color-stop(100%,#f6bb42));
+  background: -webkit-linear-gradient(top,  #ffcd67 0%,#ff670f 100%);
+  background: -o-linear-gradient(top,  #ffcd67 0%,#f6bb42 100%);
+  background: -ms-linear-gradient(top,  #ffcd67 0%,#f6bb42 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcd67', endColorstr='#f6bb42',GradientType=0 );
+  color:#fff;}  
+
+.purple-grdt{
+  background: #a98ded;
+  background: -moz-linear-gradient(top,  #a98ded 0%, #967adc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a98ded), color-stop(100%,#967adc));
+  background: -webkit-linear-gradient(top,  #a98ded 0%,#967adc 100%);
+  background: -o-linear-gradient(top,  #a98ded 0%,#967adc 100%);
+  background: -ms-linear-gradient(top,  #a98ded 0%,#967adc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a98ded', endColorstr='#967adc',GradientType=0 );
+  color:#fff;}  
+      
+.pink-grdt{
+  background: #fb3ea4;
+  background: -moz-linear-gradient(top,  #fb3ea4 0%, #f21b8f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fb3ea4), color-stop(100%,#f21b8f));
+  background: -webkit-linear-gradient(top,  #fb3ea4 0%,#f21b8f 100%);
+  background: -o-linear-gradient(top,  #fb3ea4 0%,#f21b8f 100%);
+  background: -ms-linear-gradient(top,  #fb3ea4 0%,#f21b8f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb3ea4', endColorstr='#f21b8f',GradientType=0 );
+  color:#fff;}  
+
+
+.whitebg > .wsmenu-list > li > a{color:#424242; border-right:1px solid rgba(0,0,0,0.10); }
+.whitebg > .wsmenu-list > li > a{background-color:#fff !important;}
+.whitebg > .wsmenu-list > li > a > .arrow:after{ border-top-color:#E5E5E5 !important;}
+          
+.red-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.red-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.red-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.gry-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.gry-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.gry-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.blue-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.blue-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.blue-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+
+.green-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.green-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.green-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.orange-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.orange-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.orange-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.yellow-grdt > .wsmenu-list > li > a{color:#424242 !important;}
+.yellow-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.yellow-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#424242 !important;}
+.yellow-grdt > .wsmenu-list li a .fa{color:#424242 !important;}
+
+.purple-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.purple-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.purple-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+.pink-grdt > .wsmenu-list > li > a{color:#fff !important;}
+.pink-grdt > .wsmenu-list > li > a{background-color:transparent !important;}
+.pink-grdt > .wsmenu-list > li > a > .arrow:after{ border-top-color:#fff !important;}
+
+ 
+@media only screen and (max-width: 780px) {
+
+.red-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.blue-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.orange-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.green-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.purple-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+.pink-grdt > .wsmenu-list > li > a > .fa{ color:#fff !important; }
+
+/* Color Theme */
+.gry > .wsmenu-submenu > li:hover>a{ background-color:#424242 !important; color:#fff;}
+.gry > .wsmenu .wsmenu-list > li > a.active{color: #fff; background-color: #424242;}
+.gry > .wsmenu .wsmenu-list > li > a:hover{ color: #fff; background-color: #424242;}
+
+.orange > .wsmenu-submenu > li:hover>a{ background-color:#ff670f !important; color:#fff;}
+.orange > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #ff670f;}
+.orange > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #ff670f;}
+
+.blue > .wsmenu-submenu > li:hover>a{ background-color:#4A89DC !important; color:#fff;}
+.blue > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #4A89DC;}
+.blue > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #4A89DC;} 
+
+.green > .wsmenu-submenu > li:hover>a{ background-color:#74a52e !important; color:#fff;}
+.green > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #74a52e;}
+.green > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #74a52e;}  
+
+.red > .wsmenu-submenu > li:hover>a{ background-color:#DA4B38 !important; color:#fff;}
+.red > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #DA4B38;}
+.red > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #DA4B38;}  
+
+.yellow > .wsmenu-submenu > li:hover>a{ background-color:#F6BB42 !important; color:#fff;}
+.yellow > .wsmenu .wsmenu-list > li > a.active{color: #fff; background-color: #F6BB42;}
+.yellow > .wsmenu .wsmenu-list > li > a:hover{ color: #fff; background-color: #F6BB42;} 
+
+.purple > .wsmenu-submenu > li:hover>a{ background-color:#967ADC !important; color:#fff;}
+.purple > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #967ADC;}
+.purple > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #967ADC;} 
+  
+.pink > .wsmenu-submenu > li:hover>a{ background-color:#ee1289 !important; color:#fff;}
+.pink > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #ee1289;}
+.pink > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #ee1289;} 
+  
+.chocolate > .wsmenu-submenu > li:hover>a{ background-color:#934915 !important; color:#fff;}
+.chocolate > .wsmenu > .wsmenu-list > li > a.active{color: #fff; background-color: #934915;}
+.chocolate > .wsmenu > .wsmenu-list > li > a:hover{ color: #fff; background-color: #934915;}  
+
+}
+
+ /*
+ * Webslide - v3.1
+ * Web Slide - Responsive Mega Menu for Bootstrap 3+
+ */
+
+ 
+ .cl {
+    clear: both;
+ }
+
+
+/*------------------------------------ Desktop CSS ---------------------------------------------*/
+.wsmobileheader{display:none;}
+.overlapblackbg{ display:none; }
+.bigmegamenu{ position:relative; }
+.wsmenu{
+  font-family:Helvetica, sans-serif;
+  color:#fff;
+  font-size:13px;
+  padding:0px;
+  width:70%;
+  float:right;
+  -webkit-border-radius:2px 2px 2px 2px;
+  -moz-border-radius:2px 2px 2px 2px;
+  border-radius:2px 2px 2px 2px;}
+
+.wsmenu-list{
+  text-align:left;
+  margin:0 auto 0 auto;
+  width:100%;
+  display: table;
+  padding:0px;}
+  
+.wsmenu-list > li{
+  text-align:center;
+  display: table-cell;}
+  
+.wsmenu-list li:first-child a{
+  -webkit-border-radius:2px 2px 2px 2px;
+  -moz-border-radius:2px 2px 2px 2px;
+  border-radius:2px 2px 2px 2px;
+  }
+  
+.wsmenu-list li:last-child a{
+  -webkit-border-radius:2px 2px 2px 2px;
+  -moz-border-radius:2px 2px 2px 2px;
+  border-radius:2px 2px 2px 2px;
+  border-right:0px solid;
+  }
+  
+.wsmenu-list > li > a .fa{
+  display: inline-block;
+  font-size:14px;
+  line-height:inherit;
+  margin-right:4px; }
+  
+.wsmenu-list li ul li a .fa.fa-angle-double-right{ font-size:12px; margin: 0 3px 0 -4px;}
+
+.wsmenu-list li a .arrow:after {
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-top: 4px solid #b3b3b3;
+    content: "";
+    float: right;
+    height: 0;
+    margin: 0 0 0 9px;
+    position: absolute;
+    text-align: right;
+    top: 22px;
+    width: 0;}
+
+.wsmenu-list > li > a{
+  display:block;
+  color:#E5E5E5;
+  padding:0px 14px; line-height:48px;
+  text-decoration:none;
+  position:relative;}
+
+.wsmenu-list li a:hover .arrow:after{ border-top-color:#b3b3b3}
+.wsmenu-list li a.active .arrow:after{ border-top-color:#b3b3b3}
+.wsmenu-list li:hover>a .arrow:after{ border-top-color:#b3b3b3}
+
+.megamenu iframe{width:100%; margin-top:10px; min-height:200px; }
+.megamenu video{ width:100%; margin-top:10px;  min-height:200px;}
+
+/*For megamenu desktop */
+.wsmenu-list li:hover .megamenu{opacity:1;}
+.megamenu{
+  width:100%;
+  left:0px;
+  position:absolute;
+  top:48px;
+  color:#000;
+  z-index:1000;
+  margin:0px;
+  text-align:left;
+  padding:14px;
+  font-size:15px;
+  border:solid 1px #eeeeee;
+  background-color:#fff;
+  opacity: 0;
+  -o-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+  -o-transition: -o-transform 0.3s, opacity 0.3s;
+  -ms-transition: -ms-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;}
+
+.megamenu .title{
+  border-bottom:1px solid #CCC;
+  font-size:14px;
+  padding:9px 5px 9px 0px;
+  font-size:17px;
+  color:#424242;
+  margin-bottom:7px;
+  text-align:left;
+  height:39px;}
+  
+.link-list li{
+  display:block;
+  text-align:center;
+  white-space:nowrap;
+  text-align:left;}
+  
+.link-list li a{
+  line-height:18px;
+  border-right:none;
+  text-align:left;
+  padding:6px 0px;
+  background:#fff !important;
+  background-image:none !important;
+  color: #666666 !important;
+  border-right: 0 none !important;
+  display:block;
+  border-right:1px solid #e7e7e7;
+  background-color:#fff;
+  color:#424242;}
+  
+.link-list .fa{font-size:11px;}
+
+.megacollink{width:23%; float:left; margin:0% 1%;}  
+.megacollink li{
+  display:block;
+  text-align:center;
+  white-space:nowrap;
+  text-align:left;}
+.megacollink li a{
+  line-height:18px;
+  border-right:none;
+  text-align:left;
+  padding:8px 0px;
+  background:#fff !important;
+  background-image:none !important;
+  color: #666666 !important;
+  border-right: 0 none !important;
+  display:block;
+  border-right:1px solid #e7e7e7;
+  background-color:#fff;
+  color:#424242;}
+.megacollink .fa{font-size:11px;}
+
+.megacolimage{width:31.33%; float:left; margin:0% 1%;}  
+.typographydiv{width:100%; margin:0% 0%;} 
+.typographylinks{width:25%; float:left; margin:0% 0%;}  
+.mainmapdiv{ width:100%; display:block; margin:0% 0%; }
+
+.wsmenu-list .ad-style{width:28%; float:right;}
+.wsmenu-list .ad-style a{border:none !important; padding:0px !important; margin:0px !important; line-height:normal !important; background-image:none !important;}
+.mobile-sub .megamenu .ad-style a:hover{ background-color:transparent !important; }
+.wsmenu-list .megamenu  li:hover>a{background:transparent !important;}
+.wsmenu-list .megamenu  li a:hover{background:transparent !important; text-decoration:underline;}
+.wsmenu-list .megamenu li .fa {  margin-right:5px;    text-align: center;    width: 18px;}
+.mrgtop{ margin-top:15px; }
+.show-grid div{padding-bottom: 10px; padding-top: 10px; background-color:#dbdbdb; border: 1px solid #e7e7e7; color:#6a6a6a; margin:2px 0px;}
+
+/*For halfmenu */
+.halfmenu{
+  width:40%;
+  right:auto !important;
+  left:auto !important;}
+
+.halfmenu .megacollink{
+  width:48%;
+  float:left;
+  margin:0% 1%;}    
+/*For halfmenu */ 
+
+
+/*Form for desktop */
+.halfdiv{
+  width:35%;
+  right:0px !important;
+  left:auto;}
+  
+.menu_form{width:100%; display:block;}
+.menu_form input[type="text"]{
+  width:100%;
+  border:1px solid #e2e2e2;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  color:#000;
+  font-size:13px;
+  padding:8px 5px;
+  margin-bottom:8px;
+  }
+.menu_form textarea{
+  width:100%;
+  border:1px solid #e2e2e2;
+  border-radius:5px;
+  color:#000;
+  font-size:13px;
+  padding:8px 5px;
+  margin-bottom:8px;
+  min-height:122px;}
+  
+.menu_form input[type="submit"]{width:25%; display:block; height:28px; float:right;  border:solid 1px #ccc; margin-right:15px; -webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px;}
+.menu_form input[type="button"] {width:25%; display:block; height:28px; float:right; border:solid 1px #ccc; -webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px;}
+
+.megamenu .left.carousel-control{ padding-top:20%; }
+.megamenu .right.carousel-control{ padding-top:20%; }
+.carousel-inner .item img{ width:100%; }
+.megamenu .carousel-caption{
+  bottom:0px;
+  background-color:rgba(0,0,0,0.7);
+    font-size: 13px;
+    height: 31px;
+    left: 0;
+    padding: 7px 0;
+    right: 0;
+    width: 100%;}
+
+/*Animation*/
+.wsmenu-list li > .wsmenu-submenu{
+  transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateX(-75deg);
+  -o-transform: rotateX(-75deg);
+  -moz-transform: rotateX(-75deg);
+  -webkit-transform: rotateX(-75deg);
+  visibility:hidden;
+    }
+  
+.wsmenu-list li:hover > .wsmenu-submenu{
+  transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+    opacity: 1;
+  visibility:visible;
+  }
+
+.wsmenu-submenu li > .wsmenu-submenu-sub{
+  transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateX(-75deg);
+  -o-transform: rotateX(-75deg);
+  -moz-transform: rotateX(-75deg);
+  -webkit-transform: rotateX(-75deg);
+  visibility:hidden;
+  }
+  
+.wsmenu-submenu li:hover > .wsmenu-submenu-sub{
+  transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+    opacity: 1;
+  visibility:visible;
+  }
+
+.wsmenu-submenu-sub li > .wsmenu-submenu-sub-sub{
+  transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateX(-75deg);
+  -o-transform: rotateX(-75deg);
+  -moz-transform: rotateX(-75deg);
+  -webkit-transform: rotateX(-75deg);
+  visibility:hidden;
+  }
+  
+.wsmenu-submenu-sub li:hover > .wsmenu-submenu-sub-sub{
+  transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+    opacity: 1;
+  visibility:visible;
+  }
+
+
+.wsmenu-list li > .megamenu{
+  transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateX(-75deg);
+  -o-transform: rotateX(-75deg);
+  -moz-transform: rotateX(-75deg);
+  -webkit-transform: rotateX(-75deg);
+  visibility:hidden;
+  }
+  
+.wsmenu-list li:hover > .megamenu{
+  transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+    opacity: 1;
+  visibility:visible;
+  }
+
+  
+/* Submenu CSS */
+.wsmenu-submenu{
+  position:absolute;
+  top: 48px;
+  z-index:1000;
+  margin:0px;
+  padding:2px;
+  border:solid 1px #eeeeee;
+  background-color:#fff;
+  opacity: 0;
+  -o-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+  -o-transition: -o-transform 0.3s, opacity 0.3s;
+  -ms-transition: -ms-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;}
+
+.wsmenu-submenu li a {
+  background:#fff !important;
+  background-image:none !important;
+  color: #666666 !important;
+  border-right: 0 none !important;
+  text-align:left;
+  display:block;
+  line-height:22px;
+  padding:6px 12px;
+  text-transform:none; 
+  font-size:13px;
+  letter-spacing:normal;
+  border-right:0px solid;}
+
+.wsmenu-submenu li{position:relative; margin:0px; padding:0px;}
+
+.wsmenuexpandermain{display:none;}
+
+.wsmenu-list li:hover .wsmenu-submenu{display:block;}
+
+.wsmenu-list .wsmenu-submenu .wsmenu-submenu-sub{min-width:220px; position:absolute; left:100%; top:0; margin:0px; padding:0px;
+  opacity: 0;
+  -o-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+  -o-transition: -o-transform 0.4s, opacity 0.4s;
+  -ms-transition: -ms-transform 0.4s, opacity 0.4s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.4s;
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;}
+  
+.wsmenu-list .wsmenu-submenu li:hover .wsmenu-submenu-sub{opacity:1; list-style:none; padding:2px; border:solid 1px #eeeeee; background-color:#fff;}
+.wsmenu-list .wsmenu-submenu li:hover .wsmenu-submenu-sub{display:block;}
+.wsmenu-list .wsmenu-submenu .wsmenu-submenu-sub .wsmenu-submenu-sub-sub{
+  min-width:220px; position:absolute; left:100%; top:0; margin:0px; padding:0px;
+  opacity: 0;
+  -o-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+  -o-transition: -o-transform 0.4s, opacity 0.4s;
+  -ms-transition: -ms-transform 0.4s, opacity 0.4s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.4s;
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;}
+  
+.wsmenu-list .wsmenu-submenu .wsmenu-submenu-sub li:hover .wsmenu-submenu-sub-sub{opacity:1; list-style:none; padding:2px; border:solid 1px #eeeeee; background-color:#fff;}
+.wsmenu-submenu li{position:relative; padding:0px; margin:0px; display:block;}
+.wsmenu-click{display:none;}
+.wsmenu-click02{display:none;}
+
+/* Default Theme */ 
+.wsmenu-list li:hover>a{background-color:rgba(0,0,0,0.08) !important; text-decoration:none;}
+.wsmenu-list > li > a:hover {background-color:rgba(0,0,0,0.08) !important;  text-decoration:none;}
+.wsmenu-list > li > a.active{background-color:rgba(0,0,0,0.08) !important; text-decoration:none; }
+.wsmenu-submenu > li > a:hover {background-color:rgba(0,0,0,0.08) !important; border-radius:0px!important; text-decoration:none;  text-decoration:none;}
+
+.typography-text { padding:0px 0px; font-size:14px;}
+.typography-text p{ text-align:justify; line-height:24px; color:#656565;}
+.typography-text ul li{ display:block; padding:2px 0px; line-height:22px;}
+.typography-text ul li a{color:#656565;}
+.hometext{display:none;}
+.wsmenu-submenu .fa{ margin-right:7px;}
+
+
+@media only screen and (min-width:780px) and (max-width:1064px) {
+.wsmenu-list > li > a > .fa { display:none !important;}
+.hometext{ display:block !important;}
+.wsmenu{ width:100%; font-size:13px !important; position:relative;}
+.bigmegamenu{ position:static !important; }
+.wsmenu-list li a { white-space:nowrap !important; padding-left:4px !important; padding-right:10px !important;}
+.megacollink {width:48%; margin:1% 1%;}
+.typographylinks{width:48%; margin:1% 1%;}
+
+
+}
+
+
+ 
+
+@media only screen and (min-width: 781px) {
+
+.wsmenu-list li:hover > .wsmenu-submenu{display:block !important;}
+.wsmenu-submenu li:hover > .wsmenu-submenu-sub{display:block !important;}
+.wsmenu-submenu-sub li:hover > .wsmenu-submenu-sub-sub{display:block !important;}
+.wsmenu-list li:hover > .megamenu{display:block !important;}
+
+}
+
+
+/*------------------------------------ Mobile CSS ---------------------------------------------*/
+@media only screen and (max-width: 780px) {
+.wsoffcanvasopener .wsmenu {
+  left:0px;
+  -webkit-transition:all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  }
+
+.wsmenucontainer.wsoffcanvasopener{
+  display:block; margin-left:240px;
+  }
+  
+.wsmobileheader{
+  display:block !important;
+  position:relative;
+  top:0;
+  right:0;
+  left:0;
+  -webkit-transition:all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  
+  }
+  
+
+.wsmenu-list > li:hover>a{background-color:rgba(0,0,0,0.08) !important; text-decoration:none;}
+.hometext{ display:inline-block !important; }
+.megacollink {width:96% !important; margin:0% 2% !important; }
+.megacolimage{width:90% !important; margin:0% 5% !important;}
+.typographylinks{width:98% !important; margin:0% 1% !important;}  
+.typographydiv{width:86% !important; margin:0% 7% !important;}  
+.mainmapdiv{width:90% !important; margin:0% 5% !important; }
+
+.overlapblackbg{
+  left:0;
+  z-index:2;
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  display:none;
+  background-color:rgba(0, 0, 0, 0.45);
+  cursor:pointer;}
+  
+.wsoffcanvasopener .overlapblackbg{display:block !important;}
+
+/* Default Theme */ 
+.wsmenu-submenu > li:hover>a{ background-color:#7b7b7b; color:#666666;}
+.wsmenu > .wsmenu-list > li > a.active{color: #666666; background-color:rgba(0,0,0,0.08);}
+.wsmenu > .wsmenu-list > li > a:hover{ color: #666666; background-color:rgba(0,0,0,0.08);}  
+
+.wsmenu-list li:hover .wsmenu-submenu{display:none ;}
+.wsmenu-list li:hover .wsmenu-submenu .wsmenu-submenu-sub{display:none;}
+.wsmenu-list .wsmenu-submenu .wsmenu-submenu-sub li:hover .wsmenu-submenu-sub-sub{display:none; list-style:none; padding:2px; border:solid 1px #eeeeee; background-color:#fff;}
+.wsmenu-list li:first-child a{-webkit-border-radius:0px 0px 0px 0px; -moz-border-radius:0px 0px 0px 0px; border-radius:0px 0px 0px 0px;}
+.wsmenu-list li:last-child a{-webkit-border-radius:0px 4px 0px 0px; -moz-border-radius:0px 0px 0px 0px; border-radius:0px 0px 0px 0px; border-right:0px solid;}
+
+.innerpnd{ padding:0px !important; }
+.typography-text { padding:10px 0px; }
+
+.wsmenucontainer{
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  min-height:800px;
+  -webkit-transition:all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;}
+  
+
+
+/* Mobile click to drop arrow */
+.wsmenu-click {
+  height:43px;
+  position:absolute;
+  top:0;
+  right:0;
+  display:block;
+  cursor:pointer;
+  width:100%;
+  }
+
+.wsmenu-click i{
+  display:block;
+  height:23px;
+  width:25px;
+  margin-top:11px;
+  margin-right:8px;
+  background-size:25px;
+  font-size:21px;
+  color:rgba(0,0,0,0.25);
+  float:right;
+  }
+  
+  
+.wsmenu-click02 {
+  height:43px;
+  position:absolute;
+  top:0;
+  right:0;
+  display:block;
+  cursor:pointer;
+  width:100%;
+  }
+
+.wsmenu-click02 i{
+  display:block;
+  height:23px;
+  width:25px;
+  margin-top:11px;
+  margin-right:8px;
+  background-size:25px;
+  font-size:21px;
+  color:rgba(0,0,0,0.25);
+  float:right;
+  } 
+  
+.ws-activearrow > i{transform: rotate(180deg);}
+
+.wsmenu-rotate{
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  transform:rotate(180deg);}
+
+/*2nd UL Style*/
+.wsmenu-submenu-sub{
+  width:100% !important;
+  position:static !important;
+  left:100% !important;
+  top:0 !important;
+  display:none;
+  margin:0px !important;
+  padding:0px !important;
+  border:solid 0px !important;
+  transform:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  }
+  
+.wsmenu-submenu-sub li{
+  margin:0px 0px 0px 0px !important;
+  padding:0px;
+  position:relative;}
+  
+.wsmenu-submenu-sub a{
+  display:block;
+  padding:10px 25px 10px 25px;
+  border-bottom:solid 1px #ccc;
+  font-weight:normal;}
+  
+.wsmenu-submenu-sub li a.active{color:#000 !important;}
+
+.wsmenu-submenu-sub li:hover>a{ background-color:#333333 !important; color:#fff;}
+
+.wsmenu-list > li > a .fa{margin-right:6px;}
+
+.wsmenu-submenu-sub-sub{
+  width:100% !important;
+  position:static !important;
+  left:100% !important;
+  top:0 !important;
+  display:none;
+  margin:0px !important;
+  padding:0px !important;
+  border:solid 0px !important;
+  transform:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  }
+  
+.wsmenu-submenu-sub-sub li{
+  margin:0px 0px 0px 0px !important;}
+  
+.wsmenu-submenu-sub-sub a{
+  display:block;
+  color:#000;
+  padding:10px 25px;
+  background:#000 !important;
+  border-bottom:solid 1px #ccc;
+  font-weight:normal;}
+  
+.wsmenu-submenu-sub-sub li a.active{ color:#000 !important;}
+.wsmenu-submenu-sub-sub li:hover>a{ background-color:#606060 !important; color:#fff;}
+.wsmenu{position: relative;}
+
+.wsmenu .wsmenu-list{
+  height:100%;
+  overflow-y:auto;
+  display:block !important;}
+  
+.wsmenu .wsmenu-list > li{
+  width:100%;
+  display:block;
+  float:none;
+  border-right:none;
+  background-color:transparent;
+  position:relative;
+  white-space:inherit;}
+  
+.wsmenu > .wsmenu-list > li > a{
+  padding:9px 32px 9px 17px;
+  font-size:14px;
+  text-align:left;
+  border-right:solid 0px;
+  background-color:transparent;
+  color:#666666;
+  line-height:25px;
+  border-bottom:1px solid;
+  border-bottom-color:rgba(0,0,0,0.13);
+  position:static;
+  }
+  
+.wsmenu > .wsmenu-list > li > a > .fa{font-size: 16px; color:#bfbfbf;}
+.wsmenu .wsmenu-list li a .arrow:after{ display:none !important; }
+.wsmenu .wsmenu-list li ul li a .fa.fa-caret-right{ font-size:12px !important; color:#8E8E8E; }
+
+.mobile-sub .wsmenu-submenu{
+  transform:none !important;
+  opacity:1 !important;
+  display:none;
+  position:relative !important;
+  top:0px;
+  background-color:#fff ;
+  border:solid 1px #ccc;
+  padding:0px;
+  visibility:visible !important;
+  }
+  
+.mobile-sub .wsmenu-submenu li a{
+  line-height:20px;
+  height:36px;
+  background-color:#e7e7e7 !important;
+  font-size:13px !important;
+  padding:8px 0px 8px 18px;
+  color:#8E8E8E;}
+
+.mobile-sub .wsmenu-submenu li a:hover{ background-color:#e7e7e7  !important; color:#666666; text-decoration:underline; }
+.mobile-sub .wsmenu-submenu li:hover>a{ background-color:#e7e7e7 !important; color:#666666; }
+.mobile-sub .wsmenu-submenu li .wsmenu-submenu-sub li a{line-height:20px; height:36px; background-color:#e7e7e7 !important; border-bottom:none; padding-left:28px;}
+.mobile-sub .wsmenu-submenu li .wsmenu-submenu-sub li .wsmenu-submenu-sub-sub li a{line-height:20px; height:36px; background-color:#e7e7e7 !important; border-bottom:none !important; padding-left:38px; color:#8e8e8e;}
+
+
+
+.wsmenu-list .megamenu{
+  background-color:#e7e7e7;
+  color:#666666;
+  display:none;
+  position:relative !important;
+  top:0px;
+  padding:0px;
+  border:solid 0px;
+  transform:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  }
+  
+.wsmenu-list li:hover .megamenu{display:none; position:relative !important; top:0px; }
+.megamenu .title{ color:#666666; font-size:15px !important; padding:10px 8px 10px 0px;}
+.halfdiv .title{ padding-left:15px;}
+.megamenu > ul{
+  width:100% !important;
+  margin:0px;
+  padding:0px;
+  font-size:13px !important;}
+  
+.megamenu > ul > li > a{
+  padding:9px 14px !important;
+  line-height:normal !important;
+  font-size:13px !important;
+  background-color:#e7e7e7 !important;
+  color:#666666;}
+  
+.megamenu > ul > li > a:hover{background-color:#000000 !important;}
+
+.ad-style{ width:100% !important;}
+
+.megamenu ul li.title{
+  line-height:26px;
+  color:#666666;
+  margin:0px;
+  font-size:15px;
+  padding:7px 13px !important;
+  border-bottom:1px solid #ccc;
+  background-color:transparent !important;}
+
+.halfdiv{ width:100%; display:block;}
+.halfmenu{width:100%; display:block;}
+
+.menu_form{ padding:10px 10px 63px 10px; background-color: #e7e7e7;}
+
+.menu_form input[type="button"]{ width:46%; }
+.menu_form input[type="submit"]{ width:46%; } 
+.menu_form textarea{min-height:100px;}
+
+.wsmenu {
+  width:240px;
+  left:-240px;
+  height: 100%;
   position: fixed;
-  width: 100%;
-  top: 0px;
-  z-index: 9;
-  background: white;
-  max-height: 66px;
-  box-shadow: 0 1px 3px #E1DFDF;
-}
-
-#logo {
-  max-width: 88%;
-}
-
-.ttmenu .navbar-default {
-  background: white;
-}
-
-.ttmenu .navbar-default .navbar-nav > li > a {
-  color: grey !important;
-  font-weight: 400;
-  font-size: 1.02em;
-  letter-spacing: 0.05;
-}
-
-.ttmenu .dropdown-menu, .ttmenu .navbar-default .ttmenu-content {
-  background-color: #f3f3f3;
-  box-shadow: 0 1px 3px #E1DFDF;
-}
-
-
-h3.ttmenu__subheadline  {
-  margin-bottom: 0;
-}
-
-.ttmenu__subheadline a {
-  color: #00458C !important;
-  font-size: 1em !important;
-}
-
-.dropdown-menu .dp {
-  padding-left: 20px;
-  background-color: rgb(242, 242, 242);
-  margin-top: -10px;
-}
-
-.ttmenu .btn-primary {
-  background-color: transparent;
-  color: grey;
-  border-color: grey;
-}
-
-@media only screen and (max-width : 320px) {
-  .mmenu .navbar-toggle {
-    margin-right: 30px;
+  top: 0;
+  margin: 0;
+  background-color: #fff;
+  border-radius:0px;
+  z-index:102;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  border:none !important;
+  background-color:#fff !important;
   }
+
+/*.wsoffcanvasopener .wsmenu {
+  width:240px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  }
+ 
+.wsmenu.menuclose{
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  }*/
+ 
+
+ 
+/* Navigation arrow Animation */
+.animated-arrow{
+  position:fixed;
+  left:0; top:0; z-index:102;
+  -webkit-transition:all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  }
+  
+.callusicon{
+  color: #c9c9c9;
+    font-size: 25px;
+    height: 25px;
+    position: fixed;
+    right: 15px;
+    top: 13px;
+    transition: all 0.4s ease-in-out 0s;
+    width: 25px;
+    z-index:102;
+  -webkit-transition:all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  } 
+  
+.callusicon:focus, callusicon:hover {
+    color: #fff !important;
+}
+
+.wsoffcanvasopener .callusicon{ display:none !important; }
+
+.smallogo{
+  width:100%;
+  display:block;
+  text-align:center;
+  padding-top:9px;
+  position:fixed;
+  z-index:1;
+  width:100%;
+  height:52px;
+  background: #262626;
+  background: -moz-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #262626), color-stop(50%, #1c1c1c), color-stop(100%, #262626));
+  background: -webkit-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
+  background: -o-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
+  background: -ms-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
+  background: linear-gradient(to bottom, #262626 0, #1c1c1c 50%, #262626 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', endColorstr='#262626', GradientType=0);
+  box-shadow: 0 1px 4px rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+
+.wsoffcanvasopener .animated-arrow{
+  left:240px;
+  }
+
+
+.animated-arrow{
+  cursor:pointer;
+  padding:13px 35px 16px 0px;
+  margin:10px 0 0 15px;}
+  
+.animated-arrow span, .animated-arrow span:before, .animated-arrow span:after {
+  cursor: pointer;
+  height:3px;
+  width:23px;
+  background: #c9c9c9;
+  position: absolute;
+  display: block;
+  content: '';}
+  
+.animated-arrow span:before{
+  top: -7px;}
+  
+.animated-arrow span:after {
+  bottom: -7px;}
+  
+.animated-arrow span, .animated-arrow span:before, .animated-arrow span:after{
+  transition: all 500ms ease-in-out;}
+  
+.wsoffcanvasopener .animated-arrow span{
+  background-color: transparent;}
+  
+.wsoffcanvasopener .animated-arrow span:before, .animated-arrow.active span:after{
+  top:7px;}
+  
+.wsoffcanvasopener .animated-arrow span:before {
+  transform: rotate(45deg);
+  -moz-transform:  rotate(45deg);
+  -ms-transform:  rotate(45deg);
+  -o-transform:  rotate(45deg);
+  -webkit-transform:  rotate(45deg);
+  bottom:0px;
+  }
+  
+.wsoffcanvasopener .animated-arrow span:after {
+  transform: rotate(-45deg);
+  -moz-transform:  rotate(-45deg);
+  -ms-transform:  rotate(-45deg);
+  -o-transform:  rotate(-45deg);
+  -webkit-transform:  rotate(-45deg);
+  }
+
+
+/*Animation None */
+.wsmenu-list li > .wsmenu-submenu{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  }
+  
+.wsmenu-list li:hover > .wsmenu-submenu{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  }
+
+.wsmenu-submenu li > .wsmenu-submenu-sub{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  }
+  
+.wsmenu-submenu li:hover > .wsmenu-submenu-sub{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  opacity:1  !important;
+  }
+
+.wsmenu-submenu-sub li > .wsmenu-submenu-sub-sub{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  opacity:1  !important;
+  }
+  
+.wsmenu-submenu-sub li:hover > .wsmenu-submenu-sub-sub{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  opacity:1  !important;
+  }
+
+
+.wsmenu-list li > .megamenu{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  opacity:1  !important;
+  }
+  
+.wsmenu-list li:hover > .megamenu{
+  transform:none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform:none !important;
+  transform: none !important;
+  -o-transform:none !important;
+  -moz-transform: none !important;
+  -webkit-transform: none !important;
+  visibility:visible !important;
+  opacity:1  !important;
+  }
+
+
+  
+
 }
 
 {% endset %}
 
-{% set mmenuJs %}
+{% set wsmenuJs %}
 
-(function($) {
-"use strict";
-  // SEARCH
-  $(document).ready(function(){
-    var submitIcon = $('.searchbox-icon');
-    var inputBox = $('.searchbox-input');
-    var searchBox = $('.searchbox');
-    var isOpen = false;
-      submitIcon.click(function(){
-        if(isOpen == false){
-          searchBox.addClass('searchbox-open');
-          inputBox.focus();
-          isOpen = true;
-        } else {
-          searchBox.removeClass('searchbox-open');
-          inputBox.focusout();
-          isOpen = false;
-        }
-      });
-      submitIcon.mouseup(function(){
-        return false;
-      });
-      searchBox.mouseup(function(){
-        return false;
-      });
-      $(document).mouseup(function(){
-        if(isOpen == true){
-        $('.searchbox-icon').css('display','block');
-        submitIcon.click();
-        }
-      });
-      });
-      function buttonUp(){
-        var inputVal = $('.searchbox-input').val();
-        inputVal = $.trim(inputVal).length;
-        if( inputVal !== 0){
-          $('.searchbox-icon').css('display','none');
-        } else {
-        $('.searchbox-input').val('');
-        $('.searchbox-icon').css('display','block');
-      }
-  }
-})(jQuery);
+ /*
+ * Webslide - v3.1
+ * Web Slide - Responsive Mega Menu for Bootstrap 3+
+ *
+ * Copyright 2016 webthemex
+ * http://codecanyon.net/user/webthemex?ref=webthemex
+ *
+ * Licensed under Envato licenses
+ * http://codecanyon.net/licenses/standard
+ */
+ 
+$(function() {
+  $('#wsnavtoggle').click(function () {
+    $('.wsmenucontainer').toggleClass('wsoffcanvasopener');
+  });
+  
+  $('.overlapblackbg').click(function () {
+    $('.wsmenucontainer').removeClass('wsoffcanvasopener');
+  });
+  
+  
+  //MAIN Menu UL SHOW/HIDE JS
+  $('.wsmenu-list> li').has('.wsmenu-submenu').prepend('<span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>');
+  $('.wsmenu-list > li').has('.megamenu').prepend('<span class="wsmenu-click"><i class="wsmenu-arrow fa fa-angle-down"></i></span>');
+  
+  $('.wsmenu-click').click(function(){
+    $(this).toggleClass('ws-activearrow')
+    .parent().siblings().children().removeClass('ws-activearrow');
+  
+    $(".wsmenu-submenu, .megamenu").not($(this).siblings('.wsmenu-submenu, .megamenu')).slideUp('slow');
+    $(this).siblings('.wsmenu-submenu').slideToggle('slow');
+    $(this).siblings('.megamenu').slideToggle('slow');  
+  });
+  
+  //MAIN Menu UL SHOW/HIDE JS
+  //SUB Menu UL SHOW JS
+  $('.wsmenu-list > li > ul > li').has('.wsmenu-submenu-sub').prepend('<span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>');
+  $('.wsmenu-list > li > ul > li > ul > li').has('.wsmenu-submenu-sub-sub').prepend('<span class="wsmenu-click02"><i class="wsmenu-arrow fa fa-angle-down"></i></span>');
+  
+  $('.wsmenu-click02').click(function(){
+    $(this).children('.wsmenu-arrow').toggleClass('wsmenu-rotate');
+    $(this).siblings('.wsmenu-submenu-sub').slideToggle('slow');
+    $(this).siblings('.wsmenu-submenu-sub-sub').slideToggle('slow');
+  
+  });
+    //SUB Menu UL SHOW JS
+    
+    
+  
+});
 
 {% endset %}
 
-{% includeCss mmenuCss %}
-{% includeJs mmenuJs %}
+{% includeCss wsmenuCss %}
+{% includeJs wsmenuJs %}
 
-<div class="mmenu">
-      <div class="hero">
-            <div class="hovermenu ttmenu">
-                <div class="container">
-                  <div class="row">
-                    <div class="navbar navbar-default" role="navigation">
-                        <div class="navbar-header">
-                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                          </button>
-                          <a href="http://www.aranca.com"><img id="logo" src="/assets/images/aranca_logo_214x75.png" alt="Aranca Logo"></a>
-                        </div><!-- end navbar-header -->
+<div class="wsmenucontainer clearfix">
+<div class="overlapblackbg"></div>
+ 
 
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown ttmenu-full"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Services <b class="dropme"></b></a>
-                                    <ul id="first-menu" class="dropdown-menu">
-                                        <li>
-                                        <div class="ttmenu-content">
-                                            <div class="tabbable row">
-                                                <div class="col-md-3">
-                                                    <ul class="nav nav-pills nav-stacked">
-                                                        <li class="active" ><a href="#tabs5-pane1" data-toggle="tab">Business Research</a></li>
-                                                        <li><a href="#tabs5-pane2" data-toggle="tab">IP Research</a></li>
-                                                        <li><a href="#tabs5-pane3" data-toggle="tab">Investment Research</a></li>
-                                                        <li><a href="#tabs5-pane4" data-toggle="tab">Procurement Research</a></li>
-                                                        <li><a href="#tabs5-pane5" data-toggle="tab">Valuation Advisory</a></li>
-                                                    </ul>
-                                                </div><!-- end col -->
-                                                <div class="col-md-9">
-                                                    <div class="tab-content">
-                                                        <div id="tabs5-pane1" class="tab-pane active">
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview">Overview</a></h3>
-                                                                              <p>Aranca helps clients make informed business decisions involving customers, competitors, markets and technologies; with insights from domain experts.</p>
+  <div class="wsmobileheader clearfix">
+  <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
+  <a class="smallogo"><img src="images/logo.png" width="120" alt="" /></a>
+  <a class="callusicon" href="tel:123456789"><span class="fa fa-phone"></span></a>
+  </div>
+  
+  <div class="header">
+  <div class="wrapper clearfix bigmegamenu">
+  <div class="logo clearfix"><a href="index.html" title="Responsive Slide Menus"><img src="images/logo.png" alt="" /></a></div>
 
-                                                                              <a href="{{siteUrl}}business-research/advisory-services-overview"><button class="btn btn-primary small">Learn More</button></a>
-                                                                            </li>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#sol-port">Solutions</a></h3>
-                                                                              <p>Explore our complete solution portfolio</p>
+  <!--Main Menu HTML Code-->
+      <nav class="wsmenu clearfix">
+                    <ul class="mobile-sub wsmenu-list">
+                      <li><a href="#" class="active"><i class="fa fa-home"></i><span class="hometext">&nbsp;&nbsp;Home</span></a></li>
+                      <li><a href="#"><i class="fa fa-align-justify"></i>&nbsp;&nbsp;Dropdowns <span class="arrow"></span></a>
+                        <ul class="wsmenu-submenu">
+                          <li><a href="#"><i class="fa fa-angle-right"></i>Website Design </a></li>
+                          <li><a href="#"><i class="fa fa-angle-right"></i>Ecommerce Solutions</a></li>
+                          <li><a href="#"><i class="fa fa-angle-right"></i>Application Development</a></li>
+                          <li><a href="#"><i class="fa fa-angle-right"></i>Website Development</a></li>
+                          <li><a href="#"><i class="fa fa-angle-right"></i>Open Source Development</a>
+                            <ul class="wsmenu-submenu-sub">
+                              <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 1</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 2</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 3</a></li>
+                              <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 4</a>
+                                <ul class="wsmenu-submenu-sub-sub">
+                                  <li class=""><a href="#"><i class="fa fa-angle-right"></i>Submenu item 1 Sub</a></li>
+                                  <li class=""><a href="#"><i class="fa fa-angle-right"></i>Submenu item 2 Sub</a></li>
+                                  <li class=""><a href="#"><i class="fa fa-angle-right"></i>Submenu item 3 Sub</a></li>
+                                  <li class=""><a href="#"><i class="fa fa-angle-right"></i>Submenu item 4 Sub</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Mega menu <span class="arrow"></span></a>
+                        <div class="megamenu clearfix">
+                          <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                            <li class="title">Product Header</li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                          </ul>
+                          <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                            <li class="title">Product Header</li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                          </ul>
+                          <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                            <li class="title">Product Header</li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                            <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                          </ul>
+                          <div class="col-lg-3 col-md-3 col-xs-12">
+                            <h3 class="title">New Arrival </h3>
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                              <div class="carousel-inner" role="listbox">
+                                <div class="item active"> <img src="images/image01.jpg" alt="This is Product Name">
+                                  <div class="carousel-caption"> CodeCanyon </div>
+                                </div>
+                                <div class="item"><img src="images/image02.jpg" alt="This is Product Name">
+                                  <div class="carousel-caption"> ThemeForest </div>
+                                </div>
+                                <div class="item"><img src="images/image03.jpg" alt="This is Product Name">
+                                  <div class="carousel-caption"> GraphicRiver </div>
+                                </div>
+                                <div class="item"><img src="images/image04.jpg" alt="This is Product Name">
+                                  <div class="carousel-caption"> ActiveDen </div>
+                                </div>
+                                <div class="item"><img src="images/image05.jpg" alt="This is Product Name">
+                                  <div class="carousel-caption"> PhotoDune </div>
+                                </div>
+                                <div class="item"><img src="images/image06.jpg" alt="This is Product Name">
+                                  <div class="carousel-caption"> 3DOcean </div>
+                                </div>
+                              </div>
+                              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="fa fa-arrow-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="fa fa-arrow-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li><a href="#"><i class="fa fa-th-large"></i>&nbsp;&nbsp;Product images <span class="arrow"></span></a>
+                        <div class="megamenu clearfix ">
+                           
+                            <div class="col-sm-4">
+                              <h3 class="title">CodeCanyon</h3>
+                              <div class="fluid-width-video-wrapper"><a href="#"><img src="images/image01.jpg" alt=""/></a> </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h3 class="title">ThemeForest</h3>
+                              <div class="fluid-width-video-wrapper"><img src="images/image02.jpg" alt=""/> </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h3 class="title">GraphicRiver </h3>
+                              <div class="fluid-width-video-wrapper"><img src="images/image03.jpg" alt=""/> </div>
+                            </div>
+                          
+                           
+                            <div class="col-sm-4">
+                              <h3 class="title mrgtop">ActiveDen</h3>
+                              <div class="fluid-width-video-wrapper"><a href="#"><img src="images/image04.jpg" alt=""/></a> </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h3 class="title mrgtop">PhotoDune</h3>
+                              <div class="fluid-width-video-wrapper"><img src="images/image05.jpg" alt=""/> </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h3 class="title mrgtop">3DOcean </h3>
+                              <div class="fluid-width-video-wrapper"><img src="images/image06.jpg" alt=""/> </div>
+                            </div>
+                           
+                        </div>
+                      </li>
+                      <li><a href="#"><i class="fa fa-paragraph"></i>&nbsp;&nbsp;Typography <span class="arrow"></span></a>
+                        <div class="megamenu clearfix" >
+                          <div class="typography-text clearfix">
+                        
+                        <div class="col-lg-6 col-sm-12">
+                          <h3 class="title">This is another title</h3>
+                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic.</p>
+                        </div>
+                          
+                        <div class="col-lg-3 col-sm-12">
+                          <h3 class="title">This is another title</h3>
+                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                        </div>
+                          
+                        <div class="col-lg-3 col-sm-12">
+                          <h3 class="title">This is another title</h3>
+                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                          </div>
+                         
+                        <div class="cl"></div>
+                         
+                         <div class="col-lg-3 col-sm-12">
+                            <h3 class="title">Other Services</h3>
+                            <ul>
+                              <li><a href="#"><i class="fa fa-wordpress"></i>Wordpress Development</a></li>
+                              <li><a href="#"><i class="fa fa-drupal"></i>Drupal Development</a></li>
+                              <li><a href="#"><i class="fa fa-shopping-cart"></i>Shoping Cart Development</a></li>
+                            </ul>
+                          </div>
+                          
+                         <div class="col-lg-3 col-sm-12">
+                            <h3 class="title">More Services</h3>
+                            <ul>
+                              <li><a href="#"><i class="fa fa-android"></i> Android App Development</a></li>
+                              <li><a href="#"><i class="fa fa-apple"></i>iPhone App Development</a></li>
+                              <li><a href="#"><i class="fa fa-windows"></i>Windows App Development</a></li>
+                            </ul>
+                          </div>
+        
+                         <div class="col-lg-3 col-sm-12">
+                            <h3 class="title">Other Products</h3>
+                            <ul>
+                              <li><a href="#"><i class="fa fa-wordpress"></i>Wordpress Development</a></li>
+                              <li><a href="#"><i class="fa fa-drupal"></i>Drupal Development</a></li>
+                              <li><a href="#"><i class="fa fa-joomla"></i>Joomla Development</a></li>
+                            </ul>
+                          </div>
+                          
+                         <div class="col-lg-3 col-sm-12">
+                            <h3 class="title">More Services</h3>
+                            <ul>
+                              <li><a href="#"><i class="fa fa-android"></i> Android App Development</a></li>
+                              <li><a href="#"><i class="fa fa-mobile"></i>HTML5 App Development</a></li>
+                              <li><a href="#"><i class="fa fa-paypal"></i>Paypal Store Integration</a></li>
+                            </ul>
+                          </div>
+                          
+                        
+                      </div>
+                        </div>
+                      </li>
+                      <li><a href="#"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;Contact Us <span class="arrow"></span></a>
+                        <div class="megamenu halfdiv">
+                          <h3 class="title">Contact Us</h3>
+                          <form name="contact_name" class="menu_form">
+                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Email">
+                            <textarea placeholder="Your message..."></textarea>
+                            <input type="button" value="Reset">
+                            <input type="submit" value="Send">
+                          </form>
+                          <div class="cl"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </nav>
+  <!--Menu HTML Code--> 
+  
+  
+  
+</div>
+    
+        
+</div>
 
-                                                                            <a href="{{siteUrl}}business-research/advisory-services-overview#sol-port"><button class="btn btn-primary small">Learn More</button></a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#solution">Industries</a></h4>
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}business-research/aerospace-and-defense">Aerospace and Defense</a></li>
-                                                                            <li><a href="{{siteUrl}}business-research/aluminium">Aluminium</a></li>
-                                                                            <li><a href="{{siteUrl}}business-research/building-materials">Building Materials</a></li>
-                                                                            <li><a href="{{siteUrl}}business-research/commercial-banking">Commercial Banking</a></li>
-                                                                            <li><a href="{{siteUrl}}business-research/consumer-appliances">Consumer Appliances</a></li>
-                                                                            <li><a href="{{siteUrl}}business-research/education">Education</a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                        <li>
-                                                                        <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
-                                                                        </li>
-                                                                        <li><a href="{{siteUrl}}business-research/iron-and-steel">Iron and Steel</a></li>
-                                                                        <li><a href="{{siteUrl}}business-research/it-hardware">IT Hardware</a></li>
-                                                                        <li><a href="{{siteUrl}}business-research/life-non-life-insurance">Life & Non Life Insurance</a></li>
-                                                                        <li><a href="{{siteUrl}}business-research/machinery-instrument">Machinery & Instrument</a></li>
-                                                                        <li><a href="{{siteUrl}}business-research/personal-home-care">Personal Home Care</a></li>
-                                                                        <li><a href="{{siteUrl}}business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                            </div><!-- end row -->
-                                                        </div>
-                                                        <div id="tabs5-pane2" class="tab-pane">
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview">Overview</a></h3>
-                                                                              </li>
-                                                                              <li>
-                                                                              <p>Aranca provides technology intelligence, IP strategy and litigation support to enterprises and law firms.</p>
-                                                                            </li>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview#sol">Solutions</a></h3>
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/ip-strategy">IP Strategy</a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/litigation-support">Litigation Support</a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/technology-intelligence">Technology Intelligence</a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview#solution">Technologies</a></h3>
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/automotive">Automotive</a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/biotechnology">Biotechnology </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/chemicals">Chemicals </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/communication-network">Communication & Network </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/diagnostics">Diagnostics </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/electronics">Electronics </a></li>
-
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                            <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/food-beverage">Food & Beverage </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/home-care">Home Care </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/industrial-manufacturing">Industrial Manufacturing  </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/medical-devices">Medical Devices </a></li>
-                                                                            <li><a href="{{siteUrl}}intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                            </div><!-- end row -->
-                                                        </div>
-                                                        <div id="tabs5-pane3" class="tab-pane">
-                                                            <div class="row">
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}investment-research/overview">Overview</a></h3>
-                                                                              </li>
-                                                                              <li>
-                                                                              Aranca delivers effective co-sourced investment research & analytics across asset classes to buy-side and sell-side senior professionals from financial institutions.
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}investment-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
-                                                                              </li>
-                                                                              <li>
-                                                                              Learn more about what investment research solutions can do for you.
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}investment-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div>
-                                                            </div><!-- end row -->
-                                                        </div>
-                                                        <div id="tabs5-pane4" class="tab-pane">
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview">Overview</a></h3>
-                                                                              </li>
-                                                                              <li>
-                                                                              <p>Aranca provides global sourcing teams in client organizations with customized, category-specific intelligence that help them design profitable sourcing strategies.</p>
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}procurement-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#solution">Solutions</a></h3>
-                                                                              </li>
-                                                                              <li>
-                                                                              Learn more about what Procurement research solutions can do for you.
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}procurement-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#framework">Frameworks</a></h3>
-                                                                              </li>
-                                                                              <li>
-                                                                              Learn more about what Procurement research frameworks can do for you.
-                                                                            </li>
-                                                                            <li><a href="{{siteUrl}}procurement-research/overview#framework"><button class="btn btn-primary small">View Frameworks</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                            </div><!-- end row -->
-                                                        </div>
-                                                        <div id="tabs5-pane5" class="tab-pane">
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="http://www.arancavaluation.com/">Overview</a></h3>
-                                                                              </li>
-                                                                              <li>
-                                                                              <p>Aranca provides multi-disciplinary valuation advisory services to companies, investors, attorneys and lenders, for diverse transactions, tax and financial reporting needs.</p>
-                                                                            </li>
-                                                                            <li><a href="http://www.arancavaluation.com/"><button class="btn btn-primary small">Learn More</button></a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div><!-- end col -->
-                                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                                    <div class="box">
-                                                                        <ul>
-                                                                            <li>
-                                                                              <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
-                                                                              </li>
-                                                                              <li class="dropdown-submenu">
-                                                                              <a href="#">Tax Valuation <span class="dropme-left"></span></a>
-                                                                                <ul class="dropdown-menu" style="left:70%;">
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/409a-valuation">409a</a></li>
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/estate-gift-tax-valuations">Estate & Gift Tax</a></li>
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/s-corp-election-irc-1374">S-Corp Election</a></li>
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/nols-built-in-capital-gains-irc382">NOLs & Built-in Capital Gains</a></li>
-                                                                                </ul>
-                                                                              </li>
-                                                                              <li class="dropdown-submenu"><a href="#">Financial Reporting <span class="dropme-left"></span></a>
-                                                                                <ul class="dropdown-menu" style="left:70%;">
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/purchase-price-allocations-asc-805-ifrs-3">Purchase Price Allocations</a></li>
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/impairment-of-goodwill-and-other-intangible-assets">Goodwill Impairment</a></li>
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/complex-securities-valuations">Complex Securities Valuations</a></li>
-                                                                                </ul>
-                                                                              </li>
-                                                                              <li class="dropdown-submenu"><a href="#">Transaction Services <span class="dropme-left"></span></a>
-                                                                                <ul class="dropdown-menu" style="left:70%;">
-                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/transaction-services/fairness-opinions">Fairness Opinions</a></li>
-                                                                                </ul>
-                                                                              </li>
-                                                                              <li><a href="http://www.arancavaluation.com/ip-valuation/overview">IP Valuation</a></li>
-                                                                        </ul>
-                                                                    </div><!-- end box -->
-                                                                </div>
-                                                            </div><!-- end row -->
-                                                        </div>
-                                                    </div><!-- /.tab-content -->
-                                                </div><!-- end col -->
-                                            </div><!-- /.tabbable -->
-                                        </div><!-- end ttmenu-content -->
-                                        </li>
-                                    </ul>
-                                </li><!-- end mega menu -->
-                                <li class="dropdown ttmenu-full"><a href="{{siteUrl}}knowledge-library" data-toggle="dropdown" class="dropdown-toggle">Knowledge Library <b class="dropme"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                        <div class="ttmenu-content">
-                                            <div class="row">
-                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                    <div class="box">
-                                                    <ul>
-                                                        <li>
-                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library">Overview</a></h3>
-                                                        </li>
-                                                        <li>
-                                                          <p>The Aranca Knowledge Library showcases the opinions, commentaries,insights and perspectives of our global thought leaders on sectors,industries, and regions most relevant to your business.</p>
-                                                        </li>
-                                                        <li><a href="{{siteUrl}}knowledge-library"><button class="btn btn-primary small">Read More</button></a></li>
-                                                        </ul>
-                                                    </div><!-- end box -->
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                    <div class="box">
-                                                    <ul>
-                                                        <li>
-                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/articles">Articles</a></h3>
-                                                        </li>
-                                                        <li>
-                                                          <p>We offer our useful insights and perspectives on topics that matter to you and your business.</p>
-                                                        </li>
-                                                        <li>
-                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/blogs-and-opinions">Blogs &amp; Opinions</a></h3>
-                                                        </li>
-                                                        <li>
-                                                          <p>Get to know commentary and opinions of our thought leaders on latest developments around the world that can significantly impact your business today.</p>
-                                                        </li>
-                                                    </ul>
-                                                    </div><!-- end box -->
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                                    <div class="box">
-                                                    <ul>
-                                                        <li>
-                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/infographics">Infographics</a></h3>
-                                                        </li>
-                                                        <li>
-                                                          <p>Understand and interpret complex information and elaborate trends in the most visually engaging format.</p>
-                                                        </li>
-                                                        <li>
-                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/special-reports">Special Reports</a></h3>
-                                                        </li>
-                                                        <li>
-                                                          <p>Our in-depth thematic reports demonstrate our profound understanding of complex scenarios, imperatives and challenges pertaining to your business, and offer our relevant perspectives.</p>
-                                                        </li>
-                                                    </ul>
-
-                                                    </div><!-- end box -->
-                                                </div>
-                                            </div><!-- end row -->
-                                        </div><!-- end ttmenu-content -->
-                                        </li>
-                                    </ul>
-                                </li><!-- end mega menu -->
-                                <li class="dropdown">
-                                    <a href="{{siteUrl}}about-us/company-overview" class="dropdown-toggle" data-toggle="dropdown">About Us<span class="dropme"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                        <div class="ttmenu-content">
-                                            <div class="row">
-                                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                                  <div class="box">
-                                                      <ul>
-                                                          <li>
-                                                            <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}about-us/company-overview">Overview</a></h3>
-                                                          </li>
-                                                          <li><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
-                                                      <li><a href="{{siteUrl}}about-us/our-team">Our Team</a></li>
-
-                                                          <li><a href="{{siteUrl}}about-us/how-we-work">How We Work</a></li>
-                                                          <li><a href="{{siteUrl}}about-us/our-values">Our Values</a></li>
-                                                      </ul>
-                                                  </div><!-- end box -->
-                                              </div><!-- end col -->
-                                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                                  <div class="box">
-                                                      <ul>
-                                                      <li>
-                                                      <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
-                                                      </li>
-                                                      <li><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
-                                                      <li><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
-                                                      <li><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
-                                                      <li><a href="{{siteUrl}}media-room">Media Room</a></li>
-                                                      <li><a href="{{siteUrl}}press-releases">Press Release</a></li>
-                                                      </ul>
-                                                  </div><!-- end box -->
-                                              </div><!-- end col -->
-                                            </div><!-- end row -->
-                                        </div>
-                                        </li>
-                                    </ul>
-                                </li><!-- end mega menu -->
-                                <li><a href="/contact-us">Contact</a></li>
-                                <li class="sharer__list__item"><a href="https://twitter.com/aranca" target="_blank"><i class="fa fa-twitter"></i></a></li>
-
-                                <li class="sharer__list__item"><a href="https://www.facebook.com/ArancaResearch" target="_blank"><i class="fa fa-facebook"></i></a></li>
-
-                                <li class="sharer__list__item"><a href="http://www.linkedin.com/company/aranca" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                <!-- follow social links -->
-                                </li><!-- end mega menu -->
-                            </ul><!-- end nav navbar-nav -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <form role="search" method="get" action="{{ url('search/results') }}" id="search-form"class="searchbox">
-                                        <input type="search" placeholder="Search......" name="q" class="searchbox-input" onkeyup="buttonUp();" id="s" required>
-                                        <input type="submit" class="searchbox-submit" value="GO">
-                                        <span class="searchbox-icon"><i class="fa fa-search"></i></span>
-                                    </form>
-                                </li>
-                            </ul><!-- end nav navbar-nav navbar-right -->
-                        </div><!--/.nav-collapse -->
-                    </div><!-- end navbar navbar-default clearfix -->
-                  </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end menu 1 -->
-        </div><!-- end hero -->
-</div><!-- /container -->
