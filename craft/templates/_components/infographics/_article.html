@@ -2,18 +2,24 @@
 {% set articleCss %}
 
 .article {
-  padding-top: 70px;
   min-height: 1000px;
+  padding-top: 84px;
 }
 
 .article__body {
   background: white;
-  padding: 30px 90px;
+  padding: 5em 90px;
+}
+
+.article__body h2 {
+  color: #2E7DA8;
+  font-size: 1.5em;
 }
 
 .article__headline {
   color: #2E7DA8;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 
 .article__content > p:first-child {
@@ -22,46 +28,24 @@
   color: #5E95B5;
 }
 
-.article__content h2 {
-  font-size: 2em;
-  font-weight: 300;
-  line-height: 1.2em;
-  color: #034883
+.article__content > p {
+  margin-bottom: 20px;
+  color: #5B6A72;
+  font-size: 1.1em;
 }
 
+.article__image {
+  margin-bottom: 20px;
+}
 
 .release-date {
   color: {{ roman }};
 }
 
-.action-bar{
-  border-top: 1px solid {{ ttgreyLight }};
-  margin-bottom: 22px;
-}
-.action-bar__item{
-  float:left;
-  color: {{ ttgreyLight }};
-  font-size:22px;
-  width: 4em;
-  border-right: 1px solid {{ ttgreyLight }};
-  transition: font-size 0.2s ease;
-}
-
-.action-bar__item:hover{
-  color: {{ ttgreyLight }};
-  font-size:25px;
-}
-
-.action-bar__item-text{
-  font-size: 0.5em;
-  text-transform: uppercase;
-  position: relative;
-  top: -10px;
-  letter-spacing: 0.1em;
-}
-
-.action-bar__icon{
-  padding-top: 15px;
+@media only screen and (max-width : 480px) {
+  .article__body, #disqus_thread {
+    padding: 10px 20px;
+  }
 }
 
 {% endset %}
