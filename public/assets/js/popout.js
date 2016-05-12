@@ -86,9 +86,9 @@ function slideoutEventCallBack(event, data) {
             //break;
         case 'ORIGINATE_ERROR':
             if(data.errorCode && data.errorCode == 812) {
-                $('.wbf-container').addClass('agent-busy');
+                $('.wbs-container').addClass('agent-busy');
             } else {
-                $('.wbf-container').addClass('oops');
+                $('.wbs-container').addClass('oops');
             }
             clearInterval(timer);
             break;
@@ -126,9 +126,9 @@ function slideoutEventCallBack(event, data) {
             break;
         case 'ORIGINATE_ERROR':
             if(data.errorCode && data.errorCode == 812) {
-                $('.wbf-container').addClass('agent-busy');
+                $('.wbs-container').addClass('agent-busy');
             } else {
-                $('.wbf-container').addClass('oops');
+                $('.wbs-container').addClass('oops');
             }
             clearInterval(timer);
             break;
