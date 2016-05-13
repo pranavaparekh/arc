@@ -7,7 +7,7 @@
 .overlapblackbg{ display:none; }
 .bigmegamenu{ position:relative; }
 .wsmenu{
-  color:#fff;
+/*  color:#fff;*/
   font-size:13px;
   padding:0px;
   width:100%;
@@ -62,10 +62,12 @@
 
 .wsmenu-list > li > a{
   display:block;
-  color:#E5E5E5;
-  padding:0px 14px; line-height:48px;
+  color: #8C8888;
+  /*padding:0px 14px; */
+  line-height:48px;
   text-decoration:none;
-  position:relative;}
+  position:relative;
+  font-size: 1.2em;}
 
 .wsmenu-list li a:hover .arrow:after{ border-top-color:#b3b3b3}
 .wsmenu-list li a.active .arrow:after{ border-top-color:#b3b3b3}
@@ -86,9 +88,10 @@
   margin:0px;
   text-align:left;
   padding:14px;
+  padding-bottom: 20px;
   font-size:15px;
   border:solid 1px #eeeeee;
-  background-color:#fff;
+  background-color:#f5f5f5;
   opacity: 0;
   -o-transform-origin: 0% 0%;
   -ms-transform-origin: 0% 0%;
@@ -100,19 +103,20 @@
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;}
 
 .megamenu .title{
-  border-bottom:1px solid #CCC;
+/*  border-bottom:1px solid #CCC;*/
   font-size:14px;
   padding:9px 5px 9px 0px;
-  font-size:17px;
-  color:#424242;
+  font-size:1.5em;
+  color:#00458C;
   margin-bottom:7px;
   text-align:left;
-  height:39px;}
+  height:39px;
+  }
   
 .link-list li{
   display:block;
   text-align:center;
-  white-space:nowrap;
+
   text-align:left;}
   
 .link-list li a{
@@ -120,13 +124,13 @@
   border-right:none;
   text-align:left;
   padding:6px 0px;
-  background:#fff !important;
+/*  background:#fff !important;*/
   background-image:none !important;
-  color: #666666 !important;
+  color: #7D7B7B !important;
   border-right: 0 none !important;
   display:block;
   border-right:1px solid #e7e7e7;
-  background-color:#fff;
+/*  background-color:#fff;*/
   color:#424242;}
   
 .link-list .fa{font-size:11px;}
@@ -381,10 +385,10 @@
 .wsmenu-click02{display:none;}
 
 /* Default Theme */ 
-.wsmenu-list li:hover>a{background-color:rgba(0,0,0,0.08) !important; text-decoration:none;}
-.wsmenu-list > li > a:hover {background-color:rgba(0,0,0,0.08) !important;  text-decoration:none;}
-.wsmenu-list > li > a.active{background-color:rgba(0,0,0,0.08) !important; text-decoration:none; }
-.wsmenu-submenu > li > a:hover {background-color:rgba(0,0,0,0.08) !important; border-radius:0px!important; text-decoration:none;  text-decoration:none;}
+.wsmenu-list li:hover>a{/*background-color:rgba(0,0,0,0.08) !important;*/ font-weight: bold; text-decoration:none;}
+.wsmenu-list > li > a:hover {/*background-color:rgba(0,0,0,0.08) !important; */ text-decoration:none;}
+.wsmenu-list > li > a.active{/*background-color:rgba(0,0,0,0.08) !important;*/ text-decoration:none; }
+.wsmenu-submenu > li > a:hover {/*background-color:rgba(0,0,0,0.08) !important; */border-radius:0px!important; text-decoration:none;  text-decoration:none;}
 
 .typography-text { padding:0px 0px; font-size:15px;}
 .typography-text p{ text-align:justify; line-height:24px; color:#656565;}
@@ -406,6 +410,8 @@
 
 }
 
+
+/* Custom Styles */
 /* MENU TABBED */
 
 .nav-pills {
@@ -440,6 +446,38 @@
     margin-right:10px;
 }
 
+.wsmenu .nav-pills > li:hover > a:after {
+  color: #FFFBFB;
+}
+
+.tabbed-pill.active:hover > a {
+  color: #fff !important;
+  text-decoration: none !important;
+  
+}
+
+.tabbed-pill.active:hover {
+  background-color: #034883 !important;
+}
+
+.wsmenu .btn-primary {
+  background-color: transparent;
+  color: grey;
+  border-color: grey;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Typography */
+
+.wsmenu__list__item {
+  border-bottom: 1px dotted #C1BEBE;
+  padding: 0.5em 0;
+}
+}
+.wsmenu__list__item a {
+  font-weight: 300;
+}
  
 
 @media only screen and (min-width: 781px) {
@@ -611,7 +649,7 @@
   
 .wsmenu-submenu-sub li a.active{color:#000 !important;}
 
-.wsmenu-submenu-sub li:hover>a{ background-color:#333333 !important; color:#fff;}
+.wsmenu-submenu-sub li:hover>a{ background-color:#333333 !important; /*color:#fff;*/}
 
 .wsmenu-list > li > a .fa{margin-right:6px;}
 
@@ -641,7 +679,7 @@
   font-weight:normal;}
   
 .wsmenu-submenu-sub-sub li a.active{ color:#000 !important;}
-.wsmenu-submenu-sub-sub li:hover>a{ background-color:#606060 !important; color:#fff;}
+.wsmenu-submenu-sub-sub li:hover>a{ background-color:#606060 !important; /*color:#fff;*/}
 .wsmenu{position: relative;}
 
 .wsmenu .wsmenu-list{
@@ -737,9 +775,9 @@
 
 .megamenu ul li.title{
   line-height:26px;
-  color:#666666;
+  color:#01468D;
   margin:0px;
-  font-size:15px;
+  font-size:1.4em;
   padding:7px 13px !important;
   border-bottom:1px solid #ccc;
   background-color:transparent !important;}
@@ -1061,19 +1099,18 @@ $(function() {
 TABBED HOVER -->
 =============================================== */
 
-  $('.nav-pills > li ').hover( function(){
+  $('.wsmenu .nav-pills > li ').hover( function(){
     if($(this).hasClass('hoverblock'))
       return;
       else
       $(this).find('a').tab('show');
   });
 
-  $('.nav-tabs > li').find('a').click( function(){
+  $('.wsmenu .nav-tabs > li').find('a').click( function(){
     $(this).parent()
       .siblings().addClass('hoverblock');
   });
-    
-    
+  
   
 });
 
@@ -1104,17 +1141,17 @@ TABBED HOVER -->
           <li><a href="{{ siteUrl }}"><img src="http://www.aranca.com/assets/images/aranca_logo_214x75.png" alt=""></a></li>
           
           <!-- services desktop menu item -->
-          <li class="hidden-xs"><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Services<span class="arrow"></span></a>
+          <li class="hidden-xs"><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;SERVICES<span class="arrow"></span></a>
             <div class="megamenu clearfix">
               
               <div class="tabbable row">
                   <div class="col-md-3">
                       <ul class="nav nav-pills nav-stacked">
-                          <li class="active"><a href="#tabs5-pane1" data-toggle="tab" aria-expanded="true">Business Research</a></li>
-                          <li class=""><a href="#tabs5-pane2" data-toggle="tab" aria-expanded="false">IP Research</a></li>
-                          <li class=""><a href="#tabs5-pane3" data-toggle="tab" aria-expanded="false">Investment Research</a></li>
-                          <li class=""><a href="#tabs5-pane4" data-toggle="tab" aria-expanded="false">Procurement Research</a></li>
-                          <li><a href="#tabs5-pane5" data-toggle="tab">Valuation Advisory</a></li>
+                          <li class="tabbed-pill active"><a href="#tabs5-pane1" data-toggle="tab">Business Research</a></li>
+                          <li class="tabbed-pill"><a href="#tabs5-pane2" data-toggle="tab">IP Research</a></li>
+                          <li class="tabbed-pill"><a href="#tabs5-pane3" data-toggle="tab">Investment Research</a></li>
+                          <li class="tabbed-pill"><a href="#tabs5-pane4" data-toggle="tab">Procurement Research</a></li>
+                          <li class="tabbed-pill"><a href="#tabs5-pane5" data-toggle="tab">Valuation Advisory</a></li>
                       </ul>
                   </div><!-- end col -->
                   <div class="col-md-9">
@@ -1146,12 +1183,12 @@ TABBED HOVER -->
                                               <li>
                                                 <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/business-research/advisory-services-overview#solution">Industries</a></h3>
                                               </li>
-                                              <li><a href="http://www.aranca.com/business-research/aerospace-and-defense">Aerospace and Defense</a></li>
-                                              <li><a href="http://www.aranca.com/business-research/aluminium">Aluminium</a></li>
-                                              <li><a href="http://www.aranca.com/business-research/building-materials">Building Materials</a></li>
-                                              <li><a href="http://www.aranca.com/business-research/commercial-banking">Commercial Banking</a></li>
-                                              <li><a href="http://www.aranca.com/business-research/consumer-appliances">Consumer Appliances</a></li>
-                                              <li><a href="http://www.aranca.com/business-research/education">Education</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/aerospace-and-defense">Aerospace and Defense</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/aluminium">Aluminium</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/building-materials">Building Materials</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/commercial-banking">Commercial Banking</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/consumer-appliances">Consumer Appliances</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/education">Education</a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1161,11 +1198,11 @@ TABBED HOVER -->
                                           <li>
                                           <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
                                           </li>
-                                          <li><a href="http://www.aranca.com/business-research/iron-and-steel">Iron and Steel</a></li>
-                                          <li><a href="http://www.aranca.com/business-research/it-hardware">IT Hardware</a></li>
-                                          <li><a href="http://www.aranca.com/business-research/life-non-life-insurance">Life &amp; Non Life Insurance</a></li>
-                                          <li><a href="http://www.aranca.com/business-research/machinery-instrument">Machinery &amp; Instrument</a></li>
-                                          <li><a href="http://www.aranca.com/business-research/personal-home-care">Personal Home Care</a></li>
+                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/iron-and-steel">Iron and Steel</a></li>
+                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/it-hardware">IT Hardware</a></li>
+                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/life-non-life-insurance">Life &amp; Non Life Insurance</a></li>
+                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/machinery-instrument">Machinery &amp; Instrument</a></li>
+                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/personal-home-care">Personal Home Care</a></li>
                                           <li><a href="http://www.aranca.com/business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
@@ -1186,9 +1223,9 @@ TABBED HOVER -->
                                               <li>
                                                 <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview#sol">Solutions</a></h3>
                                               </li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/ip-strategy">IP Strategy</a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/litigation-support">Litigation Support</a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/technology-intelligence">Technology Intelligence</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/ip-strategy">IP Strategy</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/litigation-support">Litigation Support</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/technology-intelligence">Technology Intelligence</a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1199,12 +1236,12 @@ TABBED HOVER -->
                                               <li>
                                                 <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview#solution">Technologies</a></h3>
                                               </li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/automotive">Automotive</a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/biotechnology">Biotechnology </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/chemicals">Chemicals </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/communication-network">Communication &amp; Network </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/diagnostics">Diagnostics </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/electronics">Electronics </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/automotive">Automotive</a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/biotechnology">Biotechnology </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/chemicals">Chemicals </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/communication-network">Communication &amp; Network </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/diagnostics">Diagnostics </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/electronics">Electronics </a></li>
 
                                           </ul>
                                       </div><!-- end box -->
@@ -1215,12 +1252,12 @@ TABBED HOVER -->
                                               <li>
                                               <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
                                               </li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/food-beverage">Food &amp; Beverage </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/home-care">Home Care </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/industrial-manufacturing">Industrial Manufacturing  </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/medical-devices">Medical Devices </a></li>
-                                              <li><a href="http://www.aranca.com/intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/food-beverage">Food &amp; Beverage </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/home-care">Home Care </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/industrial-manufacturing">Industrial Manufacturing  </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/medical-devices">Medical Devices </a></li>
+                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1354,34 +1391,42 @@ TABBED HOVER -->
             </div>
           </li><!-- end services desktop menu item -->
           
-          <li><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;KNOWLEDGE LIBRARY<span class="arrow"></span></a>
+          <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;KNOWLEDGE LIBRARY<span class="arrow"></span></a>
             <div class="megamenu clearfix">
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                <li class="title">Product Header</li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                <li class="title">Blogs</li>
+                {% set latestBlogPosts = craft.entries.section('blogs').limit(5) %}
+                {% for blogPost in latestBlogPosts %}
+                  <li class="wsmenu__list__item"><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/blogs-and-opinions">view all posts &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
               </ul>
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                <li class="title">Product Header</li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                <li class="title">Articles</li>
+                {% set latestArticles = craft.entries.section('blogs').limit(5) %}
+                {% for article in latestArticles %}
+                  <li class="wsmenu__list__item"><a href="{{ article.url }}"></i>{{ article.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/articles">view all articles &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
               </ul>
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                <li class="title">Product Header</li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
-                <li><a href="#"><i class="fa fa-arrow-circle-right"></i>Submenu link style</a></li>
+                <li class="title">Special Reports</li>
+                {% set latestSpecialReports = craft.entries.section('specialReports').limit(5) %}
+                {% for sReport in latestSpecialReports %}
+                  <li class="wsmenu__list__item"><a href="{{ sReport.url }}"></i>{{ sReport.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/special-reports">view all special reports &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
               </ul>
-              <div class="col-lg-3 col-md-3 col-xs-12">
-                <h3 class="title">New Arrival </h3>
+              <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                <li class="title">Infographics</li>
+                {% set latestInfographics = craft.entries.section('infographics').limit(5) %}
+                {% for iGraphic in latestInfographics %}
+                  <li class="wsmenu__list__item"><a href="{{ iGraphic.url }}">{{ iGraphic.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/infographics">view all infographics &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
+              </ul>
+<!--               <div class="col-lg-3 col-md-3 col-xs-12">
+                <h3 class="title">Infographics</h3>
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner" role="listbox">
                     <div class="item active"> <img src="images/image01.jpg" alt="This is Product Name">
@@ -1404,39 +1449,47 @@ TABBED HOVER -->
                     </div>
                   </div>
                   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="fa fa-arrow-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="fa fa-arrow-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-              </div>
+              </div> -->
             </div>
           </li>
 
           <li><a href="#"><i class="fa fa-th-large"></i>&nbsp;&nbsp;<span class="arrow">ABOUT US</span></a>
-            <div class="megamenu clearfix ">
-               
-                <div class="col-sm-4">
-                  <h3 class="title">CodeCanyon</h3>
-                  <div class="fluid-width-video-wrapper"><a href="#"><img src="images/image01.jpg" alt=""/></a> </div>
-                </div>
-                <div class="col-sm-4">
-                  <h3 class="title">ThemeForest</h3>
-                  <div class="fluid-width-video-wrapper"><img src="images/image02.jpg" alt=""/> </div>
-                </div>
-                <div class="col-sm-4">
-                  <h3 class="title">GraphicRiver </h3>
-                  <div class="fluid-width-video-wrapper"><img src="images/image03.jpg" alt=""/> </div>
-                </div>
-              
-               
-                <div class="col-sm-4">
-                  <h3 class="title mrgtop">ActiveDen</h3>
-                  <div class="fluid-width-video-wrapper"><a href="#"><img src="images/image04.jpg" alt=""/></a> </div>
-                </div>
-                <div class="col-sm-4">
-                  <h3 class="title mrgtop">PhotoDune</h3>
-                  <div class="fluid-width-video-wrapper"><img src="images/image05.jpg" alt=""/> </div>
-                </div>
-                <div class="col-sm-4">
-                  <h3 class="title mrgtop">3DOcean </h3>
-                  <div class="fluid-width-video-wrapper"><img src="images/image06.jpg" alt=""/> </div>
-                </div>
+            <div class="megamenu halfdiv clearfix ">
+                <ul>
+                  <li>
+                  <div class="ttmenu-content">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="box">
+                                <ul>
+                                    <li>
+                                      <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/about-us/company-overview">Overview</a></h3>
+                                    </li>
+                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/our-culture">Our Culture</a></li>
+                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/our-team">Our Team</a></li>
+                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/how-we-work">How We Work</a></li>
+                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/our-values">Our Values</a></li>
+                                </ul>
+                            </div><!-- end box -->
+                        </div><!-- end col -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="box">
+                                <ul>
+                                <li>
+                                <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
+                                </li>
+                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/who-we-are">Who We Are</a></li>
+                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/what-we-believe">What We Believe</a></li>
+                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/work-at-aranca">Work At Aranca</a></li>
+                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/media-room">Media Room</a></li>
+                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/press-releases">Press Release</a></li>
+                                </ul>
+                            </div><!-- end box -->
+                        </div><!-- end col -->
+                      </div><!-- end row -->
+                  </div>
+                  </li>
+              </ul>
                
             </div>
             <!-- end megamenu -->
@@ -1451,6 +1504,15 @@ TABBED HOVER -->
                 <textarea placeholder="Your message..."></textarea>
                 <input type="button" value="Reset">
                 <input type="submit" value="Send">
+              </form>
+              <div class="cl"></div>
+            </div>
+          </li>
+          <li><a href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;SEARCH<span class="arrow"></span></a>
+            <div class="megamenu halfdiv">
+              <form role="search" method="get" action="{{ url('search/results') }}" id="search-form" class="search-form searchbox menu_form">
+                  <input type="text" placeholder="Search our knowledge library and services" name="q" class="searchbox-input" onkeyup="buttonUp();" id="s" required>
+                  <input type="submit" class="searchbox-submit" value="GO">
               </form>
               <div class="cl"></div>
             </div>
