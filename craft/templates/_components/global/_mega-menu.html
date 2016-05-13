@@ -1403,7 +1403,7 @@ TABBED HOVER -->
               </ul>
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                 <li class="title">Articles</li>
-                {% set latestArticles = craft.entries.section('blogs').limit(5) %}
+                {% set latestArticles = craft.entries.section('articles').limit(5) %}
                 {% for article in latestArticles %}
                   <li class="wsmenu__list__item"><a href="{{ article.url }}"></i>{{ article.title }}</a></li>
                 {% endfor %}
