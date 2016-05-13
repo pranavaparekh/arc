@@ -1,9 +1,11 @@
+
 {% set locCss %}
 .ct__headline {
   font-weight: 300;
   color: #100D26;
   text-transform: uppercase;
   margin-top: 35px;
+  padding-left: 20px;
 }
 .ct__locations {
   padding-left: 20px;
@@ -29,14 +31,89 @@
   color: #5B5656;
 }
 
+@media only screen and (max-width : 480px) {
+  .ct__headline {
+    padding-left: 0;
+  }
+
+  .ct__locations {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
 {% endset %}
 
 {% includeCss locCss %}
 
-<h1 class="ct__headline" style="padding-left: 20px;">Locations</h1>
+<h1 class="ct__headline">Locations</h1>
 
 <div class="ct__locations">
 
+  <p class="country-name">China</p>
+  <div class="vcard">
+    <p class="adr">
+      <span class="region">Shanghai (Sales Office and Global Research Centre),</span><br>
+      <span class="street-address"># 3072, 3/F, Siilver Court,</span><br>
+      <span class="street-address">No. 85, Tao Yuan Road, Huangpu District,</span><br>
+      <span class="postal-code">Shanghai 200021</span><br>
+    </p>
+
+  </div>
+
+<<<<<<< HEAD
+  <p class="country-name">United Kingdom</p>
+  <div class="vcard">
+    <p class="adr">
+      <span class="region">London (Sales Office)</span><br>
+      <span class="street-address">1 Berkeley Street,</span><br>
+      <span class="postal-code">London W1J 8DJ,</span><br>
+    </p>
+  </div>
+
+  <p class="country-name">China</p>
+  <div class="vcard">
+    <p class="adr">
+      <span class="region">Shanghai (Sales Office and Global Research Centre),</span><br>
+      <span class="street-address"># 3072, 3/F, Siilver Court,</span><br>
+      <span class="street-address">No. 85, Tao Yuan Road, Huangpu District,</span><br>
+      <span class="postal-code">Shanghai 200021</span><br>
+    </p>
+  </div>
+
+=======
+>>>>>>> 981a4f33ccafc7af7ae79d415d2f19b64cccc205
+  <p class="country-name">India</p>
+  <div class="vcard">
+    <p class="adr">
+      <span class="region">Gurgaon (Sales Office and Global Research Centre),</span><br>
+      <span class="street-address">Plot No. 883, Udyog Vihar Phase 5,</span><br>
+      <span class="street-address">Near Hotel Trident & Oberoi,</span><br>
+      <span class="postal-code">Gurgaon – 122016</span><br>
+    </p>
+
+  </div>
+
+  <div class="vcard">
+    <p class="adr">
+      <span class="region">Mumbai (Sales Office and Global Research Centre),</span><br>
+      <span class="street-address">Unit 201 & 301, Floor 2 & 3, B Wing,</span><br>
+      <span class="street-address">Supreme Business Park, Hiranandani Gardens, Powai,</span><br>
+      <span class="postal-code">Mumbai – 400 076</span><br>
+    </p>
+  </div>
+
+  <div class="vcard">
+    <p class="adr">
+      <span class="region">Mumbai (Global Research Centre),</span><br>
+      <span class="street-address">306, A Wing, Boomerang,</span><br>
+      <span class="street-address">Chandivali Farm Road, Andheri East,</span><br>
+      <span class="postal-code">Mumbai – 400072</span><br>
+    </p>
+  </div>
+
+<<<<<<< HEAD
+=======
   <p class="country-name">United States</p>
   <div class="vcard">
     <p class="adr">
@@ -71,43 +148,5 @@
     </p>
   </div>
 
-  <p class="country-name">China</p>
-  <div class="vcard">
-    <p class="adr">
-      <span class="region">Shanghai (Sales Office and Global Research Centre),</span><br>
-      <span class="street-address"># 3072, 3/F, Siilver Court,</span><br>
-      <span class="street-address">No. 85, Tao Yuan Road, Huangpu District,</span><br>
-      <span class="postal-code">Shanghai 200021</span><br>
-    </p>
-  </div>
-
-  <p class="country-name">India</p>
-  <div class="vcard">
-    <p class="adr">
-      <span class="region">Gurgaon (Sales Office and Global Research Centre),</span><br>
-      <span class="street-address">Plot No. 883, Udyog Vihar Phase 5,</span><br>
-      <span class="street-address">Near Hotel Trident & Oberoi,</span><br>
-      <span class="postal-code">Gurgaon – 122016</span><br>
-    </p>
-
-  </div>
-
-  <div class="vcard">
-    <p class="adr">
-      <span class="region">Mumbai (Sales Office and Global Research Centre),</span><br>
-      <span class="street-address">Unit 201 & 301, Floor 2 & 3, B Wing,</span><br>
-      <span class="street-address">Supreme Business Park, Hiranandani Gardens, Powai,</span><br>
-      <span class="postal-code">Mumbai – 400 076</span><br>
-    </p>
-  </div>
-
-  <div class="vcard">
-    <p class="adr">
-      <span class="region">Mumbai (Global Research Centre),</span><br>
-      <span class="street-address">306, A Wing, Boomerang,</span><br>
-      <span class="street-address">Chandivali Farm Road, Andheri East,</span><br>
-      <span class="postal-code">Mumbai – 400072</span><br>
-    </p>
-  </div>
-
+>>>>>>> 981a4f33ccafc7af7ae79d415d2f19b64cccc205
 </div>
