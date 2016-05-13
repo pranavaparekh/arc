@@ -1,0 +1,507 @@
+
+
+{% set mmenuCss %}
+.mmenu {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 9;
+  background: white;
+  max-height: 66px;
+  box-shadow: 0 1px 3px #E1DFDF;
+}
+
+#logo {
+  max-width: 88%;
+}
+
+.ttmenu .navbar-default {
+  background: white;
+}
+
+.ttmenu .navbar-default .navbar-nav > li > a {
+  color: grey !important;
+  font-weight: 400;
+  font-size: 1.02em;
+  letter-spacing: 0.05;
+}
+
+.ttmenu .dropdown-menu, .ttmenu .navbar-default .ttmenu-content {
+  background-color: #f3f3f3;
+  box-shadow: 0 1px 3px #E1DFDF;
+}
+
+
+h3.ttmenu__subheadline  {
+  margin-bottom: 0;
+}
+
+.ttmenu__subheadline a {
+  color: #00458C !important;
+  font-size: 1em !important;
+}
+
+.dropdown-menu .dp {
+  padding-left: 20px;
+  background-color: rgb(242, 242, 242);
+  margin-top: -10px;
+}
+
+.ttmenu .btn-primary {
+  background-color: transparent;
+  color: grey;
+  border-color: grey;
+}
+
+@media only screen and (max-width : 320px) {
+  .mmenu .navbar-toggle {
+    margin-right: 30px;
+  }
+}
+
+{% endset %}
+
+{% set mmenuJs %}
+
+(function($) {
+"use strict";
+  // SEARCH
+  $(document).ready(function(){
+    var submitIcon = $('.searchbox-icon');
+    var inputBox = $('.searchbox-input');
+    var searchBox = $('.searchbox');
+    var isOpen = false;
+      submitIcon.click(function(){
+        if(isOpen == false){
+          searchBox.addClass('searchbox-open');
+          inputBox.focus();
+          isOpen = true;
+        } else {
+          searchBox.removeClass('searchbox-open');
+          inputBox.focusout();
+          isOpen = false;
+        }
+      });
+      submitIcon.mouseup(function(){
+        return false;
+      });
+      searchBox.mouseup(function(){
+        return false;
+      });
+      $(document).mouseup(function(){
+        if(isOpen == true){
+        $('.searchbox-icon').css('display','block');
+        submitIcon.click();
+        }
+      });
+      });
+      function buttonUp(){
+        var inputVal = $('.searchbox-input').val();
+        inputVal = $.trim(inputVal).length;
+        if( inputVal !== 0){
+          $('.searchbox-icon').css('display','none');
+        } else {
+        $('.searchbox-input').val('');
+        $('.searchbox-icon').css('display','block');
+      }
+  }
+})(jQuery);
+
+{% endset %}
+
+{% includeCss mmenuCss %}
+{% includeJs mmenuJs %}
+
+<div class="mmenu">
+      <div class="hero">
+            <div class="hovermenu ttmenu">
+                <div class="container">
+                  <div class="row">
+                    <div class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a href="http://www.aranca.com"><img id="logo" src="/assets/images/aranca_logo_214x75.png" alt="Aranca Logo"></a>
+                        </div><!-- end navbar-header -->
+
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown ttmenu-full"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Services <b class="dropme"></b></a>
+                                    <ul id="first-menu" class="dropdown-menu">
+                                        <li>
+                                        <div class="ttmenu-content">
+                                            <div class="tabbable row">
+                                                <div class="col-md-3">
+                                                    <ul class="nav nav-pills nav-stacked">
+                                                        <li class="active" ><a href="#tabs5-pane1" data-toggle="tab">Business Research</a></li>
+                                                        <li><a href="#tabs5-pane2" data-toggle="tab">IP Research</a></li>
+                                                        <li><a href="#tabs5-pane3" data-toggle="tab">Investment Research</a></li>
+                                                        <li><a href="#tabs5-pane4" data-toggle="tab">Procurement Research</a></li>
+                                                        <li><a href="#tabs5-pane5" data-toggle="tab">Valuation Advisory</a></li>
+                                                    </ul>
+                                                </div><!-- end col -->
+                                                <div class="col-md-9">
+                                                    <div class="tab-content">
+                                                        <div id="tabs5-pane1" class="tab-pane active">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview">Overview</a></h3>
+                                                                              <p>Aranca helps clients make informed business decisions involving customers, competitors, markets and technologies; with insights from domain experts.</p>
+
+                                                                              <a href="{{siteUrl}}business-research/advisory-services-overview"><button class="btn btn-primary small">Learn More</button></a>
+                                                                            </li>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#sol-port">Solutions</a></h3>
+                                                                              <p>Explore our complete solution portfolio</p>
+
+                                                                            <a href="{{siteUrl}}business-research/advisory-services-overview#sol-port"><button class="btn btn-primary small">Learn More</button></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#solution">Industries</a></h4>
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}business-research/aerospace-and-defense">Aerospace and Defense</a></li>
+                                                                            <li><a href="{{siteUrl}}business-research/aluminium">Aluminium</a></li>
+                                                                            <li><a href="{{siteUrl}}business-research/building-materials">Building Materials</a></li>
+                                                                            <li><a href="{{siteUrl}}business-research/commercial-banking">Commercial Banking</a></li>
+                                                                            <li><a href="{{siteUrl}}business-research/consumer-appliances">Consumer Appliances</a></li>
+                                                                            <li><a href="{{siteUrl}}business-research/education">Education</a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                        <li>
+                                                                        <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
+                                                                        </li>
+                                                                        <li><a href="{{siteUrl}}business-research/iron-and-steel">Iron and Steel</a></li>
+                                                                        <li><a href="{{siteUrl}}business-research/it-hardware">IT Hardware</a></li>
+                                                                        <li><a href="{{siteUrl}}business-research/life-non-life-insurance">Life & Non Life Insurance</a></li>
+                                                                        <li><a href="{{siteUrl}}business-research/machinery-instrument">Machinery & Instrument</a></li>
+                                                                        <li><a href="{{siteUrl}}business-research/personal-home-care">Personal Home Care</a></li>
+                                                                        <li><a href="{{siteUrl}}business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                        <div id="tabs5-pane2" class="tab-pane">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview">Overview</a></h3>
+                                                                              </li>
+                                                                              <li>
+                                                                              <p>Aranca provides technology intelligence, IP strategy and litigation support to enterprises and law firms.</p>
+                                                                            </li>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview#sol">Solutions</a></h3>
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/ip-strategy">IP Strategy</a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/litigation-support">Litigation Support</a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/technology-intelligence">Technology Intelligence</a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview#solution">Technologies</a></h3>
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/automotive">Automotive</a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/biotechnology">Biotechnology </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/chemicals">Chemicals </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/communication-network">Communication & Network </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/diagnostics">Diagnostics </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/electronics">Electronics </a></li>
+
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                            <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/food-beverage">Food & Beverage </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/home-care">Home Care </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/industrial-manufacturing">Industrial Manufacturing  </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/medical-devices">Medical Devices </a></li>
+                                                                            <li><a href="{{siteUrl}}intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                        <div id="tabs5-pane3" class="tab-pane">
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}investment-research/overview">Overview</a></h3>
+                                                                              </li>
+                                                                              <li>
+                                                                              Aranca delivers effective co-sourced investment research & analytics across asset classes to buy-side and sell-side senior professionals from financial institutions.
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}investment-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
+                                                                              </li>
+                                                                              <li>
+                                                                              Learn more about what investment research solutions can do for you.
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}investment-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div>
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                        <div id="tabs5-pane4" class="tab-pane">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview">Overview</a></h3>
+                                                                              </li>
+                                                                              <li>
+                                                                              <p>Aranca provides global sourcing teams in client organizations with customized, category-specific intelligence that help them design profitable sourcing strategies.</p>
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}procurement-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#solution">Solutions</a></h3>
+                                                                              </li>
+                                                                              <li>
+                                                                              Learn more about what Procurement research solutions can do for you.
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}procurement-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#framework">Frameworks</a></h3>
+                                                                              </li>
+                                                                              <li>
+                                                                              Learn more about what Procurement research frameworks can do for you.
+                                                                            </li>
+                                                                            <li><a href="{{siteUrl}}procurement-research/overview#framework"><button class="btn btn-primary small">View Frameworks</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                        <div id="tabs5-pane5" class="tab-pane">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="http://www.arancavaluation.com/">Overview</a></h3>
+                                                                              </li>
+                                                                              <li>
+                                                                              <p>Aranca provides multi-disciplinary valuation advisory services to companies, investors, attorneys and lenders, for diverse transactions, tax and financial reporting needs.</p>
+                                                                            </li>
+                                                                            <li><a href="http://www.arancavaluation.com/"><button class="btn btn-primary small">Learn More</button></a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div><!-- end col -->
+                                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                                    <div class="box">
+                                                                        <ul>
+                                                                            <li>
+                                                                              <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
+                                                                              </li>
+                                                                              <li class="dropdown-submenu">
+                                                                              <a href="#">Tax Valuation <span class="dropme-left"></span></a>
+                                                                                <ul class="dropdown-menu" style="left:70%;">
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/409a-valuation">409a</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/estate-gift-tax-valuations">Estate & Gift Tax</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/s-corp-election-irc-1374">S-Corp Election</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/nols-built-in-capital-gains-irc382">NOLs & Built-in Capital Gains</a></li>
+                                                                                </ul>
+                                                                              </li>
+                                                                              <li class="dropdown-submenu"><a href="#">Financial Reporting <span class="dropme-left"></span></a>
+                                                                                <ul class="dropdown-menu" style="left:70%;">
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/purchase-price-allocations-asc-805-ifrs-3">Purchase Price Allocations</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/impairment-of-goodwill-and-other-intangible-assets">Goodwill Impairment</a></li>
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/complex-securities-valuations">Complex Securities Valuations</a></li>
+                                                                                </ul>
+                                                                              </li>
+                                                                              <li class="dropdown-submenu"><a href="#">Transaction Services <span class="dropme-left"></span></a>
+                                                                                <ul class="dropdown-menu" style="left:70%;">
+                                                                                    <li class="dp"><a href="http://www.arancavaluation.com/transaction-services/fairness-opinions">Fairness Opinions</a></li>
+                                                                                </ul>
+                                                                              </li>
+                                                                              <li><a href="http://www.arancavaluation.com/ip-valuation/overview">IP Valuation</a></li>
+                                                                        </ul>
+                                                                    </div><!-- end box -->
+                                                                </div>
+                                                            </div><!-- end row -->
+                                                        </div>
+                                                    </div><!-- /.tab-content -->
+                                                </div><!-- end col -->
+                                            </div><!-- /.tabbable -->
+                                        </div><!-- end ttmenu-content -->
+                                        </li>
+                                    </ul>
+                                </li><!-- end mega menu -->
+                                <li class="dropdown ttmenu-full"><a href="{{siteUrl}}knowledge-library" data-toggle="dropdown" class="dropdown-toggle">Knowledge Library <b class="dropme"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                        <div class="ttmenu-content">
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="box">
+                                                    <ul>
+                                                        <li>
+                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library">Overview</a></h3>
+                                                        </li>
+                                                        <li>
+                                                          <p>The Aranca Knowledge Library showcases the opinions, commentaries,insights and perspectives of our global thought leaders on sectors,industries, and regions most relevant to your business.</p>
+                                                        </li>
+                                                        <li><a href="{{siteUrl}}knowledge-library"><button class="btn btn-primary small">Read More</button></a></li>
+                                                        </ul>
+                                                    </div><!-- end box -->
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="box">
+                                                    <ul>
+                                                        <li>
+                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/articles">Articles</a></h3>
+                                                        </li>
+                                                        <li>
+                                                          <p>We offer our useful insights and perspectives on topics that matter to you and your business.</p>
+                                                        </li>
+                                                        <li>
+                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/blogs-and-opinions">Blogs &amp; Opinions</a></h3>
+                                                        </li>
+                                                        <li>
+                                                          <p>Get to know commentary and opinions of our thought leaders on latest developments around the world that can significantly impact your business today.</p>
+                                                        </li>
+                                                    </ul>
+                                                    </div><!-- end box -->
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="box">
+                                                    <ul>
+                                                        <li>
+                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/infographics">Infographics</a></h3>
+                                                        </li>
+                                                        <li>
+                                                          <p>Understand and interpret complex information and elaborate trends in the most visually engaging format.</p>
+                                                        </li>
+                                                        <li>
+                                                          <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}knowledge-library/special-reports">Special Reports</a></h3>
+                                                        </li>
+                                                        <li>
+                                                          <p>Our in-depth thematic reports demonstrate our profound understanding of complex scenarios, imperatives and challenges pertaining to your business, and offer our relevant perspectives.</p>
+                                                        </li>
+                                                    </ul>
+
+                                                    </div><!-- end box -->
+                                                </div>
+                                            </div><!-- end row -->
+                                        </div><!-- end ttmenu-content -->
+                                        </li>
+                                    </ul>
+                                </li><!-- end mega menu -->
+                                <li class="dropdown">
+                                    <a href="{{siteUrl}}about-us/company-overview" class="dropdown-toggle" data-toggle="dropdown">About Us<span class="dropme"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                        <div class="ttmenu-content">
+                                            <div class="row">
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="box">
+                                                      <ul>
+                                                          <li>
+                                                            <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}about-us/company-overview">Overview</a></h3>
+                                                          </li>
+                                                          <li><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
+                                                      <li><a href="{{siteUrl}}about-us/our-team">Our Team</a></li>
+
+                                                          <li><a href="{{siteUrl}}about-us/how-we-work">How We Work</a></li>
+                                                          <li><a href="{{siteUrl}}about-us/our-values">Our Values</a></li>
+                                                      </ul>
+                                                  </div><!-- end box -->
+                                              </div><!-- end col -->
+                                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                                  <div class="box">
+                                                      <ul>
+                                                      <li>
+                                                      <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
+                                                      </li>
+                                                      <li><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
+                                                      <li><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
+                                                      <li><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
+                                                      <li><a href="{{siteUrl}}media-room">Media Room</a></li>
+                                                      <li><a href="{{siteUrl}}press-releases">Press Release</a></li>
+                                                      </ul>
+                                                  </div><!-- end box -->
+                                              </div><!-- end col -->
+                                            </div><!-- end row -->
+                                        </div>
+                                        </li>
+                                    </ul>
+                                </li><!-- end mega menu -->
+                                <li><a href="/contact-us">Contact</a></li>
+                                <li class="sharer__list__item"><a href="https://twitter.com/aranca" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+                                <li class="sharer__list__item"><a href="https://www.facebook.com/ArancaResearch" target="_blank"><i class="fa fa-facebook"></i></a></li>
+
+                                <li class="sharer__list__item"><a href="http://www.linkedin.com/company/aranca" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <!-- follow social links -->
+                                </li><!-- end mega menu -->
+                            </ul><!-- end nav navbar-nav -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <form role="search" method="get" action="{{ url('search/results') }}" id="search-form"class="searchbox">
+                                        <input type="search" placeholder="Search......" name="q" class="searchbox-input" onkeyup="buttonUp();" id="s" required>
+                                        <input type="submit" class="searchbox-submit" value="GO">
+                                        <span class="searchbox-icon"><i class="fa fa-search"></i></span>
+                                    </form>
+                                </li>
+                            </ul><!-- end nav navbar-nav navbar-right -->
+                        </div><!--/.nav-collapse -->
+                    </div><!-- end navbar navbar-default clearfix -->
+                  </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end menu 1 -->
+        </div><!-- end hero -->
+</div><!-- /container -->
