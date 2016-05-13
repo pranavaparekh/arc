@@ -2,17 +2,7 @@
 
 {% set wsmenuCss %}
 
- /*
- * Webslide - v3.1
- * Web Slide - Responsive Mega Menu for Bootstrap 3+
- *
- * Copyright 2016 webthemex
- * http://codecanyon.net/user/webthemex?ref=webthemex
- *
- * Licensed under Envato licenses
- * http://codecanyon.net/licenses/standard
- */
-/*------------------------------------ Desktop CSS ---------------------------------------------*/
+ /*------------------------------------ Desktop CSS ---------------------------------------------*/
 .wsmobileheader{display:none;}
 .overlapblackbg{ display:none; }
 .bigmegamenu{ position:relative; }
@@ -90,7 +80,7 @@
   width:100%;
   left:0px;
   position:absolute;
-  top:72px;
+  top:75px;
   color:#000;
   z-index:1000;
   margin:0px;
@@ -324,11 +314,11 @@
 /* Submenu CSS */
 .wsmenu-submenu{
   position:absolute;
-  top: 72px;
+  top: 48px;
   z-index:1000;
   margin:0px;
   padding:2px;
- /* border:solid 1px #eeeeee;*/
+  border:solid 1px #eeeeee;
   background-color:#fff;
   opacity: 0;
   -o-transform-origin: 0% 0%;
@@ -360,7 +350,7 @@
 
 .wsmenu-list li:hover .wsmenu-submenu{display:block;}
 
-.wsmenu-list .wsmenu-submenu .wsmenu-submenu-sub{min-width:220px; position:absolute; left:100%; top:0; margin:0px; padding:0px;
+.wsmenu-list .wsmenu-submenu .wsmenu-submenu-sub{min-width:220px; position:absolute; left:90%; top:0; margin:0px; padding:0px;
   opacity: 0;
   -o-transform-origin: 0% 0%;
   -ms-transform-origin: 0% 0%;
@@ -369,9 +359,7 @@
   -o-transition: -o-transform 0.4s, opacity 0.4s;
   -ms-transition: -ms-transform 0.4s, opacity 0.4s;
   -moz-transition: -moz-transform 0.4s, opacity 0.4s;
-  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-  width: 46.250em;
-  }
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;}
   
 .wsmenu-list .wsmenu-submenu li:hover .wsmenu-submenu-sub{opacity:1; list-style:none; padding:2px; border:solid 1px #eeeeee; background-color:#fff;}
 .wsmenu-list .wsmenu-submenu li:hover .wsmenu-submenu-sub{display:block;}
@@ -418,6 +406,39 @@
 
 }
 
+/* MENU TABBED */
+
+.nav-pills {
+    margin-top: 6px;
+}
+.nav-pills > li {
+  float: none;
+  margin-top:0;
+  cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nav-pills > li > a {
+  border-radius: 0;
+  cursor: pointer !important;
+  border:0 !important;
+  position: relative;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  margin-right: 0;
+}
+.nav-pills > li > a:after{
+    content: "\f105";
+    color:#1a1a1a;
+    font-family: 'FontAwesome';
+    display:block;
+    right:10px;
+    width:0;
+    position:absolute;
+    height:0;
+    top:13px;
+    margin-top:0;
+    margin-right:10px;
+}
 
  
 
@@ -1034,6 +1055,23 @@ $(function() {
   
   });
     //SUB Menu UL SHOW JS
+
+
+/* ==============================================
+TABBED HOVER -->
+=============================================== */
+
+  $('.nav-pills > li ').hover( function(){
+    if($(this).hasClass('hoverblock'))
+      return;
+      else
+      $(this).find('a').tab('show');
+  });
+
+  $('.nav-tabs > li').find('a').click( function(){
+    $(this).parent()
+      .siblings().addClass('hoverblock');
+  });
     
     
   
@@ -1064,89 +1102,257 @@ $(function() {
       <nav class="wsmenu clearfix">
         <ul class="mobile-sub wsmenu-list">
           <li><a href="{{ siteUrl }}"><img src="http://www.aranca.com/assets/images/aranca_logo_214x75.png" alt=""></a></li>
+          
+          <!-- services desktop menu item -->
+          <li class="hidden-xs"><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Services<span class="arrow"></span></a>
+            <div class="megamenu clearfix">
+              
+              <div class="tabbable row">
+                  <div class="col-md-3">
+                      <ul class="nav nav-pills nav-stacked">
+                          <li class="active"><a href="#tabs5-pane1" data-toggle="tab" aria-expanded="true">Business Research</a></li>
+                          <li class=""><a href="#tabs5-pane2" data-toggle="tab" aria-expanded="false">IP Research</a></li>
+                          <li class=""><a href="#tabs5-pane3" data-toggle="tab" aria-expanded="false">Investment Research</a></li>
+                          <li class=""><a href="#tabs5-pane4" data-toggle="tab" aria-expanded="false">Procurement Research</a></li>
+                          <li><a href="#tabs5-pane5" data-toggle="tab">Valuation Advisory</a></li>
+                      </ul>
+                  </div><!-- end col -->
+                  <div class="col-md-9">
+                      <div class="tab-content">
+                          <div id="tabs5-pane1" class="tab-pane active">
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/business-research/advisory-services-overview">Overview</a></h3>
+                                                <p>Aranca helps clients make informed business decisions involving customers, competitors, markets and technologies; with insights from domain experts.</p>
 
-          <li><a href="#"><i class="fa fa-align-justify"></i>&nbsp;&nbsp;SERVICES<span class="arrow"></span></a>
-            <ul class="wsmenu-submenu ">
-              <li><a href="#"><i class="fa fa-angle-right"></i>Business Research</a>
+                                                <a href="http://www.aranca.com/business-research/advisory-services-overview"><button class="btn btn-primary small">Learn More</button></a>
+                                              </li>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/business-research/advisory-services-overview#sol-port">Solutions</a></h3>
+                                                <p>Explore our complete solution portfolio</p>
 
-                <ul class="wsmenu-submenu-sub">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                          <div class="box">
-                              <ul>
-                                  <li class="hidden-xs">
-                                    <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview">Overview</a></h3>
-                                    <p>Aranca helps clients make informed business decisions involving customers, competitors, markets and technologies; with insights from domain experts.</p>
+                                              <a href="http://www.aranca.com/business-research/advisory-services-overview#sol-port"><button class="btn btn-primary small">Learn More</button></a>
+                                              </li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
 
-                                    <a href="{{siteUrl}}business-research/advisory-services-overview"><button class="btn btn-primary small">Learn More</button></a>
-                                  </li>
-                                  <li>
-                                    <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#sol-port">Solutions</a></h3>
-                                    <p>Explore our complete solution portfolio</p>
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/business-research/advisory-services-overview#solution">Industries</a></h3>
+                                              </li>
+                                              <li><a href="http://www.aranca.com/business-research/aerospace-and-defense">Aerospace and Defense</a></li>
+                                              <li><a href="http://www.aranca.com/business-research/aluminium">Aluminium</a></li>
+                                              <li><a href="http://www.aranca.com/business-research/building-materials">Building Materials</a></li>
+                                              <li><a href="http://www.aranca.com/business-research/commercial-banking">Commercial Banking</a></li>
+                                              <li><a href="http://www.aranca.com/business-research/consumer-appliances">Consumer Appliances</a></li>
+                                              <li><a href="http://www.aranca.com/business-research/education">Education</a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                          <li>
+                                          <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
+                                          </li>
+                                          <li><a href="http://www.aranca.com/business-research/iron-and-steel">Iron and Steel</a></li>
+                                          <li><a href="http://www.aranca.com/business-research/it-hardware">IT Hardware</a></li>
+                                          <li><a href="http://www.aranca.com/business-research/life-non-life-insurance">Life &amp; Non Life Insurance</a></li>
+                                          <li><a href="http://www.aranca.com/business-research/machinery-instrument">Machinery &amp; Instrument</a></li>
+                                          <li><a href="http://www.aranca.com/business-research/personal-home-care">Personal Home Care</a></li>
+                                          <li><a href="http://www.aranca.com/business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                              </div><!-- end row -->
+                          </div>
+                          <div id="tabs5-pane2" class="tab-pane">
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview">Overview</a></h3>
+                                                </li>
+                                                <li>
+                                                <p>Aranca provides technology intelligence, IP strategy and litigation support to enterprises and law firms.</p>
+                                              </li>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview#sol">Solutions</a></h3>
+                                              </li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/ip-strategy">IP Strategy</a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/litigation-support">Litigation Support</a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/technology-intelligence">Technology Intelligence</a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
 
-                                     <a href="{{siteUrl}}business-research/advisory-services-overview#sol-port"><button class="btn btn-primary small">Learn More</button></a>
-                                  </li>
-                              </ul>
-                          </div><!-- end box -->
-                      </div><!-- end col -->
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview#solution">Technologies</a></h3>
+                                              </li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/automotive">Automotive</a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/biotechnology">Biotechnology </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/chemicals">Chemicals </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/communication-network">Communication &amp; Network </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/diagnostics">Diagnostics </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/electronics">Electronics </a></li>
 
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                          <div class="box">
-                              <ul>
-                                  <li>
-                                    <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#solution">Industries</a></h4>
-                                  </li>
-                                  <li><a href="{{siteUrl}}business-research/aerospace-and-defense">Aerospace and Defense</a></li>
-                                  <li><a href="{{siteUrl}}business-research/aluminium">Aluminium</a></li>
-                                  <li><a href="{{siteUrl}}business-research/building-materials">Building Materials</a></li>
-                                  <li><a href="{{siteUrl}}business-research/commercial-banking">Commercial Banking</a></li>
-                                  <li><a href="{{siteUrl}}business-research/consumer-appliances">Consumer Appliances</a></li>
-                                  <li><a href="{{siteUrl}}business-research/education">Education</a></li>
-                              </ul>
-                          </div><!-- end box -->
-                      </div><!-- end col -->
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                          <div class="box">
-                              <ul>
-                              <li>
-                              <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
-                              </li>
-                              <li><a href="{{siteUrl}}business-research/iron-and-steel">Iron and Steel</a></li>
-                              <li><a href="{{siteUrl}}business-research/it-hardware">IT Hardware</a></li>
-                              <li><a href="{{siteUrl}}business-research/life-non-life-insurance">Life & Non Life Insurance</a></li>
-                              <li><a href="{{siteUrl}}business-research/machinery-instrument">Machinery & Instrument</a></li>
-                              <li><a href="{{siteUrl}}business-research/personal-home-care">Personal Home Care</a></li>
-                              <li><a href="{{siteUrl}}business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
-                              </ul>
-                          </div><!-- end box -->
-                      </div><!-- end col -->
-                    </div><!-- end row -->
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#"><i class="fa fa-angle-right"></i>IP Research</a>
-                <ul class="wsmenu-submenu-sub">
-                  <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 1</a></li>
-                </ul>
-              </li>
-              <li><a href="#"><i class="fa fa-angle-right"></i>Investment Research</a>
-                <ul class="wsmenu-submenu-sub ">
-                  <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 1</a></li>
-                </ul>
-              </li>
-              <li><a href="#"><i class="fa fa-angle-right"></i>Procurement Research</a>
-                <ul class="wsmenu-submenu-sub">
-                  <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 1</a></li>
-                </ul>
-              </li>
-              <li><a href="#"><i class="fa fa-angle-right"></i>Valuation Advisory</a>
-                <ul class="wsmenu-submenu-sub">
-                  <li><a href="#"><i class="fa fa-angle-right"></i>Submenu item 1</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                              <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
+                                              </li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/food-beverage">Food &amp; Beverage </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/home-care">Home Care </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/industrial-manufacturing">Industrial Manufacturing  </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/medical-devices">Medical Devices </a></li>
+                                              <li><a href="http://www.aranca.com/intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                              </div><!-- end row -->
+                          </div>
+                          <div id="tabs5-pane3" class="tab-pane">
+                              <div class="row">
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/investment-research/overview">Overview</a></h3>
+                                                </li>
+                                                <li>
+                                                Aranca delivers effective co-sourced investment research &amp; analytics across asset classes to buy-side and sell-side senior professionals from financial institutions.
+                                              </li>
+                                              <li><a href="http://www.aranca.com/investment-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                                  <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
+                                                </li>
+                                                <li>
+                                                Learn more about what investment research solutions can do for you.
+                                              </li>
+                                              <li><a href="http://www.aranca.com/investment-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div>
+                              </div><!-- end row -->
+                          </div>
+                          <div id="tabs5-pane4" class="tab-pane">
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/procurement-research/overview">Overview</a></h3>
+                                                </li>
+                                                <li>
+                                                <p>Aranca provides global sourcing teams in client organizations with customized, category-specific intelligence that help them design profitable sourcing strategies.</p>
+                                              </li>
+                                              <li><a href="http://www.aranca.com/procurement-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/procurement-research/overview#solution">Solutions</a></h3>
+                                                </li>
+                                                <li>
+                                                Learn more about what Procurement research solutions can do for you.
+                                              </li>
+                                              <li><a href="http://www.aranca.com/procurement-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/procurement-research/overview#framework">Frameworks</a></h3>
+                                                </li>
+                                                <li>
+                                                Learn more about what Procurement research frameworks can do for you.
+                                              </li>
+                                              <li><a href="http://www.aranca.com/procurement-research/overview#framework"><button class="btn btn-primary small">View Frameworks</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                              </div><!-- end row -->
+                          </div>
+                          <div id="tabs5-pane5" class="tab-pane">
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="http://www.arancavaluation.com/">Overview</a></h3>
+                                                </li>
+                                                <li>
+                                                <p>Aranca provides multi-disciplinary valuation advisory services to companies, investors, attorneys and lenders, for diverse transactions, tax and financial reporting needs.</p>
+                                              </li>
+                                              <li><a href="http://www.arancavaluation.com/"><button class="btn btn-primary small">Learn More</button></a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+                                              <li>
+                                                <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
+                                                </li>
+                                                <li class="dropdown-submenu">
+                                                <a href="#">Tax Valuation <span class="dropme-left"></span></a>
+                                                  <ul class="dropdown-menu" style="left:70%;">
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/409a-valuation">409a</a></li>
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/estate-gift-tax-valuations">Estate &amp; Gift Tax</a></li>
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/s-corp-election-irc-1374">S-Corp Election</a></li>
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/nols-built-in-capital-gains-irc382">NOLs &amp; Built-in Capital Gains</a></li>
+                                                  </ul>
+                                                </li>
+                                                <li class="dropdown-submenu"><a href="#">Financial Reporting <span class="dropme-left"></span></a>
+                                                  <ul class="dropdown-menu" style="left:70%;">
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/purchase-price-allocations-asc-805-ifrs-3">Purchase Price Allocations</a></li>
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/impairment-of-goodwill-and-other-intangible-assets">Goodwill Impairment</a></li>
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/complex-securities-valuations">Complex Securities Valuations</a></li>
+                                                  </ul>
+                                                </li>
+                                                <li class="dropdown-submenu"><a href="#">Transaction Services <span class="dropme-left"></span></a>
+                                                  <ul class="dropdown-menu" style="left:70%;">
+                                                      <li class="dp"><a href="http://www.arancavaluation.com/transaction-services/fairness-opinions">Fairness Opinions</a></li>
+                                                  </ul>
+                                                </li>
+                                                <li><a href="http://www.arancavaluation.com/ip-valuation/overview">IP Valuation</a></li>
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div>
+                              </div><!-- end row -->
+                          </div>
+                      </div><!-- /.tab-content -->
+                  </div><!-- end col -->
+              </div><!-- end tabbable -->
+              
+            </div>
+          </li><!-- end services desktop menu item -->
           
           <li><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;KNOWLEDGE LIBRARY<span class="arrow"></span></a>
             <div class="megamenu clearfix">
