@@ -140,7 +140,7 @@
     </section>
 
 
-<section style="background:#efefe9; padding-top: 50px;
+<!-- <section style="background:#efefe9; padding-top: 50px;
     padding-bottom: 10px;">
         <div class="container">
             <div class="row">
@@ -154,7 +154,7 @@
         <div class="container">
             <div class="row">
                 <div class="board">
-                    <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+
                     <div class="board-inner">
                     <ul class="nav nav-tabs" id="myTab">
                     <div class="liner"></div>
@@ -238,7 +238,59 @@ Work with you to ensure that your program delivers the desired value to the orga
 </div>
 </div>
 </div>
-</section>
+</section> -->
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">How We Help</h2>
+                    <h4 class="text-muted">Our procurement research analysts help organizations overcome key supplier diversity program challenges.</h4>
+                    <hr class="primary">
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6 col-lg-offset-1 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-2x fa-life-ring wow bounceIn text-primary"></i>
+                        <h4>Verify & Understand Diverse Suppliers</h4>
+                        <p class="text-muted">Study and profile identified diverse suppliers for certification and capabilities based on business and program objectives</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-2x fa-check-circle wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h4>Identifying Right Categories</h4>
+                        <p class="text-muted">Prioritize categories based on business alignment & supplier availability</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-2x fa-tachometer wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h4>Performance Metrics for Supplier Diversity Programs</h4>
+                        <p class="text-muted">Define Program KPIs and setup metrics dashboard for review</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-2x fa-search bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <h4>Finding Diverse Suppliers</h4>
+                        <p class="text-muted">Deep-dive research to find suppliers who align to your program objectives</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-2x fa-forward wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <h4>Sustain Supplier Diversity Drive</h4>
+                        <p class="text-muted">Work with you to ensure that your program delivers the desired value to the organization</p>
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </section>
                    
 
   
@@ -334,11 +386,49 @@ Work with you to ensure that your program delivers the desired value to the orga
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Write to Us</h2>
-                    <hr class="primary">
+                  
                     <p>A consultant from our business team will personally assess your inquiry and get back to you within 24 hours after you fill out this form.</p>
                 </div>
+
+<script>
+window.onload = function ()
+{
+var url = window.location.href;
+document.getElementById("formurl").value = url;
+
+var urlParams;
+var query = (window.location != window.parent.location) ? document.referrer.split('?')[1] || '' : window.location.search.split('?')[1]|| '';
+(window.onpopstate = function () {
+var match, search = /([^&=]+)=?([^&]*)/g;
+urlParams = {};
+while (match = search.exec(query))
+urlParams[encodeURIComponent(match[1])] = match[2];
+}
+)();
+for (i in urlParams) {
+var urlParamsArray = urlParams[i];
+try {
+document.getElementsByName(i)[0].value=decodeURIComponent(urlParamsArray);
+}
+catch(err) {
+}
+}
+};
+</script>
                 <div class="col-lg-4 col-lg-offset-4 text-center">
-                <form data-toggle="validator" action="http://connect.aranca.com/acton/eform/17562/0021/d-ext-0002" id="contact-us">
+                <form class="form-horizontal" role="form" accept-charset="UTF-8" id="contactForm" name="Landing Page" method="post" action="http://www.aranca.com/landing/19052014/bin/process-equity3.php">
+
+                <input type="hidden" name="_form_name_" value="Landing Page" />
+                <input type="hidden" name="lead_source__c" value="website" />
+                <input type="hidden" name="practice__c" value="Procurement" />
+                <input type="hidden" name="created_by__c" value="Marketing" />
+                <input type="hidden" name="utm_source" />
+                <input type="hidden" name="utm_medium" />
+                <input type="hidden" name="utm_content" />
+                <input type="hidden" name="utm_campaign" />
+                <input type="hidden" name="referrer" />
+                <input type="hidden" name="ao_refurl" value="" />
+                <input type="hidden" name="formurl" id="formurl" value="" />
 
   <div class="row">
     <div class="col-sm-12">
@@ -365,10 +455,14 @@ Work with you to ensure that your program delivers the desired value to the orga
       </div>
     </div>
   </div>  <!-- end col-sm-6 -->
-<button type="submit" class="btn btn-default btn-block btn-lg">Submit</button>
+  <p style="display: none;">website
+                      <br /><input name="url" id="url" type="text" /></p>
+                      <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-business-research" />
+                      <input type="hidden" name="subject" value="Google Enquiry | Supplier Diversity Program" />
+      <button type="submit" class="btn btn-default btn-xl" onClick="_gaq.push(['_trackEvent', 'Contact', 'Information Request', 'Contact From', , false]);">Submit</button>
 
 </form>
-    
+    <script>document.getElementsByName('ao_refurl')[0].value = document.referrer</script>
                 </div>
             </div>
         </div>
