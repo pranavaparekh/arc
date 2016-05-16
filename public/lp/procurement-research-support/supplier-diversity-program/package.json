@@ -15,3 +15,22 @@
     "grunt-contrib-concat": "^0.5.1"
   }
 }
+
+{
+  "name": "Aranca",
+  "src": "src/sass/site",
+  "components": "src/sass/_components",
+  "dest": "public/assets/",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-browser-sync": "latest",
+    "grunt-contrib-watch": "latest"
+  },
+  "dependencies": {
+    "grunt-contrib-concat": "^0.5.1"
+  }
+}
+
