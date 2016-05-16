@@ -410,6 +410,29 @@
 
 }
 
+@media only screen and (max-width:480px) {
+
+  .wsmenu__list__item a {
+    color: #7A7D80 !important;
+  }
+
+  .menu_form input[type="text"] {
+    padding: 0;
+    ::-webkit-input-placeholder { color:#f00; font-size: 8px; }
+    ::-moz-placeholder { color:#f00; font-size: 8px; } /* firefox 19+ */
+    :-ms-input-placeholder { color:#f00;  font-size: 8px;} /* ie */
+    input:-moz-placeholder { color:#f00;  font-size: 8px;}
+  }
+
+  .menu_form input[type="submit"] {
+    width: 100% !important;
+    margin-right: 0;
+  }
+
+}
+
+
+
 
 /* Custom Styles */
 /* MENU TABBED */
@@ -458,6 +481,10 @@
 
 .tabbed-pill.active:hover {
   background-color: #034883 !important;
+}
+
+.tab-content p  {
+  color: #756060;
 }
 
 .wsmenu .btn-primary {
@@ -1128,7 +1155,7 @@ TABBED HOVER -->
  <div class="overlapblackbg"></div>
  <div class="wsmobileheader clearfix">
   <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
-  <a class="smallogo"><img src="/assets/images/aranca_logo_small.png" alt="" /></a>
+  <a href="{{ siteUrl }}" class="smallogo"><img src="/assets/images/aranca_logo_small.png" alt="" /></a>
   <a class="callusicon" href="tel:123456789"><span class="fa fa-phone"></span></a>
 </div>
 
@@ -1276,9 +1303,9 @@ TABBED HOVER -->
                                               <li>
                                                 <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}investment-research/overview">Overview</a></h3>
                                                 </li>
-                                                <li>
+                                                <p>
                                                 Aranca delivers effective co-sourced investment research &amp; analytics across asset classes to buy-side and sell-side senior professionals from financial institutions.
-                                              </li>
+                                              </p>
                                               <li><a href="{{siteUrl}}investment-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
@@ -1289,9 +1316,9 @@ TABBED HOVER -->
                                               <li>
                                                 <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
                                                 </li>
-                                                <li>
+                                                <p>
                                                 Learn more about what investment research solutions can do for you.
-                                              </li>
+                                              </p>
                                               <li><a href="{{siteUrl}}investment-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
@@ -1319,9 +1346,9 @@ TABBED HOVER -->
                                               <li>
                                                 <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#solution">Solutions</a></h3>
                                                 </li>
-                                                <li>
+                                                <p>
                                                 Learn more about what Procurement research solutions can do for you.
-                                              </li>
+                                              </p>
                                               <li><a href="{{siteUrl}}procurement-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
@@ -1332,9 +1359,9 @@ TABBED HOVER -->
                                               <li>
                                                 <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#framework">Frameworks</a></h3>
                                                 </li>
-                                                <li>
+                                                <p>
                                                 Learn more about what Procurement research frameworks can do for you.
-                                              </li>
+                                              </p>
                                               <li><a href="{{siteUrl}}procurement-research/overview#framework"><button class="btn btn-primary small">View Frameworks</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
@@ -1537,27 +1564,23 @@ TABBED HOVER -->
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="box">
                                 <ul>
-                                    <li>
-                                      <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}about-us/company-overview">Overview</a></h3>
-                                    </li>
-                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
-                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/our-team">Our Team</a></li>
-                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/how-we-work">How We Work</a></li>
-                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/our-values">Our Values</a></li>
+                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/company-overview">Overview</a></li>
+                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
+                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/our-team">Our Team</a></li>
+                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/how-we-work">How We Work</a></li>
+                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/our-values">Our Values</a></li>
                                 </ul>
                             </div><!-- end box -->
                         </div><!-- end col -->
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="box">
                                 <ul>
-                                <li>
-                                <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
-                                </li>
-                                <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
-                                <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
-                                <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
-                                <li class="wsmenu__list__item"><a href="{{siteUrl}}media-room">Media Room</a></li>
-                                <li class="wsmenu__list__item"><a href="{{siteUrl}}press-releases">Press Release</a></li>
+                                
+                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
+                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
+                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
+                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}media-room">Media Room</a></li>
+                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}press-releases">Press Release</a></li>
                                 </ul>
                             </div><!-- end box -->
                         </div><!-- end col -->
