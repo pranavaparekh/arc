@@ -468,6 +468,11 @@
   margin-top: 10px;
 }
 
+.wsmenu-submenu--right {
+  left:170px;
+  width: 100%;
+}
+
 /* Typography */
 
 .wsmenu__list__item {
@@ -872,14 +877,14 @@
   z-index:101;
   width:100%;
   height:52px;
-  background: #262626;
-  background: -moz-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
+  background: #FFFFFF;
+  /*background: -moz-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #262626), color-stop(50%, #1c1c1c), color-stop(100%, #262626));
   background: -webkit-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
   background: -o-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
   background: -ms-linear-gradient(top, #262626 0, #1c1c1c 50%, #262626 100%);
   background: linear-gradient(to bottom, #262626 0, #1c1c1c 50%, #262626 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', endColorstr='#262626', GradientType=0);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', endColorstr='#262626', GradientType=0);*/
   box-shadow: 0 1px 4px rgba(0,0,0,.5);
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.5);
 }
@@ -1138,7 +1143,7 @@ TABBED HOVER -->
   <!--Main Menu HTML Code-->
       <nav class="wsmenu clearfix">
         <ul class="mobile-sub wsmenu-list">
-          <li><a href="{{ siteUrl }}"><img src="http://www.aranca.com/assets/images/aranca_logo_214x75.png" alt=""></a></li>
+          <li><a href="{{ siteUrl }}"><img src="{{siteUrl}}assets/images/aranca_logo_214x75.png" alt=""></a></li>
           
           <!-- services desktop menu item -->
           <li class="hidden-xs"><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;SERVICES<span class="arrow"></span></a>
@@ -1162,16 +1167,16 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/business-research/advisory-services-overview">Overview</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview">Overview</a></h3>
                                                 <p>Aranca helps clients make informed business decisions involving customers, competitors, markets and technologies; with insights from domain experts.</p>
 
-                                                <a href="http://www.aranca.com/business-research/advisory-services-overview"><button class="btn btn-primary small">Learn More</button></a>
+                                                <a href="{{siteUrl}}business-research/advisory-services-overview"><button class="btn btn-primary small">Learn More</button></a>
                                               </li>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/business-research/advisory-services-overview#sol-port">Solutions</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#sol-port">Solutions</a></h3>
                                                 <p>Explore our complete solution portfolio</p>
 
-                                              <a href="http://www.aranca.com/business-research/advisory-services-overview#sol-port"><button class="btn btn-primary small">Learn More</button></a>
+                                              <a href="{{siteUrl}}business-research/advisory-services-overview#sol-port"><button class="btn btn-primary small">Learn More</button></a>
                                               </li>
                                           </ul>
                                       </div><!-- end box -->
@@ -1181,14 +1186,14 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/business-research/advisory-services-overview#solution">Industries</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#solution">Industries</a></h3>
                                               </li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/aerospace-and-defense">Aerospace and Defense</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/aluminium">Aluminium</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/building-materials">Building Materials</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/commercial-banking">Commercial Banking</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/consumer-appliances">Consumer Appliances</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/education">Education</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/aerospace-and-defense">Aerospace and Defense</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/aluminium">Aluminium</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/building-materials">Building Materials</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/commercial-banking">Commercial Banking</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/consumer-appliances">Consumer Appliances</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/education">Education</a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1198,12 +1203,12 @@ TABBED HOVER -->
                                           <li>
                                           <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
                                           </li>
-                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/iron-and-steel">Iron and Steel</a></li>
-                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/it-hardware">IT Hardware</a></li>
-                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/life-non-life-insurance">Life &amp; Non Life Insurance</a></li>
-                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/machinery-instrument">Machinery &amp; Instrument</a></li>
-                                          <li class="wsmenu__list__item"><a href="http://www.aranca.com/business-research/personal-home-care">Personal Home Care</a></li>
-                                          <li><a href="http://www.aranca.com/business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
+                                          <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/iron-and-steel">Iron and Steel</a></li>
+                                          <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/it-hardware">IT Hardware</a></li>
+                                          <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/life-non-life-insurance">Life &amp; Non Life Insurance</a></li>
+                                          <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/machinery-instrument">Machinery &amp; Instrument</a></li>
+                                          <li class="wsmenu__list__item"><a href="{{siteUrl}}business-research/personal-home-care">Personal Home Care</a></li>
+                                          <li><a href="{{siteUrl}}business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1215,17 +1220,17 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview">Overview</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview">Overview</a></h3>
                                                 </li>
                                                 <li>
                                                 <p>Aranca provides technology intelligence, IP strategy and litigation support to enterprises and law firms.</p>
                                               </li>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview#sol">Solutions</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview#sol">Solutions</a></h3>
                                               </li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/ip-strategy">IP Strategy</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/litigation-support">Litigation Support</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/technology-intelligence">Technology Intelligence</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/ip-strategy">IP Strategy</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/litigation-support">Litigation Support</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/technology-intelligence">Technology Intelligence</a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1234,14 +1239,14 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/intellectual-property-research/overview#solution">Technologies</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview#solution">Technologies</a></h3>
                                               </li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/automotive">Automotive</a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/biotechnology">Biotechnology </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/chemicals">Chemicals </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/communication-network">Communication &amp; Network </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/diagnostics">Diagnostics </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/electronics">Electronics </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/automotive">Automotive</a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/biotechnology">Biotechnology </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/chemicals">Chemicals </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/communication-network">Communication &amp; Network </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/diagnostics">Diagnostics </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/electronics">Electronics </a></li>
 
                                           </ul>
                                       </div><!-- end box -->
@@ -1252,12 +1257,12 @@ TABBED HOVER -->
                                               <li>
                                               <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
                                               </li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/food-beverage">Food &amp; Beverage </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/home-care">Home Care </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/industrial-manufacturing">Industrial Manufacturing  </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/medical-devices">Medical Devices </a></li>
-                                              <li class="wsmenu__list__item"><a href="http://www.aranca.com/intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/food-beverage">Food &amp; Beverage </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/home-care">Home Care </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/industrial-manufacturing">Industrial Manufacturing  </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/medical-devices">Medical Devices </a></li>
+                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1269,12 +1274,12 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/investment-research/overview">Overview</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}investment-research/overview">Overview</a></h3>
                                                 </li>
                                                 <li>
                                                 Aranca delivers effective co-sourced investment research &amp; analytics across asset classes to buy-side and sell-side senior professionals from financial institutions.
                                               </li>
-                                              <li><a href="http://www.aranca.com/investment-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
+                                              <li><a href="{{siteUrl}}investment-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1287,7 +1292,7 @@ TABBED HOVER -->
                                                 <li>
                                                 Learn more about what investment research solutions can do for you.
                                               </li>
-                                              <li><a href="http://www.aranca.com/investment-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
+                                              <li><a href="{{siteUrl}}investment-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div>
@@ -1299,12 +1304,12 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/procurement-research/overview">Overview</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview">Overview</a></h3>
                                                 </li>
                                                 <li>
                                                 <p>Aranca provides global sourcing teams in client organizations with customized, category-specific intelligence that help them design profitable sourcing strategies.</p>
                                               </li>
-                                              <li><a href="http://www.aranca.com/procurement-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
+                                              <li><a href="{{siteUrl}}procurement-research/overview"><button class="btn btn-primary small">Learn More</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1312,12 +1317,12 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/procurement-research/overview#solution">Solutions</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#solution">Solutions</a></h3>
                                                 </li>
                                                 <li>
                                                 Learn more about what Procurement research solutions can do for you.
                                               </li>
-                                              <li><a href="http://www.aranca.com/procurement-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
+                                              <li><a href="{{siteUrl}}procurement-research/overview#solution"><button class="btn btn-primary small">View Solutions</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1325,12 +1330,12 @@ TABBED HOVER -->
                                       <div class="box">
                                           <ul>
                                               <li>
-                                                <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/procurement-research/overview#framework">Frameworks</a></h3>
+                                                <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}procurement-research/overview#framework">Frameworks</a></h3>
                                                 </li>
                                                 <li>
                                                 Learn more about what Procurement research frameworks can do for you.
                                               </li>
-                                              <li><a href="http://www.aranca.com/procurement-research/overview#framework"><button class="btn btn-primary small">View Frameworks</button></a></li>
+                                              <li><a href="{{siteUrl}}procurement-research/overview#framework"><button class="btn btn-primary small">View Frameworks</button></a></li>
                                           </ul>
                                       </div><!-- end box -->
                                   </div><!-- end col -->
@@ -1354,34 +1359,32 @@ TABBED HOVER -->
                                   <div class="col-md-4 col-sm-4 col-xs-12">
                                       <div class="box">
                                           <ul>
-                                              <li>
-                                                <h3 class="ttmenu__subheadline"><a href="#">Solutions</a></h3>
-                                                </li>
-                                                <li class="dropdown-submenu">
-                                                <a href="#">Tax Valuation <span class="dropme-left"></span></a>
-                                                  <ul class="dropdown-menu" style="left:70%;">
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/409a-valuation">409a</a></li>
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/estate-gift-tax-valuations">Estate &amp; Gift Tax</a></li>
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/s-corp-election-irc-1374">S-Corp Election</a></li>
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/tax-valuation/nols-built-in-capital-gains-irc382">NOLs &amp; Built-in Capital Gains</a></li>
-                                                  </ul>
-                                                </li>
-                                                <li class="dropdown-submenu"><a href="#">Financial Reporting <span class="dropme-left"></span></a>
-                                                  <ul class="dropdown-menu" style="left:70%;">
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/purchase-price-allocations-asc-805-ifrs-3">Purchase Price Allocations</a></li>
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/impairment-of-goodwill-and-other-intangible-assets">Goodwill Impairment</a></li>
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/financial-reporting/complex-securities-valuations">Complex Securities Valuations</a></li>
-                                                  </ul>
-                                                </li>
-                                                <li class="dropdown-submenu"><a href="#">Transaction Services <span class="dropme-left"></span></a>
-                                                  <ul class="dropdown-menu" style="left:70%;">
-                                                      <li class="dp"><a href="http://www.arancavaluation.com/transaction-services/fairness-opinions">Fairness Opinions</a></li>
-                                                  </ul>
-                                                </li>
-                                                <li><a href="http://www.arancavaluation.com/ip-valuation/overview">IP Valuation</a></li>
+                                                <li class="title">Tax Valuation</li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/tax-valuation/409a-valuation"><i class="fa fa-angle-right"></i>409a</a></li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/tax-valuation/estate-gift-tax-valuations"><i class="fa fa-angle-right"></i>Estate & Gift Tax</a></li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/tax-valuation/s-corp-election-irc-1374"><i class="fa fa-angle-right"></i>S-Corp Election</a></li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/tax-valuation/nols-built-in-capital-gains-irc382"><i class="fa fa-angle-right"></i>NOLs & Built-in Capital Gains</a></li>
+
+                                                <li class="title"><a href="http://www.arancavaluation.com/ip-valuation/overview">IP Valuation</a></li>
                                           </ul>
                                       </div><!-- end box -->
-                                  </div>
+                                  </div><!-- end col -->
+                                  <div class="col-md-4 col-sm-4 col-xs-12">
+                                      <div class="box">
+                                          <ul>
+
+                                                
+                                                <li class="title">Financial Reporting</li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/financial-reporting/purchase-price-allocations-asc-805-ifrs-3"><i class="fa fa-angle-right"></i>Purchase Price Allocations</a></li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/financial-reporting/impairment-of-goodwill-and-other-intangible-assets"><i class="fa fa-angle-right"></i>Goodwill Impairment</a></li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/financial-reporting/complex-securities-valuations"><i class="fa fa-angle-right"></i>Complex Securities Valuations</a></li>
+                                                
+                                                <li class="title">Transaction Services</li>
+                                                      <li class="wsmenu__list__item"><a href="http://www.arancavaluation.com/transaction-services/fairness-opinions"><i class="fa fa-angle-right"></i>Fairness Opinions</a></li>
+
+                                          </ul>
+                                      </div><!-- end box -->
+                                  </div><!-- end col -->
                               </div><!-- end row -->
                           </div>
                       </div><!-- /.tab-content -->
@@ -1390,6 +1393,103 @@ TABBED HOVER -->
               
             </div>
           </li><!-- end services desktop menu item -->
+          
+          <!-- services mobile menu item -->
+          <li class="hidden-sm hidden-md hidden-lg"><a href="#"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;SERVICES<span class="arrow"></span></a>
+            <ul class="wsmenu-submenu">
+                <li><a href="#"><i class="fa fa-angle-right"></i>Business Research</a>
+                  <ul class="wsmenu-submenu-sub">
+                    <li><a href="{{siteUrl}}business-research/advisory-services-overview"><i class="fa fa-angle-right"></i>Overview</a></li>
+                    <li><a href="{{siteUrl}}business-research/advisory-services-overview#sol-port"><i class="fa fa-angle-right"></i>Solutions</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i>Industries</a>
+                      <ul class="wsmenu-submenu-sub-sub">
+                        <li><a href="{{siteUrl}}business-research/aerospace-and-defense"><i class="fa fa-angle-right"></i>Aerospace and Defense</a></li>
+                        <li><a href="{{siteUrl}}business-research/aluminium"><i class="fa fa-angle-right"></i>Aluminium</a></li>
+                        <li><a href="{{siteUrl}}business-research/building-materials"><i class="fa fa-angle-right"></i>Building Materials</a></li>
+                        <li><a href="{{siteUrl}}business-research/commercial-banking"><i class="fa fa-angle-right"></i>Commercial Banking</a></li>
+                        <li><a href="{{siteUrl}}business-research/consumer-appliances"><i class="fa fa-angle-right"></i>Consumer Appliances</a></li>
+                        <li><a href="{{siteUrl}}business-research/education"><i class="fa fa-angle-right"></i>Education</a></li>
+                        <li><a href="{{siteUrl}}business-research/iron-and-steel"><i class="fa fa-angle-right"></i>Iron and Steel</a></li>
+                        <li><a href="{{siteUrl}}business-research/it-hardware"><i class="fa fa-angle-right"></i>IT Hardware</a></li>
+                        <li><a href="{{siteUrl}}business-research/life-non-life-insurance"><i class="fa fa-angle-right"></i>Life &amp; Non Life Insurance</a></li>
+                        <li><a href="{{siteUrl}}business-research/machinery-instrument"><i class="fa fa-angle-right"></i>Machinery &amp; Instrument</a></li>
+                        <li><a href="{{siteUrl}}business-research/personal-home-care"><i class="fa fa-angle-right"></i>Personal Home Care</a></li>
+                        <li><a href="{{siteUrl}}business-research/advisory-services-overview#solution"><button class="btn btn-primary small">More Industries</button></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li><!-- end BR -->
+                <li><a href="#"><i class="fa fa-angle-right"></i>IP Research</a>
+                  <ul class="wsmenu-submenu-sub">
+                    <li><a href="{{siteUrl}}intellectual-property-research/overview"><i class="fa fa-angle-right"></i>Overview</a></li>
+                    <li><a href="{{siteUrl}}intellectual-property-research/overview#sol"><i class="fa fa-angle-right"></i>Solutions</a>
+                      <ul class="wsmenu-submenu-sub-sub">
+                        <li><a href="{{siteUrl}}intellectual-property-research/ip-strategy"><i class="fa fa-angle-right"></i>IP Strategy</a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/litigation-support"><i class="fa fa-angle-right"></i>Litigation Support</a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/technology-intelligence"><i class="fa fa-angle-right"></i>Technology Intelligence</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="{{siteUrl}}intellectual-property-research/overview#solution"><i class="fa fa-angle-right"></i>Technologies</a>
+                      <ul class="wsmenu-submenu-sub-sub">
+                        <li><a href="{{siteUrl}}intellectual-property-research/automotive"><i class="fa fa-angle-right"></i>Automotive</a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/biotechnology"><i class="fa fa-angle-right"></i>Biotechnology </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/chemicals"><i class="fa fa-angle-right"></i>Chemicals </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/communication-network"><i class="fa fa-angle-right"></i>Communication &amp; Network </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/diagnostics"><i class="fa fa-angle-right"></i>Diagnostics </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/electronics"><i class="fa fa-angle-right"></i>Electronics </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/engineering-plastics-and-polymers"><i class="fa fa-angle-right"></i>Engineering Plastics and Polymers </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/food-beverage"><i class="fa fa-angle-right"></i>Food & Beverage </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/home-care"><i class="fa fa-angle-right"></i>Home Care </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/industrial-manufacturing"><i class="fa fa-angle-right"></i>Industrial Manufacturing  </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/medical-devices"><i class="fa fa-angle-right"></i>Medical Devices </a></li>
+                        <li><a href="{{siteUrl}}intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li><!-- end IP -->
+                <li><a href="#"><i class="fa fa-angle-right"></i>IP Research</a>
+                  <ul class="wsmenu-submenu-sub">
+                    <li><a href="{{siteUrl}}investment-research/overview"><i class="fa fa-angle-right"></i>Overview</a></li>
+                    <li><a href="{{siteUrl}}investment-research/overview#solution"><i class="fa fa-angle-right"></i>Solutions</a>
+                    </li>
+                  </ul>
+                </li><!-- end IR -->
+                <li><a href="#"><i class="fa fa-angle-right"></i>Procurement Research</a>
+                  <ul class="wsmenu-submenu-sub">
+                    <li><a href="{{siteUrl}}procurement-research/overview"><i class="fa fa-angle-right"></i>Overview</a></li>
+                    <li><a href="{{siteUrl}}procurement-research/overview#solution"><i class="fa fa-angle-right"></i>Solutions</a></li>
+                    <li><a href="{{siteUrl}}procurement-research/overview#framework"><i class="fa fa-angle-right"></i>Frameworks</a></li>
+                  </ul>
+                </li><!-- end Procurement -->
+                <li><a href="#"><i class="fa fa-angle-right"></i>Valuation & Advisory</a>
+                  <ul class="wsmenu-submenu-sub">
+                    <li><a href="http://www.arancavaluation.com/"><i class="fa fa-angle-right"></i>Overview</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i>Solutions</a>
+                      <ul class="wsmenu-submenu-sub-sub">
+                        <li class="title">Tax Valuation</li>
+                        <li><a href="http://www.arancavaluation.com/tax-valuation/409a-valuation"><i class="fa fa-angle-right"></i>409a</a></li>
+                        <li><a href="http://www.arancavaluation.com/tax-valuation/estate-gift-tax-valuations"><i class="fa fa-angle-right"></i>Estate & Gift Tax</a></li>
+                        <li><a href="http://www.arancavaluation.com/tax-valuation/s-corp-election-irc-1374"><i class="fa fa-angle-right"></i>S-Corp Election</a></li>
+                        <li><a href="http://www.arancavaluation.com/tax-valuation/nols-built-in-capital-gains-irc382"><i class="fa fa-angle-right"></i>NOLs & Built-in Capital Gains</a></li>
+
+                        <li class="title">Financial Reporting</li>
+                        <li><a href="http://www.arancavaluation.com/financial-reporting/purchase-price-allocations-asc-805-ifrs-3"><i class="fa fa-angle-right"></i>Purchase Price Allocations</a></li>
+                        <li><a href="http://www.arancavaluation.com/financial-reporting/impairment-of-goodwill-and-other-intangible-assets"><i class="fa fa-angle-right"></i>Goodwill Impairment</a></li>
+                        <li><a href="http://www.arancavaluation.com/financial-reporting/complex-securities-valuations"><i class="fa fa-angle-right"></i>Complex Securities Valuations</a></li>
+
+                        <li class="title">Transaction Services</li>
+                        <li><a href="http://www.arancavaluation.com/transaction-services/fairness-opinions"><i class="fa fa-angle-right"></i>Fairness Opinions</a></li>
+
+                        <li class="title">IP Valuation</li>
+                        <li><a href="http://www.arancavaluation.com/ip-valuation/overview"><i class="fa fa-angle-right"></i>Overview</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li><!-- end Procurement -->
+              </ul>
+          </li>
+
+          <!-- end services mobile menu item -->
           
           <li><a href="#"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;KNOWLEDGE LIBRARY<span class="arrow"></span></a>
             <div class="megamenu clearfix">
@@ -1425,31 +1525,6 @@ TABBED HOVER -->
                 {% endfor %}
                 <li class="wsmenu__list__item"><a href="/knowledge-library/infographics">view all infographics &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
               </ul>
-<!--               <div class="col-lg-3 col-md-3 col-xs-12">
-                <h3 class="title">Infographics</h3>
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner" role="listbox">
-                    <div class="item active"> <img src="images/image01.jpg" alt="This is Product Name">
-                      <div class="carousel-caption"> CodeCanyon </div>
-                    </div>
-                    <div class="item"><img src="images/image02.jpg" alt="This is Product Name">
-                      <div class="carousel-caption"> ThemeForest </div>
-                    </div>
-                    <div class="item"><img src="images/image03.jpg" alt="This is Product Name">
-                      <div class="carousel-caption"> GraphicRiver </div>
-                    </div>
-                    <div class="item"><img src="images/image04.jpg" alt="This is Product Name">
-                      <div class="carousel-caption"> ActiveDen </div>
-                    </div>
-                    <div class="item"><img src="images/image05.jpg" alt="This is Product Name">
-                      <div class="carousel-caption"> PhotoDune </div>
-                    </div>
-                    <div class="item"><img src="images/image06.jpg" alt="This is Product Name">
-                      <div class="carousel-caption"> 3DOcean </div>
-                    </div>
-                  </div>
-                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="fa fa-arrow-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="fa fa-arrow-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-              </div> -->
             </div>
           </li>
 
@@ -1463,12 +1538,12 @@ TABBED HOVER -->
                             <div class="box">
                                 <ul>
                                     <li>
-                                      <h3 class="ttmenu__subheadline"><a href="http://www.aranca.com/about-us/company-overview">Overview</a></h3>
+                                      <h3 class="ttmenu__subheadline"><a href="{{siteUrl}}about-us/company-overview">Overview</a></h3>
                                     </li>
-                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/our-culture">Our Culture</a></li>
-                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/our-team">Our Team</a></li>
-                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/how-we-work">How We Work</a></li>
-                                    <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/our-values">Our Values</a></li>
+                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
+                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/our-team">Our Team</a></li>
+                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/how-we-work">How We Work</a></li>
+                                    <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/our-values">Our Values</a></li>
                                 </ul>
                             </div><!-- end box -->
                         </div><!-- end col -->
@@ -1478,11 +1553,11 @@ TABBED HOVER -->
                                 <li>
                                 <h3 class="ttmenu__subheadline"><a href="#"></a></h3>
                                 </li>
-                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/who-we-are">Who We Are</a></li>
-                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/what-we-believe">What We Believe</a></li>
-                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/about-us/work-at-aranca">Work At Aranca</a></li>
-                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/media-room">Media Room</a></li>
-                                <li class="wsmenu__list__item"><a href="http://www.aranca.com/press-releases">Press Release</a></li>
+                                <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
+                                <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
+                                <li class="wsmenu__list__item"><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
+                                <li class="wsmenu__list__item"><a href="{{siteUrl}}media-room">Media Room</a></li>
+                                <li class="wsmenu__list__item"><a href="{{siteUrl}}press-releases">Press Release</a></li>
                                 </ul>
                             </div><!-- end box -->
                         </div><!-- end col -->
@@ -1495,18 +1570,7 @@ TABBED HOVER -->
             <!-- end megamenu -->
           </li>
           
-          <li><a href="#"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CONTACT<span class="arrow"></span></a>
-            <div class="megamenu halfdiv">
-              <h3 class="title">Contact Us</h3>
-              <form name="contact_name" class="menu_form">
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="Email">
-                <textarea placeholder="Your message..."></textarea>
-                <input type="button" value="Reset">
-                <input type="submit" value="Send">
-              </form>
-              <div class="cl"></div>
-            </div>
+          <li><a href="/contact-us"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CONTACT</a>
           </li>
           <li><a href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;SEARCH<span class="arrow"></span></a>
             <div class="megamenu halfdiv">
