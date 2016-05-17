@@ -16,6 +16,14 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
+          {% if craft.session.hasFlash('success') %}
+
+          <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong>  {{ craft.session.getFlash('success') | raw }}
+          </div>
+
+          {% endif %}
           <h1 class="lede__headline">Thank you for writing to us.</h1>
           <h2 class="lede__subheadline">You will hear from our team real soon</h2>
           <hr class="lede__border">

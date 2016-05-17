@@ -16,11 +16,28 @@
 {% includeCss ctFormCss %}
 
 <h1 class="ct__headline">Email Us</h1>
-<form data-toggle="validator" action="http://connect.aranca.com/acton/eform/17562/0021/d-ext-0002" id="contact-us">
+{% if craft.session.hasFlash('success') %}
+
+  {{ craft.session.getFlash('success') | raw }}
+
+{% endif %}
+
+{% if craft.session.hasFlash('failure') %}
+
+  <div class="alert alert-danger">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Sorry!</strong>  {{ craft.session.getFlash('failure') | raw }}
+  </div>
+
+  {% endif %}
+<form method="post" accept-charset="UTF-8" data-toggle="validator" action="" id="contact-us">
+  <input type="hidden" name="action" value="recaptcha/service/saveForm">
+  <input type="hidden" name="endpoint" value="http://connect.aranca.com/acton/eform/17562/0021/d-ext-0002">
+  <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-business-research">
+  {{ getCsrfInput() }}
 
   <p class="ct__form__content">A consultant from our business team will personally assess your inquiry and get back to you within 24 hours after you fill out this form.</p>
-
-
+  
 
   <div class="row">
     <div class="col-sm-6">
@@ -67,10 +84,14 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <input type="hidden" name="_ipaddr" >
-        <input type="hidden" name="ao_refurl" >
+        <input type="hidden" name="_ipaddr" value="{{ craft.request.getIpAddress() }}">
+        <input type="hidden" name="ao_refurl" value="{{ craft.request.getUrlReferrer() }}" >
         <label for="">Send Us Your Inquiry</label>
         <textarea rows="10" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements" required></textarea><br>
+        
+        <p><em>We need to quickly check if you are human before you submit this form</em></p>
+        <p>{{craft.recaptcha.render()}}</p>
+
         <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Inquiry</button>
       </div>
 
