@@ -4,3 +4,8 @@ Disallow: /*?q=
 Disallow: /thankyou-valuation-and-advisory
 Disallow: /downloads/
 Disallow: /outlookmsg/
+Disallow: /Aranca/newsletters/
+Disallow: /resources/news-and-analysis/newstrack/
+Disallow: /kjkpjc6oo/
+Disallow: /dw0m12oad/
+Disallow: /component/
