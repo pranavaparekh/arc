@@ -50,7 +50,7 @@ function slideoutMakecall() {
     Waybeo.CTC.MakeCall({
         'hash': '56bd928aa3e24',
         'route_hash': '56bd8379cf7b9',
-        'callerid_hash': '5731e201533f4',
+        'callerid_hash': '573422281ad9d',
         'contact_number': _phone,
         'optional_params': {
             name: $('#wctcname').val(),
