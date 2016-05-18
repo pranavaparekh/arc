@@ -27,6 +27,89 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link href="//d39dxds0ufldft.cloudfront.net/css/bootstrap.min.css" rel="stylesheet">
   <link href="//d39dxds0ufldft.cloudfront.net/css/24032014/cis-style.css" rel="stylesheet">
+  <link href="/assets/css/skeleton.css" rel="stylesheet">
+  <link href="/assets/css/colio.css" rel="stylesheet">
+  <style type="text/css">
+  .clc {
+    padding: 20px 0;
+  }
+  .colio-theme-black h3 {
+    font-weight:300;
+    font-size:28px;
+  }
+
+  .team-member h4 > span {
+    font-size:0.8em;
+  }
+
+  .profile__content {
+    text-align: justify;
+  }
+
+@media only screen and (max-width : 480px) {
+
+    .portfolio .list .thumb img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .portfolio .list .thumb {
+      height: 160px;
+    }
+
+}
+  </style>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/jquery.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/bs-validator.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/jquery.colio.min.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/slick.min.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/zozo.tabs.min.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/olark.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/bootstrap-v3.3.5.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/ttmenu.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/blazy.min.js"></script>
+<script type="text/javascript" src="http://www.arancavaluation.com/assets/js/site.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      
+      // "scrollTop" plugin
+      $.scrollUp();
+      
+      // "colio" plugin
+      $('.portfolio .list').colio({
+        id: 'demo_1',
+        theme: 'black',
+        placement: 'inside',
+        hiddenItems: '.isotope-hidden',
+        onContent: function(content){
+          // init "fancybox" plugin
+          $('.fancybox', content).fancybox();
+        }
+      });
+      
+      // "isotope" plugin
+      var filter = '*', isotope_run = function(f) {
+        var list = $('.portfolio .list').isotope({layoutMode : 'fitRows', filter: f});    
+        window.setTimeout(function(){
+          list.trigger('colio','excludeHidden');
+        }, 25);
+      };
+      
+      $('.portfolio .filters a').click(function(){
+        $(this).addClass('filter-active').siblings().removeClass('filter-active');
+        var href = $(this).attr('href').substr(1);
+        filter = href ? '.' + href : '*';
+        isotope_run(filter);
+        return false;
+      });
+      
+      isotope_run(filter);      
+      
+    });
+  </script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -35,6 +118,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
 
       <!-- Google Analytics code -->
       <script>
@@ -46,6 +131,7 @@
         ga('create', 'UA-2764060-1', 'auto');
         ga('send', 'pageview');
       </script>
+
 
 
       <script type="text/javascript">
@@ -309,6 +395,55 @@ catch(err) {
   </div>
 </section>
 
+<!-- <section class="clc container-sk">
+<div class="row">
+      <div class="col-sm-12">
+        <div class="lede__headline text-center">Industry Expertise</div>
+        <div class="lede__subheadline text-center">We are a leading provider of 409A valuation to start-ups and emerging growth companies across diverse industry sub-sectors. They are names you’ve most certainly heard of, and names you will most certainly hear of soon.</div>
+        <hr class="lede__border">
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="portfolio clearfix">
+        <ul class="list">
+          <li class="inspiration" data-content="#colio_c1">
+            <div class="thumb">
+              <div class="view">
+                <a class="button colio-link" href="#">Client List</a>
+              </div>
+              <img src="/assets/images/pictures/digital-marketing-thumb.jpg" alt="Pic">
+            </div>
+            <h4><a class="colio-link" href="#">Digital Marketing & <br>Advertising</a></h4>
+          </li>
+          <li class="design inspiration" data-content="#colio_c2">
+            <div class="thumb">
+              <div class="view">
+                <a class="button colio-link" href="#">Client List</a>
+              </div>
+              <img src="/assets/images/pictures/Semi-conductor-and-Advanced-Materials.jpg" alt="Pic">
+            </div>
+            <h4><a class="colio-link" href="#">Semiconductors & <br>Advanced Materials</a></h4>
+          </li>
+        </ul>
+      </div>
+      <div id="colio_c1" class="colio-content">
+        <div class="main" style="width:100%">
+          <h3>Digital Marketing & Advertising</h3>
+          <img src="/assets/images/pictures/digital-marketing.png" alt="">
+        </div>
+      </div>
+      <div id="colio_c2" class="colio-content">
+        <div class="main" style="width:100%">
+          <h3>Semiconductors & Advanced Materials</h3>
+          <img src="/assets/images/pictures/semiconductor.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
 <section class="slide-5">
   <div class="container">
     <div class="row" style="margin:10px 0;">
@@ -502,6 +637,7 @@ clients.start();
 sectors.start();
 pro.start();
 </script>
+
 
 
 
