@@ -15,7 +15,7 @@
 
 {% includeCss ctFormCss %}
 
-<h1 class="ct__headline">Email Us</h1>
+<h1 class="ct__headline">Help Us Get Back to You</h1>
 {% if craft.session.hasFlash('success') %}
 
   {{ craft.session.getFlash('success') | raw }}
@@ -86,16 +86,16 @@
       <div class="form-group">
         <input type="hidden" name="_ipaddr" value="{{ craft.request.getIpAddress() }}">
         <input type="hidden" name="ao_refurl" value="{{ craft.request.getUrlReferrer() }}" >
-        <label for="">Send Us Your Inquiry</label>
-        <textarea rows="5" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements" required></textarea><br>
+        <label for="">How Can We Assist You?</label>
+        <textarea rows="5" name="comment" class="form-control" id="comment" placeholder="Share details about your requirement" required></textarea><br>
         
         <p><em>We need to quickly check if you are human before you submit this form</em></p>
         <p>{{craft.recaptcha.render()}}</p>
 
-        <button type="submit" class="btn btn-primary btn-block btn-lg">Send Your Inquiry</button>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Send Us Your Inquiry</button>
       </div>
 
-      <p class="ct__form__content--lighter">Please note that while we appreciate your questions, we are unable to respond to all inquiries</p>
+     <!--  <p class="ct__form__content--lighter">Please note that while we appreciate your questions, we are unable to respond to all inquiries</p> -->
     </div><!--  end col-sm-12 -->
   </div>
 </form>
