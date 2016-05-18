@@ -43,7 +43,7 @@
     <div class="col-sm-12">
       <div class="form-group">
         <label for="firstname">Name</label>
-        <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Your first name" required>
+        <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Your Name" required>
         <div class="help-block with-errors"></div>
       </div>
     </div>
@@ -87,7 +87,7 @@
         <input type="hidden" name="_ipaddr" value="{{ craft.request.getIpAddress() }}">
         <input type="hidden" name="ao_refurl" value="{{ craft.request.getUrlReferrer() }}" >
         <label for="">Send Us Your Inquiry</label>
-        <textarea rows="10" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements" required></textarea><br>
+        <textarea rows="5" name="comment" class="form-control" id="comment" placeholder="Tell us as much as you can about your project requirements" required></textarea><br>
         
         <p><em>We need to quickly check if you are human before you submit this form</em></p>
         <p>{{craft.recaptcha.render()}}</p>
