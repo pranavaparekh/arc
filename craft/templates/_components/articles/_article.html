@@ -82,10 +82,16 @@ $(document).ready(function() {
   <p class="release-date">
     {{ entry.postDate|date("d M, Y") }}</p>
   </p>
-  {% include '_components/global/_action' with { 'vertical': true } %}
-
+    {% include '_components/global/_action' with { 'vertical': true } %}
+    
 
      {% include '_components/global/_byline' %}
+
+     {% set entryTags = entry.kcTags %}
+
+     {% if entryTags | length %}
+      {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
+     {% endif %}
 
     {% set assets = entry.articlesBanner %}
     {% if assets | length %}

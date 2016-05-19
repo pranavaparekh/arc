@@ -88,6 +88,12 @@ $(document).ready(function() {
 
     {% include '_components/global/_action' %}
 
+    {% set entryTags = entry.kcTags %}
+
+     {% if entryTags | length %}
+      {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
+     {% endif %}
+
     <div class="article__content">
       {{ content }}
     </div>
