@@ -435,6 +435,9 @@
 
 
 /* Custom Styles */
+
+
+
 /* MENU TABBED */
 
 .nav-pills {
@@ -1076,6 +1079,20 @@
 
 }
 
+ /* make menu sticky on desktop only */
+  @media only screen and (min-width : 768px) {
+    .header {
+      position: fixed;
+      left: 0;
+      top: 0px;
+      width: 100%;
+      z-index: 1;
+      background: white;
+    }
+
+  }
+
+
 {% endset %}
 
 {% set wsmenuJs %}
@@ -1164,9 +1181,6 @@ TABBED HOVER -->
 
   <div class="header">
   <div class="wrapper clearfix bigmegamenu">
-<!--   <div class="logo clearfix">
-      <a href="index.html" title="Responsive Slide Menus"><img src="images/logo.png" alt="" /></a>
-  </div> -->
 
   <!--Main Menu HTML Code-->
       <nav class="wsmenu clearfix">
