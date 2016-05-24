@@ -6,7 +6,7 @@ $(document).ready(function () {
         });
     }, "jsonp");
 
-    $('.wbs-switch, .wbs-close, .callusicon').click(function (evt) {
+    $('.wbs-switch, .wbs-close').click(function (evt) {
         // evt.preventDefault();
         $('.wbs-container').toggleClass('active');
         if (!$('.wbs-container').hasClass('active')) {

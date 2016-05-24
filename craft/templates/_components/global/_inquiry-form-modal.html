@@ -492,7 +492,7 @@
         });
     }
 
-    jQuery("#nav8").FSNav({
+    jQuery('#{{formId}}').FSNav({
       animation: "dropdown",
       onShow: function(e) {
         $('#{{formtype}}').validator();
@@ -515,7 +515,7 @@
 {% includeJsFile '/assets/js/bs-validator.js' %}
 
 <!-- modal -->
-<div id="nav8" class="full-screen-nav">
+<div id="{{ formId }}" class="full-screen-nav">
   <span class="full-screen-nav-close"></span>
   <div class="full-screen-nav-content">
     <div class="full-screen-nav-general">

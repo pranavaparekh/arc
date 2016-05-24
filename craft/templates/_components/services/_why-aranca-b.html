@@ -1,3 +1,5 @@
+{% set formId = "nav10" %}
+
 {% set whyarcCSS %}
   .why-arc-b { padding: 30px 0;
     {% if blueBackground is defined %}
@@ -54,6 +56,38 @@
     opacity: 0.8;
   }
 
+  .svc__cta p {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px dotted #2279C3;
+    border-bottom: 1px dotted #2279C3;
+  }
+
+  .svc__cta p a {
+    font-size: 1.6em;
+    text-decoration: none;
+    color: #2279C3;
+    font-weight: 300;
+    transition: 0.5s background-color;
+    padding: 5px;
+    display: inline-block;
+    padding: 10px 0;
+  }
+
+  .svc__cta p:hover a {
+    background-color: #2279C3;
+    color: white;
+    display: block;
+  }
+
+@media only screen and (max-width : 480px) {
+  .svc__cta p {
+    font-size: 1.2em;
+    padding: 5px;
+  }
+}
+
 {% endset %}
 
 {% set whyarcJs %}
@@ -63,6 +97,14 @@
       $('.why-arc-b__headline--col').addClass('animated fadeInUp');
     }
   });
+
+  (function ( $, window, document, undefined ) {
+    $(".svc__cta__form").click(function(e){
+      e.preventDefault();
+      console.log('show modal');
+      $('#{{formId}}').data("FSNav").showNav();
+    });
+  }( jQuery, window, document ));;
 
 {% endset%}
 
@@ -80,7 +122,7 @@
             <p class="why-arc-b__subtext">{{ block.subHeadline }}</p>
             <hr class="lede__border">
           {% endfor %}
-
+          
         </div><!-- end col 12 -->
       </div><!-- end row -->
 
@@ -101,9 +143,37 @@
         {% endif %}
 
         {% endfor %}
+      
+       {% if includeCta is defined %}
+          <div class="svc__cta">
+            <p><a class="svc__cta__form" href="">Unlock the true value your ip portfolio can <span>deliver to your business</span></a></p>
+          </div>
+
+          {# Get the category that this entry belongs to #}
+          {% set entryCategory = entry.servicesCategory.first() %}
+
+          {% if entryCategory is defined %}
+
+          {% switch entryCategory.slug %}
+            {% case 'business-research' %}
+              {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0017/d-ext-0002' %}
+            {% case 'procurement-research' %}
+              {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0020/d-ext-0002' %}
+            {% case 'investment-research' %}
+              {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001d/d-ext-0002' %}
+            {% case 'ip-research' %}
+              {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001e/d-ext-0002' %}
+            {% default %}
+              {% set formActionUrl = 'invalid' %}
+          {% endswitch %}
+
+          {% include '_components/global/_inquiry-form-modal'
+            with {  'formtype': 'svc_cta', 'formAction': formActionUrl, 'formId': formId } %}
+          {% endif %}
+
+        {% endif %}
+
       </div><!-- end row -->
-
-
 
     </div><!-- end container -->
   </div><!-- end row -->

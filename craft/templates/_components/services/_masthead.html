@@ -1,6 +1,6 @@
 {% set asset = entry.mastheadBanner.first() %}
 {% set firstLevel = entry.servicesCategory.level(1).first() %}
-
+{% set formId = "nav8" %}
 
 {% set svcmastheadCss %}
   .svc-masthead {
@@ -110,7 +110,7 @@
   (function ( $, window, document, undefined ) {
     $("#show-nav").click(function(){
       console.log('show modal');
-      $("#nav8").data("FSNav").showNav();
+      $('#{{formId}}').data("FSNav").showNav();
     });
   }( jQuery, window, document ));
 {% endset %}
@@ -163,6 +163,6 @@
     {% set formActionUrl = 'invalid' %}
 {% endswitch %}
 
-{% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl  } %}
+{% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': formId } %}
 
 {% endif %}
