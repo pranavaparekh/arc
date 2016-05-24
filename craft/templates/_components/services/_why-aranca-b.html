@@ -98,14 +98,6 @@
     }
   });
 
-  (function ( $, window, document, undefined ) {
-    $(".svc__cta__form").click(function(e){
-      e.preventDefault();
-      console.log('show modal');
-      $('#{{formId}}').data("FSNav").showNav();
-    });
-  }( jQuery, window, document ));;
-
 {% endset%}
 
 {% includeCss whyarcCSS %}
@@ -145,6 +137,21 @@
         {% endfor %}
       
        {% if includeCta is defined %}
+          
+          {% set svcCtaJs %}
+            
+          (function ( $, window, document, undefined ) {
+              $(".svc__cta__form").click(function(e){
+                e.preventDefault();
+                console.log('show modal');
+                $('#{{formId}}').data("FSNav").showNav();
+              });
+            }( jQuery, window, document ));
+  
+          {% endset %}
+
+          {% includeJs svcCtaJs  %}
+
           <div class="svc__cta">
             <p><a class="svc__cta__form" href="">Unlock the true value your ip portfolio can <span>deliver to your business</span></a></p>
           </div>
