@@ -1,6 +1,6 @@
 
 {# logic for getting cta content and image #}
-
+{% set formId = "nav8" %}
 {% set callText = '' %}
 {% set callBanner = '' %}
 
@@ -98,7 +98,7 @@
     $(".call-to-action").click(function(e){
       e.preventDefault();
       console.log('show modal');
-      $("#nav9").data("FSNav").showNav();
+      $('#{{formId}}').data("FSNav").showNav();
     });
   }( jQuery, window, document ));
 {% endset %}
@@ -142,7 +142,7 @@
     {% set formActionUrl = 'invalid' %}
 {% endswitch %}
 
-{% include '_components/global/_cta-form'
-  with {  'formtype': 'cta', 'formAction': formActionUrl } %}
+{% include '_components/global/_inquiry-form-modal'
+  with {  'formtype': 'cta', 'formAction': formActionUrl, 'formId': formId } %}
 {% endif %}
 
