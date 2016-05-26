@@ -1540,7 +1540,8 @@ TABBED HOVER -->
             <div class="megamenu clearfix">
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                 <li class="title">Blogs</li>
-                {% set latestBlogPosts = craft.entries.section('blogs').limit(5) %}
+                <a href="/knowledge-library/blogs-and-opinions"><img class="img-responsive" src="/assets/images/articles-thumb.jpg"></a>
+                {% set latestBlogPosts = craft.entries.section('blogs').limit(3) %}
                 {% for blogPost in latestBlogPosts %}
                   <li class="wsmenu__list__item"><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></li>
                 {% endfor %}
@@ -1548,7 +1549,8 @@ TABBED HOVER -->
               </ul>
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                 <li class="title">Articles</li>
-                {% set latestArticles = craft.entries.section('articles').limit(5) %}
+                <a href="/knowledge-library/articles"><img class="img-responsive" src="/assets/images/articles-thumb.jpg"></a>
+                {% set latestArticles = craft.entries.section('articles').limit(3) %}
                 {% for article in latestArticles %}
                   <li class="wsmenu__list__item"><a href="{{ article.url }}"></i>{{ article.title }}</a></li>
                 {% endfor %}
@@ -1556,7 +1558,8 @@ TABBED HOVER -->
               </ul>
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                 <li class="title">Special Reports</li>
-                {% set latestSpecialReports = craft.entries.section('specialReports').limit(5) %}
+               <a href="/knowledge-library/special-reports"> <img class="img-responsive" src="/assets/images/sr-reports-thumb.jpg"></a>
+                {% set latestSpecialReports = craft.entries.section('specialReports').limit(3) %}
                 {% for sReport in latestSpecialReports %}
                   <li class="wsmenu__list__item"><a href="{{ sReport.url }}"></i>{{ sReport.title }}</a></li>
                 {% endfor %}
@@ -1564,7 +1567,8 @@ TABBED HOVER -->
               </ul>
               <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                 <li class="title">Infographics</li>
-                {% set latestInfographics = craft.entries.section('infographics').limit(5) %}
+                <a href="/knowledge-library/infographics"><img class="img-responsive" src="/assets/images/infographics-thumb.jpg"></a>
+                {% set latestInfographics = craft.entries.section('infographics').limit(3) %}
                 {% for iGraphic in latestInfographics %}
                   <li class="wsmenu__list__item"><a href="{{ iGraphic.url }}">{{ iGraphic.title }}</a></li>
                 {% endfor %}
