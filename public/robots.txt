@@ -9,3 +9,7 @@ Disallow: /resources/news-and-analysis/newstrack/
 Disallow: /kjkpjc6oo/
 Disallow: /dw0m12oad/
 Disallow: /component/
+Disallow: /knowledge-center/newstrack/
+Disallow: /knowledge-center/newsletter/
+Disallow: /event/
+Disallow: /events/
