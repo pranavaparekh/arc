@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('.wbs-switch').hide();
     var telInput = $("#slideoutMobile");
     $.get("http://ipinfo.io", function (response) {
         telInput.intlTelInput({
@@ -44,6 +45,12 @@ Waybeo.CTC.Init({
     hash: '56bd928aa3e24',
 });
 
+Waybeo.Utils.getIpCountry(function(l) {
+    var _AllowedSouthAmericanCountries = ['US','MX','CA','CU'];
+    if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
+       $('.wbs-switch').show();
+    }
+});
 function slideoutMakecall() {
     var _phone = $.trim($("#slideoutMobile").val()).replace('+', '').replace(' ', '');
     $('.wbs-container').addClass('connecting');
