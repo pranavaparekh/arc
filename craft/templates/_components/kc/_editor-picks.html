@@ -1,0 +1,17 @@
+editor-picks
+
+{% set blogEditorentries = craft.entries.section('blogs').editorPicks('1').ids() %}
+{% set articleEditorentries = craft.entries.section('articles').editorPicks('1').ids() %}
+{% set srEditorentries = craft.entries.section('specialReports').editorPicks('1').ids() %}
+
+{% set entryIdsCombined = blogEditorentries | merge(articleEditorentries) | merge(srEditorentries)  %}
+
+{% set allEditorEntries = craft.entries.id(entryIdsCombined).order('postDate DESC').limit(6) %}
+
+<ul>
+{% for entry in allEditorEntries %}
+  <li>
+    <a href={{ entry.url }}>{{ entry.title }}</a>
+  </li>
+{% endfor %}
+</ul>

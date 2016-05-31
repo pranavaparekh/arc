@@ -1,0 +1,25 @@
+{% set kcMainCss %}
+
+.kc-main {
+  padding: 50px 0;
+}
+
+{% endset %}
+
+{% includeCss kcMainCss %}
+
+<div class="container kc-main">
+  <div class="row">
+    <div class="col-sm-3 kc-sidebar">
+      {% include '_components/kc/_latest' %}
+    </div><!--  end col-sm-4 -->
+
+    <div class="col-sm-6 kc-focus">
+      {% include '_components/kc/_featured' %}
+    </div><!--  end col-sm-4 -->
+
+    <div class="col-sm-3 kc-editorial">
+      {% include '_components/kc/_editor-picks' %}
+    </div><!--  end col-sm-8 -->
+  </div><!--  end row -->
+</div>

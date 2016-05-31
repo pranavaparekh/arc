@@ -9,26 +9,18 @@
 {% include '_components/global/_header' %}
 {% include '_components/kc/_masthead' %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4 mc-sidebar">
-      {% include '_components/kc/_highlights' %}
-      {% include '_components/media-center/_pr-list' %}
-      {% include '_components/media-center/_archive' %}
-    </div><!--  end col-sm-4 -->
-
-    <div class="col-sm-8 mc-main">
-      {% include '_components/kc/_featured' %}
-      {% include '_components/kc/_articles' %}
-      {% include '_components/kc/_blogs' %}
-      {% include '_components/kc/_infographics' %}
-      {# include '_components/press-kit/_pk-download' #}
-      {% include '_components/media-center/_contact' %}
-    </div><!--  end col-sm-8 -->
-  </div><!--  end row -->
+{# include the main layout that includes sub layouts #}
+<div class="kc__layout" style="background-color: #F4F8FA">
+  {% include 'layouts/kc/_main' %}
 </div>
-
 {% include '_components/global/_footer' %}
 
-
 {% endblock %}
+
+{# 
+  {% include '_components/kc/_featured' %}
+  {% include '_components/kc/_articles' %}
+  {% include '_components/kc/_blogs' %}
+  {% include '_components/kc/_infographics' %}
+  {% include '_components/media-center/_contact' %} 
+#} 

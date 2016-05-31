@@ -1,0 +1,20 @@
+
+
+{% set latestSpecialReports = craft.entries.section('specialReports').limit(1).ids() %}
+{% set latestArticles = craft.entries.section('articles').limit(2).ids() %}
+{% set latestBlogPosts = craft.entries.section('blogs').limit(1).ids() %}
+{% set latestInfographics = craft.entries.section('infographics').limit(1).ids() %}
+
+{% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
+
+{% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
+
+<h2>The Latest</h2>
+<ul>
+{% for entry in allLatestEntries %}
+  <li>
+    <p>{{ entry.type }}</p>
+    <a href={{ entry.url }}>{{ entry.title }}</a>
+  </li>
+{% endfor %}
+</ul>
