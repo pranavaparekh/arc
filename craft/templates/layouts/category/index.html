@@ -1,0 +1,10 @@
+This is category {{ category.slug }}
+
+{% set entries = craft.entries.section('articles').relatedTo(category).find() %}
+
+{% for entry in entries %}
+  <li>
+    <a href={{ entry.url }}>{{ entry.title }}</a>
+  </li>
+{% endfor %}
+</ul>

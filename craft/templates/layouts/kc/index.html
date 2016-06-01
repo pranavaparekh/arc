@@ -12,12 +12,13 @@
 {# include the main layout that includes sub layouts #}
 <div class="kc__layout" style="background-color: #F4F8FA">
   {% include 'layouts/kc/_main' %}
+  {% include 'layouts/kc/_category-block' %}
 </div>
 {% include '_components/global/_footer' %}
 
 {% endblock %}
 
-{# 
+{# use these older components if needed 
   {% include '_components/kc/_featured' %}
   {% include '_components/kc/_articles' %}
   {% include '_components/kc/_blogs' %}
