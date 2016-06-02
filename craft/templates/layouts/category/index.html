@@ -1,7 +1,11 @@
-This is category {{ category.slug }}
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+
+This is category {{ category.displayCategoryTitle }}
 
 {% set entries = craft.entries.section('articles').relatedTo(category).find() %}
 
+<ul>
 {% for entry in entries %}
   <li>
     <a href={{ entry.url }}>{{ entry.title }}</a>

@@ -1,0 +1,80 @@
+
+{% set catmastheadCss %}
+
+  .cat-masthead {
+    position: relative;
+     color: white;
+    background: url('/assets/images/backgrounds/cat-masthead-bkg.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 250px;
+    max-height: 250px;
+  }
+
+  .cat-masthead__content {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 50%;
+  }
+
+  .cat-masthead__content--headline {
+    font-size: 3.5em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-shadow: 2px 2px 3px #232323;
+  }
+
+  .cat-masthead__content--tagline {
+    font-size: 2em;
+    line-height: 1em;
+    font-weight: 300;
+    text-shadow: 2px 2px 3px #232323;
+  }
+
+  .cat-masthead__border {
+    margin: 5px 0;
+  }
+
+  @media only screen and (max-width : 480px) {
+    .cat-masthead__content--headline {
+      font-size: 3em;
+    }
+
+    .cat-masthead__content--tagline {
+      font-size: 1.8em;
+    }
+
+    .cat-masthead__content {
+      max-width: 80%;
+    }
+  }
+
+
+
+
+  @media(min-width: {{ screenmd }}) {
+
+
+  }
+
+{% endset %}
+
+{% includeCss catmastheadCss %}
+
+<section class="container-fluid cat-masthead">
+  <div class="row">
+    <div class="cat-masthead__content">
+      <h2 class="cat-masthead__content--headline">Knowledge Library </h2>
+      <hr class="cat-masthead__border">
+      <p class="cat-masthead__content--tagline">
+      Articles, Blogs, Special Reports and more</p>
+    </div>
+  </div>
+</section>
