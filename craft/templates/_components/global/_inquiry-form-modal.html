@@ -521,8 +521,14 @@
     <div class="full-screen-nav-general">
 
       <!-- start form here -->
-      <form action={{formActionUrl}} id="{{formtype}}">
+      <form method="post" action="" id="{{formtype}}">
+        <input type="hidden" name="action" value="recaptcha/service/saveForm">
+        <input type="hidden" name="endpoint" value="{{formActionUrl}}">
+        <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-business-research">
+        {{ getCsrfInput() }}
+
         <p class="form__headline">Send Your Inquiry</p>
+        
 
         <div class="row">
           <div class="col-sm-12">
@@ -570,6 +576,8 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="form-group">
+              <p><em>We need to quickly check if you are human before you submit this form</em></p>
+              {{craft.recaptcha.render()}}
               <input type="hidden" name="_ipaddr" >
               <input type="hidden" name="ao_refurl" >
               <button id="btnsubmit" type="submit" class="btn  btn-block btn-lg btn-blue">Send Your Inquiry</button>
