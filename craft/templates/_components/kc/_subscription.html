@@ -1,0 +1,42 @@
+{% set kcSubscribeCss %}
+
+.kcsubscribe {
+  
+}
+
+.kcsubscribe .input-group-addon {
+  padding: 14px 52px;
+  color: #fff;
+  text-align: center;
+  background-color: #A0263F;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.kcsubscribe .form-control {
+  padding: 20px 5px;
+}
+
+
+{% endset %}
+
+{% includeCss kcSubscribeCss %}
+
+<section class="container kcsubscribe">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <form id="kc-subscribe" action="#">
+        <div class="input-group">
+          <input type="email" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status">
+          <span class="input-group-addon">subscribe</span>
+        </div>
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+      </form>
+    </div>
+       
+     </div>
+   </div>
+ </section>
