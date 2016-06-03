@@ -180,3 +180,6 @@
 {% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': formId } %}
 
 {% endif %}
+
+{% include '_components/global/_json-ld-services' with { 'url':  entry.url, 'catTitle': firstLevel.title } %}
+
