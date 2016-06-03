@@ -1,0 +1,12 @@
+{% set entries = craft.entries.section('articles').relatedTo(category).find() %}
+
+
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+<ul>
+{% for entry in entries %}
+  <li>
+    <a href={{ entry.url }}>{{ entry.title }}</a>
+  </li>
+{% endfor %}
+</ul>

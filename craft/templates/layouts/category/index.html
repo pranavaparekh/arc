@@ -1,14 +1,24 @@
-{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
-{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
 
-This is category {{ category.displayCategoryTitle }}
 
-{% set entries = craft.entries.section('articles').relatedTo(category).find() %}
+{% extends "base_layouts/_site" %}
+{% set title = category.displayCategoryTitle %}
 
-<ul>
-{% for entry in entries %}
-  <li>
-    <a href={{ entry.url }}>{{ entry.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+{% block main %}
+
+{% include '_components/global/_header' %}
+{% include '_components/category/_masthead' %}
+
+<div class="container" style="background-color: #F4F8FA">
+  <div class="row">
+    <div class="col-sm-8">
+      {% include '_components/category/_list' %}
+    </div>
+    <div class="col-sm-4">
+      {% include '_components/category/_sidebar' %}
+    </div>
+  </div>{# end col-sm-4 #}
+</div>{# end row #}
+{# end container #}
+
+
+{% endblock %}
