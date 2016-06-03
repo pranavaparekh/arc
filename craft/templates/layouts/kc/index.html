@@ -6,11 +6,21 @@
 
 {% block main %}
 
+{% set kcBodyCss %}
+
+body {
+  background-color: #F4F8FA !important;
+}
+
+{% endset %}
+
+{% includeCss kcBodyCss %}
+
 {% include '_components/global/_header' %}
 {% include '_components/kc/_masthead' %}
 
 {# include the main layout that includes sub layouts #}
-<div class="kc__layout" style="background-color: #F4F8FA">
+<div class="kc__layout">
   {% include 'layouts/kc/_main' %}
   {% include '_components/kc/_subscription' %}
   {% include 'layouts/kc/_category-block' %}

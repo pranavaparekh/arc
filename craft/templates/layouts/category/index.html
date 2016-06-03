@@ -5,10 +5,19 @@
 
 {% block main %}
 
+{% set kcBodyCss %}
+
+body {
+  background-color: #F4F8FA;
+}
+
+{% endset %}
+{% includeCss kcBodyCss %}
+
 {% include '_components/global/_header' %}
 {% include '_components/category/_masthead' %}
 
-<div class="container" style="background-color: #F4F8FA">
+<div class="container-fluid kc-cat">
   <div class="row">
     <div class="col-sm-8">
       {% include '_components/category/_list' %}

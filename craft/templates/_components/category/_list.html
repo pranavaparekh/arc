@@ -1,12 +1,162 @@
-{% set entries = craft.entries.section('articles').relatedTo(category).find() %}
+{% set blogPosts = craft.entries.section('blogs').relatedTo(category).limit() %}
+{% set articles = craft.entries.section('articles').relatedTo(category).limit() %}
+{% set infographics = craft.entries.section('infographics').relatedTo(category).limit() %}
+{% set specialReports = craft.entries.section('specialReports').relatedTo(category).limit() %}
 
 
 {% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
 {% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
-<ul>
-{% for entry in entries %}
-  <li>
-    <a href={{ entry.url }}>{{ entry.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+
+{% set catListCss %}
+
+
+
+{% endset %}
+
+{% set catListJs %}
+
+$(document).ready(function () {
+    $("#catList").zozoTabs({
+      theme: "black",
+      style: "underlined",
+      orientation: "horizontal",
+      position: "top-center",
+      size: "xlarge",
+      animation: {
+        easing: "easeInOutExpo",
+        duration: 400,
+        effects: "slideH"
+      },
+    });
+});
+
+{% endset %}
+
+{% includeJs catListCss %}
+{% includeJs catListJs %}
+
+<!-- Zozo Tabs Start-->
+<div id="catList" style="padding-top:50px;">
+
+    <!-- Tab Navigation Menu -->
+    <ul>
+      {% if blogPosts.total() > 0 %}
+        <li class="kc-content__type-item">
+          <img src="/assets/images/icons/kc-books.jpg" class="hidden-xs" alt="books and opinions">
+          <a>Blogs and Opinions</a>
+        </li>
+      {% endif %}
+
+      {% if articles.total() > 0 %}
+        <li class="kc-content__type-item">
+          <img src="/assets/images/icons/kc-articles.jpg" class="hidden-xs" alt="articles">
+          <a>Articles</a>
+        </li>
+      {% endif %}
+
+      {% if infographics.total() > 0 %}
+        <li class="kc-content__type-item">
+          <img src="/assets/images/icons/kc-infographics.jpg" class="hidden-xs" alt="infographics">
+          <a>Infographics</a>
+        </li>
+      {% endif %}
+
+      {% if specialReports.total() > 0 %}
+        <li class="kc-content__type-item">
+          <img src="/assets/images/icons/kc-special-reports.jpg" class="hidden-xs" alt="special reports">
+          <a>Special Reports</a>
+        </li>
+      {% endif %}
+    </ul>
+
+    <!-- Start: Content container -->
+    <div>
+      <!-- Blogs and Opinions -->
+      {% if blogPosts.total() > 0 %}
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <ol class="kc-content__list">
+              {% for blogPost in blogPosts %}
+              <li class="kc-content__list__item">
+                <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                  <div class="kc-content__grid__inner">
+                    <h5 class="kc-content__headline"><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></h5>
+                    <p class="kc-content__excerpt">{{ blogPost.blogContent|hacksaw(words='25') }}</p>
+                  </div>
+                </article>
+              </li>
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      {% endif %}
+      <!-- end Blogs and Opinions -->
+
+      <!-- Articles -->
+      {% if articles.total() > 0 %}
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <ol class="kc-content__list">
+              {% for article in articles %}
+              
+              <li class="kc-content__list__item">
+                <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                  <div class="kc-content__grid__inner">
+                    <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+                    <p class="kc-content__excerpt">{{ article.articlesContent|hacksaw(words='25') }}</p>
+                  </div>
+                </article>
+              </li>
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      {% endif %}
+      <!-- end Articles -->
+
+      <!-- Infographics -->
+      {% if infographics.total() > 0 %}
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <ol class="kc-content__list">
+              {% for infographic in infographics %}
+              <li class="kc-content__list__item">
+                <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                  <div class="kc-content__grid__inner">
+                    <h5 class="kc-content__headline"><a href="{{ infographic.url }}">{{ infographic.title }}</a></h5>
+                    <p class="kc-content__excerpt">{{ infographic.igContent|hacksaw(words='25') }}</p>
+                  </div>
+                </article>
+              </li>
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      {% endif %}
+      <!-- end Infographics -->
+
+      <!-- Special Reports -->
+      {% if specialReports.total() > 0 %}
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <ol class="kc-content__list">
+              {% for specialReport in specialReports %}
+              <li class="kc-content__list__item">
+                <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                  <div class="kc-content__grid__inner">
+                    <h5 class="kc-content__headline"><a href="{{ specialReport.url }}">{{ specialReport.title }}</a></h5>
+                    <p class="kc-content__excerpt">{{ specialReport.srContent|hacksaw(words='25') }}</p>
+                  </div>
+                </article>
+              </li>
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      {% endif %}
+      <!-- end Special Reports -->
+
+    </div><!-- End: content container -->
+</div>
+<!-- Zozo Tabs End-->
+
