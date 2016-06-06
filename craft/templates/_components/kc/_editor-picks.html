@@ -1,4 +1,4 @@
-editor-picks
+
 
 {% set blogEditorentries = craft.entries.section('blogs').editorPicks('1').ids() %}
 {% set articleEditorentries = craft.entries.section('articles').editorPicks('1').ids() %}
@@ -6,12 +6,82 @@ editor-picks
 
 {% set entryIdsCombined = blogEditorentries | merge(articleEditorentries) | merge(srEditorentries)  %}
 
-{% set allEditorEntries = craft.entries.id(entryIdsCombined).order('postDate DESC').limit(6) %}
+{% set allEditorEntries = craft.entries.id(entryIdsCombined).order('postDate DESC').limit(4) %}
 
-<ul>
-{% for entry in allEditorEntries %}
-  <li>
-    <a href={{ entry.url }}>{{ entry.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+{% import 'macros/ctype' as contentType %}
+
+{% set edpickCss %}
+
+.edpick__story__list {
+  margin-top: 20px;
+}
+
+.edpick__story {
+  margin-bottom: 20px;
+  max-height: 150px;
+  overflow: hidden;
+  position: relative
+}
+
+.edpick__story__content {
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+.edpick__story__content__link {
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 1px 2px 3px #6f6f6f;
+};
+
+.edpick__story__content__link:hover {
+  color: #f9f9f9;
+}
+
+{% endset %}
+
+{% includeCss edpickCss %}
+
+<div class="edpick">
+  <span class="kc-label">editor-picks</span>
+  <ul class="edpick__story__list">
+  {% for entry in allEditorEntries %}
+    <li class="edpick__story">
+      
+      {% switch entry.type %}
+
+      {% case "blogs" %}
+
+        {% set featuredBanner = entry.blogsBanner %}
+
+      {% case "articles" %}
+        {% set featuredBanner = entry.articlesBanner %}
+
+      {% case "specialReports" %}
+
+        {% set featuredBanner = entry.srBanner %}
+
+       {% case "infographics" %}
+
+        {% set featuredBanner = entry.igBanner %}
+
+      {% endswitch %}
+
+      <img src={{ featuredBanner.first().url }} />
+
+      <div class="edpick__story__content">
+        <span>{{ entry.type }}</span><br>
+        <a class="edpick__story__content__link" href={{ entry.url }}>{{ entry.title }}</a>
+      </div>
+
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
