@@ -1,0 +1,14 @@
+{
+    "name": "ctigelaar/subscribor",
+    "description": "Google reCAPTCHA for Craft CMS",
+    "authors": [
+        {
+            "name": "/Amit Erandole",
+            "homepage": "https://github.com/amite"
+        }
+    ],
+    "type": "craft-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
