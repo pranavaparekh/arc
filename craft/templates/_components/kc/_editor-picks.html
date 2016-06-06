@@ -12,6 +12,8 @@
 
 {% set edpickCss %}
 
+
+
 .edpick__story__list {
   margin-top: 20px;
 }
@@ -38,10 +40,12 @@
   font-size: 1.2em;
   color: white;
   text-shadow: 1px 2px 3px #6f6f6f;
-};
+  transition: 0.5s color;
+}
 
-.edpick__story__content__link:hover {
-  color: #f9f9f9;
+.edpick__story__content__link:hover, .edpick__story__content__link:focus {
+  color: #e2dddd;
+  text-decoration: none;
 }
 
 {% endset %}
