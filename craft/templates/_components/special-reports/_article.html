@@ -86,11 +86,6 @@ $(document).ready(function() {
   {% include '_components/global/_action' %}
   {% include '_components/global/_byline' %}
 
-   {% set entryTags = entry.kcTags %}
-
-   {% if entryTags | length %}
-    {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
-   {% endif %}
 
   {% set pdfLink = entry.srDownload.first() %}
   {% set actonPdfLink = entry.srPdfUrl %}
@@ -120,4 +115,9 @@ $(document).ready(function() {
     {{ content }}
   </div>
 </div>
+{% set entryTags = entry.kcTags %}
+
+{% if entryTags | length %}
+{% include '_components/global/_tag-list' with { 'tags': entryTags } %}
+{% endif %}
 <div id="disqus_thread"></div>
