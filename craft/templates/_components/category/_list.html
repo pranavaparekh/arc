@@ -7,11 +7,30 @@
 {% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
 {% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
 
+
 {% set catListCss %}
 
+#catList {
+  padding-top:50px;
+}
 
+
+
+.kc-content__list__item {
+  margin: 60px 0;
+  background: #fff;
+}
+
+.kc-content__list__item:first-child {
+  margin-top: 30px;
+}
+
+.kc-content__grid__inner {
+  padding: 0.8em;
+}
 
 {% endset %}
+
 
 {% set catListJs %}
 
@@ -32,11 +51,11 @@ $(document).ready(function () {
 
 {% endset %}
 
-{% includeJs catListCss %}
+{% includeCss catListCss %}
 {% includeJs catListJs %}
 
 <!-- Zozo Tabs Start-->
-<div id="catList" style="padding-top:50px;">
+<div id="catList">
 
     <!-- Tab Navigation Menu -->
     <ul>
@@ -78,12 +97,24 @@ $(document).ready(function () {
             <ol class="kc-content__list">
               {% for blogPost in blogPosts %}
               <li class="kc-content__list__item">
-                <article class="kc-content__grid__item kc-content__blog1 image-cover">
-                  <div class="kc-content__grid__inner">
-                    <h5 class="kc-content__headline"><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></h5>
-                    <p class="kc-content__excerpt">{{ blogPost.blogContent|hacksaw(words='25') }}</p>
+                <div class="row">
+                  
+                  <div class="col-sm-7">
+                    <img src={{ blogPost.blogsBanner.first().url }} class="img-responsive">
                   </div>
-                </article>
+                  <div class="col-sm-5">
+                    
+                    <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                      <div class="kc-content__grid__inner">
+                        <h5 class="kc-content__headline"><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></h5>
+                        <p class="kc-content__excerpt">{{ blogPost.blogContent|hacksaw(words='15') }}</p>
+                      </div>
+                    </article>
+
+                  </div>
+              
+                </div>
+
               </li>
               {% endfor %}
             </ol>
@@ -100,13 +131,24 @@ $(document).ready(function () {
               {% for article in articles %}
               
               <li class="kc-content__list__item">
-                <article class="kc-content__grid__item kc-content__blog1 image-cover">
-                  <div class="kc-content__grid__inner">
-                    <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
-                    <p class="kc-content__excerpt">{{ article.articlesContent|hacksaw(words='25') }}</p>
+                <div class="row">
+                  
+                  <div class="col-sm-7">
+                    <img src={{ article.articlesBanner.first().url }} class="img-responsive">
                   </div>
-                </article>
+
+                  <div class="col-sm-5">
+                    <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                      <div class="kc-content__grid__inner">
+                        <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+                        <p class="kc-content__excerpt">{{ article.articlesContent|hacksaw(words='25') }}</p>
+                      </div>
+                    </article>
+                  </div> {# end col-sm-7 #}
+                </div>{# end row #}
               </li>
+
+               
               {% endfor %}
             </ol>
           </div><!-- offset-2-->

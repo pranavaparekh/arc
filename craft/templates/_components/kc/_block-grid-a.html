@@ -1,0 +1,92 @@
+{% set blockGridACss %}
+
+.blk-grid-a {
+  padding: 30px 0px;
+}
+
+.blk-grid-a__headline {
+  padding: 30px 0px;
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.blk-grid-a__item {
+  position: relative;
+}
+
+
+.blk-grid-a__item__content {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 95%;
+  text-align: center;
+}
+
+.blk-grid-a__item__content__link {
+  color: white;
+}
+
+{% endset %}
+
+{% includeCss blockGridACss %}
+
+<div class="col-sm-12 blk-grid-a">
+
+  <header>
+    <h3 class="text-center blk-grid-a__headline">browse content by category</h3>
+  </header>
+  
+  {# start grid here #}
+  
+  <a class="blk-grid-a__item__content__link" href="/practices/business-research">
+    <div class="col-sm-3"><div class="blk-grid-a__item"></div>
+      <img src="/assets/images/categories/br-research-square.jpg" class="img-responsive">
+      
+      
+        <div class="blk-grid-a__item__content">
+          <h4>Business Research</h4>
+        </div>{# end content here #}
+
+    </div>
+  </a>
+  
+  <a class="blk-grid-a__item__content__link" href="/practices/investment-research">
+    <div class="col-sm-3"><div class="blk-grid-a__item"></div>
+      <img src="/assets/images/categories/investment-research-square.jpg" class="img-responsive">
+      
+      <div class="blk-grid-a__item__content">
+        <h4>Investment Research</h4>
+      </div>
+
+    </div>
+  </a>
+  
+  <a class="blk-grid-a__item__content__link" href="/practices/ip-research">
+    <div class="col-sm-3"><div class="blk-grid-a__item"></div>
+      <img src="/assets/images/categories/ip-research-square.jpg" class="img-responsive">
+      
+      <div class="blk-grid-a__item__content">
+        <h4>IP Research</h4>
+      </div>{# end content here #}
+
+    </div>
+  </a>
+  
+  <a class="blk-grid-a__item__content__link" href="/practices/procurement-research">
+    <div class="col-sm-3"><div class="blk-grid-a__item"></div>
+      <img src="/assets/images/categories/procurement-research-square.jpg" class="img-responsive">
+      
+      <div class="blk-grid-a__item__content">
+        <h4>Procurement Research</h4>
+      </div>{# start content here #}
+
+    </div>
+  </a>
+  
+  {# end grid here #}
+
+</div>{# end col-sm-12 #}

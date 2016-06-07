@@ -1,8 +1,19 @@
 
+{% set catBlockCss %}
 
 
-<h2>browse content by category</h2>
+{% endset %}
 
-<div class="br">
-  <p><a href="/practices/business-research">Business Research</a></p>
-</div>
+{% includeCss catBlockCss %}
+
+<div class="container cat-block">
+  <div class="row">
+
+
+      {% include '_components/kc/_block-grid-a' %}
+      
+
+  </div>{# end row #}
+</div>{# end container #}
+
+
