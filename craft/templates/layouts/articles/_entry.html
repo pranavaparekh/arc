@@ -8,8 +8,17 @@
 
 {% include '_components/global/_header' %}
 
-  <div class="row">
-    <div class="container">
+{% set articleLayoutCss %}
+
+#main {
+  background-color: #F4F8FA;
+}
+
+{% endset %}
+
+{% includeCss articleLayoutCss %}
+
+    <div class="container article">
       <div class="row">
         <div class="col-sm-12">
 
@@ -29,8 +38,7 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+
 {% include '_components/global/_footer' %}
 {% includeJsFile '/assets/js/disqus.js' %}
 

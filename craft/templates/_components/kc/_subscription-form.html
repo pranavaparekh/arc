@@ -1,0 +1,36 @@
+{% set subFormCss %}
+  .sub-form {
+    background: #fff;
+    padding: 20px;
+  }
+{% endset %}
+
+{% includeCss subFormCss %}
+
+<div class="sub-form">
+  <form method="post" accept-charset="UTF-8" id="sub-form" action="">
+      <input type="hidden" name="action" value="subscribor/service/subscribe">
+      <input type="hidden" name="endpoint" value="http://connect.aranca.com/acton/eform/17562/0022/d-ext-0002">
+      <input type="hidden" name="redirect" value="http://aranca.craft.dev/knowledge-library">
+      {{ getCsrfInput() }}
+
+      <div class="input-group">
+        <input type="email" class="form-control" id="mql-subscription" name="Email_Address">
+
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" name="Areas_of_Interest" value="Valuation Know-how"> Valuation Know-how
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" name="Areas_of_Interest" value="What’s Changing In The StartUp World"> What’s Changing In The StartUp World
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox3" name="Areas_of_Interest" value="All About IP Valuation"> All About IP Valuation
+        </label>
+
+        <button type="submit" class="btn">subscribe</button>
+        <!-- <span class="input-group-addon">subscribe</span> -->
+      </div>
+      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+      <span id="inputGroupSuccess2Status" class="sr-only">(success)</span>
+    </form>
+</div>

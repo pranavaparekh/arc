@@ -2,12 +2,12 @@
 
 .article {
   min-height: 1000px;
-  padding-top: 84px;
+  padding-top: 120px;
 }
 
 .article__body {
   background: white;
-  padding: 5em 90px;
+  padding: 5px 30px;
 }
 
 .article__body h2 {
@@ -48,6 +48,9 @@
   color: {{ roman }};
 }
 
+.sidebar {
+}
+
 @media only screen and (max-width : 480px) {
   .article__body, #disqus_thread {
     padding: 10px 20px;
@@ -85,7 +88,7 @@ $(document).ready(function() {
 {% includeJs articleJs %}
 
 <div class="row">
-  <div class="col-sm-9">
+  <div class="col-sm-8">
     {# start article body #}
     <div class="article__body">
       <h1 class="article__headline">{{ entry.title }}</h1>
@@ -115,9 +118,11 @@ $(document).ready(function() {
       </div>
     </div>
     {# end article body #}
-  </div>
-  <div class="col-sm-3">
-    sidebar
+  </div>{# end col-sm-9 #}
+  <div class="col-sm-4">
+    <div class="sidebar">
+      {% include '_components/kc/_subscription-form' %}
+    </div>
   </div>{# end col-sm-4 #}
 </div>{# end row #}
 
