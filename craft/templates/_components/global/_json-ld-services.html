@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% if entry.title == "Overview" %}
 <script type="application/ld+json">
 {
@@ -61,68 +60,3 @@
 }
 </script>
 {% endif %}
-=======
-{% if entry.title == "Overview" %}
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "item": {
-      "@id": "{{ siteUrl }}",
-      "name": "Home",
-      "image": "http://www.aranca.com/assets/images/aranca_logo_214x75.png"
-    }
-  },
-  {
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-      "@id": "{{ url }}",
-      "name": "{{ catTitle }}",
-      "image": "http://www.aranca.com/assets/images/aranca_logo_214x75.png"
-    }
-  }
-  ]
-}
-</script>
-{% else %}
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "item": {
-      "@id": "{{ siteUrl }}",
-      "name": "Home",
-      "image": "http://www.aranca.com/assets/images/aranca_logo_214x75.png"
-    }
-  },
-  {
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-      "@id": "{{ siteUrl }}{{ craft.request.getSegment(1) }}",
-      "name": "{{ catTitle }}",
-      "image": "http://www.aranca.com/assets/images/aranca_logo_214x75.png"
-    }
-  },
-    {
-    "@type": "ListItem",
-    "position": 3,
-    "item": {
-      "@id": "{{ url }}",
-      "name": "{{ entry.title }}",
-      "image": "http://www.aranca.com/assets/images/aranca_logo_214x75.png"
-    }
-  }
-  ]
-}
-</script>
-{% endif %} 
- 
->>>>>>> 00ca1af067b6ba401d5cfb3ec5cadfc6ccd20ac4
