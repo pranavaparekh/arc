@@ -28,6 +28,7 @@ return array(
    'investment-research' => 'layouts/services/ir/_redirect',
    'intellectual-property-research' => 'layouts/services/ip/_redirect',
    'ip' => 'layouts/services/ip/_redirect',
+   'procurement-research' => 'layouts/services/procurement/_redirect',
    'knowledge-library' => 'layouts/kc/index',
    'knowledge-library/blogs-and-opinions' => 'layouts/blogs/index',
    'knowledge-library/infographics' => 'layouts/infographics/index',
