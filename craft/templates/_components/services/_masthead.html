@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% set asset = entry.mastheadBanner.first() %}
 {% set firstLevel = entry.servicesCategory.level(1).first() %}
 {% set formId = "nav8" %}
@@ -183,3 +184,190 @@
 
 {% include '_components/global/_json-ld-services' with { 'url':  entry.url, 'catTitle': firstLevel.title } %}
 
+=======
+{% set asset = entry.mastheadBanner.first() %}
+{% set firstLevel = entry.servicesCategory.level(1).first() %}
+{% set formId = "nav8" %}
+
+{% set svcmastheadCss %}
+  .svc-masthead {
+    position: relative;
+    color: white;
+    background: url({{ asset.url }}) no-repeat center center;
+    background-size: cover;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .svc-masthead__content {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 50%;
+  }
+
+  .svc-masthead__headline {
+    font-size: 3.5em;
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    text-shadow: 1px 2px 6px #040404;
+    position: static;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-weight: 300;
+  }
+
+  .svc-masthead__btn {
+    border-radius: 5px;
+    padding: 5px 58px;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    text-shadow: 1px 5px 3px #BC2D5B;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: #BC2D54;
+    box-shadow: 0px 5px 0px 0px #831D39;
+    border: none;
+  }
+
+  .svc-masthead__btn:hover {
+    background-color: #D53661;
+    color: white;
+  }
+
+  .svc-masthead__btn:active {
+     transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+
+  .svc-masthead__breadcrumb {
+    margin-bottom: 15px;
+  }
+
+  .svc-masthead__breadcrumb__item {
+    margin-bottom: 10px;
+  }
+
+  .svc-masthead__breadcrumb__item > a {
+    font-size: 1.1em;
+    color: #00458D;
+    position: static;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #D9D6D6;
+    padding: 4px 35px;
+  }
+
+  .svc-masthead__breadcrumb__item > a:hover {
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width : 480px) {
+    .svc-masthead__content {
+      max-width: 98%;
+    }
+
+    .svc-masthead__headline {
+      font-size: 2.8em;
+    }
+
+    .svc-masthead__breadcrumb__item > a {
+      padding: 2px 2px;
+      font-size: 12px;
+    }
+
+    .svc-masthead__btn {
+      padding: 3px 30px;
+      font-size: 14px;
+    }
+  }
+
+
+
+{% endset %}
+
+{% set svcmastheadJs %}
+  (function ( $, window, document, undefined ) {
+    $("#show-nav").click(function(){
+      console.log('show modal');
+      $('#{{formId}}').data("FSNav").showNav();
+    });
+  }( jQuery, window, document ));
+{% endset %}
+
+{% includeCss svcmastheadCss %}
+{% includeJs svcmastheadJs %}
+
+
+
+<section class="svc-masthead">
+  {% if craft.session.hasFlash('success') %}
+
+    {{ craft.session.getFlash('success') | raw }}
+
+  {% endif %}
+
+  {% if craft.session.hasFlash('failure') %}
+
+    <div class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Sorry!</strong>  {{ craft.session.getFlash('failure') | raw }}
+    </div>
+
+  {% endif %}
+
+  <!--  content -->
+  <div class="svc-masthead__content text-center">
+
+    <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+    <ul class="svc-masthead__breadcrumb">
+      {% if firstLevel | length %}
+        <li class="svc-masthead__breadcrumb__item">
+          {% for entry in firstLevel.categoryEntryUrl %}
+          <a href="{{ entry.url }}">{{ firstLevel }}</a>
+          {% endfor %}
+        </li>
+      {% endif %}
+
+    </ul>
+
+    <button id="show-nav" type="button" class="svc-masthead__btn">
+      Write to Us
+    </button>
+
+  </div><!--  content -->
+
+</section> <!--  end masthead section -->
+
+{# Get the category that this entry belongs to #}
+{% set entryCategory = entry.servicesCategory.first() %}
+
+{% if entryCategory is defined %}
+
+{% switch entryCategory.slug %}
+  {% case 'business-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0017/d-ext-0002' %}
+  {% case 'procurement-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0020/d-ext-0002' %}
+  {% case 'investment-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001d/d-ext-0002' %}
+  {% case 'ip-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001e/d-ext-0002' %}
+  {% default %}
+    {% set formActionUrl = 'invalid' %}
+{% endswitch %}
+
+{% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': formId } %}
+
+{% endif %}
+
+{% include '_components/global/_json-ld-services' with { 'url':  entry.url, 'catTitle': firstLevel.title } %}
+
+>>>>>>> 00ca1af067b6ba401d5cfb3ec5cadfc6ccd20ac4
