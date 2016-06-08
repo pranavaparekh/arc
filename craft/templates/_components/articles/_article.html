@@ -77,32 +77,42 @@ $(document).ready(function() {
 {% includeCss articleCss %}
 {% includeJs articleJs %}
 
-<div class="article__body">
-  <h1 class="article__headline">{{ entry.title }}</h1>
-  <p class="release-date">
-    {{ entry.postDate|date("d M, Y") }}</p>
-  </p>
-    {% include '_components/global/_action' with { 'vertical': true } %}
-    
+<div class="row">
+  <div class="col-sm-9">
+    {# start article body #}
+    <div class="article__body">
+      <h1 class="article__headline">{{ entry.title }}</h1>
+      <p class="release-date">
+        {{ entry.postDate|date("d M, Y") }}</p>
+      </p>
+        {% include '_components/global/_action' with { 'vertical': true } %}
+        
 
-     {% include '_components/global/_byline' %}
+         {% include '_components/global/_byline' %}
 
+         {% set entryTags = entry.kcTags %}
 
-    {% set assets = entry.articlesBanner %}
-    {% if assets | length %}
-      {% for image in assets %}
-        <img src="{{ image.url }}" alt="" class="img-responsive article__image">
-      {% endfor %}
-    {% endif %}
-  <div class="article__content">
-    
-    {{ content }}
+         {% if entryTags | length %}
+          {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
+         {% endif %}
+
+        {% set assets = entry.articlesBanner %}
+        {% if assets | length %}
+          {% for image in assets %}
+            <img src="{{ image.url }}" alt="" class="img-responsive article__image">
+          {% endfor %}
+        {% endif %}
+      <div class="article__content">
+        
+        {{ content }}
+      </div>
+    </div>
+    {# end article body #}
   </div>
-</div>
-{% set entryTags = entry.kcTags %}
+  <div class="col-sm-3">
+    sidebar
+  </div>{# end col-sm-4 #}
+</div>{# end row #}
 
-{% if entryTags | length %}
-{% include '_components/global/_tag-list' with { 'tags': entryTags } %}
-{% endif %}
 <div id="disqus_thread"></div>
 
