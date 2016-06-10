@@ -11,6 +11,10 @@ body {
   background-color: #F4F8FA;
 }
 
+.sidebar {
+  margin-top: 180px;
+}
+
 {% endset %}
 {% includeCss kcBodyCss %}
 
@@ -22,8 +26,11 @@ body {
     <div class="col-sm-8">
       {% include '_components/category/_list' %}
     </div>
+    <!-- start sidebar -->
     <div class="col-sm-4">
-      {% include '_components/category/_sidebar' %}
+      <div class="sidebar">
+        {% include '_components/kc/_subscription-form' %}
+      </div>
     </div>
   </div>{# end col-sm-4 #}
 </div>{# end row #}
