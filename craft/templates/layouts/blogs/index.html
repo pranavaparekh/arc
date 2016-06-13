@@ -7,6 +7,16 @@
 
 {% block main %}
 
+{% set kcBodyCss %}
+
+body {
+  background-color: #F4F8FA !important;
+}
+
+{% endset %}
+
+{% includeCss kcBodyCss %}
+
 {% include '_components/global/_header' %}
 {% include '_components/blogs/_masthead' %}
 
