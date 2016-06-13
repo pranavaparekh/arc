@@ -9,6 +9,22 @@
 
 .kc-preview__headline {
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #6980A6;
+  letter-spacing: 0.06em;
+}
+
+.kc-preview__grid, .kc-preview__wrapper {
+  margin-top: 20px;
+}
+
+.kc-preview__grid__item p {
+  padding-top: 5px;
+}
+
+.kc-preview__wrapper p {
+  color: #949292;
 }
 
 {% endset %}
@@ -18,25 +34,30 @@
 <div class="kc-preview">
   <div class="row">
     <h3 class="kc-preview__headline">What's Inside</h3>
-    <div class="col-sm-4">
+    <div class="col-sm-4 kc-preview__wrapper">
       <p>We have premium content featuring authoritative insights and opinion on business, finance, science and technology</p>
     </div>
-    <div class="col-sm-8">
+    <!-- start container for icons and texts -->
+    <div class="col-sm-8 kc-preview__grid">
       <div class="row">
-        <div class="col-sm-6">
-          <p>50+ Articles</p>
+        <div class="col-sm-6 text-center kc-preview__grid__item">
+          <img src="/assets/images/icons/kc-articles.png" class="hidden-xs" alt="articles">
+          <p><a href="/knowledge-library/">50+ Articles</a></p>
         </div>
-        <div class="col-sm-6">
-          <p>30+ Special Reports</p>
+        <div class="col-sm-6 text-center kc-preview__grid__item">
+          <img src="/assets/images/icons/kc-special-reports.png" class="hidden-xs" alt="special reports">
+          <p><a href="/knowledge-library/special-reports">30+ Special Reports</a></p>
         </div>
       </div>{# end inner row #}
-
+       <br>
        <div class="row">
-        <div class="col-sm-6">
-          <p>50+ Blog Posts</p>
+        <div class="col-sm-6 text-center kc-preview__grid__item">
+          <img src="/assets/images/icons/kc-books.png" class="hidden-xs" alt="books and opinions">
+          <p><a href="/knowledge-library/blogs-and-opinions">50+ Blog Posts</a></p>
         </div>
-        <div class="col-sm-6">
-          <p>30+ Infographics</p>
+        <div class="col-sm-6 text-center kc-preview__grid__item">
+          <img src="/assets/images/icons/kc-infographics.png" class="hidden-xs" alt="infographics">
+          <p><a href="/knowledge-library/infographics">30+ Infographics</a></p>
         </div>
       </div>{# end inner row #}
     </div>{# end col-sm-8 #}
