@@ -1,0 +1,108 @@
+{% set submodalCss %}
+
+
+#areas-of-interest {
+  top:25%;
+  outline: none;
+}
+
+#areas-of-interest .modal-content {
+  border-radius: 0;
+  background: #fff;
+  padding: 3em;
+  border: 10px solid #3D74A6;
+  color: #3D74A6;
+}
+
+#areas-of-interest .modal-subtitle {
+  color: #A55E74;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+}
+
+#areas-of-interest .modal-title {
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+#areas-of-interest .modal-header {
+  border-top: 1px solid #cedbe6;
+  border-bottom: 1px solid #cedbe6;
+}
+
+#areas-of-interest .modal-footer {
+  border: none;
+}
+
+#areas-of-interest .btn-success {
+  color: #fff;
+  background-color: #3D74A6;
+  border-color: #3D74A6;
+  border-radius: 0;
+  padding: 10px 190px;
+}
+
+{% endset %}
+
+{% includeCss submodalCss %}
+
+{# start modal #}
+<div id="areas-of-interest" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-subtitle text-center">Why bother with content you don't need?</h5>
+        <h4 class="modal-title text-center">Just pick the topics you want to subscribe to</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="checkbox">
+                <label class="checkbox">
+                <input type="checkbox" id=Checkbox1" name="Areas_of_Interest" value="Valuation Know-how"> Valuation Know-how
+                </label>
+              </div>
+              <div class="checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" id=Checkbox2" name="Areas_of_Interest" value="What’s Changing In The StartUp World"> What’s Changing In The StartUp World
+                </label>
+              </div>
+              <div class="checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" name="Areas_of_Interest" value="All About IP Valuation"> All About IP Valuation
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="checkbox">
+                <label class="checkbox">
+                <input type="checkbox" id=Checkbox1" name="Areas_of_Interest" value="Valuation Know-how"> Valuation Know-how
+                </label>
+              </div>
+              <div class="checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" id=Checkbox2" name="Areas_of_Interest" value="What’s Changing In The StartUp World"> What’s Changing In The StartUp World
+                </label>
+              </div>
+              <div class="checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" id="inlineCheckbox3" name="Areas_of_Interest" value="All About IP Valuation"> All About IP Valuation
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>{# end row #}
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success">click to subscribe</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+{# end modal #}

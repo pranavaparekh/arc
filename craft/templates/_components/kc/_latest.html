@@ -33,6 +33,12 @@
     text-transform: uppercase;
     font-size: 0.7em;
     letter-spacing: 0.1em;
+    color: #828384;
+  }
+
+  .kc-latest__date {
+    margin-top: 5px;
+    color: #bbb8b8;
   }
 
 
@@ -48,6 +54,7 @@
   <li class="kc-latest__item">
     <p class="kc-latest__item__label">{{ entry.type }}</p>
     <a href={{ entry.url }}>{{ entry.title }}</a>
+    <p class="kc-latest__date"><em><small>published on {{ blogPost.postDate | date("M d, Y") }}</small></em></p>
   </li>
 {% endfor %}
 </ul>

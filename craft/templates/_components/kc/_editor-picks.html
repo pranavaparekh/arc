@@ -22,7 +22,7 @@
   margin-bottom: 20px;
   max-height: 150px;
   overflow: hidden;
-  position: relative
+  position: relative;
 }
 
 .edpick__story__content {
@@ -48,6 +48,8 @@
   text-decoration: none;
 }
 
+
+
 {% endset %}
 
 {% includeCss edpickCss %}
@@ -56,7 +58,7 @@
   <span class="kc-label">editor-picks</span>
   <ul class="edpick__story__list">
   {% for entry in allEditorEntries %}
-    <li class="edpick__story">
+    <li class="edpick__story shadow-box tint">
       
       {% switch entry.type %}
 
