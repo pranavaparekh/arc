@@ -2,8 +2,8 @@
 
 {% set latestSpecialReports = craft.entries.section('specialReports').limit(1).ids() %}
 {% set latestArticles = craft.entries.section('articles').limit(2).ids() %}
-{% set latestBlogPosts = craft.entries.section('blogs').limit(2).ids() %}
-{% set latestInfographics = craft.entries.section('infographics').limit(2).ids() %}
+{% set latestBlogPosts = craft.entries.section('blogs').limit(1).ids() %}
+{% set latestInfographics = craft.entries.section('infographics').limit(1).ids() %}
 
 {% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
 
@@ -13,7 +13,7 @@
   
   .kc-latest {
     background: white;
-    padding: 6% 8%;
+    padding: 32px 8%;
   }
 
   .kc-latest__headline {
