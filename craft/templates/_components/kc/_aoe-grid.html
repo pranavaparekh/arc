@@ -1,0 +1,101 @@
+{% set blockGridACss %}
+
+.aoe-grid {
+  padding: 30px 0px;
+}
+
+.aoe-grid__headline {
+  padding: 30px 0px;
+  font-size: 4em;
+  font-weight: 100;
+  color: #889099;
+}
+
+.aoe-grid__item {
+  position: relative;
+}
+
+
+.aoe-grid__item__content {
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 95%;
+  text-align: center;
+}
+
+.aoe-grid__item__content h4 {
+  text-shadow: 1px 2px 3px #656060;
+}
+
+.aoe-grid__item__content__link {
+  color: white;
+}
+
+{% endset %}
+
+{% includeCss blockGridACss %}
+
+<div class="col-sm-12 aoe-grid">
+
+  <header>
+    <h3 class="text-center aoe-grid__headline">browse content by areas of interest</h3>
+  </header>
+  
+  {# start grid here #}
+  
+  <a class="aoe-grid__item__content__link" href="/practices/business-research">
+    <div class="col-sm-3">
+      <div class="aoe-grid__item tint">
+        <img src="/assets/images/categories/br-research-square.jpg" class="img-responsive">
+      </div>
+      
+        <div class="aoe-grid__item__content">
+          <h4>Business Research</h4>
+        </div>{# end content here #}
+
+    </div>
+  </a>
+  
+  <a class="aoe-grid__item__content__link" href="/practices/investment-research">
+    <div class="col-sm-3">
+      <div class="aoe-grid__item tint">
+        <img src="/assets/images/categories/investment-research-square.jpg" class="img-responsive">
+      </div>
+      <div class="aoe-grid__item__content">
+        <h4>Investment Research</h4>
+      </div>
+
+    </div>
+  </a>
+  
+  <a class="aoe-grid__item__content__link" href="/practices/ip-research">
+    <div class="col-sm-3">
+      <div class="aoe-grid__item tint">
+        <img src="/assets/images/categories/ip-research-square.jpg" class="img-responsive">
+      </div>
+      <div class="aoe-grid__item__content">
+        <h4>IP Research</h4>
+      </div>{# end content here #}
+
+    </div>
+  </a>
+  
+  <a class="aoe-grid__item__content__link" href="/practices/procurement-research">
+    <div class="col-sm-3">
+      <div class="aoe-grid__item tint">
+        <img src="/assets/images/categories/procurement-research-square.jpg" class="img-responsive">
+      </div>
+      <div class="aoe-grid__item__content">
+        <h4>Procurement Research</h4>
+      </div>{# start content here #}
+
+    </div>
+  </a>
+  
+  {# end grid here #}
+
+</div>{# end col-sm-12 #}
