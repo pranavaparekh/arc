@@ -1,6 +1,7 @@
 <?php
 namespace Craft;
-
+use GuzzleHttp\Client as Client;
+use GuzzleHttp\Psr7\Request;
 
 /**
  * Recaptcha controller
@@ -21,44 +22,44 @@ class Subscribor_ServiceController extends BaseController
     // Get post variables - returns 400 if email not provided
     // $addEmail = craft()->request->getRequiredParam('Email_Address');
 
-    // get all form data
-    $data = craft()->request->getPost();
-
      // get the endpoint to which data is submitted
     $endpoint = craft()->request->getPost('endpoint');
 
-    $areas = craft()->request->getPost('Areas_of_Interest');
+    // get areas of interest and implode multiple values into comma separated values
+    $areas = implode(",", craft()->request->getPost('Areas_of_Interest'));
 
-    // print "<pre>";
-    // print "form submitted";
-    // print_r($areas);
-    // print "</pre>";
-    // exit();
+    // get all data
+    $data = craft()->request->getPost();
 
-    // create a new guzzle client
-    $client = new \Guzzle\Http\Client();
+    // modify the array to include imploded values (see above)
+    $data['Areas_of_Interest'] = $areas;
 
-    // configure endpoint
-    $request = $client->post($endpoint);
+    // this is old version 3.9.3 componser client
+    // $client = new \Guzzle\Http\Client();
 
-    // add form data to the request
-    $request->addPostFields($data);
+    // create a new guzzle client with version 6.2.0 from composer package
+    $client = new Client();
 
-    // send the data to the endpoint
-    $result = $client->send($request);
+    // send data to endpoint
+    $response = $client->request('POST', $endpoint, [
+        'form_params' => $data
+    ]);
 
-    if ($result->getStatusCode() == 200) {
+    if ($response->getStatusCode() == 200) {
       craft()->userSession->setFlash('success', 'You have subscribed successfully to our newsletter');
       $this->redirectToPostedUrl();
     }
+
 
   }
       
 }
 
-// print "<pre>";
-// print "form submitted";
-// print_r($data);
-// print "</pre>";
-// exit();
+    // $request = new Request('POST', $endpoint, $data);
+
+    // print "<pre>";
+    // print "form submitted";
+    // print_r($request);
+    // print "</pre>";
+    // exit();
 

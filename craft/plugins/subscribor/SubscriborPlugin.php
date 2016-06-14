@@ -23,6 +23,10 @@ class SubscriborPlugin extends BasePlugin
         return '1.0.0';
     }
 
+    function init() {
+        require CRAFT_PLUGINS_PATH.'/subscribor/vendor/autoload.php';
+    }
+
     function getDeveloper()
     {
         return 'Amit Erandole';
