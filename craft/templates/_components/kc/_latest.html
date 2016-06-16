@@ -10,10 +10,13 @@
 {% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
 
 {% set kcLatestCss %}
+
+  .kc-sidebar {
+    background: white;
+  }
   
   .kc-latest {
-    background: white;
-    padding: 32px 8%;
+    
   }
 
   .kc-latest__headline {
@@ -21,6 +24,7 @@
     font-weight: 300;
     color: #616161;
     letter-spacing: 0.1em;
+    padding-top: 15px;
   }
 
   .kc-latest__item {
@@ -47,7 +51,7 @@
 {% includeCss kcLatestCss %}
 
 
-<div class="kc-latest shadow-box">
+<div class="kc-latest">
 <h2 class="kc-latest__headline">The Latest</h2>
 <ul class="kc-latest__list">
 {% for entry in allLatestEntries %}

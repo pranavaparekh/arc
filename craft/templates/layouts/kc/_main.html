@@ -1,17 +1,19 @@
+{% includeJsFile "/assets/js/jquery.matchHeight-min.js" %}
+
 {% set kcMainCss %}
 @media (min-width: 768px) {
-   .container.kc-main {
+/*   .container.kc-main {
       width: 920px;
       max-width: 100%;
-  }
+  }*/
 }
 
 
 @media (min-width: 992px) {
-  .container.kc-main {
+/*  .container.kc-main {
       width: 992px;
       max-width: 100%;
-  }
+  }*/
 }
 
 @media (min-width: 1200px) {
@@ -34,20 +36,30 @@
 
 {% endset %}
 
-{% includeCss kcMainCss %}
 
+{% set kcMainJs %}
+
+$(function() {
+    $('.kc-wrapper').matchHeight();
+});
+
+{% endset %}
+
+
+{% includeCss kcMainCss %}
+{% includeJs kcMainJs %}
 <div class="container kc-main">
   <div class="row">
-    <div class="col-sm-4 kc-sidebar">
+    <div class="col-sm-4 kc-sidebar kc-wrapper shadow-box">
       {% include '_components/kc/_latest' %}
     </div><!--  end col-sm-4 -->
 
-    <div class="col-sm-5 kc-focus">
+    <div class="col-sm-5 kc-focus kc-wrapper">
       {% include '_components/kc/_featured' %}
       {% include '_components/kc/_preview' %}
     </div><!--  end col-sm-4 -->
 
-    <div class="col-sm-3 kc-editorial">
+    <div class="col-sm-3 kc-editorial kc-wrapper">
       {% include '_components/kc/_editor-picks' %}
     </div><!--  end col-sm-8 -->
   </div><!--  end row -->

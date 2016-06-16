@@ -20,9 +20,13 @@
 
 .edpick__story {
   margin-bottom: 20px;
-  max-height: 150px;
+  max-height: 155px;
   overflow: hidden;
   position: relative;
+}
+
+.edpick__story img {
+  min-height: 300px;
 }
 
 .edpick__story__content {
@@ -37,7 +41,7 @@
 }
 
 .edpick__story__content__link {
-  font-size: 1.2em;
+  font-size: 1em;
   color: white;
   text-shadow: 1px 2px 3px #6f6f6f;
   transition: 0.5s color;
@@ -46,6 +50,12 @@
 .edpick__story__content__link:hover, .edpick__story__content__link:focus {
   color: #e2dddd;
   text-decoration: none;
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .edpick__story__content__link {
+    font-size: 0.8em;
+  }
 }
 
 
