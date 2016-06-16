@@ -119,10 +119,10 @@ $(document).ready(function () {
               <li class="kc-content__list__item shadow-box">
                 <div class="row">
                   
-                  <div class="col-sm-7">
+                  <div class="col-lg-7 col-sm-12">
                     <img src={{ blogPost.blogsBanner.first().url }} class="img-responsive">
                   </div>
-                  <div class="col-sm-5">
+                  <div class="col-lg-5 col-sm-12">
                     
                     <article class="kc-content__grid__item kc-content__blog1 image-cover">
                       <div class="kc-content__grid__inner">
@@ -154,11 +154,11 @@ $(document).ready(function () {
               <li class="kc-content__list__item shadow-box">
                 <div class="row">
                   
-                  <div class="col-sm-7">
+                  <div class="col-lg-7 col-sm-12">
                     <img src={{ article.articlesBanner.first().url }} class="img-responsive">
                   </div>
 
-                  <div class="col-sm-5">
+                  <div class="col-lg-5 col-sm-12">
                     <article class="kc-content__grid__item kc-content__blog1 image-cover">
                       <div class="kc-content__grid__inner">
                         <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
@@ -184,15 +184,30 @@ $(document).ready(function () {
           <div class="col-sm-12">
             <ol class="kc-content__list">
               {% for infographic in infographics %}
+              
               <li class="kc-content__list__item shadow-box">
-                <article class="kc-content__grid__item kc-content__blog1 image-cover">
-                  <div class="kc-content__grid__inner">
-                    <h5 class="kc-content__headline"><a href="{{ infographic.url }}">{{ infographic.title }}</a></h5>
-                    <p class="kc-content__excerpt">{{ infographic.igContent|hacksaw(words='25') }}</p>
-                    <p class="kc-content__date"><em><small>published on {{ blogPost.postDate | date("M d, Y") }}</small></em></p>
+                <div class="row">
+                  
+                  <div class="col-lg-7 col-sm-12">
+                  {% if infographic.igBanner[1] | length %}
+                    {% set asset = infographic.igBanner[1] %}
+                    <img src={{ asset.url() }} class="img-responsive" alt={{infographic.title}}>
+                  {% endif %}
                   </div>
-                </article>
+
+                  <div class="col-lg-5 col-sm-12">
+                    <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                      <div class="kc-content__grid__inner">
+                        <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+                        <p class="kc-content__excerpt">{{ infographic.igContent|hacksaw(words='25') }}</p>
+                        <p class="kc-content__date"><em><small>published on {{ infographic.postDate | date("M d, Y") }}</small></em></p>
+                      </div>
+                    </article>
+                  </div> {# end col-sm-7 #}
+                </div>{# end row #}
               </li>
+
+               
               {% endfor %}
             </ol>
           </div><!-- offset-2-->
@@ -209,11 +224,11 @@ $(document).ready(function () {
               <li class="kc-content__list__item shadow-box">
                 <div class="row">
                   
-                  <div class="col-sm-7">
+                  <div class="col-lg-7 col-sm-12">
                     <img src={{ specialReport.srBanner.first().url }} class="img-responsive">
                   </div>
 
-                  <div class="col-sm-5">
+                  <div class="col-lg-5 col-sm-12">
                     <article class="kc-content__grid__item kc-content__blog1 image-cover">
                       <div class="kc-content__grid__inner">
                         <h5 class="kc-content__headline"><a href="{{ specialReport.url }}">{{ specialReport.title }}</a></h5>
