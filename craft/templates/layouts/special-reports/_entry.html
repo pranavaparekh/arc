@@ -7,6 +7,16 @@
 
 {% include '_components/global/_header' %}
 
+{% set articleLayoutCss %}
+
+#main {
+  background-color: #F4F8FA;
+}
+
+{% endset %}
+
+{% includeCss articleLayoutCss %}
+
 <div class="container-fluid article">
   <div class="row">
     <div class="container">

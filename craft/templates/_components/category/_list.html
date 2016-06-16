@@ -24,6 +24,10 @@
   background: #fff;
 }
 
+.kc-content__list__item img {
+  min-height: 230px;
+}
+
 .kc-content__list__item:first-child {
   margin-top: 30px;
 }
@@ -236,8 +240,8 @@ $(function() {
                   <div class="col-lg-5 col-sm-12">
                     <article class="kc-content__grid__item kc-content__blog1 image-cover">
                       <div class="kc-content__grid__inner">
-                        <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
-                        <p class="kc-content__excerpt">{{ infographic.igContent|hacksaw(words='25') }}</p>
+                        <h5 class="kc-content__headline"><a href="{{ infographic.url }}">{{ infographic.title }}</a></h5>
+                        <p class="kc-content__excerpt">{{ infographic.igContent|hacksaw(words='15') }}</p>
                         <p class="kc-content__date"><em><small>published on {{ infographic.postDate | date("M d, Y") }}</small></em></p>
                       </div>
                     </article>

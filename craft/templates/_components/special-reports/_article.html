@@ -2,17 +2,17 @@
 
 .article {
   min-height: 1000px;
-  padding-top: 84px;
+  padding-top: 120px;
 }
 
 .article__body {
   background: white;
-  padding: 5em 90px;
+  padding: 5px 30px;
 }
 
 .article__body h2 {
   color: #2E7DA8;
-  font-size: 1.5em;
+  font-size: 28px;
 }
 
 .article__headline {
@@ -37,14 +37,25 @@
   margin-bottom: 20px;
 }
 
+.article__content img {
+  height: auto;
+  display:block;
+  max-width: 100%;
+  width:100%; 
+}
+
 .release-date {
   color: {{ roman }};
+}
+
+.sidebar {
 }
 
 @media only screen and (max-width : 480px) {
   .article__body, #disqus_thread {
     padding: 10px 20px;
   }
+}
 }
 
 {% endset %}
@@ -77,47 +88,64 @@ $(document).ready(function() {
 {% includeCss articleCss %}
 {% includeJs articleJs %}
 
-<div class="article__body">
-  <h1 class="article__headline">{{ entry.title }}</h1>
-  <p class="release-date">
-    {{ entry.postDate|date("d M, Y") }}
-  </p>
+<div class="row">
+  <div class="col-sm-8">
+    {# start article body #}
+    <div class="article__body shadow-box">
+      <h1 class="article__headline">{{ entry.title }}</h1>
+      <p class="release-date">
+        {{ entry.postDate|date("d M, Y") }}
+      </p>
 
-  {% include '_components/global/_action' %}
-  {% include '_components/global/_byline' %}
-
-
-  {% set pdfLink = entry.srDownload.first() %}
-  {% set actonPdfLink = entry.srPdfUrl %}
-  {% set asset = entry.srBanner.first() %}
-
-  {% if asset | length %}
-    <a href="{{ pdfLink.url }}" target="_blank">
-      <img src="{{ asset.url }}" alt="" class="img-responsive article__image">
-    </a>
-  {% endif %}
+      {% include '_components/global/_action' with { 'vertical': true } %}
+      {% include '_components/global/_byline' %}
 
 
-  {% if actonPdfLink | length %}
-    <p class="article__download"><strong>Download this report:</strong>&nbsp;
-      <a href="{{ actonPdfLink }}" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;{{ entry.title }}</a>
-    </p>
-    <hr>
-  {% else %}
-    <p class="article__download"><strong>Download this report:</strong>
-      <a href="{{ pdfLink.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i>   {{pdfLink.title}}</a>
-    </p>
-    <hr>
-  {% endif %}
+      {% set pdfLink = entry.srDownload.first() %}
+      {% set actonPdfLink = entry.srPdfUrl %}
+      {% set asset = entry.srBanner.first() %}
+
+      {% if asset | length %}
+        <a href="{{ pdfLink.url }}" target="_blank">
+          <img src="{{ asset.url }}" alt="" class="img-responsive article__image">
+        </a>
+      {% endif %}
 
 
-  <div class="article__content">
-    {{ content }}
-  </div>
-</div>
-{% set entryTags = entry.kcTags %}
+      {% if actonPdfLink | length %}
+        <p class="article__download"><strong>Download this report:</strong>&nbsp;
+          <a href="{{ actonPdfLink }}" target="_blank"><i class="fa fa-file-pdf-o"></i>&nbsp;&nbsp;{{ entry.title }}</a>
+        </p>
+        <hr>
+      {% else %}
+        <p class="article__download"><strong>Download this report:</strong>
+          <a href="{{ pdfLink.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i>   {{pdfLink.title}}</a>
+        </p>
+        <hr>
+      {% endif %}
 
-{% if entryTags | length %}
-{% include '_components/global/_tag-list' with { 'tags': entryTags } %}
-{% endif %}
+
+      <div class="article__content">
+        {{ content }}
+      </div>
+
+      {% set entryTags = entry.kcTags %}
+      {% if entryTags | length %}
+        {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
+      {% endif %}
+      
+    </div>{# end article content #}
+  </div>{# end column-8 #}
+  <div class="col-sm-4">
+    <div class="sidebar">
+      {% include '_components/kc/_subscription-form' %}
+    </div>
+  </div>{# end col-sm-4 #}
+
+</div>{# end row #}
+
+
+
+<br>
+
 <div id="disqus_thread"></div>
