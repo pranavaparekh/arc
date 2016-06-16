@@ -522,9 +522,6 @@
       <script>
       window.onload = function ()
       {
-      var url = window.location.href;
-      document.getElementById("formurl").value = url;
-
       var urlParams;
       var query = (window.location != window.parent.location) ? document.referrer.split('?')[1] || '' : window.location.search.split('?')[1]|| '';
       (window.onpopstate = function () {
@@ -557,9 +554,8 @@
         <input type="hidden" name="utm_medium" />
         <input type="hidden" name="utm_content" />
         <input type="hidden" name="utm_campaign" />
-        <input type="hidden" name="referrer" />
-        <input type="hidden" name="ao_refurl" value="" />
-        <input type="hidden" name="formurl" id="formurl" value="" />
+        <input type="hidden" name="referrer" value="{{ craft.request.urlReferrer }}"/>
+        <input type="hidden" name="formurl" id="formurl" value="{{ craft.request.url }}" />
 
         {{ getCsrfInput() }}
 
@@ -623,7 +619,6 @@
           </div><!--  end col-sm-12 -->
         </div>
       </form>
-      <script>document.getElementsByName('ao_refurl')[0].value = document.referrer</script>
     </div>
   </div>
 </div>
