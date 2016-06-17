@@ -16,7 +16,7 @@ p {
 {% includeCss thankyouCss %}
 
 
-
+  {% set actonPdfLink = entry.srPdfUrl %}
 <div class="container thank-you">
   <div class="row">
     <div class="container">
@@ -32,6 +32,12 @@ p {
           </p>
 
           <p style="padding-top: 20px;"><em>To view the list of all content pieces <a href="https://onedrive.live.com/view.aspx?resid=E66445CFBBFF2309!149&ithint=file%2cxlsx&app=Excel&authkey=!AO6aBrvX-suKeNs" target="_blank">click here</em></p>
+
+        <hr>
+        <p class="article__download"><strong>Download this report:</strong>
+          <a href="{{ actonPdfLink.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i>   {{actonPdfLink.title}}</a>
+        </p>
+        
         </div>
       </div>
     </div>
