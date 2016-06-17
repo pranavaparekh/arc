@@ -1,5 +1,40 @@
 
-aoe template
 
-http://aranca.craft.dev/knowledge-library/areas-of-interest/identifying-growth-opportunities
-                        knowledge-library/areas-of-interest/{slug}
+{% extends "base_layouts/_site" %}
+{% set title = category %}
+
+{% block main %}
+
+{% set kcBodyCss %}
+
+body {
+  background-color: #F4F8FA;
+}
+
+.sidebar {
+  margin-top: 180px;
+}
+
+{% endset %}
+{% includeCss kcBodyCss %}
+
+{% include '_components/global/_header' %}
+{% include '_components/category/_masthead' with { 'showTitle': true } %}
+
+<div class="container-fluid kc-cat">
+  <div class="row">
+    <div class="col-sm-8">
+      {% include '_components/category/_list' %}
+    </div>
+    <!-- start sidebar -->
+    <div class="col-sm-4">
+      <div class="sidebar">
+        {% include '_components/category/_sidebar' %}
+      </div>
+    </div>
+  </div>{# end col-sm-4 #}
+</div>{# end row #}
+{# end container #}
+
+
+{% endblock %}

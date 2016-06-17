@@ -29,7 +29,7 @@
   }
 
   .cat-masthead__content--headline {
-    font-size: 3.5em;
+    font-size: 2.5em;
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 300;
@@ -37,7 +37,7 @@
   }
 
   .cat-masthead__content--tagline {
-    font-size: 2em;
+    font-size: 1.8em;
     line-height: 1em;
     font-weight: 300;
     text-shadow: 2px 2px 3px #232323;
@@ -79,7 +79,13 @@
 <section class="container-fluid cat-masthead">
   <div class="row">
     <div class="cat-masthead__content">
-      <h2 class="cat-masthead__content--headline">{{ category.displayCategoryTitle }}</h2>
+      <h2 class="cat-masthead__content--headline">
+        {% if showTitle is defined %}
+          {{ category.title }}
+        {% else %}
+          {{ category.displayCategoryTitle }}
+        {% endif %}
+      </h2>
       <hr class="cat-masthead__border">
       <p class="cat-masthead__content--tagline">
       Articles, Blogs, Special Reports and more</p>
