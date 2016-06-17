@@ -16,7 +16,7 @@ p {
 {% includeCss thankyouCss %}
 
 
-  {% set actonPdfLink = entry.srPdfUrl %}
+
 <div class="container thank-you">
   <div class="row">
     <div class="container">
@@ -35,9 +35,9 @@ p {
 
         <hr>
         <p class="article__download"><strong>Download this report:</strong>
-          <a href="{{ actonPdfLink.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i>   {{actonPdfLink.title}}</a>
+          <a href="{{ srPdfUrl.url }}" target="_blank"><i class="fa fa-file-pdf-o"></i>   {{srPdfUrl.title}}</a>
         </p>
-        
+
         </div>
       </div>
     </div>
