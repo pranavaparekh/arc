@@ -114,8 +114,10 @@ $(document).ready(function() {
 <iframe src="{{ siteUrl }}/_ppform/_ppform1.html" width="200" height="300" ></iframe>
 {% elseif craft.request.url == "http://www.aranca.com/knowledge-library/special-reports/gold-will-it-shine-in-the-near-term" %}
 <iframe src="{{ siteUrl }}/_ppform/_ppform2.html" width="200" height="300" ></iframe>
-{% else craft.request.url == "http://www.aranca.com/knowledge-library/special-reports/greece-impasse-can-europe-bear-greeces-future" %}
+{% elseif craft.request.url == "http://www.aranca.com/knowledge-library/special-reports/greece-impasse-can-europe-bear-greeces-future" %}
 <iframe src="{{ siteUrl }}/_ppform/_ppform3.html" width="200" height="300" ></iframe>
+{% else %}
+
 {% endif %}
 
   <div class="article__content">
