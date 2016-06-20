@@ -51,6 +51,10 @@
 .sidebar {
 }
 
+.edpick {
+  margin-top: 50px;
+}
+
 @media only screen and (max-width : 480px) {
   .article__body, #disqus_thread {
     padding: 10px 20px;
@@ -122,6 +126,8 @@ $(document).ready(function() {
   <div class="col-sm-4">
     <div class="sidebar">
       {% include '_components/kc/_subscription-form' %}
+      {% include '_components/kc/_social' %}
+      {% include '_components/kc/_editor-picks' %}
     </div>
   </div>{# end col-sm-4 #}
 </div>{# end row #}

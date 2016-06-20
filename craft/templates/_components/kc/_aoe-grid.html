@@ -1,7 +1,12 @@
 {% set blockGridACss %}
 
 .aoe-grid {
-  padding: 30px 0px;
+  padding: 60px 0px;
+}
+
+.aoe-grid__header img {
+  display:block;
+  margin:auto;
 }
 
 .aoe-grid .row {
@@ -13,6 +18,7 @@
   font-size: 4em;
   font-weight: 100;
   color: #889099;
+  padding-top: 0;
 }
 
 .aoe-grid__item {
@@ -45,7 +51,8 @@
 
 <div class="col-sm-12 aoe-grid">
 
-  <header>
+  <header class="aoe-grid__header">
+     <img src="/assets/images/icons/aoe-icon.png">
     <h3 class="text-center aoe-grid__headline">browse content by areas of interest</h3>
   </header>
   
