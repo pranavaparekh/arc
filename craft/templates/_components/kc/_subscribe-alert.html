@@ -1,0 +1,31 @@
+{% set subAlertCss %}
+
+.sub-alert.alert {
+  position: absolute;
+  top: 73px;
+  z-index: 1;
+  width: 100%;
+}
+
+
+{% endset %}
+
+{% includeCss subAlertCss %}
+
+{% if craft.session.hasFlash('success') %}
+
+  <div class="sub-alert alert alert-success">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong> {{ craft.session.getFlash('success') | raw }}
+  </div>
+
+{% endif %}
+
+{% if craft.session.hasFlash('failure') %}
+
+  <div class="sub-alert alert alert-danger">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Sorry!</strong>  {{ craft.session.getFlash('failure') | raw }}
+  </div>
+
+{% endif %}

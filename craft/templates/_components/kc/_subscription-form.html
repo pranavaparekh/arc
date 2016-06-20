@@ -72,7 +72,7 @@ $( document ).ready(function() {
     if( isEmailEmpty( emailField.val() ) || !isvalidEmail( emailField.val() ) ) {
       console.log('We got errors');
       link.click( function(e){ e.stopPropagation(); } );
-      helpBlock.html('You got errors');
+      helpBlock.html('Please enter a valid email address');
     } else {
       helpBlock.html('');
       // enableDisableSubscribeButton();
@@ -94,7 +94,7 @@ $( document ).ready(function() {
   <form method="post" accept-charset="UTF-8" id="sub-form" action="" />
       <input type="hidden" name="action" value="subscribor/service/subscribe">
       <input type="hidden" name="endpoint" value="http://connect.aranca.com/acton/eform/17562/0022/d-ext-0002" />
-      <input type="hidden" name="redirect" value="http://aranca.craft.dev/knowledge-library" />
+      <input type="hidden" name="redirect" value="{{ url(craft.request.path) }}" />
       {{ getCsrfInput() }}
       
       <header class="sub-form__header">
