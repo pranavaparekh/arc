@@ -42,7 +42,7 @@
 
 {% set featuredEntries = craft.entries.section('specialReports').limit(3) %}
 
-<a href="/knowledge-library/special-reports" class="kc-label--teal">Featured Stories</a>
+<span class="kc-label--teal">Featured Stories</span>
 <div class="slides kc-slider">
 
 {% for entry in featuredEntries %}
@@ -57,7 +57,7 @@
 
 
     <div class="featEntry__headline__wrapper">
-      <p class="kc-featured--slide__meta">{{ entry.title }} | {{ entry.postDate }}</p>
+      <p class="kc-featured--slide__meta">{{ entry.title }}</p>
     </div>
   </div><!-- kc-featured-slide -->
   </a>
