@@ -15,6 +15,7 @@
 
 {% endset %}
 
+
 {% includeCss articleLayoutCss %}
 
 {% include '_components/kc/_subscribe-alert' %}
@@ -36,12 +37,14 @@
           {% include '_components/blogs/_article'
               with { 'category': category, 'content': content }
           %}
+          
+          {% include '_components/kc/_disqus' %}
+          
 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div><!-- end col-sm-12 -->
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </div><!-- end row -->
+</div><!-- end container-fluid -->
 {% include '_components/global/_footer' %}
-{% includeJsFile '/assets/js/disqus.js' %}
 {% endblock %}

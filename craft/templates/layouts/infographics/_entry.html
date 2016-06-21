@@ -24,12 +24,12 @@
           {% include '_components/infographics/_article'
               with { 'category': category, 'content': content, 'banner': banner }
           %}
-
+          
+          {% include '_components/kc/_disqus' %}
         </div>
       </div>
     </div>
   </div>
 </div>
 {% include '_components/global/_footer' %}
-{% includeJsFile '/assets/js/disqus.js' %}
 {% endblock %}
