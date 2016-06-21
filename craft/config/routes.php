@@ -56,5 +56,7 @@ return array(
    'valuation-and-advisory/us-gaap-reporting' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/us-tax-compliance' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/transaction-support' => 'layouts/services/va/_redirects',
-   'knowledge/download-center' => 'layouts/kc/_redirect'
+   'knowledge/download-center' => 'layouts/kc/_redirect',
+
+   'index.aspx' => 'index_redirect'
 );
