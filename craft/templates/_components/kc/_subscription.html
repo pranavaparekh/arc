@@ -55,7 +55,22 @@
             <input type="hidden" name="action" value="subscribor/service/subscribe">
             <input type="hidden" name="endpoint" value="http://connect.aranca.com/acton/eform/17562/0022/d-ext-0002" />
             <input type="hidden" name="redirect" value="{{ url(craft.request.path) }}" />
-            {{ getCsrfInput() }}
+            <input type="hidden" name="_form_name_" value="Subscription Form" />
+            <input type="hidden" name="Subscription_Status" value="on" />
+            <input type="hidden" name="WebPage_URL" value="{{ url(craft.request.path) }}" />
+            <input type="hidden" name="Webpage_Name" value="{{ entry.title}}" />
+            <input type="hidden" name="referrer" value="{{ craft.request.urlReferrer }}" />
+            <input type="hidden" name="ao_refurl" value="{{ craft.request.urlReferrer }}" />
+            <input type="hidden" name="Created_By" value="Marketing" />
+            <input type="hidden" name="Lead_Source" value="Website" />
+            <input type="hidden" name="Form_Name" value="MQL Subscription form" />
+            <input type="hidden" name="IMSF" value="MQL" />
+            <input type="hidden" name="AoI_Conversion_Point" value="Subscription form" />
+            <input type="hidden" name="utm_source" />
+            <input type="hidden" name="utm_medium" />
+            <input type="hidden" name="utm_content" />
+            <input type="hidden" name="utm_campaign" />
+                  {{ getCsrfInput() }}
 
             <div class="input-group">
               <input type="email" class="sub-form__email form-control" id="mql-subscription" placeholder="Just your email" name="Email_Address">
