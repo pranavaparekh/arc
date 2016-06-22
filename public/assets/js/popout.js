@@ -11,7 +11,7 @@ $(document).ready(function () {
         // evt.preventDefault();
         $('.wbs-container').toggleClass('active');
         if (!$('.wbs-container').hasClass('active')) {
-            $(this).delay(300).queue(function () {
+            $(this).delay(300).queue(function () {http://www.aranca.com/
                 $.dequeue(this);
                 clearStatusSlide();
                 if (timer) {
@@ -42,7 +42,7 @@ function clearStatusSlide() {
 }
 
 Waybeo.CTC.Init({
-    hash: '56bd928aa3e24',
+    hash: '56bd928aa3e24'
 });
 
 Waybeo.Utils.getIpCountry(function(l) {
