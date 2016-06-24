@@ -21,7 +21,7 @@
           {% set asset = entry.articlesBanner.first() %}
 
           {% if asset %}
-              <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}>
+              <img src="{{ asset.url }}" class="img-responsive" alt="{{ asset.altTag }}">
           {% else %}
               <img src="/assets/images/Article-thumb.jpg" class="img-responsive" alt={{entry.title}}>
           {% endif %}

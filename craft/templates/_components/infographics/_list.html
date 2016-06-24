@@ -18,7 +18,7 @@
         <a href={{ entry.url }}>
         {% if (entry.igBanner | length) > 1 %}
           {% set asset = entry.igBanner[1] %}
-          <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}> <br>
+          <img src="{{ asset.url }}" class="img-responsive" alt="{{ asset.altTag }}"> <br>
         {% endif %}
 
         <div class="featEntry__headline__wrapper--short">

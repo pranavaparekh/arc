@@ -110,7 +110,7 @@ $(document).ready(function() {
 
       {% if asset | length %}
         <a href="{{ pdfLink.url }}" target="_blank">
-          <img src="{{ asset.url }}" alt="" class="img-responsive article__image">
+          <img src="{{ asset.url }}" alt="{{ asset.altTag }}" class="img-responsive article__image">
         </a>
       {% endif %}
 
