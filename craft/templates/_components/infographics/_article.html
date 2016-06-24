@@ -94,7 +94,7 @@ $(document).ready(function() {
     </div>
 
     {% if banner | length %}
-        <img src="{{ banner.url() }}" alt="" class="img-responsive article__image">
+        <img src="{{ banner.url() }}" alt="{{ banner.altTag }}" class="img-responsive article__image">
     {% endif %}
 
 </div>

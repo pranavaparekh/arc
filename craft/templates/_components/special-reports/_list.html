@@ -21,7 +21,7 @@
          {% set asset = entry.srBanner.first() %}
 
         {% if asset %}
-            <img src={{ asset.url }} class="img-responsive" alt={{entry.title}}>
+            <img src="{{ asset.url }}" class="img-responsive" alt="{{asset.altTag}}">
         {% endif %}
 
         <div class="featEntry__headline__wrapper">
