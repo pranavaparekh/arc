@@ -20,7 +20,7 @@
 
 return array(
     // match url => load template
-   'media-room' => 'layouts/media-center/index',
+   'media-room' => 'layouts/media-room/index',
    'press-releases' => 'layouts/press-releases/index',
    'press-releases/practices/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
    'press-releases/regions/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
@@ -50,6 +50,8 @@ return array(
    'thankyou-(?P<practiceType>\w+\-?\w+?\-?\w+?)' => 'layouts/thank-you/_entry',
    'thankyou/subscribe' => 'layouts/thank-you/_subscribe-thankyou',
    'thankyou/subscribe-update' => 'layouts/thank-you/_subscribe-update-thankyou',
+
+   // redirects start here -> put all redirects below this point - add new routes above
 
    'valuation-and-advisory' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/us-gaap-reporting/goodwill-impairment-asc350' => 'layouts/services/va/_redirects',

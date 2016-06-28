@@ -1,0 +1,73 @@
+{% set logoGridCss %}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+.logo-grid {
+  padding: 20px 0;
+}
+
+.logo-grid__header h3 {
+  color: #b1b1b9;
+  font-size: 3em;
+  font-weight: 100;
+  padding: 20px 0;
+}
+
+
+{% endset %}
+{% includeCss logoGridCss %}
+
+
+<div class="container logo-grid">
+  <header class="logo-grid__header">
+    <h3 class="text-center">aranca in the media as seen in</h3 class="text-center">
+  </header>
+  <div class="row">
+    <div class="col-sm-15">
+      <img class="img-responsive" src="/assets/images/logos/wsj.jpg">
+    </div>
+    <div class="col-sm-15">
+      <img class="img-responsive" src="/assets/images/logos/ft.jpg">
+    </div>
+    <div class="col-sm-15">
+      <img class="img-responsive" src="/assets/images/logos/thomson-reuters.jpg">
+    </div>
+    <div class="col-sm-15">
+      <img class="img-responsive" src="/assets/images/logos/techcrunch.jpg">
+    </div>
+    <div class="col-sm-15">
+      <img class="img-responsive" src="/assets/images/logos/business-insider.jpg">
+    </div>
+  </div><!-- end row -->
+</div><!-- end container -->

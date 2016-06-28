@@ -7,20 +7,29 @@
 
 {% block main %}
 
+{% set mrBodyCss %}
+
+body {
+  background-color: #F4F8FA !important;
+}
+
+{% endset %}
+
+{% includeCss mrBodyCss %}
+
 {% include '_components/global/_header' %}
-{% include '_components/media-center/_masthead' %}
-{% include '_components/media-center/_featured' %}
+{% include '_components/media-room/_masthead' %}
+{% include '_components/media-room/_logo-grid' %}
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 mc-sidebar">
-      {% include '_components/media-center/_pr-list' %}
-      {% include '_components/media-center/_archive' %}
+    <div class="col-sm-8 mc-main">
+      {% include '_components/media-room/_about-us' %}
     </div><!--  end col-sm-4 -->
 
-    <div class="col-sm-8 mc-main">
-      {% include '_components/media-center/_story-list' %}
-      {% include '_components/media-center/_contact' %}
+    <div class="col-sm-4 mc-sidebar">
+      {% include '_components/media-room/_story-list' %}
+      {% include '_components/media-room/_contact' %}
       {% include '_components/press-kit/_pk-download' %}
     </div><!--  end col-sm-8 -->
   </div><!--  end row -->
