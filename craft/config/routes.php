@@ -45,6 +45,7 @@ return array(
    'search/results' => 'layouts/search/results',
 
    'thankyou-(?P<practiceType>\w+\-?\w+?\-?\w+?)' => 'layouts/thank-you/_entry',
+   'thankyou/knowledge-library/thnakyou' => 'layouts/thank-you/_subscribe-thankyou',
 
    'valuation-and-advisory' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/us-gaap-reporting/goodwill-impairment-asc350' => 'layouts/services/va/_redirects',
