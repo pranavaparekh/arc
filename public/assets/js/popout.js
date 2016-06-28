@@ -1,31 +1,31 @@
-// $(document).ready(function () {
-//     $('.wbs-switch').hide();
-//     var telInput = $("#slideoutMobile");
-//     $.get("http://ipinfo.io", function (response) {
-//         telInput.intlTelInput({
-//             defaultCountry: response.country.toLowerCase()
-//         });
-//     }, "jsonp");
+$(document).ready(function () {
+    $('.wbs-switch').hide();
+    var telInput = $("#slideoutMobile");
+    $.get("http://ipinfo.io", function (response) {
+        telInput.intlTelInput({
+            defaultCountry: response.country.toLowerCase()
+        });
+    }, "jsonp");
 
-//     $('.wbs-switch, .wbs-close').click(function (evt) {
-//         // evt.preventDefault();
-//         $('.wbs-container').toggleClass('active');
-//         if (!$('.wbs-container').hasClass('active')) {
-//             $(this).delay(300).queue(function () {http://www.aranca.com/
-//                 $.dequeue(this);
-//                 clearStatusSlide();
-//                 if (timer) {
-//                     timer = null;
-//                 }
-//             });
-//         }
-//     });
+    $('.wbs-switch, .wbs-close').click(function (evt) {
+        // evt.preventDefault();
+        $('.wbs-container').toggleClass('active');
+        if (!$('.wbs-container').hasClass('active')) {
+            $(this).delay(300).queue(function () {http://www.aranca.com/
+                $.dequeue(this);
+                clearStatusSlide();
+                if (timer) {
+                    timer = null;
+                }
+            });
+        }
+    });
 
-//     $('#slideoutCallMe').click(function () {
-//         slideoutMakecall();
-//     });
+    $('#slideoutCallMe').click(function () {
+        slideoutMakecall();
+    });
 
-// });
+});
 
 function clearStatusSlide() {
     $('.wbs-container').removeClass('connecting')
