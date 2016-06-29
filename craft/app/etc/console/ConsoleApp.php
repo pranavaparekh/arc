@@ -6,8 +6,8 @@ namespace Craft;
  *
  * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://buildwithcraft.com/license Craft License Agreement
- * @see       http://buildwithcraft.com
+ * @license   http://craftcms.com/license Craft License Agreement
+ * @see       http://craftcms.com
  * @package   craft.app.etc.console
  * @since     1.0
  */
@@ -55,6 +55,12 @@ class ConsoleApp extends \CConsoleApplication
 
 		// Attach our own custom Logger
 		Craft::setLogger(new Logger());
+
+		// If there is a custom appId set, apply it here.
+		if ($appId = $this->config->get('appId'))
+		{
+			$this->setId($appId);
+		}
 
 		// Initialize Cache and LogRouter right away (order is important)
 		$this->getComponent('cache');
@@ -162,7 +168,7 @@ class ConsoleApp extends \CConsoleApplication
 
 		list($componentId, $eventName) = explode('.', $event, 2);
 
-		$component = $this->getComponent($componentId);
+		$component = $this->getComponent($componentId, false);
 
 		// Normalize the event name
 		if (strncmp($eventName, 'on', 2) !== 0)
@@ -170,7 +176,14 @@ class ConsoleApp extends \CConsoleApplication
 			$eventName = 'on'.ucfirst($eventName);
 		}
 
-		$component->$eventName = $handler;
+		if ($component)
+		{
+			$component->$eventName = $handler;
+		}
+		else
+		{
+			$this->_pendingEvents[$componentId][$eventName][] = $handler;
+		}
 	}
 
 	/**
