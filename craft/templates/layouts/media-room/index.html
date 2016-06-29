@@ -13,6 +13,8 @@ body {
   background-color: #F4F8FA !important;
 }
 
+.mc-sidebar {margin-top: 20px;}
+
 {% endset %}
 
 {% includeCss mrBodyCss %}
@@ -25,12 +27,16 @@ body {
   <div class="row">
     <div class="col-sm-8 mc-main">
       {% include '_components/media-room/_about-us' %}
+      {% include '_components/media-room/_story-list' %}
     </div><!--  end col-sm-4 -->
 
     <div class="col-sm-4 mc-sidebar">
-      {% include '_components/media-room/_story-list' %}
-      {% include '_components/media-room/_contact' %}
+      
       {% include '_components/press-kit/_pk-download' %}
+      {% include '_components/media-room/_contact' %}
+      {% include '_components/media-room/_subscribe' %}
+      {% include '_components/media-room/_feat-report-slider' %}
+      {% include '_components/kc/_social' %}
     </div><!--  end col-sm-8 -->
   </div><!--  end row -->
 </div>

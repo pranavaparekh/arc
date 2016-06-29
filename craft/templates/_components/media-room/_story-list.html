@@ -1,30 +1,148 @@
+{% set mcEntries = craft.entries.section('mediaCenter').limit(4) %}
+{% set prEntries = craft.entries.section('pressReleases').limit(4) %}
+
+{% set latestSpecialReports = craft.entries.section('specialReports').limit(1).ids() %}
+{% set latestArticles = craft.entries.section('articles').limit(2).ids() %}
+{% set latestBlogPosts = craft.entries.section('blogs').limit(1).ids() %}
+{% set latestInfographics = craft.entries.section('infographics').limit(1).ids() %}
+
+{% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
+
+{% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
+
+
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+
+
 {% set mcStoryListCss %}
 
+#mcStoryList {
+  padding-top: 50px;
+}
+
+.mcStoryList__item {
+  background: white;
+  padding: 0.5em;
+  margin-bottom: 15px;
+  padding-left: 1em;
+}
+
+{% endset %}
+
+{% set mcStoryListJs %}
+
+$(document).ready(function () {
+    $("#mcStoryList").zozoTabs({
+      theme: "black",
+      style: "underlined",
+      orientation: "horizontal",
+      position: "top-center",
+      size: "xlarge",
+      animation: {
+        easing: "easeInOutExpo",
+        duration: 400,
+        effects: "slideH"
+      },
+    });
+});
 
 {% endset %}
 
 {% includeCss mcStoryListCss %}
-
-{% set mcEntries = craft.entries.section('mediaCenter').offset(3).limit(6) %}
-
-<section class="row sl-list">
-    <div class="col-sm-6">
-      {% for mcEntry in mcEntries %}
-
-        <h2 class="sl-list__headline"><a href="{{ mcEntry.url }}">{{ mcEntry.title }}</a></h2>
-        <!-- <p class="sl-list__date">{{ mcEntry.postDate | date('M j, Y') }}</p> -->
-        <p class="sl-list__excerpt">{{ mcEntry.mcExcerpt|hacksaw(words='10', append='...') }}</p>
-
-        {% if loop.index % 3 == 0 and loop.index != 6 %}
-        </div>
-        <div class="col-sm-6">
-        {% endif %}
-
-      {% endfor %}
-    </div>
+{% includeJs mcStoryListJs %}
 
 
-</section>
+
+
+
+<!-- Zozo Tabs Start-->
+<div id="mcStoryList">
+
+  <!-- Tab Navigation Menu -->
+  <ul>
+
+    <li class="mcStoryList-item">
+      <img src="/assets/images/icons/press-releases-icon.png" class="hidden-xs" alt="books and opinions">
+      <a>Press Releases</a>
+    </li>
+
+    <li class="mcStoryList-item">
+      <img src="/assets/images/icons/media-coverage-icon.png" class="hidden-xs" alt="articles">
+      <a>Media Coverage</a>
+    </li>
+
+    <li class="mcStoryList-item">
+      <img src="/assets/images/icons/kc-articles.png" class="hidden-xs" alt="infographics">
+      <a>Latest Content</a>
+    </li>
+
+   </ul>
+
+    <!-- Start: Content container -->
+    <div>
+      <!-- Press Releases -->
+        <div class="row">
+          <div class="col-sm-12">
+            <ol class="mcStoryList">
+              {% for prEntry in prEntries %}
+              <li class="mcStoryList__item shadow-box">
+                    
+                <article class="mcStoryList__grid__item">
+                  <h5 class="mcStoryList__headline"><a href="{{ prEntry.url }}">{{ prEntry.title }}</a></h5>
+                  <p class="mcStoryList__date"><em><small>published on {{ prEntry.postDate | date("M d, Y") }}</small></em></p>
+                </article>
+
+              </li>
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      <!-- end Press Releases -->
+
+      <!-- Media Coverage -->
+      <div class="row">
+        <div class="col-sm-12">
+          <ol class="mcStoryList">
+            {% for mcEntry in mcEntries %}
+            <li class="mcStoryList__item shadow-box">
+                  
+              <article class="mcStoryList__grid__item">
+                <h5 class="mcStoryList__headline"><a href="{{ mcEntry.url }}">{{ mcEntry.title }}</a></h5>
+                <p class="mcStoryList__date"><em><small>published on {{ mcEntry.postDate | date("M d, Y") }}</small></em></p>
+              </article>
+
+            </li>
+            {% endfor %}
+          </ol>
+        </div><!-- offset-2-->
+      </div><!-- row -->
+    <!-- end Media Coverage -->
+
+    <!-- Latest from KC -->
+    <div class="row">
+      <div class="col-sm-12">
+        <ol class="mcStoryList">
+          {% for latestEntry in allLatestEntries %}
+          <li class="mcStoryList__item shadow-box">
+                
+            <article class="mcStoryList__grid__item">
+              <h5 class="mcStoryList__headline"><a href="{{ latestEntry.url }}">{{ latestEntry.title }}</a></h5>
+              <p class="mcStoryList__date"><em><small>published on {{ latestEntry.postDate | date("M d, Y") }}</small></em></p>
+            </article>
+
+          </li>
+          {% endfor %}
+        </ol>
+      </div><!-- offset-2-->
+    </div><!-- row -->
+    <!-- end Latest from KC -->
+
+
+
+    </div><!-- End: content container -->
+</div>
+<!-- Zozo Tabs End-->
 
 
 

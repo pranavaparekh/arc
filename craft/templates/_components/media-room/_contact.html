@@ -1,5 +1,26 @@
-<section class="row mc-contact">
-  <div class="col-sm-12">
+{% set mcContactCss %}
 
+.mc-contact {
+  margin-top: 30px;
+  background-color: white;
+  padding: 0.8em;
+}
+
+{% endset %}
+
+{% includeCss mcContactCss %}
+
+<section class="mc-contact">
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="/assets/images/team/anupriya.jpg" alt="anupriya deepak - media contact for aranca">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Anupriya Deepak </h4>
+      <p>T: +91 22 3937 9999 (EXT. 407)</p>
+      <p>E: anupriya.deepak@aranca.com</p>
+    </div>
   </div>
 </section>

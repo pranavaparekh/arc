@@ -1,21 +1,59 @@
 {% set pressKitCss %}
+.pk-download {
+  padding-bottom: 1.5em;
+}
+
+.pk-download__icon {
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+}
 
 .pk-download__headline {
-  padding-top: 130px;
-  color: white;
+
+    color: #7f7d7d;
+    font-weight: 100;
 }
 
+
 .pk-download__link, .pk-download__link > a  {
-  color: {{ roman }};
-  font-size: 1.3em;
+  color: #c1c1c1;
+  font-size: 1.2em;
+  font-weight: 300;
 }
+
+.pk-download__btn {
+  margin-top: 60px;
+}
+
+
+.pk-download__btn a {
+  color: grey;
+  transition: 0.3s all;
+  border: 1px solid #eaeaea;
+  display: block;
+  padding: 0.5em;
+  background: #f9f9f9;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.9em;
+}
+
+.pk-download__btn a:hover {
+  color: white;
+  background: #00458C;
+  text-decoration: none;
+   border: 1px solid #00458C;
+
+}
+
 
 
 @media(min-width: {{ screenmd }}) {
 
   .pk-download {
     margin-top: 20px;
-    background: url('/assets/images/backgrounds/pk-download-bkg.jpg') no-repeat {{ brandPrimary }};
+    background: white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -33,8 +71,9 @@
 {% includeCss pressKitCss %}
 
 
-<section class="row pk-download">
-  <div class="col-sm-12">
+<section>
+  <div class="pk-download shadow-box">
+    <img class="pk-download__icon" src="/assets/images/icons/press-kit-download-icon.png" >
     <h1 class="pk-download__headline text-center">DOWNLOAD OUR PRESS KIT</h1>
     <p class="pk-download__link text-center">
     <a href="/assets/uploads/press-kit/Aranca-BoilerPlate.pdf" onClick="ga('send', 'event', { eventCategory: 'download', eventAction: 'Aranca Profile'});" >Aranca Profile</a> | 
@@ -42,9 +81,9 @@
     <a href="/assets/uploads/press-kit/Aranca-ExecutiveBios.pdf" onClick="ga('send', 'event', { eventCategory: 'download', eventAction: 'Executive Bios '});">Executive Bios</a>&nbsp;
     <a href="/assets/uploads/press-kit/aranca-executive-photographs.zip" onClick="ga('send', 'event', { eventCategory: 'download', eventAction: 'Photographs'});">&amp; photographs</a>
     </p>
-    <p class="pk-download__ziplink text-center img-responsive">
+    <p class="pk-download__btn text-center img-responsive">
       <a href="/assets/uploads/press-kit/aranca-press-kit-2016.zip">
-        <img src="/assets/images/icons/download.png" alt="download press kit" />
+        Download
       </a>
     </p>
   </div>

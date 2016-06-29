@@ -1,0 +1,76 @@
+{% set aboutCss %}
+
+.abt {
+  color: #9e9a9a;
+  background: #fff;
+  padding: 1.5em 1.5em 4em 1.5em;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.abt__headline {
+  font-size: 3em;
+  font-weight: 100;
+}
+
+.abt__tagline {
+  text-transform: uppercase;
+}
+
+.abt__link {
+  text-align: center;
+  display: block;
+  border: 1px solid #dacfcf;
+  padding: 0.5em;
+  transition: 0.5s all;
+  color: #9e9a9a;
+}
+
+.abt__link:hover {
+  background: #00458C;
+  color: white;
+  text-decoration: none;
+}
+{% endset %}
+
+{% includeCss aboutCss %}
+
+<div class="abt shadow-box">
+  <h3 class="abt__headline">about aranca</h3>
+  <p>For over 2000 companies, from the hottest startups to the Fortune 500, Aranca is the preferred and trusted custom research, analytics and advisory partner.</p>
+  <p class="abt__tagline">Meet our Leadership team</p>
+  
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="/assets/images/team/Hemendra.jpg" class="img-reponsive img-thumbnail">
+      <p class="caption text-center">Hemendra Aran</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="/assets/images/team/madhusudan.jpg" class="img-reponsive img-thumbnail">
+      <p class="caption text-center">Madhusudhan Rajgopalan</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="/assets/images/team/kannan-siva-thumb.jpg" class="img-reponsive img-thumbnail">
+      <p class="caption text-center">Kannan Sivasubramanian</p>
+    </div>
+  </div>{# end row #}
+  <br>
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="" class="abt__link">who we are</a>
+    </div>
+    <div class="col-xs-6">
+      <a href="" class="abt__link">what we believe</a>
+    </div>
+  </div>{# end row #}
+   <br>
+  <div class="row">
+    <div class="col-xs-6">
+      <a href="" class="abt__link">our values</a>
+    </div>
+    <div class="col-xs-6">
+      <a href="" class="abt__link">our culture</a>
+    </div>
+  </div>{# end row #}
+
+</div>{# end component abt #}
