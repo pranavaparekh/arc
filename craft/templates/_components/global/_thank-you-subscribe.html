@@ -4,7 +4,13 @@
   padding-top: 20px;
   padding-bottom: 30px;
 }
-
+.lede__headline, .lede__subheadline {
+  text-align:left;
+  line-height:25px;
+}
+.thank-you a {
+  font-weight:500;
+}
 {% endset %}
 
 {% includeCss thankyouCss %}
@@ -24,15 +30,19 @@
           </div>
 
           {% endif %}
-          <h1 class="lede__headline">Thank you for subscribing.</h1>
-          <h2 class="lede__subheadline">You will hear from our team real soon</h2>
-          <hr class="lede__border">
-          <p class="text-center">In the meanwhile, why not take a few minutes to browse some interesting and relevant content in our <a href="http://www.aranca.com/knowledge-library">knowledge library?</a></p>
+          <h1 class="lede__headline">Thank you for subscribing to Aranca Context.</h1>
+          <h2 class="lede__subheadline">As a token of our gratitude a mail with links to two of our most popular blogs are already on its way to your inbox. Going forward, we will mail you once every two weeks with links to more blogs/articles/etc. tailored to your areas of interest.</h2>
+          <h2 class="lede__subheadline">Didn’t check your areas of interest? No problem, you can update them <a href="http://www.aranca.com/knowledge-library/subscription-update" target="_blank">here.</a></h2>
+          <h2 class="lede__subheadline">Or, click on the below blocks to explore more of our published content. </h2>
+          <h2 class="lede__subheadline">Want to stay on top of our most recent content pieces? Follow us on <a href="https://twitter.com/aranca" target="_blank">Twitter.</a></h2>
+
         </div>
       </div>
     </div>
   </div>
 </div>
+
+{% include 'layouts/kc/_aoe' %}
 
 <!-- Google Code for Knowledge Library Subscription Signup Conversion Page -->
 <script type="text/javascript">

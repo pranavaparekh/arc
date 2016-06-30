@@ -17,10 +17,14 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-
+{% if url(craft.request.path) == "http://aranca.craft.dev/knowledge-library/subscription-update" %}
           <h1 class="lede__headline">Chose the topics you want to receive updates for, below:</h1>
           <hr class="lede__border">
-
+{% else %}
+          <h1 class="lede__headline">You can update your email preferences below. <br/>Check the topics you want to receive content for.
+</h1>
+          <hr class="lede__border">
+{% endif %}
         </div>
 
 

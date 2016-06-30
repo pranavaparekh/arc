@@ -61,6 +61,7 @@ return array(
    'knowledge/download-center' => 'layouts/kc/_redirect',
 
    'knowledge-library/subscription-update' => 'layouts/subscribe/_entry',
+   'knowledge-library/subscription-preferences' => 'layouts/subscribe/_entry',
 
    'index.aspx' => 'index_redirect'
 );
