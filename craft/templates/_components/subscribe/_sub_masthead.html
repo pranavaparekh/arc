@@ -1,0 +1,77 @@
+
+{% set hmMastheadCss %}
+
+.masthead {
+  position: relative;
+  text-align: right;
+  background: url('/assets/images/backgrounds/sub_header2.jpg');
+  background-position: 0 25px;
+  background-size: cover;
+  min-height: 800px;
+  min-height: 45vh;
+  color: white;
+}
+
+.masthead__wrapper{
+    position: absolute;
+    left: -20%;
+    right: 0;
+    top: 44%;
+    margin-right: 2em;
+}
+
+.masthead__content__headline {
+  font-weight: 300;
+  font-size: 3vw;
+  text-shadow: 1px 2px 3px #756D6D;
+}
+
+.masthead__content p {
+  font-size: 1.4em;
+  font-size: 1.5vw;
+  font-weight: 300;
+  text-shadow: 1px 2px 3px #2D2727;
+}
+
+.hm-masthead__btn {
+    display: inline-block;
+    font-size: 1em;
+    letter-spacing: 0.08em;
+    background: {{ brandPrimary }};
+    color: white;
+    text-transform: uppercase;
+    padding: 3px 20px;
+    transition: all .6s;
+    border: 1px solid white;
+    margin: 15px 0;
+}
+
+.hm-masthead__btn:hover {
+  background-color: #dd4b39;
+  color: white;
+  border: 1px solid white;
+}
+
+@media only screen and (max-width : 480px) {
+ .masthead {
+  position: relative;
+  text-align: right;
+  background: url('/assets/images/backgrounds/sub_header.jpg');
+  background-position: 0 25px;
+  background-size: cover;
+  min-height: 800px;
+  min-height: 45vh;
+  color: white;
+}
+}
+
+{% endset %}
+
+
+{% includeCss hmMastheadCss %}
+
+<section class="container-fluid masthead">
+  <div class="masthead__wrapper">
+
+  </div><!-- end masthead__wrapper -->
+</section>

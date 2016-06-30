@@ -46,6 +46,7 @@ return array(
 
    'thankyou-(?P<practiceType>\w+\-?\w+?\-?\w+?)' => 'layouts/thank-you/_entry',
    'thankyou/subscribe' => 'layouts/thank-you/_subscribe-thankyou',
+   'thankyou/subscribe-update' => 'layouts/thank-you/_subscribe-update-thankyou',
 
    'valuation-and-advisory' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/us-gaap-reporting/goodwill-impairment-asc350' => 'layouts/services/va/_redirects',
@@ -58,6 +59,8 @@ return array(
    'valuation-and-advisory/us-tax-compliance' => 'layouts/services/va/_redirects',
    'valuation-and-advisory/transaction-support' => 'layouts/services/va/_redirects',
    'knowledge/download-center' => 'layouts/kc/_redirect',
+
+   'knowledge-library/subscription-update' => 'layouts/subscribe/_entry',
 
    'index.aspx' => 'index_redirect'
 );
