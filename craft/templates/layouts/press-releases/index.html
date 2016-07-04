@@ -4,24 +4,47 @@
 {% set desc = 'Aranca is a global provider of outsourced investment & business research, market analysis, patent & intellectual property research services. Find news & views related to global business, industry innovations & latest trends through our press releases.' %}
 {% set keywords = 'aranca press releases, global business news, latest industry news, industry innovations, innovations & trends, industry insights, industry reports' %}
 
+
 {% block main %}
+
+{% set mrBodyCss %}
+
+body {
+  background-color: #F4F8FA !important;
+}
+
+.mc-sidebar {margin-top: 20px;}
+
+.mc-main {
+    margin-top: 10px;
+}
+
+{% endset %}
+
+{% includeCss mrBodyCss %}
 
 {% include '_components/global/_header' %}
 {% include '_components/press-releases/_masthead' %}
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 mc-sidebar">
-      {% include '_components/media-center/_pr-list' %}
-      {% include '_components/media-center/_archive' %}
-    </div><!--  end col-sm-4 -->
-
     <div class="col-sm-8 mc-main">
-      {% include '_components/press-releases/_story-list' %}
-      {% include '_components/press-kit/_pk-download' %}
+      {% include '_components/press-releases/_list' %}
     </div><!--  end col-sm-8 -->
+
+    <div class="col-sm-4 mc-sidebar">
+      
+      {% include '_components/press-kit/_pk-download' %}
+      {% include '_components/media-room/_contact' %}
+      {% include '_components/media-room/_subscribe' %}
+      {% include '_components/media-room/_feat-report-slider' %}
+      {% include '_components/kc/_social' %}
+    </div><!--  end col-sm-4 -->
   </div><!--  end row -->
 </div>
 
+{% include '_components/global/_footer' %}
+
 
 {% endblock %}
+

@@ -1,0 +1,116 @@
+{% set mediaCoverage = craft.entries.section('pressReleases').limit() %}
+
+
+{% set catListCss %}
+
+
+
+#catList {
+  padding-top:0px;
+}
+
+
+
+.kc-content__list__item {
+
+}
+
+.kc-content__list__item img {
+
+}
+
+.kc-content__list__item:first-child {
+
+}
+
+.kc-content__grid__inner {
+  background: #fff;
+  padding: 1em;
+  min-height: 250px;
+}
+
+.kc-logo-wrapper {
+  min-height: 200px;
+}
+
+.kc-logo-wrapper img {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 25%;
+}
+
+.kc-content__headline {
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.2em;
+}
+
+.kc-content__publisher {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
+}
+
+.kc-content__excerpt {
+  color: #a2a2a2;
+  font-size: 1.1em;
+}
+
+.kc-content__date {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+}
+
+.kc-content__article-body {
+  display: none;
+}
+
+.meta {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+}
+
+.mc-main .row {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+{% endset %}
+
+
+{% set catListJs %}
+
+
+{% endset %}
+
+{% includeCss catListCss %}
+{% includeJs catListJs %}
+
+
+
+<!-- Blogs and Opinions -->
+  <div class="row">
+      
+        {% for mediaCoverageItem in mediaCoverage %}
+         <div class="col-sm-6 kc-content__list__item">
+            <article class="kc-content__grid__item shadow-box">
+              <div class="kc-content__grid__inner">
+                <h5 class="kc-content__headline"><a target="_blank" href="{{ mediaCoverageItem.mcSource }}">{{ mediaCoverageItem.title }}</a></h5>
+                <p class="kc-content__excerpt">{{ mediaCoverageItem.prExcerpt|hacksaw(words='15') }}</p>
+                <p class="kc-content__date"><em><small>published on {{ mediaCoverageItem.postDate | date("M d, Y") }}</small></em></p>
+              </div>
+            </article>
+          </div>
+          
+          {% if loop.index % 2 == 0 %}
+            </div><!-- close row and open it below again -->
+            <div class="row">
+          {% endif %}
+        {% endfor %}
+
+  </div><!-- row -->
+
+
+

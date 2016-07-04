@@ -1,0 +1,9 @@
+<li class="col-sm-6 kc-content__list__item shadow-box">
+  <article class="kc-content__grid__item">
+    <div class="kc-content__grid__inner">
+      <h5 class="kc-content__headline"><a target="_blank" href="{{ mediaCoverageItem.mcSource }}">{{ mediaCoverageItem.title }}</a></h5>
+      <p class="kc-content__excerpt">{{ mediaCoverageItem.mcExcerpt|hacksaw(words='15') }}</p>
+      <p class="kc-content__date"><em><small>published on {{ mediaCoverageItem.postDate | date("M d, Y") }}</small></em></p>
+    </div>
+  </article>
+</li>
