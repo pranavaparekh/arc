@@ -21,6 +21,7 @@
 return array(
     // match url => load template
    'media-room' => 'layouts/media-room/index',
+   'media-room/media-coverage' => 'layouts/media-room/media-coverage/index',
    'press-releases' => 'layouts/press-releases/index',
    'press-releases/practices/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',
    'press-releases/regions/(?P<category>\w+\-?\w+?)' => 'layouts/press-releases/_category',

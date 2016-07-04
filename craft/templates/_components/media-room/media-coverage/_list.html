@@ -1,0 +1,127 @@
+{% set mediaCoverage = craft.entries.section('mediaCenter').limit() %}
+
+
+{% set catListCss %}
+
+
+
+#catList {
+  padding-top:0px;
+}
+
+
+
+.kc-content__list__item {
+  margin: 60px 0;
+  background: #fff;
+}
+
+.kc-content__list__item img {
+
+}
+
+.kc-content__list__item:first-child {
+  margin-top: 30px;
+}
+
+.kc-content__grid__inner {
+  padding: 0.8em;
+  padding-left: 0;
+}
+
+.kc-logo-wrapper {
+  min-height: 200px;
+}
+
+.kc-logo-wrapper img {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 25%;
+}
+
+.kc-content__headline {
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.2em;
+}
+
+.kc-content__publisher {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
+}
+
+.kc-content__excerpt {
+  color: #a2a2a2;
+  font-size: 1.1em;
+}
+
+.kc-content__date {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+}
+
+.kc-content__article-body {
+  display: none;
+}
+
+.meta {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+}
+
+{% endset %}
+
+
+{% set catListJs %}
+
+
+{% endset %}
+
+{% includeCss catListCss %}
+{% includeJs catListJs %}
+
+
+<!-- Start: Content container -->
+<div>
+<!-- Blogs and Opinions -->
+  <div class="row">
+    <div class="col-sm-12">
+      <ol class="kc-content__list">
+        {% for mediaCoverageItem in mediaCoverage %}
+        <li class="kc-content__list__item shadow-box">
+          <div class="row">
+            
+            <div class="col-lg-5 col-sm-12">
+              <div class="kc-logo-wrapper">
+                <img src="/assets/images/logos/ft.jpg"  alt="">
+              </div>
+            </div>
+            <div class="col-lg-7 col-sm-12">
+              
+              <article class="kc-content__grid__item kc-content__blog image-cover">
+                <div class="kc-content__grid__inner">
+                  <h5 class="kc-content__headline"><a target="_blank" href="{{ mediaCoverageItem.mcSource }}">{{ mediaCoverageItem.title }}</a></h5>
+                  <p class="kc-content__publisher">
+                    covered by <strong>{{ mediaCoverageItem.mcPublisher }}</strong> | 
+                    <span><a href="{{ mediaCoverageItem.url }}" class="kc-weblink">Read it on our website</a></span></p>
+                  <p class="kc-content__excerpt">{{ mediaCoverageItem.mcExcerpt|hacksaw(words='15') }}</p>
+                  <p class="kc-content__date"><em><small>published on {{ mediaCoverageItem.postDate | date("M d, Y") }}</small></em></p>
+                </div>
+              </article>
+
+            </div>
+        
+          </div>
+
+        </li>
+        {% endfor %}
+      </ol>
+    </div><!-- offset-2-->
+  </div><!-- row -->
+
+</div><!-- End: content container -->
+
+
