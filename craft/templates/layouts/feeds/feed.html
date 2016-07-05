@@ -57,7 +57,7 @@
     {% endswitch %}
 
 
-    <description>{{ content }}</description>
+    <description>{{ content | escape }}</description>
     <pubDate>{{ item.postDate.rfc2822() }}</pubDate>
     <guid>{{ item.url() }}</guid>
   </item>
