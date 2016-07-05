@@ -40,6 +40,9 @@ return array(
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/authors/(?P<author>\w+\-?\w+?)' => 'layouts/kc/_author',
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/archives/(?P<year>\d{4})-(?P<month>\d{2})' => 'layouts/kc/_archive',
 
+   // Feeds go here
+   'feeds/(?P<category>\w+\-?\w+?)' => 'layouts/feeds/feed',
+
    'special-reports/pp-form' => 'layouts/special-reports/pp-form',
 
    'search/results' => 'layouts/search/results',
