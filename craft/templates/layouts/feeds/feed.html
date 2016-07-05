@@ -4,12 +4,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
-{% set rss = craft.entries.section('blogs').relatedTo({
+{% set latestSpecialReports = craft.entries.section('specialReports').relatedTo({
   category: craft.categories.slug(category)
-}).limit() %}
+}).limit(5).ids() %}
+{% set latestArticles = craft.entries.section('articles').relatedTo({
+  category: craft.categories.slug(category)
+}).limit(5).ids() %}
+
+{% set latestBlogPosts = craft.entries.section('blogs').relatedTo({
+  category: craft.categories.slug(category)
+}).limit(5).ids() %}
+
+{% set latestInfographics = craft.entries.section('infographics').relatedTo({
+  category: craft.categories.slug(category)
+}).limit(5).ids() %}
+
+{% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
+
+{% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
+
+{% set rss = allLatestEntries %}
 
 <channel>
-  <title>Aranca RSS Feed</title>
+  <title>Aranca {{ category }} RSS Feed</title>
   <link>{{ craft.request.getUrl() }}/</link>
   <description>Aranca RSS Feed for {{ category }}</description>
   <language>en-us</language>
@@ -19,7 +36,28 @@
   <item>
     <title>{{ item.title }}</title>
     <link>{{ item.url() }}</link>
-    <description>{{ item.blogIntro }}</description>
+
+    {% switch item.type %}
+
+      {% case "blogs" %}
+
+        {% set content = item.blogIntro %}
+
+      {% case "articles" %}
+        {% set content = item.articlesContent %}
+
+      {% case "specialReports" %}
+
+        {% set content = item.srIntro %}
+
+       {% case "infographics" %}
+
+        {% set content = item.igIntro %}
+
+    {% endswitch %}
+
+
+    <description>{{ content }}</description>
     <pubDate>{{ item.postDate.rfc2822() }}</pubDate>
     <guid>{{ item.url() }}</guid>
   </item>
