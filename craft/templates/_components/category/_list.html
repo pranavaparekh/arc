@@ -1,9 +1,3 @@
-{% set blogPosts = craft.entries.section('blogs').relatedTo(category).limit() %}
-{% set articles = craft.entries.section('articles').relatedTo(category).limit() %}
-{% set infographics = craft.entries.section('infographics').relatedTo(category).limit() %}
-{% set specialReports = craft.entries.section('specialReports').relatedTo(category).limit() %}
-
-
 {% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
 {% includeJsFile "/assets/js/readingTime.js"  %}
 {% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
@@ -102,6 +96,13 @@ $(function() {
 {% includeCss catListCss %}
 {% includeJs catListJs %}
 
+{% cache if craft.config.cache %}
+
+{% set blogPosts = craft.entries.section('blogs').relatedTo(category).limit() %}
+{% set articles = craft.entries.section('articles').relatedTo(category).limit() %}
+{% set infographics = craft.entries.section('infographics').relatedTo(category).limit() %}
+{% set specialReports = craft.entries.section('specialReports').relatedTo(category).limit() %}
+
 <!-- Zozo Tabs Start-->
 <div id="catList">
 
@@ -190,7 +191,7 @@ $(function() {
                 <div class="row">
                   
                   <div class="col-lg-7 col-sm-12">
-                    <img src={{ article.articlesBanner.first().url }} class="img-responsive">
+                    <img src={{ article.articlesBanner.first().url ?? "" }} class="img-responsive">
                   </div>
 
                   <div class="col-lg-5 col-sm-12">
@@ -231,10 +232,7 @@ $(function() {
                 <div class="row">
                   
                   <div class="col-lg-7 col-sm-12">
-                  {% if infographic.igBanner[1] | length %}
-                    {% set asset = infographic.igBanner[1] %}
-                    <img src={{ asset.url() }} class="img-responsive" alt={{infographic.title}}>
-                  {% endif %}
+                    <img src={{ infographic.igBanner[1].url() ?? "" }} class="img-responsive" alt={{infographic.title}}>
                   </div>
 
                   <div class="col-lg-5 col-sm-12">
@@ -275,7 +273,7 @@ $(function() {
                       <div class="kc-content__grid__inner">
                         <h5 class="kc-content__headline"><a href="{{ specialReport.url }}">{{ specialReport.title }}</a></h5>
                         <p class="kc-content__excerpt">{{ specialReport.srContent|hacksaw(words='25') }}</p>
-                        <p class="kc-content__date"><em><small>published on {{ blogPost.postDate | date("M d, Y") }}</small></em></p>
+                        <p class="kc-content__date"><em><small>published on {{ specialReport.postDate | date("M d, Y") }}</small></em></p>
                       </div>
                     </article>
                   </div> {# end col-sm-7 #}
@@ -291,4 +289,6 @@ $(function() {
     </div><!-- End: content container -->
 </div>
 <!-- Zozo Tabs End-->
+
+{% endcache %}
 
