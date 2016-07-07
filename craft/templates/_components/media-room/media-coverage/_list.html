@@ -31,6 +31,7 @@
 
 .kc-logo-wrapper {
   min-height: 200px;
+  padding: 1em 2em;
 }
 
 .kc-logo-wrapper img {
@@ -67,6 +68,10 @@
   display: none;
 }
 
+.mc__list__image {
+  
+}
+
 .meta {
   color: #ccc7c7;
   letter-spacing: 0.05em;
@@ -96,7 +101,10 @@
             
             <div class="col-lg-5 col-sm-12">
               <div class="kc-logo-wrapper">
-                <img src="/assets/images/logos/ft.jpg"  alt="">
+                {% set asset = mediaCoverageItem.mediaPublisherLogo.first() %}
+                {% if asset %}
+                  <img src={{ asset.url }} class="img-responsive mc__list__image"  alt="" />
+                {% endif %}
               </div>
             </div>
             <div class="col-lg-7 col-sm-12">
@@ -107,7 +115,7 @@
                   <p class="kc-content__publisher">
                     covered by <strong>{{ mediaCoverageItem.mcPublisher }}</strong> | 
                     <span><a href="{{ mediaCoverageItem.url }}" class="kc-weblink">Read it on our website</a></span></p>
-                  <p class="kc-content__excerpt">{{ mediaCoverageItem.mcExcerpt|hacksaw(words='15') }}</p>
+                  <p class="kc-content__excerpt">{{ mediaCoverageItem.mcExcerpt|hacksaw(words='20') }}</p>
                   <p class="kc-content__date"><em><small>published on {{ mediaCoverageItem.postDate | date("M d, Y") }}</small></em></p>
                 </div>
               </article>
