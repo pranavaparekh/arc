@@ -733,5 +733,83 @@ var google_remarketing_only = true;
 <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/955828310/?value=0&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
+
+<!-- waybeo implementation -->
+
+
+
+<script type="text/javascript" src="http://js.waybeo.com/v0.1-beta2/waybeo.min.js"></script>
+<script type="text/javascript" src="/assets/js/slideout.js"></script>
+ <link rel="stylesheet" href="/assets/css/slideout.css">
+<script type="text/javascript" src="/assets/js/intlTelInput.min.js"></script>
+ <link rel="stylesheet" href="/assets/css/intlTelInput.css">
+
+<div class="wbs-switch">
+        <!--Use the css background property to change this image-->
+</div>
+
+<!-- Slideout popup form -->
+<div class="wbs-container right theme-peter-river">
+    <div class="wbs-form">
+        <div class="wbs-window">
+            <div class="wbs-msg">
+                    Please fill out the form below and we will call you back
+                <a href="javascript:void(0);" class="wbs-close">[x] close</a>
+            </div>
+            <input type="text" class="wbpb-name"  name="name" id="wctcname" placeholder="Name">
+            <!--<div class="wbs-formerror">Please enter a valid Name</div>-->
+            <input type="email" class="wbpb-email"  name="email" id="wctcemail" placeholder="Email">
+            <!--<div class="wbs-formerror">Please enter a valid email id</div>-->
+            <input type="tel" class="wbpb-tbox"  name="mobile" id="slideoutMobile" placeholder="Phone Number">
+            <div class="wbs-formerror">Please enter a valid phone number</div>
+            <!-- <input type="url" class="wbpb-url"  name="url" id="wctcurl"  placeholder="URL"> -->
+            <!--<div class="wbs-formerror">Please select an option</div>-->
+            <input class="wbs-btn" type="button" value="Call Me" id="slideoutCallMe">
+        </div>
+        <div class="wbs-livestatus">
+            <div class="wbs-livemsg-connecting">
+                Connecting now...
+            </div>
+            <div class="wbs-livemsg-connected">
+                Connection Established.
+            </div>
+            <div class="wbs-livemsg-verifying">
+                Please verify your number using the code below.
+                <div class="wbs-verificationcode">
+                    11001
+                </div>
+            </div>
+            <div class="wbs-livemsg-verification-success">
+                Number verification successful
+            </div>
+            <div class="wbs-livemsg-verification-failed">
+                Number verification failed.
+            </div>
+            <div class="wbs-livemsg-in-progress">
+                Call in progress.
+            </div>
+            <div class="wbs-livemsg-completed">
+                Call Completed Successfully.
+            </div>
+            <div class="wbs-livemsg-ended">
+                Call ended.
+            </div>
+            <div class="wbs-livemsg-agent-busy">
+            <a href="javascript:void(0);" class="wbs-close" style="text-align: right ">[x] close</a><br/>
+                Agent busy. We will call you back.
+                
+            </div>
+            <div class="wbs-livemsg-oops">
+                Oops! Something went wrong.
+            </div>
+            <div class="wbs-livemsg-timer" class="timer">
+                00:00:00
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End slideout popup form -->
+
+
   </body>
 </html>
