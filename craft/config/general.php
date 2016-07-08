@@ -56,7 +56,7 @@ return array(
     'assetsImagesUrl' => '/assets/images',
   ),
   'staging' => array(
-    'devMode' => true,
+    'devMode' => false,
     'cache' => true,
     'assetsCssUrl' => '/assets/css',
     'assetsJsUrl' => '/assets/js',
