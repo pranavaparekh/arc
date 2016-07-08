@@ -39,6 +39,7 @@
 {% includeJs kcFeaturedJs %}
 {% includeCss kcFeaturedCss %}
 
+{% cache globally if craft.config.cache %}
 
 {% set featuredEntries = craft.entries.section('specialReports').limit(3) %}
 
@@ -65,3 +66,4 @@
 </div>
 
 <!-- 2014-12-31 -->
+{% endcache %}
