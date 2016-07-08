@@ -1,0 +1,34 @@
+{% extends "base_layouts/_site" %}
+
+{% set title = 'Media Room - Announcements, Coverage, Press kit and More' %}
+{% set desc = 'Aranca has been profiled by global media agencies like Business Standard, BBC, CNBC, NDTV, The Economic Times, Zee News among others & is identified as a leading provider of outsourced research & analytics services.' %}
+{% set keywords = 'media coverage, videos, press releases, global research services provider, aranca media, aranca press releases, aranca case studies, aranca interviews, aranca financial reports, industry reports by aranca' %}
+
+
+{% block main %}
+{% set mrBodyCss %}
+
+html { 
+  background: url('/assets/images/backgrounds/mr-coverage-masthead-bkg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+{% endset %}
+
+{% includeCss mrBodyCss %}
+
+
+
+
+{% include '_components/global/_header' %}
+
+{% include '_components/media-room/_subscribe-box' %}
+
+
+
+
+{% endblock %}

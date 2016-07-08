@@ -1,14 +1,4 @@
-{% set mcEntries = craft.entries.section('mediaCenter').limit(4) %}
-{% set prEntries = craft.entries.section('pressReleases').limit(4) %}
 
-{% set latestSpecialReports = craft.entries.section('specialReports').limit(1).ids() %}
-{% set latestArticles = craft.entries.section('articles').limit(2).ids() %}
-{% set latestBlogPosts = craft.entries.section('blogs').limit(1).ids() %}
-{% set latestInfographics = craft.entries.section('infographics').limit(1).ids() %}
-
-{% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
-
-{% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
 
 
 {% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
@@ -60,8 +50,19 @@ $(document).ready(function () {
 {% includeCss mcStoryListCss %}
 {% includeJs mcStoryListJs %}
 
+{% cache globally if craft.config.cache %}
 
+{% set mcEntries = craft.entries.section('mediaCenter').limit(4) %}
+{% set prEntries = craft.entries.section('pressReleases').limit(4) %}
 
+{% set latestSpecialReports = craft.entries.section('specialReports').limit(1).ids() %}
+{% set latestArticles = craft.entries.section('articles').limit(2).ids() %}
+{% set latestBlogPosts = craft.entries.section('blogs').limit(1).ids() %}
+{% set latestInfographics = craft.entries.section('infographics').limit(1).ids() %}
+
+{% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
+
+{% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
 
 
 <!-- Zozo Tabs Start-->
@@ -155,5 +156,5 @@ $(document).ready(function () {
 </div>
 <!-- Zozo Tabs End-->
 
-
+{% endcache %}
 
