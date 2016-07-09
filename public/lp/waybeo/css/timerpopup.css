@@ -63,14 +63,14 @@ html {
     background: blue;
 }
 .wbpb-header .wbpb-mainheader {
-    font-size: 1.1rem;
+    font-size: 1.1em;
     color: white;
     float: left;
 }
 .wbpb-header .wbpb-close {
     float: right;
     color: white;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     border-radius: 50%;
     background: transparent;
     width:11px;
@@ -80,7 +80,7 @@ html {
     margin-top: 3px;
 }
 .wbpb-header .wbpb-close:hover {
-    background: orange;
+    color: red;
 }
 .wbpb-form {
     padding:20px;
@@ -89,7 +89,7 @@ html {
 }
 .wbpb-form .wbpb-msg {
     margin-bottom: 20px;
-    font-size: 0.95rem;
+    font-size: 0.95em;
 }
 .wbpb-inputs input[type="tel"] {
     height: 39px;
@@ -114,7 +114,7 @@ html {
     background: blue;
     color:white;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     text-transform: uppercase;
     border: none;
     -webkit-transition-duration:0.3s;
@@ -232,10 +232,12 @@ html {
 
 /* theme peter-river*/
 .wbpb-container.theme-peter-river .wbpb-header {
-    background: #3498db;
+    /*background: #3498db;*/
+    background: #1c4586;
 }
 .wbpb-container.theme-peter-river input[type="button"] {
-    background: #3498db;
+   /* background: #3498db;*/
+   background: #1c4586;
 }
 .wbpb-container.theme-peter-river input[type="button"]:hover {
     background: #2980b9;
@@ -345,7 +347,7 @@ html {
 }
 @media screen and (max-width:767px){
     .wbpb-mastercontainer {
-        width: 100%;	
+        width: 100%;    
     }
     .wbpb-container {
         width: 100%;
