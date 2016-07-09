@@ -1,14 +1,4 @@
 
-
-{% set latestSpecialReports = craft.entries.section('specialReports').limit(1).ids() %}
-{% set latestArticles = craft.entries.section('articles').limit(2).ids() %}
-{% set latestBlogPosts = craft.entries.section('blogs').limit(1).ids() %}
-{% set latestInfographics = craft.entries.section('infographics').limit(1).ids() %}
-
-{% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
-
-{% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
-
 {% set kcLatestCss %}
 
   .kc-sidebar {
@@ -50,6 +40,17 @@
 
 {% includeCss kcLatestCss %}
 
+{% cache globally if craft.config.cache %}
+
+{% set latestSpecialReports = craft.entries.section('specialReports').limit(1).ids() %}
+{% set latestArticles = craft.entries.section('articles').limit(2).ids() %}
+{% set latestBlogPosts = craft.entries.section('blogs').limit(1).ids() %}
+{% set latestInfographics = craft.entries.section('infographics').limit(1).ids() %}
+
+{% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
+
+{% set allLatestEntries = craft.entries.id(entryIdsCombined).order('postDate DESC') %}
+
 
 <div class="kc-latest">
 <h2 class="kc-latest__headline">The Latest</h2>
@@ -63,3 +64,5 @@
 {% endfor %}
 </ul>
 </div>
+
+{% endcache %}
