@@ -1,5 +1,6 @@
 (function($){
     $(document).ready(function () {
+        $('.wbpb-mastercontainer').hide();
     var telInput = $("#timerMobile");
     $.get("http://ipinfo.io", function (response) {
         telInput.intlTelInput({
@@ -74,6 +75,13 @@ Waybeo.CTC.Init({
         aggressive: true,
         timer: 5,
         trigger: showTimerPopup
+    }
+});
+
+Waybeo.Utils.getIpCountry(function(l) {
+    var _AllowedSouthAmericanCountries = ['US','MX','CA','CU'];
+    if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
+       $('.wbpb-mastercontainer').show();
     }
 });
 
