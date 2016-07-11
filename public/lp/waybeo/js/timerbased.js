@@ -69,7 +69,7 @@ function clearStatusbottom() {
 }
 
 Waybeo.Utils.getIpCountry(function(l) {
-    var _AllowedSouthAmericanCountries = ['US', 'IN'];
+    var _AllowedSouthAmericanCountries = ['US'];
     if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
        Waybeo.CTC.Init({
             hash: '56bd928aa3e24',
