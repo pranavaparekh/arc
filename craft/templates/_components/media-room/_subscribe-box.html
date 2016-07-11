@@ -56,19 +56,6 @@ $( document ).ready(function() {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
   }
-
-  function  enableDisableSubscribeButton() {
-
-    var isChecked = ( $('input[name="Areas_of_Interest[]"]').is(':checked') );
-
-    if (isChecked) {
-      $("button#subscribe").removeAttr("disabled").button('refresh');
-    }
-    else {
-      $("button#subscribe").attr("disabled", "disabled");
-    }
-
-  }
   
   var emailField = $('.sub-form__email'), helpBlock = $('.help-block');
   
@@ -83,7 +70,7 @@ $( document ).ready(function() {
     } else {
       helpBlock.html('');
       // enableDisableSubscribeButton();
-      $('#areas-of-interest').modal('show');
+      $('#sub-form').submit();
     }
 
   });
