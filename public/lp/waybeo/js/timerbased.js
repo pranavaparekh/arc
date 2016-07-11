@@ -1,6 +1,5 @@
 (function($){
     $(document).ready(function () {
-        $('.wbpb-mastercontainer').hide();
     var telInput = $("#timerMobile");
     $.get("http://ipinfo.io", function (response) {
         telInput.intlTelInput({
@@ -69,21 +68,21 @@ function clearStatusbottom() {
             .removeClass('timer');
 }
 
-Waybeo.CTC.Init({
-    hash: '56bd928aa3e24',
-    autoPopup: {
-        aggressive: true,
-        timer: 5,
-        trigger: showTimerPopup
+Waybeo.Utils.getIpCountry(function(l) {
+    var _AllowedSouthAmericanCountries = ['US'];
+    if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
+       Waybeo.CTC.Init({
+            hash: '56bd928aa3e24',
+            autoPopup: {
+                aggressive: true,
+                timer: 5,
+                trigger: showTimerPopup
+            }
+        });
     }
 });
 
-Waybeo.Utils.getIpCountry(function(l) {
-    var _AllowedSouthAmericanCountries = ['US','MX','CA','CU'];
-    if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
-       $('.wbpb-mastercontainer').show();
-    }
-});
+
 
 function makecallTimer(_phone) {
     Waybeo.CTC.MakeCall({

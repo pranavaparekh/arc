@@ -67,12 +67,17 @@ function clearStatusbottom() {
             .removeClass('timer');
 }
 
-Waybeo.CTC.Init({
-    hash: '56bd928aa3e24',
-    autoPopup: {
-        aggressive: true,
-        timer: 5,
-        trigger: showTimerPopup
+Waybeo.Utils.getIpCountry(function(l) {
+    var _AllowedSouthAmericanCountries = ['SA','AE', 'QA', 'JO', 'IL', 'OM', 'KW', 'BH'];
+    if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
+       Waybeo.CTC.Init({
+            hash: '5780845c74a17',
+            autoPopup: {
+                aggressive: true,
+                timer: 5,
+                trigger: showTimerPopup
+            }
+        });
     }
 });
 
