@@ -25,14 +25,15 @@ class Subscribor_ServiceController extends BaseController
      // get the endpoint to which data is submitted
     $endpoint = craft()->request->getPost('endpoint');
 
-    // get areas of interest and implode multiple values into comma separated values
-    $areas = implode(",", craft()->request->getPost('Areas_of_Interest'));
-
     // get all data
     $data = craft()->request->getPost();
 
-    // modify the array to include imploded values (see above)
-    $data['Areas_of_Interest'] = $areas;
+    if( !empty(craft()->request->getPost('Areas_of_Interest')) ) {
+        // get areas of interest and implode multiple values into comma separated values
+        $areas = implode(",", craft()->request->getPost('Areas_of_Interest'));
+            // modify the array to include imploded values (see above)
+        $data['Areas_of_Interest'] = $areas;
+    }
 
     // this is old version 3.9.3 componser client
     // $client = new \Guzzle\Http\Client();
