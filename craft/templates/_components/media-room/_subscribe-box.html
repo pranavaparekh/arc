@@ -122,7 +122,7 @@ window.onload = function ()
 </script>
   <form method="post" accept-charset="UTF-8" id="sub-form" action="" />
       <input type="hidden" name="action" value="subscribor/service/subscribe">
-      <input type="hidden" name="endpoint" value="http://connect.aranca.com/acton/eform/17562/0022/d-ext-0002" />
+      <input type="hidden" name="endpoint" value="http://connect.aranca.com/acton/eform/17562/000c/d-ext-0001" />
       <input type="hidden" name="redirect" value="{{ url(craft.request.path) }}" />
       <input type="hidden" name="_form_name_" value="Subscription Form" />
       <input type="hidden" name="Subscription_Status" value="on" />
@@ -143,14 +143,14 @@ window.onload = function ()
       
       <header class="sub-form__header">
         <img src="/assets/images/icons/newsletter-icon.png">
-        <h3 class="sub-form__headline">Get fresh content delivered weekly</h3>
-        <p>Get insights on topics that matter to your business. Stay updated on the areas that interest you.</p>
+        <h3 class="sub-form__headline">News@Aranca</h3>
+        <p>Get updates on upcoming new reports from Aranca to your inbox</p>
       </header>
 
       <div class="input-group">
         <input type="email" class="form-control sub-form__email" placeholder="Just your email" name="Email_Address" required>
         <span class="input-group-btn open-aoe-modal">
-          <a href="javascript:void(0)" id="#open-aoe-modal" class="btn btn-success">subscribe</a>
+          <button type="submit" class="btn btn-success">subscribe</button>
         </span>
       </div>
       <small class="help-block with-errors" style="color: red;"></small>

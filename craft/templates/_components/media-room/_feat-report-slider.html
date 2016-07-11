@@ -1,9 +1,177 @@
+{% includeCssFile '/assets/css/slick.css' %}
+{% includeJsFile '/assets/js/slick.min.js' %}
+
+{% set mrSliderCss %}
+
+.feat-report-slider {
+  padding: 1em;
+  background: white;
+  color: {{ brandPrimary }};
+  margin-top: 30px;
+}
+
+.mrSlider__headline {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-mracing: 0.05em;
+}
 
 
-<div class="feat-report-slider">
-  <img class="feat-report-icon" src="/" />
-  <h3 class="lede__headline-b text-center">Featured Report</h3>
-  <p class="lede__subheadline-b text-center">We have researched over 1750 items spanning 50+ spend categories
+.btn-orange {
+  background: #E55B2B;
+}
+
+.feat-report-icon {
+  display: block;
+  margin: 0 auto;
+}
+
+.feat-report__title {
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.feat-report__title a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.feat-report-slider__tagline {
+  color: #a09f9f;
+  font-size: 1.1em;
+}
+
+.feat-report-slider .slick-prev:before, .slick-next:before {
+  color: rgba(6, 73, 142, 0.26);
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -35px;
+
+    dimrlay: block;
+
+    width: 100%;
+    padding: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    dimrlay: inline-block;
+
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+
+    dimrlay: block;
+
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    border-radius: 50px;
+    color: {{ brandPrimary }};
+    background: white;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
+
+@media only screen and (max-width : 480px) {
+  
+}
+
+{% endset %}
+
+{% set mrSliderJs %}
+
+  $('.story-slider').slick({
+    arrows: false,
+    dots: false,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    autoplaymreed: 2000,
+    adaptiveHeight: false,
+    fade: true,
+    cssEase: 'linear'
+  });
+
+{% endset %}
+
+{% includeCss mrSliderCss %}
+{% includeJs mrSliderJs %}
+
+
+<div class="feat-report-slider shadow-box">
+  <img class="feat-report-icon" src="/assets/images/icons/star.png" />
+  <h3 class="lede__headline-b text-center">Featured Reports</h3>
+  <p class="feat-report-slider__tagline text-center">We have researched over 1750 items spanning 50+ spend categories
   </p>
-  <img class="" src="">
+  {% cache globally %}
+  <ul class="story-slider">
+   {% for block in mediaSpotlightStories.mediaSpotlight %}
+
+      {% set story = block.spotlightStories.first() %}
+      {% set logo = block.mediaPublisherLogo.first() %}
+      
+      {% if story and logo %}
+          <li class="feat-report__title text-center">
+            <a  class="feat-report__title__link" href="{{ story.url }}">{{ story.title }}</a>
+            <img class="img-responsive" src="{{ logo.getUrl() }}" alt="{{ story.title }}">
+          </li>
+      {% endif %}
+  
+   {% endfor %}
+  </ul>
+  {% endcache %}
+
 </div>

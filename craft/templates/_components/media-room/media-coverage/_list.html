@@ -113,8 +113,10 @@
                 <div class="kc-content__grid__inner">
                   <h5 class="kc-content__headline"><a target="_blank" href="{{ mediaCoverageItem.mcSource }}">{{ mediaCoverageItem.title }}</a></h5>
                   <p class="kc-content__publisher">
-                    covered by <strong>{{ mediaCoverageItem.mcPublisher }}</strong> | 
-                    <span><a href="{{ mediaCoverageItem.url }}" class="kc-weblink">Read it on our website</a></span></p>
+                    covered by <strong>{{ mediaCoverageItem.mcPublisher }}</strong>
+                    {% if mediaCoverageItem.mcContent | length %}
+                    | <span><a href="{{ mediaCoverageItem.url }}" class="kc-weblink">Read it on our website</a></span></p>
+                    {% endif %}
                   <p class="kc-content__excerpt">{{ mediaCoverageItem.mcExcerpt|hacksaw(words='20') }}</p>
                   <p class="kc-content__date"><em><small>published on {{ mediaCoverageItem.postDate | date("M d, Y") }}</small></em></p>
                 </div>
