@@ -43,7 +43,9 @@ return array(
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/archives/(?P<year>\d{4})-(?P<month>\d{2})' => 'layouts/kc/_archive',
 
    // Feeds go here
-   'feeds/(?P<category>\w+\-?\w+?)' => 'layouts/feeds/feed',
+   'feeds/(?P<categorySlug>\w+\-?\w+?)' => 'layouts/feeds/feed',
+   'feed/media' => 'layouts/feeds/media',
+   'feed/press-releases' => 'layouts/feeds/press-releases',
 
    'special-reports/pp-form' => 'layouts/special-reports/pp-form',
 

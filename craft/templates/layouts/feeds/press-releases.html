@@ -1,0 +1,29 @@
+{# http://craftcms.stackexchange.com/questions/4650/any-working-rss-feed-examples-out-there #}
+
+{% header "Content-Type: application/rss+xml" %}
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+{% set rss =  craft.entries.section('pressReleases') %}
+
+<channel>
+  <title>Aranca Press Releases RSS Feed</title>
+  <link>{{ craft.request.getUrl() }}/</link>
+  <description>Aranca RSS Feed for Aranca Press Releases</description>
+  <language>en-us</language>
+  <atom:link href="{{ url() }}" rel="self" type="application/rss+xml" />
+
+  {% for item in rss %}
+  <item>
+    <title>{{ item.title }}</title>
+    <link>{{ item.url() }}</link>
+
+
+    <description>{{ item.prExcerpt | escape }}</description>
+    <pubDate>{{ item.postDate.rfc2822() }}</pubDate>
+    <guid>{{ item.url() }}</guid>
+  </item>
+  {% endfor %}
+</channel>
+
+</rss>
