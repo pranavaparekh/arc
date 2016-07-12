@@ -4,20 +4,18 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
-{% set latestSpecialReports = craft.entries.section('specialReports').relatedTo({
-  category: craft.categories.slug(category)
-}).limit(5).ids() %}
-{% set latestArticles = craft.entries.section('articles').relatedTo({
-  category: craft.categories.slug(category)
-}).limit(5).ids() %}
+{% set category = craft.categories.slug(categorySlug).first() %}
+{% if not category %}
+    {% exit 404 %}
+{% endif %}
 
-{% set latestBlogPosts = craft.entries.section('blogs').relatedTo({
-  category: craft.categories.slug(category)
-}).limit(5).ids() %}
+{% set latestSpecialReports = craft.entries.section('specialReports').relatedTo(category).limit(5).ids() %}
 
-{% set latestInfographics = craft.entries.section('infographics').relatedTo({
-  category: craft.categories.slug(category)
-}).limit(5).ids() %}
+{% set latestArticles = craft.entries.section('articles').relatedTo(category).limit(5).ids() %}
+
+{% set latestBlogPosts = craft.entries.section('blogs').relatedTo(category).limit(5).ids() %}
+
+{% set latestInfographics = craft.entries.section('infographics').relatedTo(category).limit(5).ids() %}
 
 {% set entryIdsCombined = latestSpecialReports | merge(latestArticles) | merge(latestBlogPosts) | merge(latestInfographics) %}
 
