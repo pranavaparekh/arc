@@ -1,4 +1,5 @@
-$(document).ready(function () {
+(function($){
+    $(document).ready(function () {
     var telInput = $("#timerMobile");
     $.get("http://ipinfo.io", function (response) {
         telInput.intlTelInput({
@@ -161,3 +162,5 @@ function setStatusTimer() {
         }, 1000);
     }
 }
+
+})(jq191);
