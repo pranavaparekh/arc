@@ -1,4 +1,5 @@
-$(document).ready(function () {
+(function($){
+    $(document).ready(function () {
     var telInput = $("#timerMobile");
     $.get("http://ipinfo.io", function (response) {
         telInput.intlTelInput({
@@ -68,10 +69,10 @@ function clearStatusbottom() {
 }
 
 Waybeo.Utils.getIpCountry(function(l) {
-    var _AllowedSouthAmericanCountries = ['SA','AE', 'QA', 'JO', 'IL', 'OM', 'KW', 'BH','IN'];
+    var _AllowedSouthAmericanCountries = ['US'];
     if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
        Waybeo.CTC.Init({
-            hash: '5780845c74a17',
+            hash: '5784c19c9db01',
             autoPopup: {
                 aggressive: true,
                 timer: 5,
@@ -81,11 +82,13 @@ Waybeo.Utils.getIpCountry(function(l) {
     }
 });
 
+
+
 function makecallTimer(_phone) {
     Waybeo.CTC.MakeCall({
-        'hash': '5780845c74a17',
-        'route_hash': '5780813adc8ca',
-        'callerid_hash': '5780845c931b7',
+        'hash': '5784c19c9db01',
+        'route_hash': '5784c1206956f',
+        'callerid_hash': '5784c19cb791b',
         'contact_number': _phone
     }, eventCallBack);
 }
@@ -161,3 +164,5 @@ function setStatusTimer() {
         }, 1000);
     }
 }
+    
+})(jq191);
