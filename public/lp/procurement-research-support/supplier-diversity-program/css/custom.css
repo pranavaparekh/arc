@@ -349,3 +349,30 @@ left: 35%;
     padding:12px 20px;
     }
 }
+
+/* banner */
+header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-image: url(../img/Procurement-Research-overview.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    min-height: 450px;
+    overflow: hidden;
+}
+
+.svc-masthead__headline {
+    font-size: 50px;
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    text-shadow: 1px 2px 6px #040404;
+    position: static;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
