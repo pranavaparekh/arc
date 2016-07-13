@@ -63,7 +63,7 @@
 {% includeCss edpickCss %}
 
 
-{% cache globally if craft.config.cache %}
+{# cache globally if craft.config.cache #}
 
 {% set blogEditorentries = craft.entries.section('blogs').editorPicks('1').ids() %}
 {% set articleEditorentries = craft.entries.section('articles').editorPicks('1').ids() %}
@@ -110,5 +110,5 @@
   </ul>
 </div>
 
-{% endcache %}
+{# endcache #}
 

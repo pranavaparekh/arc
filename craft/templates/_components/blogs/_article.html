@@ -33,6 +33,11 @@
   font-size: 1.1em;
 }
 
+.article__content a {
+  color: #b3223c;
+  font-weight: 500;
+}
+
 .article__image {
   margin-bottom: 20px;
 }
@@ -122,6 +127,9 @@ $(document).ready(function() {
     <div class="sidebar">
       {% include '_components/kc/_subscription-form' %}
       {% include '_components/kc/_social' %}
+      {% if entry.url == "http://aranca.craft.dev/knowledge-library/blogs-and-opinions/5-sectors-and-6-stocks-that-will-flourish-after-a-flush-indian-monsoon" %}
+        {% include '_components/kc/_cta-blog' %}
+      {% endif %}
       {% include '_components/kc/_editor-picks' %}
     </div>
   </div>{# end col-sm-4 #}
