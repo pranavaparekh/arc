@@ -26,6 +26,18 @@
     font-size: 0.8em;
     letter-spacing: 0.08em;
 }
+
+.mc__publisher {
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  padding-right: 1em;
+}
+
+.mc__publisher strong {
+  color: #2e79bb;
+}
+
 {% endset %}
 
 {% set mcStoryListJs %}
@@ -119,7 +131,10 @@ $(document).ready(function () {
                   
               <article class="mcStoryList__grid__item">
                 <h5 class="mcStoryList__headline"><a href="{{ mcEntry.url }}">{{ mcEntry.title }}</a></h5>
-                <p class="mcStoryList__date"><em><small>published on {{ mcEntry.postDate | date("M d, Y") }}</small></em></p>
+                <p class="mcStoryList__date">
+                    <em><small>published on {{ mcEntry.postDate | date("M d, Y") }}</small></em>
+                    <span class="mc__publisher pull-right">Published by <strong>{{ mcEntry.mcPublisher }}</strong></span>
+                </p>
               </article>
 
             </li>
