@@ -33,6 +33,11 @@
   font-size: 1.1em;
 }
 
+.article__content a {
+  color: #b3223c;
+  font-weight: 500;
+}
+
 .article__image {
   margin-bottom: 20px;
 }
@@ -121,6 +126,9 @@ $(document).ready(function() {
   <div class="col-sm-4">
     <div class="sidebar">
       {% include '_components/kc/_subscription-form' %}
+      {% if entry.url == "http://www.aranca.com/knowledge-library/blogs-and-opinions/supplier-diversity-are-you-benchmarking-correctly" %}
+        {% include '_components/kc/_cta-blog' %}
+      {% endif %}
       {% include '_components/kc/_social' %}
       {% include '_components/kc/_editor-picks' %}
     </div>
