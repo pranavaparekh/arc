@@ -130,7 +130,13 @@ $(document).ready(function () {
             <li class="mcStoryList__item shadow-box">
                   
               <article class="mcStoryList__grid__item">
-                <h5 class="mcStoryList__headline"><a href="{{ mcEntry.url }}">{{ mcEntry.title }}</a></h5>
+                {# if the story has content on our website, link to it or link it to the publication source where it is published #}
+                {% if not mcEntry.mcContent | length %}
+                  {% set mcEntryUrl = mcEntry.mcSource %}
+                {% else %}
+                  {% set mcEntryUrl = mcEntry.url %}
+                {% endif %}
+                <h5 class="mcStoryList__headline"><a href="{{ mcEntryUrl }}">{{ mcEntry.title }}</a></h5>
                 <p class="mcStoryList__date">
                     <em><small>published on {{ mcEntry.postDate | date("M d, Y") }}</small></em>
                     <span class="mc__publisher pull-right">Published by <strong>{{ mcEntry.mcPublisher }}</strong></span>
