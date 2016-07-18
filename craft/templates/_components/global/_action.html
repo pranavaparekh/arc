@@ -137,7 +137,7 @@ $.ajax({
   contentType: "application/json",
   dataType: 'jsonp',
   success: function(data) {
-    $('#linkedin-shares').html(data.count + ' shares').css('display', 'block');
+    $('#linkedin-shares').html(data.count).css('display', 'block');
   },
   error: function() {
     console.log('Failed!');
