@@ -1,42 +1,265 @@
-{% set kcFeaturedArticlesCss %}
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeJsFile "/assets/js/readingTime.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
 
-  .feat-articles {
-    margin-top: 20px;
-  }
+{% set catListCss %}
+
+
+
+#catList {
+  padding-top:50px;
+}
+
+
+
+.kc-content__list__item {
+  margin: 60px 0;
+  background: #fff;
+}
+
+.kc-content__list__item img {
+  min-height: 230px;
+}
+
+.kc-content__list__item:first-child {
+  margin-top: 30px;
+}
+
+.kc-content__grid__inner {
+  padding: 0.8em;
+  padding-left: 0;
+}
+
+.kc-content__headline {
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.2em;
+}
+
+.kc-content__excerpt {
+  color: #a2a2a2;
+  font-size: 1.1em;
+}
+
+.kc-content__date {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+}
+
+.kc-content__article-body {
+  display: none;
+}
+
+.meta {
+  color: #ccc7c7;
+  letter-spacing: 0.05em;
+}
 
 {% endset %}
 
-{% includeCss kcFeaturedArticlesCss %}
 
-{% set featuredEntries = craft.entries.section('articles').limit() %}
-<span class="kc-label--teal">All Articles</span>
-<div class="feat-articles">
+{% set catListJs %}
 
-  <div class="row">
-  {% for entry in featuredEntries %}
-  <div class="featEntry col-sm-6">
-      <a href={{ entry.url }}>
-        <div class="featEntry__inner shadow-box">
+$(document).ready(function () {
+    $("#catList").zozoTabs({
+      theme: "black",
+      style: "underlined",
+      orientation: "horizontal",
+      position: "top-center",
+      size: "xlarge",
+      animation: {
+        easing: "easeInOutExpo",
+        duration: 400,
+        effects: "slideH"
+      },
+    });
+});
 
-          {% set asset = entry.articlesBanner.first() %}
+$(function() {
 
-          {% if asset %}
-              <img src="{{ asset.url }}" class="img-responsive" alt="{{ asset.altTag }}">
-          {% else %}
-              <img src="/assets/images/Article-thumb.jpg" class="img-responsive" alt={{entry.title}}>
-          {% endif %}
+  $('.kc-content__article-body').each(function() {
 
-          <div class="featEntry__headline__wrapper">
-            <h2 class="featEntry__headline">{{ entry.title }}</h2>
-          </div>
+    $(this).readingTime({
+        readingTimeTarget: $(this).siblings('.meta').find('.eta'),
+        wordCountTarget: $(this).siblings('.meta').find('.words'),
+        wordsPerMinute: 100
+    });
 
-        </div><!-- featEntry__inner -->
-      </a>
-    </div><!-- kc-featured-article -->
-  {% if loop.index % 2 == 0 %}
-    </div><!-- close row and open it below again -->
-    <div class="row">
-  {% endif %}
-{% endfor %}
-   </div><!-- row -->
-</div><!-- articles -->
+  });
+  
+});
+
+{% endset %}
+
+{% includeCss catListCss %}
+{% includeJs catListJs %}
+
+{% cache globally %}
+
+{% set brCategory = craft.categories.slug('business-research').first() %}
+{% set ipCategory = craft.categories.slug('ip-research').first() %}
+{% set irCategory = craft.categories.slug('investment-research').first() %}
+
+{% set brArticles = craft.entries.section('articles').relatedTo(brCategory).limit() %}
+{% set ipArticles = craft.entries.section('articles').relatedTo(ipCategory).limit() %}
+{% set irArticles = craft.entries.section('articles').relatedTo(irCategory).limit() %}
+<!-- Zozo Tabs Start-->
+<div id="catList">
+
+    <!-- Tab Navigation Menu -->
+    <ul>
+      {% if brArticles.total() > 0 %}
+        <li class="kc-content__type-item">
+          <img src="/assets/images/icons/kc-articles.png" class="hidden-xs" alt="articles">
+          <a>Business Research</a>
+        </li>
+      {% endif %}
+
+      {% if ipArticles.total() > 0 %}
+        <li class="kc-content__type-item">
+          <img src="/assets/images/icons/kc-articles.png" class="hidden-xs" alt="articles">
+          <a>IP Research</a>
+        </li>
+      {% endif %}
+
+      {% if irArticles.total() > 0 %}
+        <li class="kc-content__type-item">
+          <img src="/assets/images/icons/kc-articles.png" class="hidden-xs" alt="articles">
+          <a>Investment Research</a>
+        </li>
+      {% endif %}
+    </ul>
+
+    <!-- Start: Content container -->
+    <div>
+
+      <!-- BR Articles -->
+      {% if brArticles.total() > 0 %}
+        <div class="row">
+          <div class="col-sm-12">
+            <ol class="kc-content__list">
+              {% for article in brArticles %}
+              
+              <li class="kc-content__list__item shadow-box">
+                <div class="row">
+                  
+                  <div class="col-lg-7 col-sm-12">
+                    <img src="{{ article.articlesBanner.first().url ?? '' }}" class="img-responsive">
+                  </div>
+
+                  <div class="col-lg-5 col-sm-12">
+                    <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                      <div class="kc-content__grid__inner">
+                        <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+                        <p class="kc-content__excerpt">{{ article.articlesContent|hacksaw(words='18') }}</p>
+                        <p class="meta">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<span class="eta"></span> to read |
+                          <span class="words"></span> words
+                        </p>
+                        <p class="kc-content__date"><em><small>published on {{ article.postDate | date("M d, Y") }}</small></em></p>
+                        <div class="kc-content__article-body">
+                          {{ article.articlesContent }}
+                        </div>
+                      </div>
+                    </article>
+                  </div> {# end col-sm-7 #}
+                </div>{# end row #}
+              </li>
+
+               
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      {% endif %}
+      <!-- end BR Articles -->
+
+      <!-- IP Articles -->
+      {% if ipArticles.total() > 0 %}
+        <div class="row">
+          <div class="col-sm-12">
+            <ol class="kc-content__list">
+              {% for article in ipArticles %}
+              
+              <li class="kc-content__list__item shadow-box">
+                <div class="row">
+                  
+                  <div class="col-lg-7 col-sm-12">
+                    <img src="{{ article.articlesBanner.first().url ?? '' }}" class="img-responsive">
+                  </div>
+
+                  <div class="col-lg-5 col-sm-12">
+                    <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                      <div class="kc-content__grid__inner">
+                        <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+                        <p class="kc-content__excerpt">{{ article.articlesContent|hacksaw(words='18') }}</p>
+                        <p class="meta">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<span class="eta"></span> to read |
+                          <span class="words"></span> words
+                        </p>
+                        <p class="kc-content__date"><em><small>published on {{ article.postDate | date("M d, Y") }}</small></em></p>
+                        <div class="kc-content__article-body">
+                          {{ article.articlesContent }}
+                        </div>
+                      </div>
+                    </article>
+                  </div> {# end col-sm-7 #}
+                </div>{# end row #}
+              </li>
+
+               
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      {% endif %}
+      <!-- end IP Articles -->
+
+      <!-- IP Articles -->
+      {% if irArticles.total() > 0 %}
+        <div class="row">
+          <div class="col-sm-12">
+            <ol class="kc-content__list">
+              {% for article in irArticles %}
+              
+              <li class="kc-content__list__item shadow-box">
+                <div class="row">
+                  
+                  <div class="col-lg-7 col-sm-12">
+                    <img src="{{ article.articlesBanner.first().url ?? '' }}" class="img-responsive">
+                  </div>
+
+                  <div class="col-lg-5 col-sm-12">
+                    <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                      <div class="kc-content__grid__inner">
+                        <h5 class="kc-content__headline"><a href="{{ article.url }}">{{ article.title }}</a></h5>
+                        <p class="kc-content__excerpt">{{ article.articlesContent|hacksaw(words='18') }}</p>
+                        <p class="meta">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<span class="eta"></span> to read |
+                          <span class="words"></span> words
+                        </p>
+                        <p class="kc-content__date"><em><small>published on {{ article.postDate | date("M d, Y") }}</small></em></p>
+                        <div class="kc-content__article-body">
+                          {{ article.articlesContent }}
+                        </div>
+                      </div>
+                    </article>
+                  </div> {# end col-sm-7 #}
+                </div>{# end row #}
+              </li>
+
+               
+              {% endfor %}
+            </ol>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      {% endif %}
+      <!-- end IR Articles -->
+
+
+    </div><!-- End: content container -->
+</div>
+<!-- Zozo Tabs End-->
+
+{% endcache %}

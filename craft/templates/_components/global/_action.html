@@ -57,6 +57,46 @@
   padding-top: 15px;
 }
 
+a.tip {
+    position: relative;
+}
+
+a.tip span {
+  display: none;
+  position: absolute;
+  top: 14px;
+  left: 50px;
+  padding: 5px;
+  z-index: 100;
+  background: #ffffff;
+  color: #034883;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #034883;
+}
+a.tip span:before{
+    content:'';
+    display:block;
+    width:0;
+    height:0;
+    position:absolute;
+    
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; 
+    border-right:8px solid #034883;
+    left:-8px;
+    
+    top:7px;
+}
+
+a:hover.tip {
+    font-size: 99%; /* this is just for IE */
+}
+
+a:hover.tip span {
+    display: block;
+}
+
 @media only screen and (max-width : 480px) {
   .share-links {
     position: static;
@@ -84,8 +124,26 @@
 
 
 {% set actionJs %}
+$( document ).ready(function() {
 
+  var actionUrl = "{{ entry.url | e }}";
+  var shareUrl = 'https://www.linkedin.com/countserv/count/share?url=' + actionUrl;
+  console.log('url is', shareUrl);
 
+  $.ajax({
+    url: shareUrl,
+    type: 'GET',
+    contentType: "application/json",
+    dataType: 'jsonp',
+    success: function(data) {
+      $('#linkedin-shares').html(data.count).css('display', 'block');
+    },
+    error: function() {
+      console.log('Failed!');
+    },
+  });
+
+});
 
 {% endset %}
 
@@ -99,8 +157,8 @@
 <a class="sharer" href="javascript:void(0);"  data-sharer="twitter" data-title="{{ docTitle }}" data-url="{{ docUrl }}">
 <i class="fa fa-twitter"></i></a>
 
-<a class="sharer" href="javascript:void(0);" data-sharer="linkedin" data-url="{{ docUrl }}">
-<i class="fa fa-linkedin"></i></a>
+<a class="sharer tip" href="javascript:void(0);" data-sharer="linkedin" data-url="{{ docUrl }}">
+<i class="fa fa-linkedin"></i><span id="linkedin-shares"></span></a>
 
 <a class="sharer" href="javascript:void(0);" data-sharer="email" data-title="{{ docTitle }}"
   data-subject="I found this at the aranca website" data-to="" data-url="{{ docUrl }}">

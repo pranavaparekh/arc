@@ -14,6 +14,10 @@ body {
   background-color: #F4F8FA !important;
 }
 
+.sub-form {
+  margin-top: 180px;
+}
+
 {% endset %}
 
 {% includeCss kcBodyCss %}
@@ -22,20 +26,20 @@ body {
 {% include '_components/kc/_subscribe-alert' %}
 {% include '_components/articles/_masthead' %}
 
-<div class="container">
+<div class="container-fluid kc-cat">
   <div class="row">
-    <div class="col-sm-4 mc-sidebar">
-      {% include '_components/kc/_highlights' %}
-      {% include '_components/media-room/_pr-list' %}
-      {% include '_components/media-room/_archive' %}
-    </div><!--  end col-sm-4 -->
-
-    <div class="col-sm-8 mc-main">
+    <div class="col-sm-8">
       {% include '_components/articles/_list' %}
-      {# include '_components/press-kit/_pk-download' #}
     </div><!--  end col-sm-8 -->
-  </div><!--  end row -->
-</div>
+
+    <!-- start sidebar -->
+    <div class="col-sm-4">
+      <div class="sidebar">
+        {% include '_components/category/_sidebar' %}
+      </div>{# end sidebar #}
+    </div>{# end col-sm-4 #}
+  </div>{# end row #}
+</div>{# end container #}
 
 {% include '_components/global/_footer' %}
 

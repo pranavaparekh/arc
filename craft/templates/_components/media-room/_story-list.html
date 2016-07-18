@@ -130,7 +130,8 @@ $(document).ready(function () {
             <li class="mcStoryList__item shadow-box">
                   
               <article class="mcStoryList__grid__item">
-                {# if the story has content on our website, link to it or link it to the publication source where it is published #}
+                {# if the story has content on our website, link to it or link 
+                it to the publication source where it is published #}
                 {% if not mcEntry.mcContent | length %}
                   {% set mcEntryUrl = mcEntry.mcSource %}
                 {% else %}
