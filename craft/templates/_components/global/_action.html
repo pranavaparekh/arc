@@ -126,24 +126,22 @@ a:hover.tip span {
 {% set actionJs %}
 $( document ).ready(function() {
 
-var actionUrl = "{{ entry.url | e }}";
-var shareUrl = 'https://www.linkedin.com/countserv/count/share?url=' + actionUrl;
-console.log('url is', shareUrl);
+  var actionUrl = "{{ entry.url | e }}";
+  var shareUrl = 'https://www.linkedin.com/countserv/count/share?url=' + actionUrl;
+  console.log('url is', shareUrl);
 
-$.ajax({
-  url: shareUrl,
-  type: 'GET',
-  contentType: "application/json",
-  dataType: 'jsonp',
-  success: function(data) {
-    $('#linkedin-shares').html(data.count).css('display', 'block');
-  },
-  error: function() {
-    console.log('Failed!');
-  },
-});
-
-
+  $.ajax({
+    url: shareUrl,
+    type: 'GET',
+    contentType: "application/json",
+    dataType: 'jsonp',
+    success: function(data) {
+      $('#linkedin-shares').html(data.count).css('display', 'block');
+    },
+    error: function() {
+      console.log('Failed!');
+    },
+  });
 
 });
 
