@@ -5,7 +5,20 @@
       <p>
         Written by
         {% for author in entry.multiAuthor %}
-          {{ author.firstName }} {{ author.lastName }} {% if entry.multiAuthor | length > 1 %} | {% endif %}
+          
+          {% if author.authorLinkedinProfile | length %}
+            <a href="{{author.authorLinkedinProfile}}">{{ author.firstName }} {{ author.lastName }}</a> {% if entry.multiAuthor | length > 1 %} | {% endif %}
+            
+            {# https://www.linkedin.com/profile/profile-badges #}
+            <a href="{{author.authorLinkedinProfile}}">
+      
+              <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_greytxt_80x15.png" width="80" height="15" border="0" alt="View {{ author.firstName }} {{ author.lastName }}'s profile on LinkedIn">
+        
+            </a>
+          {% else %}
+            {{ author.firstName }} {{ author.lastName }} {% if entry.multiAuthor | length > 1 %} | {% endif %}
+          {% endif %}
+          
          {% endfor %}
 
       </p>
