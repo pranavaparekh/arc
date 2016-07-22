@@ -121,7 +121,8 @@ function makecallTimer(_phone) {
 Waybeo.Utils.getIpCountry(function(location) {
     var _location = location.country_code;
     if (_location == 'US') {
-         $( "#int-num" ).show();
+         $( "#int-num").show();
+         $( "#int-num-mob").show();
          var _intnum = $("#int-num-display").data('telus');
          $("#int-num-display").html(_intnum);
         }
