@@ -68,11 +68,37 @@ function clearStatusbottom() {
             .removeClass('timer');
 }
 
+//timerbased popup for US
+
+// Waybeo.Utils.getIpCountry(function(l) {
+//     var _AllowedSouthAmericanCountries = ['US'];
+//     if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
+//        Waybeo.CTC.Init({
+//             hash: '56bd928aa3e24',
+//             autoPopup: {
+//                 aggressive: true,
+//                 timer: 5,
+//                 trigger: showTimerPopup
+//             }
+//         });
+//     }
+// });
+
+// function makecallTimer(_phone) {
+//     Waybeo.CTC.MakeCall({
+//         'hash': '56bd928aa3e24',
+//         'route_hash': '56bd8379cf7b9',
+//         'callerid_hash': '573422281ad9d',
+//         'contact_number': _phone
+//     }, eventCallBack);
+// }
+
+// timerbased popup for Middle East
 Waybeo.Utils.getIpCountry(function(l) {
-    var _AllowedSouthAmericanCountries = ['US'];
+    var _AllowedSouthAmericanCountries = ['SA','AE', 'QA', 'JO', 'IL', 'OM', 'KW', 'BH'];
     if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
        Waybeo.CTC.Init({
-            hash: '56bd928aa3e24',
+            hash: '5780845c74a17',
             autoPopup: {
                 aggressive: true,
                 timer: 5,
@@ -82,16 +108,25 @@ Waybeo.Utils.getIpCountry(function(l) {
     }
 });
 
-
-
 function makecallTimer(_phone) {
     Waybeo.CTC.MakeCall({
-        'hash': '56bd928aa3e24',
-        'route_hash': '56bd8379cf7b9',
-        'callerid_hash': '573422281ad9d',
+        'hash': '5780845c74a17',
+        'route_hash': '5780813adc8ca',
+        'callerid_hash': '5780845c931b7',
         'contact_number': _phone
     }, eventCallBack);
 }
+
+// Show number at top navigation
+Waybeo.Utils.getIpCountry(function(location) {
+    var _location = location.country_code;
+    if (_location == 'US') {
+         $( "#int-num" ).show();
+         var _intnum = $("#int-num-display").data('telus');
+         $("#int-num-display").html(_intnum);
+        }
+    });
+
 
 var captcha = '', timer = '';
 function eventCallBack(event, data) {
