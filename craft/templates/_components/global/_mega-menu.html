@@ -3,6 +3,7 @@
 {% set wsmenuCss %}
 
  /*------------------------------------ Desktop CSS ---------------------------------------------*/
+ #int-num { display:none;}
 .wsmobileheader{display:none;}
 .overlapblackbg{ display:none; }
 .bigmegamenu{ position:relative; }
@@ -387,7 +388,8 @@
 .wsmenu-click02{display:none;}
 
 /* Default Theme */ 
-.wsmenu-list li:hover>a{/*background-color:rgba(0,0,0,0.08) !important;*/ font-weight: bold; text-decoration:none;}
+.wsmenu-list li > a { color: #00458c; }
+.wsmenu-list li:hover>a{/*background-color:rgba(0,0,0,0.08) !important;*/ color:#b21741; text-decoration:none;}
 .wsmenu-list > li > a:hover {/*background-color:rgba(0,0,0,0.08) !important; */ text-decoration:none;}
 .wsmenu-list > li > a.active{/*background-color:rgba(0,0,0,0.08) !important;*/ text-decoration:none; }
 .wsmenu-submenu > li > a:hover {/*background-color:rgba(0,0,0,0.08) !important; */border-radius:0px!important; text-decoration:none;  text-decoration:none;}
@@ -1180,7 +1182,7 @@ TABBED HOVER -->
  <div class="wsmobileheader clearfix">
   <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
   <a href="{{ siteUrl }}" class="smallogo"><img src="/assets/images/aranca_logo_small.png" alt="" /></a>
-<!--   <a class="wbs-switch callusicon" href="javascript:void(0)"><span class="fa fa-phone"></span></a> -->
+  <a class="wbs-switch callusicon" href="javascript:void(0)"><span class="fa fa-phone"></span></a>
 </div>
 
   
@@ -1603,7 +1605,7 @@ TABBED HOVER -->
                                 <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
                                 <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/work-at-aranca">Work At Aranca</a></li>
                                 <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}media-room">Media Room</a></li>
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}media-room/press-releases">Press Release</a></li>
+                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}press-releases">Press Release</a></li>
                                 </ul>
                             </div><!-- end box -->
                         </div><!-- end col -->
@@ -1619,9 +1621,14 @@ TABBED HOVER -->
           <!-- contact -->
           <li><a href="/contact-us"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CONTACT</a>
           </li>
+          
+
+          <li id="int-num"><a href="/contact-us" style="color: #b0113c;"><i class="fa fa-phone-square"></i>&nbsp;&nbsp;CALL US: <span id="int-num-display" data-telus="+17164420910" data-teluk="+17164420910"></span></a>
+          </li>
+
 
           <!-- search -->
-          <li><a href="#"><i class="fa fa-search"></i>&nbsp;&nbsp;SEARCH<span class="arrow"></span></a>
+          <li><a href="#"><i class="fa fa-search"></i><span class="arrow"></span></a>
             <div class="megamenu halfdiv">
               <form role="search" method="get" action="{{ url('search/results') }}" id="search-form" class="search-form searchbox menu_form">
                   <input type="text" placeholder="Search our knowledge library and services" name="q" class="searchbox-input" onkeyup="buttonUp();" id="s" required>

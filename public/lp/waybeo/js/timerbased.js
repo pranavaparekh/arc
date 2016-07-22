@@ -68,21 +68,30 @@ function clearStatusbottom() {
             .removeClass('timer');
 }
 
-Waybeo.Utils.getIpCountry(function(l) {
-    var _AllowedSouthAmericanCountries = ['US'];
-    if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
-       Waybeo.CTC.Init({
-            hash: '56bd928aa3e24',
-            autoPopup: {
-                aggressive: true,
-                timer: 5,
-                trigger: showTimerPopup
-            }
-        });
-    }
-});
+//timerbased popup
 
+// Waybeo.Utils.getIpCountry(function(l) {
+//     var _AllowedSouthAmericanCountries = ['US'];
+//     if($.inArray(l.country_code, _AllowedSouthAmericanCountries) != -1) {
+//        Waybeo.CTC.Init({
+//             hash: '56bd928aa3e24',
+//             autoPopup: {
+//                 aggressive: true,
+//                 timer: 5,
+//                 trigger: showTimerPopup
+//             }
+//         });
+//     }
+// });
 
+Waybeo.Utils.getIpCountry(function(location) {
+    var _location = location.country_code;
+    if (_location == 'IN') {
+         $( "#int-num" ).show();
+         var _intnum = $("#int-num-display").data('telus');
+         $("#int-num-display").html(_intnum);
+        }
+    });
 
 function makecallTimer(_phone) {
     Waybeo.CTC.MakeCall({
