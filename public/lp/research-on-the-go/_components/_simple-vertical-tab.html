@@ -28,9 +28,11 @@ div.bhoechie-tab-menu{
 }
 div.bhoechie-tab-menu div.list-group{
   margin-bottom: 0;
+  font-size: 15px;
 }
 div.bhoechie-tab-menu div.list-group>a{
   margin-bottom: 0;
+  height: 80px;
 }
 div.bhoechie-tab-menu div.list-group>a .glyphicon,
 div.bhoechie-tab-menu div.list-group>a .fa {
@@ -67,9 +69,41 @@ div.bhoechie-tab-content{
   background-color: #ffffff;
   /* border: 1px solid #eeeeee; */
   padding-left: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
+.bhoechie-tab-content {
+    padding-top: 30px;
+}
+
+.bhoechie-tab-content p {
+    color:#1c4586;
+    font-size: 1.5em;
+}
+.bhoechie-tab-content p > span {
+    color:#b3223c;
+}
+.bhoechie-tab-content ul {
+    padding-left:20px; list-style:none;
+}
+.bhoechie-tab-content li {
+    margin-bottom:15px;
+    color:#6d6d6d;
+
+}
+.bhoechie-tab-content li > span {
+    color:#b3223c;
+
+}
+.bhoechie-tab-content li:before {    
+    font-family: 'FontAwesome';
+    content: '\f0eb';
+    margin:0 5px 0 -15px;
+    line-height: 2.1;
+    color: #397eb9;
+    font-size: 16px;
+
+}
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
 }
@@ -82,62 +116,42 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
         <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
               <div class="list-group">
-                <a href="#" class="list-group-item active text-center">
-                  <h4 class="glyphicon glyphicon-plane"></h4><br/>What is ROTG?
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-road"></h4><br/>How ROTG Works?
+                <a href="#" class="list-group-item active">
+                  <br/>What is Research-on-the-Go?
                 </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-home"></h4><br/>Hotel
+                <a href="#" class="list-group-item">
+                  <br/>Why do you need Research-on-the-Go?
                 </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Restaurant
-                </a>
-                <a href="#" class="list-group-item text-center">
-                  <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Credit Card
+                <a href="#" class="list-group-item" style="height:100px;">
+                  <br/>How will Research-on-the-Go adapt to your enterprise?
                 </a>
               </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
-                    <center>
-                      <h1 class="glyphicon glyphicon-plane" style="font-size:14em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">What is ROTG</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Flight Reservation</h3>
-                      <p>askfjb akbufju sdbfgv sogfinio dksbvouwedv iwuebvuwue ivuwe vubewuvwev we v8we7 v8wev8wegv87ewgv8we7gv87a we8gv87ew v87ewg v87g awe7vg e78g vdsvgbsdisadubgaredgbuabdsfauvb adu va ruvuad </p>
-                    </center>
+                    <ul> 
+                      <li><span>Aranca Research-on-the-Go</span> is an on-demand, cloud based platform that offers a wide range of research services that are both customizable and modular to deliver relevant information and analysis to enterprises for better decision making. </li>
+                      <li>It is an effective combination of technology enabled front-end and expert-backed data validation in the back-end, as an integrated, on-demand service platform.</li>
+                      <li>The core value propositions of the <span>Aranca Research-on-the-Go</span> are scalability to address the needs of all the business functions, flexibility to meet dynamic research requirements, and cost-effectiveness to help organizations enjoy best value for their investment.</li>
+                    </ul>
                 </div>
                 <!-- train section -->
                 <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">How ROTG Works</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
-                    </center>
+                  <ul>
+                    <li>With <span>Aranca Research-on-the-Go,</span> organizations are at a sweet spot to successfully leverage a reimagined research services space. A space that effectively marries conventional research service models with progressive technology platforms, and dynamically serves the evolving business needs. And, change the way research has always been consumed.</li>
+                    <li>It helps your organization’s busy executives find quick answers to a wide range of simple or complex questions concerning the business ecosystem in which they operate. </li>
+                    <li>With <span>Aranca Research-on-the-Go,</span> you need to just focus on what you do best—take business calls and make relevant decisions, and let us handle your research needs. </li>
+                  </ul>
                 </div>
     
                 <!-- hotel search -->
                 <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
-                    </center>
-                </div>
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
-                    </center>
-                </div>
-                <div class="bhoechie-tab-content">
-                    <center>
-                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                      <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
-                    </center>
+                <ul>
+                  <li>Our experts leverage Aranca’s proprietary consultative engagement framework—Aranca ValID—to help your organization adapt to an effective and proven MI-CI framework, and transition from your current as-is knowledge environment to the new state. </li>
+                  <li>Powered by our rich experience of working with over 2000 global clients and more than 50,000 projects while running offshore MI-CI teams for various customers, <span>Aranca Research-on-the-Go</span> buckets all enterprise research and knowledge requirements across several functional areas. </li>
+                  <li>Detailed processes and well defined systems are crafted for every aspect of the solution to enable seamless and fruitful on-demand research experience. Procedures are determined for role management, user training, workflow, information delivery, user feedback, and continuous improvement.</li>
+                </ul>
                 </div>
             </div>
         </div>
