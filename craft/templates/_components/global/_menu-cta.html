@@ -1,0 +1,133 @@
+
+{# logic for getting cta content and image #}
+{% set formId = "nav8" %}
+{% set callText = '' %}
+{% set callBanner = '' %}
+
+{% for call in servicesCta.callToAction %}
+  {% for cat in call.ctaCategory %}
+
+    {% if cat.slug == entry.servicesCategory.first().slug %}
+      {% set callText = call.ctaRichtext %}
+      {% set callBanner = call.ctaBanner.first() %}
+    {% endif %}
+
+  {% endfor %}
+{% endfor %}
+
+{# endlogic #}
+
+
+{% set fullCtaACSS %}
+
+.menu-cta {
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 276px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+
+.menu-cta__content {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.menu-cta__headline {
+  color: white;
+  font-size: 2.5em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.menu-cta__body {
+  border: 2px solid white;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.menu-cta__body > a {
+  color: white;
+}
+
+.call-to-action {
+  background-color: #3498db;
+  background-image: -webkit-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: -moz-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: -o-linear-gradient(#4aa3df 0%, #258cd1 100%);
+  background-image: linear-gradient(#4aa3df 0%, #258cd1 100%);
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  -moz-background-clip: padding;
+  border-radius: 4px;
+  background-clip: padding-box;
+  padding: 10px 60px;
+  border: none;
+  box-shadow: 1px 2px 6px #256498;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+@media only screen and (max-width : 480px) {
+  .menu-cta__headline {
+    font-size: 1.5em;
+  }
+}
+
+
+{% endset %}
+
+{% set fullCtaAJs %}
+
+  (function ( $, window, document, undefined ) {
+    $(".call-to-action").click(function(e){
+      e.preventDefault();
+      console.log('show modal');
+      $('#{{formId}}').data("FSNav").showNav();
+    });
+  }( jQuery, window, document ));
+{% endset %}
+
+{% includeCss fullCtaACSS %}
+{% includeJs fullCtaAJs %}
+            <button type="button" class="call-to-action">
+              <i class="fa fa-envelope"></i>  Write To Us
+            </button>
+
+{# Get the category that this entry belongs to #}
+{% set entryCategory = entry.servicesCategory.first() %}
+
+{% if entryCategory is defined %}
+
+{% switch entryCategory.slug %}
+  {% case 'business-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0017/d-ext-0001' %}
+  {% case 'procurement-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0020/d-ext-0001' %}
+  {% case 'investment-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001d/d-ext-0001' %}
+  {% case 'ip-research' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001e/d-ext-0001' %}
+  {% default %}
+    {% set formActionUrl = 'invalid' %}
+{% endswitch %}
+
+{% include '_components/global/_inquiry-form-modal'
+  with {  'formtype': 'cta', 'formAction': formActionUrl, 'formId': formId } %}
+{% endif %}
+
