@@ -6,6 +6,7 @@ include('_components/_intro.html');
 include('_components/_tabbed-slider-carousel.html');
 include('_components/_simple-vertical-tab.html');
 include('_components/_CTA.html');
+include('_components/_CTA_form.html');
 
 // include('_components/_masthead-form.html');
 
