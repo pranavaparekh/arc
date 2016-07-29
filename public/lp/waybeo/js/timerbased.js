@@ -126,6 +126,12 @@ Waybeo.Utils.getIpCountry(function(location) {
          var _intnum = $("#int-num-display").data('telus');
          $("#int-num-display").html(_intnum);
         }
+    if (_location == 'UK') {
+         $( "#int-num").show();
+         $( "#int-num-mob-uk").show();
+         var _intnum = $("#int-num-display").data('teluk');
+         $("#int-num-display").html(_intnum);
+        }
     });
 
 
