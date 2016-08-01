@@ -98,13 +98,32 @@
     <script>/*<![CDATA[*/(function(w,a,b,d,s){w[a]=w[a]||{};w[a][b]=w[a][b]||{q:[],track:function(r,e,t){this.q.push({r:r,e:e,t:t||+new Date});}};var e=d.createElement(s);var f=d.getElementsByTagName(s)[0];e.async=1;e.src='//connect.aranca.com/cdnr/95/acton/bn/tracker/17562';f.parentNode.insertBefore(e,f);})(window,'ActOn','Beacon',document,'script');ActOn.Beacon.track();/*]]>*/</script>
   <!-- End: ActOn Tracking code -->
 
+  <!-- CALL US style -->
+  <style type="text/css">
+    #int-num {
+      margin-left: 630px;
+      margin-top:15px;
+      font-size:1.1em;
+      display: none;
+    }
+    #int-num-mob {
+      display: none;
+    }
+  </style>
+
   <nav class="navbar" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand logo-nav" href="http://www.aranca.com" target="_blank">
+        <a class="navbar-brand logo-nav" href="http://www.aranca.com" target="_blank" style="font-style:20px;">
           <img src="http://www.aranca.com/images/aranca_logo_final.jpg">
+          <a id="int-num-mob" class="wbs-switch callusicon hidden-sm hidden-md hidden-lg" href="tel:+18189305085"><span class="glyphicon glyphicon-phone-alt"></span></a>
         </a>
       </div>
+      <div class="navbar-header">
+      <button id="int-num" class="btn btn-primary nohover hidden-xs" style="cursor:default !important;"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;&nbsp;CALL: <span id="int-num-display" data-telus="+18189305085" data-teluk="+442031293086"></span>
+      </button>
+      </div>
+
     </div>
   </nav>
 
@@ -519,7 +538,83 @@ var google_remarketing_only = true;
 </div>
 </noscript>
 
+<!-- start waybeo -->
 
+        <link rel="stylesheet" href="/lp/waybeo/css/intlTelInput.css">
+        <link rel="stylesheet" href="/lp/waybeo/css/timerpopup.css">
+
+    <!-- Slideout form -->
+            <div class="wbpb-mastercontainer right">
+            <div class="wbpb-container theme-peter-river">
+                <div class="wbpb-header">
+                    <div class="wbpb-mainheader">Talk to us right now!</div>
+                    <div class="wbpb-close">x</div>
+                    <div class="wbpb-clear"></div>
+                </div>
+                <div class="wbpb-form">
+                    <div class="wbpb-window">
+                        <div class="wbpb-msg">
+                            Please share your number. We will connect you with <strong>Manpreet Singh</strong>, Regional Head - Business Development.
+                        </div>
+                        <div class="wbpb-inputs">
+                            <input type="tel" class="wbpb-tbox" name="mobile" id="timerMobile" placeholder="Enter Phone Number">
+                            <input class="wbpb-btn" type="button" value="Call Now" id="timerCallMe">
+                            <div class="wbpb-formerror">Please enter a valid phone number</div>
+
+                        </div>
+                    </div>
+                    <div class="wbpb-livestatus">
+                        <div class="wbpb-livemsg-connecting">
+                            Connecting now...
+                        </div>
+                        <div class="wbpb-livemsg-connected">
+                            Connection Established.
+                        </div>
+                        <div class="wbpb-livemsg-verifying">
+                            Please verify your number using the code below.
+                            <div class="wbpb-verificationcode">
+                                11001
+                            </div>
+                        </div>
+                        <div class="wbpb-livemsg-verification-success">
+                            Number verification successful
+                        </div>
+                        <div class="wbpb-livemsg-verification-failed">
+                            Number verification failed.
+                        </div>
+                        <div class="wbpb-livemsg-in-progress">
+                            Call in progress.
+                        </div>
+                        <div class="wbpb-livemsg-completed">
+                            Call Completed Successfully.
+                        </div>
+                        <div class="wbpb-livemsg-ended">
+                            Call ended.
+                        </div>
+                        <div class="wbpb-livemsg-agent-busy">
+                            Oops! We couldn't connect you to Nilesh. He will call you right back.
+                        </div>
+                        <div class="wbpb-livemsg-oops">
+                            Oops! Something went wrong.
+                        </div>
+                        <div class="wbpb-livemsg-timer timer">
+                            00:00:00
+                        </div>
+                    </div>
+                </div>
+                <div class="wbpb-footer">
+                </div>
+            </div>  
+        </div>
+    <!-- End Slideout form -->
+        <script type="text/javascript" src="/lp/waybeo/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/lp/waybeo/js/intlTelInput.min.js"></script>
+        <script type="text/javascript" src="http://js.waybeo.com/v0.1-beta2/waybeo.min.js"></script>
+        <script type="text/javascript" src="/lp/waybeo/js/timerbased.js"></script>
+
+
+
+<!-- end: waybeo -->
 
 <!-- Start of Leadin Embed --> 
   <script type="text/javascript" src="//js.leadin.com/js/v1/2270236.js" id="LeadinEmbed-2270236" crossorigin="use-credentials" async defer></script>

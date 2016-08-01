@@ -44,6 +44,7 @@
   <![endif]-->
   
 
+
      <!-- JS 
   ================================================== -->
   <script type="text/javascript" src="/assets/js/colio/js/jquery.min.js"></script>
@@ -173,13 +174,32 @@
     <script>/*<![CDATA[*/(function(w,a,b,d,s){w[a]=w[a]||{};w[a][b]=w[a][b]||{q:[],track:function(r,e,t){this.q.push({r:r,e:e,t:t||+new Date});}};var e=d.createElement(s);var f=d.getElementsByTagName(s)[0];e.async=1;e.src='//connect.aranca.com/cdnr/95/acton/bn/tracker/17562';f.parentNode.insertBefore(e,f);})(window,'ActOn','Beacon',document,'script');ActOn.Beacon.track();/*]]>*/</script>
   <!-- End: ActOn Tracking code -->
 
+  <!-- CALL US style -->
+  <style type="text/css">
+    #int-num {
+      margin-left: 630px;
+      margin-top:15px;
+      font-size:1.1em;
+      display: none;
+    }
+    #int-num-mob {
+      display: none;
+    }
+  </style>
+
   <nav class="navbar" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand logo-nav" href="http://www.aranca.com" target="_blank">
+        <a class="navbar-brand logo-nav" href="http://www.aranca.com" target="_blank" style="font-style:20px;">
           <img src="http://www.aranca.com/images/aranca_logo_final.jpg">
+          <a id="int-num-mob" class="wbs-switch callusicon hidden-sm hidden-md hidden-lg" href="tel:+18189305085"><span class="glyphicon glyphicon-phone-alt"></span></a>
         </a>
       </div>
+      <div class="navbar-header">
+      <button id="int-num" class="btn btn-primary nohover hidden-xs" style="cursor:default !important;"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;&nbsp;CALL: <span id="int-num-display" data-telus="+18189305085" data-teluk="+442031293086"></span>
+      </button>
+      </div>
+
     </div>
   </nav>
 
@@ -731,7 +751,7 @@ var google_remarketing_only = true;
                 <div class="wbpb-form">
                     <div class="wbpb-window">
                         <div class="wbpb-msg">
-                            Please share your number. We will connect you with <strong>Asif Abdulla</strong>, Regional Head - Business Development.
+                            Please share your number. We will connect you with <strong>Manpreet Singh</strong>, Regional Head - Business Development.
                         </div>
                         <div class="wbpb-inputs">
                             <input type="tel" class="wbpb-tbox" name="mobile" id="timerMobile" placeholder="Enter Phone Number">
@@ -787,7 +807,7 @@ var google_remarketing_only = true;
         <script type="text/javascript" src="/lp/waybeo/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="/lp/waybeo/js/intlTelInput.min.js"></script>
         <script type="text/javascript" src="http://js.waybeo.com/v0.1-beta2/waybeo.min.js"></script>
-        <script type="text/javascript" src="/lp/waybeo/js/us-ctc-409a.js"></script>
+        <script type="text/javascript" src="/lp/waybeo/js/timerbased.js"></script>
 
 
 
