@@ -1,6 +1,4 @@
 
-
-
 {% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
 {% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
 
@@ -84,13 +82,13 @@ $(document).ready(function () {
   <ul>
 
     <li class="mcStoryList-item">
-      <img src="/assets/images/icons/press-releases-icon.png" class="hidden-xs" alt="books and opinions">
-      <a>Press Releases</a>
+      <img src="/assets/images/icons/media-coverage-icon.png" class="hidden-xs" alt="articles">
+      <a>Media Coverage</a>
     </li>
 
     <li class="mcStoryList-item">
-      <img src="/assets/images/icons/media-coverage-icon.png" class="hidden-xs" alt="articles">
-      <a>Media Coverage</a>
+      <img src="/assets/images/icons/press-releases-icon.png" class="hidden-xs" alt="books and opinions">
+      <a>Press Releases</a>
     </li>
 
     <li class="mcStoryList-item">
@@ -102,25 +100,7 @@ $(document).ready(function () {
 
     <!-- Start: Content container -->
     <div>
-      <!-- Press Releases -->
-        <div class="row">
-          <div class="col-sm-12">
-            <ol class="mcStoryList">
-              {% for prEntry in prEntries %}
-              <li class="mcStoryList__item shadow-box">
-                    
-                <article class="mcStoryList__grid__item">
-                  <h5 class="mcStoryList__headline"><a href="{{ prEntry.url }}">{{ prEntry.title }}</a></h5>
-                  <p class="mcStoryList__date"><em><small>published on {{ prEntry.postDate | date("M d, Y") }}</small></em></p>
-                </article>
 
-              </li>
-              {% endfor %}
-            </ol>
-            <a class="mcStoryList__all-links" href="/media-room/press-releases">View all Press Releases</a>
-          </div><!-- offset-2-->
-        </div><!-- row -->
-      <!-- end Press Releases -->
 
       <!-- Media Coverage -->
       <div class="row">
@@ -151,6 +131,26 @@ $(document).ready(function () {
         </div><!-- offset-2-->
       </div><!-- row -->
     <!-- end Media Coverage -->
+
+    <!-- Press Releases -->
+        <div class="row">
+          <div class="col-sm-12">
+            <ol class="mcStoryList">
+              {% for prEntry in prEntries %}
+              <li class="mcStoryList__item shadow-box">
+                    
+                <article class="mcStoryList__grid__item">
+                  <h5 class="mcStoryList__headline"><a href="{{ prEntry.url }}">{{ prEntry.title }}</a></h5>
+                  <p class="mcStoryList__date"><em><small>published on {{ prEntry.postDate | date("M d, Y") }}</small></em></p>
+                </article>
+
+              </li>
+              {% endfor %}
+            </ol>
+            <a class="mcStoryList__all-links" href="/media-room/press-releases">View all Press Releases</a>
+          </div><!-- offset-2-->
+        </div><!-- row -->
+      <!-- end Press Releases -->
 
     <!-- Latest from KC -->
     <div class="row">
