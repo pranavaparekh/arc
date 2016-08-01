@@ -7,8 +7,14 @@
   {% include '_components/services/_ztabs' with {'blueBackground': 'aliceblue' } %}
 {% endif %}
 {% if entry.tfilterRichtext|length %}
-  {% include '_components/services/_assignment-tab'  %}
+  {% include '_components/services/_assignment-tab' %}
 {% endif %}
+
+{% if craft.request.lastSegment == 'ip-strategy' %}
+   {% include '_components/services/_interactive'  %}
+{% endif %}
+
+
 
 {% include '_components/services/_full-cta-a' %}
 {% include '_components/services/_kc-content' %}
