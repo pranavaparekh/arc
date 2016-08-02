@@ -2,17 +2,31 @@
 {% include '_components/services/_masthead' %}
 {% include '_components/services/_customers-blok' with { 'bkColor': '#F2F2F2' } %}
 {% include '_components/services/_services-intro' %}
+
+{% if entry.id == '2178' %}
+  {% include '_components/services/_htimeline-b' %}
+{% endif %}
+
+
 {% include '_components/services/_svc_box_grid' with {'data': entry.experienceRichtext, 'brandColor': BrCore } %}
+
+
+
 {% if entry.solutionRichtext|length %}
   {% include '_components/services/_ztabs' with {'blueBackground': 'aliceblue' } %}
 {% endif %}
+
+
 {% if entry.tfilterRichtext|length %}
   {% include '_components/services/_assignment-tab' %}
 {% endif %}
 
+
+
 {% if craft.request.lastSegment == 'ip-strategy' %}
    {% include '_components/services/_interactive'  %}
 {% endif %}
+
 
 
 

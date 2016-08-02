@@ -1,0 +1,233 @@
+{% set htimelineCss %}
+
+.section-header, .steps-header, .steps-name {
+  color: #3498DB;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+.steps-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.steps-timeline {
+  outline: 1px dashed rgba(255, 0, 0, 0);
+}
+@media screen and (max-width: 500px) {
+  .steps-timeline {
+    border-left: 2px solid #3498DB;
+    margin-left: 45px;
+  }
+}
+@media screen and (min-width: 500px) {
+  #Steps {
+    margin-top: 220px;
+  }
+
+  .steps-timeline {
+    border-top: 2px solid #3498DB;
+    padding-top: 20px;
+    margin-top: 40px;
+    margin-left: 16.65%;
+    margin-right: 16.65%;
+  }
+}
+.steps-timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.steps-one,
+.steps-two,
+.steps-three,
+.steps-four {
+  outline: 1px dashed rgba(0, 128, 0, 0);
+}
+@media screen and (max-width: 500px) {
+  .steps-one,
+  .steps-two,
+  .steps-three,
+  .steps-four {
+    margin-left: -25px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .steps-one,
+  .steps-two,
+  .steps-three,
+  .steps-four {
+    float: left;
+    width: 25%;
+    margin-top: -50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .steps-one,
+  .steps-two {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .steps-one {
+    margin-right: 10%;
+    margin-left: -10%;
+  }
+
+  .steps-two {
+    margin-right: 10%;
+    margin-left: -4%;
+  }
+
+  .steps-three {
+    margin-left: -3.35%;
+    margin-right: -16.65%;
+  }
+
+  .steps-four {
+    margin-left: 24%;
+    margin-right: -13%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .steps-three  {
+    margin-bottom: 30px;
+  }
+}
+
+.steps-img {
+  display: block;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 500px) {
+  .steps-img {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.steps-name,
+.steps-description {
+  margin: 0;
+}
+
+@media screen and (min-width: 500px) {
+  .steps-name {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.steps-description {
+  overflow: hidden;
+}
+
+.steps-description {
+  overflow: hidden;
+  color: #909090;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+
+@media screen and (min-width: 500px) {
+  .steps-description {
+    margin-top: 20px;
+  }
+
+  .steps-description li {
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+{% endset %}
+
+{% includeCss htimelineCss %}
+
+<div class="row">
+  <div class="col-sm-12 box-grid__headline-main">
+    <h2 class="lede__headline">Solution Portfolio</h2>
+    <p class="lede__subheadline">Unearthing critical case-clinching evidence at every stage.
+    </p>
+    <hr class="lede__border">
+  </div>
+
+    <!-- STEPS -->
+  <section id="Steps" class="steps-section">
+
+    <div class="steps-timeline">
+
+      <div class="steps-one">
+        <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+        <h3 class="steps-name">
+          Patent Monetization
+        </h3>
+        <ul class="steps-description">
+          <li>IP Strategy</li>
+          <li>Licensing Support Services</li>
+        </ul>
+      </div>
+
+      <div class="steps-two">
+        <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+        <h3 class="steps-name">
+          Pre Litigation
+        </h3>
+        <ul class="steps-description">
+          <li>Portfolio Analysis</li>
+          <li>Target Scouting</li>
+          <li>EoUcharts</li>
+          <li>Validity Analysis</li>
+          <li>Internal Damange Estimations</li>
+        </ul>
+      </div>
+
+      <div class="steps-three">
+        <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+        <h3 class="steps-name">
+          Pre Discovery
+        </h3>
+        <ul class="steps-description">
+          <li>Product Analysis</li>
+          <li>Reverse Engineering</li>
+          <li>Infringement Analysis</li>
+          <li>Non-infringement Analysis</li>
+          <li>Invalidity/IPR Analysis</li>
+          <li>Rule 11 PICs</li>
+        </ul>
+      </div>
+
+      <div class="steps-four">
+        <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+        <h3 class="steps-name">
+          Fact Discovery
+        </h3>
+        <ul class="steps-description">
+          <li>Source Code Review</li>
+          <li>Production Evidence Mining</li>
+          <li>Product Testing</li>
+          <li>Claim Construction</li>
+          <li>Claim Charts</li>
+          <li>Expert Witness Support</li>
+          <li>IPR/Invalidity Rebuttals</li>
+          <li>Damage Model Adjustments</li>
+        </ul>
+      </div>
+
+    </div><!-- /.steps-timeline -->
+
+  </section>
+
+
+</div>
+
