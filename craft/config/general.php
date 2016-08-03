@@ -14,7 +14,9 @@ define('SITE_URL_ABS', URI_SCHEME . $_SERVER['SERVER_NAME']);
 define('BASEPATH', realpath(CRAFT_BASE_PATH . '/../') . '/');
 return array(
   '*' => array(
+    'enableCsrfProtection' => true,
     'omitScriptNameInUrls' => true,
+    'sendPoweredByHeader' => false,
     'siteUrlAbs'  => SITE_URL_ABS,
     'siteUrl'  => array(
       'en' => SITE_URL,
