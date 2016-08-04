@@ -204,7 +204,7 @@
   </nav>
 
 
-  <section class="featured sra2">
+  <section class="featured sra2" style="font-family:arial;">
   <div class="container">
   <div class="row">
   <div class="col-lg-6 col-sm-6">
@@ -218,14 +218,16 @@
                 <li>&bull; Pricing starts at only $1,490</li>
                 <li>&bull; No long-term monthly commitments; get updates only when required</li>
                 <li>&bull; Free lifetime audit support</li>
+                <li style="padding-top:15px; font-weight:bold;">Get a qualified, independent, full-service stock option valuation for your company that minimizes the impact on your time and resources – for as little as $1,490</li>
                 </ul>
                 <p style="padding-top: 18px; line-height: 25px; font-size: 16px; padding-bottom:18px;">
                 </p>
              </div>
   </div>
   <div class="col-lg-5 col-sm-5 col-md-offset-1">
-  <div class="form-box" style="height:500px; margin-bottom:30px; padding-top:30px;">
-    <div class="col-lg-9 col-md-offset-3"><div class="form-title"><!-- Write to us --></div>
+    <div class="form-box" style="margin-bottom:30px; padding-top:30px; padding-right:5%">
+    <div class="col-lg-11 col-md-offset-1"><div class="form-title"><!-- Write to us --></div>
+    <font size="4.5px"><b>Get Your 409A Valuation Report </b></font></br><font size="3px">A senior partner will get in touch with you to get started right away. <br></font>
     <div class="form-subline" style="font-size: 12px;"><!-- for no-obligation consultation and price quote --></div>
   </div>
 
@@ -297,34 +299,16 @@ catch(err) {
       <input type="text" class="form-control" id="inputname" name="firstname" style="width:100%;" required>
     </div>
   </div>
-<!--   <div class="form-group">
-    <label for="inputname" class="col-sm-3 text-right control-label">Last Name<sup>*</sup>:</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputname" name="lastname" required>
-    </div>
-  </div> -->
   <div class="form-group">
-    <label for="inputcompany" class="col-sm-3 text-right control-label">Company<sup>*</sup>:</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputcompany" name="company" style="width:100%;" required>
-    </div>
-  </div>
-  <div class="form-group hidden-xs">
     <label for="inputphone" class="col-sm-3  text-right control-label">Phone:</label>
     <div class="col-sm-9">
       <input type="text" class="form-control" id="inputphone" name="tel" style="width:100%;" >
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail" class="col-sm-3 text-right control-label">Work Email<sup>*</sup>:</label>
+    <label for="inputEmail" class="col-sm-3 text-right control-label">Email<sup>*</sup>:</label>
     <div class="col-sm-9">
       <input type="email" class="form-control" id="inputEmail" name="email" style="width:100%;" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputComment" class="col-sm-3 text-right control-label">How can we help?</label>
-    <div class="col-sm-9">
-      <textarea rows="2" cols="50" class="form-control" id="inputComment" name="comment"> </textarea>
     </div>
   </div>
 
@@ -335,7 +319,7 @@ catch(err) {
                       <br /><input name="url" id="url" type="text" /></p>
       <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-valuation-and-advisory" />
       <input type="hidden" name="subject" value="Google Enquiry | 409A Valuations" />
-      <button type="submit" class="btn btn-warning btn-lg mybt" onClick="_gaq.push(['_trackEvent', '409A Valuations', 'Information Request', 'IRC 409a Valuations Contact From', , false]);">Write to Us</button>
+      <button type="submit" class="btn btn-warning btn-lg mybt" onClick="_gaq.push(['_trackEvent', '409A Valuations', 'Information Request', 'IRC 409a Valuations Contact From', , false]);">Get Started Now</button>
     </div>
   </div>
 
@@ -713,7 +697,7 @@ law firms, existing clients, VC firms and audit firms.  </p>
 
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="http://www.aranca.com/lp/css/custom.css">
+    <link rel="stylesheet" href="../lp/css/custom.css">
 
 
 
@@ -739,7 +723,16 @@ var google_remarketing_only = true;
 
         <link rel="stylesheet" href="/lp/waybeo/css/intlTelInput.css">
         <link rel="stylesheet" href="/lp/waybeo/css/timerpopup.css">
-
+<style type="text/css">
+.featured .form-box {
+  height: 400px;
+}
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px) {
+    .featured .form-box {
+      height: 480px;
+    }
+}
+</style>
     <!-- Slideout form -->
             <div class="wbpb-mastercontainer right">
             <div class="wbpb-container theme-peter-river">

@@ -32,7 +32,7 @@ body{font-family: 'Roboto', sans-serif;}
   background-image: url("../images/409a-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 480px;
+  min-height: 380px;
 }
 .sra3{
   background-color:#003663;
@@ -54,9 +54,9 @@ body{font-family: 'Roboto', sans-serif;}
 .featured h1{font-size:36px;font-weight:700;margin-top:80px;}
 .featured .subhead{font-size:20px;font-weight:400;margin-top:30px;}
 .featured .form-box{height:390px; width:390px; border:1px solid #ddd; border-radius:4px;background:#fff;position:relative;top:-40px;-webkit-box-shadow: 0px 0px 9px -1px rgba(50, 50, 50, 0.8);-moz-box-shadow:0px 0px 9px -1px rgba(50, 50, 50, 0.8);box-shadow:0px 0px 9px -1px rgba(50, 50, 50, 0.8);}
-.featured .form-box{color:#757575;}
+.featured .form-box{color:#2d2d2d;}
 .featured .form-box sup{color:red;}
-.featured .form-box  .mybt{color:#282828; font-weight:700;font-size:24px;background:#f0a02f;padding:5px 20px; border-bottom:4px solid transparent;}
+.featured .form-box  .mybt{color:#282828; font-weight:700;font-size:24px;background:#004785;padding:5px 20px; border-bottom:4px solid transparent;}
 .featured .form-box  .mybt:hover{color:#282828; font-weight:700;font-size:24px;background:#f7a93b; border-bottom:4px solid #b76f0a;}
 .featured .form-box .control-label{font-size:13px;padding-right:0;font-weight:300;}
 .featured .form-title{font-size:28px;font-weight:700;margin-top:8px;}
