@@ -29,6 +29,14 @@ body{font-family: 'Roboto', sans-serif;}
 .sra2{
   background-color:#003663;
   color:#ffffff;
+  background-image: url("../images/409a-banner-old.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 480px;
+}
+.sra25{
+  background-color:#003663;
+  color:#ffffff;
   background-image: url("../images/409a-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
