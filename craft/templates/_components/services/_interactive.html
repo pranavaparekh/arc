@@ -3,13 +3,13 @@
 
 {% set slideCss %}
 .deck-container {
-  color: white;
-  background: url('/assets/images/backgrounds/tech-analysis-bkg.jpg') no-repeat center center {{ brandPrimary }};
+  color: #757272;
+  background: url('/assets/images/backgrounds/tech-analysis-bkg.jpg') no-repeat center center #dcdcdc;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 800px;
+  min-height: 500px;
   overflow:hidden;
   font-weight: 300;
 }
@@ -21,30 +21,30 @@
 
 .slide-frame__opener-tagline {
   font-weight: 300;
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 0;
 }
 
 .slide-frame__opener-tagline span {
-  color: #346DAD;
+  color: #234e71;
 }
 
 .slide-frame__opener-headline {
-  font-size: 7.5em;
+  font-size: 4.5em;
   font-weight: 300;
   margin-bottom: 50px;
   margin-top: 0;
 }
 
 .step-0__slide-frame {
-  padding-top: 220px;
-  min-height: 500px;
+  padding-top: 40px;
+  /*min-height: 500px;*/
 }
 
 .slide-content__nav-block--item {
   background: #1C4474;
-  padding: 1em;
-  font-size: 1.1em;
+  padding: 0.5em;
+  font-size: 1em;
   transition: all 0.3s;
 }
 
@@ -58,21 +58,33 @@
 }
 
 .slide-details {
-  padding-top: 90px;
+  padding-top: 20px;
   position: relative;
 }
 
 .slide-details__next {
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
-    background: #7F96AC;
-    padding: 2em;
-    position: absolute;
-    right: 0;
-    transition: 0.3s all;
+  background: #7F96AC;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  transition: 0.3s all;
+}
+
+.slide-details__next > i {
+  position: relative;
+    top: -5px;
+    left: 2px;
 }
 
 .slide-details__next:hover {
   background: #98acbf;
+}
+
+a.slide-details__back.navigate, a.navigate.back {
+  color: #234e71;
 }
 
 .slide-details__questions {
@@ -88,26 +100,28 @@
 }
 
 .slide-details__questions__headline {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 300;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .slide-details__questions__list-item {
-  font-size: 1.6em;
+  font-size: 1em;
   list-style-image: url('/assets/images/icons/cmd-bullet.png');
 }
 
 .slide-content__inner__content {
+  font-size: 0.9em;
 }
 
 .slide-content__inner__headline {
+  font-size: 1.2em;
   font-weight: 300;
 }
 
 .slide-content__headline {
-  margin-top: 50px;
-  font-size: 3em;
+  margin-top: 20px;
+  font-size: 2em;
   font-weight: 100;
 }
 
@@ -210,7 +224,7 @@
           
           <div class="col-sm-10 col-sm-offset-1 slide-details step-1__slide-frame">
           
-            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="2">Next</a>
+            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="2"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             <header class="slide-details__questions">
               <h3 class="slide-details__questions__headline">Opportunity Assessment</h3>
               <h5 class="slide-frame__tagline">We will answer questions like</span></h5>
@@ -229,8 +243,8 @@
 
               {% include '_components/services/_frameworks-content' %}
 
-
-              <a href="javascript:void(0)" class="navigate" data-href="0">Go Back</a>
+              <a href="javascript:void(0)" class="slide-details__back navigate" data-href="0"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+              <a href="javascript:void(0)" class="navigate back" data-href="0">Go Back</a>
             </div><!-- end slide-content -->
           </div><!-- end col-sm-12 -->
 
@@ -243,7 +257,7 @@
         <div class="row">
           
           <div class="col-sm-10 col-sm-offset-1 slide-details step-1__slide-frame">
-            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="3">Next</a>
+            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="3"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             <header class="slide-details__questions">
               <h3 class="slide-details__questions__headline">Competitive Intelligence</h3>
               <h5 class="slide-frame__tagline">We will answer questions like</span></h5>
@@ -263,7 +277,8 @@
               {% include '_components/services/_frameworks-content' %}
 
 
-              <a href="javascript:void(0)" class="navigate" data-href="0">Go Back</a>
+              <a href="javascript:void(0)" class="slide-details__back navigate" data-href="0"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+              <a href="javascript:void(0)" class="navigate back" data-href="0">Go Back</a>
             </div><!-- end slide-content -->
           </div><!-- end col-sm-12 -->
 
@@ -276,7 +291,7 @@
         <div class="row">
           
           <div class="col-sm-10 col-sm-offset-1 slide-details step-1__slide-frame">
-            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="4">Next</a>
+            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="4"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             <header class="slide-details__questions">
               <h3 class="slide-details__questions__headline">Diversification Planning</h3>
               <h5 class="slide-frame__tagline">We will answer questions like</span></h5>
@@ -296,7 +311,8 @@
               {% include '_components/services/_frameworks-content' %}
 
 
-              <a href="javascript:void(0)" class="navigate" data-href="2">Go Back</a>
+              <a href="javascript:void(0)" class="slide-details__back navigate" data-href="0"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+              <a href="javascript:void(0)" class="navigate back" data-href="0">Go Back</a>
             </div><!-- end slide-content -->
           </div><!-- end col-sm-12 -->
 
@@ -309,7 +325,7 @@
         <div class="row">
           
           <div class="col-sm-10 col-sm-offset-1 slide-details step-1__slide-frame">
-            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="5">Next</a>
+            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="5"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             <header class="slide-details__questions">
               <h3 class="slide-details__questions__headline">Mergers & Acquisition</h3>
               <h5 class="slide-frame__tagline">We will answer questions like</span></h5>
@@ -342,7 +358,7 @@
         <div class="row">
           
           <div class="col-sm-10 col-sm-offset-1 slide-details step-1__slide-frame">
-            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="0">Close</a>
+            <a href="javascript:void(0)" class="slide-details__next navigate" data-href="0"><i class="fa fa-times" aria-hidden="true"></i></a>
             <header class="slide-details__questions">
               <h3 class="slide-details__questions__headline">Licensing Partners</h3>
               <h5 class="slide-frame__tagline">We will answer questions like</span></h5>
