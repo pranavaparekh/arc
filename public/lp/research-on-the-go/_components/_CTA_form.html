@@ -101,9 +101,40 @@
 {
     background: #109177;
 }
+.w3b_url {
+  display: none; 
+}
 </style>
 
+<!-- Start: Form URL capture -->
 
+<script>
+window.onload = function ()
+{
+var url = window.location.href;
+document.getElementById("formurl").value = url;
+
+var urlParams;
+var query = (window.location != window.parent.location) ? document.referrer.split('?')[1] || '' : window.location.search.split('?')[1]|| '';
+(window.onpopstate = function () {
+var match, search = /([^&=]+)=?([^&]*)/g;
+urlParams = {};
+while (match = search.exec(query))
+urlParams[encodeURIComponent(match[1])] = match[2];
+}
+)();
+for (i in urlParams) {
+var urlParamsArray = urlParams[i];
+try {
+document.getElementsByName(i)[0].value=decodeURIComponent(urlParamsArray);
+}
+catch(err) {
+}
+}
+};
+</script>
+
+  <!-- End: Form URL capture -->
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -116,11 +147,27 @@
       </div>
       <div class="modal-body">
         <div class="form-style-5">
-          <form>
+          <form id="contactForm" name="Landing Page" method="post"  accept-charset="UTF-8" action="http://www.aranca.com/landing/19052014/bin/process-equity3.php">
           <fieldset>
           <legend><span class="number"><i class="fa fa-pencil" aria-hidden="true"></i></span> Download Whitepaper</legend>
-          <input type="text" name="field1" placeholder="Your Name *">
-          <input type="email" name="field2" placeholder="Business Email *">   
+          <input type="hidden" name="_form_name_" value="Landing Page" />
+<input type="hidden" name="title" value="Research On The Go" />
+<input type="hidden" name="lead_source__c" value="website" />
+<input type="hidden" name="practice__c" value="ROTG" />
+<input type="hidden" name="created_by__c" value="Marketing" />
+<input type="hidden" name="utm_source" />
+<input type="hidden" name="utm_medium" />
+<input type="hidden" name="utm_content" />
+<input type="hidden" name="utm_campaign" />
+<input type="hidden" name="referrer" />
+<input type="hidden" name="formurl" id="formurl" />
+          <input type="text" name="firstname" placeholder="Your Name *">
+          <input type="email" name="email" placeholder="Business Email *">
+          <input type="text" name="company" placeholder="Company *">
+          <p class="w3b_url">website
+                      <br /><input name="url" id="url" type="text" /></p>
+          <input type="hidden" name="redirect" value="http://connect.aranca.com/acton/attachment/17562/f-0085/1/-/-/-/-/Research-as-a-Service-WhitePaper.pdf" />
+          <input type="hidden" name="subject" value="Aranca LP | ROTG" />   
           </fieldset>
           <input type="submit" value="Download" />
           </form>
