@@ -1,0 +1,312 @@
+<!-- 4 tab layout -->
+<style type="text/css">
+.sol-port-b {
+  background: url(/assets/images/backgrounds/sol-port-bkg.jpg);
+  padding: 60px 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.sol-port-b-tabs {
+  text-align:center;
+  display: table;
+  width: 100%;      /* new */
+  margin-top: 3.0em;
+}
+
+.sol-port-b-tabs.nav-tabs {
+  border-bottom: none;
+}
+
+.sol-port-b-tabs.nav-tabs > li {
+  float:none;
+  margin-bottom: 1.5em;
+  display: table-cell;  /* updated */
+  margin-left:50px;
+}
+
+.sol-port-b-tabs__content {
+  background: white;
+  padding: 2em;
+  border-radius: 1.5em;
+  margin-top: 2em;
+  box-shadow: -2px 2px 2px #89CAFF;
+}
+
+.sol-port-b-tabs__item > h4 {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 0.8em;
+  font-weight: 300;
+  font-size:1.4em;
+}
+
+.nav-tabs .sol-port-b-tabs__item > a {
+    display: inline-block;
+    width: 8em;
+    height: 8em;
+    border-radius: 100px;
+     background: white;
+}
+
+.nav-tabs .sol-port-b-tabs__item > a > i {
+    line-height: 2.7em;
+    font-size: 2.3em;
+}
+.nav-tabs .sol-port-b-tabs__item.active > a {
+  box-shadow: -2px 2px 8px #89CAFF;
+}
+
+.nav-tabs > .sol-port-b-tabs__item.active > a:focus {
+  color: blue;
+}
+
+.nav-tabs .sol-port-b-tabs__item.active > a::before {
+  /* triangle properties */
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid white;
+    content: "";
+    width: 0;
+    height: 0;
+
+     /*  positioning */
+    left: 25%;
+    top: 108%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.sol-port-b-content__headline--left {
+  color: #2C7DA8;
+  font-size: 1.7em;
+  letter-spacing: 0.02em;
+  padding-left: 0.6em;
+  margin-bottom: 1.2em;
+  padding-bottom: 0.8em;
+  line-height: 1.5em;
+  font-weight: 300;
+  border-bottom: 1px solid #cccccc;
+}
+
+.sol-port-b-content__headline--right {
+  text-transform: uppercase;
+  color: #2C7DA8;
+  font-size: 1.6em;
+  letter-spacing: 0.02em;
+  padding-left: 0.6em;
+  margin-bottom: 1.2em;
+  font-weight: 300;
+  line-height: 1.5em;
+  padding-bottom: 0.8em;
+  border-bottom: 1px solid #cccccc;
+}
+
+.sol-port-b-content__headline > span {
+  font-size: 0.8em;
+}
+
+.sol-port-b-content__list {
+  margin-bottom: 2em;
+}
+
+.sol-port-b-content__item__headline {
+  text-transform: uppercase;
+  color: {{ roman }};
+  font-size: 1.1em;
+  letter-spacing: 0.02em;
+  padding-left: 0.8em;
+  padding-bottom: 0.5em;
+}
+
+
+.sol-port-b-content__item {
+  color:#2C7DA8;
+  line-height: 2.5em;
+  padding-left: 0.8em;
+  font-size: 16px;
+  font-weight: 300;
+  border-bottom: 1px dotted;
+}
+
+.sol-port-b-content__para {
+  color: #707274;
+  line-height: 1.8em;
+  font-size: 1.2em;
+  padding-left: 0.8em;
+  font-weight: 300;
+}
+
+@media only screen and (max-width : 480px) {
+  .nav-tabs .sol-port-b-tabs__item > a {
+    width: 5em;
+    height: 5em;
+  }
+
+  .nav-tabs .sol-port-b-tabs__item > a > img {
+    position: relative;
+    bottom: 11px;
+    left: -2px;
+  }
+
+  .sol-port-b-tabs__item > h4 {
+    font-size: 0.9em;
+  }
+}
+
+</style>
+
+<script type="text/javascript">
+{% set solPortJs %}
+$(document).ready(function(){
+  $('.sol-port-b-tabs__item a').hover(function() {
+    $(this).tab('show');
+  });
+});
+</script>
+
+
+<section class="container-fluid sol-port-b">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="lede__headline--white">Service Portfolio</h3>
+            <p class="lede__subheadline--white">Our diverse solutions portfolio help clients meet their ever-growing reporting needs and provide in-depth analysis in dealing with valuation issues during transaction process.</p>
+            <hr class="lede__border--white">
+            
+            <ul class="nav nav-tabs sol-port-b-tabs" role="tablist">
+              <li class="active sol-port-b-tabs__item">
+                <h4>Tax Valuations</h4>
+                <a href="#tax" role="tab" data-toggle="tab" data-target="#tax"><br>
+                  <img src="/assets/uploads/icons/overview/tax-valuation.png" alt="cap-block-icon2" height="40px" width="40px">
+                </a>
+              </li>
+              <li class="sol-port-b-tabs__item">
+                <h4>Financial Reporting</h4>
+                <a href="#finance" role="tab" data-toggle="tab" data-target="#finance"><br>
+                  <img src="/assets/uploads/icons/overview/financial-reporting.png" alt="cap-block-icon2" height="40px" width="40px">
+                </a>
+              </li>
+              <li class="sol-port-b-tabs__item" data-target="">
+                <h4>Transaction Services</h4>
+                <a href="#transact" role="tab" data-toggle="tab" data-target="#transact"><br>
+                    <img src="/assets/uploads/icons/overview/transaction-services.png" alt="cap-block-icon2" height="40px" width="40px">
+                </a>
+              </li>
+              <li class="sol-port-b-tabs__item" data-target="">
+                <h4>IP Valuation</h4>
+                <a href="#ip" role="tab" data-toggle="tab" data-target="#ip"><br>
+                    <img src="/assets/uploads/icons/overview/ip-valuation.png" alt="cap-block-icon2" height="40px" width="40px">
+                </a>
+              </li>
+            </ul>
+            
+            <div class="tab-content sol-port-b-tabs__content">
+              
+              <div class="tab-pane fade active in" id="tax">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--left">Looking for valuation reports which will withstand scrutiny from tax authorities? You can trust Aranca’s valuation experts.</h2>
+                      <p class="sol-port-b-content__para">Valuation has always been a crucial element of complex and ever-changing tax regulations.</p>
+                      <p class="sol-port-b-content__para">For over a decade, Aranca has emerged as a trusted advisor helping companies and business owners with tax valuations & advisory services encompassing range of compliance, planning, dispute and transaction related issues.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-4">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--right">Our tax valuation <br>services</h2>
+                      <ul class="sol-port-b-content__list">
+                          <li class="sol-port-b-content__item__headline"></li>
+                          <li class="sol-port-b-content__item"><a href="/tax-valuation/409a-valuation" target="_blank">409A Valuation (Stock Options)</a></li>
+                          <li class="sol-port-b-content__item"><a href="/tax-valuation/estate-gift-tax-valuations">Estate & Gift Tax</a></li>
+                          <li class="sol-port-b-content__item"><a href="/tax-valuation/s-corp-election-irc-1374" target="_blank">S-Corp Election (IRC1374)</a></li>
+                          <li class="sol-port-b-content__item"><a href="/tax-valuation/nols-built-in-capital-gains-irc382" target="_blank">NOLs & Built-in Gains (IRC382)</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              
+              <div class="tab-pane fade" id="finance">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--left">Hundreds of clients have trusted Aranca’s valuation group to enhance the credibility of their financial reporting.</h2>
+                      <p class="sol-port-b-content__para">Companies need an independent valuation firm that is able to apply its financial expertise and knowledge of accounting standards to complex valuation situations, proactively interact with auditors to address their questions, thereby freeing precious time to focus on what they do best.</p>
+                      <p class="sol-port-b-content__para">Aranca has developed a strong reputation to produce valuation reports that can withstand in audit review or SEC scrutiny so that our clients can meet their reporting responsibilities with growing confidence.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-4">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--right">Our financial reporting valuation services</h2>
+                      <ul class="sol-port-b-content__list">
+                          <li class="sol-port-b-content__item__headline"></li>
+                          <li class="sol-port-b-content__item"><a href="/financial-reporting/purchase-price-allocations-asc-805-ifrs-3" target="_blank">Purchase Price Allocations (ASC 805)</a></li>
+                          <li class="sol-port-b-content__item"><a href="/financial-reporting/impairment-of-goodwill-and-other-intangible-assets" target="_blank">Goodwill Impairment (ASC 350)</a></li>
+                          <li class="sol-port-b-content__item"><a href="/financial-reporting/complex-securities-valuations" target="_blank">Complex Securities Valuations</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              
+              <div class="tab-pane fade" id="transact">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--left">Our insightful and objective advice empowers our clients to take sound decisions in complex transactions</h2>
+                      <p class="sol-port-b-content__para">Whatever be our clients’ objectives – get an unbiased opinion to meet their fiduciary duties or ‘sharpen their sword’ while selling or buying a business, our insightful valuation opinions help clients focus on core priorities of the deal.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-4">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--right">Our transaction valuation services</h2>
+                      <ul class="sol-port-b-content__list">
+                          <li class="sol-port-b-content__item__headline"></li>
+                          <li class="sol-port-b-content__item"><a href="/transaction-services/fairness-opinions">Fairness Opinions</a></li>
+                         
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              
+              <div class="tab-pane fade" id="ip">
+                <div class="row">
+                  <div class="col-sm-7">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--left">Clients choose Aranca for diverse IP valuation needs because of our unparalleled blend of strong IP research, market research and valuation capabilities.</h2>
+                      <p class="sol-port-b-content__para">Several factors impact the value of IP assets in a given situation – legal, technological, market, strategic and financial. We ask the right questions questions and conduct in-depth research to thoroughly assess the IP portfolio and the market dynamics. </p>
+                      <p class="sol-port-b-content__para">The ability of our teams – IP experts, market research  and valuation specialists, to collaborate with clients’ in-house technology/product and corporate strategy/finance teams is core to our valuation approach.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-4">
+                    <div class="row">
+                      <h2 class="sol-port-b-content__headline--right">Our intellectual property valuation services</h2>
+                      <ul class="sol-port-b-content__list">
+                          <li class="sol-port-b-content__item__headline"></li>
+                          <li class="sol-port-b-content__item"><a href="/ip-valuation/overview">M&A</a></li>
+                          <li class="sol-port-b-content__item"><a href="/ip-valuation/overview">Technology Transfer</a></li>
+                          <li class="sol-port-b-content__item"><a href="/ip-valuation/overview">Financial Reporting</a></li>
+                          <li class="sol-port-b-content__item"><a href="/ip-valuation/overview">Licensing Strategy</a></li>
+                          <li class="sol-port-b-content__item"><a href="/ip-valuation/overview">IP Financing</a></li>
+                          <li class="sol-port-b-content__item"><a href="/ip-valuation/overview">Technology Transfers, Joint Ventures, etc.</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div> 
+          </div>
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- row -->
+</section>
