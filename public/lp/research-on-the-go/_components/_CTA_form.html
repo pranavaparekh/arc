@@ -151,16 +151,16 @@ catch(err) {
           <fieldset>
           <legend><span class="number"><i class="fa fa-pencil" aria-hidden="true"></i></span> Download Whitepaper</legend>
           <input type="hidden" name="_form_name_" value="Landing Page" />
-<input type="hidden" name="title" value="Research On The Go" />
-<input type="hidden" name="lead_source__c" value="website" />
-<input type="hidden" name="practice__c" value="ROTG" />
-<input type="hidden" name="created_by__c" value="Marketing" />
-<input type="hidden" name="utm_source" />
-<input type="hidden" name="utm_medium" />
-<input type="hidden" name="utm_content" />
-<input type="hidden" name="utm_campaign" />
-<input type="hidden" name="referrer" />
-<input type="hidden" name="formurl" id="formurl" />
+          <input type="hidden" name="title" value="Research On The Go - Download Whitepaper" />
+          <input type="hidden" name="lead_source__c" value="website" />
+          <input type="hidden" name="practice__c" value="ROTG" />
+          <input type="hidden" name="created_by__c" value="Marketing" />
+          <input type="hidden" name="utm_source" />
+          <input type="hidden" name="utm_medium" />
+          <input type="hidden" name="utm_content" />
+          <input type="hidden" name="utm_campaign" />
+          <input type="hidden" name="referrer" />
+          <input type="hidden" name="formurl" id="formurl" />
           <input type="text" name="firstname" placeholder="Your Name *">
           <input type="email" name="email" placeholder="Business Email *">
           <input type="text" name="company" placeholder="Company *">
@@ -189,14 +189,29 @@ catch(err) {
       </div>
       <div class="modal-body">
         <div class="form-style-5">
-          <form>
+          <form id="contactForm" name="Landing Page" method="post"  accept-charset="UTF-8" action="http://www.aranca.com/landing/19052014/bin/process-equity3.php">
           <fieldset>
           <legend><span class="number"><i class="fa fa-pencil" aria-hidden="true"></i></span> Write to us</legend>
-          <input type="text" name="field1" placeholder="Your Name *">
-          <input type="email" name="field2" placeholder="Business Email *">
-          <input type="text" name="field1" placeholder="Company *">
-          <input type="text" name="field1" placeholder="Your Phone">
-          <textarea name="field3" placeholder="How can we help?"></textarea>     
+          <input type="hidden" name="_form_name_" value="Landing Page" />
+          <input type="hidden" name="title" value="Research On The Go - Download Whitepaper" />
+          <input type="hidden" name="lead_source__c" value="website" />
+          <input type="hidden" name="practice__c" value="ROTG" />
+          <input type="hidden" name="created_by__c" value="Marketing" />
+          <input type="hidden" name="utm_source" />
+          <input type="hidden" name="utm_medium" />
+          <input type="hidden" name="utm_content" />
+          <input type="hidden" name="utm_campaign" />
+          <input type="hidden" name="referrer" />
+          <input type="hidden" name="formurl" id="formurl" />
+          <input type="text" name="firstname" placeholder="Your Name *">
+          <input type="email" name="email" placeholder="Business Email *">
+          <input type="text" name="company" placeholder="Company *">
+          <input type="text" name="phone" placeholder="Your Phone">
+          <textarea name="comment" placeholder="How can we help?"></textarea> 
+          <p class="w3b_url">website
+                      <br /><input name="url" id="url" type="text" /></p>
+          <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-business-research" />
+          <input type="hidden" name="subject" value="Aranca LP | ROTG" />      
           </fieldset>
           <input type="submit" value="Submit" />
           </form>
