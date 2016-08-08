@@ -55,6 +55,14 @@
     font-weight:300;
     color:#fff;
 }
+#custom_carousel .controls a span {
+    overflow:hidden;
+    display:block;
+    font-size:12px;
+    margin-top:2px;
+    font-weight:300;
+    color:#fff;
+}
 .service-icon {
     border: 2px solid #fff;
     border-radius: 20%;
@@ -104,6 +112,13 @@
 .lede__border {
     width: 15%;
     border: 1px solid #00436f;
+}
+.item-head {
+    font-size: 1.3em;
+    color: #1c4586;
+    text-align: center;
+    font-weight: 300;
+}
 </style>
 
 <a id ="tabbed"></a>
@@ -116,7 +131,7 @@
             <hr class="lede__border">
         </div>
         <div class="controls">
-            <ul class="nav">
+            <ul class="nav hidden-xs">
                 <li data-target="#custom_carousel" data-slide-to="0" class="active" style="background-color:#f5a15a"><a style="background-color: #f5a15a;" href="#">
                 <!-- <p>Decision-making Problem</p> -->
                 <!-- <p class="service-icon">1</p> -->
@@ -143,6 +158,36 @@
                 <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
                 </a></li>
             </ul>
+            
+            <ul class="nav visible-xs">
+                <li data-target="#custom_carousel" data-slide-to="0" class="active" style="background-color:#f5a15a"><a style="background-color: #f5a15a;" href="#">
+                <!-- <p>Decision-making Problem</p> -->
+                <!-- <p class="service-icon">1</p> -->
+                <P><span>Problem 1</span></P>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+
+                <li data-target="#custom_carousel" data-slide-to="1" style="background-color: #20738e;"><a style="background-color: #20738e;" href="#">
+               <!--  <p>Decision-making Problem</p> -->
+               <!--  <p class="service-icon">2</p> -->
+                <p><span>Problem 2</span></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="2" style="background-color: #687e4a;"><a style="background-color: #687e4a;" href="#">
+                <!-- <p>Decision-making Problem</p> -->
+               <!--  <p class="service-icon">3</p> -->
+                <p><span>Problem 3</span></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="3" style="background-color: #18b2b3;"><a style="background-color: #18b2b3;" href="#">
+               <!--  <p>Decision-making Problem</p> -->
+                <!-- <p class="service-icon">4</p> -->
+                <p><span>Problem 4</span></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+            </ul>
+
+
         </div>
 
         <!-- Wrapper for slides -->
@@ -150,6 +195,7 @@
             <div class="item active">
                 <div class="container-fluid">
                     <div class="row">
+                    <p class="item-head visible-xs">DATA & INFORMATION OVERLOAD?</P>
                         <div class="col-md-3"><img src="/lp/research-on-the-go/img/tabs/information-overload.jpg" class="img-responsive" style="padding-top:35px;"></div>
                         <div class="col-md-9 input-item">
                         <p><span>Aranca Research-On-The-Go,</span> helps you cut through the unnecessary data overload, and access the information you need.</p>
@@ -165,6 +211,7 @@
             <div class="item">
                 <div class="container-fluid">
                     <div class="row">
+                    <p class="item-head visible-xs">DIVERSE & COMPLEX RESEARCH NEEDS?</P>
                         <div class="col-md-3"><img src="/lp/research-on-the-go/img/tabs/diverse-research-needs.jpg" class="img-responsive" style="padding-top:35px;"></div>
                         <div class="col-md-9 input-item" >
                             <p><span>Aranca Research-On-The-Go</span> mimics a holistic enterprise MI-CI framework to offer the best platform that addresses both short-term and long-term research needs with equal ease.</p>
@@ -180,6 +227,7 @@
             <div class="item">
                 <div class="container-fluid">
                     <div class="row">
+                    <p class="item-head visible-xs">QUICK ACCESS TO INTELLIGENCE?</P>
                         <div class="col-md-3"><img src="/lp/research-on-the-go/img/tabs/quicker-access.jpg" class="img-responsive" style="padding-top:35px;"></div>
                         <div class="col-md-9 input-item">
                             <p><span>Aranca Research-On-The-Go</span> marries research capabilities with technology to deliver required information with apt scalability and intrinsic flexibility, which can be consumed as a service on the go.</p>
@@ -195,6 +243,7 @@
             <div class="item">
                 <div class="container-fluid">
                     <div class="row">
+                    <p class="item-head visible-xs">UNPREDICTABLE RESEARCH COST ESCALATIONS?</P>
                         <div class="col-md-3"><img src="/lp/research-on-the-go/img/tabs/escalating-costs.jpg" class="img-responsive" style="padding-top:35px;"></div>
                         <div class="col-md-9 input-item">
                             <p><span>Aranca Research-On-The-Go</span> enables you to gain full visibility of your organizational research needs, and cost control without any prior commitments and burning a deep hole in the pocket.</p>
