@@ -349,3 +349,10 @@ left: 35%;
     padding:12px 20px;
     }
 }
+
+/* headline */
+.lede__headline, .lede__headline--caps, .lede__headline--white, .lede__headline-b {
+    font-size: 2.2em;
+    color: #b92a51;
+    text-align: center;
+    font-weight: 300;
