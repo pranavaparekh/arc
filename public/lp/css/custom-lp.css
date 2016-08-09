@@ -356,3 +356,11 @@ left: 35%;
     color: #b92a51;
     text-align: center;
     font-weight: 300;
+  }
+
+.lede__subheadline, .lede__subheadline--white, .lede__subheadline-b {
+    font-size: 18px;
+    color: #474A4C;
+    font-weight: 300;
+    text-align: center;
+}
