@@ -22,7 +22,17 @@
 .edpick__story__content {
   color: white;
   position: absolute;
-  top: 30%;
+  top: -1%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: left;
+}
+
+.edpick__story__content2 {
+  color: white;
+  position: absolute;
+  top: 40%;
   left: 0;
   right: 0;
   margin: auto;
@@ -31,7 +41,7 @@
 }
 
 .edpick__story__content span {
-  font-size: 0.7em;
+  font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background: rgba(226, 105, 88, 0.68);
@@ -39,7 +49,7 @@
 }
 
 .edpick__story__content__link {
-  font-size: 1em;
+  font-size: 1.1em;
   color: white;
   text-shadow: 1px 2px 3px #6f6f6f;
   transition: 0.5s color;
@@ -101,7 +111,9 @@
       <img src={{ featuredBanner.first().url }} class="img-responsive" />
 
       <div class="edpick__story__content">
-        <span>{{ entry.type }}</span><br>
+        <span>{{ entry.type }}</span><br/>
+      </div>
+      <div class="edpick__story__content2">
         <a class="edpick__story__content__link" href={{ entry.url }}>{{ entry.title }}</a>
       </div>
 
