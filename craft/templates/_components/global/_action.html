@@ -89,6 +89,14 @@ a.tip span:before{
     top:7px;
 }
 
+.sharer__label {
+  padding: 0.5em;
+  border: 1px solid #06498e;
+  font-size: 0.8em;
+  background: #06498e;
+  color: white;
+}
+
 a:hover.tip {
     font-size: 99%; /* this is just for IE */
 }
@@ -108,9 +116,17 @@ a:hover.tip span {
     padding-right: 1em;
   }
 
+  .sharer__label {
+    display: none;
+  }
+
   .byline {
     padding: 10px 0px;
   }
+
+  .sharer .fa {
+    margin-right: 1.2em;
+}
 }
 
 @media only screen and (min-width : 481px) {
@@ -151,6 +167,7 @@ $( document ).ready(function() {
 {% includeJs actionJs %}
 
 <div class="share-links clearfix">
+<span class="sharer sharer__label">Share</span>
 <a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-url="{{ docUrl }}" >
 <i class="fa fa-facebook" style="padding: 9px 13px;"></i></a>
 
