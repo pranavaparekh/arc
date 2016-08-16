@@ -1,0 +1,42 @@
+{% set twFeedCss %}
+
+.tw-feeds {
+  margin-top: 50px;
+}
+
+.tw-feeds__header .fa-twitter {
+  display: block;
+  text-align: center;
+  font-size: 5em;
+  color: #93aabd;
+}
+
+{% endset %}
+
+
+{% includeCss twFeedCss %}
+
+
+<div class="col-sm-12 tw-feeds">
+
+  <header class="tw-feeds__header">
+    <i class="fa fa-twitter" aria-hidden="true"></i>
+    <h3 class="text-center blk-grid-a__headline">follow our twitter feeds</h3>
+  </header>
+  
+  <div class="row">
+    <div class="col-sm-3">
+      <a class="twitter-timeline" href="https://twitter.com/Aranca_IP">Tweets by Aranca_IP</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="col-sm-3">
+      <a class="twitter-timeline" href="https://twitter.com/Aranca_Val">Tweets by Aranca_IP</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="col-sm-3">
+      <a class="twitter-timeline" href="https://twitter.com/Aranca_BR">Tweets by Aranca_IP</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="col-sm-3">
+      <a class="twitter-timeline" href="https://twitter.com/Aranca_IR">Tweets by Aranca_IP</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </div><!-- end row -->
+
+</div>{# end col-sm-12 #}
