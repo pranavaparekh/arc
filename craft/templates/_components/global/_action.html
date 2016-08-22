@@ -144,7 +144,15 @@ $( document ).ready(function() {
 
   var actionUrl = "{{ entry.url | e }}";
   var shareUrl = 'https://www.linkedin.com/countserv/count/share?url=' + actionUrl;
-  console.log('url is', shareUrl);
+
+  var fbEndPoint = 'https://graph.facebook.com/v2.7/?';
+  var fbToken = '253106861754647|qlRbyuOYzr9hbWOaBpQ1tEfMwk4';
+  var fbShareUrl = fbEndPoint + 'access_token=' + fbToken + '&format=json' + '&id=' + actionUrl + '&method=get';
+
+  console.log(fbShareUrl);
+
+  // 'https://graph.facebook.com/v2.7/?access_token=253106861754647|qlRbyuOYzr9hbWOaBpQ1tEfMwk4&format=json&id=http%3A%2F%2Fwww.aranca.com%2Fknowledge-library%2Fspecial-reports%2Fgene-therapy-advanced-treatments-for-a-new-era&method=get'
+
 
   $.ajax({
     url: shareUrl,
@@ -153,6 +161,17 @@ $( document ).ready(function() {
     dataType: 'jsonp',
     success: function(data) {
       $('#linkedin-shares').html(data.count).css('display', 'block');
+    },
+    error: function() {
+      console.log('Failed!');
+    },
+  });
+
+  $.ajax({
+    url: fbShareUrl,
+    type: 'GET',
+    success: function(data) {
+      $('#fb-shares').html(data.share.share_count).css('display', 'block');
     },
     error: function() {
       console.log('Failed!');
@@ -168,8 +187,8 @@ $( document ).ready(function() {
 
 <div class="share-links clearfix">
 <span class="sharer sharer__label">Share</span>
-<a class="sharer" href="javascript:void(0);" data-sharer="facebook" data-url="{{ docUrl }}" >
-<i class="fa fa-facebook" style="padding: 9px 13px;"></i></a>
+<a class="sharer tip" href="javascript:void(0);" data-sharer="facebook" data-url="{{ docUrl }}" >
+<i class="fa fa-facebook" style="padding: 9px 13px;"></i><span id="fb-shares"></span></a>
 
 <a class="sharer" href="javascript:void(0);"  data-sharer="twitter" data-title="{{ docTitle }}" data-url="{{ docUrl }}">
 <i class="fa fa-twitter"></i></a>
