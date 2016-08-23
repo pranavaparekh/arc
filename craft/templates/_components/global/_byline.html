@@ -20,17 +20,17 @@
 
               <div class="media-left">
                 <a href="{{author.authorLinkedinProfile}}">
-                  <img src="{{ author.photoUrl(60) }}" alt="{{ author.firstName }} {{ author.lastName }}" />
+                  <img src="{{ author.photoUrl(80) }}" alt="{{ author.firstName }} {{ author.lastName }}" class="img-circle" />
                 </a>
-              </div>{# end media-left #}
+              </div>{# end media-left #} 
 
               <div class="media-body">
                 <a href="{{author.authorLinkedinProfile}}"><h4 class="media-heading">{{ author.firstName }} {{ author.lastName }}</h4></a>
-                <p class="author__byline__designation">{{author.authorDesignation}}</p>
+                <p class="author__byline__designation">{{author.authorDesignation}}<br/>
                 {#  <a href="">{{ author.firstName }} {{ author.lastName }}</a> {% if entry.multiAuthor | length > 1 %} | {% endif %}<br> #}
                 <a href="{{author.authorLinkedinProfile}}">
-                  <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_greytxt_80x15.png" width="80" height="15" border="0" alt="View {{ author.firstName }} {{ author.lastName }}'s profile on LinkedIn">
-                </a>
+                  <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png" border="0" alt="View {{ author.firstName }} {{ author.lastName }}'s profile on LinkedIn">
+                </a></p>
               </div>{# end media body #}
               
             </div>{# end media  #}
