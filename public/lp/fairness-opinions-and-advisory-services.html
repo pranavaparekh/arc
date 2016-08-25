@@ -80,6 +80,7 @@
       </script>
       <!-- End: Hotjar Tracking Code -->
 
+      <script src="http://www.w3schools.com/lib/w3data.js"></script>
 
   </head>
   <body>
@@ -122,6 +123,7 @@
              </div>
   </div>
   <div class="col-lg-5 col-sm-5 col-md-offset-1">
+  <a id="cta-form"></a>
   <div class="form-box" style="height:380px; margin-bottom:30px;">
     <div class="col-lg-9 col-md-offset-3"><div class="form-title">Write to us</div>
     <div class="form-subline" style="font-size: 12px;">for no-obligation consultation and price quote</div>
@@ -156,11 +158,12 @@ catch(err) {
 </script>
   <!-- End: Form URL capture -->
 <div class="col-lg-12" style="margin-top:10px;">
-   <form class="form-horizontal no-lfm" role="form" accept-charset="UTF-8" id="contactForm" name="Financial opinions and Advisory" method="post" action="http://www.aranca.com/landing/19052014/bin/process-equity2.php">
+   <form class="form-horizontal no-lfm" role="form" accept-charset="UTF-8" id="contactForm" name="Financial opinions and Advisory" method="post" action="http://www.aranca.com/landing/19052014/bin/process-equity3.php">
 
 <input type="hidden" name="LFMIdsite" value="9698" />
 <input type="hidden" name="LFMC" id="LFMC" value="0" />
-<input type="hidden" name="_form_name_" value="Financial opinions and Advisory" />
+<input type="hidden" name="_form_name_" value="Landing Page" />
+<input type="hidden" name="title" value="Fairness Opinions and Advisory Services" />
 <input type="hidden" name="lead_source__c" value="website" />
 <input type="hidden" name="practice__c" value="VAL" />
 <input type="hidden" name="created_by__c" value="Marketing" />
@@ -232,7 +235,7 @@ catch(err) {
   <p class="w3b_url">website
                       <br /><input name="url" id="url" type="text" /></p>
                       <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-valuation-and-advisory" />
-                      <input type="hidden" name="subject" value="Google Enquiry | SRI Research" />
+                      <input type="hidden" name="subject" value="Google Enquiry | Fairness Opinions" />
       <button type="submit" class="btn btn-warning btn-lg mybt" onClick="_gaq.push(['_trackEvent', 'Contact', 'Information Request', 'Contact From', , false]);">Contact Our Team</button>
 
 
@@ -436,6 +439,9 @@ law firms, existing clients, VC firms and audit firms. </p>
     <li data-target="#testimonial" data-slide-to="1"></li>
     <li data-target="#testimonial" data-slide-to="2"></li>
     <li data-target="#testimonial" data-slide-to="3"></li>
+    <li data-target="#testimonial" data-slide-to="4"></li>
+    <li data-target="#testimonial" data-slide-to="5"></li>
+    <li data-target="#testimonial" data-slide-to="6"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -447,7 +453,36 @@ law firms, existing clients, VC firms and audit firms. </p>
       </div>
     </div>
 
+
+    <div class="item">
+      <div class="carousel-caption">
+       <p><span class="img-sprite quote left-icon"></span> Aranca did a very comprehensive job in performing a valuation of our company. The team was extremely responsive and professional. Our investors said that the report that Aranca wrote was among the best that they had seen for any of their portfolio companies.</p>
+       <p><strong>&mdash; Finance Head, Aryaka Networks Inc.</strong></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="carousel-caption">
+       <p><span class="img-sprite quote left-icon"></span> I must compliment you for the outstanding job you did on our PPA assignment. The report was of high quality and you managed to adhere to short time lines. It is difficult to find responsive and knowledgeable firms that can also offer competitive cost advantage.</p>
+       <p><strong>&mdash; CFO, Dachis Group</strong></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="carousel-caption">
+       <p><span class="img-sprite quote left-icon"></span> Thanks for all of your efforts and commitment to our project. The team did a great job in a short period of time, and I really appreciate it! I’ve worked with multiple business valuations firms in my past, and the job that your team did was by far the best.</p>
+       <p><strong>&mdash; CFO, Leading US ecommerce platform</strong></p>
+      </div>
+    </div>
+
   <div class="item">
+      <div class="carousel-caption">
+     <p><span class="img-sprite quote left-icon"></span> Based on my past experience of working with a number of valuation firms, it has been a real pleasure working with you and your team. You were all very professional, thoughtful and thorough.</p>
+     <p><strong>&mdash; CFO, Online Retailer</strong></p>
+    </div>
+    </div>
+
+    <div class="item">
       <div class="carousel-caption">
      <p><span class="img-sprite quote left-icon"></span> I was very pleased with Aranca's prompt and professional service. I would highly recommend their valuation services for any startup.</p>
      <p><strong>&mdash;  President & Co-Founder, Consumer internet startup</strong></p>
@@ -461,13 +496,6 @@ law firms, existing clients, VC firms and audit firms. </p>
       </div>
     </div>
 
-  <div class="item">
-      <div class="carousel-caption">
-     <p><span class="img-sprite quote left-icon"></span> Based on my past experience of working with a number of valuation firms, it has been a real pleasure working with you and your team. You were all very professional, thoughtful and thorough.</p>
-     <p><strong>&mdash; CFO, Online Retailer</strong></p>
-    </div>
-    </div>
-
   </div>
 
 
@@ -479,12 +507,19 @@ law firms, existing clients, VC firms and audit firms. </p>
   </div>
 </section>
 
-<section class="footer">
+<section style="margin-top:20px; padding-bottom:0px;">
+<div w3-include-html="/lp/_components/_svc-list-single.html"></div> 
+</section>
+<section>
+<div w3-include-html="/lp/_components/_full-cta-c.html"></div> 
+</section>
+
+<section class="footer" style="margin-top:0px;">
   <div class="container">
     <div class="row" style="margin:10px 0;">
     <div class="col-lg-12">
     <h4>About Aranca</h4>
-    <p>Founded in 2003, Aranca is a leading firm providing research & analytics to global clients, from start-ups to global financial institutions and Fortune 500 firms. Aranca has built a strong reputation for insightful opinions and actionable research across markets, industry sectors and technology domains. </p>
+    <p>Founded in 2003, Aranca is a leading firm providing research, analytics & valuation advisory services to global clients, from start-ups to global financial institutions and Fortune 500 firms. With well over four thousand valuation opinions under its belt, Aranca has built a strong reputation and is a business valuation firm of choice for several privately held businesses, PE firms and mid-market investment banks.  </p>
     </div>
     </div>
     <div class="row" style="margin:30px 0 0 0;">
@@ -586,6 +621,9 @@ var google_remarketing_only = true;
 </div>
 </noscript>
 
+<script>
+w3IncludeHTML();
+</script>
 
 <!-- Start of Leadin Embed --> 
   <script type="text/javascript" src="//js.leadin.com/js/v1/2270236.js" id="LeadinEmbed-2270236" crossorigin="use-credentials" async defer></script>
