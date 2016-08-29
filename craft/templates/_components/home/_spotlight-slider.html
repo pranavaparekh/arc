@@ -144,9 +144,29 @@
     {% for story in spotlightStories.knowledgeCenterEntries %}
       <div class="row"   id="spSlider">
 
-          {% set spTitle = story.title %}
-          {% set spIntro = story.srIntro %}
-          {% set spImage = story.srBanner.first().url %}
+        {% switch story.type %}
+
+          {% case "specialReports" %}
+
+            {% set spTitle = story.title %}
+            {% set spIntro = story.srIntro %}
+            {% set spImage = story.srBanner.first().url %}
+
+          {% case "articles" %}
+
+            {% set spTitle = story.title %}
+            {% set spIntro = story.excerpt %}
+            {% set spImage = story.articlesBanner.first().url %}
+
+          {% case "blogs" %}
+
+            {% set spTitle = story.title %}
+            {% set spIntro = story.blogIntro %}
+            {% set spImage = story.blogsBanner.first().url %}
+
+        {% endswitch %}
+
+ 
 
         <!-- story slider starts here -->
           <div class="col-sm-6">
