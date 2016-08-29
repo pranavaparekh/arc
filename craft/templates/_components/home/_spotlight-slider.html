@@ -147,19 +147,19 @@
         {% switch story.type %}
 
           {% case "specialReports" %}
-            {% set spName = story.getSection().name %}
+            {% set spName = 'Special Report' %}
             {% set spTitle = story.title %}
             {% set spIntro = story.srIntro %}
             {% set spImage = story.srBanner.first().url %}
 
           {% case "articles" %}
-            {% set spName = story.getSection().name %}
+            {% set spName = 'Blog' %}
             {% set spTitle = story.title %}
             {% set spIntro = story.excerpt %}
             {% set spImage = story.articlesBanner.first().url %}
 
           {% case "blogs" %}
-            {% set spName = story.getSection().name %}
+            {% set spName = 'Article' %}
             {% set spTitle = story.title %}
             {% set spIntro = story.blogIntro %}
             {% set spImage = story.blogsBanner.first().url %}
