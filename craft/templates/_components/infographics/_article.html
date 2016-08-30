@@ -111,6 +111,6 @@ $(document).ready(function() {
 </div>
 {% set entryTags = entry.kcTags %}
 
-{% if entryTags | length %}
-{% include '_components/global/_tag-list' with { 'tags': entryTags } %}
-{% endif %}
+  {% if entryTags | length %}
+    {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
+  {% endif %}
