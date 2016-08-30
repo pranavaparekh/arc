@@ -90,11 +90,13 @@ a.tip span:before{
 }
 
 .sharer__label {
-  padding: 0.5em;
+  
   border: 1px solid #06498e;
   font-size: 0.8em;
   background: #06498e;
   color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 a:hover.tip {
@@ -186,7 +188,7 @@ $( document ).ready(function() {
 {% includeJs actionJs %}
 
 <div class="share-links clearfix">
-<span class="sharer sharer__label">Share</span>
+<span class="sharer sharer__label"><i class="fa fa-share" aria-hidden="true"></i></span>
 <a class="sharer tip" href="javascript:void(0);" data-sharer="facebook" data-url="{{ docUrl }}" >
 <i class="fa fa-facebook" style="padding: 9px 13px;"></i><span id="fb-shares"></span></a>
 
