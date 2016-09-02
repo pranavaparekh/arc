@@ -96,9 +96,16 @@ $(document).ready(function () {
  <!-- start column 1 -->
 {# Get the category that this entry belongs to #}
 {% set entryCategory = entry.servicesCategory.first() %}
+
 {# Pass the above category slug to the below query for knowledge center domain #}
 {% set practicesCategory = craft.categories.group('practices').slug(entryCategory.slug) %}
+{# show media coverage specific for technology and industry pages #}
+{% set techCategory = craft.categories.group('technology').slug(entry.slug) %}
+{% set indCategory = craft.categories.group('industries').slug(entry.slug) %}
+
 {# Filter entries in knowledge center by category slug #}
+{% set techmediaPosts = craft.entries.section('mediaCenter').relatedTo(techCategory).limit(3) %}
+{% set indmediaPosts = craft.entries.section('mediaCenter').relatedTo(indCategory).limit(3) %}
 {% set blogPosts = craft.entries.section('blogs').relatedTo(practicesCategory).limit(3) %}
 {% set articles = craft.entries.section('articles').relatedTo(practicesCategory).limit(3) %}
 {% set infographics = craft.entries.section('infographics').relatedTo(practicesCategory).limit(3) %}
@@ -122,6 +129,21 @@ $(document).ready(function () {
 
                     <!-- Tab Navigation Menu -->
                     <ul>
+                      {% if techmediaPosts.total() > 0 %}
+                        <li class="kc-content__type-item">
+                          <img src="/assets/images/icons/aoe-icon.png" class="hidden-xs" alt="media coverage" width="36px" height="36px">
+                          <a>Media Coverage</a>
+                        </li>
+                      {% endif %}
+
+                      {% if indmediaPosts.total() > 0 %}
+                        <li class="kc-content__type-item">
+                          <img src="/assets/images/icons/aoe-icon.png" class="hidden-xs" alt="media coverage" width="36px" height="36px">
+                          <a>Media Coverage</a>
+                        </li>
+                      {% endif %}
+
+
                       {% if blogPosts.total() > 0 %}
                         <li class="kc-content__type-item">
                           <img src="/assets/images/icons/kc-books.jpg" class="hidden-xs" alt="books and opinions">
@@ -153,6 +175,50 @@ $(document).ready(function () {
 
                     <!-- Start: Content container -->
                     <div>
+                      <!-- Media -->
+                      {% if techmediaPosts.total() > 0 %}
+                        <div class="row">
+                          <div class="col-sm-8 col-sm-offset-2">
+                            <ol class="kc-content__list">
+                              {% for techmediaPost in techmediaPosts %}
+                              <li class="kc-content__list__item">
+                                <div class="kc-item-number">{{ loop.index }}</div>
+                                <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                                  <div class="kc-content__grid__inner">
+                                    <h5 class="kc-content__headline"><a href="{{ techmediaPost.url }}">{{ techmediaPost.title }}</a></h5>
+                                    <p class="kc-content__excerpt">{{ techmediaPost.mcContent|hacksaw(words='25') }}</p>
+                                  </div>
+                                </article>
+                              </li>
+                              {% endfor %}
+                            </ol>
+                          </div><!-- offset-2-->
+                        </div><!-- row -->
+                      {% endif %}
+                      <!-- end Media -->
+
+                      <!-- Media -->
+                      {% if indmediaPosts.total() > 0 %}
+                        <div class="row">
+                          <div class="col-sm-8 col-sm-offset-2">
+                            <ol class="kc-content__list">
+                              {% for indmediaPost in indmediaPosts %}
+                              <li class="kc-content__list__item">
+                                <div class="kc-item-number">{{ loop.index }}</div>
+                                <article class="kc-content__grid__item kc-content__blog1 image-cover">
+                                  <div class="kc-content__grid__inner">
+                                    <h5 class="kc-content__headline"><a href="{{ indmediaPost.url }}">{{ indmediaPost.title }}</a></h5>
+                                    <p class="kc-content__excerpt">{{ indmediaPost.mcContent|hacksaw(words='25') }}</p>
+                                  </div>
+                                </article>
+                              </li>
+                              {% endfor %}
+                            </ol>
+                          </div><!-- offset-2-->
+                        </div><!-- row -->
+                      {% endif %}
+                      <!-- end Media -->
+
                       <!-- Blogs and Opinions -->
                       {% if blogPosts.total() > 0 %}
                         <div class="row">
