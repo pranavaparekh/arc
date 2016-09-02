@@ -66,9 +66,10 @@
 {% includeCss articleCss %}
 
 <div class="article__body">
-  <h1 class="article__headline">{{ entry.title }}</h1>
-  <p class="release-date">
-    Published on  {{ entry.postDate|date("d M, Y") }}</p>
+  <div class="col-sm-12">
+    <h1 class="article__headline">{{ entry.title }}</h1>
+    <p class="release-date">Published on  {{ entry.postDate|date("d M, Y") }}</p>
+  </div>
   <div class="col-sm-9 article__content">
     {{ content }}
     <br/>
@@ -80,7 +81,4 @@
       <img src={{ asset.url }} class="img-responsive mc__list__image"  alt="" />
     {% endif %}
   </div>
-
-
 </div>
-
