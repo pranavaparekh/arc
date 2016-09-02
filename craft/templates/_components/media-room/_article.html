@@ -69,13 +69,17 @@
   <h1 class="article__headline">{{ entry.title }}</h1>
   <p class="release-date">
     Published on  {{ entry.postDate|date("d M, Y") }}</p>
-
-  <div class="article__content">
+  <div class="col-sm-3 kc-logo-wrapper">
+    {% set asset = entry.mediaPublisherLogo.first() %}
+    {% if asset %}
+      <img src={{ asset.url }} class="img-responsive mc__list__image"  alt="" />
+    {% endif %}
+  </div>
+  <div class="col-sm-9 article__content">
     {{ content }}
+    <br/>
+    <a href="{{ entry.mcSource }}" class="btn btn-success" target="_blank">Read more</a>
   </div>
-  <br/>
-  <div>
-  <a href="{{entry.mcSource }}" class="btn btn-success" target="_blank">Read more</a>
-  </div>
+
 </div>
 
