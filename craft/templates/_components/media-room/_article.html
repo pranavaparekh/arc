@@ -61,6 +61,14 @@
   padding-top: 15px;
 }
 
+.logo-wrapper {
+  margin-top: 30px;
+    background-color: white;
+    padding: 0.8em;
+}
+.shadow-box {
+    box-shadow: 0 3px 6px 0 rgba(153, 153, 153, 0.35);
+}
 {% endset %}
 
 {% includeCss articleCss %}
@@ -75,7 +83,7 @@
     <br/>
     <a href="{{ entry.mcSource }}" class="btn btn-success" target="_blank">Read more</a>
   </div>
-  <div class="col-sm-3 kc-logo-wrapper">
+  <div class="col-sm-3 logo-wrapper shadow-box">
     {% set asset = entry.mediaPublisherLogo.first() %}
     {% if asset %}
       <img src={{ asset.url }} class="img-responsive mc__list__image"  alt="" />
