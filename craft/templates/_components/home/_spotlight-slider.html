@@ -152,14 +152,14 @@
             {% set spIntro = story.srIntro %}
             {% set spImage = story.srBanner.first().url %}
 
-          {% case "blogs" %}
-            {% set spName = 'Blog' %}
+          {% case "articles" %}
+            {% set spName = 'Article' %}
             {% set spTitle = story.title %}
             {% set spIntro = story.excerpt %}
             {% set spImage = story.articlesBanner.first().url %}
 
-          {% case "articles" %}
-            {% set spName = 'Article' %}
+          {% case "blogs" %}
+            {% set spName = 'Blog' %}
             {% set spTitle = story.title %}
             {% set spIntro = story.blogIntro %}
             {% set spImage = story.blogsBanner.first().url %}
