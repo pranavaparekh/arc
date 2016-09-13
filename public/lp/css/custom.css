@@ -63,7 +63,7 @@ body{font-family: 'Roboto', sans-serif;}
 .featured .subhead{font-size:20px;font-weight:400;margin-top:30px;}
 .featured .form-box{height:390px; width:390px; border:1px solid #ddd; border-radius:4px;background:#fff;position:relative;top:-40px;-webkit-box-shadow: 0px 0px 9px -1px rgba(50, 50, 50, 0.8);-moz-box-shadow:0px 0px 9px -1px rgba(50, 50, 50, 0.8);box-shadow:0px 0px 9px -1px rgba(50, 50, 50, 0.8);}
 .featured .form-box{color:#2d2d2d;}
-.featured .form-box sup{color:red;}
+.featured .form-box sup{color:red; font-weight: bold;}
 .featured .form-box  .mybt{color:#ffffff; font-weight:700;font-size:24px;background:#004785;padding:5px 20px; border-bottom:4px solid transparent;}
 .featured .form-box  .mybt:hover{color:#282828; font-weight:700;font-size:24px;background:#f7a93b; border-bottom:4px solid #b76f0a;}
 .featured .form-box .control-label{font-size:13px;padding-right:0;font-weight:300;}
