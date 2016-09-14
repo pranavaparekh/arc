@@ -13,3 +13,4 @@ Disallow: /knowledge-center/newstrack/
 Disallow: /knowledge-center/newsletter/
 Disallow: /event/
 Disallow: /events/
+Disallow: /about-us/work-at-aranca
