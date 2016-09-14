@@ -38,6 +38,7 @@
   margin: auto;
   max-width: 90%;
   text-align: center;
+
 }
 
 .edpick__story__content span {
@@ -49,18 +50,21 @@
 }
 
 .edpick__story__content__link {
-  font-size: 1.2em;
+  
   color: white;
   text-shadow: 1px 2px 3px #6f6f6f;
   transition: 0.5s color;
+  background: rgba(102, 103, 103, 0.5);
+    text-shadow: 1px 1px 3px #101010;
+  font-size: 1.2em;
 }
 
-.edpick__story__content__link:hover, .edpick__story__content__link:focus {
-  color: #e2dddd;
+.edpick__story__content__link:hover img, .edpick__story__content__link:focus img {
+  padding: 5px;
   text-decoration: none;
 }
-.aoe-grid__item {
-  position: relative;
+.tint {
+box-shadow: rgba(0, 0, 0, 0.2) 3px 5px 5px;
 }
 
 @media (min-width: 500px) and (max-width: 1024px) {
@@ -81,96 +85,88 @@
 
 {# cache globally if craft.config.cache #}
 
-{% set blogEditorentries = craft.entries.section('blogs').editorPicks('1').ids() %}
-{% set articleEditorentries = craft.entries.section('articles').editorPicks('1').ids() %}
-{% set srEditorentries = craft.entries.section('specialReports').editorPicks('1').ids() %}
 
-{% set entryIdsCombined = blogEditorentries | merge(articleEditorentries) | merge(srEditorentries)  %}
-
-{% set allEditorEntries = craft.entries.id(entryIdsCombined).order('postDate DESC').limit(4) %}
 
 <div class="edpick">
   <span class="kc-label">Areas of Interest</span>
   <ul class="edpick__story__list">
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/identifying-growth-opportunities">
       <img src="/assets/images/aoe/br/Identifying-Growth-Opportunities.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/identifying-growth-opportunities">Identifying Growth <br> Opportunities</a>
-      </div>
+        Identifying Growth <br> Opportunities
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/staying-ahead-of-competition">
       <img src="/assets/images/aoe/br/Staying-Ahead-Of-Competition.jpg" class="img-responsive"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/staying-ahead-of-competition">Staying Ahead Of <br> Competition</a>
-      </div>
+        Staying Ahead Of <br> Competition
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/enabling-business-decisions">
       <img src="/assets/images/aoe/br/Enabling-Business-Decisions.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/enabling-business-decisions">Enabling Business <br> Decisions</a>
-      </div>
+        Enabling Business <br> Decisions
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/getting-more-out-of-your-supply-chain">
       <img src="/assets/images/aoe/br/Getting-More-Out-Of-Your-Supply-Chain.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/getting-more-out-of-your-supply-chain">Getting More Out Of Your <br> Supply Chain</a>
-      </div>
+        Getting More Out Of Your <br> Supply Chain
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/knowing-your-customer-better">
       <img src="/assets/images/aoe/br/Knowing-Your-Customer-Better.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/knowing-your-customer-better">Knowing Your Customer <br> Better</a>
-      </div>
+        Knowing Your Customer <br> Better
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/enabling-digital-transformation">
       <img src="/assets/images/aoe/br/Enabling-Digital-Transformation.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/enabling-digital-transformation">Enabling Digital <br> Transformation</a>
-      </div>
+        Enabling Digital <br> Transformation
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/whats-impacting-markets">
       <img src="/assets/images/aoe/ir/Whats-Impacting-Markets.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/whats-impacting-markets">What’s Impacting <br> Markets?</a>
-      </div>
+        What’s Impacting <br> Markets?
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/empower-your-investment-strategies-buy-side">
       <img src="/assets/images/aoe/ir/Empower-Your-Investment-Strategies-Sell-Side.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/empower-your-investment-strategies-buy-side">Empower Your Investment Strategies <br> – Buy Side</a>
-      </div>
+        Empower Your Investment Strategies <br> – Buy Side
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/empower-your-investment-strategies-sell-side">
       <img src="/assets/images/aoe/ir/Empower-Your-Investment-Strategies-Sell-Side.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/empower-your-investment-strategies-sell-side">Empower Your Investment Strategies <br> – Sell Side</a>
-      </div>
+        Empower Your Investment Strategies <br> – Sell Side
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/get-your-fixed-income-insights">
       <img src="/assets/images/aoe/ir/Get-Your-Fixed-Income-Insights.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/get-your-fixed-income-insights">Get Your Fixed-Income <br> Insights</a>
-      </div>
+        Get Your Fixed-Income <br> Insights
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/building-your-technology-r-d-roadmap">
       <img src="/assets/images/aoe/ip/Building-Your-Technology-R&D-Roadmap.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/building-your-technology-r-d-roadmap">Building Your Technology <br> R&D Roadmap</a>
-      </div>
+        Building Your Technology <br> R&D Roadmap
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/monetize-protect-ip">
       <img src="/assets/images/aoe/ip/Monetize-&-Protect-IP.jpg"  class="img-responsive" />
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/monetize-protect-ip">Monetize & <br> Protect IP</a>
-      </div>
+        Monetize & <br> Protect IP
+      </div></a>
     </li>
-    <li class="edpick__story shadow-box tint">
-      <div class="aoe-grid__item tint">
+    <li class="edpick__story shadow-box tint"><a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/all-about-litigation">
       <img src="/assets/images/aoe/ip/All-About-Litigation.jpg"  class="img-responsive" />
-      </div>
       <div class="edpick__story__content2">
-        <a class="edpick__story__content__link" href="/knowledge-library/areas-of-interest/all-about-litigation">All About <br> Litigation</a>
-      </div>
+        All About <br> Litigation
+      </div></a>
     </li>
   </ul>
 </div>
