@@ -49,14 +49,21 @@
   top: 0;
 }
 
-/*.tag:hover {
+.tag:hover {
   background-color: crimson;
   color: white;
+  text-decoration: none;
+}
+
+.tag a:hover, .tag a:focus {
+  background-color: crimson;
+  color: white;
+  text-decoration: none;
 }
 
 .tag:hover::after {
    border-left-color: crimson; 
-}*/
+}
 
 {% endset %}
 
@@ -64,6 +71,7 @@
 
 <ul class="tags">
   {% for tag in tags %}
-  <li class="tag">{{ tag.title }}</li>
+
+  <li><a href="{{ tag.url }}" class="tag">{{ tag.title }}</a></li>
   {% endfor %}
 </ul>
