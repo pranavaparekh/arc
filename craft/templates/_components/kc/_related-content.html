@@ -81,26 +81,49 @@
 
 
 <div class="edpick">
-  <span class="kc-label">Related Content</span>
-    {% set tags = entry.relatedArticleContent %}
-      {% if tags | length %}
-      <ul class="edpick__story__list">
-      {% for tag in tags %}
-        <li class="edpick__story shadow-box tint">
-          
-          <img src="{{ tag.articlesBanner.first().url }}" class="img-responsive" />
 
-          <!-- <div class="edpick__story__content">
-            <span>{{ entry.type }}</span><br/>
-          </div> -->
-          <div class="edpick__story__content2">
-            <a class="edpick__story__content__link" href={{ tag.url }}>{{ tag.title }}</a>
-          </div>
+    {% set relArts = entry.relatedArticleContent %}
+    {% set relBlogs = entry.relatedBlogContent %}
 
-        </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
+      {% if relArts | length %}
+      <span class="kc-label">Related Content</span>
+        <ul class="edpick__story__list">
+          {% for relArt in relArts %}
+            <li class="edpick__story shadow-box tint">
+              
+              <img src="{{ relArt.articlesBanner.first().url }}" class="img-responsive" />
+
+              <!-- <div class="edpick__story__content">
+                <span>{{ entry.type }}</span><br/>
+              </div> -->
+              <div class="edpick__story__content2">
+                <a class="edpick__story__content__link" href={{ relArt.url }}>{{ relArt.title }}</a>
+              </div>
+
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if relBlogs | length %}
+      <span class="kc-label">Related Content</span>
+        <ul class="edpick__story__list">
+          {% for relBlog in relBlogs %}
+            <li class="edpick__story shadow-box tint">
+              
+              <img src="{{ relBlog.blogsBanner.first().url }}" class="img-responsive" />
+
+              <!-- <div class="edpick__story__content">
+                <span>{{ entry.type }}</span><br/>
+              </div> -->
+              <div class="edpick__story__content2">
+                <a class="edpick__story__content__link" href={{ relBlog.url }}>{{ relBlog.title }}</a>
+              </div>
+
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
 </div>
 
 {# endcache #}
