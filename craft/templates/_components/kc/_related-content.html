@@ -1,0 +1,107 @@
+{% import 'macros/ctype' as contentType %}
+
+{% set edpickCss %}
+
+
+
+.edpick__story__list {
+  margin-top: 20px;
+}
+
+.edpick__story {
+  margin-bottom: 20px;
+  max-height: 155px;
+  overflow: hidden;
+  position: relative;
+}
+
+.edpick__story img {
+  min-height: 300px;
+}
+
+.edpick__story__content {
+  color: white;
+  position: absolute;
+  top: -1%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: left;
+}
+
+.edpick__story__content2 {
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 90%;
+  text-align: center;
+}
+
+.edpick__story__content span {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(226, 105, 88, 0.68);
+  padding: 0.2em 0.5em;
+}
+
+.edpick__story__content__link {
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 1px 2px 3px #6f6f6f;
+  transition: 0.5s color;
+}
+
+.edpick__story__content__link:hover, .edpick__story__content__link:focus {
+  color: #e2dddd;
+  text-decoration: none;
+}
+
+@media (min-width: 500px) and (max-width: 1024px) {
+  .edpick__story__content span {
+  font-size: 0.7em;
+  }
+  .edpick__story__content__link {
+    font-size: 0.8em;
+  }
+}
+
+
+
+{% endset %}
+
+{% includeCss edpickCss %}
+
+
+{# cache globally if craft.config.cache #}
+
+
+
+<div class="edpick">
+  <span class="kc-label">Related Content</span>
+    {% set tags = entry.relatedArticleContent %}
+      {% if tags | length %}
+      <ul class="edpick__story__list">
+      {% for tag in tags %}
+        <li class="edpick__story shadow-box tint">
+          
+          <img src="{{ tag.articlesBanner.first().url }}" class="img-responsive" />
+
+          <div class="edpick__story__content">
+            <span>{{ entry.type }}</span><br/>
+          </div>
+          <div class="edpick__story__content2">
+            <a class="edpick__story__content__link" href={{ tag.url }}>{{ tag.title }}</a>
+          </div>
+
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+</div>
+
+{# endcache #}
+
