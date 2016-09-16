@@ -97,6 +97,11 @@ $(document).ready(function() {
   </p>
 
     {% include '_components/global/_action' %}
+
+    {% set entryAoe = entry.areasOfInterestCategory %}
+    {% if entryAoe | length %}
+      {% include '_components/global/_aoe-list' with { 'tags': entryAoe } %}
+    {% endif %}
     
     {% include '_components/global/_byline' %}
     
