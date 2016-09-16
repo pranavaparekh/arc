@@ -81,12 +81,13 @@
 
 
 <div class="edpick">
-
+  <span class="kc-label">Related Content</span>
     {% set relArts = entry.relatedArticleContent %}
     {% set relBlogs = entry.relatedBlogContent %}
+    {% set relSRs = entry.relatedSrContent %}
+    {% set relIGs = entry.relatedInfographicContent %}
 
       {% if relArts | length %}
-      <span class="kc-label">Related Content</span>
         <ul class="edpick__story__list">
           {% for relArt in relArts %}
             <li class="edpick__story shadow-box tint">
@@ -106,18 +107,43 @@
       {% endif %}
 
       {% if relBlogs | length %}
-      <span class="kc-label">Related Content</span>
         <ul class="edpick__story__list">
           {% for relBlog in relBlogs %}
             <li class="edpick__story shadow-box tint">
               
               <img src="{{ relBlog.blogsBanner.first().url }}" class="img-responsive" />
-
-              <!-- <div class="edpick__story__content">
-                <span>{{ entry.type }}</span><br/>
-              </div> -->
               <div class="edpick__story__content2">
                 <a class="edpick__story__content__link" href={{ relBlog.url }}>{{ relBlog.title }}</a>
+              </div>
+
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if relSRs | length %}
+        <ul class="edpick__story__list">
+          {% for relSR in relSRs %}
+            <li class="edpick__story shadow-box tint">
+              
+              <img src="{{ relSR.srBanner.first().url }}" class="img-responsive" />
+              <div class="edpick__story__content2">
+                <a class="edpick__story__content__link" href={{ relSR.url }}>{{ relSR.title }}</a>
+              </div>
+
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if relIGs | length %}
+        <ul class="edpick__story__list">
+          {% for relIG in relIGs %}
+            <li class="edpick__story shadow-box tint">
+              
+              <img src="{{ relIG.igBanner.first().url }}" class="img-responsive" />
+              <div class="edpick__story__content2">
+                <a class="edpick__story__content__link" href={{ relIG.url }}>{{ relIG.title }}</a>
               </div>
 
             </li>
