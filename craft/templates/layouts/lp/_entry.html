@@ -4,8 +4,11 @@
 
 
 {% block main %}
-{% include '_components/global/_header' %}
-{% include '_components/services/_masthead' %}
-{% include '_components/services/_why-aranca-c' %}
 
+{% include '_components/landing-pages/global/_nav' %}
+{% include '_components/services/_masthead' %}
+{% include '_components/landing-pages/_sol-portfolio' with { 'brandColor': BrCore } %}
+{% include '_components/services/_why-aranca-c' %}
+{% include '_components/services/_ztabs' with { 'blueBackground': 'aliceblue' } %}
+{% include '_components/global/_footer' %}
 {% endblock %}
