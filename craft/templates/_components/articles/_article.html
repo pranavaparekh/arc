@@ -137,6 +137,8 @@ $(document).ready(function() {
           {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
         {% endif %}
 
+    {% include '_components/kc/_disqus' %}
+
     </div> {# end article body #}
   </div>{# end col-sm-9 #}
   <div class="col-sm-4">
