@@ -186,6 +186,8 @@ $(document).ready(function() {
       {% if entryTags | length %}
         {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
       {% endif %}
+
+      {% include '_components/kc/_disqus' %}
       
     </div>{# end article content #}
   </div>{# end column-8 #}
