@@ -151,11 +151,9 @@
 
     </ul>
 
-    <!-- <button id="show-nav" type="button" class="svc-masthead__btn">
+    <button id="show-nav" type="button" class="svc-masthead__btn">
       Write to Us
-    </button> -->
-
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    </button>
 
   </div><!--  content -->
 
@@ -179,11 +177,8 @@
     {% set formActionUrl = 'invalid' %}
 {% endswitch %}
 
-{# include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': formId } #}
-
-{% include '_components/global/_inquiry-form-modal-hubspot' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': 'myModal' } %}
+{% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': formId } %}
 
 {% endif %}
 
 {% include '_components/global/_json-ld-services' with { 'url':  entry.url, 'catTitle': firstLevel.title } %} 
-
