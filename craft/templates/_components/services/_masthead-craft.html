@@ -151,19 +151,13 @@
 
     </ul>
 
-    <!-- <button id="show-nav" type="button" class="svc-masthead__btn">
+    <button id="show-nav" type="button" class="svc-masthead__btn">
       Write to Us
-    </button> -->
-
-    <button type="button" data-toggle="modal" data-target="#myModal" class="svc-masthead__btn">Write to Us</button>
+    </button>
 
   </div><!--  content -->
 
 </section> <!--  end masthead section -->
-{% set formLink = craft.request.url %}
-{% set refferLink =  craft.request.urlReferrer %}
-
-
 
 {# Get the category that this entry belongs to #}
 {% set entryCategory = entry.servicesCategory.first() %}
@@ -172,21 +166,19 @@
 
 {% switch entryCategory.slug %}
   {% case 'business-research' %}
-    {% set formActionUrl = '53710ad0-586c-42bb-b691-dccecc55739d' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0017/d-ext-0002' %}
   {% case 'procurement-research' %}
-    {% set formActionUrl = 'b758f7e6-3df4-495d-b259-f3967d7054cf' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/0020/d-ext-0002' %}
   {% case 'investment-research' %}
-    {% set formActionUrl = '9c03be9e-51f8-4264-9810-1465e08856e2' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001d/d-ext-0002' %}
   {% case 'ip-research' %}
-    {% set formActionUrl = 'dfeba8c7-2499-49ac-9346-4c3d634fc66d' %}
+    {% set formActionUrl = 'http://connect.aranca.com/acton/eform/17562/001e/d-ext-0002' %}
   {% default %}
     {% set formActionUrl = 'invalid' %}
 {% endswitch %}
 
-
-{% include '_components/global/_inquiry-form-modal-hubspot' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': 'myModal', 'referring_url': 'refferLink' } %}
+{% include '_components/global/_inquiry-form-modal' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': formId } %}
 
 {% endif %}
 
 {% include '_components/global/_json-ld-services' with { 'url':  entry.url, 'catTitle': firstLevel.title } %} 
-

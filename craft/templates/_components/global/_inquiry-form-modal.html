@@ -611,7 +611,11 @@
           <div class="col-sm-12"  style="text-align: left;">
             <div class="form-group">
               <p><em>We need to quickly check if you are human before you submit this form</em></p>
-              {{craft.recaptcha.render()}}
+              
+              <!-- Unhide google recaptcha when enable captcha from craft cms -->
+              {#craft.recaptcha.render()#}
+              <!-- end google recaptch -->
+
               <input type="hidden" name="_ipaddr" >
               <input type="hidden" name="ao_refurl" >
               <button id="btnsubmit" type="submit" class="btn  btn-block btn-lg btn-blue">Send Your Inquiry</button>
