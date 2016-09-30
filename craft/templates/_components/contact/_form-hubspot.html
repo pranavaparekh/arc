@@ -1,5 +1,3 @@
-{% includeJsFile '/assets/js/bs-validator.js' %}
-
 {% set ctFormCss %}
 
 .ct__form__content {
@@ -37,20 +35,6 @@
 {% includeCss ctFormCss %}
 
 <h1 class="ct__headline">Help Us Get Back to You</h1>
-{% if craft.session.hasFlash('success') %}
-
-  {{ craft.session.getFlash('success') | raw }}
-
-{% endif %}
-
-{% if craft.session.hasFlash('failure') %}
-
-  <div class="alert alert-danger">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Sorry!</strong>  {{ craft.session.getFlash('failure') | raw }}
-  </div>
-
-  {% endif %}
   <script>
 window.onload = function ()
 {
