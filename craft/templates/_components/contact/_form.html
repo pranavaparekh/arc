@@ -122,7 +122,12 @@ window.onload = function ()
         <textarea rows="5" name="comment" class="form-control" id="comment" placeholder="Share details about your requirement" required></textarea><br>
         
         <p><em>We need to quickly check if you are human before you submit this form</em></p>
-        <p>{{craft.recaptcha.render()}}</p>
+
+      <!-- Unhide google recaptcha when enable captcha from craft cms -->
+      <p>{#craft.recaptcha.render()#}</p>
+      <!-- end google recaptch -->
+        
+
 
         <button type="submit" class="btn btn-primary btn-block btn-lg">Send Us Your Inquiry</button>
       </div>
