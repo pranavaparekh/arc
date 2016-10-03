@@ -116,7 +116,7 @@ $(document).ready(function() {
             {% include '_components/global/_aoe-list' with { 'tags': entryAoe } %}
           {% endif %}
 
-        {% include '_components/global/_byline' %}
+        
 
 
         {% set assets = entry.articlesBanner %}
@@ -130,7 +130,7 @@ $(document).ready(function() {
         {{ content }}
       </div>
       
-
+      {% include '_components/global/_byline' %}
       {% set entryTags = entry.kcTags %}
 
         {% if entryTags | length %}
