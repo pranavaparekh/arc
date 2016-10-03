@@ -1,0 +1,182 @@
+{% set asset = entry.mastheadBanner.first() %}
+{% set firstLevel = entry.servicesCategory.level(1).first() %}
+{% set formId = "nav8" %}
+
+{% set svcmastheadCss %}
+  .svc-masthead {
+    position: relative;
+    color: white;
+    background: url({{ asset.url }}) no-repeat center center;
+    background-size: cover;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .svc-masthead__content {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+  }
+
+  .svc-masthead__headline {
+    font-size: 3.5em;
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    text-shadow: 1px 2px 6px #040404;
+    position: static;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    font-weight: 300;
+    max-width: 50%;
+  }
+
+  .svc-masthead__btn {
+    border-radius: 5px;
+    padding: 5px 58px;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    text-shadow: 1px 5px 3px #BC2D5B;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: #BC2D54;
+    box-shadow: 0px 5px 0px 0px #831D39;
+    border: none;
+  }
+
+  .svc-masthead__btn:hover {
+    background-color: #D53661;
+    color: white;
+  }
+
+  .svc-masthead__btn:active {
+     transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+
+  .svc-masthead__breadcrumb {
+    margin-bottom: 15px;
+  }
+
+  .svc-masthead__breadcrumb__item {
+    margin-bottom: 10px;
+  }
+
+  .svc-masthead__breadcrumb__item > a {
+    font-size: 1.1em;
+    color: #00458D;
+    position: static;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #D9D6D6;
+    padding: 4px 35px;
+  }
+
+  .svc-masthead__breadcrumb__item > a:hover {
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width : 480px) {
+
+
+    .svc-masthead__headline {
+      font-size: 2.8em;
+      max-width: 98%;
+    }
+
+    .svc-masthead__breadcrumb__item > a {
+      padding: 2px 2px;
+      font-size: 12px;
+    }
+
+    .svc-masthead__btn {
+      padding: 3px 30px;
+      font-size: 14px;
+    }
+  }
+
+
+
+{% endset %}
+
+{% set svcmastheadJs %}
+  (function ( $, window, document, undefined ) {
+    $("#show-nav").click(function(){
+      console.log('show modal');
+      $('#{{formId}}').data("FSNav").showNav();
+    });
+  }( jQuery, window, document ));
+{% endset %}
+
+{% includeCss svcmastheadCss %}
+{% includeJs svcmastheadJs %}
+
+
+
+<section class="svc-masthead">
+
+  <!--  content -->
+  <div class="svc-masthead__content text-center">
+
+    <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+    <ul class="svc-masthead__breadcrumb">
+      {% if entry.optionalCategory | length %}
+        <li class="svc-masthead__breadcrumb__item">
+          <a>{{ entry.optionalCategory }}</a>
+        </li>
+      {% else %}
+        <li class="svc-masthead__breadcrumb__item">
+          {% for entry in firstLevel.categoryEntryUrl %}
+          <a href="{{ entry.url }}">{{ firstLevel }}</a>
+          {% endfor %}
+        </li>
+      {% endif %}
+
+    </ul>
+
+    <!-- <button id="show-nav" type="button" class="svc-masthead__btn">
+      Write to Us
+    </button> -->
+
+    <button type="button" data-toggle="modal" data-target="#myModal" class="svc-masthead__btn">Write to Us</button>
+
+  </div><!--  content -->
+
+</section> <!--  end masthead section -->
+{% set formLink = craft.request.url %}
+{% set refferLink =  craft.request.urlReferrer %}
+
+
+
+{# Get the category that this entry belongs to #}
+{% set entryCategory = entry.servicesCategory.first() %}
+
+{% if entryCategory is defined %}
+
+{% switch entryCategory.slug %}
+  {% case 'business-research' %}
+    {% set formActionUrl = '53710ad0-586c-42bb-b691-dccecc55739d' %}
+  {% case 'procurement-research' %}
+    {% set formActionUrl = 'b758f7e6-3df4-495d-b259-f3967d7054cf' %}
+  {% case 'investment-research' %}
+    {% set formActionUrl = '9c03be9e-51f8-4264-9810-1465e08856e2' %}
+  {% case 'ip-research' %}
+    {% set formActionUrl = 'dfeba8c7-2499-49ac-9346-4c3d634fc66d' %}
+  {% default %}
+    {% set formActionUrl = 'invalid' %}
+{% endswitch %}
+
+
+{% include '_components/global/_inquiry-form-modal-hubspot' with { 'formtype': 'inquiry', 'formAction': formActionUrl, 'formId': 'myModal', 'referring_url': 'refferLink' } %}
+
+{% endif %}
+
+{% include '_components/global/_json-ld-services' with { 'url':  entry.url, 'catTitle': firstLevel.title } %} 
+
