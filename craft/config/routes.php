@@ -72,5 +72,6 @@ return array(
    'knowledge-library/subscription-update' => 'layouts/subscribe/_entry',
    'knowledge-library/subscription-preferences' => 'layouts/subscribe/_entry',
 
-   'index.aspx' => 'index_redirect'
+   'index.aspx' => 'index_redirect',
+   'editorial-services' => 'layouts/services/va/_redirects'
 );
