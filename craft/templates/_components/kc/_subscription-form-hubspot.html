@@ -56,6 +56,8 @@
     background-color: #416196; 
     border-color: #130269; 
   } 
+
+
 {% endset %}
 
 {% includeCss subFormCss %}
@@ -101,7 +103,7 @@ window.onload = function ()
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <div class="modal-content"  style="width: 900px;">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Subscribe</h4>
@@ -145,6 +147,7 @@ window.onload = function ()
             portalId: '2270236',
             formId: '9ab41245-e4a1-46c6-ae82-cbbecef616b3',
             submitButtonClass: 'my-submit'
+            
           });
 
         </script>
@@ -159,3 +162,12 @@ window.onload = function ()
   </div>
 </div>
 <!-- End: modal popup --> 
+<style type="text/css">
+  
+  .hs-form .hs-input {
+  max-width: 800px;
+}
+.hs-form fieldset {
+  max-width: 800px;
+}
+</style>
