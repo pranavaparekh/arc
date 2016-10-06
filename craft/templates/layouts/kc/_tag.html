@@ -1,15 +1,121 @@
-{% set tag = craft.tags.title(tag).first() %}
+{% extends "base_layouts/_site" %}
 
-<h1>Entries tagged with “{{ tag.title }}”</h1>
+{% set srCss %}
+  .sresults {
+    padding-top: 70px;
+  }
 
-{% set entries = craft.entries.relatedTo(tag).order('title') %}
+  .sr__section__heading {
+    font-weight: 300;
+  }
 
-{% if entries | length %}
-    <ul>
-        {% for entry in entries %}
-            <li>{{ entry.getLink() }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No entries could be found with that tag.</p>
-{% endif %}
+  .sr__item a {
+    font-size: 1.5em;
+    margin-bottom: 0.4em;
+  }
+  .sr__excerpt {
+    color: #7B7676;
+    font-size: 1.1em;
+    font-style: italic;
+  }
+  .sr__number {
+  	color: #c31e4b;
+  }
+
+
+{% endset %}
+
+{% includeCss srCss %}
+
+{% set title = "Knowledge Library Tags" %}
+{% set desc = 'Pick the topics you want to receive updates from Aranca' %}
+{% set keywords = 'knowledge library, tags' %}
+{% set tag = craft.request.getSegment(3) %}
+
+{% block main %}
+
+
+
+
+{% set articleEntries = craft.entries.search(tag).section('articles').order('score') %}
+{% set blogEntries = craft.entries.search(tag).section('blogs').order('score') %}
+{% set srEntries = craft.entries.search(tag).section('specialReports').order('score') %}
+{% set igEntries = craft.entries.search(tag).section('infographics').order('score') %}
+
+
+{% include '_components/global/_header' %}
+<section class="sresults container">
+  <div class="row">
+    <div class="col-sm-12">
+    	<h3 style="padding-top:20px;">Entries tagged with “{{ tag }}”</h3>
+      	{# articles results #}
+		{% if articleEntries|length %}
+		    <h2 class="sr__section__heading">Articles</h2>
+		    <p class="sr__number">{{ articleEntries|length }} articles found for {{ tag }}:</p>
+
+		    <ul class="sr__list">
+		        {% for entry in articleEntries %}
+		          <li class="sr__item"><a href="{{ entry.url }}" target="_blank">{{ entry.title }}</a>
+		              <p class="sr__excerpt">{{ entry.excerpt }}</p>
+		          </li>
+		        {% endfor %}
+		    </ul>
+		    <hr>
+		{% endif %}
+
+
+		{# blogs results #}
+		{% if blogEntries|length %}
+		    <h2 class="sr__section__heading">Blogs</h2>
+		    <p class="sr__number">{{ blogEntries|length }} blog posts found for {{ tag }}:</p>
+
+		    <ul class="sr__list">
+		        {% for entry in blogEntries %}
+		          <li class="sr__item"><a href="{{ entry.url }}" target="_blank">{{ entry.title }}</a>
+		              <p class="sr__excerpt">{{ entry.excerpt }}</p>
+		          </li>
+		        {% endfor %}
+		    </ul>
+		    <hr>
+		{% endif %}
+
+		{# infographics results #}
+		{% if igEntries|length %}
+		    <h2 class="sr__section__heading">Infographics</h2>
+		    <p class="sr__number">{{ igEntries|length }} infographics found for {{ tag }}:</p>
+
+		    <ul class="sr__list">
+		        {% for entry in igEntries %}
+		          <li class="sr__item"><a href="{{ entry.url }}" target="_blank">{{ entry.title }}</a>
+		              <p class="sr__excerpt">{{ entry.igIntro }}</p>
+		          </li>
+		        {% endfor %}
+		    </ul>
+		    <hr>
+		{% endif %}
+
+		{# special reports results #}
+		{% if srEntries|length %}
+		    <h2 class="sr__section__heading">Special Reports</h2>
+		    <p class="sr__number">{{ srEntries|length }} special reports found for {{ tag }}:</p>
+
+		    <ul class="sr__list">
+		        {% for entry in srEntries %}
+		          <li class="sr__item"><a href="{{ entry.url }}" target="_blank">{{ entry.title }}</a>
+		              <p class="sr__excerpt">{{ entry.srIntro }}</p>
+		          </li>
+		        {% endfor %}
+		    </ul>
+		    <hr>
+		{% endif %}
+
+
+    </div>
+  </div>
+</section>
+{% include '_components/global/_footer' %}
+
+
+
+{% endblock %}
+

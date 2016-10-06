@@ -38,7 +38,7 @@ return array(
    'knowledge-library/special-reports' => 'layouts/special-reports/index',
    'knowledge-library/videos' => 'layouts/kc/index',
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/practices/(?P<category>\w+\-?\w+?)' => 'layouts/kc/_category',
-   'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/tags/(?P<tag>\w+\-?\w+?)' => 'layouts/kc/_tag',
+   'knowledge-library/tags/(?P<tag>\w+(\-?\w+?)*)' => 'layouts/kc/_tag',
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/authors/(?P<author>\w+\-?\w+?)' => 'layouts/kc/_author',
    'knowledge-library/(?P<ctype>\w+(\-?\w+?)*)/archives/(?P<year>\d{4})-(?P<month>\d{2})' => 'layouts/kc/_archive',
 

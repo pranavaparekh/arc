@@ -26,11 +26,6 @@
   -webkit-transition: color 0.2s;
 }
 
-.s-tag {
-    font-size: 12px;
-    color: #9e9e9e;
-}
-
 .tag::before {
   background: #fff;
   border-radius: 10px;
@@ -54,22 +49,30 @@
   top: 0;
 }
 
-/*.tag:hover {
+.tag:hover {
   background-color: crimson;
   color: white;
+  text-decoration: none;
+}
+
+.tag a:hover, .tag a:focus {
+  background-color: crimson;
+  color: white;
+  text-decoration: none;
 }
 
 .tag:hover::after {
    border-left-color: crimson; 
-}*/
+}
+
 
 {% endset %}
 
 {% includeCss tagsCss %}
 
 <ul class="tags">
-<li class="s-tag"><strong>Labels: &nbsp;</strong></li>
+<li>Tags: &nbsp;</li>
   {% for tag in tags %}
-  <li class="s-tag">{{ tag.title }}, &nbsp;</li>
+  <li><a href="{{ siteUrl }}knowledge-library/tags/{{ tag.slug }}" target="_blank" class="tag">{{ tag.title }}</a></li>
   {% endfor %}
 </ul>

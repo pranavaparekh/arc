@@ -146,9 +146,9 @@ $(document).ready(function() {
 
       {% include '_components/global/_action' with { 'vertical': true } %}
       
-      {% set entryAoe = entry.areasOfInterestCategory %}
-      {% if entryAoe | length %}
-        {% include '_components/global/_aoe-list' with { 'tags': entryAoe } %}
+      {% set entryTags = entry.kcTags %}
+      {% if entryTags | length %}
+        {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
       {% endif %}
 
       
@@ -183,10 +183,7 @@ $(document).ready(function() {
 
       {% include '_components/global/_byline' %}
 
-      {% set entryTags = entry.kcTags %}
-      {% if entryTags | length %}
-        {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
-      {% endif %}
+
 
       {% include '_components/kc/_disqus' %}
       

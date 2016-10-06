@@ -98,10 +98,11 @@ $(document).ready(function() {
 
     {% include '_components/global/_action' %}
 
-    {% set entryAoe = entry.areasOfInterestCategory %}
-    {% if entryAoe | length %}
-      {% include '_components/global/_aoe-list' with { 'tags': entryAoe } %}
-    {% endif %}
+{% set entryTags = entry.kcTags %}
+
+  {% if entryTags | length %}
+    {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
+  {% endif %}
     
     
     <div class="article__content">
@@ -116,10 +117,6 @@ $(document).ready(function() {
     {% include '_components/global/_byline' %}
 
 </div>
-{% set entryTags = entry.kcTags %}
 
-  {% if entryTags | length %}
-    {% include '_components/global/_tag-list' with { 'tags': entryTags } %}
-  {% endif %}
 
 {% include '_components/kc/_disqus' %}
