@@ -111,6 +111,13 @@
   margin-bottom: 2em;
 }
 
+.sol-port-content__list2 {
+  margin-bottom: 2em;
+  margin-left: 1em;
+  list-style-type: disc;
+
+}
+
 .sol-port-content__item__headline {
   text-transform: uppercase;
   color: {{ roman }};
@@ -126,8 +133,15 @@
   line-height: 1.8em;
 }
 
+.sol-port-content__item2 {
+  {% if brandColor is defined %}
+  color: #6F7981;
+  {% endif %}
+  line-height: 1.8em;
+}
+
 #l-firms .sol-port-content__list, #l-firms .sol-port-content__headline  {
-  text-align: center;
+  text-align: left;
 }
 
 @media only screen and (max-width : 480px) {
