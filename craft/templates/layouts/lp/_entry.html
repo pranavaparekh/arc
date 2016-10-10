@@ -10,6 +10,9 @@
 {% include '_components/services/_service-intro' %}
 {% include '_components/landing-pages/_sol-portfolio' with { 'brandColor': BrCore } %}
 {% include '_components/services/_why-aranca-c' %}
+{% if entry.tfilterRichtext|length %}
+  {% include '_components/services/_table-filter' %}
+{% endif %}
 {% include '_components/services/_ztabs' with { 'blueBackground': 'aliceblue' } %}
 {% include '_components/global/_footer' %}
 {% endblock %}
