@@ -1,0 +1,208 @@
+
+
+{% set custblokCss %}
+  .cust {
+    background-color: white;
+    margin-top: -1px;
+    background-color: #E2F0FB;
+  }
+
+  /* top triangle will show if passed in */
+  {% if topConnector is defined %}
+  .cust::before {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    {% if brandColor is defined %}
+      border-top: 25px solid {{ brandColor }};
+    {% endif %}
+    position: absolute;
+    left: 50%;
+  }
+  {% endif %}
+
+  .cust-blok {
+    background-color:  {{ bgBlue }};
+    color: {{ ttPrimary }};
+
+  }
+  .cust-blok__headline--main {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .cust-blok__headline {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    line-height: 40px;
+  }
+  .cust-blok__subheadline {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .cust-blok__headline--small {
+    color: {{ redPrimary }};
+    font-weight: 300;
+    line-height: 1.3em;
+  }
+
+  .cust-blok__headline--col {
+    text-align: center;
+  }
+  .cust-blok--intro {
+   text-align: center;
+   padding: 25px 0;
+  }
+
+
+
+  .cust-blok__border {
+    width: 50%;
+    border: 1px solid #034883;
+  }
+  .cust-blok__content {
+  color: #8B8D8F;
+  font-size: 1.2em;
+  text-align: center;
+  }
+
+  .triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid {{ bgBlue }};
+  }
+
+  .cust-blok__headline--main > .triangle-down {
+    position: relative;
+    top: 40px;
+  }
+
+  .cust-blok__icon {
+    padding-top: 20px;
+  }
+
+  .cust-blok--col {
+    padding-bottom: 30px;
+  }
+
+  @media only screen and (max-width : 480px) {
+    .cust::before {
+      left: 42%;
+    }
+  }
+
+{% endset %}
+
+{% set custBlockJs %}
+
+  new Waypoint.Inview({
+    element: $('.cust-blok--col')[0],
+    enter: function(direction) {
+      $('.cust-blok__headline--col').addClass('animated fadeInUp');
+      console.log('Scrolled to waypoint!')
+    }
+  });
+
+{% endset %}
+
+{% includeCss custblokCss %}
+{% includeJs custBlockJs %}
+
+
+
+
+  <section class="container-fluid cust cust-blok--intro">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+            <h2 class="lede__headline">The Aranca Edge</h2>
+            <p class="lede__subheadline">We don't just have the experience; we have varied experience. Over the last 13 years, we have generated over 8000 reports across domains and delivered them to over 1500 clients all over the world.</p>
+            <hr class="lede__border">
+         </div><!-- end row -->
+      </div><!-- end container -->
+    </div><!-- end row -->
+  </section>
+
+
+
+  <section class="container-fluid cust cust-blok--col">
+    <div class="row">
+      <div class="container">
+
+
+
+  <div class="row">
+  <div class="col-sm-4 cust-blok__headline--col">
+    <img src="/assets/uploads/icons/services/business-analyst.png" class="cust-blok__icon" alt="cap-block-icon1">
+    <h3 class="cust-blok__headline--small">Experienced & Qualified Team</h3>
+    <div class="cust-blok__content">
+      <p>30+ team of skilled and experienced editorial and presentation design professionals
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-4 cust-blok__headline--col">
+    <img src="/assets/uploads/icons/services/va-countries.png" class="cust-blok__icon" alt="cap-block-icon4">
+    <h3 class="cust-blok__headline--small">Global Benchmarks</h3>
+    <div class="cust-blok__content">
+      <p>While our Publication Support team is adept at using the Chicago Manual of Style, for all publications in American English, we are equally proficient in referencing the Oxford Style Guide for our clients in Europe, South Africa and Asia
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-4 cust-blok__headline--col">
+    <img src="/assets/uploads/icons/services/cap.png" class="cust-blok__icon" alt="cap-block-icon3">
+    <h3 class="cust-blok__headline--small">Ability To Manage Volumes
+    </h3>
+    <div class="cust-blok__content">
+      <p>The team delivers over 500 edited and designed business documents every month  for global clients across industry verticals.
+      </p>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <br><br><br>
+  <div class="col-sm-4 cust-blok__headline--col">
+    <img src="/assets/uploads/icons/services/investors.png" class="cust-blok__icon" alt="cap-block-icon2">
+    <h3 class="cust-blok__headline--small">Experience That Counts
+    </h3>
+    <div class="cust-blok__content">
+      <p>The team comprises people with more than 10 years of relevant experience in domains as diverse as print media, e-learning, linguistics, economics, finance and intellectual property rights. They have delivered complex assignments - infographics, pitch presentation slides, RFPs and proposals, factsheets, newsletters, equity reports, sector initiation reports and company profiles for global clients.
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-4 cust-blok__headline--col">
+    <img src="/assets/uploads/icons/services/engage-expert.png" class="why-arc-c__icon" alt="cap-block-icon1">
+    <h3 class="cust-blok__headline--small">Customized Output</h3>
+    <div class="cust-blok__content">
+      <p>Our publication support team appreciates and implements the nuances that come to play while editing documents for clients based on the regional preferences. Our Presentation Support team is adept at customizing design styles and develop document templates to align with the client’s brand guidelines.
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-4 cust-blok__headline--col">
+    <img src="/assets/uploads/icons/services/global-footprint.png" class="why-arc-c__icon" alt="cap-block-icon1" style="width:33px; height:33px;">
+    <h3 class="cust-blok__headline--small">Quality Assurance</h3>
+    <div class="cust-blok__content">
+      <ul>
+        <li>•  Every document goes through at least two rounds of edit and design iterations to:</li>
+        <li>• Fix grammar, punctuation, spelling and typographical errors</li>
+        <li>• Ensure consistency in format, font, and terminology, language and word preferences, etc.</li>
+        <li>• Point out gaps in logic, flow, structure, and style</li>
+        <li>• Word-to-word content</li>
+        <li>• Consistency in format, font, in line with the standard guidelines</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+      </div><!-- end container -->
+    </div><!-- end row -->
+  </section>
+</section>
