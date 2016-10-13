@@ -8,12 +8,14 @@
 {% include '_components/landing-pages/global/_nav' %}
 {% include '_components/landing-pages/_masthead' %}
 {% include '_components/services/_service-intro' %}
-{% include '_components/landing-pages/_sol-portfolio' with { 'brandColor': BrCore } %}
-{% include '_components/services/_why-aranca-c' %}
 {% if entry.tfilterRichtext|length %}
   {% include '_components/services/_table-filter' %}
 {% endif %}
-{% include '_components/services/_ztabs' with { 'blueBackground': 'aliceblue' } %}
+{% include '_components/landing-pages/_solution-check-table' %}
+{# include '_components/landing-pages/_sol-portfolio'  #}
+{# include '_components/services/_why-aranca-c' #}
+
+{# include '_components/services/_ztabs' with { 'blueBackground': 'aliceblue' } #}
 {% include '_components/landing-pages/_faq-accordian' %}
 {% include '_components/landing-pages/_team-profile-modal' %}
 {% include '_components/global/_footer' %}
