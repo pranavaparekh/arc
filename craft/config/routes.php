@@ -74,6 +74,6 @@ return array(
 
    'index.aspx' => 'index_redirect',
    'editorial-services' => 'layouts/services/va/_redirects',
-   'knowledge-center/special-report/781-pharma-patent-monetization-new-approaches-new-synergies' => 'layouts/services/va/_redirects'
+   'knowledge-center/special-report/patent-monetization-for-iam' => 'layouts/services/va/_redirects'
 
 );
