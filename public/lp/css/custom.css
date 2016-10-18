@@ -58,6 +58,14 @@ body{font-family: 'Roboto', sans-serif;}
   background-size: cover;
   min-height: 480px;
 }
+.sra5{
+  background-color:#f8bb3c;
+  color:#ffffff;
+  background-image: url("../images/FICR-WMF.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 480px;
+}
 .f-img{background-image:url(../img/featured-image.jpg);background-repeat:repeat-x;color:#000;background-position: center center;}
 .featured h1{font-size:36px;font-weight:700;margin-top:80px;}
 .featured .subhead{font-size:20px;font-weight:400;margin-top:30px;}
