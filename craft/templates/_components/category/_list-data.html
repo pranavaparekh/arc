@@ -1,0 +1,141 @@
+          {% set blogPosts = craft.entries.section('blogs').relatedTo(category).limit() %}
+{% set articles = craft.entries.section('articles').relatedTo(category).limit() %}
+{% set infographics = craft.entries.section('infographics').relatedTo(category).limit() %}
+{% set specialReports = craft.entries.section('specialReports').relatedTo(category).limit() %}
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th  style="text-align: center; color:#59656B;">
+                  Title
+                </th>
+                <th style="text-align: center; color:#59656B;">
+                  Practice
+                </th>
+                <th  style="text-align: center; color:#59656B;">
+                  Type
+                </th>
+                <th  style="text-align: center; color:#59656B;">
+                  Industry
+                </th>
+                <th style="text-align: center; color:#59656B;">
+                  AOI
+                </th>
+                <th style="text-align: center; color:#59656B;">
+                  URL
+                </th>
+              </tr>
+            </thead>
+            <tbody style="text-align: center;">
+              {% if blogPosts.total() > 0 %}
+                {% for blogPost in blogPosts %}
+                  <tr>
+                    <td>{{ blogPost.title }}</td>
+                    <td>{{ category.title }}</td>
+                    <td>Blog</td>
+                    <td>
+                    {% set aois = blogPost.areasOfInterestCategory %}
+                      <ul>
+                        {% for aoi in aois %}
+                        <li>{{ aoi.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td>
+                    {% set indus = blogPost.industryCategory %}
+                      <ul>
+                        {% for indu in indus %}
+                        <li>{{ indu.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td><a href="{{ blogPost.url }}" target="_blank">{{ blogPost.url }}</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
+
+              {% if articles.total() > 0 %}
+                {% for article in articles %}
+                  <tr>
+                    <td>{{ article.title }}</td>
+                    <td>{{ category.title }}</td>
+                    <td>Article</td>
+                    <td>
+                    {% set aois = article.areasOfInterestCategory %}
+                      <ul>
+                        {% for aoi in aois %}
+                        <li>{{ aoi.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td>
+                    {% set indus = article.industryCategory %}
+                      <ul>
+                        {% for indu in indus %}
+                        <li>{{ indu.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td><a href="{{ article.url }}" target="_blank">{{ article.url }}</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
+
+              {% if infographics.total() > 0 %}
+                {% for infographic in infographics %}
+                  <tr>
+                    <td>{{ infographic.title }}</td>
+                    <td>{{ category.title }}</td>
+                    <td>Infographic</td>
+                    <td>
+                    {% set aois = infographic.areasOfInterestCategory %}
+                      <ul>
+                        {% for aoi in aois %}
+                        <li>{{ aoi.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td>
+                    {% set indus = infographic.industryCategory %}
+                      <ul>
+                        {% for indu in indus %}
+                        <li>{{ indu.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td><a href="{{ infographic.url }}" target="_blank">{{ infographic.url }}</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
+
+              {% if specialReports.total() > 0 %}
+                {% for specialReport in specialReports %}
+                  <tr>
+                    <td>{{ specialReport.title }}</td>
+                    <td>{{ category.title }}</td>
+                    <td>Special Report</td>
+                    <td>
+                    {% set aois = specialReport.areasOfInterestCategory %}
+                      <ul>
+                        {% for aoi in aois %}
+                        <li>{{ aoi.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td>
+                    {% set indus = specialReport.industryCategory %}
+                      <ul>
+                        {% for indu in indus %}
+                        <li>{{ indu.title }}</li>
+                        {% endfor %}
+                      </ul>
+                    </td>
+                    <td><a href="{{ specialReport.url }}" target="_blank">{{ specialReport.url }}</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
+            </tbody>
+          </table>
