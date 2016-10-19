@@ -65,7 +65,6 @@ body{font-family: 'Roboto', sans-serif;}
   background-repeat: no-repeat;
   background-size: cover;
   height: 250px;
-  text-align: center
 }
 .f-img{background-image:url(../img/featured-image.jpg);background-repeat:repeat-x;color:#000;background-position: center center;}
 .featured h1{font-size:36px;font-weight:700;margin-top:80px;}
