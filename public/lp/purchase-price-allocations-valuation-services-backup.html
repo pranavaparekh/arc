@@ -120,141 +120,61 @@
 </p>
              </div>
   </div>
-  <div class="col-lg-4 col-sm-4 col-md-offset-1">
-  <div class="form-box" style="height:480px; margin-bottom:30px;">
-    <div class="col-lg-9 col-md-offset-3"><div class="form-title">Send us your inquiry</div>
-    <div class="form-subline" style="font-size: 12px;">for no-obligation consultation</div>
-  </div>
+  
+  <div class="col-lg-5 col-sm-5 col-md-offset-1">
+  <div class="form-box" style="height:520px; margin-bottom:30px;">
+    <div class="col-lg-12">
+      <div class="form-title" style="color:#03428e;">Write to us</div>
+      <div class="form-subline" style="font-size: 12px;">for no-obligation consultation</div>
+      <hr style="margin-bottom:0px;">
+    </div><!-- col-12 -->
 
-<!-- Start: Form URL capture -->
-
-<script>
-window.onload = function ()
-{
-var url = window.location.href;
-document.getElementById("formurl").value = url;
-
-var urlParams;
-var query = (window.location != window.parent.location) ? document.referrer.split('?')[1] || '' : window.location.search.split('?')[1]|| '';
-(window.onpopstate = function () {
-var match, search = /([^&=]+)=?([^&]*)/g;
-urlParams = {};
-while (match = search.exec(query))
-urlParams[encodeURIComponent(match[1])] = match[2];
-}
-)();
-for (i in urlParams) {
-var urlParamsArray = urlParams[i];
-try {
-document.getElementsByName(i)[0].value=decodeURIComponent(urlParamsArray);
-}
-catch(err) {
-}
-}
-};
-</script>
-  <!-- End: Form URL capture -->
-<div class="col-lg-12" style="margin-top:10px;">
-   <form class="form-horizontal no-lfm" role="form" accept-charset="UTF-8" id="contactForm" name="Landing Page" method="post" action="http://www.aranca.com/landing/19052014/bin/process-equity3.php">
-
-<input type="hidden" name="LFMIdsite" value="9698" />
-<input type="hidden" name="LFMC" id="LFMC" value="0" />
-<input type="hidden" name="_form_name_" value="Landing Page" />
-<input type="hidden" name="title" value="Purchase Price Allocations Valuation Services" />
-<input type="hidden" name="lead_source__c" value="website" />
-<input type="hidden" name="practice__c" value="VAL" />
-<input type="hidden" name="created_by__c" value="Marketing" />
-<input type="hidden" name="utm_source" />
-<input type="hidden" name="utm_medium" />
-<input type="hidden" name="utm_content" />
-<input type="hidden" name="utm_campaign" />
-<input type="hidden" name="referrer" />
-<input type="hidden" name="formurl" id="formurl" />
-<input type="hidden" name="ao_refurl" />
-
-<script type="text/javascript">
-  function getCookie(cookieName, path, domain) {
-  var cookiePattern = new RegExp('(^|;)[ ]*' + cookieName + '=([^;]*)' +
-  (path ? '(;[ ]*expires=[^;]*)?;[ ]*path=' + path.replace('/', '\\/') + '' : '') +
-  (domain ? ';[ ]*domain=' + domain + '(;|$)' : '')),
-  cookieMatch = cookiePattern.exec(document.cookie),
-  unescapeWrapper = window.decodeURIComponent || unescape;
-  return cookieMatch ? unescapeWrapper(cookieMatch[2]) : 0;
-  }
-  function setLFMC() {
-  try {
-  document.Financial opinions and Advisory.LFMC.value= getCookie("_vt_");
-  } catch (e) { }
-  }
-  window.onload = function(){ setLFMC(); }
-</script>
-
-  <div class="form-group">
-    <label for="inputname" class="col-sm-3 text-right control-label">Name<sup>*</sup>:</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputname" name="firstname" required>
-    </div>
-  </div>
-<!--   <div class="form-group">
-    <label for="inputname" class="col-sm-3 text-right control-label">Last Name<sup>*</sup>:</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputname" name="lastname" required>
-    </div>
-  </div> -->
-  <div class="form-group">
-    <label for="inputcompany" class="col-sm-3 text-right control-label">Company<sup>*</sup>:</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputcompany" name="company" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputphone" class="col-sm-3  text-right control-label">Phone:</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputphone" name="tel">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail" class="col-sm-3 text-right control-label">Work Email<sup>*</sup>:</label>
-    <div class="col-sm-9">
-      <input type="email" class="form-control" id="inputEmail" name="email" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputComment" class="col-sm-3 text-right control-label">How can we help?</label>
-    <div class="col-sm-9">
-      <textarea rows="2" cols="50" class="form-control" id="inputComment" name="comment"> </textarea>
-    </div>
-  </div>
+    <!-- Start: Form URL capture -->
+    <script>
+      window.onload = function ()
+      {
+        var url = window.location.href;
+        document.getElementById("formurl").value = url;
+        var urlParams;
+        var query = (window.location != window.parent.location) ? document.referrer.split('?')[1] || '' : window.location.search.split('?')[1]|| '';
+        (window.onpopstate = function () {
+          var match, search = /([^&=]+)=?([^&]*)/g;
+          urlParams = {};
+          while (match = search.exec(query))
+          urlParams[encodeURIComponent(match[1])] = match[2];
+        })();
+        for (i in urlParams) {
+        var urlParamsArray = urlParams[i];
+        try {
+        document.getElementsByName(i)[0].value=decodeURIComponent(urlParamsArray);
+        }
+        catch(err) {
+        }
+        }
+      };
+    </script>
+    <!-- End: Form URL capture -->
 
 
-  <div class="form-group">
-    <div class="col-sm-offset-3 col-sm-9">
-  <p class="w3b_url">website
-                      <br /><input name="url" id="url" type="text" /></p>
-                      <input type="hidden" name="redirect" value="http://www.aranca.com/thankyou-valuation-and-advisory" />
-                      <input type="hidden" name="subject" value="Google Enquiry | SRI Research" />
-      <button type="submit" class="btn btn-warning btn-lg mybt" onClick="_gaq.push(['_trackEvent', 'Contact', 'Information Request', 'Contact From', , false]);">Send</button>
+    <div class="col-lg-12" style="margin-top:10px;">
+    <link rel="stylesheet" href="/assets/css/hb-form.css">
 
 
-    </div>
-  </div>
-
-</form>
-
-
-
-
-</div>
-<script>document.getElementsByName('ao_refurl')[0].value = document.referrer</script>
-
-
-
-  </div>
-
-
-  </div>
-
-  </div>
+    <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+    <script>
+      hbspt.forms.create({ 
+        css: '',
+        portalId: '2270236',
+        formId: '954ecd0f-9c8f-4602-88bc-d1f60f99e267',
+        submitButtonClass: 'my-submit'
+      });
+    </script>
+    </div><!-- col-12 -->
+  </div><!-- form box -->
+</div><!-- col-5 -->
   </div>
 
   </section>
