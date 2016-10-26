@@ -1,0 +1,40 @@
+<p><img class="img-responsive" src="/assets/images/articles-thumb.jpg"></p>
+{% set latestBlogPosts = craft.entries.section('blogs').limit(1) %}
+{% for blogPost in latestBlogPosts %}
+<li>
+	<div class="col-sm-2" style="margin-left:-10px;"><img src="/assets/images/icons/blog.png" width="34px" /></div>
+	<div class="col-sm-10 wsmenu__list__item" >
+	<a href="{{ blogPost.url }}">{{ blogPost.title }}</a>
+	</div>
+</li>
+{% endfor %}
+
+{% set latestArticles = craft.entries.section('articles').limit(1) %}
+{% for article in latestArticles %}
+<li>
+  <div class="col-sm-2" style="margin-left:-10px;"><img src="/assets/images/icons/blog.png" width="34px" /></div>
+  <div class="col-sm-10 wsmenu__list__item">
+  <a href="{{ article.url }}"></i>{{ article.title }}</a>
+  </div>
+  </li>
+{% endfor %}
+<hr>
+{% set latestSpecialReports = craft.entries.section('specialReports').limit(1) %}
+{% for sReport in latestSpecialReports %}
+<li>
+  <div class="col-sm-2" style="margin-left:-10px;"><img src="/assets/images/icons/blog.png" width="34px" /></div>
+  <div class="col-sm-10 wsmenu__list__item">
+  <a href="{{ sReport.url }}"></i>{{ sReport.title }}</a>
+  </div>
+  </li>
+{% endfor %}
+<hr>
+{% set latestInfographics = craft.entries.section('infographics').limit(1) %}
+{% for iGraphic in latestInfographics %}
+<li>
+	<div class="col-sm-2" style="margin-left:-10px;"><img src="/assets/images/icons/blog.png" width="34px" /></div>
+	<div class="col-sm-10 wsmenu__list__item">
+  	<a href="{{ iGraphic.url }}">{{ iGraphic.title }}</a>
+  	</div>
+  	</li>
+{% endfor %}

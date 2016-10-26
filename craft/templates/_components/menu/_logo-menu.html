@@ -86,7 +86,7 @@
   width:100%;
   left:0px;
   position:absolute;
-  top:48px;
+  top:75px;
   color:#000;
   z-index:1000;
   margin:0px;
@@ -395,17 +395,6 @@
 .wsmenu-list > li > a:hover {/*background-color:rgba(0,0,0,0.08) !important; */ text-decoration:none;}
 .wsmenu-list > li > a.active{/*background-color:rgba(0,0,0,0.08) !important;*/ text-decoration:none; }
 .wsmenu-submenu > li > a:hover {/*background-color:rgba(0,0,0,0.08) !important; */border-radius:0px!important; text-decoration:none;  text-decoration:none;}
-
-/* Service menu theme */ 
-.wsmenu-list li > a { color: #00458c; }
-.wsmenu-list li:hover>a{text-decoration:none;}
-.wsmenu-list li.br:hover>a{background-color: #13718B !important; color:#ffffff; text-decoration:none;}
-.wsmenu-list li.ip:hover>a{background-color: #02B9B5 !important; color:#ffffff; text-decoration:none;}
-.wsmenu-list li.ir:hover>a{background-color: #F89F5D !important; color:#ffffff; text-decoration:none;}
-.wsmenu-list li.pr:hover>a{background-color: #5E7849 !important; color:#ffffff; text-decoration:none;}
-.wsmenu-list li.va:hover>a{background-color: #DF6D55 !important; color:#ffffff; text-decoration:none;}
-.wsmenu-list > li > a:hover {text-decoration:none;} 
-.wsmenu-submenu > li > a:hover { border-radius:0px!important; text-decoration:none; }
 
 .typography-text { padding:0px 0px; font-size:15px;}
 .typography-text p{ text-align:justify; line-height:24px; color:#656565;}
@@ -1194,91 +1183,69 @@ TABBED HOVER -->
 
 <div class="wsmenucontainer clearfix">
  <div class="overlapblackbg"></div>
-   <div class="wsmobileheader clearfix">
-    <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
-    <a href="{{ siteUrl }}" class="smallogo"><img src="/assets/images/aranca_logo_small.png" alt="" /></a>
-    <a id="int-num-mob" class="wbs-switch callusicon" href="tel:+17164420910"><i class="fa fa-phone"></i></a>
-      <a id="int-num-mob-uk" class="wbs-switch callusicon" href="tel:+442031293086"><i class="fa fa-phone"></i></a>
-    </div>
+ <div class="wsmobileheader clearfix">
+  <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
+  <a href="{{ siteUrl }}" class="smallogo"><img src="/assets/images/aranca_logo_small.png" alt="" /></a>
+  <a id="int-num-mob" class="wbs-switch callusicon" href="tel:+17164420910"><i class="fa fa-phone"></i></a>
+    <a id="int-num-mob-uk" class="wbs-switch callusicon" href="tel:+442031293086"><i class="fa fa-phone"></i></a>
+</div>
 
 
-  <div class="header" style="top:76px;">
+  <div class="header">
   <div class="wrapper clearfix bigmegamenu">
 
   <!--Main Menu HTML Code-->
       <nav class="wsmenu clearfix">
         <ul class="mobile-sub wsmenu-list">
+          <li><a href="{{ siteUrl }}"><img src="{{siteUrl}}assets/images/aranca_logo_214x75.png" width="150px" alt=""></a></li>
           
-          <li class="br"><a href="#"><span class="arrow">Business Research</span></a>
-            <div class="megamenu clearfix ">
-              <ul>
-                  <li>
-                  <div class="ttmenu-content">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                                      <div class="box">
-                                          <ul>
-                                              <li>
-                                                <p class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview">Overview</a></p>
-                                                <div class="col-sm-3" style="margin-left:-10px;">
-                                                  <img src="/assets/images/icons/br-logo.jpg" width="80px">
-                                                </div>
-                                                <div class="col-sm-9">
-                                                <p style="text-align:justify;">Aranca helps clients make informed business decisions involving customers, competitors, markets and technologies; with insights from domain experts.</p>
-                                                </div>
-                                                <a href="{{siteUrl}}intellectual-property-research/overview"><button class="btn btn-primary small">Learn More</button></a>
-                                              </li>
-                                              <hr>
-                                              <li>
-                                                <p class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#sol-port">Solutions</a></p>
-                                                <p>Explore our complete solution portfolio</p>
+          
 
-                                              <a href="{{siteUrl}}business-research/advisory-services-overview#sol-port"><button class="btn btn-primary small">Learn More</button></a>
-                                              </li>
-                                              
-                                          </ul>
-                                      </div><!-- end box -->
-                                  </div><!-- end col -->
-
-                                  <div class="col-md-4 col-sm-4 col-xs-12">
-                                      <div class="box">
-                                          <ul>
-                                              <li>
-                                                <p class="ttmenu__subheadline"><a href="{{siteUrl}}intellectual-property-research/overview#solution">Technologies</a></p>
-                                              </li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/automotive">Automotive</a></li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/biotechnology">Biotechnology </a></li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/chemicals">Chemicals </a></li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/communication-network">Communication &amp; Network </a></li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/diagnostics">Diagnostics </a></li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/electronics">Electronics </a></li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/engineering-plastics-and-polymers">Engineering Plastics and Polymers </a></li>
-                                              <li class="wsmenu__list__item"><a href="{{siteUrl}}intellectual-property-research/overview#solution"><button class="btn btn-primary small">More Technologies</button></a></li>
-                                          </ul>
-                                      </div><!-- end box -->
-                                  </div><!-- end col -->
-                                  <div class="col-md-4 col-sm-4 col-xs-12">
-                                      <div class="box">
-                                          <ul>
-                                              <li>
-                                              <p class="ttmenu__subheadline"><a href="{{siteUrl}}business-research/advisory-services-overview#sol-port">The Latest</a></p>
-                                              {% include '_components/menu/_menubar-kl-latest-list' %}
-
-                                                </li>
-                                          </ul>
-                                      </div><!-- end box -->
-                                  </div><!-- end col -->
-                              </div><!-- end row -->
-                  </div>
-                  </li>
+          
+          <li><a href="/knowledge-library"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;KNOWLEDGE LIBRARY<span class="arrow"></span></a>
+            <div class="megamenu clearfix">
+              <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                <li class="title">Blogs</li>
+                <a href="/knowledge-library/blogs-and-opinions"><img class="img-responsive" src="/assets/images/blogs-thumb.jpg"></a>
+                {% set latestBlogPosts = craft.entries.section('blogs').limit(3) %}
+                {% for blogPost in latestBlogPosts %}
+                  <li class="wsmenu__list__item"><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/blogs-and-opinions">view all posts &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
+              </ul>
+              <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                <li class="title">Articles</li>
+                <a href="/knowledge-library/articles"><img class="img-responsive" src="/assets/images/articles-thumb.jpg"></a>
+                {% set latestArticles = craft.entries.section('articles').limit(3) %}
+                {% for article in latestArticles %}
+                  <li class="wsmenu__list__item"><a href="{{ article.url }}"></i>{{ article.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/articles">view all articles &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
+              </ul>
+              <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                <li class="title">Special Reports</li>
+               <a href="/knowledge-library/special-reports"> <img class="img-responsive" src="/assets/images/sr-reports-thumb.jpg"></a>
+                {% set latestSpecialReports = craft.entries.section('specialReports').limit(3) %}
+                {% for sReport in latestSpecialReports %}
+                  <li class="wsmenu__list__item"><a href="{{ sReport.url }}"></i>{{ sReport.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/special-reports">view all special reports &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
+              </ul>
+              <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
+                <li class="title">Infographics</li>
+                <a href="/knowledge-library/infographics"><img class="img-responsive" src="/assets/images/infographics-thumb.jpg"></a>
+                {% set latestInfographics = craft.entries.section('infographics').limit(3) %}
+                {% for iGraphic in latestInfographics %}
+                  <li class="wsmenu__list__item"><a href="{{ iGraphic.url }}">{{ iGraphic.title }}</a></li>
+                {% endfor %}
+                <li class="wsmenu__list__item"><a href="/knowledge-library/infographics">view all infographics &nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
               </ul>
             </div>
-            <!-- end megamenu -->
           </li>
 
-          <li class="ip"><a href="#"><span class="arrow">IP Research</span></a>
-            <div class="megamenu clearfix ">
-              <ul>
+          <li><a href="#"><i class="fa fa-th-large"></i>&nbsp;&nbsp;<span class="arrow">ABOUT US</span></a>
+            <div class="megamenu halfmenu clearfix ">
+                <ul>
                   <li>
                   <div class="ttmenu-content">
                       <div class="row">
@@ -1309,133 +1276,34 @@ TABBED HOVER -->
                   </div>
                   </li>
               </ul>
+               
             </div>
             <!-- end megamenu -->
+          </li>
+          
+          <!-- contact -->
+          <li><a href="/contact-us"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CONTACT</a>
+          </li>
+          
+
+          <!-- search -->
+          <li><a href="#"><i class="fa fa-search"></i>SEARCH<span class="arrow"></span></a>
+            <div class="megamenu halfdiv">
+              <form role="search" method="get" action="{{ url('search/results') }}" id="search-form" class="search-form searchbox menu_form">
+                  <input type="text" placeholder="Search our knowledge library and services" name="q" class="searchbox-input" onkeyup="buttonUp();" id="s" required>
+                  <input type="submit" class="searchbox-submit" value="GO">
+              </form>
+              <div class="cl"></div>
+            </div>
+          </li>
+          <li id="int-num" class="hidden-xs"><i class="fa fa-phone-square"></i>&nbsp;&nbsp;CALL: <span id="int-num-display" data-telus="+17164420910" data-teluk="+442031293086"></span>
           </li>
 
-          <li class="ir"><a href="#"><span class="arrow">Investment Research</span></a>
-            <div class="megamenu clearfix ">
-              <ul>
-                  <li>
-                  <div class="ttmenu-content">
-                      <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/company-overview">Overview</a></li>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                      </div><!-- end row -->
-                  </div>
-                  </li>
-              </ul>
-            </div>
-            <!-- end megamenu -->
-          </li>
+          <li class="sharer__list__item"><a href="https://twitter.com/aranca" target="_blank"><i class="fa fa-twitter"></i><span class="visible-xs">Follow us on Twitter</span></a></li>&nbsp;&nbsp;
 
-          <li class="pr"><a href="#"><span class="arrow">Procurement Research</span></a>
-            <div class="megamenu clearfix ">
-              <ul>
-                  <li>
-                  <div class="ttmenu-content">
-                      <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/company-overview">Overview</a></li>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                      </div><!-- end row -->
-                  </div>
-                  </li>
-              </ul>
-            </div>
-            <!-- end megamenu -->
-          </li>
+          <li class="sharer__list__item"><a href="https://www.facebook.com/ArancaResearch" target="_blank"><i class="fa fa-facebook"></i><span class="visible-xs">Get updates on Facebook</span></a></li>&nbsp;&nbsp;
 
-          <li class="va"><a href="#"><span class="arrow">Valuation Advisory</span></a>
-            <div class="megamenu clearfix ">
-              <ul>
-                  <li>
-                  <div class="ttmenu-content">
-                      <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/company-overview">Overview</a></li>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                      </div><!-- end row -->
-                  </div>
-                  </li>
-              </ul>
-            </div>
-            <!-- end megamenu -->
-          </li>
-
-          <li class="br"><a href="#"><span class="arrow">Presentation & Publication</span></a>
-            <div class="megamenu clearfix ">
-              <ul>
-                  <li>
-                  <div class="ttmenu-content">
-                      <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/company-overview">Overview</a></li>
-                                  <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/our-culture">Our Culture</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="box">
-                                <ul>
-                                
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/who-we-are">Who We Are</a></li>
-                                <li class="wsmenu__list__item">&nbsp;<span><i class="wsmenu-arrow fa fa-angle-right"></i></span><a href="{{siteUrl}}about-us/what-we-believe">What We Believe</a></li>
-                                </ul>
-                            </div><!-- end box -->
-                        </div><!-- end col -->
-                      </div><!-- end row -->
-                  </div>
-                  </li>
-              </ul>
-            </div>
-            <!-- end megamenu -->
-          </li>
+          <li class="sharer__list__item"><a href="http://www.linkedin.com/company/aranca" target="_blank"><i class="fa fa-linkedin"></i><span class="visible-xs">Join us on LinkedIn</span></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </ul>
       </nav>
   <!--Menu HTML Code--> 
