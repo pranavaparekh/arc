@@ -1,0 +1,101 @@
+<section class="footer" style="padding:20px 0px;">
+  <div class="container">
+    <div class="row" style="margin:10px 0;">
+    <div class="col-lg-12">
+    <h4>About Aranca</h4>
+    <p style="font-size: 13px;">Founded in 2003, Aranca is a global research, analytics, and advisory firm empowering decision makers with a Custom Intelligence Blueprint. We help decision-makers from Fortune 500 companies, financial institutions, and high potential start-ups to understand and solve complex business problems about their markets, customers, competitors, channels, supply chain, technologies and compliance regulations across geographies and industries.</p>
+    </div>
+
+    </div>
+    <div class="row" style="margin:30px 0 0 0;">
+    <div class="col-lg-6 pull-left">
+      <small>&copy; 2016, Aranca. All rights reserved.</small>
+    </div>
+    <div class="col-lg-6 pull-right policy">
+     <ul>
+      <li><a href="http://www.aranca.com/privacy-policy" target="_blank">Privacy Policy</a> |</li>
+      <li><a href="http://www.aranca.com/terms-of-use" target="_blank">Terms of Use</a></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+ <!--  <a title="Scroll to top" href="#" class="scroll-top" style="display: inline;">Top</a> -->
+</section>
+
+    <!-- jQuery -->
+    <script src="/lp/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/lp/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <!--   <script src="js/jquery.easing.min.js"></script> -->
+    <script src="/lp/js/jquery.fittext.js"></script>
+  <!--  <script src="js/wow.min.js"></script>  -->
+
+    <!-- Custom Theme JavaScript -->
+<!--     <script src="js/creative.js"></script> -->
+
+<script type="text/javascript">
+    $(document).ready(function(evt){
+    $('#custom_carousel').on('slide.bs.carousel', function (evt) {
+      $('#custom_carousel .controls li.active').removeClass('active');
+      $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
+    })
+});
+
+    $(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
+</script>
+
+
+
+<!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 955828310;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/955828310/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<script type="text/javascript">
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 2000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+
+
+<!-- Start of Leadin Embed --> 
+  <script type="text/javascript" src="//js.leadin.com/js/v1/2270236.js" id="LeadinEmbed-2270236" crossorigin="use-credentials" async defer></script>
+<!-- End of Leadin Embed --> 
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+
+
+<style type="text/css">
+  .cust {
+    margin-top: -1px;
+    background-color: #E2F0FB;
+    padding-top:0;
+  }
+
+  /* top triangle will show if passed in */
+
+
+
+
+  .cust-blok {
+/*    background-color:  #2E6596;*/
+    color: #ffffff;
+    padding-top:40px;
+    padding-bottom: 20px;
+  }
+
+  .cust-blok__headline--main {
+    text-align: center;
+  }
+  .cust-blok__headline {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    line-height: 40px;
+  }
+  .cust-blok__subheadline {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .cust-blok__headline--small {
+    color: #A41034;
+    font-weight: 300;
+    line-height: 1.3em;
+  }
+
+  .cust-blok__headline--col {
+    text-align: center;
+  }
+  .cust-blok--intro {
+   text-align: center;
+   padding: 25px 0;
+  }
+
+
+
+  .cust-blok__border {
+    width: 50%;
+    border: 1px solid #034883;
+  }
+  .cust-blok__content {
+  color: #8B8D8F;
+  font-size: 1.2em;
+  text-align: center;
+  }
+
+  .triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 21px solid #2E6596;
+  }
+
+  .cust-blok__headline--main > .triangle-down {
+    position: relative;
+    top: 40px;
+  }
+
+  .cust-blok__icon {
+    padding-top: 20px;
+  }
+
+  .cust-blok--col {
+    padding-bottom: 30px;
+  }
+  .fa-check {
+    text-align: center;
+    color: green;
+  }
+  .fa-times {
+    text-align: center;
+    color: red;
+  }
+  .cust-blok__headline--main td {
+    color: #6F7981;
+  }
+  @media only screen and (max-width : 480px) {
+    .cust::before {
+      left: 42%;
+    }
+  }
+
+</style>
+
+<script type="text/javascript">
+
+  new Waypoint.Inview({
+    element: $('.cust-blok--col')[0],
+    enter: function(direction) {
+      $('.cust-blok__headline--col').addClass('animated fadeInUp');
+      console.log('Scrolled to waypoint!')
+    }
+  });
+</script>
+
+
+
+
+
+<section class="container-fluid cust">
+
+  <section class="container-fluid cust-blok">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm-12 cust-blok__headline--main">
+            <h3 class="lede__headline">Most Pressing Business Challenges of Marketers</h3>
+            <hr class="lede__border">
+              <p style="color:#474A4C; text-align: left; margin-bottom:10px;">Many a deals have been lost for the sheer lack of intelligence on potential customers. Sales teams across the world often struggle to gather   critical information for prospect profiling. </p>
+              <p style="color:#474A4C; text-align: left;">B2B sales professionals are confronted with multiple challenges in the midst of the evolving industry dynamics and changing customer requirements. </p>
+              <div class="panel panel-default" style="font-size: 15px;">
+                <img src="/lp/images/sales-intelligence.jpg" />
+              </div>
+          </div> <!-- col-sm-12 -->
+        </div> <!-- end row  -->
+      </div><!-- end container -->
+    </div> <!-- end row  -->
+  </section><!-- end section -->
+
+
+
+  <section class="container-fluid cust-blok--intro">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+
+            <h3 class="lede__headline">Impact of having a Targated Sales Approach</h3>
+            <p class="lede__subheadline"></p>
+            <hr class="lede__border">
+
+         </div><!-- end row -->
+    <div class="row">
+      <div class="container">
+        <div class="row">
+      <div class="col-sm-2 col-sm-offset-1 cust-blok__headline--col animated fadeInUp">
+        <img src="/assets/uploads/icons/services/investors.png" class="cust-blok__icon" alt="cap-block-icon2">
+        <h3 class="cust-blok__headline--small">Revenue</h3>
+      </div>
+      <div class="col-sm-2 cust-blok__headline--col animated fadeInUp">
+        <img src="/assets/uploads/icons/services/cap.png" class="cust-blok__icon" alt="cap-block-icon3">
+        <h3 class="cust-blok__headline--small">Better return on investment</h3>
+      </div>
+      <div class="col-sm-2 cust-blok__headline--col animated fadeInUp">
+        <img src="/assets/uploads/icons/services/ip/staff-with-advanced.png" class="cust-blok__icon" alt="cap-block-icon3">
+        <h3 class="cust-blok__headline--small">Higher sales conversion rate</h3>
+      </div>
+      <div class="col-sm-2 cust-blok__headline--col animated fadeInUp">
+        <img src="/assets/uploads/icons/services/research-helpdesk.png" class="cust-blok__icon" alt="cap-block-icon2">
+        <h3 class="cust-blok__headline--small">Increased average revenue per sale</h3>
+      </div>
+      <div class="col-sm-2 cust-blok__headline--col animated fadeInUp">
+        <img src="/assets/uploads/icons/services/co-sourced-teams.png" class="cust-blok__icon" alt="cap-block-icon3">
+        <h3 class="cust-blok__headline--small">Savings related to cost of customer acquisition</h3>
+      </div>
+
+        </div><!-- end row -->
+      </div><!-- end container -->
+    </div><!-- end row -->
+
+      </div><!-- end container -->
+    </div><!-- end row -->
+  </section>
+
+</section>
+
+
+
+
+</section>

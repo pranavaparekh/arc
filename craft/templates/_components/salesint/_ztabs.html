@@ -1,0 +1,221 @@
+{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
+{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+
+{% set ztabsCss %}
+
+  .ztabs {
+    padding: 60px 0;
+    /*background: url('/assets/images/patterns/swirl_pattern.jpg');*/
+    {% if blueBackground is defined %}
+    background: {{ blueBackground }}
+    {% endif %}
+  }
+
+  .ztabs__headline {
+    font-size: 2em;
+    color: #e55b2b;
+    letter-spacing: 0.05em;
+  }
+
+  .ztab__list__item__head {
+    font-size: 1.40em;
+    line-height: 1.6em;
+    color: {{ ttgrey }};
+    margin-bottom: 0.5em;
+    border-bottom: 1px dashed #C2CDD5;
+    padding-bottom: 0.5em;
+    color: #A0ABB2;
+  }
+
+
+
+  .ztab__subllist > li {
+    margin-left: 1em;
+    list-style: disc;
+    line-height: 2.2em;
+    font-size: 1.2em;
+    color: #878788;
+  }
+  .ztab__list__item--content {
+    color: #8B8D8F;
+    padding-left: 20px;
+  }
+.cs-name {
+    color: #034883;
+  }
+  {% if blueBackground is defined %}
+  .z-tabs.vertical.underlined > ul.z-tabs-nav > li.z-active > a, .z-tabs.vertical.underlined > ul.z-tabs-nav > li > a:hover {
+      background: #FFFFFF;
+    }
+  {% endif %}
+{% endset %}
+
+{% set ztabsJs %}
+
+ $(document).ready(function () {
+      /*  jQuery activation and setting options. Visit docs.zozoui.com/tabs for
+          complete documentation, option list, public methods, callback events.*/
+      $("#tabbed-nav").zozoTabs({
+          theme: "red",
+          style: "underlined",
+          // theme: "silver",
+          orientation: "vertical",
+          position: "top-left",
+          size: "xlarge",
+          animation: {
+              duration: 400,
+              effects: "slideV"
+          },
+      });
+  });
+
+{% endset %}
+
+{% includeJs ztabsJs %}
+{% includeCss ztabsCss %}
+
+<section class="container-fluid ztabs">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="lede__headline text-center">Case Studies</h2>
+<hr class="lede__border">
+<!-- Zozo Tabs Start-->
+<div class="hover underlined xlarge z-icons-dark z-shadows z-bordered z-tabs vertical top-left top red" id="tabbed-nav"><ul style="display: none;" class="z-tabs-nav z-tabs-mobile z-state-closed"><li><a class="z-link" style="text-align: left;"><span class="z-title">Prospecting</span><span class="z-arrow"></span></a></li></ul><i class="z-dropdown-arrow"></i><ul class="z-tabs-nav z-tabs-desktop z-hide-menu">
+    <li data-link="tab1" class="z-tab z-first"><a class="z-link">Prospecting</a></li>
+    <li data-link="tab1" class="z-tab"><a class="z-link">Market Analysis</a></li>
+    <li data-link="tab2" class="z-tab"><a class="z-link">Competitor Intelligence</a></li>
+    <li data-link="tab3" class="z-tab"><a class="z-link">Customer Experience</a></li>
+
+  </ul>
+  <!-- Tab Navigation Menu -->
+
+  <!-- Content container -->
+
+  <!-- content container -->
+<div style="min-height: 336px;" class="z-container">
+    <!-- First col -->
+    <div style="position: absolute; display: none; left: 0px; top: -336px;" class="z-content"><div class="z-content-inner">
+      <h4 class="ztabs__headline">Prospecting</h4>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+             <a href=#  data-toggle="modal" data-target="#prospecting1"> <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/prospecting1.png" alt=""></p>
+              <p class="cs-name">Database development of prospects for a leading Finnish textile service provider</p></a>
+        </div>
+        <div class="col-sm-6">
+              <a href=#  data-toggle="modal" data-target="#prospecting2"> 
+              <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/prospecting2.png" alt=""></p>
+              <p class="cs-name">Identification of customers with specific technological capabilities applicable to client’s products</p></a>
+        </div>
+      </div>
+      <!-- row -->
+    </div></div>
+    <!-- First col -->
+    <!-- Second col -->
+    <div class="z-content z-active" style="display: block; position: relative; left: 0px; top: 0px;"><div class="z-content-inner">
+      <h4 class="ztabs__headline">Market Analysis</h4>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+             <a href=#  data-toggle="modal" data-target="#marketana1"> <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/marketana1.png" alt=""></p>
+              <p class="cs-name">Go to market strategy for a Malaysian agency to penetrate in Indian medical gloves market</p></a>
+        </div>
+        <div class="col-sm-6">
+              <a href=#  data-toggle="modal" data-target="#marketana2"> 
+              <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/marketana2.png" alt=""></p>
+              <p class="cs-name">Feasibility assessment of setting up an ELL institute in Saudi Arabia</p></a>
+        </div>
+      </div>
+      <!-- row -->
+    </div></div>
+    <!-- Second col -->
+    <!-- three col -->
+    <div class="z-content"><div class="z-content-inner">
+      <h4 class="ztabs__headline">Competitor Intelligence</h4>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+             <a href=#  data-toggle="modal" data-target="#competitor1"> <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/competitor1.png" alt=""></p>
+              <p class="cs-name">Quarterly competitor profiling for a industrial & environmental machinery manufacturer</p></a>
+        </div>
+        <div class="col-sm-6">
+              <a href=#  data-toggle="modal" data-target="#competitor2"> 
+              <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/competitor2.png" alt=""></p>
+              <p class="cs-name">Quarterly competitor profiling for a water and wastewater machinery manufacturer</p></a>
+        </div>
+      </div>
+      <!-- row -->
+    </div></div>
+    <!-- three col -->
+    <!-- four col -->
+    <div class="z-content"><div class="z-content-inner">
+      <h4 class="ztabs__headline">Customer Experience</h4>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+             <a href=#  data-toggle="modal" data-target="#customer1"> <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/customer1.png" alt=""></p>
+              <p class="cs-name">Assessing the customer readiness for a new web-based platform</p></a>
+        </div>
+        <div class="col-sm-6">
+              <a href=#  data-toggle="modal" data-target="#customer2"> 
+              <p>
+              <img class="img-responsive img-hover" src="/lp/images/sales-intelligence-case-study/customer2.png" alt=""></p>
+              <p class="cs-name">Customer satisfaction survey covering existing homogenizer users in India</p></a>
+        </div>
+      </div>
+      <!-- row -->
+    </div></div>
+    <!-- four col -->
+    <!-- five col -->
+    <div class="z-content"><div class="z-content-inner">
+      <h4 class="ztabs__headline">Middle East</h4>
+      <br>
+      <div class="row">
+        <ul class="ztab__subllist">
+          <li class="ztab__list__item"><strong>85%</strong> of Market capitalization on which we have written research</li>
+          <li class="ztab__list__item"><strong>~750</strong> companies on which we have created financial models and/or reports</li>
+          <li class="ztab__list__item"><strong>300+</strong> credit model and notes across investment grade, high yield and distressed securities</li>
+          <li class="ztab__list__item"><strong>300+</strong> Companies on which we provide continuous coverage support</li>
+          <li class="ztab__list__item"><strong>100+</strong> deals supported for PE/VC firms </li>
+          <li class="ztab__list__item"><strong>200+</strong> M&amp;A deals worth more than $5 billion supported</li>
+        </ul>
+      </div>
+      <!-- row -->
+    </div></div>
+    <!-- five col -->
+    <!-- six col -->
+    <div class="z-content"><div class="z-content-inner">
+      <h4 class="ztabs__headline">Africa</h4>
+      <br>
+      <div class="row">
+        <ul class="ztab__subllist">
+          <li class="ztab__list__item"><strong>65%</strong> of Market capitalization on which we have written research</li>
+          <li class="ztab__list__item"><strong>~500+</strong> companies on which we have created financial models and/or reports</li>
+          <li class="ztab__list__item"><strong>100+</strong> credit model and notes across investment grade, high yield and distressed securities</li>
+          <li class="ztab__list__item"><strong>100+</strong> Companies on which we provide continuous coverage support</li>
+          <li class="ztab__list__item"><strong>200+</strong> start-ups deals supported for PE/VC firms </li>
+          <li class="ztab__list__item"><strong>100+</strong> M&amp;A deals worth more than $2 billion supported</li>
+        </ul>
+      </div>
+      <!-- row -->
+    </div></div>
+    <!-- six col -->
+  </div></div>
+<!-- end ztabs -->
+        </div> <!-- end col-sm-12 -->
+      </div> <!-- end row -->
+    </div> <!-- end row -->
+  </div> <!-- end row -->
+
+
+</section><!-- end ztabs -->
+

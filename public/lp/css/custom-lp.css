@@ -1,6 +1,9 @@
 /* custom class */
 
 /* for why arnca */
+body {
+  font-style: "Roboto", Arial, sans-serif;
+}
 
   .cust {
     background-color: #E2F0FB;
@@ -29,7 +32,6 @@
   }
   .cust-blok__headline--main {
     text-align: center;
-    text-transform: uppercase;
   }
   .cust-blok__headline {
     font-size: 30px;
@@ -320,20 +322,23 @@ padding-top: 50px;
 
 @media( max-width : 585px ){
     
-    .board {
+.board {
 width: 90%;
 height:auto !important;
 }
-    span.round-tabs {
+
+span.round-tabs {
         font-size:16px;
 width: 50px;
 height: 50px;
 line-height: 50px;
     }
-    .tab-content .head{
+
+.tab-content .head{
         font-size:20px;
         }
-    .nav-tabs > li a {
+
+.nav-tabs > li a {
 width: 50px;
 height: 50px;
 line-height:50px;
@@ -352,15 +357,27 @@ left: 35%;
 
 /* headline */
 .lede__headline, .lede__headline--caps, .lede__headline--white, .lede__headline-b {
-    font-size: 2.2em;
-    color: #b92a51;
+    font-size: 24px;
+    color: #59656B;
     text-align: center;
     font-weight: 300;
-  }
+}
 
 .lede__subheadline, .lede__subheadline--white, .lede__subheadline-b {
-    font-size: 18px;
+    font-size: 17px;
     color: #474A4C;
     font-weight: 300;
     text-align: center;
 }
+
+/* masthead */
+
+.sra5{
+ background-color: #f8bb3c;
+  color:#ffffff;
+  background-image: url("../images/FICR-WMF.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+}
+
