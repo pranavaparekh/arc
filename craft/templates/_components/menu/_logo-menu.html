@@ -1284,7 +1284,15 @@ TABBED HOVER -->
           <!-- contact -->
           <li><a href="/contact-us"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CONTACT</a>
           </li>
-          
+          <li>
+            <form role="search" method="get" action="{{ url('search/results') }}" id="search-form" class="search-form searchbox menu_form">
+            <div class="col-sm-6">
+            <input type="text" placeholder="Search our knowledge library and services" name="q" class="searchbox-input" onkeyup="buttonUp();" id="s" required>
+            </div>
+            <div class="col-sm-6">
+            <input type="submit" class="searchbox-submit" value="GO">
+            </div>
+              </form> </li>
 
           <!-- search -->
           <li><a href="#"><i class="fa fa-search"></i>SEARCH<span class="arrow"></span></a>
