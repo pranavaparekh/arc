@@ -12,7 +12,7 @@
 {% for article in latestArticles %}
 <li>
   <div class="col-sm-10 wsmenu__list__item">
-  <a href="{{ article.url }}"></i>{{ article.title }}</a>
+  <a href="{{ article.url }}">{{ article.title }}</a>
   </div>
   </li>
 {% endfor %}
@@ -21,7 +21,7 @@
 {% for sReport in latestSpecialReports %}
 <li>
   <div class="col-sm-10 wsmenu__list__item">
-  <a href="{{ sReport.url }}"></i>{{ sReport.title }}</a>
+  <a href="{{ sReport.url }}">{{ sReport.title }}</a>
   </div>
   </li>
 {% endfor %}
