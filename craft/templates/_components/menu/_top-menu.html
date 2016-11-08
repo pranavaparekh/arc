@@ -1,0 +1,34 @@
+<style type="text/css">
+  #top-menu .fa { color: #b3223c; }
+  #top-menu li { color: #1c4586; }
+</style>
+<nav class="navbar navbar-default navbar-fixed-top hidden-xs" id="top-menu" style="height: 50px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="{{ siteUrl }}"><img src="{{siteUrl}}assets/images/aranca_logo_214x75.png" width="150px" alt=""></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+
+      <li><a href="{{siteUrl}}knowledge-library"><i class="fa fa-book"></i>&nbsp;&nbsp;<span class="arrow">KNOWLEDGE LIBRARY</span></a></li>
+      <li><a href="{{siteUrl}}media-room"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;<span class="arrow">MEDIA ROOM</span></a></li>
+      <li><a href="{{siteUrl}}about-us/company-overview"><i class="fa fa-th-large"></i>&nbsp;&nbsp;<span class="arrow">ABOUT US</span></a></li>
+      <li><a href="/contact-us"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CONTACT</a></li>
+
+      <!-- social button -->
+      <li class="sharer__list__item"><a href="https://twitter.com/aranca" target="_blank"><i class="fa fa-twitter"></i><span class="visible-xs">Follow us on Twitter</span></a></li>&nbsp;&nbsp;
+      <li class="sharer__list__item"><a href="https://www.facebook.com/ArancaResearch" target="_blank"><i class="fa fa-facebook"></i><span class="visible-xs">Get updates on Facebook</span></a></li>&nbsp;&nbsp;
+      <li class="sharer__list__item"><a href="http://www.linkedin.com/company/aranca" target="_blank"><i class="fa fa-linkedin"></i><span class="visible-xs">Join us on LinkedIn</span></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <!-- Search -->
+      <li><a>
+        <form role="search" method="get" action="{{ url('search/results') }}" id="search-form" >
+          <input type="text" placeholder="Search our knowledge library and services" name="q" style="font-size: 14px;" class="searchbox-input" onkeyup="buttonUp();" id="s" required>
+<!--           <input type="submit" class="searchbox-submit" value="Go"> -->
+        <button type="submit" class="btn btn-primary" style="padding: 2px 10px;"><i class="fa fa-search" style="color: #ffffff;"></i></button>
+        </form>
+      </a></li>
+
+    </ul>
+  </div>
+</nav>
+
