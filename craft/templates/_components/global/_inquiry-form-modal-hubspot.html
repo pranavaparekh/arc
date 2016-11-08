@@ -63,7 +63,7 @@
           };
           </script>
         <!-- End: Form URL capture -->
-
+        <div class="form-modal-hub-form">
 
         <!-- Start - Hubspot code start -->
 
@@ -75,13 +75,14 @@
           hbspt.forms.create({ 
             portalId: '2270236',
             formId: '{{ formActionUrl }}',
-            submitButtonClass: 'my-submit'
+            submitButtonClass: 'my-submit',
+            target: '.form-modal-hub-form'
           });
 
         </script>
 
          <!-- End - Hubspot code start -->
-
+</div>
       </div>
 <!--       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
