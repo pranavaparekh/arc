@@ -4,11 +4,28 @@
     position: relative;
      color: white;
     background: -webkit-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/patent-watch-banner.jpg') no-repeat center center;
+    url('img/35North-Venture-masthead.jpg') no-repeat center center;
     background: -o-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/patent-watch-banner.jpg') no-repeat center center;
+    url('img/35North-Venture-masthead.jpg') no-repeat center center;
     background: linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/patent-watch-banner.jpg') no-repeat center center;
+    url('img/35North-Venture-masthead.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 300px;
+    max-height: 250px;
+  }
+
+  .kc-masthead2 {
+    position: relative;
+     color: white;
+    background: -webkit-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
+    url('img/35North-Venture-masthead2.jpg') no-repeat center center;
+    background: -o-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
+    url('img/35North-Venture-masthead2.jpg') no-repeat center center;
+    background: linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
+    url('img/35North-Venture-masthead2.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -45,7 +62,7 @@
   .kc-masthead__border {
     margin: 5px 0;
     max-width: 100%;
-    border-color: #337ab7;
+    border-color: #64bf2a;
     border-width: 1px;
   }
   .kc-masthead__arrow {
@@ -62,9 +79,9 @@
     color:#fff;
   }
 
- @media only screen and (max-width: 500px) {
+ @media only screen and (max-width: 600px) {
     .kc-masthead__content--headline {
-      font-size: 2.5em;
+      font-size: 1.3em;
     }
 
     .kc-masthead__content--tagline {
@@ -74,7 +91,7 @@
     .kc-masthead__content {
     text-align: center;
     position: absolute;
-    top: 20%;
+    top: 15%;
 
   }
 
@@ -82,9 +99,41 @@
 
 <section class="container-fluid kc-masthead">
   <div class="row">
-    <div class="kc-masthead__content">
-      <h1 class="kc-masthead__content--headline">Helping passionate entrepreneurs build high growth businesses </h1>
-      <hr class="kc-masthead__border">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active kc-masthead">
+      <div class="kc-masthead__content">
+        <h1 class="kc-masthead__content--headline">Helping passionate entrepreneurs build high growth businesses </h1>
+      </div>
+    </div>
+
+    <div class="item kc-masthead2">
+      <div class="kc-masthead__content">
+        <h1 class="kc-masthead__content--headline">Helping passionate entrepreneurs build high growth businesses </h1>
+      </div>
     </div>
   </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+  </div>
 </section>
+
+
+
+<a id="about"></a>
