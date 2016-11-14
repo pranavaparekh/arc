@@ -1,0 +1,72 @@
+{% set siteName = craft.app.getSiteName() %}
+{% set entry = entry is defined ? entry : 'Aranca' %}
+{% set docTitle = entry.seoTitle is defined ? entry.seoTitle : title|striptags %}
+{% set docDesc = entry.seoDescription is defined ? entry.seoDescription : desc|striptags %}
+{% set docKeyWords = entry.seoKeywords is defined ? entry.seoKeywords : keywords|striptags %}
+{% set docUrl = entry.url is defined ? entry.url : title|striptags %}
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+  <head>
+    {% block head %}
+
+      <!-- A/B testing for Sales intelligence landing page, Remove after campaign end -->
+        {% if entry.url == "{{siteUrl}}lp/research-and-analytics-support-for-sales-effectiveness" %}
+          <!-- Google Analytics Content Experiment code -->
+          <script>function utmx_section(){}function utmx(){}(function(){var
+          k='98667376-1',d=document,l=d.location,c=d.cookie;
+          if(l.search.indexOf('utm_expid='+k)>0)return;
+          function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+          indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+          length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+          '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+          '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+          '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+          valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+          '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+          </script><script>utmx('url','A/B');</script>
+          <!-- End of Google Analytics Content Experiment code -->
+        {% endif %}
+      <!-- End A/B -->
+      
+      <!-- for mega menu -->
+      <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="HandheldFriendly" content="True">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <!-- end mega menu meta tags -->
+
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta name="keywords" content="{{docKeyWords}}">
+      <meta name="description" content="{{docDesc}}">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--       <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui"> -->
+
+      {% block ogtags %}{% endblock %}
+
+      <title>{{ docTitle ~ (docTitle and siteName ? ' | ') ~ siteName }}</title>
+
+    {% endblock %} {# end head block #}
+
+    <!-- Begin Cookie Consent -->
+    <script type="text/javascript">
+        window.cookieconsent_options = {"message":"In order to provide required site functionality and improve your online experience, this site uses cookies. By using this website, you agree to the use of cookies. Please read Aranca’s online privacy statement to know more.","dismiss":"Got it!","learnMore":"More info","link":"http://www.aranca.com/legal/privacy-cookies-policy","theme":"dark-top"};
+    </script>
+
+  </head>
+
+  <body>
+    
+
+    {% block body %}
+
+    {% endblock %} {# end main body block #}
+
+    {% block foot %}
+
+    {% endblock %} {# end footer block #}
+
+    </div><!-- end wsmenucontainer -->
+  </body>
+
+</html>

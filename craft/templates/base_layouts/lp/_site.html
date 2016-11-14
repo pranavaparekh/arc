@@ -1,0 +1,125 @@
+{% extends "base_layouts/lp/_base" %}
+
+{% block ogtags %}
+  <!-- for Facebook -->
+  <meta property="og:url"                content="{{ docUrl }}" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="{{ docTitle }}" />
+  <meta property="og:description"        content="{{ docDesc }}" />
+  <meta property="og:image"              content="http://staging.aranca.com/assets/images/aranca_logo_214x75.png" />
+{% endblock %}
+
+{% set brandPrimary = '#00436f' %}
+{% set brandOrange = '#faae53' %}
+{% set redPrimary = '#A41034' %}
+{% set ttPrimary = '#ffffff' %}
+{% set ttOrange = '#EE4A00' %}
+{% set ttBlue = '#034883' %}
+{% set ttgrey = '#474A4C' %}
+{% set ttgreyLight = '#9EA1A4' %}
+{% set bgBlue = '#2E6596' %}
+
+{% set roman = '#E26958' %}
+
+
+{% set CoreBlue = '#00458C' %}
+{% set CoreCrimson = '#B3223C' %}
+
+{% set CoreBlack = '#000000' %}
+{% set CoreGray = '#898989' %}
+
+{% set BrCore = '#20738E' %}
+
+
+
+{% set IrCore = '#F5A15A' %}
+
+
+{% set FicrCore = '#F5A15A' %}
+
+
+{% set VaCore = '#DD6A51' %}
+
+
+
+{# Responsive Breakpoints #}
+
+{% set screenxs = '480px'  %}
+{% set screensm = '768px'  %}
+{% set screenmd = '992px'  %}
+{% set screenlg = '1200px' %}
+
+
+
+
+
+{% block head %}
+  {{parent()}}
+  <link rel="stylesheet" href="/assets/css/fontawesome.min.css" rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{craft.config.assetsCssUrl}}/main.css" rel='stylesheet' type='text/css'>
+  {% includeCssFile "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" %}
+  <!-- You can add Google Analytics here or use T3 Injection feature -->
+<!-- Google Analytics code -->
+     <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-2764060-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+<!-- end Google Analytics code -->
+
+<!-- Start of Async HubSpot Analytics Code -->
+  <script type="text/javascript">
+    (function(d,s,i,r) {
+    if (d.getElementById(i)){return;}
+    var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+    n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2270236.js';
+    e.parentNode.insertBefore(n, e);
+    })(document,"script","hs-analytics",300000);
+  </script>
+<!-- End of Async HubSpot Analytics Code --> 
+
+
+{% endblock %}
+
+
+{% block body %}
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M9DK9F"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M9DK9F');</script>
+  <!-- End Google Tag Manager -->
+  {# include "includes/_top-bar.html" #}
+  {# include "includes/_nav-bar.html" #}
+
+  <main id="main" role="main">
+
+    {% block main %}
+
+
+
+
+    {% endblock %}
+
+  </main>
+{% endblock %}
+
+{% block foot %}
+  {{parent()}}
+
+  {% includeJsFile "/assets/js/jquery.js" first %}
+  {% includeJsFile "/assets/js/bootstrap-v3.3.5.js" %}
+  {% includeJsFile "/assets/js/jquery.waypoints.min.js" %}
+  {% includeJsFile "/assets/js/inview.min.js" %}
+  {% includeJsFile "/assets/js/site.js"  %}
+
+
+{% endblock %}
