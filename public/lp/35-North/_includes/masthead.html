@@ -3,12 +3,12 @@
   .kc-masthead {
     position: relative;
      color: white;
-    background: -webkit-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/35North-Venture-masthead.jpg') no-repeat center center;
-    background: -o-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/35North-Venture-masthead.jpg') no-repeat center center;
-    background: linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/35North-Venture-masthead.jpg') no-repeat center center;
+    background:  
+    url('img/1250x300-new-1.jpg') no-repeat center center;
+    background:  
+    url('img/1250x300-new-1.jpg') no-repeat center center;
+    background: 
+    url('img/1250x300-new-1.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -20,12 +20,29 @@
   .kc-masthead2 {
     position: relative;
      color: white;
-    background: -webkit-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/35North-Venture-masthead2.jpg') no-repeat center center;
-    background: -o-linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/35North-Venture-masthead2.jpg') no-repeat center center;
-    background: linear-gradient(rgba(80, 76, 76, 0.30), rgba(103, 92, 92, 0.30)) , 
-    url('img/35North-Venture-masthead2.jpg') no-repeat center center;
+    background: 
+    url('img/1250x300-new-2.jpg') no-repeat center center;
+    background: 
+    url('img/1250x300-new-2.jpg') no-repeat center center;
+    background: 
+    url('img/1250x300-new-2.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 300px;
+    max-height: 250px;
+  }
+
+  .kc-masthead3 {
+    position: relative;
+     color: white;
+    background: 
+    url('img/1250x300-new-3.jpg') no-repeat center center;
+    background: 
+    url('img/1250x300-new-3.jpg') no-repeat center center;
+    background: 
+    url('img/1250x300-new-3.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -96,27 +113,38 @@
   }
 
 </style>
-
+<script type="text/javascript">
+$('#myCarousel').carousel({
+    interval: 300
+});
+</script>
 <section class="container-fluid kc-masthead">
   <div class="row">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel carousel-fade" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active kc-masthead">
       <div class="kc-masthead__content">
-        <h1 class="kc-masthead__content--headline">Helping passionate entrepreneurs build high growth businesses </h1>
+        <h1 class="kc-masthead__content--headline"></h1>
       </div>
     </div>
 
     <div class="item kc-masthead2">
       <div class="kc-masthead__content">
-        <h1 class="kc-masthead__content--headline">Helping passionate entrepreneurs build high growth businesses </h1>
+        <h1 class="kc-masthead__content--headline"></h1>
+      </div>
+    </div>
+
+    <div class="item kc-masthead3">
+      <div class="kc-masthead__content">
+        <h1 class="kc-masthead__content--headline"></h1>
       </div>
     </div>
   </div>
