@@ -1,0 +1,355 @@
+<style type="text/css">
+.full-content a {
+    color: #efefef;
+
+}
+.full-content a:hover {
+    color: #000;
+    opacity: 0.5;
+}
+.full-content a:active, a:visited {
+    color: #efefef;
+}
+.full-content {
+    background: #ddd;
+}
+#custom_carousel {
+    padding-top: 40px;
+    min-height: 750px;
+}
+#custom_carousel .item {
+
+    color:#000;
+    background-color:#eee;
+    padding:20px 0;
+    min-height: 450px;
+}
+#custom_carousel .controls{
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding:0;
+    margin:0;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    background:#ddd
+}
+#custom_carousel .controls li {
+    display: table-cell;
+    width: 1%;
+    max-width:90px
+}
+
+#custom_carousel .controls li.active {
+    background-color:#eee;
+    border-bottom:4px solid #A41034;
+}
+
+
+#custom_carousel .controls li.active:after {
+    opacity: 0;
+}
+
+#custom_carousel .controls a small {
+    overflow:hidden;
+    display:block;
+    font-size:27px;
+    margin-top:5px;
+    font-weight:300;
+    color:#fff;
+}
+#custom_carousel .controls a span {
+    overflow:hidden;
+    display:block;
+    font-size:12px;
+    margin-top:2px;
+    font-weight:300;
+    color:#fff;
+}
+.service-icon {
+    border: 2px solid #fff;
+    border-radius: 20%;
+    color: #ffffff;
+
+    padding: 10px 13px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+.input-item {
+    padding-top: 20px;
+}
+
+.input-item p {
+    color:#1c4586;
+    font-size: 1.4em;
+    font-weight: 300;
+}
+.input-item p > span, h3 > span {
+    color:#b3223c;
+}
+.input-item p.para {
+    font-size: 1.1em;
+    text-align: justify;
+}
+.input-item ul {
+    padding-left:20px; list-style:none;
+}
+
+.input-item ul.bullet-list li {
+    margin-bottom:auto;
+}
+.input-item li {
+    margin-bottom:8px;
+    color:#6d6d6d;
+    font-size: 1em;
+
+}
+.input-item li > span {
+    color:#b3223c;
+
+}
+.input-item li:before {    
+    font-family: 'FontAwesome';
+    content: '\f084';
+    margin:0 5px 0 -15px;
+    line-height: 2.1;
+    color: #1c4586;
+    font-size: 16px;
+}
+.input-item ul.bullet-list li:before {    
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    margin:0 5px 0 -15px;
+    line-height: 2.1;
+    color: #1c4586;
+    font-size: 16px;
+}
+.lede__headline, .lede__headline--caps, .lede__headline--white, .lede__headline-b {
+    font-size: 2.2em;
+    color: #b92a51;
+    text-align: center;
+    font-weight: 300;
+}
+.lede__border {
+    width: 15%;
+    border: 1px solid #00436f;
+}
+.item-head {
+    font-size: 1.3em;
+    color: #1c4586;
+    text-align: center;
+    font-weight: 300;
+}
+</style>
+
+<a id ="tabbed"></a>
+<div class="container-fluid full-content">
+
+    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="row text-center" style="margin:10px 0 30px;">
+            <div class="lede__headline text-center">Aranca offers bespoke research solutions in following four areas</div>
+            <div class="lede__subheadline text-center"></div>
+            <hr class="lede__border">
+        </div>
+        <div class="controls">
+            <ul class="nav hidden-xs">
+                <li data-target="#custom_carousel" data-slide-to="0" class="active" style="background-color:#f5a15a"><a style="background-color: #f5a15a;" href="#">
+                <!-- <p>Decision-making Problem</p> -->
+                <!-- <p class="service-icon">1</p> -->
+                <P><small>COMMERCIAL AND<br> INDUSTRIAL LENDING &nbsp;</small></P>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+
+                <li data-target="#custom_carousel" data-slide-to="1" style="background-color: #20738e;"><a style="background-color: #20738e;" href="#">
+               <!--  <p>Decision-making Problem</p> -->
+               <!--  <p class="service-icon">2</p> -->
+                <p><small>COMMERCIAL REAL<br> ESTATE LENDING &nbsp;</small></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="2" style="background-color: #687e4a;"><a style="background-color: #687e4a;" href="#">
+                <!-- <p>Decision-making Problem</p> -->
+               <!--  <p class="service-icon">3</p> -->
+                <p><small>EQUIPMENT <br> LENDING &nbsp;</small></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="3" style="background-color: #18b2b3;"><a style="background-color: #18b2b3;" href="#">
+               <!--  <p>Decision-making Problem</p> -->
+                <!-- <p class="service-icon">4</p> -->
+                <p><small>DCM AND LOAN <br> SYNDICATION</small></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+            </ul>
+            
+            <ul class="nav visible-xs">
+                <li data-target="#custom_carousel" data-slide-to="0" class="active" style="background-color:#f5a15a"><a style="background-color: #f5a15a;" href="#">
+                <!-- <p>Decision-making Problem</p> -->
+                <!-- <p class="service-icon">1</p> -->
+                <P><span>Solution 1</span></P>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+
+                <li data-target="#custom_carousel" data-slide-to="1" style="background-color: #20738e;"><a style="background-color: #20738e;" href="#">
+               <!--  <p>Decision-making Problem</p> -->
+               <!--  <p class="service-icon">2</p> -->
+                <p><span>Solution 2</span></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="2" style="background-color: #687e4a;"><a style="background-color: #687e4a;" href="#">
+                <!-- <p>Decision-making Problem</p> -->
+               <!--  <p class="service-icon">3</p> -->
+                <p><span>Solution 3</span></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+                <li data-target="#custom_carousel" data-slide-to="3" style="background-color: #18b2b3;"><a style="background-color: #18b2b3;" href="#">
+               <!--  <p>Decision-making Problem</p> -->
+                <!-- <p class="service-icon">4</p> -->
+                <p><span>Solution 4</span></p>
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                </a></li>
+            </ul>
+
+
+        </div>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container-fluid">
+                    <div class="row">
+                        <p class="item-head visible-xs">COMMERCIAL AND  INDUSTRIAL LENDING</P>
+                        <div class="col-sm-12 input-item">
+                            <p>To enable clients to spend more time on sales activities, Aranca partners with clients to provide solutions on some of the pain areas like Market and Industry Studies, Loan Summaries and Periodic Reviews and Recommendations on Preliminary Borrower Rating. </p>
+                        </div>
+                        <div class="col-md-2"><img src="/lp/research-on-the-go/img/tabs/diverse-research-needs.jpg" class="img-responsive" style="padding-top:30px;"></div>
+                        <div class="col-sm-4 input-item" style="padding-top:0px;">
+                            <h3><span>Solution Framework</span></h3>
+                            <p class="para">Aranca C&I teams are working with clients on Market Research and Industry Reviews, Quarterly and Annual Loan Reviews and Appraisal Notes, Preliminary Borrower Rating models, Asset Quality Reviews, Covenant Compliance Reports, Portfolio Monitoring and Collateral Audit Reports.</p>
+                        </div>
+                        <div class="col-sm-6 input-item" style="padding-top:0px;">
+                            <h3><span>Aranca Value-Add</span></h3>
+                            <ul>
+                                <li>By streamlining documentation of loan adherence records and periodic updates, our clients get early warning on non-compliant loans. </li>
+                                <li>Better cash flow management and floor planning through collateral audit reports</li>
+                                <li>Reduced lead time and winning more deals through Market research and Industry reviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>            
+            </div> 
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <p class="item-head visible-xs">COMMERCIAL REAL ESTATE LENDING</P>
+                        <div class="col-sm-12 input-item">
+                            <p>Aranca provide support in Multifamily Mortgage Lending, Commercial Mortgage Production through CMBS and direct lending, Healthcare Real Estate, Institutional REITs & Funds, Loan Servicing & Asset Management and Affordable Housing</p>
+                        </div>
+                        <div class="col-md-2"><img src="/lp/research-on-the-go/img/tabs/real-estate.jpg" class="img-responsive" style="padding-top:30px;"></div>
+                        <div class="col-sm-4 input-item" style="padding-top:0px;">
+                            <h3><span>Solution Framework</span></h3>
+                            <p class="para">Aranca solution products include a) Asset and Cash flow summary reports comprising Market Summary, Loan Summary, Property Summary, Roll-over analysis, SWOT analysis b) Loan origination reports consisting of Property Operating Performance, Tenant analysis, borrower analysis and loan analysis c) Incorporating and analyzing property operating statements and performing re-underwriting based on cash-flow analysis d) testing covenant compliance </p>
+                        </div>
+                        <div class="col-sm-6 input-item" style="padding-top:0px;">
+                            <h3><span>Aranca Value-Add</span></h3>
+                            <p>Client’s loan origination team benefits from:</p>
+                            <ul>
+                                <li>More number of deals underwritten with short turnaround time due to Aranca support on research on deal origination</li>
+                                <li>Periodic portfolio monitoring and stress testing had helped CRE teams in identifying red-flag in advance for non-compliant portfolios</li>
+                                <li>Added benefits of standardization of research and reporting processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>            
+            </div> 
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <p class="item-head visible-xs">EQUIPMENT LENDING</P>
+                        <div class="col-sm-12 input-item">
+                            <p>Clients use Aranca equipment lending services in origination, risk assessment and management and portfolio monitoring. Aranca brings the knowledge of sector expertise and know how in the equipment lending to produce premium asset summary notes.</p>
+                        </div>
+                        <div class="col-md-2"><img src="/lp/research-on-the-go/img/tabs/equipment.jpg" class="img-responsive" style="padding-top:30px;"></div>
+                        <div class="col-sm-4 input-item" style="padding-top:0px;">
+                            <h3><span>Solution Framework</span></h3>
+                            <p class="para">Aranca equipment lending teams help on-shore teams in Market studies, Sector reports, Loan appraisals, Annual review notes/ Portfolio monitoring, Preliminary risk ratings, Assessment of change in risk profiles and future implications, Asset summary report, peer benchmarking </p>
+                            <p class="para">Aranca team have experience in equipment lending across sectors including Medical equipment, Computers and software, Construction, agriculture, mining and oilfield, railroad, industrial and materials handling equipment.</p>
+                        </div>
+                        <div class="col-sm-6 input-item" style="padding-top:0px;">
+                            <h3><span>Aranca Value-Add</span></h3>
+                            <ul>
+                                <li>Increased efficiency in the underwriting process with a centralized fundamental analysis for the credit team</li>
+                                <li>Increased coverage and periodicity of loans monitored by the portfolio management team</li>
+                                <li>Developed and maintained early warning systems to consistently monitor loan portfolio for timely actions on deteriorating loans, concentration risk, event risk, etc</li>
+                                <li>Filtered and processed large flow of sector information for asset management team</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>           
+            </div> 
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <p class="item-head visible-xs">DCM AND LOAN SYNDICATION</P>
+                        <div class="col-sm-12 input-item">
+                            <p>Aranca syndication team has wider experience in DCM support across rating categories and geographies. Partnering with Aranca helps our clients to focus more on winning deals. Aranca experience to work with global as well as regional firms and team’s experience to directly work with on-shore syndication teams have helped client derive benefits on a real time basis.</p>
+                        </div>
+                        <div class="col-sm-3 input-item" style="padding-top:12px;">
+                            <h4><span>Deal Origination</span></h3>
+                            <ul class="bullet-list">
+                                <li>Opportunities screening</li>
+                                <li>New issuance grading/analysis for public and private debt</li>
+                                <li>Credit profiles</li>
+                                <li>Shadow rating modelling</li>
+                                <li>Optimal capital structure analysis</li>
+                                <li>Security analysis</li>
+                                <li>Cash flow modelling</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2 input-item" style="padding-top:12px;">
+                            <h4><span>Deal Marketing</span></h3>
+                            <ul class="bullet-list">
+                                <li>Credit assessment report/Net road show summaries</li>
+                                <li>Security’s term sheet and covenants summary</li>
+                                <li>Industry report</li>
+                                <li>Sensitivity and scenario analysis</li>
+                                <li>Credit comps (issuer/security)</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3 input-item" style="padding-top:12px;">
+                            <h4><span>Market Intelligence/Analysis</span></h3>
+                            <ul class="bullet-list">
+                                <li>Tracking new deals, pricing trends</li> 
+                                <li>Periodic updates on market and sector trends</li>
+                                <li>Maintenance of deal and comps database</li>
+                                <li>News monitoring and impact analysis</li>
+                                <li>Benchmarking and competitor analysis</li>
+                                <li>Economic/regulatory updates</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 input-item" style="padding-top:0px;">
+                            <h3><span>Aranca Value-Add</span></h3>
+                            <ul>
+                                <li>Improved consistency and standardization across pitch books by maintaining up-to-date standard slides and data</li>
+                                <li>Monitor and maintain covenant compliance data for distribution</li>
+                                <li>Increased market visibility in new sectors by supporting creation and publication of annual sector books</li>
+                                <li>Reduced product team’s time on periodic pricing updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>           
+            </div> 
+        <!-- End Item -->
+        </div>
+        <!-- End Carousel Inner -->
+
+    </div>
+    <!-- End Carousel -->
+</div>
+
+<script type="text/javascript">
+      $(document).ready(function(){
+    $('#custom_carousel').on('slide.bs.carousel', function () {
+      $('#custom_carousel .controls li.active').removeClass('active');
+      $('#custom_carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
+    })
+});
+</script>
