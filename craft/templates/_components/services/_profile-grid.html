@@ -2,15 +2,21 @@
 
 {% set pGridCss %}
 
-  .team-member {
-    text-align: center;
-    margin-bottom: 50px;
+ .profile {
+    padding-top: 120px;
+    padding-bottom: 30px;
+    background: aliceblue;
   }
 
   .team-member img {
     margin: 0 auto;
     border: 7px solid white;
-    width: 75%;
+    width: 38%;
+  }
+
+  .team-member {
+    text-align: center;
+    margin-bottom: 50px;
   }
 
   .team-member h4 {
@@ -21,6 +27,11 @@
 
   .team-member p {
     margin-top: 0;
+  }
+
+  .profile__content p {
+    font-size: 1.2em;
+    color: #5C5555;
   }
 
 {% endset %}
@@ -104,56 +115,19 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Write to Us</h4>
       </div>
-      <div class="modal-body">
-
-         <!-- Start: Form URL capture -->
-          <script>
-          window.onload = function ()
-          {
-          var urlParams;
-          var query = (window.location != window.parent.location) ? document.referrer.split('?')[1] || '' : window.location.search.split('?')[1]|| '';
-          (window.onpopstate = function () {
-          var match, search = /([^&=]+)=?([^&]*)/g;
-          urlParams = {};
-          while (match = search.exec(query))
-          urlParams[encodeURIComponent(match[1])] = match[2];
-          }
-          )();
-          for (i in urlParams) {
-          var urlParamsArray = urlParams[i];
-          try {
-          document.getElementsByName(i)[0].value=decodeURIComponent(urlParamsArray);
-          }
-          catch(err) {
-          }
-          }
-          };
-          </script>
-        <!-- End: Form URL capture -->
-        <div class="form-modal-hub-form">
-
-        <!-- Start - Hubspot code start -->
-
-        <!--[if lte IE 8]>
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-        <![endif]-->
-        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-        <script>
-          hbspt.forms.create({ 
-            portalId: '2270236',
-            formId: '{{ formActionUrl }}',
-            submitButtonClass: 'my-submit',
-            target: '.form-modal-hub-form'
-          });
-
-        </script>
-
-         <!-- End - Hubspot code start -->
-        </div>
+      <div class="modal-body profile">
+        <div class="col-sm-6 profile__image">
+  <div class="team-member">
+    <img src="/assets/images/team/komal-aran.jpg" class="img-responsive img-circle" alt="">
+    <h4>Komal Aran&nbsp;Atariya</h4>
+    <p class="text-muted">Chief People Officer</p>
+  </div>
+</div>
+<div class="col-sm-6 profile__content">
+  <p>Komal heads the Human Resource division in Aranca and is responsible for organizational development, people management, training and overall employee satisfaction globally.</p> <p>He has an experience of close to 3 decades and was an active member in leading news, mythological and national radio channels.</p>
+<p>Though managing people is his profession, Komal is nationally known for the music he creates and with over 2000 songs and 500 jingles to his credit Komal is a well known name within the film and entertainment fraternity</p>
+</div>
       </div>
-<!--       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div> -->
     </div>
 
   </div>
