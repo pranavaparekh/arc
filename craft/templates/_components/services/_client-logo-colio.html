@@ -1,72 +1,6 @@
-<!-- CSS
-  ================================================== -->
-  <link rel="stylesheet" href="/assets/css/colio/css/base.css">
-  <link rel="stylesheet" href="/assets/css/colio/css/skeleton.css">
-  <link rel="stylesheet" href="/assets/css/colio/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/colio/css/isotope.css">
-  <link rel="stylesheet" href="/assets/css/colio/css/colio.css">
-
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  
-
-
-     <!-- JS 
-  ================================================== -->
-  <script type="text/javascript" src="/assets/js/colio/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/js/colio/js/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="/assets/js/colio/js/jquery.scrollUp.min.js"></script>
-  <script type="text/javascript" src="/assets/js/colio/js/jquery.isotope.min.js"></script>
-  <script type="text/javascript" src="/assets/js/colio/js/jquery.colio.min.js"></script>
-
-  
-  <!-- Colio Black Theme
-  ================================================== -->
-  <link rel="stylesheet" href="/assets/css/colio/colio-black/style.css" />
-  <link rel="stylesheet" href="/assets/css/colio/colio-black/fancybox/jquery.fancybox.css" />
-  <script type="text/javascript" src="/assets/css/colio/colio-black/fancybox/jquery.fancybox.js"></script>
-   
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-      
-      // "scrollTop" plugin
-      $.scrollUp();
-      
-      // "colio" plugin
-      $('.portfolio .list').colio({
-        id: 'demo_1',
-        theme: 'black',
-        placement: 'inside',
-        hiddenItems: '.isotope-hidden',
-        onContent: function(content){
-          // init "fancybox" plugin
-          $('.fancybox', content).fancybox();
-        }
-      });
-      
-      // "isotope" plugin
-      var filter = '*', isotope_run = function(f) {
-        var list = $('.portfolio .list').isotope({layoutMode : 'fitRows', filter: f});    
-        window.setTimeout(function(){
-          list.trigger('colio','excludeHidden');
-        }, 25);
-      };
-      
-      $('.portfolio .filters a').click(function(){
-        $(this).addClass('filter-active').siblings().removeClass('filter-active');
-        var href = $(this).attr('href').substr(1);
-        filter = href ? '.' + href : '*';
-        isotope_run(filter);
-        return false;
-      });
-      
-      isotope_run(filter);      
-      
-    });
-  </script>
-
+{% includeCssFile '/assets/css/skeleton.css' %}
+{% includeCssFile '/assets/css/colio.css' %}
+{% includeJsFile '/assets/js/jquery.colio.min.js' %}
 
 {% set svcClientGridCss %}
   .clc {
@@ -103,10 +37,56 @@
 
 {% endset %}
 
+{% set svcClientGridJs %}
+  $(document).ready(function(){
 
+      // "scrollTop" plugin
+      // $.scrollUp();
+
+      // "colio" plugin
+      $('.portfolio .list').colio({
+        id: 'demo_1',
+        theme: 'black',
+        placement: 'inside',
+        hiddenItems: '.isotope-hidden',
+        scrollPage: true,
+        onContent: function(content){
+          // init "fancybox" plugin
+
+          $('.fancybox', content).fancybox();
+        }
+      });
+
+      // "isotope" plugin
+      var filter = '*', isotope_run = function(f) {
+        var list = $('.portfolio .list').imagesLoaded( function() {
+          // init Isotope after all images have loaded
+          list.isotope({
+           layoutMode : 'fitRows', filter: f
+          });
+        });
+        window.setTimeout(function(){
+          list.trigger('colio','excludeHidden');
+        }, 25);
+      };
+
+      $('.portfolio .filters a').click(function(){
+        $(this).addClass('filter-active').siblings().removeClass('filter-active');
+        var href = $(this).attr('href').substr(1);
+        filter = href ? '.' + href : '*';
+        isotope_run(filter);
+        return false;
+      });
+
+      isotope_run(filter);
+
+    });
+
+
+{% endset %}
 
 {% includeCss svcClientGridCss %}
-
+{% includeJs svcClientGridJs %}
 
 <section class="clc container-sk">
 {{ entry. colioRichtext }}
