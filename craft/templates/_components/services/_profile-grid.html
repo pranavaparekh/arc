@@ -1,5 +1,4 @@
-{% includeJsFile "/assets/js/zozo.tabs.min.js"  %}
-{% includeCssFile "/assets/css/zozo.tabs.min.css"  %}
+
 
 {% set pGridCss %}
 
@@ -26,205 +25,25 @@
 
 {% endset %}
 
-{% set pGridJs %}
-  $(document).ready(function () {
 
-      $("#tabbed-nav").zozoTabs({
-          theme: "black",
-          style: "underlined",
-          orientation: "horizontal",
-          position: "top-center",
-          size: "xlarge",
-          animation: {
-            easing: "easeInOutExpo",
-            duration: 400,
-            effects: "slideH"
-          },
-      });
-  });
-{% endset %}
 
 {% includeCss pGridCss %}
-{% includeJs pGridJs %}
 
 
 <section class="container p-grid">
   <h2 class="lede__headline text-center">Meet Our Team</h2>
   <hr class="lede__border">
   <!-- Zozo Tabs Start-->
-  <div id="tabbed-nav">
 
-    <!-- Tab Navigation Menu -->
-    <ul class="profile__list">
-      <li class="profile__list__item"><a>Corporate</a></li>
-      <li class="profile__list__item"><a>Practices</a></li>
-      <li class="profile__list__item"><a>Advisory</a></li>
-    </ul>
+
+
 
     <!-- Content container -->
     <div class="pgrid__container">
-        <!-- grid starts here -->
-      <!-- first row starts here -->
-      <div class="corporate">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/hemendra-aran">
-            <img src="/assets/images/team/Hemendra.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Hemendra Aran</h4>
-            <p class="text-muted">CEO &amp; Founder</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/madhusudan-rajagopalan">
-              <img src="/assets/images/team/madhusudan.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Madhusudan Rajagopalan</h4>
-            <p class="text-muted">COO &amp; Co-founder</p>
-          </div>
-        </div>
 
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/kannan-sivasubramanian">
-            <img src="/assets/images/team/kannan-siva.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Kannan Sivasubramanian</h4>
-            <p class="text-muted">Executive Vice President</p>
-          </div>
-        </div>
+      
 
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/sunil-karande">
-            <img src="/assets/images/team/Sunil_Karande.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Sunil Karande</h4>
-            <p class="text-muted">Head of Business Automation</p>
-          </div>
-        </div>
 
-      </div><!-- end row -->
-      <!-- first row ends here -->
-      <!-- second row starts here -->
-      <div class="row">
-
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/sujit-janardanan">
-            <img src="/assets/images/team/sujit-j.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Sujit Janardanan</h4>
-            <p class="text-muted">Vice President - Marketing</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/ashish-sethi">
-            <img src="/assets/images/team/ashish.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Ashish Sethi</h4>
-            <p class="text-muted">Global Head of Sales</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/komal-atariya">
-            <img src="/assets/images/team/komal-aran.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Komal Aran Atariya</h4>
-            <p class="text-muted">Chief People Officer</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/ritesh-rawal">
-            <img src="/assets/images/team/ritesh-rawal.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Ritesh Rawal</h4>
-            <p class="text-muted">Head of Finance</p>
-          </div>
-        </div>
-      </div><!-- end row -->
-      <!-- second row ends here -->
-      <!-- third row starts here -->
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/shreekar-karambelkar">
-            <img src="/assets/images/team/shreekar.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Shreekar Karambelkar</h4>
-            <p class="text-muted">Head of IT Infrastructure</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/neeraj-bhardwaj">
-            <img src="/assets/images/team/neeraj-bharadwaj.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Neeraj Bhardwaj</h4>
-            <p class="text-muted">Director, Business Development</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/kevin-menezes">
-            <img src="/assets/images/team/kevin.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Kevin Menezes</h4>
-            <p class="text-muted">Head - Editorial &amp; Graphics</p>
-          </div>
-        </div>
-      </div><!-- end row -->
-      <!-- Third row ends here -->
-      </div>
-
-      <div class="practices">
-      <!-- first row starts here -->
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/prabir-chetia">
-            <img src="/assets/images/team/prabir.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Prabir Chetia</h4>
-            <p class="text-muted">Head - Business Research &amp; Advisory</p>
-          </div>
-        </div> 
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/bharat-ramnani">
-            <img src="/assets/images/team/bharat.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Bharat Ramnani</h4>
-            <p class="text-muted">Head - Valuation Advisory</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/prakash-kailasam">
-            <img src="/assets/images/team/prakash.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Prakash Kailasam</h4>
-            <p class="text-muted">Head - Technology Intelligence &amp; IP Research</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="team-member">
-            <a href="/about-us/ankit-rastogi">
-            <img src="/assets/images/team/ankit.jpg" class="img-responsive img-circle" alt="">
-            </a>
-            <h4>Ankit Rastogi</h4>
-            <p class="text-muted">Head - Investment Research &amp; Analytics</p>
-          </div>
-        </div>
-
-      </div><!-- end row -->
-      <!-- first row ends here -->
-      </div>
 
       <div class="advisory">
         <div class="row">
