@@ -1671,11 +1671,10 @@ TABBED HOVER -->
 
 </script>
 <script type="text/javascript">
-      var carName = response.country;
-      function myFunction() {
-    document.getElementById("demo").innerHTML = carName;
-}
-myFunction();
+  function ip_details($ip) {
+$json = file_get_contents("http://ipinfo.io/{$ip}/geo");
+$details = json_decode($json);
+return $details;
 </script>
 </li>
           
