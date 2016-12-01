@@ -1655,7 +1655,29 @@ TABBED HOVER -->
           
           <!-- contact -->
           <li><a href="/contact-us"><i class="fa fa-paper-plane"></i>&nbsp;&nbsp;CONTACT</a>
-          </li>
+          <p id="ip"></p>
+          <p id="demo"></p>
+<div id="address"></div>
+<script type="text/javascript">
+(function($){
+    $(document).ready(function () {
+    $.get("http://ipinfo.io", function (response) {
+      console.log(response.ip, response.country);
+
+  }, "jsonp");
+
+});
+});
+
+</script>
+<script type="text/javascript">
+      var carName = response.country;
+      function myFunction() {
+    document.getElementById("demo").innerHTML = carName;
+}
+myFunction();
+</script>
+</li>
           
 
           <!-- search -->
@@ -1673,7 +1695,9 @@ TABBED HOVER -->
 
           <li class="sharer__list__item"><a href="https://twitter.com/aranca" target="_blank"><i class="fa fa-twitter"></i><span class="visible-xs">Follow us on Twitter</span></a></li>&nbsp;&nbsp;
 
-          <li class="sharer__list__item"><a href="https://www.facebook.com/ArancaResearch" target="_blank"><i class="fa fa-facebook"></i><span class="visible-xs">Get updates on Facebook</span></a></li>&nbsp;&nbsp;
+          <li class="sharer__list__item"><a href="https://www.facebook.com/ArancaResearch" target="_blank"><i class="fa fa-facebook"></i><span class="visible-xs">Get updates on Facebook</span></a><p id="demo"></p>
+
+</li>&nbsp;&nbsp;
 
           <li class="sharer__list__item"><a href="http://www.linkedin.com/company/aranca" target="_blank"><i class="fa fa-linkedin"></i><span class="visible-xs">Join us on LinkedIn</span></a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </ul>
@@ -1686,3 +1710,4 @@ TABBED HOVER -->
         
 </div>
 
+ 
