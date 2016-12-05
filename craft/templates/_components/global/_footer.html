@@ -82,7 +82,20 @@
             <ul class="footer__nav">
               <li class="footer__nav__item"><a href="{{siteUrl}}legal/privacy-cookies-policy">Privacy & Cookies Policy</a></li>
               <li class="footer__nav__item"><a href="{{siteUrl}}legal/legal-terms-of-use">Legal/Terms of Use</a>
-              <li class="footer__nav__item"><a href="{{siteUrl}}legal/accessibility">Accessibility {{ data.country_code }}</a>
+              <li class="footer__nav__item"><a href="{{siteUrl}}legal/accessibility">Accessibility</a>
+<li class="footer__nav__item">location: {{ data.country_name }}</li>
+<li class="footer__nav__item">ip: {{ data.ip }}</li>
+<li class="footer__nav__item">country_code: {{ data.country_code }}</li>
+<li class="footer__nav__item">country_name: {{ data.country_name }}</li>
+<li class="footer__nav__item">region_code: {{ data.region_code }}</li>
+<li class="footer__nav__item">region_name: {{ data.region_name }}</li>
+<li class="footer__nav__item">city: {{ data.city }}</li>
+<li class="footer__nav__item">zipcode: {{ data.zipcode }}</li>
+<li class="footer__nav__item">latitude: {{ data.latitude }}</li>
+<li class="footer__nav__item">longitude: {{ data.longitude }}</li>
+<li class="footer__nav__item">metro_code: {{ data.metro_code }}</li>
+<li class="footer__nav__item">areacode: {{ data.areacode }}</li>
+<li class="footer__nav__item">cached: {{ data.cached }}</li>
             </ul>
           </div>
         </div>
