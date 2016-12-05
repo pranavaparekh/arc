@@ -23,6 +23,7 @@
 
   .svc-masthead__headline {
     font-size: 3.5em;
+    line-height: 57px;
     border-bottom: 1px solid white;
     padding-bottom: 15px;
     text-shadow: 1px 2px 6px #040404;
@@ -140,7 +141,7 @@
   <!--  content -->
   <div class="svc-masthead__content text-center">
 
-    <h1 class="svc-masthead__headline">{{ entry.pageHeadline }}</h1>
+    <div class="svc-masthead__headline">{{ entry.pageHeadline }}</div>
     <ul class="svc-masthead__breadcrumb">
       {% if firstLevel | length %}
         <li class="svc-masthead__breadcrumb__item">
