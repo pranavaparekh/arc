@@ -1,3 +1,4 @@
+{% set data = craft.geo.info(true) %}
 {% set footerCss %}
   .footer {
     background: {{ brandPrimary }};
@@ -81,7 +82,7 @@
             <ul class="footer__nav">
               <li class="footer__nav__item"><a href="{{siteUrl}}legal/privacy-cookies-policy">Privacy & Cookies Policy</a></li>
               <li class="footer__nav__item"><a href="{{siteUrl}}legal/legal-terms-of-use">Legal/Terms of Use</a>
-              <li class="footer__nav__item"><a href="{{siteUrl}}legal/accessibility">Accessibility</a>
+              <li class="footer__nav__item"><a href="{{siteUrl}}legal/accessibility">Accessibility {{ data.country_code }}</a>
             </ul>
           </div>
         </div>
