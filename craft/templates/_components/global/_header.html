@@ -1,6 +1,6 @@
+{% set data = craft.geo.info(true) %}
+{% set countrycode = data.country_code %}
 {% set headerCss %}
-
-
 
 {% endset %}
 
@@ -8,7 +8,11 @@
 {% includeCss headerCss %}
 
 {% include '_components/menu/_top-menu' %}
+{% if countrycode == "IN" %}
+{% include '_components/menu/_service-menu-india' %}
+{% else %}
 {% include '_components/menu/_service-menu' %}
+{% endif %}
 {# include '_components/global/_mega-menu' #}
 
 
