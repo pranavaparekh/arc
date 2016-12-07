@@ -1,6 +1,9 @@
 {% set crgCSS  %}
 .crg {
   padding: 30px 0;
+  {% if backgroundColor is defined %}
+    background: {{ backgroundColor }};
+  {% endif %}
 }
 .crg__item {
   padding-bottom: 20px;
