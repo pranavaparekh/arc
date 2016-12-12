@@ -8,5 +8,8 @@
 {% include '_components/services/assignment-slider' %}
 {% include '_components/services/_profile-grid' %}
 {# include '_components/salesint/_case-study-modal-os.html' #}
+{% if entry.caseStudyEntries|length %}
+  {% include '_components/services/_case-study-list' with { 'bkcolor': '#f6f6f6;'  } %}
+{% endif %}
 {% include '_components/salesint/_full-cta.html' %}
 {% include '_components/global/_footer' %}
