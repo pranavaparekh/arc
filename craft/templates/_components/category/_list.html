@@ -149,7 +149,7 @@ $(function() {
                 <div class="row">
                   
                   <div class="col-lg-7 col-sm-12">
-                    <img src="{{ blogPost.blogsBanner.first().url }}" class="img-responsive">
+                    <a href="{{ blogPost.url }}"><img src="{{ blogPost.blogsBanner.first().url }}" class="img-responsive"></a>
                   </div>
                   <div class="col-lg-5 col-sm-12">
                     
@@ -191,7 +191,7 @@ $(function() {
                 <div class="row">
                   
                   <div class="col-lg-7 col-sm-12">
-                    <img src="{{ article.articlesBanner.first().url ?? '' }}" class="img-responsive">
+                    <a href="{{ article.url }}"><img src="{{ article.articlesBanner.first().url ?? '' }}" class="img-responsive"></a>
                   </div>
 
                   <div class="col-lg-5 col-sm-12">
@@ -232,7 +232,7 @@ $(function() {
                 <div class="row">
                   
                   <div class="col-lg-7 col-sm-12">
-                    <img src="{{ infographic.igBanner[1].url() ?? '' }}" class="img-responsive" alt={{infographic.title}}>
+                    <a href="{{ infographic.url }}"><img src="{{ infographic.igBanner[1].url() ?? '' }}" class="img-responsive" alt={{infographic.title}}></a>
                   </div>
 
                   <div class="col-lg-5 col-sm-12">
@@ -265,7 +265,7 @@ $(function() {
                 <div class="row">
                   
                   <div class="col-lg-7 col-sm-12">
-                    <img src="{{ specialReport.srBanner.first().url }}" class="img-responsive">
+                    <a href="{{ specialReport.url }}"><img src="{{ specialReport.srBanner.first().url }}" class="img-responsive"></a>
                   </div>
 
                   <div class="col-lg-5 col-sm-12">
