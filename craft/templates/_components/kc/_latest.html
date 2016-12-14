@@ -58,7 +58,7 @@
 {% for entry in allLatestEntries %}
   <li class="kc-latest__item">
     <p class="kc-latest__item__label">{{ entry.type }}</p>
-    <a href={{ entry.url }}>{{ entry.title }}</a>
+    <a href={{ entry.url }} style="font-size: 16px;">{{ entry.title }}</a>
     <p class="kc-latest__date"><em><small>published on {{ entry.postDate | date("M d, Y") }}</small></em></p>
   </li>
 {% endfor %}
