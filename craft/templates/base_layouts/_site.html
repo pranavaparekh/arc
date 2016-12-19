@@ -7,7 +7,13 @@
   <meta property="og:type"               content="article" />
   <meta property="og:title"              content="{{ docTitle }}" />
   <meta property="og:description"        content="{{ docDesc }}" />
-  <meta property="og:image"              content="http://www.aranca.com/assets/images/aranca_logo_214x75.png" />
+  {% set assets = entry.blogsBanner %}
+  {% if assets | length %}
+    {% for image in assets %}
+  <meta property="og:image"    content="{{ image.url }}" />
+    {% endfor %}
+  {% endif %}
+
   
 {% endblock %}
 
