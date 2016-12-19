@@ -8,6 +8,8 @@
   <meta property="og:title"              content="{{ docTitle }}" />
   <meta property="og:description"        content="{{ docDesc }}" />
   {% set assets = entry.blogsBanner %}
+  {% set assets = entry.articlesBanner %}
+  {% set assets = entry.srBanner %}
   {% if assets | length %}
     {% for image in assets %}
   <meta property="og:image"    content="http://www.aranca.com{{ image.url }}" />
