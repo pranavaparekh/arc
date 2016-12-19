@@ -10,7 +10,7 @@
   {% set assets = entry.blogsBanner %}
   {% if assets | length %}
     {% for image in assets %}
-  <meta property="og:image"    content="{{ image.url }}" />
+  <meta property="og:image"    content="http://www.aranca.com{{ image.url }}" />
     {% endfor %}
   {% endif %}
 
