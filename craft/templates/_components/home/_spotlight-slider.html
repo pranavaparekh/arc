@@ -151,18 +151,21 @@
             {% set spTitle = story.title %}
             {% set spIntro = story.srIntro %}
             {% set spImage = story.srBanner.first().url %}
+            {% set spTag = story.srBanner.first().altTag %}
 
           {% case "articles" %}
             {% set spName = 'Article' %}
             {% set spTitle = story.title %}
             {% set spIntro = story.excerpt %}
             {% set spImage = story.articlesBanner.first().url %}
+            {% set spTag = story.articlesBanner.first().altTag %}
 
           {% case "blogs" %}
             {% set spName = 'Blog' %}
             {% set spTitle = story.title %}
             {% set spIntro = story.blogIntro %}
             {% set spImage = story.blogsBanner.first().url %}
+            {% set spTag = story.blogsBanner.first().altTag %}
 
         {% endswitch %}
 
@@ -177,7 +180,7 @@
             <p><a class="btn btn-primary btn-block btn-orange" href={{ story.url }}>Read More</a></p>
           </div>
           <div class="col-sm-6">
-            <img class="img-responsive" src={{ spImage }} />
+            <img class="img-responsive" src={{ spImage }} alt="{{ spTag }}" />
           </div>
         <!-- story slider ends here -->
 
