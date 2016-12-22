@@ -154,6 +154,7 @@
   font-size: 1.2em;
   padding-left: 0.8em;
   font-weight: 300;
+  text-align: justify;
 }
 
 .sol-port-b-content__para_2 {
@@ -199,9 +200,12 @@ $(document).ready(function(){
       <div class="container">
         <div class="row">
           
-          {{ entry.solutionRichtext }}
-          
+          {% entry.solutionRichtext %}
+
         </div><!-- row -->
       </div><!-- container -->
     </div><!-- row -->
 </section>
+
+
+
