@@ -13,3 +13,5 @@ Disallow: /knowledge-center/newstrack/
 Disallow: /knowledge-center/newsletter/
 Disallow: /event/
 Disallow: /events/
+
+Sitemap: https://www.aranca.com/sitemap.xml
