@@ -55,6 +55,7 @@
     color: {{ redPrimary }};
     font-weight: 300;
     line-height: 1.3em;
+    font-size: 23px;
   }
 
   .cust-blok__headline--col {
@@ -147,7 +148,7 @@
       <div class="container">
         <div class="row">
           {% for block in entry.customersBlockIntro %}
-            <h2 class="lede__headline">{{ block.headline }}</h2>
+            <h3 class="lede__headline">{{ block.headline }}</h3>
             <p class="lede__subheadline">{{ block.subHeadline }}</p>
             <hr class="lede__border">
           {% endfor %}
